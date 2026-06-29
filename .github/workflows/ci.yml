@@ -1,0 +1,26 @@
+name: Publish to NuGet
+
+# Mirrors the sdk-ts publish flow: generated code is pushed here by wallet-ts-api CI;
+# this workflow packs and publishes to NuGet, but only from the master branch.
+on: [push]
+
+jobs:
+  publish:
+    name: Publish to NuGet
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Pack
+        run: dotnet pack src/WalletInc/WalletInc.csproj -c Release -o ./nupkg
+
+      - name: Publish to NuGet
+        run: dotnet nuget push "./nupkg/*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+        continue-on-error: true

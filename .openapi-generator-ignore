@@ -1,0 +1,3 @@
+# Files openapi-generator must NOT overwrite when wallet-ts-api regenerates this client.
+# Keep our custom publish workflow (and anything else under .github) intact.
+.github/**
