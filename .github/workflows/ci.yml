@@ -1,7 +1,10 @@
 name: Publish to NuGet
 
 # Mirrors the sdk-ts publish flow: generated code is pushed here by wallet-ts-api CI;
-# this workflow packs and publishes to NuGet, but only from the master branch.
+# this workflow packs and publishes to NuGet (master only) using NuGet Trusted
+# Publishing (OIDC) - no long-lived API key. Prereqs on nuget.org: a trusted-publishing
+# policy authorizing WalletInc/sdk-csharp's ci.yml, plus the NUGET_USER secret
+# (your nuget.org username / profile name, NOT your email).
 on: [push]
 
 jobs:
@@ -9,18 +12,43 @@ jobs:
     name: Publish to NuGet
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
+    permissions:
+      id-token: write   # GitHub OIDC token, exchanged by nuget.org for a 1-hour key
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # The repo has no C# project until wallet-ts-api generates the client into it.
+      # Until then this job is a clean no-op (stays green) instead of failing on pack.
+      - name: Check for generated project
+        id: check
+        run: |
+          if [ -f src/WalletInc/WalletInc.csproj ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "No generated SDK yet (waiting on first wallet-ts-api generation); skipping."
+          fi
+
       - uses: actions/setup-dotnet@v4
+        if: steps.check.outputs.exists == 'true'
         with:
           dotnet-version: '8.0.x'
 
       - name: Pack
+        if: steps.check.outputs.exists == 'true'
         run: dotnet pack src/WalletInc/WalletInc.csproj -c Release -o ./nupkg
 
+      # Request the short-lived (1h) key right before push so it can't expire first.
+      - name: NuGet login (OIDC -> temp API key)
+        if: steps.check.outputs.exists == 'true'
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}   # nuget.org username / profile name, NOT email
+
       - name: Publish to NuGet
-        run: dotnet nuget push "./nupkg/*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
-        continue-on-error: true
+        if: steps.check.outputs.exists == 'true'
+        run: dotnet nuget push "./nupkg/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
