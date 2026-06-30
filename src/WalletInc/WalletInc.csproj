@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>WalletInc</AssemblyName>
+    <PackageId>WalletInc</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>Wallet Inc Development Team</Authors>
+    <Company>Wallet Inc</Company>
+    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
+    <Description>Server-side .NET SDK for the Wallet Inc CRM and Digital Payments platform. Docs: https://wallet.dev</Description>
+    <Copyright>Copyright 2026 Wallet Inc</Copyright>
+    <RootNamespace>WalletInc</RootNamespace>
+    <Version>2.1.602</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\WalletInc.xml</DocumentationFile>
+    <RepositoryUrl>https://github.com/WalletInc/sdk-csharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>https://github.com/WalletInc/api-clients/releases</PackageReleaseNotes>
+    <Nullable>annotations</Nullable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+      <Title>Wallet (SDK)</Title>
+    <PackageProjectUrl>https://github.com/WalletInc/sdk-csharp</PackageProjectUrl>
+    <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;sms</PackageTags>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Polly" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
