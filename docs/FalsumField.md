@@ -1,0 +1,13 @@
+# WalletInc.Model.FalsumField
+Interface that lists the properties of a field that has failed validation
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Name** | **string** | Name of the field | 
+**Message** | **string** | Error message | 
+**Value** | **string** | The provided value | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
