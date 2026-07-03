@@ -397,6 +397,8 @@ docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTVideoCreateParams.md
 docs/WTVideoUpdateParams.md
+docs/WTVideoUploadPresign.md
+docs/WTVideoUploadPresignParams.md
 docs/WTVirtualBusinessCardCreateParams.md
 docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
@@ -418,6 +420,8 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTVideoUploadPresignParamsTests.cs
+src/WalletInc.Test/Model/WTVideoUploadPresignTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -837,6 +841,8 @@ src/WalletInc/Model/WTTwilioRequestAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCode.cs
 src/WalletInc/Model/WTVideoCreateParams.cs
 src/WalletInc/Model/WTVideoUpdateParams.cs
+src/WalletInc/Model/WTVideoUploadPresign.cs
+src/WalletInc/Model/WTVideoUploadPresignParams.cs
 src/WalletInc/Model/WTVirtualBusinessCardCreateParams.cs
 src/WalletInc/Model/WTVirtualBusinessCardUpdateParams.cs
 src/WalletInc/Model/WTWalletConfigurationSaveWalletRecord.cs

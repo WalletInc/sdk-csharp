@@ -83,6 +83,24 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> FetchAllVideoWithHttpInfo(bool? isArchiveIncluded = default);
         /// <summary>
+        /// Presign a direct-to-R2 video upload
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <returns>WTVideoUploadPresign</returns>
+        WTVideoUploadPresign PresignVideoUpload(WTVideoUploadPresignParams wTVideoUploadPresignParams);
+
+        /// <summary>
+        /// Presign a direct-to-R2 video upload
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <returns>ApiResponse of WTVideoUploadPresign</returns>
+        ApiResponse<WTVideoUploadPresign> PresignVideoUploadWithHttpInfo(WTVideoUploadPresignParams wTVideoUploadPresignParams);
+        /// <summary>
         /// Restore Video
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
@@ -198,6 +216,29 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> FetchAllVideoWithHttpInfoAsync(bool? isArchiveIncluded = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Presign a direct-to-R2 video upload
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTVideoUploadPresign</returns>
+        System.Threading.Tasks.Task<WTVideoUploadPresign> PresignVideoUploadAsync(WTVideoUploadPresignParams wTVideoUploadPresignParams, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Presign a direct-to-R2 video upload
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTVideoUploadPresign)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WTVideoUploadPresign>> PresignVideoUploadWithHttpInfoAsync(WTVideoUploadPresignParams wTVideoUploadPresignParams, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Restore Video
         /// </summary>
@@ -798,6 +839,123 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FetchAllVideo", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Presign a direct-to-R2 video upload 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <returns>WTVideoUploadPresign</returns>
+        public WTVideoUploadPresign PresignVideoUpload(WTVideoUploadPresignParams wTVideoUploadPresignParams)
+        {
+            WalletInc.Client.ApiResponse<WTVideoUploadPresign> localVarResponse = PresignVideoUploadWithHttpInfo(wTVideoUploadPresignParams);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Presign a direct-to-R2 video upload 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <returns>ApiResponse of WTVideoUploadPresign</returns>
+        public WalletInc.Client.ApiResponse<WTVideoUploadPresign> PresignVideoUploadWithHttpInfo(WTVideoUploadPresignParams wTVideoUploadPresignParams)
+        {
+            // verify the required parameter 'wTVideoUploadPresignParams' is set
+            if (wTVideoUploadPresignParams == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTVideoUploadPresignParams' when calling VideosApi->PresignVideoUpload");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTVideoUploadPresignParams;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WTVideoUploadPresign>("/v2/video/presign", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PresignVideoUpload", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Presign a direct-to-R2 video upload 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTVideoUploadPresign</returns>
+        public async System.Threading.Tasks.Task<WTVideoUploadPresign> PresignVideoUploadAsync(WTVideoUploadPresignParams wTVideoUploadPresignParams, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<WTVideoUploadPresign> localVarResponse = await PresignVideoUploadWithHttpInfoAsync(wTVideoUploadPresignParams, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Presign a direct-to-R2 video upload 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTVideoUploadPresignParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTVideoUploadPresign)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<WTVideoUploadPresign>> PresignVideoUploadWithHttpInfoAsync(WTVideoUploadPresignParams wTVideoUploadPresignParams, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'wTVideoUploadPresignParams' is set
+            if (wTVideoUploadPresignParams == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTVideoUploadPresignParams' when calling VideosApi->PresignVideoUpload");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTVideoUploadPresignParams;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WTVideoUploadPresign>("/v2/video/presign", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PresignVideoUpload", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
