@@ -883,6 +883,7 @@ Class | Method | HTTP request | Description
  - [Model.Status](docs/Status.md)
  - [Model.SubscriptionFeature](docs/SubscriptionFeature.md)
  - [Model.SubscriptionPlan](docs/SubscriptionPlan.md)
+ - [Model.SubscriptionPlanAnnual](docs/SubscriptionPlanAnnual.md)
  - [Model.SubscriptionProduct](docs/SubscriptionProduct.md)
  - [Model.Tcpa](docs/Tcpa.md)
  - [Model.Thread](docs/Thread.md)

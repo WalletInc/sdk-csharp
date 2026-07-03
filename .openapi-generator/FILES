@@ -246,6 +246,7 @@ docs/StaticVouchersApi.md
 docs/Status.md
 docs/SubscriptionFeature.md
 docs/SubscriptionPlan.md
+docs/SubscriptionPlanAnnual.md
 docs/SubscriptionProduct.md
 docs/SystemApi.md
 docs/Tcpa.md
@@ -417,6 +418,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/SubscriptionPlanAnnualTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -689,6 +691,7 @@ src/WalletInc/Model/StaticVoucherId.cs
 src/WalletInc/Model/Status.cs
 src/WalletInc/Model/SubscriptionFeature.cs
 src/WalletInc/Model/SubscriptionPlan.cs
+src/WalletInc/Model/SubscriptionPlanAnnual.cs
 src/WalletInc/Model/SubscriptionProduct.cs
 src/WalletInc/Model/Tcpa.cs
 src/WalletInc/Model/Thread.cs
