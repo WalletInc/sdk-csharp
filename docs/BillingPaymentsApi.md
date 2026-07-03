@@ -8,6 +8,7 @@ All URIs are relative to *https://api.wall.et*
 | [**BuySpecialOffer**](BillingPaymentsApi.md#buyspecialoffer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer |
 | [**CancelPlan**](BillingPaymentsApi.md#cancelplan) | **DELETE** /v2/billing/plan | Cancel billing plan |
 | [**ChangePlan**](BillingPaymentsApi.md#changeplan) | **PUT** /v2/billing/plan | Change billing plan |
+| [**CreateBillingPortalSession**](BillingPaymentsApi.md#createbillingportalsession) | **POST** /v2/billing/portal/session | Create a Stripe Billing Portal session |
 | [**FetchAddOns**](BillingPaymentsApi.md#fetchaddons) | **GET** /v2/billing/products/addOns | Get add-on products |
 | [**FetchCustomerPaymentMethods**](BillingPaymentsApi.md#fetchcustomerpaymentmethods) | **GET** /v2/billing/paymentMethods/all | Get payment methods |
 | [**FetchIndustry**](BillingPaymentsApi.md#fetchindustry) | **GET** /v2/billing/industry | Get merchant&#39;s industry |
@@ -386,6 +387,97 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createbillingportalsession"></a>
+# **CreateBillingPortalSession**
+> Object CreateBillingPortalSession ()
+
+Create a Stripe Billing Portal session
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateBillingPortalSessionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new BillingPaymentsApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Create a Stripe Billing Portal session
+                Object result = apiInstance.CreateBillingPortalSession();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling BillingPaymentsApi.CreateBillingPortalSession: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateBillingPortalSessionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a Stripe Billing Portal session
+    ApiResponse<Object> response = apiInstance.CreateBillingPortalSessionWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BillingPaymentsApi.CreateBillingPortalSessionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
