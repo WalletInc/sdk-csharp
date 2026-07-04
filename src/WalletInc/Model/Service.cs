@@ -34,6 +34,40 @@ namespace WalletInc.Model
     public partial class Service : IValidatableObject
     {
         /// <summary>
+        /// Defines TaxBehavior
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TaxBehaviorEnum
+        {
+            /// <summary>
+            /// Enum Inclusive for value: inclusive
+            /// </summary>
+            [EnumMember(Value = "inclusive")]
+            Inclusive = 1,
+
+            /// <summary>
+            /// Enum Exclusive for value: exclusive
+            /// </summary>
+            [EnumMember(Value = "exclusive")]
+            Exclusive = 2,
+
+            /// <summary>
+            /// Enum Unspecified for value: unspecified
+            /// </summary>
+            [EnumMember(Value = "unspecified")]
+            Unspecified = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets TaxBehavior
+        /// </summary>
+        /*
+        <example>exclusive</example>
+        */
+        [DataMember(Name = "taxBehavior", EmitDefaultValue = false)]
+        public TaxBehaviorEnum? TaxBehavior { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Service" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -47,12 +81,18 @@ namespace WalletInc.Model
         /// <param name="orderNumber">orderNumber (required).</param>
         /// <param name="mediaURL">mediaURL.</param>
         /// <param name="additionalInfoURL">additionalInfoURL.</param>
+        /// <param name="priceAmount">priceAmount.</param>
+        /// <param name="currency">currency.</param>
+        /// <param name="isBuyable">isBuyable.</param>
+        /// <param name="taxBehavior">taxBehavior.</param>
         /// <param name="id">id (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt (required).</param>
         /// <param name="isActive">isActive (required).</param>
         /// <param name="merchantID">The id of the merchant registered in WalletInc&#39;s database (required).</param>
-        public Service(string title = default, string description = default, string displayedPrice = default, int orderNumber = default, string mediaURL = default, string additionalInfoURL = default, AmenityId id = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default, string merchantID = default)
+        /// <param name="stripeProductID">stripeProductID.</param>
+        /// <param name="stripePriceID">stripePriceID.</param>
+        public Service(string title = default, string description = default, string displayedPrice = default, int orderNumber = default, string mediaURL = default, string additionalInfoURL = default, int priceAmount = default, string currency = default, bool isBuyable = default, TaxBehaviorEnum? taxBehavior = default, AmenityId id = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default, string merchantID = default, string stripeProductID = default, string stripePriceID = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -85,6 +125,12 @@ namespace WalletInc.Model
             this.DisplayedPrice = displayedPrice;
             this.MediaURL = mediaURL;
             this.AdditionalInfoURL = additionalInfoURL;
+            this.PriceAmount = priceAmount;
+            this.Currency = currency;
+            this.IsBuyable = isBuyable;
+            this.TaxBehavior = taxBehavior;
+            this.StripeProductID = stripeProductID;
+            this.StripePriceID = stripePriceID;
         }
 
         /// <summary>
@@ -142,6 +188,33 @@ namespace WalletInc.Model
         public string AdditionalInfoURL { get; set; }
 
         /// <summary>
+        /// Gets or Sets PriceAmount
+        /// </summary>
+        /*
+        <example>2500</example>
+        */
+        [DataMember(Name = "priceAmount", EmitDefaultValue = false)]
+        public int PriceAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Currency
+        /// </summary>
+        /*
+        <example>usd</example>
+        */
+        [DataMember(Name = "currency", EmitDefaultValue = false)]
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsBuyable
+        /// </summary>
+        /*
+        <example>true</example>
+        */
+        [DataMember(Name = "isBuyable", EmitDefaultValue = true)]
+        public bool IsBuyable { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
@@ -176,6 +249,18 @@ namespace WalletInc.Model
         public string MerchantID { get; set; }
 
         /// <summary>
+        /// Gets or Sets StripeProductID
+        /// </summary>
+        [DataMember(Name = "stripeProductID", EmitDefaultValue = false)]
+        public string StripeProductID { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StripePriceID
+        /// </summary>
+        [DataMember(Name = "stripePriceID", EmitDefaultValue = false)]
+        public string StripePriceID { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -189,11 +274,17 @@ namespace WalletInc.Model
             sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
             sb.Append("  MediaURL: ").Append(MediaURL).Append("\n");
             sb.Append("  AdditionalInfoURL: ").Append(AdditionalInfoURL).Append("\n");
+            sb.Append("  PriceAmount: ").Append(PriceAmount).Append("\n");
+            sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("  IsBuyable: ").Append(IsBuyable).Append("\n");
+            sb.Append("  TaxBehavior: ").Append(TaxBehavior).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  MerchantID: ").Append(MerchantID).Append("\n");
+            sb.Append("  StripeProductID: ").Append(StripeProductID).Append("\n");
+            sb.Append("  StripePriceID: ").Append(StripePriceID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -230,6 +321,12 @@ namespace WalletInc.Model
             if (this.OrderNumber < (int)1)
             {
                 yield return new ValidationResult("Invalid value for OrderNumber, must be a value greater than or equal to 1.", new [] { "OrderNumber" });
+            }
+
+            // PriceAmount (int) minimum
+            if (this.PriceAmount < (int)0)
+            {
+                yield return new ValidationResult("Invalid value for PriceAmount, must be a value greater than or equal to 0.", new [] { "PriceAmount" });
             }
 
             // MerchantID (string) maxLength
