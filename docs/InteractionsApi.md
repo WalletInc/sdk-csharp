@@ -16,8 +16,8 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchDynamicVoucherWithVoucherID**](InteractionsApi.md#fetchdynamicvoucherwithvoucherid) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
 | [**FetchMemberInformation**](InteractionsApi.md#fetchmemberinformation) | **GET** /wallet/member | Get member information |
 | [**FetchStaticVoucherWithVoucherID**](InteractionsApi.md#fetchstaticvoucherwithvoucherid) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
-| [**FetchWalletPageWithToken**](InteractionsApi.md#fetchwalletpagewithtoken) | **POST** /wallet/page/token | Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
-| [**FetchWalletPaymentObjectsWithToken**](InteractionsApi.md#fetchwalletpaymentobjectswithtoken) | **POST** /wallet/paymentObject/token | Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
+| [**FetchWalletPageWithToken**](InteractionsApi.md#fetchwalletpagewithtoken) | **POST** /wallet/page/token | Get page (token-scoped) |
+| [**FetchWalletPaymentObjectsWithToken**](InteractionsApi.md#fetchwalletpaymentobjectswithtoken) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped) |
 | [**FindByVanityHandle**](InteractionsApi.md#findbyvanityhandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
 | [**IdentifyItem**](InteractionsApi.md#identifyitem) | **GET** /wallet/item/identify/{itemID} | Identify item |
 | [**RequestMerchantURLRedirect**](InteractionsApi.md#requestmerchanturlredirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
@@ -1174,7 +1174,7 @@ No authorization required
 # **FetchWalletPageWithToken**
 > Object FetchWalletPageWithToken (WTFetchWalletPaymentObjectsWithToken wTFetchWalletPaymentObjectsWithToken)
 
-Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get page (token-scoped)
 
 ### Example
 ```csharp
@@ -1201,7 +1201,7 @@ namespace Example
 
             try
             {
-                // Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+                // Get page (token-scoped)
                 Object result = apiInstance.FetchWalletPageWithToken(wTFetchWalletPaymentObjectsWithToken);
                 Debug.WriteLine(result);
             }
@@ -1222,7 +1222,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+    // Get page (token-scoped)
     ApiResponse<Object> response = apiInstance.FetchWalletPageWithTokenWithHttpInfo(wTFetchWalletPaymentObjectsWithToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -1269,7 +1269,7 @@ No authorization required
 # **FetchWalletPaymentObjectsWithToken**
 > Object FetchWalletPaymentObjectsWithToken (WTFetchWalletPaymentObjectsWithToken wTFetchWalletPaymentObjectsWithToken)
 
-Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get payment objects (token-scoped)
 
 ### Example
 ```csharp
@@ -1296,7 +1296,7 @@ namespace Example
 
             try
             {
-                // Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+                // Get payment objects (token-scoped)
                 Object result = apiInstance.FetchWalletPaymentObjectsWithToken(wTFetchWalletPaymentObjectsWithToken);
                 Debug.WriteLine(result);
             }
@@ -1317,7 +1317,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+    // Get payment objects (token-scoped)
     ApiResponse<Object> response = apiInstance.FetchWalletPaymentObjectsWithTokenWithHttpInfo(wTFetchWalletPaymentObjectsWithToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

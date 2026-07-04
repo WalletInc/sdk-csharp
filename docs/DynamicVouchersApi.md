@@ -9,6 +9,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAllDynamicVouchers**](DynamicVouchersApi.md#fetchalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns |
 | [**FetchDynamicVoucherById**](DynamicVouchersApi.md#fetchdynamicvoucherbyid) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign |
 | [**FetchDynamicVoucherRedemptions**](DynamicVouchersApi.md#fetchdynamicvoucherredemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions |
+| [**FetchDynamicVouchers**](DynamicVouchersApi.md#fetchdynamicvouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers |
 | [**FetchReachStatsOfAllDynamicVouchers**](DynamicVouchersApi.md#fetchreachstatsofalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers |
 | [**FetchReachStatsOfIndividualDynamicVoucher**](DynamicVouchersApi.md#fetchreachstatsofindividualdynamicvoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher |
 | [**RestoreDynamicVoucherCampaign**](DynamicVouchersApi.md#restoredynamicvouchercampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign |
@@ -475,6 +476,102 @@ catch (ApiException e)
 ### Return type
 
 [**List&lt;WTDynamicVoucherRedemption&gt;**](WTDynamicVoucherRedemption.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchdynamicvouchers"></a>
+# **FetchDynamicVouchers**
+> List&lt;DynamicVoucher&gt; FetchDynamicVouchers (bool? isArchiveIncluded = null)
+
+Get all dynamic vouchers
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchDynamicVouchersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get all dynamic vouchers
+                List<DynamicVoucher> result = apiInstance.FetchDynamicVouchers(isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVouchers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchDynamicVouchersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all dynamic vouchers
+    ApiResponse<List<DynamicVoucher>> response = apiInstance.FetchDynamicVouchersWithHttpInfo(isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVouchersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;DynamicVoucher&gt;**](DynamicVoucher.md)
 
 ### Authorization
 
