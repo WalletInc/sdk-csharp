@@ -44,9 +44,8 @@ namespace WalletInc.Model
         /// <param name="title">title (required).</param>
         /// <param name="description">description (required).</param>
         /// <param name="orderNumber">orderNumber (required).</param>
-        /// <param name="mediaURL">mediaURL (required).</param>
         /// <param name="additionalInfoURL">additionalInfoURL.</param>
-        public WTVideoUpdateParams(string title = default, string description = default, int orderNumber = default, string mediaURL = default, string additionalInfoURL = default)
+        public WTVideoUpdateParams(string title = default, string description = default, int orderNumber = default, string additionalInfoURL = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -61,12 +60,6 @@ namespace WalletInc.Model
             }
             this.Description = description;
             this.OrderNumber = orderNumber;
-            // to ensure "mediaURL" is required (not null)
-            if (mediaURL == null)
-            {
-                throw new ArgumentNullException("mediaURL is a required property for WTVideoUpdateParams and cannot be null");
-            }
-            this.MediaURL = mediaURL;
             this.AdditionalInfoURL = additionalInfoURL;
         }
 
@@ -98,15 +91,6 @@ namespace WalletInc.Model
         public int OrderNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets MediaURL
-        /// </summary>
-        /*
-        <example>https://wall.et/media/H847Sjudbw.mp4</example>
-        */
-        [DataMember(Name = "mediaURL", IsRequired = true, EmitDefaultValue = true)]
-        public string MediaURL { get; set; }
-
-        /// <summary>
         /// Gets or Sets AdditionalInfoURL
         /// </summary>
         /*
@@ -126,7 +110,6 @@ namespace WalletInc.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
-            sb.Append("  MediaURL: ").Append(MediaURL).Append("\n");
             sb.Append("  AdditionalInfoURL: ").Append(AdditionalInfoURL).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -164,12 +147,6 @@ namespace WalletInc.Model
             if (this.OrderNumber < (int)1)
             {
                 yield return new ValidationResult("Invalid value for OrderNumber, must be a value greater than or equal to 1.", new [] { "OrderNumber" });
-            }
-
-            // MediaURL (string) minLength
-            if (this.MediaURL != null && this.MediaURL.Length < 12)
-            {
-                yield return new ValidationResult("Invalid value for MediaURL, length must be greater than 12.", new [] { "MediaURL" });
             }
 
             yield break;

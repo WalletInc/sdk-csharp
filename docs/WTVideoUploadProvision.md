@@ -1,13 +1,14 @@
-# WalletInc.Model.WTVideoUpdateParams
+# WalletInc.Model.WTVideoUploadProvision
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Title** | **string** |  | 
-**Description** | **string** |  | 
-**OrderNumber** | **int** |  | 
-**AdditionalInfoURL** | **string** |  | [optional] 
+**Provider** | **string** |  | 
+**Url** | **string** |  | 
+**Fields** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**AssetId** | **string** |  | 
+**HdIncluded** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

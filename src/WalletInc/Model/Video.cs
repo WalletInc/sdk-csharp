@@ -33,6 +33,12 @@ namespace WalletInc.Model
     [DataContract(Name = "Video")]
     public partial class Video : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Provider
+        /// </summary>
+        [DataMember(Name = "provider", IsRequired = true, EmitDefaultValue = true)]
+        public VideoProvider Provider { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Video" /> class.
         /// </summary>
@@ -41,18 +47,28 @@ namespace WalletInc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Video" /> class.
         /// </summary>
-        /// <param name="title">title (required).</param>
-        /// <param name="description">description (required).</param>
-        /// <param name="orderNumber">orderNumber (required).</param>
-        /// <param name="mediaURL">mediaURL (required).</param>
-        /// <param name="additionalInfoURL">additionalInfoURL.</param>
         /// <param name="id">id (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt (required).</param>
+        /// <param name="title">title (required).</param>
+        /// <param name="description">description (required).</param>
+        /// <param name="orderNumber">orderNumber (required).</param>
+        /// <param name="additionalInfoURL">additionalInfoURL.</param>
         /// <param name="isActive">isActive (required).</param>
         /// <param name="merchantID">The id of the merchant registered in WalletInc&#39;s database (required).</param>
-        public Video(string title = default, string description = default, int orderNumber = default, string mediaURL = default, string additionalInfoURL = default, AmenityId id = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default, string merchantID = default)
+        /// <param name="provider">provider (required).</param>
+        /// <param name="assetId">assetId (required).</param>
+        /// <param name="source">source (required).</param>
+        public Video(AmenityId id = default, DateTime createdAt = default, DateTime updatedAt = default, string title = default, string description = default, double orderNumber = default, string additionalInfoURL = default, bool isActive = default, string merchantID = default, VideoProvider provider = default, string assetId = default, WTVideoPlaybackSource source = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for Video and cannot be null");
+            }
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             // to ensure "title" is required (not null)
             if (title == null)
             {
@@ -66,20 +82,6 @@ namespace WalletInc.Model
             }
             this.Description = description;
             this.OrderNumber = orderNumber;
-            // to ensure "mediaURL" is required (not null)
-            if (mediaURL == null)
-            {
-                throw new ArgumentNullException("mediaURL is a required property for Video and cannot be null");
-            }
-            this.MediaURL = mediaURL;
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new ArgumentNullException("id is a required property for Video and cannot be null");
-            }
-            this.Id = id;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.IsActive = isActive;
             // to ensure "merchantID" is required (not null)
             if (merchantID == null)
@@ -87,53 +89,21 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("merchantID is a required property for Video and cannot be null");
             }
             this.MerchantID = merchantID;
+            this.Provider = provider;
+            // to ensure "assetId" is required (not null)
+            if (assetId == null)
+            {
+                throw new ArgumentNullException("assetId is a required property for Video and cannot be null");
+            }
+            this.AssetId = assetId;
+            // to ensure "source" is required (not null)
+            if (source == null)
+            {
+                throw new ArgumentNullException("source is a required property for Video and cannot be null");
+            }
+            this.Source = source;
             this.AdditionalInfoURL = additionalInfoURL;
         }
-
-        /// <summary>
-        /// Gets or Sets Title
-        /// </summary>
-        /*
-        <example>This is the title of the video</example>
-        */
-        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Description
-        /// </summary>
-        /*
-        <example>This is the description of the video</example>
-        */
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OrderNumber
-        /// </summary>
-        /*
-        <example>1</example>
-        */
-        [DataMember(Name = "orderNumber", IsRequired = true, EmitDefaultValue = true)]
-        public int OrderNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets MediaURL
-        /// </summary>
-        /*
-        <example>https://wall.et/media/H847Sjudbw.mp4</example>
-        */
-        [DataMember(Name = "mediaURL", IsRequired = true, EmitDefaultValue = true)]
-        public string MediaURL { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AdditionalInfoURL
-        /// </summary>
-        /*
-        <example>https://your-site.com/videos/steak-house</example>
-        */
-        [DataMember(Name = "additionalInfoURL", EmitDefaultValue = false)]
-        public string AdditionalInfoURL { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -154,6 +124,30 @@ namespace WalletInc.Model
         public DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// Gets or Sets Title
+        /// </summary>
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Description
+        /// </summary>
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrderNumber
+        /// </summary>
+        [DataMember(Name = "orderNumber", IsRequired = true, EmitDefaultValue = true)]
+        public double OrderNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AdditionalInfoURL
+        /// </summary>
+        [DataMember(Name = "additionalInfoURL", EmitDefaultValue = false)]
+        public string AdditionalInfoURL { get; set; }
+
+        /// <summary>
         /// Gets or Sets IsActive
         /// </summary>
         [DataMember(Name = "isActive", IsRequired = true, EmitDefaultValue = true)]
@@ -170,6 +164,21 @@ namespace WalletInc.Model
         public string MerchantID { get; set; }
 
         /// <summary>
+        /// Gets or Sets AssetId
+        /// </summary>
+        /*
+        <example>9f3c1e2a4b.mp4</example>
+        */
+        [DataMember(Name = "assetId", IsRequired = true, EmitDefaultValue = true)]
+        public string AssetId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Source
+        /// </summary>
+        [DataMember(Name = "source", IsRequired = true, EmitDefaultValue = true)]
+        public WTVideoPlaybackSource Source { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -177,16 +186,18 @@ namespace WalletInc.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Video {\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
-            sb.Append("  MediaURL: ").Append(MediaURL).Append("\n");
-            sb.Append("  AdditionalInfoURL: ").Append(AdditionalInfoURL).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
+            sb.Append("  AdditionalInfoURL: ").Append(AdditionalInfoURL).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  MerchantID: ").Append(MerchantID).Append("\n");
+            sb.Append("  Provider: ").Append(Provider).Append("\n");
+            sb.Append("  AssetId: ").Append(AssetId).Append("\n");
+            sb.Append("  Source: ").Append(Source).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -207,30 +218,6 @@ namespace WalletInc.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Title (string) minLength
-            if (this.Title != null && this.Title.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
-            }
-
-            // Description (string) minLength
-            if (this.Description != null && this.Description.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Description, length must be greater than 1.", new [] { "Description" });
-            }
-
-            // OrderNumber (int) minimum
-            if (this.OrderNumber < (int)1)
-            {
-                yield return new ValidationResult("Invalid value for OrderNumber, must be a value greater than or equal to 1.", new [] { "OrderNumber" });
-            }
-
-            // MediaURL (string) minLength
-            if (this.MediaURL != null && this.MediaURL.Length < 12)
-            {
-                yield return new ValidationResult("Invalid value for MediaURL, length must be greater than 12.", new [] { "MediaURL" });
-            }
-
             // MerchantID (string) maxLength
             if (this.MerchantID != null && this.MerchantID.Length > 10)
             {

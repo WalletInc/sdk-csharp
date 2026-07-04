@@ -33,6 +33,12 @@ namespace WalletInc.Model
     [DataContract(Name = "WTVideoCreateParams")]
     public partial class WTVideoCreateParams : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Provider
+        /// </summary>
+        [DataMember(Name = "provider", IsRequired = true, EmitDefaultValue = true)]
+        public VideoProvider Provider { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WTVideoCreateParams" /> class.
         /// </summary>
@@ -44,9 +50,10 @@ namespace WalletInc.Model
         /// <param name="title">title (required).</param>
         /// <param name="description">description (required).</param>
         /// <param name="orderNumber">orderNumber (required).</param>
-        /// <param name="mediaURL">mediaURL (required).</param>
         /// <param name="additionalInfoURL">additionalInfoURL.</param>
-        public WTVideoCreateParams(string title = default, string description = default, int orderNumber = default, string mediaURL = default, string additionalInfoURL = default)
+        /// <param name="provider">provider (required).</param>
+        /// <param name="assetId">assetId (required).</param>
+        public WTVideoCreateParams(string title = default, string description = default, int orderNumber = default, string additionalInfoURL = default, VideoProvider provider = default, string assetId = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -61,12 +68,13 @@ namespace WalletInc.Model
             }
             this.Description = description;
             this.OrderNumber = orderNumber;
-            // to ensure "mediaURL" is required (not null)
-            if (mediaURL == null)
+            this.Provider = provider;
+            // to ensure "assetId" is required (not null)
+            if (assetId == null)
             {
-                throw new ArgumentNullException("mediaURL is a required property for WTVideoCreateParams and cannot be null");
+                throw new ArgumentNullException("assetId is a required property for WTVideoCreateParams and cannot be null");
             }
-            this.MediaURL = mediaURL;
+            this.AssetId = assetId;
             this.AdditionalInfoURL = additionalInfoURL;
         }
 
@@ -98,15 +106,6 @@ namespace WalletInc.Model
         public int OrderNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets MediaURL
-        /// </summary>
-        /*
-        <example>https://wall.et/media/H847Sjudbw.mp4</example>
-        */
-        [DataMember(Name = "mediaURL", IsRequired = true, EmitDefaultValue = true)]
-        public string MediaURL { get; set; }
-
-        /// <summary>
         /// Gets or Sets AdditionalInfoURL
         /// </summary>
         /*
@@ -114,6 +113,15 @@ namespace WalletInc.Model
         */
         [DataMember(Name = "additionalInfoURL", EmitDefaultValue = false)]
         public string AdditionalInfoURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetId
+        /// </summary>
+        /*
+        <example>9f3c1e2a4b.mp4</example>
+        */
+        [DataMember(Name = "assetId", IsRequired = true, EmitDefaultValue = true)]
+        public string AssetId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -126,8 +134,9 @@ namespace WalletInc.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
-            sb.Append("  MediaURL: ").Append(MediaURL).Append("\n");
             sb.Append("  AdditionalInfoURL: ").Append(AdditionalInfoURL).Append("\n");
+            sb.Append("  Provider: ").Append(Provider).Append("\n");
+            sb.Append("  AssetId: ").Append(AssetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,10 +175,10 @@ namespace WalletInc.Model
                 yield return new ValidationResult("Invalid value for OrderNumber, must be a value greater than or equal to 1.", new [] { "OrderNumber" });
             }
 
-            // MediaURL (string) minLength
-            if (this.MediaURL != null && this.MediaURL.Length < 12)
+            // AssetId (string) minLength
+            if (this.AssetId != null && this.AssetId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for MediaURL, length must be greater than 12.", new [] { "MediaURL" });
+                yield return new ValidationResult("Invalid value for AssetId, length must be greater than 1.", new [] { "AssetId" });
             }
 
             yield break;
