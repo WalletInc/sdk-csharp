@@ -149,90 +149,6 @@ Class | Method | HTTP request | Description
 *AmenitiesApi* | [**FetchAllAmenities**](docs/AmenitiesApi.md#fetchallamenities) | **GET** /v2/amenities/all | Get all Amenities
 *AmenitiesApi* | [**RestoreAmenity**](docs/AmenitiesApi.md#restoreamenity) | **PATCH** /v2/amenities/{id} | Restore Amenity
 *AmenitiesApi* | [**UpdateAmenity**](docs/AmenitiesApi.md#updateamenity) | **PUT** /v2/amenities/{id} | Update Amenity
-*AnalyticsApi* | [**CountAllSubscribers**](docs/AnalyticsApi.md#countallsubscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
-*AnalyticsApi* | [**CountAuthenticatedSessions**](docs/AnalyticsApi.md#countauthenticatedsessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
-*AnalyticsApi* | [**CountDistinctRedemptions**](docs/AnalyticsApi.md#countdistinctredemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Count distinct payment object redemptions
-*AnalyticsApi* | [**CountHelpDeskRequests**](docs/AnalyticsApi.md#counthelpdeskrequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests
-*AnalyticsApi* | [**CountInboundMessages**](docs/AnalyticsApi.md#countinboundmessages) | **GET** /v2/analytics/sms/inbound/count | Count inbound SMS messages
-*AnalyticsApi* | [**CountNewSessions**](docs/AnalyticsApi.md#countnewsessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions
-*AnalyticsApi* | [**CountOptInListSubscribersPartitionedByDate**](docs/AnalyticsApi.md#countoptinlistsubscriberspartitionedbydate) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date
-*AnalyticsApi* | [**CountOutboundMessages**](docs/AnalyticsApi.md#countoutboundmessages) | **GET** /v2/analytics/sms/outbound/count | Count outbound SMS messages
-*AnalyticsApi* | [**CountTotalSessions**](docs/AnalyticsApi.md#counttotalsessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions
-*AnalyticsApi* | [**CountTransactions**](docs/AnalyticsApi.md#counttransactions) | **GET** /v2/analytics/ledger/transactions/count | Count ledger transactions
-*AnalyticsApi* | [**CountVerifiedWalletPageViews**](docs/AnalyticsApi.md#countverifiedwalletpageviews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Get wallet object counts within a given time frame that have a valid phone verification token
-*AnalyticsApi* | [**CountWalletPageViews**](docs/AnalyticsApi.md#countwalletpageviews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Get wallet object counts within a given time frame
-*AnalyticsApi* | [**ExitLinkSummary**](docs/AnalyticsApi.md#exitlinksummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsCountPartitionedByEmployee**](docs/AnalyticsApi.md#fetchanalyticsadcreditscountpartitionedbyemployee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsCountPartitionedByPaymentDesign**](docs/AnalyticsApi.md#fetchanalyticsadcreditscountpartitionedbypaymentdesign) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsCountPartitionedByValueType**](docs/AnalyticsApi.md#fetchanalyticsadcreditscountpartitionedbyvaluetype) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID**](docs/AnalyticsApi.md#fetchanalyticsadcreditsredemptionsamountpartitionedbyadcreditid) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/adCredit | Get redemption amount of ad credits by Ad Credit
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsadcreditsredemptionsamountpartitionedbydate) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/date | Get redemption amount of ad credits by date
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRedemptionsCountPartitionedByAdCreditID**](docs/AnalyticsApi.md#fetchanalyticsadcreditsredemptionscountpartitionedbyadcreditid) | **GET** /v2/analytics/advertisementCredits/redemptions/count/adCredit | Count redemptions of ad credits by Ad Credit
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRedemptionsCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsadcreditsredemptionscountpartitionedbydate) | **GET** /v2/analytics/advertisementCredits/redemptions/count/date | Count redemptions of ad credits by date
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID**](docs/AnalyticsApi.md#fetchanalyticsadcreditsrefundsamountpartitionedbyadcreditid) | **GET** /v2/analytics/advertisementCredits/refunds/amount/adCredit | Get refund amount of ad credits by Ad Credit
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRefundsAmountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsadcreditsrefundsamountpartitionedbydate) | **GET** /v2/analytics/advertisementCredits/refunds/amount/date | Get refund amount of ad credits by date
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRefundsCountPartitionedByAdCreditID**](docs/AnalyticsApi.md#fetchanalyticsadcreditsrefundscountpartitionedbyadcreditid) | **GET** /v2/analytics/advertisementCredits/refunds/count/adCredit | Count refunds of ad credits by Ad Credit
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsRefundsCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsadcreditsrefundscountpartitionedbydate) | **GET** /v2/analytics/advertisementCredits/refunds/count/date | Count refunds of ad credits by date
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsScansCountPartitionedByAdCreditID**](docs/AnalyticsApi.md#fetchanalyticsadcreditsscanscountpartitionedbyadcreditid) | **GET** /v2/analytics/advertisementCredits/scans/count/adCredit | Count scans of ad credits by Ad Credit
-*AnalyticsApi* | [**FetchAnalyticsAdCreditsScansCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsadcreditsscanscountpartitionedbydate) | **GET** /v2/analytics/advertisementCredits/scans/count/date | Count scans of ad credits by date
-*AnalyticsApi* | [**FetchAnalyticsCampaignWalletPageViews**](docs/AnalyticsApi.md#fetchanalyticscampaignwalletpageviews) | **GET** /v2/analytics/walletPageViews/campaign/{campaignID} | Get a campaign's wallet page views
-*AnalyticsApi* | [**FetchAnalyticsCampaignsCountPartitionedByCampaignID**](docs/AnalyticsApi.md#fetchanalyticscampaignscountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/count/campaign/created | Count created campaigns by campaign
-*AnalyticsApi* | [**FetchAnalyticsCampaignsCountPartitionedByEmployee**](docs/AnalyticsApi.md#fetchanalyticscampaignscountpartitionedbyemployee) | **GET** /v2/analytics/campaigns/count/employee | Count campaigns by employee
-*AnalyticsApi* | [**FetchAnalyticsCampaignsCountPartitionedByPaymentDesign**](docs/AnalyticsApi.md#fetchanalyticscampaignscountpartitionedbypaymentdesign) | **GET** /v2/analytics/campaigns/count/paymentDesign | Count campaigns by payment design
-*AnalyticsApi* | [**FetchAnalyticsCampaignsCountPartitionedByValueType**](docs/AnalyticsApi.md#fetchanalyticscampaignscountpartitionedbyvaluetype) | **GET** /v2/analytics/campaigns/count/valueType | Count campaigns by value type
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID**](docs/AnalyticsApi.md#fetchanalyticscampaignsredemptionsamountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/redemptions/amount/campaign | Get redemption amount of campaigns by Campaign
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticscampaignsredemptionsamountpartitionedbydate) | **GET** /v2/analytics/campaigns/redemptions/amount/date | Get redemption amount of campaigns by date
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRedemptionsCountPartitionedByCampaignID**](docs/AnalyticsApi.md#fetchanalyticscampaignsredemptionscountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/redemptions/count/campaign | Count redemptions of campaigns by Campaign
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRedemptionsCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticscampaignsredemptionscountpartitionedbydate) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID**](docs/AnalyticsApi.md#fetchanalyticscampaignsrefundsamountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Get refund amount of campaigns by Campaign
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRefundsAmountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticscampaignsrefundsamountpartitionedbydate) | **GET** /v2/analytics/campaigns/refunds/amount/date | Get refund amount of campaigns by date
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID**](docs/AnalyticsApi.md#fetchanalyticscampaignsrefundscountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Count refunds of campaigns by Campaign
-*AnalyticsApi* | [**FetchAnalyticsCampaignsRefundsCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticscampaignsrefundscountpartitionedbydate) | **GET** /v2/analytics/campaigns/refunds/count/date | Count refunds of campaigns by date
-*AnalyticsApi* | [**FetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsdeliveredoutboundmessagescountpartitionedbydate) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date
-*AnalyticsApi* | [**FetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber**](docs/AnalyticsApi.md#fetchanalyticsdeliveredoutboundmessagescountpartitionedbyphonenumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number
-*AnalyticsApi* | [**FetchAnalyticsDistinctWalletSessions**](docs/AnalyticsApi.md#fetchanalyticsdistinctwalletsessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Get distinct wallet sessions
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersCountPartitionedByEmployee**](docs/AnalyticsApi.md#fetchanalyticsdynamicvoucherscountpartitionedbyemployee) | **GET** /v2/analytics/dynamicVouchers/count/employee | Count dynamic vouchers by employee
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersCountPartitionedByPaymentDesign**](docs/AnalyticsApi.md#fetchanalyticsdynamicvoucherscountpartitionedbypaymentdesign) | **GET** /v2/analytics/dynamicVouchers/count/paymentDesign | Count dynamic vouchers by payment design
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersredemptionsamountpartitionedbydate) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/date | Get redemption amount of dynamic vouchers by date
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersredemptionsamountpartitionedbydynamicvoucherid) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/dynamicVoucher | Get redemption amount of dynamic vouchers by dynamic voucher
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersredemptionscountpartitionedbydate) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/date | Count redemptions of dynamic vouchers by date
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDynamicVoucherID**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersredemptionscountpartitionedbydynamicvoucherid) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/dynamicVoucher | Count redemptions of dynamic vouchers by dynamic voucher
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersrefundsamountpartitionedbydate) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/date | Get refund amount of dynamic vouchers by date
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersrefundsamountpartitionedbydynamicvoucherid) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/dynamicVoucher | Get refund amount of dynamic vouchers by dynamic voucher
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRefundsCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersrefundscountpartitionedbydate) | **GET** /v2/analytics/dynamicVouchers/refunds/count/date | Count refunds of dynamic vouchers by date
-*AnalyticsApi* | [**FetchAnalyticsDynamicVouchersRefundsCountPartitionedByDynamicVoucherID**](docs/AnalyticsApi.md#fetchanalyticsdynamicvouchersrefundscountpartitionedbydynamicvoucherid) | **GET** /v2/analytics/dynamicVouchers/refunds/count/dynamicVoucher | Count refunds of dynamic vouchers by dynamic voucher
-*AnalyticsApi* | [**FetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticshelpdeskrequestscreatedcountpartitionedbydate) | **GET** /v2/analytics/helpdeskrequests/count/date/created | Count daily help desk requests
-*AnalyticsApi* | [**FetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticshelpdeskrequestsresolvedcountpartitionedbydate) | **GET** /v2/analytics/helpdeskrequests/count/date/resolved | Count resolved help desk requests by date
-*AnalyticsApi* | [**FetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByEmployee**](docs/AnalyticsApi.md#fetchanalyticshelpdeskrequestsresolvedcountpartitionedbyemployee) | **GET** /v2/analytics/helpdeskrequests/count/employee/resolved | Count resolved help desk requests by employee
-*AnalyticsApi* | [**FetchAnalyticsHelpDeskRequestsUnresolvedCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticshelpdeskrequestsunresolvedcountpartitionedbydate) | **GET** /v2/analytics/helpdeskrequests/count/date/unresolved | Count unresolved help desk requests by date
-*AnalyticsApi* | [**FetchAnalyticsItemWalletPageViews**](docs/AnalyticsApi.md#fetchanalyticsitemwalletpageviews) | **GET** /v2/analytics/walletPageViews/item/{itemID} | Get wallet page views of item
-*AnalyticsApi* | [**FetchAnalyticsMemberCount**](docs/AnalyticsApi.md#fetchanalyticsmembercount) | **GET** /v2/analytics/membership/member/count | Count members
-*AnalyticsApi* | [**FetchAnalyticsMerchantCreditCount**](docs/AnalyticsApi.md#fetchanalyticsmerchantcreditcount) | **GET** /v2/analytics/membership/merchantCredit/count | Count merchant credits
-*AnalyticsApi* | [**FetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID**](docs/AnalyticsApi.md#fetchanalyticsoffervsredeemedamountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/amount/campaign/offerVsRedeemed | Get offer vs redeemed amount by campaign
-*AnalyticsApi* | [**FetchAnalyticsPaymentObjectBroadcastsCreatedCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticspaymentobjectbroadcastscreatedcountpartitionedbydate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/created | Count created broadcasts by date
-*AnalyticsApi* | [**FetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts**](docs/AnalyticsApi.md#fetchanalyticspaymentobjectbroadcastsindividualexecutiontimeofcompletedbroadcasts) | **GET** /v2/analytics/paymentObjectBroadcasts/executionTime/completed | Get execution time of completed broadcasts
-*AnalyticsApi* | [**FetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticspaymentobjectbroadcastsscheduledcountpartitionedbydate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/scheduled | Count scheduled broadcasts by date
-*AnalyticsApi* | [**FetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByEmployee**](docs/AnalyticsApi.md#fetchanalyticspaymentobjectbroadcastsscheduledcountpartitionedbyemployee) | **GET** /v2/analytics/paymentObjectBroadcasts/count/employee/scheduled | Count scheduled broadcasts by employee
-*AnalyticsApi* | [**FetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByPhoneNumber**](docs/AnalyticsApi.md#fetchanalyticspaymentobjectbroadcastsscheduledcountpartitionedbyphonenumber) | **GET** /v2/analytics/paymentObjectBroadcasts/count/phoneNumber/scheduled | Count scheduled broadcasts by phone number
-*AnalyticsApi* | [**FetchAnalyticsPaymentObjectBroadcastsScheduledSMSCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticspaymentobjectbroadcastsscheduledsmscountpartitionedbydate) | **GET** /v2/analytics/paymentObjectBroadcasts/sms/count/date/scheduled | Count scheduled SMS broadcasts by date
-*AnalyticsApi* | [**FetchAnalyticsSentOutboundMessagesCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticssentoutboundmessagescountpartitionedbydate) | **GET** /v2/analytics/outboundSMS/count/date/sent | Count sent outbound messages by date
-*AnalyticsApi* | [**FetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber**](docs/AnalyticsApi.md#fetchanalyticssentoutboundmessagescountpartitionedbyphonenumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/sent | Count sent outbound messages by phone number
-*AnalyticsApi* | [**FetchAnalyticsStaticVoucherWalletPageViews**](docs/AnalyticsApi.md#fetchanalyticsstaticvoucherwalletpageviews) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Get a static voucher's wallet page views
-*AnalyticsApi* | [**FetchAnalyticsTCPAFiltersCreateCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticstcpafilterscreatecountpartitionedbydate) | **GET** /v2/analytics/tcpafilters/count/date/create | Count created TCPA Filter entries by date
-*AnalyticsApi* | [**FetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticstcpafiltersdeletecountpartitionedbydate) | **GET** /v2/analytics/tcpafilters/count/date/delete | Count deleted TCPA Filter entries by date
-*AnalyticsApi* | [**FetchAnalyticsTCPAStopCountPartitionedByDate**](docs/AnalyticsApi.md#fetchanalyticstcpastopcountpartitionedbydate) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date
-*AnalyticsApi* | [**FetchAnalyticsTCPAStopCountPartitionedByPhoneNumber**](docs/AnalyticsApi.md#fetchanalyticstcpastopcountpartitionedbyphonenumber) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number
-*AnalyticsApi* | [**FetchAnalyticsTotalAmountRedeemedPerMerchantCredit**](docs/AnalyticsApi.md#fetchanalyticstotalamountredeemedpermerchantcredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Get redeemed amount of merchant credits
-*AnalyticsApi* | [**FetchAnalyticsTotalAmountRedeemedPerTier**](docs/AnalyticsApi.md#fetchanalyticstotalamountredeemedpertier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amount of tiers
-*AnalyticsApi* | [**FetchAnalyticsTotalAmountRefundedPerMerchantCredit**](docs/AnalyticsApi.md#fetchanalyticstotalamountrefundedpermerchantcredit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Get refunded amount of merchant credits
-*AnalyticsApi* | [**FetchAnalyticsTotalAmountRefundedPerTier**](docs/AnalyticsApi.md#fetchanalyticstotalamountrefundedpertier) | **GET** /v2/analytics/membership/tier/amount/refunded | Get refunded amount of tiers
-*AnalyticsApi* | [**FetchAnalyticsTotalPointsRedeemed**](docs/AnalyticsApi.md#fetchanalyticstotalpointsredeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points
-*AnalyticsApi* | [**FetchAnalyticsTotalPointsRefunded**](docs/AnalyticsApi.md#fetchanalyticstotalpointsrefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
-*AnalyticsApi* | [**FetchAnalyticsWalletSessionActivity**](docs/AnalyticsApi.md#fetchanalyticswalletsessionactivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Get session activity
-*AnalyticsApi* | [**FetchWalletPageViewByID**](docs/AnalyticsApi.md#fetchwalletpageviewbyid) | **GET** /v2/analytics/walletPageViews/activity/{id} | Get session activity by wallet page view ID
-*AnalyticsApi* | [**ReferringSitesSummary**](docs/AnalyticsApi.md#referringsitessummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
-*AnalyticsApi* | [**SumRevenue**](docs/AnalyticsApi.md#sumrevenue) | **GET** /v2/analytics/ledger/revenue/sum | Sum ledger revenue
-*AnalyticsApi* | [**SumTransactions**](docs/AnalyticsApi.md#sumtransactions) | **GET** /v2/analytics/ledger/transactions/sum | Sum ledger transaction amounts
 *AppToPersonA2PRegistrationApi* | [**BeginA2PApplication**](docs/AppToPersonA2PRegistrationApi.md#begina2papplication) | **POST** /v2/a2p/application | Create A2P Application
 *AppToPersonA2PRegistrationApi* | [**FetchA2PApplication**](docs/AppToPersonA2PRegistrationApi.md#fetcha2papplication) | **GET** /v2/a2p/application | Get A2P Application
 *AppToPersonA2PRegistrationApi* | [**FetchA2PRegistration**](docs/AppToPersonA2PRegistrationApi.md#fetcha2pregistration) | **GET** /v2/a2p/registration | Get A2P Registration
@@ -259,6 +175,18 @@ Class | Method | HTTP request | Description
 *BillingPaymentsApi* | [**SetDefaultPaymentMethod**](docs/BillingPaymentsApi.md#setdefaultpaymentmethod) | **POST** /v2/billing/paymentMethod/default | Set payment method as default
 *BillingPaymentsApi* | [**UpcomingInvoices**](docs/BillingPaymentsApi.md#upcominginvoices) | **GET** /v2/billing/invoices/upcoming | Get upcoming invoices
 *BillingPaymentsApi* | [**VerifyPaymentMethod**](docs/BillingPaymentsApi.md#verifypaymentmethod) | **GET** /v2/billing/paymentMethod | Verify payment method
+*BroadcastsApi* | [**ArchivePaymentObjectBroadcast**](docs/BroadcastsApi.md#archivepaymentobjectbroadcast) | **DELETE** /v2/merchant/paymentObjectBroadcast/{broadcastID} | Archive payment object broadcast
+*BroadcastsApi* | [**FetchAdvertisementCreditBroadcasts**](docs/BroadcastsApi.md#fetchadvertisementcreditbroadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Get all ad credit broadcasts
+*BroadcastsApi* | [**FetchDynamicVoucherBroadcasts**](docs/BroadcastsApi.md#fetchdynamicvoucherbroadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Get all dynamic voucher broadcasts
+*BroadcastsApi* | [**FetchPaymentObjectBroadcasts**](docs/BroadcastsApi.md#fetchpaymentobjectbroadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Get payment object broadcasts
+*BroadcastsApi* | [**FetchSimpleSMSBroadcasts**](docs/BroadcastsApi.md#fetchsimplesmsbroadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Get all simple SMS broadcasts
+*BroadcastsApi* | [**FetchStaticVoucherCampaignBroadcasts**](docs/BroadcastsApi.md#fetchstaticvouchercampaignbroadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Get all static voucher campaign broadcasts
+*BroadcastsApi* | [**ScheduleAdvertisementCredit**](docs/BroadcastsApi.md#scheduleadvertisementcredit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit
+*BroadcastsApi* | [**ScheduleDynamicVoucher**](docs/BroadcastsApi.md#scheduledynamicvoucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list
+*BroadcastsApi* | [**ScheduleDynamicVoucherToRecipient**](docs/BroadcastsApi.md#scheduledynamicvouchertorecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to recipient
+*BroadcastsApi* | [**ScheduleSimpleSMS**](docs/BroadcastsApi.md#schedulesimplesms) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list
+*BroadcastsApi* | [**ScheduleSimpleSMSToRecipient**](docs/BroadcastsApi.md#schedulesimplesmstorecipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient
+*BroadcastsApi* | [**SendSmsCampaignBroadcast**](docs/BroadcastsApi.md#sendsmscampaignbroadcast) | **POST** /v2/employee/sms/schedule/campaign/{staticVoucherCampaignID} | Schedule SMS Campaign Broadcast
 *ClubMembersApi* | [**ArchiveMember**](docs/ClubMembersApi.md#archivemember) | **DELETE** /v2/membership/member/{id} | Archive Member
 *ClubMembersApi* | [**CreateMember**](docs/ClubMembersApi.md#createmember) | **POST** /v2/membership/member | Create Member
 *ClubMembersApi* | [**FetchMemberById**](docs/ClubMembersApi.md#fetchmemberbyid) | **GET** /v2/membership/member/{id} | Get Member
@@ -279,24 +207,6 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**FetchWalletViewsForSession**](docs/CustomerApi.md#fetchwalletviewsforsession) | **GET** /v2/customer/walletViews/session/{id} | Get Wallet Views for Session
 *CustomerApi* | [**SearchByMemberID**](docs/CustomerApi.md#searchbymemberid) | **POST** /v2/customer/search/memberID | Find members with memberID
 *CustomerApi* | [**SearchByPhoneNumber**](docs/CustomerApi.md#searchbyphonenumber) | **POST** /v2/customer/search/phoneNumber | Find members with phone number
-*DashboardSummariesApi* | [**CountTotalWalletSessions**](docs/DashboardSummariesApi.md#counttotalwalletsessions) | **GET** /v2/dashboard/count/visitors | Count new sessions
-*DashboardSummariesApi* | [**FetchDashboardActiveStaticVouchersCount**](docs/DashboardSummariesApi.md#fetchdashboardactivestaticvoucherscount) | **GET** /v2/dashboard/count/staticVouchers/active | Count active static vouchers
-*DashboardSummariesApi* | [**FetchDashboardAppleWalletSubscribersCount**](docs/DashboardSummariesApi.md#fetchdashboardapplewalletsubscriberscount) | **GET** /v2/dashboard/count/appleWallet/subscribers | Count Apple Wallet Subscribers
-*DashboardSummariesApi* | [**FetchDashboardEmployeesCount**](docs/DashboardSummariesApi.md#fetchdashboardemployeescount) | **GET** /v2/dashboard/count/employees | Count employees
-*DashboardSummariesApi* | [**FetchDashboardMembersCount**](docs/DashboardSummariesApi.md#fetchdashboardmemberscount) | **GET** /v2/dashboard/count/members | Count members
-*DashboardSummariesApi* | [**FetchDashboardMembershipTiersCount**](docs/DashboardSummariesApi.md#fetchdashboardmembershiptierscount) | **GET** /v2/dashboard/count/membershipTiers | Count tiers
-*DashboardSummariesApi* | [**FetchDashboardNewsArticlesCount**](docs/DashboardSummariesApi.md#fetchdashboardnewsarticlescount) | **GET** /v2/dashboard/count/newsArticles | Count News Articles
-*DashboardSummariesApi* | [**FetchDashboardOptInListsCount**](docs/DashboardSummariesApi.md#fetchdashboardoptinlistscount) | **GET** /v2/dashboard/count/optInLists | Count opt in lists
-*DashboardSummariesApi* | [**FetchDashboardOptInSourcesCount**](docs/DashboardSummariesApi.md#fetchdashboardoptinsourcescount) | **GET** /v2/dashboard/count/optInSources | Count opt in sources
-*DashboardSummariesApi* | [**FetchDashboardOutboundSMSCount**](docs/DashboardSummariesApi.md#fetchdashboardoutboundsmscount) | **GET** /v2/dashboard/count/sms/outbound | Count Outbound SMS
-*DashboardSummariesApi* | [**FetchDashboardPOSMachinesCount**](docs/DashboardSummariesApi.md#fetchdashboardposmachinescount) | **GET** /v2/dashboard/count/pos/machines | Count POS Machines
-*DashboardSummariesApi* | [**FetchDashboardPOSTransactionsCount**](docs/DashboardSummariesApi.md#fetchdashboardpostransactionscount) | **GET** /v2/dashboard/count/pos/transactions | Count POS Transactions
-*DashboardSummariesApi* | [**FetchDashboardPerformancesCount**](docs/DashboardSummariesApi.md#fetchdashboardperformancescount) | **GET** /v2/dashboard/count/performances | Count Performances
-*DashboardSummariesApi* | [**FetchDashboardPhoneNumbersCount**](docs/DashboardSummariesApi.md#fetchdashboardphonenumberscount) | **GET** /v2/dashboard/count/phoneNumbers | Count phone numbers
-*DashboardSummariesApi* | [**FetchDashboardRedemptionsCount**](docs/DashboardSummariesApi.md#fetchdashboardredemptionscount) | **GET** /v2/dashboard/count/pos/redemptions | Count POS redemptions
-*DashboardSummariesApi* | [**FetchDashboardRefundsCount**](docs/DashboardSummariesApi.md#fetchdashboardrefundscount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds
-*DashboardSummariesApi* | [**FetchDashboardWalletPageViewsCount**](docs/DashboardSummariesApi.md#fetchdashboardwalletpageviewscount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views
-*DashboardSummariesApi* | [**FetchSubscriberCount**](docs/DashboardSummariesApi.md#fetchsubscribercount) | **GET** /v2/dashboard/count/subscribers | Count subscribers
 *DiningApi* | [**ArchiveDining**](docs/DiningApi.md#archivedining) | **DELETE** /v2/dining/{id} | Archive Dining info
 *DiningApi* | [**CreateDining**](docs/DiningApi.md#createdining) | **POST** /v2/dining | Create Dining info
 *DiningApi* | [**FetchAllDining**](docs/DiningApi.md#fetchalldining) | **GET** /v2/dining/all | Get all Dining info
@@ -307,6 +217,7 @@ Class | Method | HTTP request | Description
 *DynamicVouchersApi* | [**FetchAllDynamicVouchers**](docs/DynamicVouchersApi.md#fetchalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns
 *DynamicVouchersApi* | [**FetchDynamicVoucherById**](docs/DynamicVouchersApi.md#fetchdynamicvoucherbyid) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign
 *DynamicVouchersApi* | [**FetchDynamicVoucherRedemptions**](docs/DynamicVouchersApi.md#fetchdynamicvoucherredemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions
+*DynamicVouchersApi* | [**FetchDynamicVouchers**](docs/DynamicVouchersApi.md#fetchdynamicvouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers
 *DynamicVouchersApi* | [**FetchReachStatsOfAllDynamicVouchers**](docs/DynamicVouchersApi.md#fetchreachstatsofalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers
 *DynamicVouchersApi* | [**FetchReachStatsOfIndividualDynamicVoucher**](docs/DynamicVouchersApi.md#fetchreachstatsofindividualdynamicvoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher
 *DynamicVouchersApi* | [**RestoreDynamicVoucherCampaign**](docs/DynamicVouchersApi.md#restoredynamicvouchercampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign
@@ -317,48 +228,30 @@ Class | Method | HTTP request | Description
 *EmailSubscribersApi* | [**RestoreEmailSubscriber**](docs/EmailSubscribersApi.md#restoreemailsubscriber) | **PATCH** /v2/emailSubscriber/{id} | Restore Email Subscriber
 *EmailSubscribersApi* | [**UpdateEmailSubscriber**](docs/EmailSubscribersApi.md#updateemailsubscriber) | **PUT** /v2/emailSubscriber/{id} | Update Email Subscriber
 *EmployeesApi* | [**AddPeerToRoles**](docs/EmployeesApi.md#addpeertoroles) | **POST** /v2/employee/roles/peer/{userID} | Add peer to roles
-*EmployeesApi* | [**CreateDocument**](docs/EmployeesApi.md#createdocument) | **POST** /v2/employee/document | Create document
 *EmployeesApi* | [**CreateEmployeePeer**](docs/EmployeesApi.md#createemployeepeer) | **POST** /v2/employee/peer | Create employee peer
-*EmployeesApi* | [**CreateFile**](docs/EmployeesApi.md#createfile) | **POST** /v2/employee/file/create | Create file
-*EmployeesApi* | [**CreateMediaFile**](docs/EmployeesApi.md#createmediafile) | **POST** /v2/employee/mediaFile | Create media file
-*EmployeesApi* | [**DeleteDocument**](docs/EmployeesApi.md#deletedocument) | **DELETE** /v2/employee/document/{documentID} | Delete document
-*EmployeesApi* | [**DeleteMediaFile**](docs/EmployeesApi.md#deletemediafile) | **DELETE** /v2/employee/mediaFile/{mediaFileID} | Delete media file
-*EmployeesApi* | [**DownloadFile**](docs/EmployeesApi.md#downloadfile) | **GET** /v2/employee/file/download/{fileID} | Get URL for file download
-*EmployeesApi* | [**ExportClubMembers**](docs/EmployeesApi.md#exportclubmembers) | **PUT** /v2/employee/export/members | Export club members
-*EmployeesApi* | [**ExportMerchantCredits**](docs/EmployeesApi.md#exportmerchantcredits) | **PUT** /v2/employee/export/merchantCredits | Export merchant credits
-*EmployeesApi* | [**ExportStaticVoucherCampaign**](docs/EmployeesApi.md#exportstaticvouchercampaign) | **PUT** /v2/employee/export/staticVoucherCampaign/{campaignID} | Export static voucher campaign
-*EmployeesApi* | [**FailedImport**](docs/EmployeesApi.md#failedimport) | **GET** /v2/employee/file/imports/failed/{fileID} | Get URL to download a failed import
-*EmployeesApi* | [**FetchDocuments**](docs/EmployeesApi.md#fetchdocuments) | **GET** /v2/employee/documents/all | Get all documents
-*EmployeesApi* | [**FetchDynamicVouchers**](docs/EmployeesApi.md#fetchdynamicvouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers
-*EmployeesApi* | [**FetchMediaFiles**](docs/EmployeesApi.md#fetchmediafiles) | **GET** /v2/employee/mediaFiles/all | Get all media files
 *EmployeesApi* | [**FetchMerchant**](docs/EmployeesApi.md#fetchmerchant) | **GET** /v2/employee/merchant | Create employee alert
 *EmployeesApi* | [**FetchMessages**](docs/EmployeesApi.md#fetchmessages) | **GET** /v2/employee/messages/all | Get all messages
-*EmployeesApi* | [**FetchOptInListSource**](docs/EmployeesApi.md#fetchoptinlistsource) | **GET** /v2/employee/optInListSource/{sourceID} | Get opt in list source
-*EmployeesApi* | [**FetchOptInListSourcesCreatedByEmployee**](docs/EmployeesApi.md#fetchoptinlistsourcescreatedbyemployee) | **GET** /v2/employee/optInListSources/all | Get all opt in list sources
 *EmployeesApi* | [**FetchPeerActivity**](docs/EmployeesApi.md#fetchpeeractivity) | **GET** /v2/employee/peer/activity/{employeeID} | Get peer activity
 *EmployeesApi* | [**FetchPeersPermissions**](docs/EmployeesApi.md#fetchpeerspermissions) | **GET** /v2/employee/peer/permissions/{userID} | Get peer permissions
 *EmployeesApi* | [**FetchProfileInfo**](docs/EmployeesApi.md#fetchprofileinfo) | **GET** /v2/employee | Get employee info
-*EmployeesApi* | [**ImportClubMembers**](docs/EmployeesApi.md#importclubmembers) | **POST** /v2/employee/import/members | Import club members
-*EmployeesApi* | [**ImportMerchantCredits**](docs/EmployeesApi.md#importmerchantcredits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits
 *EmployeesApi* | [**LoadWebpagesOfEmployee**](docs/EmployeesApi.md#loadwebpagesofemployee) | **GET** /v2/employee/webpages/all | Get employee's permissions
 *EmployeesApi* | [**ModifyPeersRoles**](docs/EmployeesApi.md#modifypeersroles) | **PUT** /v2/employee/peer/permissions/{userID} | Modify peer's roles
-*EmployeesApi* | [**PresignFile**](docs/EmployeesApi.md#presignfile) | **POST** /v2/employee/file/presign | Presign file for upload
 *EmployeesApi* | [**RemovePeerFromAllRoles**](docs/EmployeesApi.md#removepeerfromallroles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles
-*EmployeesApi* | [**ScheduleAdvertisementCredit**](docs/EmployeesApi.md#scheduleadvertisementcredit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit
-*EmployeesApi* | [**ScheduleDynamicVoucher**](docs/EmployeesApi.md#scheduledynamicvoucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list
-*EmployeesApi* | [**ScheduleDynamicVoucherToRecipient**](docs/EmployeesApi.md#scheduledynamicvouchertorecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to recipient
-*EmployeesApi* | [**ScheduleSimpleSMS**](docs/EmployeesApi.md#schedulesimplesms) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list
-*EmployeesApi* | [**ScheduleSimpleSMSToRecipient**](docs/EmployeesApi.md#schedulesimplesmstorecipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient
-*EmployeesApi* | [**SendHelpDeskResponse**](docs/EmployeesApi.md#sendhelpdeskresponse) | **POST** /v2/employee/helpDesk/response | Send help desk response
-*EmployeesApi* | [**SendSmsCampaignBroadcast**](docs/EmployeesApi.md#sendsmscampaignbroadcast) | **POST** /v2/employee/sms/schedule/campaign/{staticVoucherCampaignID} | Schedule SMS Campaign Broadcast
 *EmployeesApi* | [**SetAlertsRead**](docs/EmployeesApi.md#setalertsread) | **PATCH** /v2/employee/alerts | Mark alerts as read
-*EmployeesApi* | [**SetExportDataFilesRead**](docs/EmployeesApi.md#setexportdatafilesread) | **PUT** /v2/employee/export/dataFiles | Mark export data files as read
-*EmployeesApi* | [**SetHelpDeskRequestResolved**](docs/EmployeesApi.md#sethelpdeskrequestresolved) | **PATCH** /v2/employee/helpDesk/request/{helpDeskRequestID} | Resolve help desk request
 *EmployeesApi* | [**SetMessagesRead**](docs/EmployeesApi.md#setmessagesread) | **PATCH** /v2/employee/messages | Mark messages as read
 *EmployeesApi* | [**SetProfilePicture**](docs/EmployeesApi.md#setprofilepicture) | **PUT** /v2/employee/profile/picture | Set profile picture
-*EmployeesApi* | [**UpdateClubMembers**](docs/EmployeesApi.md#updateclubmembers) | **PUT** /v2/employee/update/members | Update club members
 *EmployeesApi* | [**UpdateEmailNotificationPreference**](docs/EmployeesApi.md#updateemailnotificationpreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee's email notification preference to enabled or disabled
 *EmployeesApi* | [**UpdateEmployeePeer**](docs/EmployeesApi.md#updateemployeepeer) | **PUT** /v2/employee/peer/{userID} | Update peer
+*FilesDocumentsApi* | [**CreateDocument**](docs/FilesDocumentsApi.md#createdocument) | **POST** /v2/employee/document | Create document
+*FilesDocumentsApi* | [**CreateFile**](docs/FilesDocumentsApi.md#createfile) | **POST** /v2/employee/file/create | Create file
+*FilesDocumentsApi* | [**CreateMediaFile**](docs/FilesDocumentsApi.md#createmediafile) | **POST** /v2/employee/mediaFile | Create media file
+*FilesDocumentsApi* | [**DeleteDocument**](docs/FilesDocumentsApi.md#deletedocument) | **DELETE** /v2/employee/document/{documentID} | Delete document
+*FilesDocumentsApi* | [**DeleteMediaFile**](docs/FilesDocumentsApi.md#deletemediafile) | **DELETE** /v2/employee/mediaFile/{mediaFileID} | Delete media file
+*FilesDocumentsApi* | [**DownloadFile**](docs/FilesDocumentsApi.md#downloadfile) | **GET** /v2/employee/file/download/{fileID} | Get URL for file download
+*FilesDocumentsApi* | [**FailedImport**](docs/FilesDocumentsApi.md#failedimport) | **GET** /v2/employee/file/imports/failed/{fileID} | Get URL to download a failed import
+*FilesDocumentsApi* | [**FetchDocuments**](docs/FilesDocumentsApi.md#fetchdocuments) | **GET** /v2/employee/documents/all | Get all documents
+*FilesDocumentsApi* | [**FetchMediaFiles**](docs/FilesDocumentsApi.md#fetchmediafiles) | **GET** /v2/employee/mediaFiles/all | Get all media files
+*FilesDocumentsApi* | [**PresignFile**](docs/FilesDocumentsApi.md#presignfile) | **POST** /v2/employee/file/presign | Presign file for upload
 *GalleryApi* | [**ArchiveImageGrid**](docs/GalleryApi.md#archiveimagegrid) | **DELETE** /v2/imageGrid/{id} | Archive Gallery Image
 *GalleryApi* | [**CreateImageGrid**](docs/GalleryApi.md#createimagegrid) | **POST** /v2/imageGrid | Create Gallery Image
 *GalleryApi* | [**FetchAllImageGrid**](docs/GalleryApi.md#fetchallimagegrid) | **GET** /v2/imageGrid/all | Get all Gallery Images
@@ -369,6 +262,29 @@ Class | Method | HTTP request | Description
 *GamingApi* | [**FetchAllGaming**](docs/GamingApi.md#fetchallgaming) | **GET** /v2/gaming/all | Get all Gaming details
 *GamingApi* | [**RestoreGaming**](docs/GamingApi.md#restoregaming) | **PATCH** /v2/gaming/{id} | Restore Gaming info
 *GamingApi* | [**UpdateGaming**](docs/GamingApi.md#updategaming) | **PUT** /v2/gaming/{id} | Update Gaming info
+*HelpDeskApi* | [**FetchHelpDeskRequests**](docs/HelpDeskApi.md#fetchhelpdeskrequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Get help desk requests
+*HelpDeskApi* | [**SendHelpDeskResponse**](docs/HelpDeskApi.md#sendhelpdeskresponse) | **POST** /v2/employee/helpDesk/response | Send help desk response
+*HelpDeskApi* | [**SetHelpDeskRequestResolved**](docs/HelpDeskApi.md#sethelpdeskrequestresolved) | **PATCH** /v2/employee/helpDesk/request/{helpDeskRequestID} | Resolve help desk request
+*ImportExportApi* | [**ExportClubMembers**](docs/ImportExportApi.md#exportclubmembers) | **PUT** /v2/employee/export/members | Export club members
+*ImportExportApi* | [**ExportMerchantCredits**](docs/ImportExportApi.md#exportmerchantcredits) | **PUT** /v2/employee/export/merchantCredits | Export merchant credits
+*ImportExportApi* | [**ExportStaticVoucherCampaign**](docs/ImportExportApi.md#exportstaticvouchercampaign) | **PUT** /v2/employee/export/staticVoucherCampaign/{campaignID} | Export static voucher campaign
+*ImportExportApi* | [**ImportClubMembers**](docs/ImportExportApi.md#importclubmembers) | **POST** /v2/employee/import/members | Import club members
+*ImportExportApi* | [**ImportMerchantCredits**](docs/ImportExportApi.md#importmerchantcredits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits
+*ImportExportApi* | [**SetExportDataFilesRead**](docs/ImportExportApi.md#setexportdatafilesread) | **PUT** /v2/employee/export/dataFiles | Mark export data files as read
+*ImportExportApi* | [**UpdateClubMembers**](docs/ImportExportApi.md#updateclubmembers) | **PUT** /v2/employee/update/members | Update club members
+*ImportedListsApi* | [**ArchiveRecipient**](docs/ImportedListsApi.md#archiverecipient) | **DELETE** /v2/sms/importedList/recipients/{id} | Archive recipient
+*ImportedListsApi* | [**CountImportedListRecipients**](docs/ImportedListsApi.md#countimportedlistrecipients) | **GET** /v2/sms/importedList/recipients/count/{listID} | Count imported list recipients
+*ImportedListsApi* | [**CreateImportedList**](docs/ImportedListsApi.md#createimportedlist) | **POST** /v2/sms/importedList | Create imported list
+*ImportedListsApi* | [**CreateRecipientInImportedList**](docs/ImportedListsApi.md#createrecipientinimportedlist) | **POST** /v2/sms/importedList/recipients/create | Add new recipient in an imported list
+*ImportedListsApi* | [**ExportImportedListRecipients**](docs/ImportedListsApi.md#exportimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/export/{importedListID} | Export imported list recipients
+*ImportedListsApi* | [**FetchImportedList**](docs/ImportedListsApi.md#fetchimportedlist) | **GET** /v2/merchant/lists/imported/{listID} | Get imported list
+*ImportedListsApi* | [**FetchImportedListRecipients**](docs/ImportedListsApi.md#fetchimportedlistrecipients) | **GET** /v2/sms/importedList/recipients/{listID} | Get imported list recipients
+*ImportedListsApi* | [**FetchImportedListRecipientsByPage**](docs/ImportedListsApi.md#fetchimportedlistrecipientsbypage) | **GET** /v2/sms/importedList/recipients/page/{listID} | Get imported list recipients by page
+*ImportedListsApi* | [**FetchImportedLists**](docs/ImportedListsApi.md#fetchimportedlists) | **GET** /v2/merchant/lists/imported/all | Get all imported lists
+*ImportedListsApi* | [**ImportImportedListRecipients**](docs/ImportedListsApi.md#importimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
+*ImportedListsApi* | [**ImportImportedListRecipientsFromMembershipTier**](docs/ImportedListsApi.md#importimportedlistrecipientsfrommembershiptier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
+*ImportedListsApi* | [**RestoreRecipient**](docs/ImportedListsApi.md#restorerecipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient
+*ImportedListsApi* | [**SaveImportedList**](docs/ImportedListsApi.md#saveimportedlist) | **PUT** /v2/sms/importedList/{listID} | Save imported list
 *IndustriesApi* | [**FetchAllIndustries**](docs/IndustriesApi.md#fetchallindustries) | **GET** /system/industries/all | Get all Industries & Pricing Plans
 *IndustriesApi* | [**FetchDomainsByIndustry**](docs/IndustriesApi.md#fetchdomainsbyindustry) | **GET** /system/industries/domains | Get all white-labeled custom domains by industry
 *IndustriesApi* | [**FetchIndustriesIDs**](docs/IndustriesApi.md#fetchindustriesids) | **GET** /system/industries/trimmed | Get all Industries & Pricing Plans with trimmed metadata
@@ -411,8 +327,8 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**FetchDynamicVoucherWithVoucherID**](docs/InteractionsApi.md#fetchdynamicvoucherwithvoucherid) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher
 *InteractionsApi* | [**FetchMemberInformation**](docs/InteractionsApi.md#fetchmemberinformation) | **GET** /wallet/member | Get member information
 *InteractionsApi* | [**FetchStaticVoucherWithVoucherID**](docs/InteractionsApi.md#fetchstaticvoucherwithvoucherid) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher
-*InteractionsApi* | [**FetchWalletPageWithToken**](docs/InteractionsApi.md#fetchwalletpagewithtoken) | **POST** /wallet/page/token | Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
-*InteractionsApi* | [**FetchWalletPaymentObjectsWithToken**](docs/InteractionsApi.md#fetchwalletpaymentobjectswithtoken) | **POST** /wallet/paymentObject/token | Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+*InteractionsApi* | [**FetchWalletPageWithToken**](docs/InteractionsApi.md#fetchwalletpagewithtoken) | **POST** /wallet/page/token | Get page (token-scoped)
+*InteractionsApi* | [**FetchWalletPaymentObjectsWithToken**](docs/InteractionsApi.md#fetchwalletpaymentobjectswithtoken) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped)
 *InteractionsApi* | [**FindByVanityHandle**](docs/InteractionsApi.md#findbyvanityhandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle
 *InteractionsApi* | [**IdentifyItem**](docs/InteractionsApi.md#identifyitem) | **GET** /wallet/item/identify/{itemID} | Identify item
 *InteractionsApi* | [**RequestMerchantURLRedirect**](docs/InteractionsApi.md#requestmerchanturlredirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL
@@ -433,28 +349,9 @@ Class | Method | HTTP request | Description
 *MembershipTiersApi* | [**RestoreMembershipTier**](docs/MembershipTiersApi.md#restoremembershiptier) | **PATCH** /v2/membership/tier/{id} | Restore Membership Tier
 *MembershipTiersApi* | [**UpdateMembershipTier**](docs/MembershipTiersApi.md#updatemembershiptier) | **PUT** /v2/membership/tier/{id} | Update Membership Tier
 *MerchantApi* | [**ArchiveMerchantProfile**](docs/MerchantApi.md#archivemerchantprofile) | **DELETE** /v2/merchant/delete | Archive Merchant
-*MerchantApi* | [**ArchivePaymentObjectBroadcast**](docs/MerchantApi.md#archivepaymentobjectbroadcast) | **DELETE** /v2/merchant/paymentObjectBroadcast/{broadcastID} | Archive payment object broadcast
-*MerchantApi* | [**CountInboundSMS**](docs/MerchantApi.md#countinboundsms) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes
-*MerchantApi* | [**ExportInboundMessages**](docs/MerchantApi.md#exportinboundmessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages
-*MerchantApi* | [**ExportOutboundMessages**](docs/MerchantApi.md#exportoutboundmessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages
-*MerchantApi* | [**FetchAdvertisementCreditBroadcasts**](docs/MerchantApi.md#fetchadvertisementcreditbroadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Get all ad credit broadcasts
 *MerchantApi* | [**FetchCustomRoles**](docs/MerchantApi.md#fetchcustomroles) | **GET** /v2/merchant/roles/custom | Get custom roles
-*MerchantApi* | [**FetchDynamicVoucherBroadcasts**](docs/MerchantApi.md#fetchdynamicvoucherbroadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Get all dynamic voucher broadcasts
 *MerchantApi* | [**FetchEmployees**](docs/MerchantApi.md#fetchemployees) | **GET** /v2/merchant/employees/all | Get all employees
-*MerchantApi* | [**FetchHelpDeskRequests**](docs/MerchantApi.md#fetchhelpdeskrequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Get help desk requests
-*MerchantApi* | [**FetchImportedList**](docs/MerchantApi.md#fetchimportedlist) | **GET** /v2/merchant/lists/imported/{listID} | Get imported list
-*MerchantApi* | [**FetchImportedLists**](docs/MerchantApi.md#fetchimportedlists) | **GET** /v2/merchant/lists/imported/all | Get all imported lists
-*MerchantApi* | [**FetchInboundSMS**](docs/MerchantApi.md#fetchinboundsms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes
-*MerchantApi* | [**FetchInboundSMSByPage**](docs/MerchantApi.md#fetchinboundsmsbypage) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Get inbound SMSes by page
-*MerchantApi* | [**FetchMerchantOutboundSMS**](docs/MerchantApi.md#fetchmerchantoutboundsms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes
-*MerchantApi* | [**FetchMerchantPhoneNumbers**](docs/MerchantApi.md#fetchmerchantphonenumbers) | **GET** /v2/merchant/phoneNumbers/all | Get all phone numbers
-*MerchantApi* | [**FetchOptInList**](docs/MerchantApi.md#fetchoptinlist) | **GET** /v2/merchant/lists/optIn/{listID} | Get opt in list
-*MerchantApi* | [**FetchOptInLists**](docs/MerchantApi.md#fetchoptinlists) | **GET** /v2/merchant/lists/optIn/all | Get all opt in lists
-*MerchantApi* | [**FetchPhoneNumber**](docs/MerchantApi.md#fetchphonenumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Get phone number
 *MerchantApi* | [**FetchPublicEmployees**](docs/MerchantApi.md#fetchpublicemployees) | **GET** /v2/merchant/employees/public | Get public representative employees of the merchant
-*MerchantApi* | [**FetchSimpleSMSBroadcasts**](docs/MerchantApi.md#fetchsimplesmsbroadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Get all simple SMS broadcasts
-*MerchantApi* | [**FetchStaticVoucherCampaignBroadcasts**](docs/MerchantApi.md#fetchstaticvouchercampaignbroadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Get all static voucher campaign broadcasts
-*MerchantApi* | [**FetchTCPAFilter**](docs/MerchantApi.md#fetchtcpafilter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters
 *MerchantApi* | [**FetchWalletConfiguration**](docs/MerchantApi.md#fetchwalletconfiguration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration
 *MerchantApi* | [**UpdateMerchant**](docs/MerchantApi.md#updatemerchant) | **PUT** /v2/merchant | Update merchant details
 *MerchantApi* | [**UpdatePointsOfContact**](docs/MerchantApi.md#updatepointsofcontact) | **PUT** /v2/merchant/pointsOfContact | Update points of contact
@@ -493,6 +390,24 @@ Class | Method | HTTP request | Description
 *OpenAIApi* | [**UpdateAssistant**](docs/OpenAIApi.md#updateassistant) | **PUT** /v2/interop/openai/assistant/{id} | Update Assistant
 *OpenAIApi* | [**UpdateThread**](docs/OpenAIApi.md#updatethread) | **PUT** /v2/interop/openai/thread/{id} | Update Thread
 *OpenAIApi* | [**UpdateVectorStore**](docs/OpenAIApi.md#updatevectorstore) | **PUT** /v2/interop/openai/vectorStore/{id} | Update VectorStore
+*OptInListsApi* | [**CountOptInListSubscribers**](docs/OptInListsApi.md#countoptinlistsubscribers) | **GET** /v2/sms/optInList/subscribers/count/{listID} | Count opt in list subscribers
+*OptInListsApi* | [**CountOptInSourceSubscribers**](docs/OptInListsApi.md#countoptinsourcesubscribers) | **GET** /v2/sms/optInSource/subscribers/count/{sourceID} | Count opt in source subscribers
+*OptInListsApi* | [**CreateOptInList**](docs/OptInListsApi.md#createoptinlist) | **POST** /v2/sms/optInList | Create opt in list
+*OptInListsApi* | [**CreateOptInListSource**](docs/OptInListsApi.md#createoptinlistsource) | **POST** /v2/sms/optInListSource | Send SMS to opt in list
+*OptInListsApi* | [**ExportOptInListSubscribers**](docs/OptInListsApi.md#exportoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/export/{listID} | Export opt in list subscribers
+*OptInListsApi* | [**FetchOptInList**](docs/OptInListsApi.md#fetchoptinlist) | **GET** /v2/merchant/lists/optIn/{listID} | Get opt in list
+*OptInListsApi* | [**FetchOptInListSource**](docs/OptInListsApi.md#fetchoptinlistsource) | **GET** /v2/employee/optInListSource/{sourceID} | Get opt in list source
+*OptInListsApi* | [**FetchOptInListSources**](docs/OptInListsApi.md#fetchoptinlistsources) | **GET** /v2/sms/optInListSources/all | Get all opt in list sources
+*OptInListsApi* | [**FetchOptInListSourcesCreatedByEmployee**](docs/OptInListsApi.md#fetchoptinlistsourcescreatedbyemployee) | **GET** /v2/employee/optInListSources/all | Get all opt in list sources
+*OptInListsApi* | [**FetchOptInListSubscribers**](docs/OptInListsApi.md#fetchoptinlistsubscribers) | **GET** /v2/sms/optInList/subscribers/{listID} | Get opt in list subscribers
+*OptInListsApi* | [**FetchOptInListSubscribersByPage**](docs/OptInListsApi.md#fetchoptinlistsubscribersbypage) | **GET** /v2/sms/optInList/subscribers/page/{listID} | Get opt in list subscribers by page
+*OptInListsApi* | [**FetchOptInLists**](docs/OptInListsApi.md#fetchoptinlists) | **GET** /v2/merchant/lists/optIn/all | Get all opt in lists
+*OptInListsApi* | [**FetchOptInListsAssociatedWithPhoneNumber**](docs/OptInListsApi.md#fetchoptinlistsassociatedwithphonenumber) | **GET** /v2/sms/phoneNumber/lists/{phoneNumberID} | Get opt in lists
+*OptInListsApi* | [**FetchOptInSourceSubscribers**](docs/OptInListsApi.md#fetchoptinsourcesubscribers) | **GET** /v2/sms/optInSource/subscribers/{sourceID} | Get opt in source subscribers
+*OptInListsApi* | [**FetchOptInSourcesAssociatedWithPhoneNumber**](docs/OptInListsApi.md#fetchoptinsourcesassociatedwithphonenumber) | **GET** /v2/sms/phoneNumber/sources/{phoneNumberID} | Get opt in sources
+*OptInListsApi* | [**ImportOptInListSubscribers**](docs/OptInListsApi.md#importoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
+*OptInListsApi* | [**SaveOptInList**](docs/OptInListsApi.md#saveoptinlist) | **PUT** /v2/sms/optInList/{listID} | Save opt in list
+*OptInListsApi* | [**SaveOptInListSource**](docs/OptInListsApi.md#saveoptinlistsource) | **PUT** /v2/sms/optInListSource/{sourceID} | Save opt in list source
 *PaymentDesignsApi* | [**ArchivePaymentDesign**](docs/PaymentDesignsApi.md#archivepaymentdesign) | **DELETE** /v2/payment/design/{id} | Archive payment design
 *PaymentDesignsApi* | [**CreatePaymentDesign**](docs/PaymentDesignsApi.md#createpaymentdesign) | **POST** /v2/payment/design | Create payment design
 *PaymentDesignsApi* | [**FetchAllPaymentDesigns**](docs/PaymentDesignsApi.md#fetchallpaymentdesigns) | **GET** /v2/payment/design/all | Get all payment designs
@@ -512,6 +427,16 @@ Class | Method | HTTP request | Description
 *PerformancesApi* | [**RestorePerformance**](docs/PerformancesApi.md#restoreperformance) | **PATCH** /v2/performances/{id} | Restore Performance
 *PerformancesApi* | [**SaveTicketSettings**](docs/PerformancesApi.md#saveticketsettings) | **POST** /v2/performances/{id} | Update performance's Ticket Settings
 *PerformancesApi* | [**UpdatePerformance**](docs/PerformancesApi.md#updateperformance) | **PUT** /v2/performances/{id} | Update Performance
+*PhoneNumbersApi* | [**AcquirePhoneNumber**](docs/PhoneNumbersApi.md#acquirephonenumber) | **POST** /v2/sms/phoneNumber/acquire | Acquire phone number
+*PhoneNumbersApi* | [**ArchivePhoneNumber**](docs/PhoneNumbersApi.md#archivephonenumber) | **DELETE** /v2/sms/phoneNumber/{phoneNumberID} | Archive phone number
+*PhoneNumbersApi* | [**FetchBlockedTCPAEntries**](docs/PhoneNumbersApi.md#fetchblockedtcpaentries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Get blocked TCPA entries
+*PhoneNumbersApi* | [**FetchMerchantPhoneNumbers**](docs/PhoneNumbersApi.md#fetchmerchantphonenumbers) | **GET** /v2/merchant/phoneNumbers/all | Get all phone numbers
+*PhoneNumbersApi* | [**FetchPhoneNumber**](docs/PhoneNumbersApi.md#fetchphonenumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Get phone number
+*PhoneNumbersApi* | [**FetchSMSAgreement**](docs/PhoneNumbersApi.md#fetchsmsagreement) | **GET** /v2/sms/agreement | Get SMS Agreement
+*PhoneNumbersApi* | [**FetchTCPAFilter**](docs/PhoneNumbersApi.md#fetchtcpafilter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters
+*PhoneNumbersApi* | [**RestorePhoneNumber**](docs/PhoneNumbersApi.md#restorephonenumber) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number
+*PhoneNumbersApi* | [**SendPhoneNumberForVerification**](docs/PhoneNumbersApi.md#sendphonenumberforverification) | **PUT** /v2/sms/phoneNumber/verification/{phoneNumberID} | Request phone number verification
+*PhoneNumbersApi* | [**UpdatePhoneNumber**](docs/PhoneNumbersApi.md#updatephonenumber) | **PUT** /v2/sms/phoneNumber/{phoneNumberID} | Update phone number
 *PointOfSaleConfigurationApi* | [**ArchivePOSMachine**](docs/PointOfSaleConfigurationApi.md#archiveposmachine) | **DELETE** /v2/pos/machine/{id} | Archive PoS machine
 *PointOfSaleConfigurationApi* | [**CreatePOSMachine**](docs/PointOfSaleConfigurationApi.md#createposmachine) | **POST** /v2/pos/machine | Create PoS machine
 *PointOfSaleConfigurationApi* | [**FetchAllPOSMachines**](docs/PointOfSaleConfigurationApi.md#fetchallposmachines) | **GET** /v2/pos/machine/all | Get all PoS machines
@@ -556,43 +481,16 @@ Class | Method | HTTP request | Description
 *RoomRatesApi* | [**FetchAllRoomRates**](docs/RoomRatesApi.md#fetchallroomrates) | **GET** /v2/roomRates/all | Get all Rooms & Rates
 *RoomRatesApi* | [**RestoreRoomRate**](docs/RoomRatesApi.md#restoreroomrate) | **PATCH** /v2/roomRates/{id} | Restore Room & Rate
 *RoomRatesApi* | [**UpdateRoomRate**](docs/RoomRatesApi.md#updateroomrate) | **PUT** /v2/roomRates/{id} | Update Room & Rate
-*SMSOperationsApi* | [**AcquirePhoneNumber**](docs/SMSOperationsApi.md#acquirephonenumber) | **POST** /v2/sms/phoneNumber/acquire | Acquire phone number
-*SMSOperationsApi* | [**ArchivePhoneNumber**](docs/SMSOperationsApi.md#archivephonenumber) | **DELETE** /v2/sms/phoneNumber/{phoneNumberID} | Archive phone number
-*SMSOperationsApi* | [**ArchiveRecipient**](docs/SMSOperationsApi.md#archiverecipient) | **DELETE** /v2/sms/importedList/recipients/{id} | Archive recipient
-*SMSOperationsApi* | [**CountImportedListRecipients**](docs/SMSOperationsApi.md#countimportedlistrecipients) | **GET** /v2/sms/importedList/recipients/count/{listID} | Count imported list recipients
-*SMSOperationsApi* | [**CountOptInListSubscribers**](docs/SMSOperationsApi.md#countoptinlistsubscribers) | **GET** /v2/sms/optInList/subscribers/count/{listID} | Count opt in list subscribers
-*SMSOperationsApi* | [**CountOptInSourceSubscribers**](docs/SMSOperationsApi.md#countoptinsourcesubscribers) | **GET** /v2/sms/optInSource/subscribers/count/{sourceID} | Count opt in source subscribers
-*SMSOperationsApi* | [**CountOutboundSMS**](docs/SMSOperationsApi.md#countoutboundsms) | **GET** /v2/sms/outbound/count/{phoneNumberID} | Count outbound SMS
-*SMSOperationsApi* | [**CreateImportedList**](docs/SMSOperationsApi.md#createimportedlist) | **POST** /v2/sms/importedList | Create imported list
-*SMSOperationsApi* | [**CreateOptInList**](docs/SMSOperationsApi.md#createoptinlist) | **POST** /v2/sms/optInList | Create opt in list
-*SMSOperationsApi* | [**CreateOptInListSource**](docs/SMSOperationsApi.md#createoptinlistsource) | **POST** /v2/sms/optInListSource | Send SMS to opt in list
-*SMSOperationsApi* | [**CreateRecipientInImportedList**](docs/SMSOperationsApi.md#createrecipientinimportedlist) | **POST** /v2/sms/importedList/recipients/create | Add new recipient in an imported list
-*SMSOperationsApi* | [**ExportImportedListRecipients**](docs/SMSOperationsApi.md#exportimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/export/{importedListID} | Export imported list recipients
-*SMSOperationsApi* | [**ExportOptInListSubscribers**](docs/SMSOperationsApi.md#exportoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/export/{listID} | Export opt in list subscribers
-*SMSOperationsApi* | [**FetchBlockedTCPAEntries**](docs/SMSOperationsApi.md#fetchblockedtcpaentries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Get blocked TCPA entries
-*SMSOperationsApi* | [**FetchImportedListRecipients**](docs/SMSOperationsApi.md#fetchimportedlistrecipients) | **GET** /v2/sms/importedList/recipients/{listID} | Get imported list recipients
-*SMSOperationsApi* | [**FetchImportedListRecipientsByPage**](docs/SMSOperationsApi.md#fetchimportedlistrecipientsbypage) | **GET** /v2/sms/importedList/recipients/page/{listID} | Get imported list recipients by page
-*SMSOperationsApi* | [**FetchOptInListSources**](docs/SMSOperationsApi.md#fetchoptinlistsources) | **GET** /v2/sms/optInListSources/all | Get all opt in list sources
-*SMSOperationsApi* | [**FetchOptInListSubscribers**](docs/SMSOperationsApi.md#fetchoptinlistsubscribers) | **GET** /v2/sms/optInList/subscribers/{listID} | Get opt in list subscribers
-*SMSOperationsApi* | [**FetchOptInListSubscribersByPage**](docs/SMSOperationsApi.md#fetchoptinlistsubscribersbypage) | **GET** /v2/sms/optInList/subscribers/page/{listID} | Get opt in list subscribers by page
-*SMSOperationsApi* | [**FetchOptInListsAssociatedWithPhoneNumber**](docs/SMSOperationsApi.md#fetchoptinlistsassociatedwithphonenumber) | **GET** /v2/sms/phoneNumber/lists/{phoneNumberID} | Get opt in lists
-*SMSOperationsApi* | [**FetchOptInSourceSubscribers**](docs/SMSOperationsApi.md#fetchoptinsourcesubscribers) | **GET** /v2/sms/optInSource/subscribers/{sourceID} | Get opt in source subscribers
-*SMSOperationsApi* | [**FetchOptInSourcesAssociatedWithPhoneNumber**](docs/SMSOperationsApi.md#fetchoptinsourcesassociatedwithphonenumber) | **GET** /v2/sms/phoneNumber/sources/{phoneNumberID} | Get opt in sources
-*SMSOperationsApi* | [**FetchOutboundSMS**](docs/SMSOperationsApi.md#fetchoutboundsms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS
-*SMSOperationsApi* | [**FetchOutboundSMSByPage**](docs/SMSOperationsApi.md#fetchoutboundsmsbypage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page
-*SMSOperationsApi* | [**FetchPaymentObjectBroadcasts**](docs/SMSOperationsApi.md#fetchpaymentobjectbroadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Get payment object broadcasts
-*SMSOperationsApi* | [**FetchSMSAgreement**](docs/SMSOperationsApi.md#fetchsmsagreement) | **GET** /v2/sms/agreement | Get SMS Agreement
-*SMSOperationsApi* | [**ImportImportedListRecipients**](docs/SMSOperationsApi.md#importimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
-*SMSOperationsApi* | [**ImportImportedListRecipientsFromMembershipTier**](docs/SMSOperationsApi.md#importimportedlistrecipientsfrommembershiptier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
-*SMSOperationsApi* | [**ImportOptInListSubscribers**](docs/SMSOperationsApi.md#importoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
-*SMSOperationsApi* | [**RestorePhoneNumber**](docs/SMSOperationsApi.md#restorephonenumber) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number
-*SMSOperationsApi* | [**RestoreRecipient**](docs/SMSOperationsApi.md#restorerecipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient
-*SMSOperationsApi* | [**RetrieveSentAndMaxCountOfMessages**](docs/SMSOperationsApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the number of messages sent by the merchant within the current billing cycle
-*SMSOperationsApi* | [**SaveImportedList**](docs/SMSOperationsApi.md#saveimportedlist) | **PUT** /v2/sms/importedList/{listID} | Save imported list
-*SMSOperationsApi* | [**SaveOptInList**](docs/SMSOperationsApi.md#saveoptinlist) | **PUT** /v2/sms/optInList/{listID} | Save opt in list
-*SMSOperationsApi* | [**SaveOptInListSource**](docs/SMSOperationsApi.md#saveoptinlistsource) | **PUT** /v2/sms/optInListSource/{sourceID} | Save opt in list source
-*SMSOperationsApi* | [**SendPhoneNumberForVerification**](docs/SMSOperationsApi.md#sendphonenumberforverification) | **PUT** /v2/sms/phoneNumber/verification/{phoneNumberID} | Request phone number verification
-*SMSOperationsApi* | [**UpdatePhoneNumber**](docs/SMSOperationsApi.md#updatephonenumber) | **PUT** /v2/sms/phoneNumber/{phoneNumberID} | Update phone number
+*SMSMessagesApi* | [**CountInboundSMS**](docs/SMSMessagesApi.md#countinboundsms) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes
+*SMSMessagesApi* | [**CountOutboundSMS**](docs/SMSMessagesApi.md#countoutboundsms) | **GET** /v2/sms/outbound/count/{phoneNumberID} | Count outbound SMS
+*SMSMessagesApi* | [**ExportInboundMessages**](docs/SMSMessagesApi.md#exportinboundmessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages
+*SMSMessagesApi* | [**ExportOutboundMessages**](docs/SMSMessagesApi.md#exportoutboundmessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages
+*SMSMessagesApi* | [**FetchInboundSMS**](docs/SMSMessagesApi.md#fetchinboundsms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes
+*SMSMessagesApi* | [**FetchInboundSMSByPage**](docs/SMSMessagesApi.md#fetchinboundsmsbypage) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Get inbound SMSes by page
+*SMSMessagesApi* | [**FetchMerchantOutboundSMS**](docs/SMSMessagesApi.md#fetchmerchantoutboundsms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes
+*SMSMessagesApi* | [**FetchOutboundSMS**](docs/SMSMessagesApi.md#fetchoutboundsms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS
+*SMSMessagesApi* | [**FetchOutboundSMSByPage**](docs/SMSMessagesApi.md#fetchoutboundsmsbypage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page
+*SMSMessagesApi* | [**RetrieveSentAndMaxCountOfMessages**](docs/SMSMessagesApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the number of messages sent by the merchant within the current billing cycle
 *SMSSubscribersApi* | [**ArchiveSmsSubscriber**](docs/SMSSubscribersApi.md#archivesmssubscriber) | **DELETE** /v2/SmsSubscriber/{id} | Archive SMS Subscriber
 *SMSSubscribersApi* | [**CreateSmsSubscriber**](docs/SMSSubscribersApi.md#createsmssubscriber) | **POST** /v2/SmsSubscriber | Create SMS Subscriber
 *SMSSubscribersApi* | [**FetchAllSmsSubscribers**](docs/SMSSubscribersApi.md#fetchallsmssubscribers) | **GET** /v2/SmsSubscriber/all | Get all SMS Subscribers

@@ -37,7 +37,10 @@ namespace WalletInc.Model
         /// Initializes a new instance of the <see cref="MSAnalyticsMembershipTierAmountRefundedPartitionedByDate" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected MSAnalyticsMembershipTierAmountRefundedPartitionedByDate() { }
+        protected MSAnalyticsMembershipTierAmountRefundedPartitionedByDate()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="MSAnalyticsMembershipTierAmountRefundedPartitionedByDate" /> class.
         /// </summary>
@@ -52,6 +55,7 @@ namespace WalletInc.Model
             }
             this.Date = date;
             this.Amount = amount;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -75,6 +79,12 @@ namespace WalletInc.Model
         public int Amount { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +94,7 @@ namespace WalletInc.Model
             sb.Append("class MSAnalyticsMembershipTierAmountRefundedPartitionedByDate {\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

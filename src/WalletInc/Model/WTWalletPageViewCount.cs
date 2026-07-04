@@ -37,7 +37,10 @@ namespace WalletInc.Model
         /// Initializes a new instance of the <see cref="WTWalletPageViewCount" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WTWalletPageViewCount() { }
+        protected WTWalletPageViewCount()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="WTWalletPageViewCount" /> class.
         /// </summary>
@@ -61,6 +64,7 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("walletObjectName is a required property for WTWalletPageViewCount and cannot be null");
             }
             this.WalletObjectName = walletObjectName;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -97,6 +101,12 @@ namespace WalletInc.Model
         public string WalletObjectName { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -108,6 +118,7 @@ namespace WalletInc.Model
             sb.Append("  Count: ").Append(Count).Append("\n");
             sb.Append("  DateOccurred: ").Append(DateOccurred).Append("\n");
             sb.Append("  WalletObjectName: ").Append(WalletObjectName).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -1,23 +1,22 @@
-# WalletInc.Api.MerchantApi
+# WalletInc.Api.ImportExportApi
 
 All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ArchiveMerchantProfile**](MerchantApi.md#archivemerchantprofile) | **DELETE** /v2/merchant/delete | Archive Merchant |
-| [**FetchCustomRoles**](MerchantApi.md#fetchcustomroles) | **GET** /v2/merchant/roles/custom | Get custom roles |
-| [**FetchEmployees**](MerchantApi.md#fetchemployees) | **GET** /v2/merchant/employees/all | Get all employees |
-| [**FetchPublicEmployees**](MerchantApi.md#fetchpublicemployees) | **GET** /v2/merchant/employees/public | Get public representative employees of the merchant |
-| [**FetchWalletConfiguration**](MerchantApi.md#fetchwalletconfiguration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration |
-| [**UpdateMerchant**](MerchantApi.md#updatemerchant) | **PUT** /v2/merchant | Update merchant details |
-| [**UpdatePointsOfContact**](MerchantApi.md#updatepointsofcontact) | **PUT** /v2/merchant/pointsOfContact | Update points of contact |
-| [**UpdatePosIntegration**](MerchantApi.md#updateposintegration) | **PUT** /v2/merchant/pos/integration | Update POS Integration |
+| [**ExportClubMembers**](ImportExportApi.md#exportclubmembers) | **PUT** /v2/employee/export/members | Export club members |
+| [**ExportMerchantCredits**](ImportExportApi.md#exportmerchantcredits) | **PUT** /v2/employee/export/merchantCredits | Export merchant credits |
+| [**ExportStaticVoucherCampaign**](ImportExportApi.md#exportstaticvouchercampaign) | **PUT** /v2/employee/export/staticVoucherCampaign/{campaignID} | Export static voucher campaign |
+| [**ImportClubMembers**](ImportExportApi.md#importclubmembers) | **POST** /v2/employee/import/members | Import club members |
+| [**ImportMerchantCredits**](ImportExportApi.md#importmerchantcredits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits |
+| [**SetExportDataFilesRead**](ImportExportApi.md#setexportdatafilesread) | **PUT** /v2/employee/export/dataFiles | Mark export data files as read |
+| [**UpdateClubMembers**](ImportExportApi.md#updateclubmembers) | **PUT** /v2/employee/update/members | Update club members |
 
-<a id="archivemerchantprofile"></a>
-# **ArchiveMerchantProfile**
-> Object ArchiveMerchantProfile ()
+<a id="exportclubmembers"></a>
+# **ExportClubMembers**
+> string ExportClubMembers ()
 
-Archive Merchant
+Export club members
 
 ### Example
 ```csharp
@@ -30,7 +29,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class ArchiveMerchantProfileExample
+    public class ExportClubMembersExample
     {
         public static void Main()
         {
@@ -39,17 +38,17 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
+            var apiInstance = new ImportExportApi(httpClient, config, httpClientHandler);
 
             try
             {
-                // Archive Merchant
-                Object result = apiInstance.ArchiveMerchantProfile();
+                // Export club members
+                string result = apiInstance.ExportClubMembers();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MerchantApi.ArchiveMerchantProfile: " + e.Message);
+                Debug.Print("Exception when calling ImportExportApi.ExportClubMembers: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,21 +57,21 @@ namespace Example
 }
 ```
 
-#### Using the ArchiveMerchantProfileWithHttpInfo variant
+#### Using the ExportClubMembersWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Archive Merchant
-    ApiResponse<Object> response = apiInstance.ArchiveMerchantProfileWithHttpInfo();
+    // Export club members
+    ApiResponse<string> response = apiInstance.ExportClubMembersWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MerchantApi.ArchiveMerchantProfileWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportExportApi.ExportClubMembersWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -82,7 +81,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-**Object**
+**string**
 
 ### Authorization
 
@@ -104,11 +103,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchcustomroles"></a>
-# **FetchCustomRoles**
-> Object FetchCustomRoles ()
+<a id="exportmerchantcredits"></a>
+# **ExportMerchantCredits**
+> string ExportMerchantCredits ()
 
-Get custom roles
+Export merchant credits
 
 ### Example
 ```csharp
@@ -121,7 +120,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchCustomRolesExample
+    public class ExportMerchantCreditsExample
     {
         public static void Main()
         {
@@ -130,17 +129,17 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
+            var apiInstance = new ImportExportApi(httpClient, config, httpClientHandler);
 
             try
             {
-                // Get custom roles
-                Object result = apiInstance.FetchCustomRoles();
+                // Export merchant credits
+                string result = apiInstance.ExportMerchantCredits();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MerchantApi.FetchCustomRoles: " + e.Message);
+                Debug.Print("Exception when calling ImportExportApi.ExportMerchantCredits: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -149,21 +148,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchCustomRolesWithHttpInfo variant
+#### Using the ExportMerchantCreditsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get custom roles
-    ApiResponse<Object> response = apiInstance.FetchCustomRolesWithHttpInfo();
+    // Export merchant credits
+    ApiResponse<string> response = apiInstance.ExportMerchantCreditsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MerchantApi.FetchCustomRolesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportExportApi.ExportMerchantCreditsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -173,7 +172,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-**Object**
+**string**
 
 ### Authorization
 
@@ -195,102 +194,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchemployees"></a>
-# **FetchEmployees**
-> Object FetchEmployees ()
+<a id="exportstaticvouchercampaign"></a>
+# **ExportStaticVoucherCampaign**
+> string ExportStaticVoucherCampaign (string campaignID)
 
-Get all employees
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchEmployeesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Get all employees
-                Object result = apiInstance.FetchEmployees();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MerchantApi.FetchEmployees: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchEmployeesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get all employees
-    ApiResponse<Object> response = apiInstance.FetchEmployeesWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MerchantApi.FetchEmployeesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchpublicemployees"></a>
-# **FetchPublicEmployees**
-> Object FetchPublicEmployees ()
-
-Get public representative employees of the merchant
+Export static voucher campaign
 
 ### Example
 ```csharp
@@ -303,7 +211,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchPublicEmployeesExample
+    public class ExportStaticVoucherCampaignExample
     {
         public static void Main()
         {
@@ -312,17 +220,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
+            var apiInstance = new ImportExportApi(httpClient, config, httpClientHandler);
+            var campaignID = "campaignID_example";  // string | 
 
             try
             {
-                // Get public representative employees of the merchant
-                Object result = apiInstance.FetchPublicEmployees();
+                // Export static voucher campaign
+                string result = apiInstance.ExportStaticVoucherCampaign(campaignID);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MerchantApi.FetchPublicEmployees: " + e.Message);
+                Debug.Print("Exception when calling ImportExportApi.ExportStaticVoucherCampaign: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -331,204 +240,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchPublicEmployeesWithHttpInfo variant
+#### Using the ExportStaticVoucherCampaignWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get public representative employees of the merchant
-    ApiResponse<Object> response = apiInstance.FetchPublicEmployeesWithHttpInfo();
+    // Export static voucher campaign
+    ApiResponse<string> response = apiInstance.ExportStaticVoucherCampaignWithHttpInfo(campaignID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MerchantApi.FetchPublicEmployeesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchwalletconfiguration"></a>
-# **FetchWalletConfiguration**
-> Object FetchWalletConfiguration ()
-
-Get wallet configuration
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchWalletConfigurationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Get wallet configuration
-                Object result = apiInstance.FetchWalletConfiguration();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MerchantApi.FetchWalletConfiguration: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchWalletConfigurationWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get wallet configuration
-    ApiResponse<Object> response = apiInstance.FetchWalletConfigurationWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MerchantApi.FetchWalletConfigurationWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="updatemerchant"></a>
-# **UpdateMerchant**
-> Object UpdateMerchant (WTMerchantUpdate wTMerchantUpdate)
-
-Update merchant details
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class UpdateMerchantExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
-            var wTMerchantUpdate = new WTMerchantUpdate(); // WTMerchantUpdate | 
-
-            try
-            {
-                // Update merchant details
-                Object result = apiInstance.UpdateMerchant(wTMerchantUpdate);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MerchantApi.UpdateMerchant: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UpdateMerchantWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update merchant details
-    ApiResponse<Object> response = apiInstance.UpdateMerchantWithHttpInfo(wTMerchantUpdate);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MerchantApi.UpdateMerchantWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportExportApi.ExportStaticVoucherCampaignWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -538,11 +264,107 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **wTMerchantUpdate** | [**WTMerchantUpdate**](WTMerchantUpdate.md) |  |  |
+| **campaignID** | **string** |  |  |
 
 ### Return type
 
-**Object**
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="importclubmembers"></a>
+# **ImportClubMembers**
+> string ImportClubMembers (WTEmployeeImportRecords wTEmployeeImportRecords)
+
+Import club members
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class ImportClubMembersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportExportApi(httpClient, config, httpClientHandler);
+            var wTEmployeeImportRecords = new WTEmployeeImportRecords(); // WTEmployeeImportRecords | 
+
+            try
+            {
+                // Import club members
+                string result = apiInstance.ImportClubMembers(wTEmployeeImportRecords);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportExportApi.ImportClubMembers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ImportClubMembersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Import club members
+    ApiResponse<string> response = apiInstance.ImportClubMembersWithHttpInfo(wTEmployeeImportRecords);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportExportApi.ImportClubMembersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTEmployeeImportRecords** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md) |  |  |
+
+### Return type
+
+**string**
 
 ### Authorization
 
@@ -564,11 +386,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatepointsofcontact"></a>
-# **UpdatePointsOfContact**
-> Object UpdatePointsOfContact (WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact)
+<a id="importmerchantcredits"></a>
+# **ImportMerchantCredits**
+> string ImportMerchantCredits (WTEmployeeImportRecords wTEmployeeImportRecords)
 
-Update points of contact
+Import merchant credits
 
 ### Example
 ```csharp
@@ -581,7 +403,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class UpdatePointsOfContactExample
+    public class ImportMerchantCreditsExample
     {
         public static void Main()
         {
@@ -590,18 +412,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
-            var wTMerchantUpdatePointsOfContact = new WTMerchantUpdatePointsOfContact(); // WTMerchantUpdatePointsOfContact | 
+            var apiInstance = new ImportExportApi(httpClient, config, httpClientHandler);
+            var wTEmployeeImportRecords = new WTEmployeeImportRecords(); // WTEmployeeImportRecords | 
 
             try
             {
-                // Update points of contact
-                Object result = apiInstance.UpdatePointsOfContact(wTMerchantUpdatePointsOfContact);
+                // Import merchant credits
+                string result = apiInstance.ImportMerchantCredits(wTEmployeeImportRecords);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MerchantApi.UpdatePointsOfContact: " + e.Message);
+                Debug.Print("Exception when calling ImportExportApi.ImportMerchantCredits: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -610,21 +432,21 @@ namespace Example
 }
 ```
 
-#### Using the UpdatePointsOfContactWithHttpInfo variant
+#### Using the ImportMerchantCreditsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Update points of contact
-    ApiResponse<Object> response = apiInstance.UpdatePointsOfContactWithHttpInfo(wTMerchantUpdatePointsOfContact);
+    // Import merchant credits
+    ApiResponse<string> response = apiInstance.ImportMerchantCreditsWithHttpInfo(wTEmployeeImportRecords);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MerchantApi.UpdatePointsOfContactWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportExportApi.ImportMerchantCreditsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -634,11 +456,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **wTMerchantUpdatePointsOfContact** | [**WTMerchantUpdatePointsOfContact**](WTMerchantUpdatePointsOfContact.md) |  |  |
+| **wTEmployeeImportRecords** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md) |  |  |
 
 ### Return type
 
-**Object**
+**string**
 
 ### Authorization
 
@@ -660,11 +482,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateposintegration"></a>
-# **UpdatePosIntegration**
-> Object UpdatePosIntegration (WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration)
+<a id="setexportdatafilesread"></a>
+# **SetExportDataFilesRead**
+> bool SetExportDataFilesRead ()
 
-Update POS Integration
+Mark export data files as read
 
 ### Example
 ```csharp
@@ -677,7 +499,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class UpdatePosIntegrationExample
+    public class SetExportDataFilesReadExample
     {
         public static void Main()
         {
@@ -686,18 +508,17 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new MerchantApi(httpClient, config, httpClientHandler);
-            var wTMerchantUpdatePOSIntegration = new WTMerchantUpdatePOSIntegration(); // WTMerchantUpdatePOSIntegration | 
+            var apiInstance = new ImportExportApi(httpClient, config, httpClientHandler);
 
             try
             {
-                // Update POS Integration
-                Object result = apiInstance.UpdatePosIntegration(wTMerchantUpdatePOSIntegration);
+                // Mark export data files as read
+                bool result = apiInstance.SetExportDataFilesRead();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MerchantApi.UpdatePosIntegration: " + e.Message);
+                Debug.Print("Exception when calling ImportExportApi.SetExportDataFilesRead: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -706,21 +527,113 @@ namespace Example
 }
 ```
 
-#### Using the UpdatePosIntegrationWithHttpInfo variant
+#### Using the SetExportDataFilesReadWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Update POS Integration
-    ApiResponse<Object> response = apiInstance.UpdatePosIntegrationWithHttpInfo(wTMerchantUpdatePOSIntegration);
+    // Mark export data files as read
+    ApiResponse<bool> response = apiInstance.SetExportDataFilesReadWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MerchantApi.UpdatePosIntegrationWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportExportApi.SetExportDataFilesReadWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updateclubmembers"></a>
+# **UpdateClubMembers**
+> string UpdateClubMembers (WTEmployeeUpdateRecords wTEmployeeUpdateRecords)
+
+Update club members
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class UpdateClubMembersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportExportApi(httpClient, config, httpClientHandler);
+            var wTEmployeeUpdateRecords = new WTEmployeeUpdateRecords(); // WTEmployeeUpdateRecords | 
+
+            try
+            {
+                // Update club members
+                string result = apiInstance.UpdateClubMembers(wTEmployeeUpdateRecords);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportExportApi.UpdateClubMembers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateClubMembersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update club members
+    ApiResponse<string> response = apiInstance.UpdateClubMembersWithHttpInfo(wTEmployeeUpdateRecords);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportExportApi.UpdateClubMembersWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -730,11 +643,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **wTMerchantUpdatePOSIntegration** | [**WTMerchantUpdatePOSIntegration**](WTMerchantUpdatePOSIntegration.md) |  |  |
+| **wTEmployeeUpdateRecords** | [**WTEmployeeUpdateRecords**](WTEmployeeUpdateRecords.md) |  |  |
 
 ### Return type
 
-**Object**
+**string**
 
 ### Authorization
 

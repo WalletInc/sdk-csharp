@@ -1,121 +1,25 @@
-# WalletInc.Api.DynamicVouchersApi
+# WalletInc.Api.FilesDocumentsApi
 
 All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ArchiveDynamicVoucherCampaign**](DynamicVouchersApi.md#archivedynamicvouchercampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive Dynamic Voucher Campaign |
-| [**CreateDynamicVoucher**](DynamicVouchersApi.md#createdynamicvoucher) | **POST** /v2/payment/dynamicVoucher | Create Dynamic Voucher Campaign |
-| [**FetchAllDynamicVouchers**](DynamicVouchersApi.md#fetchalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns |
-| [**FetchDynamicVoucherById**](DynamicVouchersApi.md#fetchdynamicvoucherbyid) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign |
-| [**FetchDynamicVoucherRedemptions**](DynamicVouchersApi.md#fetchdynamicvoucherredemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions |
-| [**FetchDynamicVouchers**](DynamicVouchersApi.md#fetchdynamicvouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers |
-| [**FetchReachStatsOfAllDynamicVouchers**](DynamicVouchersApi.md#fetchreachstatsofalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers |
-| [**FetchReachStatsOfIndividualDynamicVoucher**](DynamicVouchersApi.md#fetchreachstatsofindividualdynamicvoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher |
-| [**RestoreDynamicVoucherCampaign**](DynamicVouchersApi.md#restoredynamicvouchercampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign |
-| [**SaveDynamicVoucher**](DynamicVouchersApi.md#savedynamicvoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update Dynamic Voucher Campaign |
+| [**CreateDocument**](FilesDocumentsApi.md#createdocument) | **POST** /v2/employee/document | Create document |
+| [**CreateFile**](FilesDocumentsApi.md#createfile) | **POST** /v2/employee/file/create | Create file |
+| [**CreateMediaFile**](FilesDocumentsApi.md#createmediafile) | **POST** /v2/employee/mediaFile | Create media file |
+| [**DeleteDocument**](FilesDocumentsApi.md#deletedocument) | **DELETE** /v2/employee/document/{documentID} | Delete document |
+| [**DeleteMediaFile**](FilesDocumentsApi.md#deletemediafile) | **DELETE** /v2/employee/mediaFile/{mediaFileID} | Delete media file |
+| [**DownloadFile**](FilesDocumentsApi.md#downloadfile) | **GET** /v2/employee/file/download/{fileID} | Get URL for file download |
+| [**FailedImport**](FilesDocumentsApi.md#failedimport) | **GET** /v2/employee/file/imports/failed/{fileID} | Get URL to download a failed import |
+| [**FetchDocuments**](FilesDocumentsApi.md#fetchdocuments) | **GET** /v2/employee/documents/all | Get all documents |
+| [**FetchMediaFiles**](FilesDocumentsApi.md#fetchmediafiles) | **GET** /v2/employee/mediaFiles/all | Get all media files |
+| [**PresignFile**](FilesDocumentsApi.md#presignfile) | **POST** /v2/employee/file/presign | Presign file for upload |
 
-<a id="archivedynamicvouchercampaign"></a>
-# **ArchiveDynamicVoucherCampaign**
-> DynamicVoucher ArchiveDynamicVoucherCampaign (string campaignID)
+<a id="createdocument"></a>
+# **CreateDocument**
+> Document CreateDocument (WTEmployeeCreateDocument wTEmployeeCreateDocument)
 
-Archive Dynamic Voucher Campaign
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class ArchiveDynamicVoucherCampaignExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var campaignID = "campaignID_example";  // string | 
-
-            try
-            {
-                // Archive Dynamic Voucher Campaign
-                DynamicVoucher result = apiInstance.ArchiveDynamicVoucherCampaign(campaignID);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.ArchiveDynamicVoucherCampaign: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ArchiveDynamicVoucherCampaignWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Archive Dynamic Voucher Campaign
-    ApiResponse<DynamicVoucher> response = apiInstance.ArchiveDynamicVoucherCampaignWithHttpInfo(campaignID);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.ArchiveDynamicVoucherCampaignWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **campaignID** | **string** |  |  |
-
-### Return type
-
-[**DynamicVoucher**](DynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="createdynamicvoucher"></a>
-# **CreateDynamicVoucher**
-> WTDynamicVoucher CreateDynamicVoucher (WTDynamicVoucherCreateParams wTDynamicVoucherCreateParams)
-
-Create Dynamic Voucher Campaign
+Create document
 
 ### Example
 ```csharp
@@ -128,7 +32,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class CreateDynamicVoucherExample
+    public class CreateDocumentExample
     {
         public static void Main()
         {
@@ -137,18 +41,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var wTDynamicVoucherCreateParams = new WTDynamicVoucherCreateParams(); // WTDynamicVoucherCreateParams | 
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var wTEmployeeCreateDocument = new WTEmployeeCreateDocument(); // WTEmployeeCreateDocument | 
 
             try
             {
-                // Create Dynamic Voucher Campaign
-                WTDynamicVoucher result = apiInstance.CreateDynamicVoucher(wTDynamicVoucherCreateParams);
+                // Create document
+                Document result = apiInstance.CreateDocument(wTEmployeeCreateDocument);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.CreateDynamicVoucher: " + e.Message);
+                Debug.Print("Exception when calling FilesDocumentsApi.CreateDocument: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -157,21 +61,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateDynamicVoucherWithHttpInfo variant
+#### Using the CreateDocumentWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create Dynamic Voucher Campaign
-    ApiResponse<WTDynamicVoucher> response = apiInstance.CreateDynamicVoucherWithHttpInfo(wTDynamicVoucherCreateParams);
+    // Create document
+    ApiResponse<Document> response = apiInstance.CreateDocumentWithHttpInfo(wTEmployeeCreateDocument);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.CreateDynamicVoucherWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FilesDocumentsApi.CreateDocumentWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -181,789 +85,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **wTDynamicVoucherCreateParams** | [**WTDynamicVoucherCreateParams**](WTDynamicVoucherCreateParams.md) |  |  |
+| **wTEmployeeCreateDocument** | [**WTEmployeeCreateDocument**](WTEmployeeCreateDocument.md) |  |  |
 
 ### Return type
 
-[**WTDynamicVoucher**](WTDynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Created |  -  |
-| **401** | Authentication Failed |  -  |
-| **409** | Duplicate Row Found |  -  |
-| **422** | Validation Failed |  -  |
-| **424** | Merchant Not Initialized |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchalldynamicvouchers"></a>
-# **FetchAllDynamicVouchers**
-> List&lt;WTDynamicVoucher&gt; FetchAllDynamicVouchers (bool? isArchiveIncluded = null)
-
-Get all Dynamic Voucher Campaigns
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchAllDynamicVouchersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var isArchiveIncluded = true;  // bool? |  (optional) 
-
-            try
-            {
-                // Get all Dynamic Voucher Campaigns
-                List<WTDynamicVoucher> result = apiInstance.FetchAllDynamicVouchers(isArchiveIncluded);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchAllDynamicVouchers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchAllDynamicVouchersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get all Dynamic Voucher Campaigns
-    ApiResponse<List<WTDynamicVoucher>> response = apiInstance.FetchAllDynamicVouchersWithHttpInfo(isArchiveIncluded);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchAllDynamicVouchersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **isArchiveIncluded** | **bool?** |  | [optional]  |
-
-### Return type
-
-[**List&lt;WTDynamicVoucher&gt;**](WTDynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchdynamicvoucherbyid"></a>
-# **FetchDynamicVoucherById**
-> WTDynamicVoucher FetchDynamicVoucherById (string id)
-
-Get Dynamic Voucher Campaign
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchDynamicVoucherByIdExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
-
-            try
-            {
-                // Get Dynamic Voucher Campaign
-                WTDynamicVoucher result = apiInstance.FetchDynamicVoucherById(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherById: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchDynamicVoucherByIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get Dynamic Voucher Campaign
-    ApiResponse<WTDynamicVoucher> response = apiInstance.FetchDynamicVoucherByIdWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherByIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **string** |  |  |
-
-### Return type
-
-[**WTDynamicVoucher**](WTDynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchdynamicvoucherredemptions"></a>
-# **FetchDynamicVoucherRedemptions**
-> List&lt;WTDynamicVoucherRedemption&gt; FetchDynamicVoucherRedemptions (string id)
-
-Get Dynamic Voucher Campaign Redemptions
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchDynamicVoucherRedemptionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
-
-            try
-            {
-                // Get Dynamic Voucher Campaign Redemptions
-                List<WTDynamicVoucherRedemption> result = apiInstance.FetchDynamicVoucherRedemptions(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherRedemptions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchDynamicVoucherRedemptionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get Dynamic Voucher Campaign Redemptions
-    ApiResponse<List<WTDynamicVoucherRedemption>> response = apiInstance.FetchDynamicVoucherRedemptionsWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherRedemptionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **string** |  |  |
-
-### Return type
-
-[**List&lt;WTDynamicVoucherRedemption&gt;**](WTDynamicVoucherRedemption.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchdynamicvouchers"></a>
-# **FetchDynamicVouchers**
-> List&lt;DynamicVoucher&gt; FetchDynamicVouchers (bool? isArchiveIncluded = null)
-
-Get all dynamic vouchers
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchDynamicVouchersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var isArchiveIncluded = true;  // bool? |  (optional) 
-
-            try
-            {
-                // Get all dynamic vouchers
-                List<DynamicVoucher> result = apiInstance.FetchDynamicVouchers(isArchiveIncluded);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVouchers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchDynamicVouchersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get all dynamic vouchers
-    ApiResponse<List<DynamicVoucher>> response = apiInstance.FetchDynamicVouchersWithHttpInfo(isArchiveIncluded);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVouchersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **isArchiveIncluded** | **bool?** |  | [optional]  |
-
-### Return type
-
-[**List&lt;DynamicVoucher&gt;**](DynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchreachstatsofalldynamicvouchers"></a>
-# **FetchReachStatsOfAllDynamicVouchers**
-> ReachPerformanceStats FetchReachStatsOfAllDynamicVouchers (DateTime? broadcastScheduledStartAt = null, DateTime? broadcastScheduledEndAt = null)
-
-Get the reach statistics of all the dynamic vouchers
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchReachStatsOfAllDynamicVouchersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var broadcastScheduledStartAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var broadcastScheduledEndAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-
-            try
-            {
-                // Get the reach statistics of all the dynamic vouchers
-                ReachPerformanceStats result = apiInstance.FetchReachStatsOfAllDynamicVouchers(broadcastScheduledStartAt, broadcastScheduledEndAt);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfAllDynamicVouchers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchReachStatsOfAllDynamicVouchersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the reach statistics of all the dynamic vouchers
-    ApiResponse<ReachPerformanceStats> response = apiInstance.FetchReachStatsOfAllDynamicVouchersWithHttpInfo(broadcastScheduledStartAt, broadcastScheduledEndAt);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfAllDynamicVouchersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **broadcastScheduledStartAt** | **DateTime?** |  | [optional]  |
-| **broadcastScheduledEndAt** | **DateTime?** |  | [optional]  |
-
-### Return type
-
-[**ReachPerformanceStats**](ReachPerformanceStats.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchreachstatsofindividualdynamicvoucher"></a>
-# **FetchReachStatsOfIndividualDynamicVoucher**
-> ReachPerformanceStats FetchReachStatsOfIndividualDynamicVoucher (string dynamicVoucherID, DateTime? broadcastScheduledStartAt = null, DateTime? broadcastScheduledEndAt = null)
-
-Get the reach statistics of an individual dynamic voucher
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchReachStatsOfIndividualDynamicVoucherExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var dynamicVoucherID = "dynamicVoucherID_example";  // string | 
-            var broadcastScheduledStartAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var broadcastScheduledEndAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-
-            try
-            {
-                // Get the reach statistics of an individual dynamic voucher
-                ReachPerformanceStats result = apiInstance.FetchReachStatsOfIndividualDynamicVoucher(dynamicVoucherID, broadcastScheduledStartAt, broadcastScheduledEndAt);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfIndividualDynamicVoucher: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchReachStatsOfIndividualDynamicVoucherWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the reach statistics of an individual dynamic voucher
-    ApiResponse<ReachPerformanceStats> response = apiInstance.FetchReachStatsOfIndividualDynamicVoucherWithHttpInfo(dynamicVoucherID, broadcastScheduledStartAt, broadcastScheduledEndAt);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfIndividualDynamicVoucherWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **dynamicVoucherID** | **string** |  |  |
-| **broadcastScheduledStartAt** | **DateTime?** |  | [optional]  |
-| **broadcastScheduledEndAt** | **DateTime?** |  | [optional]  |
-
-### Return type
-
-[**ReachPerformanceStats**](ReachPerformanceStats.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="restoredynamicvouchercampaign"></a>
-# **RestoreDynamicVoucherCampaign**
-> DynamicVoucher RestoreDynamicVoucherCampaign (string campaignID)
-
-Restore Dynamic Voucher Campaign
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class RestoreDynamicVoucherCampaignExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var campaignID = "campaignID_example";  // string | 
-
-            try
-            {
-                // Restore Dynamic Voucher Campaign
-                DynamicVoucher result = apiInstance.RestoreDynamicVoucherCampaign(campaignID);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.RestoreDynamicVoucherCampaign: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RestoreDynamicVoucherCampaignWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Restore Dynamic Voucher Campaign
-    ApiResponse<DynamicVoucher> response = apiInstance.RestoreDynamicVoucherCampaignWithHttpInfo(campaignID);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.RestoreDynamicVoucherCampaignWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **campaignID** | **string** |  |  |
-
-### Return type
-
-[**DynamicVoucher**](DynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="savedynamicvoucher"></a>
-# **SaveDynamicVoucher**
-> WTDynamicVoucher SaveDynamicVoucher (string id, WTDynamicVoucherUpdateParams wTDynamicVoucherUpdateParams)
-
-Update Dynamic Voucher Campaign
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class SaveDynamicVoucherExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
-            var wTDynamicVoucherUpdateParams = new WTDynamicVoucherUpdateParams(); // WTDynamicVoucherUpdateParams | 
-
-            try
-            {
-                // Update Dynamic Voucher Campaign
-                WTDynamicVoucher result = apiInstance.SaveDynamicVoucher(id, wTDynamicVoucherUpdateParams);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.SaveDynamicVoucher: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SaveDynamicVoucherWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update Dynamic Voucher Campaign
-    ApiResponse<WTDynamicVoucher> response = apiInstance.SaveDynamicVoucherWithHttpInfo(id, wTDynamicVoucherUpdateParams);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.SaveDynamicVoucherWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **string** |  |  |
-| **wTDynamicVoucherUpdateParams** | [**WTDynamicVoucherUpdateParams**](WTDynamicVoucherUpdateParams.md) |  |  |
-
-### Return type
-
-[**WTDynamicVoucher**](WTDynamicVoucher.md)
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -980,9 +106,871 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
-| **409** | Duplicate Row Found |  -  |
 | **422** | Validation Failed |  -  |
-| **424** | Foreign Key does not exist |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createfile"></a>
+# **CreateFile**
+> CreateFile200Response CreateFile (WTEmployeeFileCreate wTEmployeeFileCreate)
+
+Create file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateFileExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var wTEmployeeFileCreate = new WTEmployeeFileCreate(); // WTEmployeeFileCreate | 
+
+            try
+            {
+                // Create file
+                CreateFile200Response result = apiInstance.CreateFile(wTEmployeeFileCreate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.CreateFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create file
+    ApiResponse<CreateFile200Response> response = apiInstance.CreateFileWithHttpInfo(wTEmployeeFileCreate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.CreateFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTEmployeeFileCreate** | [**WTEmployeeFileCreate**](WTEmployeeFileCreate.md) |  |  |
+
+### Return type
+
+[**CreateFile200Response**](CreateFile200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createmediafile"></a>
+# **CreateMediaFile**
+> MediaFile CreateMediaFile (WTEmployeeCreateMediaFile wTEmployeeCreateMediaFile)
+
+Create media file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateMediaFileExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var wTEmployeeCreateMediaFile = new WTEmployeeCreateMediaFile(); // WTEmployeeCreateMediaFile | 
+
+            try
+            {
+                // Create media file
+                MediaFile result = apiInstance.CreateMediaFile(wTEmployeeCreateMediaFile);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.CreateMediaFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateMediaFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create media file
+    ApiResponse<MediaFile> response = apiInstance.CreateMediaFileWithHttpInfo(wTEmployeeCreateMediaFile);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.CreateMediaFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTEmployeeCreateMediaFile** | [**WTEmployeeCreateMediaFile**](WTEmployeeCreateMediaFile.md) |  |  |
+
+### Return type
+
+[**MediaFile**](MediaFile.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deletedocument"></a>
+# **DeleteDocument**
+> Document DeleteDocument (string documentID)
+
+Delete document
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class DeleteDocumentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var documentID = "documentID_example";  // string | 
+
+            try
+            {
+                // Delete document
+                Document result = apiInstance.DeleteDocument(documentID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.DeleteDocument: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteDocumentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete document
+    ApiResponse<Document> response = apiInstance.DeleteDocumentWithHttpInfo(documentID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.DeleteDocumentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **documentID** | **string** |  |  |
+
+### Return type
+
+[**Document**](Document.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deletemediafile"></a>
+# **DeleteMediaFile**
+> MediaFile DeleteMediaFile (string mediaFileID)
+
+Delete media file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class DeleteMediaFileExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var mediaFileID = "mediaFileID_example";  // string | 
+
+            try
+            {
+                // Delete media file
+                MediaFile result = apiInstance.DeleteMediaFile(mediaFileID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.DeleteMediaFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteMediaFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete media file
+    ApiResponse<MediaFile> response = apiInstance.DeleteMediaFileWithHttpInfo(mediaFileID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.DeleteMediaFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **mediaFileID** | **string** |  |  |
+
+### Return type
+
+[**MediaFile**](MediaFile.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="downloadfile"></a>
+# **DownloadFile**
+> string DownloadFile (string fileID)
+
+Get URL for file download
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class DownloadFileExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var fileID = "fileID_example";  // string | 
+
+            try
+            {
+                // Get URL for file download
+                string result = apiInstance.DownloadFile(fileID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.DownloadFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DownloadFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get URL for file download
+    ApiResponse<string> response = apiInstance.DownloadFileWithHttpInfo(fileID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.DownloadFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **fileID** | **string** |  |  |
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="failedimport"></a>
+# **FailedImport**
+> string FailedImport (string fileID)
+
+Get URL to download a failed import
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FailedImportExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var fileID = "fileID_example";  // string | 
+
+            try
+            {
+                // Get URL to download a failed import
+                string result = apiInstance.FailedImport(fileID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.FailedImport: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FailedImportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get URL to download a failed import
+    ApiResponse<string> response = apiInstance.FailedImportWithHttpInfo(fileID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.FailedImportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **fileID** | **string** |  |  |
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchdocuments"></a>
+# **FetchDocuments**
+> List&lt;Document&gt; FetchDocuments (string? folder = null)
+
+Get all documents
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchDocumentsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var folder = "folder_example";  // string? |  (optional) 
+
+            try
+            {
+                // Get all documents
+                List<Document> result = apiInstance.FetchDocuments(folder);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.FetchDocuments: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchDocumentsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all documents
+    ApiResponse<List<Document>> response = apiInstance.FetchDocumentsWithHttpInfo(folder);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.FetchDocumentsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **folder** | **string?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;Document&gt;**](Document.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchmediafiles"></a>
+# **FetchMediaFiles**
+> List&lt;MediaFile&gt; FetchMediaFiles (string? folder = null)
+
+Get all media files
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchMediaFilesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var folder = "folder_example";  // string? |  (optional) 
+
+            try
+            {
+                // Get all media files
+                List<MediaFile> result = apiInstance.FetchMediaFiles(folder);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.FetchMediaFiles: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchMediaFilesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all media files
+    ApiResponse<List<MediaFile>> response = apiInstance.FetchMediaFilesWithHttpInfo(folder);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.FetchMediaFilesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **folder** | **string?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;MediaFile&gt;**](MediaFile.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="presignfile"></a>
+# **PresignFile**
+> PresignedPost PresignFile (WTEmployeeS3FilePresign wTEmployeeS3FilePresign)
+
+Presign file for upload
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class PresignFileExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new FilesDocumentsApi(httpClient, config, httpClientHandler);
+            var wTEmployeeS3FilePresign = new WTEmployeeS3FilePresign(); // WTEmployeeS3FilePresign | 
+
+            try
+            {
+                // Presign file for upload
+                PresignedPost result = apiInstance.PresignFile(wTEmployeeS3FilePresign);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FilesDocumentsApi.PresignFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PresignFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Presign file for upload
+    ApiResponse<PresignedPost> response = apiInstance.PresignFileWithHttpInfo(wTEmployeeS3FilePresign);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesDocumentsApi.PresignFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTEmployeeS3FilePresign** | [**WTEmployeeS3FilePresign**](WTEmployeeS3FilePresign.md) |  |  |
+
+### Return type
+
+[**PresignedPost**](PresignedPost.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
