@@ -25,333 +25,300 @@ namespace WalletInc.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IMerchantApiSync : IApiAccessor
+    public interface IImportExportApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Archive Merchant
+        /// Export club members
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        Object ArchiveMerchantProfile();
+        /// <returns>string</returns>
+        string ExportClubMembers();
 
         /// <summary>
-        /// Archive Merchant
+        /// Export club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ArchiveMerchantProfileWithHttpInfo();
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> ExportClubMembersWithHttpInfo();
         /// <summary>
-        /// Get custom roles
+        /// Export merchant credits
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        Object FetchCustomRoles();
+        /// <returns>string</returns>
+        string ExportMerchantCredits();
 
         /// <summary>
-        /// Get custom roles
+        /// Export merchant credits
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> FetchCustomRolesWithHttpInfo();
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> ExportMerchantCreditsWithHttpInfo();
         /// <summary>
-        /// Get all employees
+        /// Export static voucher campaign
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        Object FetchEmployees();
+        /// <param name="campaignID"></param>
+        /// <returns>string</returns>
+        string ExportStaticVoucherCampaign(string campaignID);
 
         /// <summary>
-        /// Get all employees
+        /// Export static voucher campaign
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> FetchEmployeesWithHttpInfo();
+        /// <param name="campaignID"></param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> ExportStaticVoucherCampaignWithHttpInfo(string campaignID);
         /// <summary>
-        /// Get public representative employees of the merchant
+        /// Import club members
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        Object FetchPublicEmployees();
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>string</returns>
+        string ImportClubMembers(WTEmployeeImportRecords wTEmployeeImportRecords);
 
         /// <summary>
-        /// Get public representative employees of the merchant
+        /// Import club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> FetchPublicEmployeesWithHttpInfo();
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> ImportClubMembersWithHttpInfo(WTEmployeeImportRecords wTEmployeeImportRecords);
         /// <summary>
-        /// Get wallet configuration
+        /// Import merchant credits
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        Object FetchWalletConfiguration();
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>string</returns>
+        string ImportMerchantCredits(WTEmployeeImportRecords wTEmployeeImportRecords);
 
         /// <summary>
-        /// Get wallet configuration
+        /// Import merchant credits
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> FetchWalletConfigurationWithHttpInfo();
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> ImportMerchantCreditsWithHttpInfo(WTEmployeeImportRecords wTEmployeeImportRecords);
         /// <summary>
-        /// Update merchant details
+        /// Mark export data files as read
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
-        /// <returns>Object</returns>
-        Object UpdateMerchant(WTMerchantUpdate wTMerchantUpdate);
+        /// <returns>bool</returns>
+        bool SetExportDataFilesRead();
 
         /// <summary>
-        /// Update merchant details
+        /// Mark export data files as read
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> UpdateMerchantWithHttpInfo(WTMerchantUpdate wTMerchantUpdate);
+        /// <returns>ApiResponse of bool</returns>
+        ApiResponse<bool> SetExportDataFilesReadWithHttpInfo();
         /// <summary>
-        /// Update points of contact
+        /// Update club members
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
-        /// <returns>Object</returns>
-        Object UpdatePointsOfContact(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact);
+        /// <param name="wTEmployeeUpdateRecords"></param>
+        /// <returns>string</returns>
+        string UpdateClubMembers(WTEmployeeUpdateRecords wTEmployeeUpdateRecords);
 
         /// <summary>
-        /// Update points of contact
+        /// Update club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> UpdatePointsOfContactWithHttpInfo(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact);
-        /// <summary>
-        /// Update POS Integration
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <returns>Object</returns>
-        Object UpdatePosIntegration(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration);
-
-        /// <summary>
-        /// Update POS Integration
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> UpdatePosIntegrationWithHttpInfo(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration);
+        /// <param name="wTEmployeeUpdateRecords"></param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> UpdateClubMembersWithHttpInfo(WTEmployeeUpdateRecords wTEmployeeUpdateRecords);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IMerchantApiAsync : IApiAccessor
+    public interface IImportExportApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Archive Merchant
+        /// Export club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ArchiveMerchantProfileAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> ExportClubMembersAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Archive Merchant
+        /// Export club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ArchiveMerchantProfileWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> ExportClubMembersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get custom roles
+        /// Export merchant credits
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> FetchCustomRolesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> ExportMerchantCreditsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get custom roles
+        /// Export merchant credits
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> FetchCustomRolesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> ExportMerchantCreditsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get all employees
+        /// Export static voucher campaign
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignID"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> FetchEmployeesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> ExportStaticVoucherCampaignAsync(string campaignID, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get all employees
+        /// Export static voucher campaign
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignID"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> FetchEmployeesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> ExportStaticVoucherCampaignWithHttpInfoAsync(string campaignID, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get public representative employees of the merchant
+        /// Import club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> FetchPublicEmployeesAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> ImportClubMembersAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get public representative employees of the merchant
+        /// Import club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> FetchPublicEmployeesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> ImportClubMembersWithHttpInfoAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get wallet configuration
+        /// Import merchant credits
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> FetchWalletConfigurationAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> ImportMerchantCreditsAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get wallet configuration
+        /// Import merchant credits
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> FetchWalletConfigurationWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> ImportMerchantCreditsWithHttpInfoAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update merchant details
+        /// Mark export data files as read
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> UpdateMerchantAsync(WTMerchantUpdate wTMerchantUpdate, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of bool</returns>
+        System.Threading.Tasks.Task<bool> SetExportDataFilesReadAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update merchant details
+        /// Mark export data files as read
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateMerchantWithHttpInfoAsync(WTMerchantUpdate wTMerchantUpdate, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (bool)</returns>
+        System.Threading.Tasks.Task<ApiResponse<bool>> SetExportDataFilesReadWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update points of contact
+        /// Update club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
+        /// <param name="wTEmployeeUpdateRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> UpdatePointsOfContactAsync(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> UpdateClubMembersAsync(WTEmployeeUpdateRecords wTEmployeeUpdateRecords, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update points of contact
+        /// Update club members
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
+        /// <param name="wTEmployeeUpdateRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePointsOfContactWithHttpInfoAsync(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Update POS Integration
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> UpdatePosIntegrationAsync(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update POS Integration
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePosIntegrationWithHttpInfoAsync(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> UpdateClubMembersWithHttpInfoAsync(WTEmployeeUpdateRecords wTEmployeeUpdateRecords, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IMerchantApi : IMerchantApiSync, IMerchantApiAsync
+    public interface IImportExportApi : IImportExportApiSync, IImportExportApiAsync
     {
 
     }
@@ -359,29 +326,29 @@ namespace WalletInc.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class MerchantApi : IDisposable, IMerchantApi
+    public partial class ImportExportApi : IDisposable, IImportExportApi
     {
         private WalletInc.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MerchantApi"/> class.
+        /// Initializes a new instance of the <see cref="ImportExportApi"/> class.
         /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <returns></returns>
-        public MerchantApi() : this((string)null)
+        public ImportExportApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MerchantApi"/> class.
+        /// Initializes a new instance of the <see cref="ImportExportApi"/> class.
         /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <param name="basePath">The target service's base path in URL format.</param>
         /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
-        public MerchantApi(string basePath)
+        public ImportExportApi(string basePath)
         {
             this.Configuration = WalletInc.Client.Configuration.MergeConfigurations(
                 WalletInc.Client.GlobalConfiguration.Instance,
@@ -394,14 +361,14 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MerchantApi"/> class using Configuration object.
+        /// Initializes a new instance of the <see cref="ImportExportApi"/> class using Configuration object.
         /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public MerchantApi(WalletInc.Client.Configuration configuration)
+        public ImportExportApi(WalletInc.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -416,7 +383,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MerchantApi"/> class.
+        /// Initializes a new instance of the <see cref="ImportExportApi"/> class.
         /// </summary>
         /// <param name="client">An instance of HttpClient.</param>
         /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
@@ -426,12 +393,12 @@ namespace WalletInc.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public MerchantApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        public ImportExportApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MerchantApi"/> class.
+        /// Initializes a new instance of the <see cref="ImportExportApi"/> class.
         /// </summary>
         /// <param name="client">An instance of HttpClient.</param>
         /// <param name="basePath">The target service's base path in URL format.</param>
@@ -443,7 +410,7 @@ namespace WalletInc.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public MerchantApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        public ImportExportApi(HttpClient client, string basePath, HttpClientHandler handler = null)
         {
             if (client == null) throw new ArgumentNullException("client");
 
@@ -458,7 +425,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MerchantApi"/> class using Configuration object.
+        /// Initializes a new instance of the <see cref="ImportExportApi"/> class using Configuration object.
         /// </summary>
         /// <param name="client">An instance of HttpClient.</param>
         /// <param name="configuration">An instance of Configuration.</param>
@@ -469,7 +436,7 @@ namespace WalletInc.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public MerchantApi(HttpClient client, WalletInc.Client.Configuration configuration, HttpClientHandler handler = null)
+        public ImportExportApi(HttpClient client, WalletInc.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
@@ -485,14 +452,14 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MerchantApi"/> class
+        /// Initializes a new instance of the <see cref="ImportExportApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public MerchantApi(WalletInc.Client.ISynchronousClient client, WalletInc.Client.IAsynchronousClient asyncClient, WalletInc.Client.IReadableConfiguration configuration)
+        public ImportExportApi(WalletInc.Client.ISynchronousClient client, WalletInc.Client.IAsynchronousClient asyncClient, WalletInc.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -559,22 +526,22 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Archive Merchant 
+        /// Export club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public Object ArchiveMerchantProfile()
+        /// <returns>string</returns>
+        public string ExportClubMembers()
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = ArchiveMerchantProfileWithHttpInfo();
+            WalletInc.Client.ApiResponse<string> localVarResponse = ExportClubMembersWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Archive Merchant 
+        /// Export club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> ArchiveMerchantProfileWithHttpInfo()
+        /// <returns>ApiResponse of string</returns>
+        public WalletInc.Client.ApiResponse<string> ExportClubMembersWithHttpInfo()
         {
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
@@ -595,11 +562,11 @@ namespace WalletInc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/v2/merchant/delete", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<string>("/v2/employee/export/members", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ArchiveMerchantProfile", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ExportClubMembers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -607,24 +574,24 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Archive Merchant 
+        /// Export club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ArchiveMerchantProfileAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> ExportClubMembersAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await ArchiveMerchantProfileWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<string> localVarResponse = await ExportClubMembersWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Archive Merchant 
+        /// Export club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> ArchiveMerchantProfileWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> ExportClubMembersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
@@ -648,11 +615,11 @@ namespace WalletInc.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v2/merchant/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<string>("/v2/employee/export/members", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ArchiveMerchantProfile", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ExportClubMembers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -660,22 +627,22 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get custom roles 
+        /// Export merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public Object FetchCustomRoles()
+        /// <returns>string</returns>
+        public string ExportMerchantCredits()
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = FetchCustomRolesWithHttpInfo();
+            WalletInc.Client.ApiResponse<string> localVarResponse = ExportMerchantCreditsWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get custom roles 
+        /// Export merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> FetchCustomRolesWithHttpInfo()
+        /// <returns>ApiResponse of string</returns>
+        public WalletInc.Client.ApiResponse<string> ExportMerchantCreditsWithHttpInfo()
         {
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
@@ -696,11 +663,11 @@ namespace WalletInc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v2/merchant/roles/custom", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<string>("/v2/employee/export/merchantCredits", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchCustomRoles", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ExportMerchantCredits", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -708,24 +675,24 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get custom roles 
+        /// Export merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> FetchCustomRolesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> ExportMerchantCreditsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await FetchCustomRolesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<string> localVarResponse = await ExportMerchantCreditsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get custom roles 
+        /// Export merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> FetchCustomRolesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> ExportMerchantCreditsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
@@ -749,11 +716,11 @@ namespace WalletInc.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v2/merchant/roles/custom", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<string>("/v2/employee/export/merchantCredits", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchCustomRoles", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ExportMerchantCredits", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -761,23 +728,29 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get all employees 
+        /// Export static voucher campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public Object FetchEmployees()
+        /// <param name="campaignID"></param>
+        /// <returns>string</returns>
+        public string ExportStaticVoucherCampaign(string campaignID)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = FetchEmployeesWithHttpInfo();
+            WalletInc.Client.ApiResponse<string> localVarResponse = ExportStaticVoucherCampaignWithHttpInfo(campaignID);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all employees 
+        /// Export static voucher campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> FetchEmployeesWithHttpInfo()
+        /// <param name="campaignID"></param>
+        /// <returns>ApiResponse of string</returns>
+        public WalletInc.Client.ApiResponse<string> ExportStaticVoucherCampaignWithHttpInfo(string campaignID)
         {
+            // verify the required parameter 'campaignID' is set
+            if (campaignID == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'campaignID' when calling ImportExportApi->ExportStaticVoucherCampaign");
+
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -794,14 +767,15 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            localVarRequestOptions.PathParameters.Add("campaignID", WalletInc.Client.ClientUtils.ParameterToString(campaignID)); // path parameter
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v2/merchant/employees/all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<string>("/v2/employee/export/staticVoucherCampaign/{campaignID}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchEmployees", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ExportStaticVoucherCampaign", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -809,25 +783,31 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get all employees 
+        /// Export static voucher campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignID"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> FetchEmployeesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> ExportStaticVoucherCampaignAsync(string campaignID, System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await FetchEmployeesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<string> localVarResponse = await ExportStaticVoucherCampaignWithHttpInfoAsync(campaignID, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all employees 
+        /// Export static voucher campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="campaignID"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> FetchEmployeesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> ExportStaticVoucherCampaignWithHttpInfoAsync(string campaignID, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'campaignID' is set
+            if (campaignID == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'campaignID' when calling ImportExportApi->ExportStaticVoucherCampaign");
+
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
@@ -846,15 +826,16 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            localVarRequestOptions.PathParameters.Add("campaignID", WalletInc.Client.ClientUtils.ParameterToString(campaignID)); // path parameter
 
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v2/merchant/employees/all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<string>("/v2/employee/export/staticVoucherCampaign/{campaignID}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchEmployees", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ExportStaticVoucherCampaign", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -862,26 +843,33 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get public representative employees of the merchant 
+        /// Import club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public Object FetchPublicEmployees()
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>string</returns>
+        public string ImportClubMembers(WTEmployeeImportRecords wTEmployeeImportRecords)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = FetchPublicEmployeesWithHttpInfo();
+            WalletInc.Client.ApiResponse<string> localVarResponse = ImportClubMembersWithHttpInfo(wTEmployeeImportRecords);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get public representative employees of the merchant 
+        /// Import club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> FetchPublicEmployeesWithHttpInfo()
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>ApiResponse of string</returns>
+        public WalletInc.Client.ApiResponse<string> ImportClubMembersWithHttpInfo(WTEmployeeImportRecords wTEmployeeImportRecords)
         {
+            // verify the required parameter 'wTEmployeeImportRecords' is set
+            if (wTEmployeeImportRecords == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeImportRecords' when calling ImportExportApi->ImportClubMembers");
+
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -895,14 +883,15 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            localVarRequestOptions.Data = wTEmployeeImportRecords;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v2/merchant/employees/public", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>("/v2/employee/import/members", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchPublicEmployees", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ImportClubMembers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -910,29 +899,36 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get public representative employees of the merchant 
+        /// Import club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> FetchPublicEmployeesAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> ImportClubMembersAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await FetchPublicEmployeesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<string> localVarResponse = await ImportClubMembersWithHttpInfoAsync(wTEmployeeImportRecords, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get public representative employees of the merchant 
+        /// Import club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> FetchPublicEmployeesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> ImportClubMembersWithHttpInfoAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'wTEmployeeImportRecords' is set
+            if (wTEmployeeImportRecords == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeImportRecords' when calling ImportExportApi->ImportClubMembers");
+
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -947,15 +943,16 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            localVarRequestOptions.Data = wTEmployeeImportRecords;
 
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v2/merchant/employees/public", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/v2/employee/import/members", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchPublicEmployees", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ImportClubMembers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -963,26 +960,33 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get wallet configuration 
+        /// Import merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Object</returns>
-        public Object FetchWalletConfiguration()
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>string</returns>
+        public string ImportMerchantCredits(WTEmployeeImportRecords wTEmployeeImportRecords)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = FetchWalletConfigurationWithHttpInfo();
+            WalletInc.Client.ApiResponse<string> localVarResponse = ImportMerchantCreditsWithHttpInfo(wTEmployeeImportRecords);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get wallet configuration 
+        /// Import merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> FetchWalletConfigurationWithHttpInfo()
+        /// <param name="wTEmployeeImportRecords"></param>
+        /// <returns>ApiResponse of string</returns>
+        public WalletInc.Client.ApiResponse<string> ImportMerchantCreditsWithHttpInfo(WTEmployeeImportRecords wTEmployeeImportRecords)
         {
+            // verify the required parameter 'wTEmployeeImportRecords' is set
+            if (wTEmployeeImportRecords == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeImportRecords' when calling ImportExportApi->ImportMerchantCredits");
+
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -996,14 +1000,15 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            localVarRequestOptions.Data = wTEmployeeImportRecords;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v2/merchant/wallet/configuration", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>("/v2/employee/import/merchantCredits", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchWalletConfiguration", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ImportMerchantCredits", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1011,29 +1016,36 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get wallet configuration 
+        /// Import merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> FetchWalletConfigurationAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> ImportMerchantCreditsAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await FetchWalletConfigurationWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<string> localVarResponse = await ImportMerchantCreditsWithHttpInfoAsync(wTEmployeeImportRecords, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get wallet configuration 
+        /// Import merchant credits 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTEmployeeImportRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> FetchWalletConfigurationWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> ImportMerchantCreditsWithHttpInfoAsync(WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'wTEmployeeImportRecords' is set
+            if (wTEmployeeImportRecords == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeImportRecords' when calling ImportExportApi->ImportMerchantCredits");
+
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1048,15 +1060,16 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            localVarRequestOptions.Data = wTEmployeeImportRecords;
 
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v2/merchant/wallet/configuration", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/v2/employee/import/merchantCredits", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FetchWalletConfiguration", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ImportMerchantCredits", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1064,33 +1077,26 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update merchant details 
+        /// Mark export data files as read 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
-        /// <returns>Object</returns>
-        public Object UpdateMerchant(WTMerchantUpdate wTMerchantUpdate)
+        /// <returns>bool</returns>
+        public bool SetExportDataFilesRead()
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = UpdateMerchantWithHttpInfo(wTMerchantUpdate);
+            WalletInc.Client.ApiResponse<bool> localVarResponse = SetExportDataFilesReadWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update merchant details 
+        /// Mark export data files as read 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> UpdateMerchantWithHttpInfo(WTMerchantUpdate wTMerchantUpdate)
+        /// <returns>ApiResponse of bool</returns>
+        public WalletInc.Client.ApiResponse<bool> SetExportDataFilesReadWithHttpInfo()
         {
-            // verify the required parameter 'wTMerchantUpdate' is set
-            if (wTMerchantUpdate == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTMerchantUpdate' when calling MerchantApi->UpdateMerchant");
-
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -1104,15 +1110,14 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = wTMerchantUpdate;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/v2/merchant", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<bool>("/v2/employee/export/dataFiles", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UpdateMerchant", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetExportDataFilesRead", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1120,36 +1125,29 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update merchant details 
+        /// Mark export data files as read 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> UpdateMerchantAsync(WTMerchantUpdate wTMerchantUpdate, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of bool</returns>
+        public async System.Threading.Tasks.Task<bool> SetExportDataFilesReadAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await UpdateMerchantWithHttpInfoAsync(wTMerchantUpdate, cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<bool> localVarResponse = await SetExportDataFilesReadWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update merchant details 
+        /// Mark export data files as read 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> UpdateMerchantWithHttpInfoAsync(WTMerchantUpdate wTMerchantUpdate, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (bool)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<bool>> SetExportDataFilesReadWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'wTMerchantUpdate' is set
-            if (wTMerchantUpdate == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTMerchantUpdate' when calling MerchantApi->UpdateMerchant");
-
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -1164,16 +1162,15 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = wTMerchantUpdate;
 
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/v2/merchant", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<bool>("/v2/employee/export/dataFiles", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UpdateMerchant", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetExportDataFilesRead", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1181,28 +1178,28 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update points of contact 
+        /// Update club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
-        /// <returns>Object</returns>
-        public Object UpdatePointsOfContact(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact)
+        /// <param name="wTEmployeeUpdateRecords"></param>
+        /// <returns>string</returns>
+        public string UpdateClubMembers(WTEmployeeUpdateRecords wTEmployeeUpdateRecords)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = UpdatePointsOfContactWithHttpInfo(wTMerchantUpdatePointsOfContact);
+            WalletInc.Client.ApiResponse<string> localVarResponse = UpdateClubMembersWithHttpInfo(wTEmployeeUpdateRecords);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update points of contact 
+        /// Update club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> UpdatePointsOfContactWithHttpInfo(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact)
+        /// <param name="wTEmployeeUpdateRecords"></param>
+        /// <returns>ApiResponse of string</returns>
+        public WalletInc.Client.ApiResponse<string> UpdateClubMembersWithHttpInfo(WTEmployeeUpdateRecords wTEmployeeUpdateRecords)
         {
-            // verify the required parameter 'wTMerchantUpdatePointsOfContact' is set
-            if (wTMerchantUpdatePointsOfContact == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTMerchantUpdatePointsOfContact' when calling MerchantApi->UpdatePointsOfContact");
+            // verify the required parameter 'wTEmployeeUpdateRecords' is set
+            if (wTEmployeeUpdateRecords == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeUpdateRecords' when calling ImportExportApi->UpdateClubMembers");
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
@@ -1221,15 +1218,15 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = wTMerchantUpdatePointsOfContact;
+            localVarRequestOptions.Data = wTEmployeeUpdateRecords;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/v2/merchant/pointsOfContact", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<string>("/v2/employee/update/members", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UpdatePointsOfContact", localVarResponse);
+                Exception _exception = this.ExceptionFactory("UpdateClubMembers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1237,30 +1234,30 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update points of contact 
+        /// Update club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
+        /// <param name="wTEmployeeUpdateRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> UpdatePointsOfContactAsync(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> UpdateClubMembersAsync(WTEmployeeUpdateRecords wTEmployeeUpdateRecords, System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await UpdatePointsOfContactWithHttpInfoAsync(wTMerchantUpdatePointsOfContact, cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<string> localVarResponse = await UpdateClubMembersWithHttpInfoAsync(wTEmployeeUpdateRecords, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update points of contact 
+        /// Update club members 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePointsOfContact"></param>
+        /// <param name="wTEmployeeUpdateRecords"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> UpdatePointsOfContactWithHttpInfoAsync(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> UpdateClubMembersWithHttpInfoAsync(WTEmployeeUpdateRecords wTEmployeeUpdateRecords, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'wTMerchantUpdatePointsOfContact' is set
-            if (wTMerchantUpdatePointsOfContact == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTMerchantUpdatePointsOfContact' when calling MerchantApi->UpdatePointsOfContact");
+            // verify the required parameter 'wTEmployeeUpdateRecords' is set
+            if (wTEmployeeUpdateRecords == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeUpdateRecords' when calling ImportExportApi->UpdateClubMembers");
 
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
@@ -1281,133 +1278,16 @@ namespace WalletInc.Api
             var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = wTMerchantUpdatePointsOfContact;
+            localVarRequestOptions.Data = wTEmployeeUpdateRecords;
 
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/v2/merchant/pointsOfContact", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<string>("/v2/employee/update/members", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UpdatePointsOfContact", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update POS Integration 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <returns>Object</returns>
-        public Object UpdatePosIntegration(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration)
-        {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = UpdatePosIntegrationWithHttpInfo(wTMerchantUpdatePOSIntegration);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update POS Integration 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <returns>ApiResponse of Object</returns>
-        public WalletInc.Client.ApiResponse<Object> UpdatePosIntegrationWithHttpInfo(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration)
-        {
-            // verify the required parameter 'wTMerchantUpdatePOSIntegration' is set
-            if (wTMerchantUpdatePOSIntegration == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTMerchantUpdatePOSIntegration' when calling MerchantApi->UpdatePosIntegration");
-
-            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = wTMerchantUpdatePOSIntegration;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/v2/merchant/pos/integration", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdatePosIntegration", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update POS Integration 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> UpdatePosIntegrationAsync(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration, System.Threading.CancellationToken cancellationToken = default)
-        {
-            WalletInc.Client.ApiResponse<Object> localVarResponse = await UpdatePosIntegrationWithHttpInfoAsync(wTMerchantUpdatePOSIntegration, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update POS Integration 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="wTMerchantUpdatePOSIntegration"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<Object>> UpdatePosIntegrationWithHttpInfoAsync(WTMerchantUpdatePOSIntegration wTMerchantUpdatePOSIntegration, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'wTMerchantUpdatePOSIntegration' is set
-            if (wTMerchantUpdatePOSIntegration == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTMerchantUpdatePOSIntegration' when calling MerchantApi->UpdatePosIntegration");
-
-
-            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = wTMerchantUpdatePOSIntegration;
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/v2/merchant/pos/integration", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdatePosIntegration", localVarResponse);
+                Exception _exception = this.ExceptionFactory("UpdateClubMembers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

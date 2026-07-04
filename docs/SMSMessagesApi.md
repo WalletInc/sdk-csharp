@@ -1,25 +1,25 @@
-# WalletInc.Api.DynamicVouchersApi
+# WalletInc.Api.SMSMessagesApi
 
 All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ArchiveDynamicVoucherCampaign**](DynamicVouchersApi.md#archivedynamicvouchercampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive Dynamic Voucher Campaign |
-| [**CreateDynamicVoucher**](DynamicVouchersApi.md#createdynamicvoucher) | **POST** /v2/payment/dynamicVoucher | Create Dynamic Voucher Campaign |
-| [**FetchAllDynamicVouchers**](DynamicVouchersApi.md#fetchalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns |
-| [**FetchDynamicVoucherById**](DynamicVouchersApi.md#fetchdynamicvoucherbyid) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign |
-| [**FetchDynamicVoucherRedemptions**](DynamicVouchersApi.md#fetchdynamicvoucherredemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions |
-| [**FetchDynamicVouchers**](DynamicVouchersApi.md#fetchdynamicvouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers |
-| [**FetchReachStatsOfAllDynamicVouchers**](DynamicVouchersApi.md#fetchreachstatsofalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers |
-| [**FetchReachStatsOfIndividualDynamicVoucher**](DynamicVouchersApi.md#fetchreachstatsofindividualdynamicvoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher |
-| [**RestoreDynamicVoucherCampaign**](DynamicVouchersApi.md#restoredynamicvouchercampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign |
-| [**SaveDynamicVoucher**](DynamicVouchersApi.md#savedynamicvoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update Dynamic Voucher Campaign |
+| [**CountInboundSMS**](SMSMessagesApi.md#countinboundsms) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes |
+| [**CountOutboundSMS**](SMSMessagesApi.md#countoutboundsms) | **GET** /v2/sms/outbound/count/{phoneNumberID} | Count outbound SMS |
+| [**ExportInboundMessages**](SMSMessagesApi.md#exportinboundmessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages |
+| [**ExportOutboundMessages**](SMSMessagesApi.md#exportoutboundmessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages |
+| [**FetchInboundSMS**](SMSMessagesApi.md#fetchinboundsms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes |
+| [**FetchInboundSMSByPage**](SMSMessagesApi.md#fetchinboundsmsbypage) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Get inbound SMSes by page |
+| [**FetchMerchantOutboundSMS**](SMSMessagesApi.md#fetchmerchantoutboundsms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes |
+| [**FetchOutboundSMS**](SMSMessagesApi.md#fetchoutboundsms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS |
+| [**FetchOutboundSMSByPage**](SMSMessagesApi.md#fetchoutboundsmsbypage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page |
+| [**RetrieveSentAndMaxCountOfMessages**](SMSMessagesApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the number of messages sent by the merchant within the current billing cycle |
 
-<a id="archivedynamicvouchercampaign"></a>
-# **ArchiveDynamicVoucherCampaign**
-> DynamicVoucher ArchiveDynamicVoucherCampaign (string campaignID)
+<a id="countinboundsms"></a>
+# **CountInboundSMS**
+> WTCountResult CountInboundSMS (string phoneNumberID, string? fromPhoneNumber = null, string? body = null, DateTime? startDate = null, DateTime? endDate = null)
 
-Archive Dynamic Voucher Campaign
+Count inbound SMSes
 
 ### Example
 ```csharp
@@ -32,7 +32,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class ArchiveDynamicVoucherCampaignExample
+    public class CountInboundSMSExample
     {
         public static void Main()
         {
@@ -41,18 +41,22 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var campaignID = "campaignID_example";  // string | 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var fromPhoneNumber = "fromPhoneNumber_example";  // string? |  (optional) 
+            var body = "body_example";  // string? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
-                // Archive Dynamic Voucher Campaign
-                DynamicVoucher result = apiInstance.ArchiveDynamicVoucherCampaign(campaignID);
+                // Count inbound SMSes
+                WTCountResult result = apiInstance.CountInboundSMS(phoneNumberID, fromPhoneNumber, body, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.ArchiveDynamicVoucherCampaign: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.CountInboundSMS: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -61,21 +65,21 @@ namespace Example
 }
 ```
 
-#### Using the ArchiveDynamicVoucherCampaignWithHttpInfo variant
+#### Using the CountInboundSMSWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Archive Dynamic Voucher Campaign
-    ApiResponse<DynamicVoucher> response = apiInstance.ArchiveDynamicVoucherCampaignWithHttpInfo(campaignID);
+    // Count inbound SMSes
+    ApiResponse<WTCountResult> response = apiInstance.CountInboundSMSWithHttpInfo(phoneNumberID, fromPhoneNumber, body, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.ArchiveDynamicVoucherCampaignWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.CountInboundSMSWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -85,11 +89,15 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **campaignID** | **string** |  |  |
+| **phoneNumberID** | **string** |  |  |
+| **fromPhoneNumber** | **string?** |  | [optional]  |
+| **body** | **string?** |  | [optional]  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
 
 ### Return type
 
-[**DynamicVoucher**](DynamicVoucher.md)
+[**WTCountResult**](WTCountResult.md)
 
 ### Authorization
 
@@ -111,109 +119,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createdynamicvoucher"></a>
-# **CreateDynamicVoucher**
-> WTDynamicVoucher CreateDynamicVoucher (WTDynamicVoucherCreateParams wTDynamicVoucherCreateParams)
+<a id="countoutboundsms"></a>
+# **CountOutboundSMS**
+> WTCountResult CountOutboundSMS (string phoneNumberID, string? toPhoneNumber = null, string? status = null, string? paymentObjectBroadcastID = null, DateTime? startDate = null, DateTime? endDate = null)
 
-Create Dynamic Voucher Campaign
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class CreateDynamicVoucherExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var wTDynamicVoucherCreateParams = new WTDynamicVoucherCreateParams(); // WTDynamicVoucherCreateParams | 
-
-            try
-            {
-                // Create Dynamic Voucher Campaign
-                WTDynamicVoucher result = apiInstance.CreateDynamicVoucher(wTDynamicVoucherCreateParams);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DynamicVouchersApi.CreateDynamicVoucher: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CreateDynamicVoucherWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create Dynamic Voucher Campaign
-    ApiResponse<WTDynamicVoucher> response = apiInstance.CreateDynamicVoucherWithHttpInfo(wTDynamicVoucherCreateParams);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DynamicVouchersApi.CreateDynamicVoucherWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **wTDynamicVoucherCreateParams** | [**WTDynamicVoucherCreateParams**](WTDynamicVoucherCreateParams.md) |  |  |
-
-### Return type
-
-[**WTDynamicVoucher**](WTDynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Created |  -  |
-| **401** | Authentication Failed |  -  |
-| **409** | Duplicate Row Found |  -  |
-| **422** | Validation Failed |  -  |
-| **424** | Merchant Not Initialized |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchalldynamicvouchers"></a>
-# **FetchAllDynamicVouchers**
-> List&lt;WTDynamicVoucher&gt; FetchAllDynamicVouchers (bool? isArchiveIncluded = null)
-
-Get all Dynamic Voucher Campaigns
+Count outbound SMS
 
 ### Example
 ```csharp
@@ -226,7 +136,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchAllDynamicVouchersExample
+    public class CountOutboundSMSExample
     {
         public static void Main()
         {
@@ -235,18 +145,23 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var isArchiveIncluded = true;  // bool? |  (optional) 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var toPhoneNumber = "toPhoneNumber_example";  // string? |  (optional) 
+            var status = "status_example";  // string? |  (optional) 
+            var paymentObjectBroadcastID = "paymentObjectBroadcastID_example";  // string? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
-                // Get all Dynamic Voucher Campaigns
-                List<WTDynamicVoucher> result = apiInstance.FetchAllDynamicVouchers(isArchiveIncluded);
+                // Count outbound SMS
+                WTCountResult result = apiInstance.CountOutboundSMS(phoneNumberID, toPhoneNumber, status, paymentObjectBroadcastID, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchAllDynamicVouchers: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.CountOutboundSMS: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -255,21 +170,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchAllDynamicVouchersWithHttpInfo variant
+#### Using the CountOutboundSMSWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get all Dynamic Voucher Campaigns
-    ApiResponse<List<WTDynamicVoucher>> response = apiInstance.FetchAllDynamicVouchersWithHttpInfo(isArchiveIncluded);
+    // Count outbound SMS
+    ApiResponse<WTCountResult> response = apiInstance.CountOutboundSMSWithHttpInfo(phoneNumberID, toPhoneNumber, status, paymentObjectBroadcastID, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchAllDynamicVouchersWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.CountOutboundSMSWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -279,11 +194,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **isArchiveIncluded** | **bool?** |  | [optional]  |
+| **phoneNumberID** | **string** |  |  |
+| **toPhoneNumber** | **string?** |  | [optional]  |
+| **status** | **string?** |  | [optional]  |
+| **paymentObjectBroadcastID** | **string?** |  | [optional]  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
 
 ### Return type
 
-[**List&lt;WTDynamicVoucher&gt;**](WTDynamicVoucher.md)
+[**WTCountResult**](WTCountResult.md)
 
 ### Authorization
 
@@ -305,11 +225,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchdynamicvoucherbyid"></a>
-# **FetchDynamicVoucherById**
-> WTDynamicVoucher FetchDynamicVoucherById (string id)
+<a id="exportinboundmessages"></a>
+# **ExportInboundMessages**
+> string ExportInboundMessages (string phoneNumberID, string locale)
 
-Get Dynamic Voucher Campaign
+Export inbound messages
 
 ### Example
 ```csharp
@@ -322,7 +242,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchDynamicVoucherByIdExample
+    public class ExportInboundMessagesExample
     {
         public static void Main()
         {
@@ -331,18 +251,19 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var locale = "locale_example";  // string | 
 
             try
             {
-                // Get Dynamic Voucher Campaign
-                WTDynamicVoucher result = apiInstance.FetchDynamicVoucherById(id);
+                // Export inbound messages
+                string result = apiInstance.ExportInboundMessages(phoneNumberID, locale);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherById: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.ExportInboundMessages: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -351,21 +272,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchDynamicVoucherByIdWithHttpInfo variant
+#### Using the ExportInboundMessagesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get Dynamic Voucher Campaign
-    ApiResponse<WTDynamicVoucher> response = apiInstance.FetchDynamicVoucherByIdWithHttpInfo(id);
+    // Export inbound messages
+    ApiResponse<string> response = apiInstance.ExportInboundMessagesWithHttpInfo(phoneNumberID, locale);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.ExportInboundMessagesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -375,11 +296,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **phoneNumberID** | **string** |  |  |
+| **locale** | **string** |  |  |
 
 ### Return type
 
-[**WTDynamicVoucher**](WTDynamicVoucher.md)
+**string**
 
 ### Authorization
 
@@ -401,11 +323,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchdynamicvoucherredemptions"></a>
-# **FetchDynamicVoucherRedemptions**
-> List&lt;WTDynamicVoucherRedemption&gt; FetchDynamicVoucherRedemptions (string id)
+<a id="exportoutboundmessages"></a>
+# **ExportOutboundMessages**
+> string ExportOutboundMessages (string phoneNumberID, string locale, string? paymentObjectBroadcastID = null)
 
-Get Dynamic Voucher Campaign Redemptions
+Export outbound messages
 
 ### Example
 ```csharp
@@ -418,7 +340,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchDynamicVoucherRedemptionsExample
+    public class ExportOutboundMessagesExample
     {
         public static void Main()
         {
@@ -427,18 +349,20 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var locale = "locale_example";  // string | 
+            var paymentObjectBroadcastID = "paymentObjectBroadcastID_example";  // string? |  (optional) 
 
             try
             {
-                // Get Dynamic Voucher Campaign Redemptions
-                List<WTDynamicVoucherRedemption> result = apiInstance.FetchDynamicVoucherRedemptions(id);
+                // Export outbound messages
+                string result = apiInstance.ExportOutboundMessages(phoneNumberID, locale, paymentObjectBroadcastID);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherRedemptions: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.ExportOutboundMessages: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -447,21 +371,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchDynamicVoucherRedemptionsWithHttpInfo variant
+#### Using the ExportOutboundMessagesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get Dynamic Voucher Campaign Redemptions
-    ApiResponse<List<WTDynamicVoucherRedemption>> response = apiInstance.FetchDynamicVoucherRedemptionsWithHttpInfo(id);
+    // Export outbound messages
+    ApiResponse<string> response = apiInstance.ExportOutboundMessagesWithHttpInfo(phoneNumberID, locale, paymentObjectBroadcastID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVoucherRedemptionsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.ExportOutboundMessagesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -471,11 +395,13 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **phoneNumberID** | **string** |  |  |
+| **locale** | **string** |  |  |
+| **paymentObjectBroadcastID** | **string?** |  | [optional]  |
 
 ### Return type
 
-[**List&lt;WTDynamicVoucherRedemption&gt;**](WTDynamicVoucherRedemption.md)
+**string**
 
 ### Authorization
 
@@ -497,11 +423,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchdynamicvouchers"></a>
-# **FetchDynamicVouchers**
-> List&lt;DynamicVoucher&gt; FetchDynamicVouchers (bool? isArchiveIncluded = null)
+<a id="fetchinboundsms"></a>
+# **FetchInboundSMS**
+> List&lt;InboundSMS&gt; FetchInboundSMS (string phoneNumberID, string? fromPhoneNumber = null)
 
-Get all dynamic vouchers
+Get inbound SMSes
 
 ### Example
 ```csharp
@@ -514,7 +440,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchDynamicVouchersExample
+    public class FetchInboundSMSExample
     {
         public static void Main()
         {
@@ -523,18 +449,19 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var isArchiveIncluded = true;  // bool? |  (optional) 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var fromPhoneNumber = "fromPhoneNumber_example";  // string? |  (optional) 
 
             try
             {
-                // Get all dynamic vouchers
-                List<DynamicVoucher> result = apiInstance.FetchDynamicVouchers(isArchiveIncluded);
+                // Get inbound SMSes
+                List<InboundSMS> result = apiInstance.FetchInboundSMS(phoneNumberID, fromPhoneNumber);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVouchers: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.FetchInboundSMS: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -543,21 +470,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchDynamicVouchersWithHttpInfo variant
+#### Using the FetchInboundSMSWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get all dynamic vouchers
-    ApiResponse<List<DynamicVoucher>> response = apiInstance.FetchDynamicVouchersWithHttpInfo(isArchiveIncluded);
+    // Get inbound SMSes
+    ApiResponse<List<InboundSMS>> response = apiInstance.FetchInboundSMSWithHttpInfo(phoneNumberID, fromPhoneNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchDynamicVouchersWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.FetchInboundSMSWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -567,11 +494,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **isArchiveIncluded** | **bool?** |  | [optional]  |
+| **phoneNumberID** | **string** |  |  |
+| **fromPhoneNumber** | **string?** |  | [optional]  |
 
 ### Return type
 
-[**List&lt;DynamicVoucher&gt;**](DynamicVoucher.md)
+[**List&lt;InboundSMS&gt;**](InboundSMS.md)
 
 ### Authorization
 
@@ -593,11 +521,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchreachstatsofalldynamicvouchers"></a>
-# **FetchReachStatsOfAllDynamicVouchers**
-> ReachPerformanceStats FetchReachStatsOfAllDynamicVouchers (DateTime? broadcastScheduledStartAt = null, DateTime? broadcastScheduledEndAt = null)
+<a id="fetchinboundsmsbypage"></a>
+# **FetchInboundSMSByPage**
+> FetchInboundSMSByPage200Response FetchInboundSMSByPage (string phoneNumberID, string? fromPhoneNumber = null, double? pageSize = null, double? pageNum = null, DateTime? startDate = null, DateTime? endDate = null)
 
-Get the reach statistics of all the dynamic vouchers
+Get inbound SMSes by page
 
 ### Example
 ```csharp
@@ -610,7 +538,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchReachStatsOfAllDynamicVouchersExample
+    public class FetchInboundSMSByPageExample
     {
         public static void Main()
         {
@@ -619,19 +547,23 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var broadcastScheduledStartAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var broadcastScheduledEndAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var fromPhoneNumber = "fromPhoneNumber_example";  // string? |  (optional) 
+            var pageSize = 1.2D;  // double? |  (optional) 
+            var pageNum = 1.2D;  // double? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
-                // Get the reach statistics of all the dynamic vouchers
-                ReachPerformanceStats result = apiInstance.FetchReachStatsOfAllDynamicVouchers(broadcastScheduledStartAt, broadcastScheduledEndAt);
+                // Get inbound SMSes by page
+                FetchInboundSMSByPage200Response result = apiInstance.FetchInboundSMSByPage(phoneNumberID, fromPhoneNumber, pageSize, pageNum, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfAllDynamicVouchers: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.FetchInboundSMSByPage: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -640,21 +572,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchReachStatsOfAllDynamicVouchersWithHttpInfo variant
+#### Using the FetchInboundSMSByPageWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get the reach statistics of all the dynamic vouchers
-    ApiResponse<ReachPerformanceStats> response = apiInstance.FetchReachStatsOfAllDynamicVouchersWithHttpInfo(broadcastScheduledStartAt, broadcastScheduledEndAt);
+    // Get inbound SMSes by page
+    ApiResponse<FetchInboundSMSByPage200Response> response = apiInstance.FetchInboundSMSByPageWithHttpInfo(phoneNumberID, fromPhoneNumber, pageSize, pageNum, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfAllDynamicVouchersWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.FetchInboundSMSByPageWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -664,12 +596,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **broadcastScheduledStartAt** | **DateTime?** |  | [optional]  |
-| **broadcastScheduledEndAt** | **DateTime?** |  | [optional]  |
+| **phoneNumberID** | **string** |  |  |
+| **fromPhoneNumber** | **string?** |  | [optional]  |
+| **pageSize** | **double?** |  | [optional]  |
+| **pageNum** | **double?** |  | [optional]  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
 
 ### Return type
 
-[**ReachPerformanceStats**](ReachPerformanceStats.md)
+[**FetchInboundSMSByPage200Response**](FetchInboundSMSByPage200Response.md)
 
 ### Authorization
 
@@ -691,11 +627,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchreachstatsofindividualdynamicvoucher"></a>
-# **FetchReachStatsOfIndividualDynamicVoucher**
-> ReachPerformanceStats FetchReachStatsOfIndividualDynamicVoucher (string dynamicVoucherID, DateTime? broadcastScheduledStartAt = null, DateTime? broadcastScheduledEndAt = null)
+<a id="fetchmerchantoutboundsms"></a>
+# **FetchMerchantOutboundSMS**
+> List&lt;OutboundSMS&gt; FetchMerchantOutboundSMS (string phoneNumberID, string toPhoneNumber)
 
-Get the reach statistics of an individual dynamic voucher
+Get outbound SMSes
 
 ### Example
 ```csharp
@@ -708,7 +644,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchReachStatsOfIndividualDynamicVoucherExample
+    public class FetchMerchantOutboundSMSExample
     {
         public static void Main()
         {
@@ -717,20 +653,19 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var dynamicVoucherID = "dynamicVoucherID_example";  // string | 
-            var broadcastScheduledStartAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var broadcastScheduledEndAt = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var toPhoneNumber = "toPhoneNumber_example";  // string | 
 
             try
             {
-                // Get the reach statistics of an individual dynamic voucher
-                ReachPerformanceStats result = apiInstance.FetchReachStatsOfIndividualDynamicVoucher(dynamicVoucherID, broadcastScheduledStartAt, broadcastScheduledEndAt);
+                // Get outbound SMSes
+                List<OutboundSMS> result = apiInstance.FetchMerchantOutboundSMS(phoneNumberID, toPhoneNumber);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfIndividualDynamicVoucher: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.FetchMerchantOutboundSMS: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -739,21 +674,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchReachStatsOfIndividualDynamicVoucherWithHttpInfo variant
+#### Using the FetchMerchantOutboundSMSWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get the reach statistics of an individual dynamic voucher
-    ApiResponse<ReachPerformanceStats> response = apiInstance.FetchReachStatsOfIndividualDynamicVoucherWithHttpInfo(dynamicVoucherID, broadcastScheduledStartAt, broadcastScheduledEndAt);
+    // Get outbound SMSes
+    ApiResponse<List<OutboundSMS>> response = apiInstance.FetchMerchantOutboundSMSWithHttpInfo(phoneNumberID, toPhoneNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.FetchReachStatsOfIndividualDynamicVoucherWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.FetchMerchantOutboundSMSWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -763,13 +698,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **dynamicVoucherID** | **string** |  |  |
-| **broadcastScheduledStartAt** | **DateTime?** |  | [optional]  |
-| **broadcastScheduledEndAt** | **DateTime?** |  | [optional]  |
+| **phoneNumberID** | **string** |  |  |
+| **toPhoneNumber** | **string** |  |  |
 
 ### Return type
 
-[**ReachPerformanceStats**](ReachPerformanceStats.md)
+[**List&lt;OutboundSMS&gt;**](OutboundSMS.md)
 
 ### Authorization
 
@@ -791,11 +725,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="restoredynamicvouchercampaign"></a>
-# **RestoreDynamicVoucherCampaign**
-> DynamicVoucher RestoreDynamicVoucherCampaign (string campaignID)
+<a id="fetchoutboundsms"></a>
+# **FetchOutboundSMS**
+> List&lt;OutboundSMS&gt; FetchOutboundSMS (string phoneNumberID, string? toPhoneNumber = null, string? status = null, string? paymentObjectBroadcastID = null)
 
-Restore Dynamic Voucher Campaign
+Get outbound SMS
 
 ### Example
 ```csharp
@@ -808,7 +742,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class RestoreDynamicVoucherCampaignExample
+    public class FetchOutboundSMSExample
     {
         public static void Main()
         {
@@ -817,18 +751,21 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var campaignID = "campaignID_example";  // string | 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var toPhoneNumber = "toPhoneNumber_example";  // string? |  (optional) 
+            var status = "status_example";  // string? |  (optional) 
+            var paymentObjectBroadcastID = "paymentObjectBroadcastID_example";  // string? |  (optional) 
 
             try
             {
-                // Restore Dynamic Voucher Campaign
-                DynamicVoucher result = apiInstance.RestoreDynamicVoucherCampaign(campaignID);
+                // Get outbound SMS
+                List<OutboundSMS> result = apiInstance.FetchOutboundSMS(phoneNumberID, toPhoneNumber, status, paymentObjectBroadcastID);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.RestoreDynamicVoucherCampaign: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.FetchOutboundSMS: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -837,21 +774,21 @@ namespace Example
 }
 ```
 
-#### Using the RestoreDynamicVoucherCampaignWithHttpInfo variant
+#### Using the FetchOutboundSMSWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Restore Dynamic Voucher Campaign
-    ApiResponse<DynamicVoucher> response = apiInstance.RestoreDynamicVoucherCampaignWithHttpInfo(campaignID);
+    // Get outbound SMS
+    ApiResponse<List<OutboundSMS>> response = apiInstance.FetchOutboundSMSWithHttpInfo(phoneNumberID, toPhoneNumber, status, paymentObjectBroadcastID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.RestoreDynamicVoucherCampaignWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.FetchOutboundSMSWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -861,11 +798,14 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **campaignID** | **string** |  |  |
+| **phoneNumberID** | **string** |  |  |
+| **toPhoneNumber** | **string?** |  | [optional]  |
+| **status** | **string?** |  | [optional]  |
+| **paymentObjectBroadcastID** | **string?** |  | [optional]  |
 
 ### Return type
 
-[**DynamicVoucher**](DynamicVoucher.md)
+[**List&lt;OutboundSMS&gt;**](OutboundSMS.md)
 
 ### Authorization
 
@@ -887,11 +827,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="savedynamicvoucher"></a>
-# **SaveDynamicVoucher**
-> WTDynamicVoucher SaveDynamicVoucher (string id, WTDynamicVoucherUpdateParams wTDynamicVoucherUpdateParams)
+<a id="fetchoutboundsmsbypage"></a>
+# **FetchOutboundSMSByPage**
+> FetchOutboundSMSByPage200Response FetchOutboundSMSByPage (string phoneNumberID, string? toPhoneNumber = null, string? paymentObjectBroadcastID = null, double? pageSize = null, double? pageNum = null, SSOutboundStatuses? status = null, DateTime? startDate = null, DateTime? endDate = null)
 
-Update Dynamic Voucher Campaign
+Get outbound SMSes by page
 
 ### Example
 ```csharp
@@ -904,7 +844,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class SaveDynamicVoucherExample
+    public class FetchOutboundSMSByPageExample
     {
         public static void Main()
         {
@@ -913,19 +853,25 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new DynamicVouchersApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
-            var wTDynamicVoucherUpdateParams = new WTDynamicVoucherUpdateParams(); // WTDynamicVoucherUpdateParams | 
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+            var toPhoneNumber = "toPhoneNumber_example";  // string? |  (optional) 
+            var paymentObjectBroadcastID = "paymentObjectBroadcastID_example";  // string? |  (optional) 
+            var pageSize = 1.2D;  // double? |  (optional) 
+            var pageNum = 1.2D;  // double? |  (optional) 
+            var status = new SSOutboundStatuses?(); // SSOutboundStatuses? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
-                // Update Dynamic Voucher Campaign
-                WTDynamicVoucher result = apiInstance.SaveDynamicVoucher(id, wTDynamicVoucherUpdateParams);
+                // Get outbound SMSes by page
+                FetchOutboundSMSByPage200Response result = apiInstance.FetchOutboundSMSByPage(phoneNumberID, toPhoneNumber, paymentObjectBroadcastID, pageSize, pageNum, status, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DynamicVouchersApi.SaveDynamicVoucher: " + e.Message);
+                Debug.Print("Exception when calling SMSMessagesApi.FetchOutboundSMSByPage: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -934,21 +880,21 @@ namespace Example
 }
 ```
 
-#### Using the SaveDynamicVoucherWithHttpInfo variant
+#### Using the FetchOutboundSMSByPageWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Update Dynamic Voucher Campaign
-    ApiResponse<WTDynamicVoucher> response = apiInstance.SaveDynamicVoucherWithHttpInfo(id, wTDynamicVoucherUpdateParams);
+    // Get outbound SMSes by page
+    ApiResponse<FetchOutboundSMSByPage200Response> response = apiInstance.FetchOutboundSMSByPageWithHttpInfo(phoneNumberID, toPhoneNumber, paymentObjectBroadcastID, pageSize, pageNum, status, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DynamicVouchersApi.SaveDynamicVoucherWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SMSMessagesApi.FetchOutboundSMSByPageWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -958,12 +904,18 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
-| **wTDynamicVoucherUpdateParams** | [**WTDynamicVoucherUpdateParams**](WTDynamicVoucherUpdateParams.md) |  |  |
+| **phoneNumberID** | **string** |  |  |
+| **toPhoneNumber** | **string?** |  | [optional]  |
+| **paymentObjectBroadcastID** | **string?** |  | [optional]  |
+| **pageSize** | **double?** |  | [optional]  |
+| **pageNum** | **double?** |  | [optional]  |
+| **status** | [**SSOutboundStatuses?**](SSOutboundStatuses?.md) |  | [optional]  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
 
 ### Return type
 
-[**WTDynamicVoucher**](WTDynamicVoucher.md)
+[**FetchOutboundSMSByPage200Response**](FetchOutboundSMSByPage200Response.md)
 
 ### Authorization
 
@@ -971,7 +923,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -980,9 +932,98 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
-| **409** | Duplicate Row Found |  -  |
 | **422** | Validation Failed |  -  |
-| **424** | Foreign Key does not exist |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="retrievesentandmaxcountofmessages"></a>
+# **RetrieveSentAndMaxCountOfMessages**
+> Object RetrieveSentAndMaxCountOfMessages ()
+
+Retrieve the number of messages sent by the merchant within the current billing cycle
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class RetrieveSentAndMaxCountOfMessagesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Retrieve the number of messages sent by the merchant within the current billing cycle
+                Object result = apiInstance.RetrieveSentAndMaxCountOfMessages();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SMSMessagesApi.RetrieveSentAndMaxCountOfMessages: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RetrieveSentAndMaxCountOfMessagesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve the number of messages sent by the merchant within the current billing cycle
+    ApiResponse<Object> response = apiInstance.RetrieveSentAndMaxCountOfMessagesWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SMSMessagesApi.RetrieveSentAndMaxCountOfMessagesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -1,30 +1,28 @@
-# WalletInc.Api.EmployeesApi
+# WalletInc.Api.ImportedListsApi
 
 All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AddPeerToRoles**](EmployeesApi.md#addpeertoroles) | **POST** /v2/employee/roles/peer/{userID} | Add peer to roles |
-| [**CreateEmployeePeer**](EmployeesApi.md#createemployeepeer) | **POST** /v2/employee/peer | Create employee peer |
-| [**FetchMerchant**](EmployeesApi.md#fetchmerchant) | **GET** /v2/employee/merchant | Create employee alert |
-| [**FetchMessages**](EmployeesApi.md#fetchmessages) | **GET** /v2/employee/messages/all | Get all messages |
-| [**FetchPeerActivity**](EmployeesApi.md#fetchpeeractivity) | **GET** /v2/employee/peer/activity/{employeeID} | Get peer activity |
-| [**FetchPeersPermissions**](EmployeesApi.md#fetchpeerspermissions) | **GET** /v2/employee/peer/permissions/{userID} | Get peer permissions |
-| [**FetchProfileInfo**](EmployeesApi.md#fetchprofileinfo) | **GET** /v2/employee | Get employee info |
-| [**LoadWebpagesOfEmployee**](EmployeesApi.md#loadwebpagesofemployee) | **GET** /v2/employee/webpages/all | Get employee&#39;s permissions |
-| [**ModifyPeersRoles**](EmployeesApi.md#modifypeersroles) | **PUT** /v2/employee/peer/permissions/{userID} | Modify peer&#39;s roles |
-| [**RemovePeerFromAllRoles**](EmployeesApi.md#removepeerfromallroles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles |
-| [**SetAlertsRead**](EmployeesApi.md#setalertsread) | **PATCH** /v2/employee/alerts | Mark alerts as read |
-| [**SetMessagesRead**](EmployeesApi.md#setmessagesread) | **PATCH** /v2/employee/messages | Mark messages as read |
-| [**SetProfilePicture**](EmployeesApi.md#setprofilepicture) | **PUT** /v2/employee/profile/picture | Set profile picture |
-| [**UpdateEmailNotificationPreference**](EmployeesApi.md#updateemailnotificationpreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled |
-| [**UpdateEmployeePeer**](EmployeesApi.md#updateemployeepeer) | **PUT** /v2/employee/peer/{userID} | Update peer |
+| [**ArchiveRecipient**](ImportedListsApi.md#archiverecipient) | **DELETE** /v2/sms/importedList/recipients/{id} | Archive recipient |
+| [**CountImportedListRecipients**](ImportedListsApi.md#countimportedlistrecipients) | **GET** /v2/sms/importedList/recipients/count/{listID} | Count imported list recipients |
+| [**CreateImportedList**](ImportedListsApi.md#createimportedlist) | **POST** /v2/sms/importedList | Create imported list |
+| [**CreateRecipientInImportedList**](ImportedListsApi.md#createrecipientinimportedlist) | **POST** /v2/sms/importedList/recipients/create | Add new recipient in an imported list |
+| [**ExportImportedListRecipients**](ImportedListsApi.md#exportimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/export/{importedListID} | Export imported list recipients |
+| [**FetchImportedList**](ImportedListsApi.md#fetchimportedlist) | **GET** /v2/merchant/lists/imported/{listID} | Get imported list |
+| [**FetchImportedListRecipients**](ImportedListsApi.md#fetchimportedlistrecipients) | **GET** /v2/sms/importedList/recipients/{listID} | Get imported list recipients |
+| [**FetchImportedListRecipientsByPage**](ImportedListsApi.md#fetchimportedlistrecipientsbypage) | **GET** /v2/sms/importedList/recipients/page/{listID} | Get imported list recipients by page |
+| [**FetchImportedLists**](ImportedListsApi.md#fetchimportedlists) | **GET** /v2/merchant/lists/imported/all | Get all imported lists |
+| [**ImportImportedListRecipients**](ImportedListsApi.md#importimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients |
+| [**ImportImportedListRecipientsFromMembershipTier**](ImportedListsApi.md#importimportedlistrecipientsfrommembershiptier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier |
+| [**RestoreRecipient**](ImportedListsApi.md#restorerecipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient |
+| [**SaveImportedList**](ImportedListsApi.md#saveimportedlist) | **PUT** /v2/sms/importedList/{listID} | Save imported list |
 
-<a id="addpeertoroles"></a>
-# **AddPeerToRoles**
-> string AddPeerToRoles (string userID, WTEmployeePeerRoles wTEmployeePeerRoles)
+<a id="archiverecipient"></a>
+# **ArchiveRecipient**
+> ImportedListRecipient ArchiveRecipient (string id)
 
-Add peer to roles
+Archive recipient
 
 ### Example
 ```csharp
@@ -37,7 +35,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class AddPeerToRolesExample
+    public class ArchiveRecipientExample
     {
         public static void Main()
         {
@@ -46,19 +44,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var userID = "userID_example";  // string | 
-            var wTEmployeePeerRoles = new WTEmployeePeerRoles(); // WTEmployeePeerRoles | 
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | 
 
             try
             {
-                // Add peer to roles
-                string result = apiInstance.AddPeerToRoles(userID, wTEmployeePeerRoles);
+                // Archive recipient
+                ImportedListRecipient result = apiInstance.ArchiveRecipient(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmployeesApi.AddPeerToRoles: " + e.Message);
+                Debug.Print("Exception when calling ImportedListsApi.ArchiveRecipient: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -67,21 +64,21 @@ namespace Example
 }
 ```
 
-#### Using the AddPeerToRolesWithHttpInfo variant
+#### Using the ArchiveRecipientWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Add peer to roles
-    ApiResponse<string> response = apiInstance.AddPeerToRolesWithHttpInfo(userID, wTEmployeePeerRoles);
+    // Archive recipient
+    ApiResponse<ImportedListRecipient> response = apiInstance.ArchiveRecipientWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmployeesApi.AddPeerToRolesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportedListsApi.ArchiveRecipientWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -91,8 +88,397 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **userID** | **string** |  |  |
-| **wTEmployeePeerRoles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md) |  |  |
+| **id** | **string** |  |  |
+
+### Return type
+
+[**ImportedListRecipient**](ImportedListRecipient.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="countimportedlistrecipients"></a>
+# **CountImportedListRecipients**
+> WTCountResult CountImportedListRecipients (string listID, bool? isArchiveIncluded = null, DateTime? startDate = null, DateTime? endDate = null)
+
+Count imported list recipients
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CountImportedListRecipientsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+
+            try
+            {
+                // Count imported list recipients
+                WTCountResult result = apiInstance.CountImportedListRecipients(listID, isArchiveIncluded, startDate, endDate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportedListsApi.CountImportedListRecipients: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CountImportedListRecipientsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Count imported list recipients
+    ApiResponse<WTCountResult> response = apiInstance.CountImportedListRecipientsWithHttpInfo(listID, isArchiveIncluded, startDate, endDate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportedListsApi.CountImportedListRecipientsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **listID** | **string** |  |  |
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
+
+### Return type
+
+[**WTCountResult**](WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createimportedlist"></a>
+# **CreateImportedList**
+> ImportedList CreateImportedList (WTSMSImportedListCreate wTSMSImportedListCreate)
+
+Create imported list
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateImportedListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var wTSMSImportedListCreate = new WTSMSImportedListCreate(); // WTSMSImportedListCreate | 
+
+            try
+            {
+                // Create imported list
+                ImportedList result = apiInstance.CreateImportedList(wTSMSImportedListCreate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportedListsApi.CreateImportedList: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateImportedListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create imported list
+    ApiResponse<ImportedList> response = apiInstance.CreateImportedListWithHttpInfo(wTSMSImportedListCreate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportedListsApi.CreateImportedListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTSMSImportedListCreate** | [**WTSMSImportedListCreate**](WTSMSImportedListCreate.md) |  |  |
+
+### Return type
+
+[**ImportedList**](ImportedList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createrecipientinimportedlist"></a>
+# **CreateRecipientInImportedList**
+> ImportedListRecipient CreateRecipientInImportedList (SSImportedListRecipientCreateParams sSImportedListRecipientCreateParams)
+
+Add new recipient in an imported list
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateRecipientInImportedListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var sSImportedListRecipientCreateParams = new SSImportedListRecipientCreateParams(); // SSImportedListRecipientCreateParams | 
+
+            try
+            {
+                // Add new recipient in an imported list
+                ImportedListRecipient result = apiInstance.CreateRecipientInImportedList(sSImportedListRecipientCreateParams);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportedListsApi.CreateRecipientInImportedList: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateRecipientInImportedListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add new recipient in an imported list
+    ApiResponse<ImportedListRecipient> response = apiInstance.CreateRecipientInImportedListWithHttpInfo(sSImportedListRecipientCreateParams);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportedListsApi.CreateRecipientInImportedListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sSImportedListRecipientCreateParams** | [**SSImportedListRecipientCreateParams**](SSImportedListRecipientCreateParams.md) |  |  |
+
+### Return type
+
+[**ImportedListRecipient**](ImportedListRecipient.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="exportimportedlistrecipients"></a>
+# **ExportImportedListRecipients**
+> string ExportImportedListRecipients (string importedListID)
+
+Export imported list recipients
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class ExportImportedListRecipientsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var importedListID = "importedListID_example";  // string | 
+
+            try
+            {
+                // Export imported list recipients
+                string result = apiInstance.ExportImportedListRecipients(importedListID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportedListsApi.ExportImportedListRecipients: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ExportImportedListRecipientsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Export imported list recipients
+    ApiResponse<string> response = apiInstance.ExportImportedListRecipientsWithHttpInfo(importedListID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportedListsApi.ExportImportedListRecipientsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **importedListID** | **string** |  |  |
 
 ### Return type
 
@@ -104,7 +490,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -118,11 +504,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createemployeepeer"></a>
-# **CreateEmployeePeer**
-> Employee CreateEmployeePeer (WTEmployeeCreate wTEmployeeCreate)
+<a id="fetchimportedlist"></a>
+# **FetchImportedList**
+> ImportedList FetchImportedList (string listID)
 
-Create employee peer
+Get imported list
 
 ### Example
 ```csharp
@@ -135,7 +521,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class CreateEmployeePeerExample
+    public class FetchImportedListExample
     {
         public static void Main()
         {
@@ -144,18 +530,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var wTEmployeeCreate = new WTEmployeeCreate(); // WTEmployeeCreate | 
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
 
             try
             {
-                // Create employee peer
-                Employee result = apiInstance.CreateEmployeePeer(wTEmployeeCreate);
+                // Get imported list
+                ImportedList result = apiInstance.FetchImportedList(listID);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmployeesApi.CreateEmployeePeer: " + e.Message);
+                Debug.Print("Exception when calling ImportedListsApi.FetchImportedList: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -164,21 +550,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateEmployeePeerWithHttpInfo variant
+#### Using the FetchImportedListWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create employee peer
-    ApiResponse<Employee> response = apiInstance.CreateEmployeePeerWithHttpInfo(wTEmployeeCreate);
+    // Get imported list
+    ApiResponse<ImportedList> response = apiInstance.FetchImportedListWithHttpInfo(listID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmployeesApi.CreateEmployeePeerWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportedListsApi.FetchImportedListWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -188,11 +574,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **wTEmployeeCreate** | [**WTEmployeeCreate**](WTEmployeeCreate.md) |  |  |
+| **listID** | **string** |  |  |
 
 ### Return type
 
-[**Employee**](Employee.md)
+[**ImportedList**](ImportedList.md)
 
 ### Authorization
 
@@ -200,7 +586,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -214,11 +600,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchmerchant"></a>
-# **FetchMerchant**
-> Object FetchMerchant ()
+<a id="fetchimportedlistrecipients"></a>
+# **FetchImportedListRecipients**
+> List&lt;ImportedListRecipient&gt; FetchImportedListRecipients (string listID)
 
-Create employee alert
+Get imported list recipients
 
 ### Example
 ```csharp
@@ -231,7 +617,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchMerchantExample
+    public class FetchImportedListRecipientsExample
     {
         public static void Main()
         {
@@ -240,17 +626,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
 
             try
             {
-                // Create employee alert
-                Object result = apiInstance.FetchMerchant();
+                // Get imported list recipients
+                List<ImportedListRecipient> result = apiInstance.FetchImportedListRecipients(listID);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmployeesApi.FetchMerchant: " + e.Message);
+                Debug.Print("Exception when calling ImportedListsApi.FetchImportedListRecipients: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -259,28 +646,230 @@ namespace Example
 }
 ```
 
-#### Using the FetchMerchantWithHttpInfo variant
+#### Using the FetchImportedListRecipientsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create employee alert
-    ApiResponse<Object> response = apiInstance.FetchMerchantWithHttpInfo();
+    // Get imported list recipients
+    ApiResponse<List<ImportedListRecipient>> response = apiInstance.FetchImportedListRecipientsWithHttpInfo(listID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmployeesApi.FetchMerchantWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportedListsApi.FetchImportedListRecipientsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **listID** | **string** |  |  |
+
+### Return type
+
+[**List&lt;ImportedListRecipient&gt;**](ImportedListRecipient.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchimportedlistrecipientsbypage"></a>
+# **FetchImportedListRecipientsByPage**
+> FetchImportedListRecipientsByPage200Response FetchImportedListRecipientsByPage (string listID, double? pageSize = null, double? pageNum = null, bool? isArchiveIncluded = null)
+
+Get imported list recipients by page
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchImportedListRecipientsByPageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var pageSize = 1.2D;  // double? |  (optional) 
+            var pageNum = 1.2D;  // double? |  (optional) 
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get imported list recipients by page
+                FetchImportedListRecipientsByPage200Response result = apiInstance.FetchImportedListRecipientsByPage(listID, pageSize, pageNum, isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportedListsApi.FetchImportedListRecipientsByPage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchImportedListRecipientsByPageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get imported list recipients by page
+    ApiResponse<FetchImportedListRecipientsByPage200Response> response = apiInstance.FetchImportedListRecipientsByPageWithHttpInfo(listID, pageSize, pageNum, isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportedListsApi.FetchImportedListRecipientsByPageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **listID** | **string** |  |  |
+| **pageSize** | **double?** |  | [optional]  |
+| **pageNum** | **double?** |  | [optional]  |
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+
+### Return type
+
+[**FetchImportedListRecipientsByPage200Response**](FetchImportedListRecipientsByPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchimportedlists"></a>
+# **FetchImportedLists**
+> Object FetchImportedLists (bool? isArchiveIncluded = null)
+
+Get all imported lists
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchImportedListsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get all imported lists
+                Object result = apiInstance.FetchImportedLists(isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportedListsApi.FetchImportedLists: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchImportedListsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all imported lists
+    ApiResponse<Object> response = apiInstance.FetchImportedListsWithHttpInfo(isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportedListsApi.FetchImportedListsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+
 ### Return type
 
 **Object**
@@ -305,102 +894,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchmessages"></a>
-# **FetchMessages**
-> List&lt;Message&gt; FetchMessages ()
+<a id="importimportedlistrecipients"></a>
+# **ImportImportedListRecipients**
+> string ImportImportedListRecipients (string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords)
 
-Get all messages
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchMessagesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Get all messages
-                List<Message> result = apiInstance.FetchMessages();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.FetchMessages: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchMessagesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get all messages
-    ApiResponse<List<Message>> response = apiInstance.FetchMessagesWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.FetchMessagesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**List&lt;Message&gt;**](Message.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchpeeractivity"></a>
-# **FetchPeerActivity**
-> List&lt;EmployeeActivityLog&gt; FetchPeerActivity (string employeeID)
-
-Get peer activity
+Import imported list recipients
 
 ### Example
 ```csharp
@@ -413,7 +911,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchPeerActivityExample
+    public class ImportImportedListRecipientsExample
     {
         public static void Main()
         {
@@ -422,18 +920,19 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var employeeID = "employeeID_example";  // string | 
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var importedListID = "importedListID_example";  // string | 
+            var wTEmployeeImportRecords = new WTEmployeeImportRecords(); // WTEmployeeImportRecords | 
 
             try
             {
-                // Get peer activity
-                List<EmployeeActivityLog> result = apiInstance.FetchPeerActivity(employeeID);
+                // Import imported list recipients
+                string result = apiInstance.ImportImportedListRecipients(importedListID, wTEmployeeImportRecords);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmployeesApi.FetchPeerActivity: " + e.Message);
+                Debug.Print("Exception when calling ImportedListsApi.ImportImportedListRecipients: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -442,21 +941,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchPeerActivityWithHttpInfo variant
+#### Using the ImportImportedListRecipientsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get peer activity
-    ApiResponse<List<EmployeeActivityLog>> response = apiInstance.FetchPeerActivityWithHttpInfo(employeeID);
+    // Import imported list recipients
+    ApiResponse<string> response = apiInstance.ImportImportedListRecipientsWithHttpInfo(importedListID, wTEmployeeImportRecords);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmployeesApi.FetchPeerActivityWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportedListsApi.ImportImportedListRecipientsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -466,757 +965,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **employeeID** | **string** |  |  |
-
-### Return type
-
-[**List&lt;EmployeeActivityLog&gt;**](EmployeeActivityLog.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchpeerspermissions"></a>
-# **FetchPeersPermissions**
-> List&lt;Object&gt; FetchPeersPermissions (string userID)
-
-Get peer permissions
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchPeersPermissionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var userID = "userID_example";  // string | 
-
-            try
-            {
-                // Get peer permissions
-                List<Object> result = apiInstance.FetchPeersPermissions(userID);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.FetchPeersPermissions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchPeersPermissionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get peer permissions
-    ApiResponse<List<Object>> response = apiInstance.FetchPeersPermissionsWithHttpInfo(userID);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.FetchPeersPermissionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **userID** | **string** |  |  |
-
-### Return type
-
-**List<Object>**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchprofileinfo"></a>
-# **FetchProfileInfo**
-> Employee FetchProfileInfo ()
-
-Get employee info
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchProfileInfoExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Get employee info
-                Employee result = apiInstance.FetchProfileInfo();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.FetchProfileInfo: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchProfileInfoWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get employee info
-    ApiResponse<Employee> response = apiInstance.FetchProfileInfoWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.FetchProfileInfoWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**Employee**](Employee.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="loadwebpagesofemployee"></a>
-# **LoadWebpagesOfEmployee**
-> List&lt;Webpage&gt; LoadWebpagesOfEmployee ()
-
-Get employee's permissions
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class LoadWebpagesOfEmployeeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Get employee's permissions
-                List<Webpage> result = apiInstance.LoadWebpagesOfEmployee();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.LoadWebpagesOfEmployee: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the LoadWebpagesOfEmployeeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get employee's permissions
-    ApiResponse<List<Webpage>> response = apiInstance.LoadWebpagesOfEmployeeWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.LoadWebpagesOfEmployeeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**List&lt;Webpage&gt;**](Webpage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="modifypeersroles"></a>
-# **ModifyPeersRoles**
-> List&lt;Object&gt; ModifyPeersRoles (string userID, WTEmployeePeerRoles wTEmployeePeerRoles)
-
-Modify peer's roles
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class ModifyPeersRolesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var userID = "userID_example";  // string | 
-            var wTEmployeePeerRoles = new WTEmployeePeerRoles(); // WTEmployeePeerRoles | 
-
-            try
-            {
-                // Modify peer's roles
-                List<Object> result = apiInstance.ModifyPeersRoles(userID, wTEmployeePeerRoles);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.ModifyPeersRoles: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ModifyPeersRolesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Modify peer's roles
-    ApiResponse<List<Object>> response = apiInstance.ModifyPeersRolesWithHttpInfo(userID, wTEmployeePeerRoles);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.ModifyPeersRolesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **userID** | **string** |  |  |
-| **wTEmployeePeerRoles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md) |  |  |
-
-### Return type
-
-**List<Object>**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="removepeerfromallroles"></a>
-# **RemovePeerFromAllRoles**
-> bool RemovePeerFromAllRoles (string userID)
-
-Remove peer from all roles
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class RemovePeerFromAllRolesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var userID = "userID_example";  // string | 
-
-            try
-            {
-                // Remove peer from all roles
-                bool result = apiInstance.RemovePeerFromAllRoles(userID);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.RemovePeerFromAllRoles: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RemovePeerFromAllRolesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove peer from all roles
-    ApiResponse<bool> response = apiInstance.RemovePeerFromAllRolesWithHttpInfo(userID);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.RemovePeerFromAllRolesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **userID** | **string** |  |  |
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="setalertsread"></a>
-# **SetAlertsRead**
-> bool SetAlertsRead ()
-
-Mark alerts as read
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class SetAlertsReadExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Mark alerts as read
-                bool result = apiInstance.SetAlertsRead();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.SetAlertsRead: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SetAlertsReadWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Mark alerts as read
-    ApiResponse<bool> response = apiInstance.SetAlertsReadWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.SetAlertsReadWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="setmessagesread"></a>
-# **SetMessagesRead**
-> bool SetMessagesRead ()
-
-Mark messages as read
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class SetMessagesReadExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Mark messages as read
-                bool result = apiInstance.SetMessagesRead();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.SetMessagesRead: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SetMessagesReadWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Mark messages as read
-    ApiResponse<bool> response = apiInstance.SetMessagesReadWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.SetMessagesReadWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="setprofilepicture"></a>
-# **SetProfilePicture**
-> string SetProfilePicture (WTEmployeeCreateMediaFile wTEmployeeCreateMediaFile)
-
-Set profile picture
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class SetProfilePictureExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var wTEmployeeCreateMediaFile = new WTEmployeeCreateMediaFile(); // WTEmployeeCreateMediaFile | 
-
-            try
-            {
-                // Set profile picture
-                string result = apiInstance.SetProfilePicture(wTEmployeeCreateMediaFile);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EmployeesApi.SetProfilePicture: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SetProfilePictureWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Set profile picture
-    ApiResponse<string> response = apiInstance.SetProfilePictureWithHttpInfo(wTEmployeeCreateMediaFile);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EmployeesApi.SetProfilePictureWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **wTEmployeeCreateMediaFile** | [**WTEmployeeCreateMediaFile**](WTEmployeeCreateMediaFile.md) |  |  |
+| **importedListID** | **string** |  |  |
+| **wTEmployeeImportRecords** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md) |  |  |
 
 ### Return type
 
@@ -1242,11 +992,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateemailnotificationpreference"></a>
-# **UpdateEmailNotificationPreference**
-> Employee UpdateEmailNotificationPreference (UpdateEmailNotificationPreferenceRequest updateEmailNotificationPreferenceRequest)
+<a id="importimportedlistrecipientsfrommembershiptier"></a>
+# **ImportImportedListRecipientsFromMembershipTier**
+> string ImportImportedListRecipientsFromMembershipTier (WTImportedListRecipientFromMembershipTierImport wTImportedListRecipientFromMembershipTierImport)
 
-Changes the employee's email notification preference to enabled or disabled
+Import imported list recipients from a given membership tier
 
 ### Example
 ```csharp
@@ -1259,7 +1009,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class UpdateEmailNotificationPreferenceExample
+    public class ImportImportedListRecipientsFromMembershipTierExample
     {
         public static void Main()
         {
@@ -1268,18 +1018,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var updateEmailNotificationPreferenceRequest = new UpdateEmailNotificationPreferenceRequest(); // UpdateEmailNotificationPreferenceRequest | 
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var wTImportedListRecipientFromMembershipTierImport = new WTImportedListRecipientFromMembershipTierImport(); // WTImportedListRecipientFromMembershipTierImport | 
 
             try
             {
-                // Changes the employee's email notification preference to enabled or disabled
-                Employee result = apiInstance.UpdateEmailNotificationPreference(updateEmailNotificationPreferenceRequest);
+                // Import imported list recipients from a given membership tier
+                string result = apiInstance.ImportImportedListRecipientsFromMembershipTier(wTImportedListRecipientFromMembershipTierImport);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmployeesApi.UpdateEmailNotificationPreference: " + e.Message);
+                Debug.Print("Exception when calling ImportedListsApi.ImportImportedListRecipientsFromMembershipTier: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1288,21 +1038,21 @@ namespace Example
 }
 ```
 
-#### Using the UpdateEmailNotificationPreferenceWithHttpInfo variant
+#### Using the ImportImportedListRecipientsFromMembershipTierWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Changes the employee's email notification preference to enabled or disabled
-    ApiResponse<Employee> response = apiInstance.UpdateEmailNotificationPreferenceWithHttpInfo(updateEmailNotificationPreferenceRequest);
+    // Import imported list recipients from a given membership tier
+    ApiResponse<string> response = apiInstance.ImportImportedListRecipientsFromMembershipTierWithHttpInfo(wTImportedListRecipientFromMembershipTierImport);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmployeesApi.UpdateEmailNotificationPreferenceWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportedListsApi.ImportImportedListRecipientsFromMembershipTierWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1312,11 +1062,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **updateEmailNotificationPreferenceRequest** | [**UpdateEmailNotificationPreferenceRequest**](UpdateEmailNotificationPreferenceRequest.md) |  |  |
+| **wTImportedListRecipientFromMembershipTierImport** | [**WTImportedListRecipientFromMembershipTierImport**](WTImportedListRecipientFromMembershipTierImport.md) |  |  |
 
 ### Return type
 
-[**Employee**](Employee.md)
+**string**
 
 ### Authorization
 
@@ -1338,11 +1088,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updateemployeepeer"></a>
-# **UpdateEmployeePeer**
-> Employee UpdateEmployeePeer (string userID, WTEmployeeUpdate wTEmployeeUpdate)
+<a id="restorerecipient"></a>
+# **RestoreRecipient**
+> ImportedListRecipient RestoreRecipient (string id)
 
-Update peer
+Restore recipient
 
 ### Example
 ```csharp
@@ -1355,7 +1105,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class UpdateEmployeePeerExample
+    public class RestoreRecipientExample
     {
         public static void Main()
         {
@@ -1364,19 +1114,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
-            var userID = "userID_example";  // string | 
-            var wTEmployeeUpdate = new WTEmployeeUpdate(); // WTEmployeeUpdate | 
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | 
 
             try
             {
-                // Update peer
-                Employee result = apiInstance.UpdateEmployeePeer(userID, wTEmployeeUpdate);
+                // Restore recipient
+                ImportedListRecipient result = apiInstance.RestoreRecipient(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmployeesApi.UpdateEmployeePeer: " + e.Message);
+                Debug.Print("Exception when calling ImportedListsApi.RestoreRecipient: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1385,21 +1134,21 @@ namespace Example
 }
 ```
 
-#### Using the UpdateEmployeePeerWithHttpInfo variant
+#### Using the RestoreRecipientWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Update peer
-    ApiResponse<Employee> response = apiInstance.UpdateEmployeePeerWithHttpInfo(userID, wTEmployeeUpdate);
+    // Restore recipient
+    ApiResponse<ImportedListRecipient> response = apiInstance.RestoreRecipientWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmployeesApi.UpdateEmployeePeerWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ImportedListsApi.RestoreRecipientWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1409,12 +1158,109 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **userID** | **string** |  |  |
-| **wTEmployeeUpdate** | [**WTEmployeeUpdate**](WTEmployeeUpdate.md) |  |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
-[**Employee**](Employee.md)
+[**ImportedListRecipient**](ImportedListRecipient.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="saveimportedlist"></a>
+# **SaveImportedList**
+> ImportedList SaveImportedList (string listID, WTSMSImportedListCreate wTSMSImportedListCreate)
+
+Save imported list
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class SaveImportedListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var wTSMSImportedListCreate = new WTSMSImportedListCreate(); // WTSMSImportedListCreate | 
+
+            try
+            {
+                // Save imported list
+                ImportedList result = apiInstance.SaveImportedList(listID, wTSMSImportedListCreate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ImportedListsApi.SaveImportedList: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SaveImportedListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Save imported list
+    ApiResponse<ImportedList> response = apiInstance.SaveImportedListWithHttpInfo(listID, wTSMSImportedListCreate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ImportedListsApi.SaveImportedListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **listID** | **string** |  |  |
+| **wTSMSImportedListCreate** | [**WTSMSImportedListCreate**](WTSMSImportedListCreate.md) |  |  |
+
+### Return type
+
+[**ImportedList**](ImportedList.md)
 
 ### Authorization
 

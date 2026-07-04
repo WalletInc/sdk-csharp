@@ -1,131 +1,33 @@
-# WalletInc.Api.InteractionsApi
+# WalletInc.Api.OptInListsApi
 
 All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ClaimTicket**](InteractionsApi.md#claimticket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID |
-| [**CreateAdvertisementCreditScan**](InteractionsApi.md#createadvertisementcreditscan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan |
-| [**CreateEmployeeVCard**](InteractionsApi.md#createemployeevcard) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card |
-| [**CreateIcsFile**](InteractionsApi.md#createicsfile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
-| [**CreateVirtualBusinessCardVCard**](InteractionsApi.md#createvirtualbusinesscardvcard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
-| [**FetchActiveDynamicVouchers**](InteractionsApi.md#fetchactivedynamicvouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers |
-| [**FetchAdvertisementCreditScansFromList**](InteractionsApi.md#fetchadvertisementcreditscansfromlist) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs |
-| [**FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID**](InteractionsApi.md#fetchallstaticvouchersassociatedwithcustomerwithvoucherid) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
-| [**FetchCustomerTicketsWithToken**](InteractionsApi.md#fetchcustomerticketswithtoken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token |
-| [**FetchDynamicVoucherWithVoucherID**](InteractionsApi.md#fetchdynamicvoucherwithvoucherid) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
-| [**FetchMemberInformation**](InteractionsApi.md#fetchmemberinformation) | **GET** /wallet/member | Get member information |
-| [**FetchStaticVoucherWithVoucherID**](InteractionsApi.md#fetchstaticvoucherwithvoucherid) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
-| [**FetchWalletPageWithToken**](InteractionsApi.md#fetchwalletpagewithtoken) | **POST** /wallet/page/token | Get page (token-scoped) |
-| [**FetchWalletPaymentObjectsWithToken**](InteractionsApi.md#fetchwalletpaymentobjectswithtoken) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped) |
-| [**FindByVanityHandle**](InteractionsApi.md#findbyvanityhandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
-| [**IdentifyItem**](InteractionsApi.md#identifyitem) | **GET** /wallet/item/identify/{itemID} | Identify item |
-| [**RequestMerchantURLRedirect**](InteractionsApi.md#requestmerchanturlredirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
-| [**SubscribeEmail**](InteractionsApi.md#subscribeemail) | **POST** /wallet/subscribeEmail | Create email subscriber |
-| [**SubscribeSms**](InteractionsApi.md#subscribesms) | **POST** /wallet/subscribeSms | Create sms subscriber |
+| [**CountOptInListSubscribers**](OptInListsApi.md#countoptinlistsubscribers) | **GET** /v2/sms/optInList/subscribers/count/{listID} | Count opt in list subscribers |
+| [**CountOptInSourceSubscribers**](OptInListsApi.md#countoptinsourcesubscribers) | **GET** /v2/sms/optInSource/subscribers/count/{sourceID} | Count opt in source subscribers |
+| [**CreateOptInList**](OptInListsApi.md#createoptinlist) | **POST** /v2/sms/optInList | Create opt in list |
+| [**CreateOptInListSource**](OptInListsApi.md#createoptinlistsource) | **POST** /v2/sms/optInListSource | Send SMS to opt in list |
+| [**ExportOptInListSubscribers**](OptInListsApi.md#exportoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/export/{listID} | Export opt in list subscribers |
+| [**FetchOptInList**](OptInListsApi.md#fetchoptinlist) | **GET** /v2/merchant/lists/optIn/{listID} | Get opt in list |
+| [**FetchOptInListSource**](OptInListsApi.md#fetchoptinlistsource) | **GET** /v2/employee/optInListSource/{sourceID} | Get opt in list source |
+| [**FetchOptInListSources**](OptInListsApi.md#fetchoptinlistsources) | **GET** /v2/sms/optInListSources/all | Get all opt in list sources |
+| [**FetchOptInListSourcesCreatedByEmployee**](OptInListsApi.md#fetchoptinlistsourcescreatedbyemployee) | **GET** /v2/employee/optInListSources/all | Get all opt in list sources |
+| [**FetchOptInListSubscribers**](OptInListsApi.md#fetchoptinlistsubscribers) | **GET** /v2/sms/optInList/subscribers/{listID} | Get opt in list subscribers |
+| [**FetchOptInListSubscribersByPage**](OptInListsApi.md#fetchoptinlistsubscribersbypage) | **GET** /v2/sms/optInList/subscribers/page/{listID} | Get opt in list subscribers by page |
+| [**FetchOptInLists**](OptInListsApi.md#fetchoptinlists) | **GET** /v2/merchant/lists/optIn/all | Get all opt in lists |
+| [**FetchOptInListsAssociatedWithPhoneNumber**](OptInListsApi.md#fetchoptinlistsassociatedwithphonenumber) | **GET** /v2/sms/phoneNumber/lists/{phoneNumberID} | Get opt in lists |
+| [**FetchOptInSourceSubscribers**](OptInListsApi.md#fetchoptinsourcesubscribers) | **GET** /v2/sms/optInSource/subscribers/{sourceID} | Get opt in source subscribers |
+| [**FetchOptInSourcesAssociatedWithPhoneNumber**](OptInListsApi.md#fetchoptinsourcesassociatedwithphonenumber) | **GET** /v2/sms/phoneNumber/sources/{phoneNumberID} | Get opt in sources |
+| [**ImportOptInListSubscribers**](OptInListsApi.md#importoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers |
+| [**SaveOptInList**](OptInListsApi.md#saveoptinlist) | **PUT** /v2/sms/optInList/{listID} | Save opt in list |
+| [**SaveOptInListSource**](OptInListsApi.md#saveoptinlistsource) | **PUT** /v2/sms/optInListSource/{sourceID} | Save opt in list source |
 
-<a id="claimticket"></a>
-# **ClaimTicket**
-> Ticket ClaimTicket (string id, ClaimTicketRequest claimTicketRequest)
+<a id="countoptinlistsubscribers"></a>
+# **CountOptInListSubscribers**
+> WTCountResult CountOptInListSubscribers (string listID, bool? isSubscribed = null, bool? isPendingAge21Verification = null, bool? isArchiveIncluded = null, DateTime? startDate = null, DateTime? endDate = null)
 
-Claim a ticket by ID
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class ClaimTicketExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
-            var claimTicketRequest = new ClaimTicketRequest(); // ClaimTicketRequest | 
-
-            try
-            {
-                // Claim a ticket by ID
-                Ticket result = apiInstance.ClaimTicket(id, claimTicketRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.ClaimTicket: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ClaimTicketWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Claim a ticket by ID
-    ApiResponse<Ticket> response = apiInstance.ClaimTicketWithHttpInfo(id, claimTicketRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.ClaimTicketWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **string** |  |  |
-| **claimTicketRequest** | [**ClaimTicketRequest**](ClaimTicketRequest.md) |  |  |
-
-### Return type
-
-[**Ticket**](Ticket.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="createadvertisementcreditscan"></a>
-# **CreateAdvertisementCreditScan**
-> AdvertisementCreditScan CreateAdvertisementCreditScan (string adCreditID)
-
-Create ad credit scan
+Count opt in list subscribers
 
 ### Example
 ```csharp
@@ -138,7 +40,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class CreateAdvertisementCreditScanExample
+    public class CountOptInListSubscribersExample
     {
         public static void Main()
         {
@@ -147,18 +49,23 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var adCreditID = "adCreditID_example";  // string | 
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var isSubscribed = true;  // bool? |  (optional) 
+            var isPendingAge21Verification = true;  // bool? |  (optional) 
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
-                // Create ad credit scan
-                AdvertisementCreditScan result = apiInstance.CreateAdvertisementCreditScan(adCreditID);
+                // Count opt in list subscribers
+                WTCountResult result = apiInstance.CountOptInListSubscribers(listID, isSubscribed, isPendingAge21Verification, isArchiveIncluded, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InteractionsApi.CreateAdvertisementCreditScan: " + e.Message);
+                Debug.Print("Exception when calling OptInListsApi.CountOptInListSubscribers: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -167,21 +74,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateAdvertisementCreditScanWithHttpInfo variant
+#### Using the CountOptInListSubscribersWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create ad credit scan
-    ApiResponse<AdvertisementCreditScan> response = apiInstance.CreateAdvertisementCreditScanWithHttpInfo(adCreditID);
+    // Count opt in list subscribers
+    ApiResponse<WTCountResult> response = apiInstance.CountOptInListSubscribersWithHttpInfo(listID, isSubscribed, isPendingAge21Verification, isArchiveIncluded, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InteractionsApi.CreateAdvertisementCreditScanWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OptInListsApi.CountOptInListSubscribersWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -191,11 +98,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **adCreditID** | **string** |  |  |
+| **listID** | **string** |  |  |
+| **isSubscribed** | **bool?** |  | [optional]  |
+| **isPendingAge21Verification** | **bool?** |  | [optional]  |
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
 
 ### Return type
 
-[**AdvertisementCreditScan**](AdvertisementCreditScan.md)
+[**WTCountResult**](WTCountResult.md)
 
 ### Authorization
 
@@ -211,16 +123,17 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createemployeevcard"></a>
-# **CreateEmployeeVCard**
-> string CreateEmployeeVCard (string id)
+<a id="countoptinsourcesubscribers"></a>
+# **CountOptInSourceSubscribers**
+> WTCountResult CountOptInSourceSubscribers (string sourceID, bool? isSubscribed = null, bool? isPendingAge21Verification = null, bool? isArchiveIncluded = null, DateTime? startDate = null, DateTime? endDate = null)
 
-Download a representative's Virtual Business Card
+Count opt in source subscribers
 
 ### Example
 ```csharp
@@ -233,7 +146,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class CreateEmployeeVCardExample
+    public class CountOptInSourceSubscribersExample
     {
         public static void Main()
         {
@@ -242,18 +155,23 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var sourceID = "sourceID_example";  // string | 
+            var isSubscribed = true;  // bool? |  (optional) 
+            var isPendingAge21Verification = true;  // bool? |  (optional) 
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
-                // Download a representative's Virtual Business Card
-                string result = apiInstance.CreateEmployeeVCard(id);
+                // Count opt in source subscribers
+                WTCountResult result = apiInstance.CountOptInSourceSubscribers(sourceID, isSubscribed, isPendingAge21Verification, isArchiveIncluded, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InteractionsApi.CreateEmployeeVCard: " + e.Message);
+                Debug.Print("Exception when calling OptInListsApi.CountOptInSourceSubscribers: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -262,21 +180,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateEmployeeVCardWithHttpInfo variant
+#### Using the CountOptInSourceSubscribersWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Download a representative's Virtual Business Card
-    ApiResponse<string> response = apiInstance.CreateEmployeeVCardWithHttpInfo(id);
+    // Count opt in source subscribers
+    ApiResponse<WTCountResult> response = apiInstance.CountOptInSourceSubscribersWithHttpInfo(sourceID, isSubscribed, isPendingAge21Verification, isArchiveIncluded, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InteractionsApi.CreateEmployeeVCardWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OptInListsApi.CountOptInSourceSubscribersWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -286,7 +204,300 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **sourceID** | **string** |  |  |
+| **isSubscribed** | **bool?** |  | [optional]  |
+| **isPendingAge21Verification** | **bool?** |  | [optional]  |
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
+
+### Return type
+
+[**WTCountResult**](WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createoptinlist"></a>
+# **CreateOptInList**
+> OptInList CreateOptInList (WTOptInListCreationParams wTOptInListCreationParams)
+
+Create opt in list
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateOptInListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var wTOptInListCreationParams = new WTOptInListCreationParams(); // WTOptInListCreationParams | 
+
+            try
+            {
+                // Create opt in list
+                OptInList result = apiInstance.CreateOptInList(wTOptInListCreationParams);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.CreateOptInList: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateOptInListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create opt in list
+    ApiResponse<OptInList> response = apiInstance.CreateOptInListWithHttpInfo(wTOptInListCreationParams);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.CreateOptInListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTOptInListCreationParams** | [**WTOptInListCreationParams**](WTOptInListCreationParams.md) |  |  |
+
+### Return type
+
+[**OptInList**](OptInList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createoptinlistsource"></a>
+# **CreateOptInListSource**
+> OptInListSource CreateOptInListSource (WTSMSOptInListSourceCreate wTSMSOptInListSourceCreate)
+
+Send SMS to opt in list
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateOptInListSourceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var wTSMSOptInListSourceCreate = new WTSMSOptInListSourceCreate(); // WTSMSOptInListSourceCreate | 
+
+            try
+            {
+                // Send SMS to opt in list
+                OptInListSource result = apiInstance.CreateOptInListSource(wTSMSOptInListSourceCreate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.CreateOptInListSource: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateOptInListSourceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Send SMS to opt in list
+    ApiResponse<OptInListSource> response = apiInstance.CreateOptInListSourceWithHttpInfo(wTSMSOptInListSourceCreate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.CreateOptInListSourceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTSMSOptInListSourceCreate** | [**WTSMSOptInListSourceCreate**](WTSMSOptInListSourceCreate.md) |  |  |
+
+### Return type
+
+[**OptInListSource**](OptInListSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="exportoptinlistsubscribers"></a>
+# **ExportOptInListSubscribers**
+> string ExportOptInListSubscribers (string listID)
+
+Export opt in list subscribers
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class ExportOptInListSubscribersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+
+            try
+            {
+                // Export opt in list subscribers
+                string result = apiInstance.ExportOptInListSubscribers(listID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.ExportOptInListSubscribers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ExportOptInListSubscribersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Export opt in list subscribers
+    ApiResponse<string> response = apiInstance.ExportOptInListSubscribersWithHttpInfo(listID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.ExportOptInListSubscribersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **listID** | **string** |  |  |
 
 ### Return type
 
@@ -306,16 +517,17 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createicsfile"></a>
-# **CreateIcsFile**
-> Object CreateIcsFile (string id)
+<a id="fetchoptinlist"></a>
+# **FetchOptInList**
+> OptInList FetchOptInList (string listID)
 
-Get ICS for live event
+Get opt in list
 
 ### Example
 ```csharp
@@ -328,7 +540,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class CreateIcsFileExample
+    public class FetchOptInListExample
     {
         public static void Main()
         {
@@ -337,18 +549,18 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
 
             try
             {
-                // Get ICS for live event
-                Object result = apiInstance.CreateIcsFile(id);
+                // Get opt in list
+                OptInList result = apiInstance.FetchOptInList(listID);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InteractionsApi.CreateIcsFile: " + e.Message);
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInList: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -357,21 +569,21 @@ namespace Example
 }
 ```
 
-#### Using the CreateIcsFileWithHttpInfo variant
+#### Using the FetchOptInListWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get ICS for live event
-    ApiResponse<Object> response = apiInstance.CreateIcsFileWithHttpInfo(id);
+    // Get opt in list
+    ApiResponse<OptInList> response = apiInstance.FetchOptInListWithHttpInfo(listID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InteractionsApi.CreateIcsFileWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -381,7 +593,199 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **listID** | **string** |  |  |
+
+### Return type
+
+[**OptInList**](OptInList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinlistsource"></a>
+# **FetchOptInListSource**
+> OptInListSource FetchOptInListSource (string sourceID)
+
+Get opt in list source
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInListSourceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var sourceID = "sourceID_example";  // string | 
+
+            try
+            {
+                // Get opt in list source
+                OptInListSource result = apiInstance.FetchOptInListSource(sourceID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInListSource: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInListSourceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get opt in list source
+    ApiResponse<OptInListSource> response = apiInstance.FetchOptInListSourceWithHttpInfo(sourceID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListSourceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sourceID** | **string** |  |  |
+
+### Return type
+
+[**OptInListSource**](OptInListSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinlistsources"></a>
+# **FetchOptInListSources**
+> Object FetchOptInListSources (bool? isArchiveIncluded = null)
+
+Get all opt in list sources
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInListSourcesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get all opt in list sources
+                Object result = apiInstance.FetchOptInListSources(isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInListSources: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInListSourcesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all opt in list sources
+    ApiResponse<Object> response = apiInstance.FetchOptInListSourcesWithHttpInfo(isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListSourcesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
 
 ### Return type
 
@@ -401,16 +805,17 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createvirtualbusinesscardvcard"></a>
-# **CreateVirtualBusinessCardVCard**
-> string CreateVirtualBusinessCardVCard (string id)
+<a id="fetchoptinlistsourcescreatedbyemployee"></a>
+# **FetchOptInListSourcesCreatedByEmployee**
+> List&lt;OptInListSource&gt; FetchOptInListSourcesCreatedByEmployee ()
 
-Download a non-representative's Virtual Business Card
+Get all opt in list sources
 
 ### Example
 ```csharp
@@ -423,7 +828,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class CreateVirtualBusinessCardVCardExample
+    public class FetchOptInListSourcesCreatedByEmployeeExample
     {
         public static void Main()
         {
@@ -432,18 +837,17 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | 
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
 
             try
             {
-                // Download a non-representative's Virtual Business Card
-                string result = apiInstance.CreateVirtualBusinessCardVCard(id);
+                // Get all opt in list sources
+                List<OptInListSource> result = apiInstance.FetchOptInListSourcesCreatedByEmployee();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InteractionsApi.CreateVirtualBusinessCardVCard: " + e.Message);
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInListSourcesCreatedByEmployee: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -452,21 +856,116 @@ namespace Example
 }
 ```
 
-#### Using the CreateVirtualBusinessCardVCardWithHttpInfo variant
+#### Using the FetchOptInListSourcesCreatedByEmployeeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Download a non-representative's Virtual Business Card
-    ApiResponse<string> response = apiInstance.CreateVirtualBusinessCardVCardWithHttpInfo(id);
+    // Get all opt in list sources
+    ApiResponse<List<OptInListSource>> response = apiInstance.FetchOptInListSourcesCreatedByEmployeeWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InteractionsApi.CreateVirtualBusinessCardVCardWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListSourcesCreatedByEmployeeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**List&lt;OptInListSource&gt;**](OptInListSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinlistsubscribers"></a>
+# **FetchOptInListSubscribers**
+> List&lt;OptInListSubscriber&gt; FetchOptInListSubscribers (string listID, bool? isSubscribed = null, bool? isPendingAge21Verification = null, bool? isArchiveIncluded = null)
+
+Get opt in list subscribers
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInListSubscribersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var isSubscribed = true;  // bool? |  (optional) 
+            var isPendingAge21Verification = true;  // bool? |  (optional) 
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get opt in list subscribers
+                List<OptInListSubscriber> result = apiInstance.FetchOptInListSubscribers(listID, isSubscribed, isPendingAge21Verification, isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInListSubscribers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInListSubscribersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get opt in list subscribers
+    ApiResponse<List<OptInListSubscriber>> response = apiInstance.FetchOptInListSubscribersWithHttpInfo(listID, isSubscribed, isPendingAge21Verification, isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListSubscribersWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -476,7 +975,604 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **listID** | **string** |  |  |
+| **isSubscribed** | **bool?** |  | [optional]  |
+| **isPendingAge21Verification** | **bool?** |  | [optional]  |
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;OptInListSubscriber&gt;**](OptInListSubscriber.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinlistsubscribersbypage"></a>
+# **FetchOptInListSubscribersByPage**
+> FetchOptInListSubscribersByPage200Response FetchOptInListSubscribersByPage (string listID, double? pageSize = null, double? pageNum = null, bool? isSubscribed = null, bool? isPendingAge21Verification = null, bool? isArchiveIncluded = null)
+
+Get opt in list subscribers by page
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInListSubscribersByPageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var pageSize = 1.2D;  // double? |  (optional) 
+            var pageNum = 1.2D;  // double? |  (optional) 
+            var isSubscribed = true;  // bool? |  (optional) 
+            var isPendingAge21Verification = true;  // bool? |  (optional) 
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get opt in list subscribers by page
+                FetchOptInListSubscribersByPage200Response result = apiInstance.FetchOptInListSubscribersByPage(listID, pageSize, pageNum, isSubscribed, isPendingAge21Verification, isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInListSubscribersByPage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInListSubscribersByPageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get opt in list subscribers by page
+    ApiResponse<FetchOptInListSubscribersByPage200Response> response = apiInstance.FetchOptInListSubscribersByPageWithHttpInfo(listID, pageSize, pageNum, isSubscribed, isPendingAge21Verification, isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListSubscribersByPageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **listID** | **string** |  |  |
+| **pageSize** | **double?** |  | [optional]  |
+| **pageNum** | **double?** |  | [optional]  |
+| **isSubscribed** | **bool?** |  | [optional]  |
+| **isPendingAge21Verification** | **bool?** |  | [optional]  |
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+
+### Return type
+
+[**FetchOptInListSubscribersByPage200Response**](FetchOptInListSubscribersByPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinlists"></a>
+# **FetchOptInLists**
+> Object FetchOptInLists (bool? isArchiveIncluded = null)
+
+Get all opt in lists
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInListsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get all opt in lists
+                Object result = apiInstance.FetchOptInLists(isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInLists: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInListsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all opt in lists
+    ApiResponse<Object> response = apiInstance.FetchOptInListsWithHttpInfo(isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinlistsassociatedwithphonenumber"></a>
+# **FetchOptInListsAssociatedWithPhoneNumber**
+> List&lt;OptInList&gt; FetchOptInListsAssociatedWithPhoneNumber (string phoneNumberID)
+
+Get opt in lists
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInListsAssociatedWithPhoneNumberExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+
+            try
+            {
+                // Get opt in lists
+                List<OptInList> result = apiInstance.FetchOptInListsAssociatedWithPhoneNumber(phoneNumberID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInListsAssociatedWithPhoneNumber: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInListsAssociatedWithPhoneNumberWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get opt in lists
+    ApiResponse<List<OptInList>> response = apiInstance.FetchOptInListsAssociatedWithPhoneNumberWithHttpInfo(phoneNumberID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInListsAssociatedWithPhoneNumberWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **phoneNumberID** | **string** |  |  |
+
+### Return type
+
+[**List&lt;OptInList&gt;**](OptInList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinsourcesubscribers"></a>
+# **FetchOptInSourceSubscribers**
+> List&lt;OptInListSubscriber&gt; FetchOptInSourceSubscribers (string sourceID, bool? isSubscribed = null, bool? isPendingAge21Verification = null, bool? isArchiveIncluded = null)
+
+Get opt in source subscribers
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInSourceSubscribersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var sourceID = "sourceID_example";  // string | 
+            var isSubscribed = true;  // bool? |  (optional) 
+            var isPendingAge21Verification = true;  // bool? |  (optional) 
+            var isArchiveIncluded = true;  // bool? |  (optional) 
+
+            try
+            {
+                // Get opt in source subscribers
+                List<OptInListSubscriber> result = apiInstance.FetchOptInSourceSubscribers(sourceID, isSubscribed, isPendingAge21Verification, isArchiveIncluded);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInSourceSubscribers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInSourceSubscribersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get opt in source subscribers
+    ApiResponse<List<OptInListSubscriber>> response = apiInstance.FetchOptInSourceSubscribersWithHttpInfo(sourceID, isSubscribed, isPendingAge21Verification, isArchiveIncluded);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInSourceSubscribersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sourceID** | **string** |  |  |
+| **isSubscribed** | **bool?** |  | [optional]  |
+| **isPendingAge21Verification** | **bool?** |  | [optional]  |
+| **isArchiveIncluded** | **bool?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;OptInListSubscriber&gt;**](OptInListSubscriber.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchoptinsourcesassociatedwithphonenumber"></a>
+# **FetchOptInSourcesAssociatedWithPhoneNumber**
+> List&lt;OptInListSource&gt; FetchOptInSourcesAssociatedWithPhoneNumber (string phoneNumberID)
+
+Get opt in sources
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOptInSourcesAssociatedWithPhoneNumberExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var phoneNumberID = "phoneNumberID_example";  // string | 
+
+            try
+            {
+                // Get opt in sources
+                List<OptInListSource> result = apiInstance.FetchOptInSourcesAssociatedWithPhoneNumber(phoneNumberID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.FetchOptInSourcesAssociatedWithPhoneNumber: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOptInSourcesAssociatedWithPhoneNumberWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get opt in sources
+    ApiResponse<List<OptInListSource>> response = apiInstance.FetchOptInSourcesAssociatedWithPhoneNumberWithHttpInfo(phoneNumberID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.FetchOptInSourcesAssociatedWithPhoneNumberWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **phoneNumberID** | **string** |  |  |
+
+### Return type
+
+[**List&lt;OptInListSource&gt;**](OptInListSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="importoptinlistsubscribers"></a>
+# **ImportOptInListSubscribers**
+> string ImportOptInListSubscribers (string listID, WTSMSImportOptInListSubscribers wTSMSImportOptInListSubscribers)
+
+Import opt in list subscribers
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class ImportOptInListSubscribersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var wTSMSImportOptInListSubscribers = new WTSMSImportOptInListSubscribers(); // WTSMSImportOptInListSubscribers | 
+
+            try
+            {
+                // Import opt in list subscribers
+                string result = apiInstance.ImportOptInListSubscribers(listID, wTSMSImportOptInListSubscribers);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OptInListsApi.ImportOptInListSubscribers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ImportOptInListSubscribersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Import opt in list subscribers
+    ApiResponse<string> response = apiInstance.ImportOptInListSubscribersWithHttpInfo(listID, wTSMSImportOptInListSubscribers);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OptInListsApi.ImportOptInListSubscribersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **listID** | **string** |  |  |
+| **wTSMSImportOptInListSubscribers** | [**WTSMSImportOptInListSubscribers**](WTSMSImportOptInListSubscribers.md) |  |  |
 
 ### Return type
 
@@ -488,7 +1584,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -496,16 +1592,17 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchactivedynamicvouchers"></a>
-# **FetchActiveDynamicVouchers**
-> List&lt;DynamicVoucher&gt; FetchActiveDynamicVouchers (string merchantID)
+<a id="saveoptinlist"></a>
+# **SaveOptInList**
+> OptInList SaveOptInList (string listID, WTOptInListCreationParams wTOptInListCreationParams)
 
-Get a merchant's active dynamic vouchers
+Save opt in list
 
 ### Example
 ```csharp
@@ -518,7 +1615,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchActiveDynamicVouchersExample
+    public class SaveOptInListExample
     {
         public static void Main()
         {
@@ -527,18 +1624,19 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var merchantID = "merchantID_example";  // string | 
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var listID = "listID_example";  // string | 
+            var wTOptInListCreationParams = new WTOptInListCreationParams(); // WTOptInListCreationParams | 
 
             try
             {
-                // Get a merchant's active dynamic vouchers
-                List<DynamicVoucher> result = apiInstance.FetchActiveDynamicVouchers(merchantID);
+                // Save opt in list
+                OptInList result = apiInstance.SaveOptInList(listID, wTOptInListCreationParams);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InteractionsApi.FetchActiveDynamicVouchers: " + e.Message);
+                Debug.Print("Exception when calling OptInListsApi.SaveOptInList: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -547,21 +1645,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchActiveDynamicVouchersWithHttpInfo variant
+#### Using the SaveOptInListWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get a merchant's active dynamic vouchers
-    ApiResponse<List<DynamicVoucher>> response = apiInstance.FetchActiveDynamicVouchersWithHttpInfo(merchantID);
+    // Save opt in list
+    ApiResponse<OptInList> response = apiInstance.SaveOptInListWithHttpInfo(listID, wTOptInListCreationParams);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InteractionsApi.FetchActiveDynamicVouchersWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OptInListsApi.SaveOptInListWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -571,108 +1669,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **merchantID** | **string** |  |  |
+| **listID** | **string** |  |  |
+| **wTOptInListCreationParams** | [**WTOptInListCreationParams**](WTOptInListCreationParams.md) |  |  |
 
 ### Return type
 
-[**List&lt;DynamicVoucher&gt;**](DynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchadvertisementcreditscansfromlist"></a>
-# **FetchAdvertisementCreditScansFromList**
-> List&lt;Object&gt; FetchAdvertisementCreditScansFromList (string merchantID, FetchAdvertisementCreditScansFromListRequest fetchAdvertisementCreditScansFromListRequest)
-
-Get multiple credit scans w/ array of IDs
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchAdvertisementCreditScansFromListExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var merchantID = "merchantID_example";  // string | 
-            var fetchAdvertisementCreditScansFromListRequest = new FetchAdvertisementCreditScansFromListRequest(); // FetchAdvertisementCreditScansFromListRequest | 
-
-            try
-            {
-                // Get multiple credit scans w/ array of IDs
-                List<Object> result = apiInstance.FetchAdvertisementCreditScansFromList(merchantID, fetchAdvertisementCreditScansFromListRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FetchAdvertisementCreditScansFromList: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchAdvertisementCreditScansFromListWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get multiple credit scans w/ array of IDs
-    ApiResponse<List<Object>> response = apiInstance.FetchAdvertisementCreditScansFromListWithHttpInfo(merchantID, fetchAdvertisementCreditScansFromListRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FetchAdvertisementCreditScansFromListWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **merchantID** | **string** |  |  |
-| **fetchAdvertisementCreditScansFromListRequest** | [**FetchAdvertisementCreditScansFromListRequest**](FetchAdvertisementCreditScansFromListRequest.md) |  |  |
-
-### Return type
-
-**List<Object>**
+[**OptInList**](OptInList.md)
 
 ### Authorization
 
@@ -688,16 +1690,17 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchallstaticvouchersassociatedwithcustomerwithvoucherid"></a>
-# **FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID**
-> List&lt;FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner&gt; FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID (string voucherID)
+<a id="saveoptinlistsource"></a>
+# **SaveOptInListSource**
+> OptInListSource SaveOptInListSource (string sourceID, WTSMSOptInListSourceCreate wTSMSOptInListSourceCreate)
 
-Get a customer's static vouchers on the basis of a given voucher ID
+Save opt in list source
 
 ### Example
 ```csharp
@@ -710,7 +1713,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class FetchAllStaticVouchersAssociatedWithCustomerWithVoucherIDExample
+    public class SaveOptInListSourceExample
     {
         public static void Main()
         {
@@ -719,18 +1722,19 @@ namespace Example
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var voucherID = "voucherID_example";  // string | 
+            var apiInstance = new OptInListsApi(httpClient, config, httpClientHandler);
+            var sourceID = "sourceID_example";  // string | 
+            var wTSMSOptInListSourceCreate = new WTSMSOptInListSourceCreate(); // WTSMSOptInListSourceCreate | 
 
             try
             {
-                // Get a customer's static vouchers on the basis of a given voucher ID
-                List<FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner> result = apiInstance.FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID(voucherID);
+                // Save opt in list source
+                OptInListSource result = apiInstance.SaveOptInListSource(sourceID, wTSMSOptInListSourceCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InteractionsApi.FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID: " + e.Message);
+                Debug.Print("Exception when calling OptInListsApi.SaveOptInListSource: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -739,21 +1743,21 @@ namespace Example
 }
 ```
 
-#### Using the FetchAllStaticVouchersAssociatedWithCustomerWithVoucherIDWithHttpInfo variant
+#### Using the SaveOptInListSourceWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get a customer's static vouchers on the basis of a given voucher ID
-    ApiResponse<List<FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner>> response = apiInstance.FetchAllStaticVouchersAssociatedWithCustomerWithVoucherIDWithHttpInfo(voucherID);
+    // Save opt in list source
+    ApiResponse<OptInListSource> response = apiInstance.SaveOptInListSourceWithHttpInfo(sourceID, wTSMSOptInListSourceCreate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InteractionsApi.FetchAllStaticVouchersAssociatedWithCustomerWithVoucherIDWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OptInListsApi.SaveOptInListSourceWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -763,106 +1767,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **voucherID** | **string** |  |  |
+| **sourceID** | **string** |  |  |
+| **wTSMSOptInListSourceCreate** | [**WTSMSOptInListSourceCreate**](WTSMSOptInListSourceCreate.md) |  |  |
 
 ### Return type
 
-[**List&lt;FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner&gt;**](FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchcustomerticketswithtoken"></a>
-# **FetchCustomerTicketsWithToken**
-> List&lt;Ticket&gt; FetchCustomerTicketsWithToken (FetchCustomerTicketsWithTokenRequest fetchCustomerTicketsWithTokenRequest)
-
-Get a customer's upcoming tickets via phone verification token
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchCustomerTicketsWithTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var fetchCustomerTicketsWithTokenRequest = new FetchCustomerTicketsWithTokenRequest(); // FetchCustomerTicketsWithTokenRequest | 
-
-            try
-            {
-                // Get a customer's upcoming tickets via phone verification token
-                List<Ticket> result = apiInstance.FetchCustomerTicketsWithToken(fetchCustomerTicketsWithTokenRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FetchCustomerTicketsWithToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchCustomerTicketsWithTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get a customer's upcoming tickets via phone verification token
-    ApiResponse<List<Ticket>> response = apiInstance.FetchCustomerTicketsWithTokenWithHttpInfo(fetchCustomerTicketsWithTokenRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FetchCustomerTicketsWithTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **fetchCustomerTicketsWithTokenRequest** | [**FetchCustomerTicketsWithTokenRequest**](FetchCustomerTicketsWithTokenRequest.md) |  |  |
-
-### Return type
-
-[**List&lt;Ticket&gt;**](Ticket.md)
+[**OptInListSource**](OptInListSource.md)
 
 ### Authorization
 
@@ -878,966 +1788,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchdynamicvoucherwithvoucherid"></a>
-# **FetchDynamicVoucherWithVoucherID**
-> DynamicVoucher FetchDynamicVoucherWithVoucherID (string voucherID)
-
-Get dynamic voucher
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchDynamicVoucherWithVoucherIDExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var voucherID = "voucherID_example";  // string | 
-
-            try
-            {
-                // Get dynamic voucher
-                DynamicVoucher result = apiInstance.FetchDynamicVoucherWithVoucherID(voucherID);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FetchDynamicVoucherWithVoucherID: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchDynamicVoucherWithVoucherIDWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get dynamic voucher
-    ApiResponse<DynamicVoucher> response = apiInstance.FetchDynamicVoucherWithVoucherIDWithHttpInfo(voucherID);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FetchDynamicVoucherWithVoucherIDWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **voucherID** | **string** |  |  |
-
-### Return type
-
-[**DynamicVoucher**](DynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchmemberinformation"></a>
-# **FetchMemberInformation**
-> Member FetchMemberInformation (string memberID, string merchantID)
-
-Get member information
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchMemberInformationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var memberID = "memberID_example";  // string | 
-            var merchantID = "merchantID_example";  // string | 
-
-            try
-            {
-                // Get member information
-                Member result = apiInstance.FetchMemberInformation(memberID, merchantID);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FetchMemberInformation: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchMemberInformationWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get member information
-    ApiResponse<Member> response = apiInstance.FetchMemberInformationWithHttpInfo(memberID, merchantID);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FetchMemberInformationWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **memberID** | **string** |  |  |
-| **merchantID** | **string** |  |  |
-
-### Return type
-
-[**Member**](Member.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchstaticvoucherwithvoucherid"></a>
-# **FetchStaticVoucherWithVoucherID**
-> StaticVoucher FetchStaticVoucherWithVoucherID (string voucherID)
-
-Get static voucher
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchStaticVoucherWithVoucherIDExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var voucherID = "voucherID_example";  // string | 
-
-            try
-            {
-                // Get static voucher
-                StaticVoucher result = apiInstance.FetchStaticVoucherWithVoucherID(voucherID);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FetchStaticVoucherWithVoucherID: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchStaticVoucherWithVoucherIDWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get static voucher
-    ApiResponse<StaticVoucher> response = apiInstance.FetchStaticVoucherWithVoucherIDWithHttpInfo(voucherID);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FetchStaticVoucherWithVoucherIDWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **voucherID** | **string** |  |  |
-
-### Return type
-
-[**StaticVoucher**](StaticVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchwalletpagewithtoken"></a>
-# **FetchWalletPageWithToken**
-> Object FetchWalletPageWithToken (WTFetchWalletPaymentObjectsWithToken wTFetchWalletPaymentObjectsWithToken)
-
-Get page (token-scoped)
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchWalletPageWithTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var wTFetchWalletPaymentObjectsWithToken = new WTFetchWalletPaymentObjectsWithToken(); // WTFetchWalletPaymentObjectsWithToken | 
-
-            try
-            {
-                // Get page (token-scoped)
-                Object result = apiInstance.FetchWalletPageWithToken(wTFetchWalletPaymentObjectsWithToken);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FetchWalletPageWithToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchWalletPageWithTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get page (token-scoped)
-    ApiResponse<Object> response = apiInstance.FetchWalletPageWithTokenWithHttpInfo(wTFetchWalletPaymentObjectsWithToken);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FetchWalletPageWithTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **wTFetchWalletPaymentObjectsWithToken** | [**WTFetchWalletPaymentObjectsWithToken**](WTFetchWalletPaymentObjectsWithToken.md) |  |  |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="fetchwalletpaymentobjectswithtoken"></a>
-# **FetchWalletPaymentObjectsWithToken**
-> Object FetchWalletPaymentObjectsWithToken (WTFetchWalletPaymentObjectsWithToken wTFetchWalletPaymentObjectsWithToken)
-
-Get payment objects (token-scoped)
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchWalletPaymentObjectsWithTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var wTFetchWalletPaymentObjectsWithToken = new WTFetchWalletPaymentObjectsWithToken(); // WTFetchWalletPaymentObjectsWithToken | 
-
-            try
-            {
-                // Get payment objects (token-scoped)
-                Object result = apiInstance.FetchWalletPaymentObjectsWithToken(wTFetchWalletPaymentObjectsWithToken);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FetchWalletPaymentObjectsWithToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchWalletPaymentObjectsWithTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get payment objects (token-scoped)
-    ApiResponse<Object> response = apiInstance.FetchWalletPaymentObjectsWithTokenWithHttpInfo(wTFetchWalletPaymentObjectsWithToken);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FetchWalletPaymentObjectsWithTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **wTFetchWalletPaymentObjectsWithToken** | [**WTFetchWalletPaymentObjectsWithToken**](WTFetchWalletPaymentObjectsWithToken.md) |  |  |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="findbyvanityhandle"></a>
-# **FindByVanityHandle**
-> WalletConfiguration FindByVanityHandle (string handle)
-
-Get vanity handle
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FindByVanityHandleExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var handle = "handle_example";  // string | 
-
-            try
-            {
-                // Get vanity handle
-                WalletConfiguration result = apiInstance.FindByVanityHandle(handle);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.FindByVanityHandle: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FindByVanityHandleWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get vanity handle
-    ApiResponse<WalletConfiguration> response = apiInstance.FindByVanityHandleWithHttpInfo(handle);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.FindByVanityHandleWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **handle** | **string** |  |  |
-
-### Return type
-
-[**WalletConfiguration**](WalletConfiguration.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="identifyitem"></a>
-# **IdentifyItem**
-> Object IdentifyItem (string itemID, bool? isRefresh = null, string? phoneVerificationToken = null, string? referrer = null)
-
-Identify item
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class IdentifyItemExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var itemID = "itemID_example";  // string | 
-            var isRefresh = true;  // bool? |  (optional) 
-            var phoneVerificationToken = "phoneVerificationToken_example";  // string? |  (optional) 
-            var referrer = "referrer_example";  // string? |  (optional) 
-
-            try
-            {
-                // Identify item
-                Object result = apiInstance.IdentifyItem(itemID, isRefresh, phoneVerificationToken, referrer);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.IdentifyItem: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the IdentifyItemWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Identify item
-    ApiResponse<Object> response = apiInstance.IdentifyItemWithHttpInfo(itemID, isRefresh, phoneVerificationToken, referrer);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.IdentifyItemWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **itemID** | **string** |  |  |
-| **isRefresh** | **bool?** |  | [optional]  |
-| **phoneVerificationToken** | **string?** |  | [optional]  |
-| **referrer** | **string?** |  | [optional]  |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="requestmerchanturlredirect"></a>
-# **RequestMerchantURLRedirect**
-> Object RequestMerchantURLRedirect (string itemID, BrowserDetails browserDetails)
-
-Request Merchant URL
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class RequestMerchantURLRedirectExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var itemID = "itemID_example";  // string | 
-            var browserDetails = new BrowserDetails(); // BrowserDetails | 
-
-            try
-            {
-                // Request Merchant URL
-                Object result = apiInstance.RequestMerchantURLRedirect(itemID, browserDetails);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.RequestMerchantURLRedirect: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RequestMerchantURLRedirectWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Request Merchant URL
-    ApiResponse<Object> response = apiInstance.RequestMerchantURLRedirectWithHttpInfo(itemID, browserDetails);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.RequestMerchantURLRedirectWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **itemID** | **string** |  |  |
-| **browserDetails** | [**BrowserDetails**](BrowserDetails.md) |  |  |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="subscribeemail"></a>
-# **SubscribeEmail**
-> EmailSubscriber SubscribeEmail (WTEmailSubscriberCreateParamsWalletUI wTEmailSubscriberCreateParamsWalletUI)
-
-Create email subscriber
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class SubscribeEmailExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var wTEmailSubscriberCreateParamsWalletUI = new WTEmailSubscriberCreateParamsWalletUI(); // WTEmailSubscriberCreateParamsWalletUI | 
-
-            try
-            {
-                // Create email subscriber
-                EmailSubscriber result = apiInstance.SubscribeEmail(wTEmailSubscriberCreateParamsWalletUI);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.SubscribeEmail: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SubscribeEmailWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create email subscriber
-    ApiResponse<EmailSubscriber> response = apiInstance.SubscribeEmailWithHttpInfo(wTEmailSubscriberCreateParamsWalletUI);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.SubscribeEmailWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **wTEmailSubscriberCreateParamsWalletUI** | [**WTEmailSubscriberCreateParamsWalletUI**](WTEmailSubscriberCreateParamsWalletUI.md) |  |  |
-
-### Return type
-
-[**EmailSubscriber**](EmailSubscriber.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="subscribesms"></a>
-# **SubscribeSms**
-> SmsSubscriber SubscribeSms (WTSmsSubscriberCreateParamsWalletUI wTSmsSubscriberCreateParamsWalletUI)
-
-Create sms subscriber
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class SubscribeSmsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
-            var wTSmsSubscriberCreateParamsWalletUI = new WTSmsSubscriberCreateParamsWalletUI(); // WTSmsSubscriberCreateParamsWalletUI | 
-
-            try
-            {
-                // Create sms subscriber
-                SmsSubscriber result = apiInstance.SubscribeSms(wTSmsSubscriberCreateParamsWalletUI);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling InteractionsApi.SubscribeSms: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SubscribeSmsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create sms subscriber
-    ApiResponse<SmsSubscriber> response = apiInstance.SubscribeSmsWithHttpInfo(wTSmsSubscriberCreateParamsWalletUI);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling InteractionsApi.SubscribeSmsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **wTSmsSubscriberCreateParamsWalletUI** | [**WTSmsSubscriberCreateParamsWalletUI**](WTSmsSubscriberCreateParamsWalletUI.md) |  |  |
-
-### Return type
-
-[**SmsSubscriber**](SmsSubscriber.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
