@@ -78,7 +78,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAnalyticsTCPAStopCountPartitionedByDate**](AnalyticsApi.md#fetchanalyticstcpastopcountpartitionedbydate) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date |
 | [**FetchAnalyticsTCPAStopCountPartitionedByPhoneNumber**](AnalyticsApi.md#fetchanalyticstcpastopcountpartitionedbyphonenumber) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number |
 | [**FetchAnalyticsTotalAmountRedeemedPerMerchantCredit**](AnalyticsApi.md#fetchanalyticstotalamountredeemedpermerchantcredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Get redeemed amount of merchant credits |
-| [**FetchAnalyticsTotalAmountRedeemedPerTier**](AnalyticsApi.md#fetchanalyticstotalamountredeemedpertier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amoun̥t of tiers |
+| [**FetchAnalyticsTotalAmountRedeemedPerTier**](AnalyticsApi.md#fetchanalyticstotalamountredeemedpertier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amount of tiers |
 | [**FetchAnalyticsTotalAmountRefundedPerMerchantCredit**](AnalyticsApi.md#fetchanalyticstotalamountrefundedpermerchantcredit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Get refunded amount of merchant credits |
 | [**FetchAnalyticsTotalAmountRefundedPerTier**](AnalyticsApi.md#fetchanalyticstotalamountrefundedpertier) | **GET** /v2/analytics/membership/tier/amount/refunded | Get refunded amount of tiers |
 | [**FetchAnalyticsTotalPointsRedeemed**](AnalyticsApi.md#fetchanalyticstotalpointsredeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points |
@@ -7459,7 +7459,7 @@ No authorization required
 # **FetchAnalyticsTotalAmountRedeemedPerTier**
 > List&lt;MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate&gt; FetchAnalyticsTotalAmountRedeemedPerTier (DateTime startDate, DateTime endDate, string locale, string timezone)
 
-Get redeemed amoun̥t of tiers
+Get redeemed amount of tiers
 
 ### Example
 ```csharp
@@ -7489,7 +7489,7 @@ namespace Example
 
             try
             {
-                // Get redeemed amoun̥t of tiers
+                // Get redeemed amount of tiers
                 List<MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate> result = apiInstance.FetchAnalyticsTotalAmountRedeemedPerTier(startDate, endDate, locale, timezone);
                 Debug.WriteLine(result);
             }
@@ -7510,7 +7510,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get redeemed amoun̥t of tiers
+    // Get redeemed amount of tiers
     ApiResponse<List<MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate>> response = apiInstance.FetchAnalyticsTotalAmountRedeemedPerTierWithHttpInfo(startDate, endDate, locale, timezone);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

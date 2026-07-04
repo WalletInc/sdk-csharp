@@ -7,6 +7,7 @@ All URIs are relative to *https://api.wall.et*
 | [**ArchiveVideo**](VideosApi.md#archivevideo) | **DELETE** /v2/video/{id} | Archive Video |
 | [**CreateVideo**](VideosApi.md#createvideo) | **POST** /v2/video | Create Video |
 | [**FetchAllVideo**](VideosApi.md#fetchallvideo) | **GET** /v2/video/all | Get all Videos |
+| [**ProvisionVideoUpload**](VideosApi.md#provisionvideoupload) | **POST** /v2/video/upload/provision | Provision a direct video upload |
 | [**RestoreVideo**](VideosApi.md#restorevideo) | **PATCH** /v2/video/{id} | Restore Video |
 | [**UpdateVideo**](VideosApi.md#updatevideo) | **PUT** /v2/video/{id} | Update Video |
 
@@ -285,6 +286,102 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="provisionvideoupload"></a>
+# **ProvisionVideoUpload**
+> WTVideoUploadProvision ProvisionVideoUpload (WTVideoUploadProvisionParams wTVideoUploadProvisionParams)
+
+Provision a direct video upload
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class ProvisionVideoUploadExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VideosApi(httpClient, config, httpClientHandler);
+            var wTVideoUploadProvisionParams = new WTVideoUploadProvisionParams(); // WTVideoUploadProvisionParams | 
+
+            try
+            {
+                // Provision a direct video upload
+                WTVideoUploadProvision result = apiInstance.ProvisionVideoUpload(wTVideoUploadProvisionParams);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VideosApi.ProvisionVideoUpload: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ProvisionVideoUploadWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Provision a direct video upload
+    ApiResponse<WTVideoUploadProvision> response = apiInstance.ProvisionVideoUploadWithHttpInfo(wTVideoUploadProvisionParams);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling VideosApi.ProvisionVideoUploadWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTVideoUploadProvisionParams** | [**WTVideoUploadProvisionParams**](WTVideoUploadProvisionParams.md) |  |  |
+
+### Return type
+
+[**WTVideoUploadProvision**](WTVideoUploadProvision.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

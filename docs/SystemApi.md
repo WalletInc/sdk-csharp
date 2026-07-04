@@ -9,7 +9,6 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAuditLogOfRoles**](SystemApi.md#fetchauditlogofroles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log |
 | [**FetchEmployeesWithRole**](SystemApi.md#fetchemployeeswithrole) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role |
 | [**FetchWebpagesForRole**](SystemApi.md#fetchwebpagesforrole) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role |
-| [**GetPaymentPrefixes**](SystemApi.md#getpaymentprefixes) | **GET** /v2/system/prefixes | Get payment prefixes (empty stub) |
 | [**LoadRole**](SystemApi.md#loadrole) | **GET** /v2/system/roles/{roleID} | Get role |
 | [**SaveRole**](SystemApi.md#saverole) | **PUT** /v2/system/roles/{roleID} | Update role |
 
@@ -474,97 +473,6 @@ catch (ApiException e)
 ### Return type
 
 [**List&lt;Webpage&gt;**](Webpage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="getpaymentprefixes"></a>
-# **GetPaymentPrefixes**
-> List&lt;Object&gt; GetPaymentPrefixes ()
-
-Get payment prefixes (empty stub)
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class GetPaymentPrefixesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new SystemApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Get payment prefixes (empty stub)
-                List<Object> result = apiInstance.GetPaymentPrefixes();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SystemApi.GetPaymentPrefixes: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetPaymentPrefixesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get payment prefixes (empty stub)
-    ApiResponse<List<Object>> response = apiInstance.GetPaymentPrefixesWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SystemApi.GetPaymentPrefixesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-**List<Object>**
 
 ### Authorization
 
