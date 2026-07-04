@@ -21,7 +21,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchDashboardRedemptionsCount**](DashboardSummariesApi.md#fetchdashboardredemptionscount) | **GET** /v2/dashboard/count/pos/redemptions | Count POS redemptions |
 | [**FetchDashboardRefundsCount**](DashboardSummariesApi.md#fetchdashboardrefundscount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds |
 | [**FetchDashboardWalletPageViewsCount**](DashboardSummariesApi.md#fetchdashboardwalletpageviewscount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views |
-| [**FetchSubscriberCount**](DashboardSummariesApi.md#fetchsubscribercount) | **GET** /v2/dashboard/count/subscribers | Count Performances |
+| [**FetchSubscriberCount**](DashboardSummariesApi.md#fetchsubscribercount) | **GET** /v2/dashboard/count/subscribers | Count subscribers |
 
 <a id="counttotalwalletsessions"></a>
 # **CountTotalWalletSessions**
@@ -1695,7 +1695,7 @@ No authorization required
 # **FetchSubscriberCount**
 > WTCountResult FetchSubscriberCount (DateTime startDateTime, DateTime endDateTime)
 
-Count Performances
+Count subscribers
 
 ### Example
 ```csharp
@@ -1723,7 +1723,7 @@ namespace Example
 
             try
             {
-                // Count Performances
+                // Count subscribers
                 WTCountResult result = apiInstance.FetchSubscriberCount(startDateTime, endDateTime);
                 Debug.WriteLine(result);
             }
@@ -1744,7 +1744,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Count Performances
+    // Count subscribers
     ApiResponse<WTCountResult> response = apiInstance.FetchSubscriberCountWithHttpInfo(startDateTime, endDateTime);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

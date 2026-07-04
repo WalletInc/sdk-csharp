@@ -44,7 +44,7 @@ namespace WalletInc.Model
         /// <param name="registerID">registerID (required).</param>
         /// <param name="registerName">registerName (required).</param>
         /// <param name="outletName">outletName (required).</param>
-        /// <param name="outletNumber">Stores the outlet number (required).</param>
+        /// <param name="outletNumber">outletNumber (required).</param>
         /// <param name="profitCenter">profitCenter (required).</param>
         public WTPosMachineUpdateParams(string registerID = default, string registerName = default, string outletName = default, int outletNumber = default, string profitCenter = default)
         {
@@ -103,9 +103,8 @@ namespace WalletInc.Model
         public string OutletName { get; set; }
 
         /// <summary>
-        /// Stores the outlet number
+        /// Gets or Sets OutletNumber
         /// </summary>
-        /// <value>Stores the outlet number</value>
         /*
         <example>5</example>
         */

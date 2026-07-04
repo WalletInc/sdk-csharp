@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Birthday** | **string** | Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured | 
 **PointsAccrued** | **int** | The number of points that the member has accrued | 
 **MemberID** | **string** | Member ID as represented by the merchant | 
-**MembershipTierRedeemableID** | **string** | The object ID of the membership tier that this member belongs to | 
+**MembershipTierRedeemableID** | **string** | The object ID of the membership tier redeemable assigned to this member | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

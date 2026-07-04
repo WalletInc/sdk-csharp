@@ -1292,9 +1292,6 @@ namespace WalletInc.Model
         /// <summary>
         /// Gets or Sets LastLoginDate
         /// </summary>
-        /*
-        <example>5</example>
-        */
         [DataMember(Name = "lastLoginDate", EmitDefaultValue = false)]
         public DateTime LastLoginDate { get; set; }
 

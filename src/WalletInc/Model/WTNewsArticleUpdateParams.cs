@@ -85,7 +85,7 @@ namespace WalletInc.Model
         /// Gets or Sets Body
         /// </summary>
         /*
-        <example>This is the description of the news article</example>
+        <example>This is the body of the news article</example>
         */
         [DataMember(Name = "body", IsRequired = true, EmitDefaultValue = true)]
         public string Body { get; set; }

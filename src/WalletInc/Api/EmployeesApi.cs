@@ -563,7 +563,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of DynamicVoucherBroadcast</returns>
         ApiResponse<DynamicVoucherBroadcast> ScheduleDynamicVoucherWithHttpInfo(string dynamicVoucherID, WTEmployeeScheduleSimpleSMS wTEmployeeScheduleSimpleSMS);
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient
+        /// Schedule Dynamic Voucher to recipient
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicVoucherID"></param>
@@ -572,7 +572,7 @@ namespace WalletInc.Api
         DynamicVoucherBroadcast ScheduleDynamicVoucherToRecipient(string dynamicVoucherID, WTEmployeeScheduleSimpleSMSToRecipient wTEmployeeScheduleSimpleSMSToRecipient);
 
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient
+        /// Schedule Dynamic Voucher to recipient
         /// </summary>
         /// <remarks>
         /// 
@@ -1490,7 +1490,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (DynamicVoucherBroadcast)</returns>
         System.Threading.Tasks.Task<ApiResponse<DynamicVoucherBroadcast>> ScheduleDynamicVoucherWithHttpInfoAsync(string dynamicVoucherID, WTEmployeeScheduleSimpleSMS wTEmployeeScheduleSimpleSMS, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient
+        /// Schedule Dynamic Voucher to recipient
         /// </summary>
         /// <remarks>
         /// 
@@ -1503,7 +1503,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<DynamicVoucherBroadcast> ScheduleDynamicVoucherToRecipientAsync(string dynamicVoucherID, WTEmployeeScheduleSimpleSMSToRecipient wTEmployeeScheduleSimpleSMSToRecipient, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient
+        /// Schedule Dynamic Voucher to recipient
         /// </summary>
         /// <remarks>
         /// 
@@ -5426,7 +5426,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient 
+        /// Schedule Dynamic Voucher to recipient 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicVoucherID"></param>
@@ -5439,7 +5439,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient 
+        /// Schedule Dynamic Voucher to recipient 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicVoucherID"></param>
@@ -5489,7 +5489,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient 
+        /// Schedule Dynamic Voucher to recipient 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicVoucherID"></param>
@@ -5503,7 +5503,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Schedule Dyanamic Voucher to recipient 
+        /// Schedule Dynamic Voucher to recipient 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicVoucherID"></param>

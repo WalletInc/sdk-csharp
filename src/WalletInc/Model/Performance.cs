@@ -37,10 +37,7 @@ namespace WalletInc.Model
         /// Initializes a new instance of the <see cref="Performance" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Performance()
-        {
-            this.AdditionalProperties = new Dictionary<string, object>();
-        }
+        protected Performance() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Performance" /> class.
         /// </summary>
@@ -49,7 +46,7 @@ namespace WalletInc.Model
         /// <param name="startDateTime">startDateTime (required).</param>
         /// <param name="price">price (required).</param>
         /// <param name="url">url (required).</param>
-        /// <param name="orderNumber">Stores the order number (required).</param>
+        /// <param name="orderNumber">orderNumber (required).</param>
         /// <param name="isSoldOut">Denotes if the event has been sold out (required).</param>
         /// <param name="mediaURL">mediaURL.</param>
         /// <param name="paymentDesignID">paymentDesignID.</param>
@@ -110,7 +107,6 @@ namespace WalletInc.Model
             this.MaxCompTickets = maxCompTickets;
             this.TicketExpirationDateTime = ticketExpirationDateTime;
             this.RedemptionInstructions = redemptionInstructions;
-            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -126,7 +122,7 @@ namespace WalletInc.Model
         /// Gets or Sets Body
         /// </summary>
         /*
-        <example>This is the description of the performance</example>
+        <example>This is the body of the performance</example>
         */
         [DataMember(Name = "body", IsRequired = true, EmitDefaultValue = true)]
         public string Body { get; set; }
@@ -156,9 +152,8 @@ namespace WalletInc.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// Stores the order number
+        /// Gets or Sets OrderNumber
         /// </summary>
-        /// <value>Stores the order number</value>
         /*
         <example>5</example>
         */
@@ -246,12 +241,6 @@ namespace WalletInc.Model
         public string MerchantID { get; set; }
 
         /// <summary>
-        /// Gets or Sets additional properties
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalProperties { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -276,7 +265,6 @@ namespace WalletInc.Model
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  MerchantID: ").Append(MerchantID).Append("\n");
-            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

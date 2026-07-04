@@ -371,7 +371,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of WTCountResult</returns>
         ApiResponse<WTCountResult> FetchDashboardWalletPageViewsCountWithHttpInfo(DateTime startDateTime, DateTime endDateTime, string? walletObjectPrefix = default);
         /// <summary>
-        /// Count Performances
+        /// Count subscribers
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDateTime"></param>
@@ -380,7 +380,7 @@ namespace WalletInc.Api
         WTCountResult FetchSubscriberCount(DateTime startDateTime, DateTime endDateTime);
 
         /// <summary>
-        /// Count Performances
+        /// Count subscribers
         /// </summary>
         /// <remarks>
         /// 
@@ -827,7 +827,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (WTCountResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<WTCountResult>> FetchDashboardWalletPageViewsCountWithHttpInfoAsync(DateTime startDateTime, DateTime endDateTime, string? walletObjectPrefix = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Count Performances
+        /// Count subscribers
         /// </summary>
         /// <remarks>
         /// 
@@ -840,7 +840,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<WTCountResult> FetchSubscriberCountAsync(DateTime startDateTime, DateTime endDateTime, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Count Performances
+        /// Count subscribers
         /// </summary>
         /// <remarks>
         /// 
@@ -3010,7 +3010,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count Performances 
+        /// Count subscribers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDateTime"></param>
@@ -3023,7 +3023,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count Performances 
+        /// Count subscribers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDateTime"></param>
@@ -3064,7 +3064,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count Performances 
+        /// Count subscribers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDateTime"></param>
@@ -3078,7 +3078,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count Performances 
+        /// Count subscribers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDateTime"></param>

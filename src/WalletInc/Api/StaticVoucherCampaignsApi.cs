@@ -271,7 +271,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;WTStaticVoucher&gt;</returns>
         ApiResponse<List<WTStaticVoucher>> FetchStaticVouchersWithHttpInfo(string campaignID);
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign
+        /// Get a page of vouchers in a Static Voucher Campaign
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -281,7 +281,7 @@ namespace WalletInc.Api
         FetchStaticVouchersPage200Response FetchStaticVouchersPage(string campaignID, double pagenum, double pagesize);
 
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign
+        /// Get a page of vouchers in a Static Voucher Campaign
         /// </summary>
         /// <remarks>
         /// 
@@ -329,7 +329,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;WTStaticVoucher&gt;</returns>
         ApiResponse<List<WTStaticVoucher>> FetchVouchersRedeemedWithHttpInfo(string campaignID);
         /// <summary>
-        /// View vouchers in Static Voucher Campaign
+        /// Preview generated broadcast messages by page
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -338,7 +338,7 @@ namespace WalletInc.Api
         VSCampaignGeneratedMessagePagination PreviewMessagesByPage(string campaignID, WTStaticVoucherCampaignPreviewMessagesByPage wTStaticVoucherCampaignPreviewMessagesByPage);
 
         /// <summary>
-        /// View vouchers in Static Voucher Campaign
+        /// Preview generated broadcast messages by page
         /// </summary>
         /// <remarks>
         /// 
@@ -723,7 +723,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (List&lt;WTStaticVoucher&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WTStaticVoucher>>> FetchStaticVouchersWithHttpInfoAsync(string campaignID, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign
+        /// Get a page of vouchers in a Static Voucher Campaign
         /// </summary>
         /// <remarks>
         /// 
@@ -737,7 +737,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<FetchStaticVouchersPage200Response> FetchStaticVouchersPageAsync(string campaignID, double pagenum, double pagesize, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign
+        /// Get a page of vouchers in a Static Voucher Campaign
         /// </summary>
         /// <remarks>
         /// 
@@ -796,7 +796,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (List&lt;WTStaticVoucher&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WTStaticVoucher>>> FetchVouchersRedeemedWithHttpInfoAsync(string campaignID, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// View vouchers in Static Voucher Campaign
+        /// Preview generated broadcast messages by page
         /// </summary>
         /// <remarks>
         /// 
@@ -809,7 +809,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<VSCampaignGeneratedMessagePagination> PreviewMessagesByPageAsync(string campaignID, WTStaticVoucherCampaignPreviewMessagesByPage wTStaticVoucherCampaignPreviewMessagesByPage, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// View vouchers in Static Voucher Campaign
+        /// Preview generated broadcast messages by page
         /// </summary>
         /// <remarks>
         /// 
@@ -2652,7 +2652,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign 
+        /// Get a page of vouchers in a Static Voucher Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -2666,7 +2666,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign 
+        /// Get a page of vouchers in a Static Voucher Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -2713,7 +2713,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign 
+        /// Get a page of vouchers in a Static Voucher Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -2728,7 +2728,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get vouchers in Static Vouchers Campaign 
+        /// Get a page of vouchers in a Static Voucher Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -3009,7 +3009,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// View vouchers in Static Voucher Campaign 
+        /// Preview generated broadcast messages by page 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -3022,7 +3022,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// View vouchers in Static Voucher Campaign 
+        /// Preview generated broadcast messages by page 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -3072,7 +3072,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// View vouchers in Static Voucher Campaign 
+        /// Preview generated broadcast messages by page 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>
@@ -3086,7 +3086,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// View vouchers in Static Voucher Campaign 
+        /// Preview generated broadcast messages by page 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="campaignID"></param>

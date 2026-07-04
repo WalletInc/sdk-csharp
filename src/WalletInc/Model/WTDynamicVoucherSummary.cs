@@ -202,7 +202,7 @@ namespace WalletInc.Model
         /// Gets or Sets CurrentValueDecimal
         /// </summary>
         /*
-        <example>$5.00</example>
+        <example>5.00</example>
         */
         [DataMember(Name = "currentValue_decimal", IsRequired = true, EmitDefaultValue = true)]
         public string CurrentValueDecimal { get; set; }
@@ -319,7 +319,7 @@ namespace WalletInc.Model
         /// Gets or Sets TotalAmountSubtractedDecimal
         /// </summary>
         /*
-        <example>$5.00</example>
+        <example>5.00</example>
         */
         [DataMember(Name = "totalAmountSubtracted_decimal", IsRequired = true, EmitDefaultValue = true)]
         public string TotalAmountSubtractedDecimal { get; set; }

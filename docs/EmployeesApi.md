@@ -34,7 +34,7 @@ All URIs are relative to *https://api.wall.et*
 | [**RemovePeerFromAllRoles**](EmployeesApi.md#removepeerfromallroles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles |
 | [**ScheduleAdvertisementCredit**](EmployeesApi.md#scheduleadvertisementcredit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit |
 | [**ScheduleDynamicVoucher**](EmployeesApi.md#scheduledynamicvoucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list |
-| [**ScheduleDynamicVoucherToRecipient**](EmployeesApi.md#scheduledynamicvouchertorecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dyanamic Voucher to recipient |
+| [**ScheduleDynamicVoucherToRecipient**](EmployeesApi.md#scheduledynamicvouchertorecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to recipient |
 | [**ScheduleSimpleSMS**](EmployeesApi.md#schedulesimplesms) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list |
 | [**ScheduleSimpleSMSToRecipient**](EmployeesApi.md#schedulesimplesmstorecipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient |
 | [**SendHelpDeskResponse**](EmployeesApi.md#sendhelpdeskresponse) | **POST** /v2/employee/helpDesk/response | Send help desk response |
@@ -2907,7 +2907,7 @@ No authorization required
 # **ScheduleDynamicVoucherToRecipient**
 > DynamicVoucherBroadcast ScheduleDynamicVoucherToRecipient (string dynamicVoucherID, WTEmployeeScheduleSimpleSMSToRecipient wTEmployeeScheduleSimpleSMSToRecipient)
 
-Schedule Dyanamic Voucher to recipient
+Schedule Dynamic Voucher to recipient
 
 ### Example
 ```csharp
@@ -2935,7 +2935,7 @@ namespace Example
 
             try
             {
-                // Schedule Dyanamic Voucher to recipient
+                // Schedule Dynamic Voucher to recipient
                 DynamicVoucherBroadcast result = apiInstance.ScheduleDynamicVoucherToRecipient(dynamicVoucherID, wTEmployeeScheduleSimpleSMSToRecipient);
                 Debug.WriteLine(result);
             }
@@ -2956,7 +2956,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Schedule Dyanamic Voucher to recipient
+    // Schedule Dynamic Voucher to recipient
     ApiResponse<DynamicVoucherBroadcast> response = apiInstance.ScheduleDynamicVoucherToRecipientWithHttpInfo(dynamicVoucherID, wTEmployeeScheduleSimpleSMSToRecipient);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

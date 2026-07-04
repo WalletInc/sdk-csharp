@@ -143,6 +143,9 @@ namespace WalletInc.Model
         /// <summary>
         /// Gets or Sets Designation
         /// </summary>
+        /*
+        <example>Founder &amp; CEO</example>
+        */
         [DataMember(Name = "designation", IsRequired = true, EmitDefaultValue = true)]
         public string Designation { get; set; }
 
@@ -222,7 +225,7 @@ namespace WalletInc.Model
         /// Gets or Sets AvatarURL
         /// </summary>
         /*
-        <example>WhatsApp number</example>
+        <example>https://media.wall.et/m/abc/avatar.png</example>
         */
         [DataMember(Name = "avatarURL", EmitDefaultValue = false)]
         public string AvatarURL { get; set; }

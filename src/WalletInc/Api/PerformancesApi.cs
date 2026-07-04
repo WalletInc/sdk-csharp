@@ -177,7 +177,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Performance</returns>
         ApiResponse<Performance> FetchPerformanceWithHttpInfo(string id);
         /// <summary>
-        /// Get Peformance&#39;s Tickets
+        /// Get Performance&#39;s Tickets
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="performanceID"></param>
@@ -192,7 +192,7 @@ namespace WalletInc.Api
         FetchPerformanceTicketsPage200Response FetchPerformanceTicketsPage(string performanceID, double pageNum, double pageSize, bool? filterComps = default, bool? filterClaimed = default, TicketSortKeys? sortBy = default, SortDirection? sortDirection = default, bool? isArchiveIncluded = default);
 
         /// <summary>
-        /// Get Peformance&#39;s Tickets
+        /// Get Performance&#39;s Tickets
         /// </summary>
         /// <remarks>
         /// 
@@ -484,7 +484,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Performance)</returns>
         System.Threading.Tasks.Task<ApiResponse<Performance>> FetchPerformanceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Peformance&#39;s Tickets
+        /// Get Performance&#39;s Tickets
         /// </summary>
         /// <remarks>
         /// 
@@ -503,7 +503,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<FetchPerformanceTicketsPage200Response> FetchPerformanceTicketsPageAsync(string performanceID, double pageNum, double pageSize, bool? filterComps = default, bool? filterClaimed = default, TicketSortKeys? sortBy = default, SortDirection? sortDirection = default, bool? isArchiveIncluded = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Peformance&#39;s Tickets
+        /// Get Performance&#39;s Tickets
         /// </summary>
         /// <remarks>
         /// 
@@ -1768,7 +1768,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get Peformance&#39;s Tickets 
+        /// Get Performance&#39;s Tickets 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="performanceID"></param>
@@ -1787,7 +1787,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get Peformance&#39;s Tickets 
+        /// Get Performance&#39;s Tickets 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="performanceID"></param>
@@ -1859,7 +1859,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get Peformance&#39;s Tickets 
+        /// Get Performance&#39;s Tickets 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="performanceID"></param>
@@ -1879,7 +1879,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get Peformance&#39;s Tickets 
+        /// Get Performance&#39;s Tickets 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="performanceID"></param>
