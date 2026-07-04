@@ -116,7 +116,7 @@ namespace WalletInc.Model
         /// Gets or Sets AdditionalInfoURL
         /// </summary>
         /*
-        <example>https://your-site.com/restaurants/steak-house</example>
+        <example>https://your-site.com/lounges/sky-lounge</example>
         */
         [DataMember(Name = "additionalInfoURL", EmitDefaultValue = false)]
         public string AdditionalInfoURL { get; set; }

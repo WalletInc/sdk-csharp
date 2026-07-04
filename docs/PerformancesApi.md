@@ -12,7 +12,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAllPerformanceTickets**](PerformancesApi.md#fetchallperformancetickets) | **GET** /v2/performances/tickets/all/{id} | Get Performance&#39;s Tickets |
 | [**FetchAllPerformances**](PerformancesApi.md#fetchallperformances) | **GET** /v2/performances/all | Get all Performances |
 | [**FetchPerformance**](PerformancesApi.md#fetchperformance) | **GET** /v2/performances/{id} | Get Performance |
-| [**FetchPerformanceTicketsPage**](PerformancesApi.md#fetchperformanceticketspage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Peformance&#39;s Tickets |
+| [**FetchPerformanceTicketsPage**](PerformancesApi.md#fetchperformanceticketspage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets |
 | [**ImportTickets**](PerformancesApi.md#importtickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets |
 | [**RestorePerformance**](PerformancesApi.md#restoreperformance) | **PATCH** /v2/performances/{id} | Restore Performance |
 | [**SaveTicketSettings**](PerformancesApi.md#saveticketsettings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings |
@@ -792,7 +792,7 @@ No authorization required
 # **FetchPerformanceTicketsPage**
 > FetchPerformanceTicketsPage200Response FetchPerformanceTicketsPage (string performanceID, double pageNum, double pageSize, bool? filterComps = null, bool? filterClaimed = null, TicketSortKeys? sortBy = null, SortDirection? sortDirection = null, bool? isArchiveIncluded = null)
 
-Get Peformance's Tickets
+Get Performance's Tickets
 
 ### Example
 ```csharp
@@ -826,7 +826,7 @@ namespace Example
 
             try
             {
-                // Get Peformance's Tickets
+                // Get Performance's Tickets
                 FetchPerformanceTicketsPage200Response result = apiInstance.FetchPerformanceTicketsPage(performanceID, pageNum, pageSize, filterComps, filterClaimed, sortBy, sortDirection, isArchiveIncluded);
                 Debug.WriteLine(result);
             }
@@ -847,7 +847,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Peformance's Tickets
+    // Get Performance's Tickets
     ApiResponse<FetchPerformanceTicketsPage200Response> response = apiInstance.FetchPerformanceTicketsPageWithHttpInfo(performanceID, pageNum, pageSize, filterComps, filterClaimed, sortBy, sortDirection, isArchiveIncluded);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

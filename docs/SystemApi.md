@@ -9,7 +9,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAuditLogOfRoles**](SystemApi.md#fetchauditlogofroles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log |
 | [**FetchEmployeesWithRole**](SystemApi.md#fetchemployeeswithrole) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role |
 | [**FetchWebpagesForRole**](SystemApi.md#fetchwebpagesforrole) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role |
-| [**GetPaymentPrefixes**](SystemApi.md#getpaymentprefixes) | **GET** /v2/system/prefixes | Get payment prefixes |
+| [**GetPaymentPrefixes**](SystemApi.md#getpaymentprefixes) | **GET** /v2/system/prefixes | Get payment prefixes (empty stub) |
 | [**LoadRole**](SystemApi.md#loadrole) | **GET** /v2/system/roles/{roleID} | Get role |
 | [**SaveRole**](SystemApi.md#saverole) | **PUT** /v2/system/roles/{roleID} | Update role |
 
@@ -499,7 +499,7 @@ No authorization required
 # **GetPaymentPrefixes**
 > List&lt;Object&gt; GetPaymentPrefixes ()
 
-Get payment prefixes
+Get payment prefixes (empty stub)
 
 ### Example
 ```csharp
@@ -525,7 +525,7 @@ namespace Example
 
             try
             {
-                // Get payment prefixes
+                // Get payment prefixes (empty stub)
                 List<Object> result = apiInstance.GetPaymentPrefixes();
                 Debug.WriteLine(result);
             }
@@ -546,7 +546,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get payment prefixes
+    // Get payment prefixes (empty stub)
     ApiResponse<List<Object>> response = apiInstance.GetPaymentPrefixesWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

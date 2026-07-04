@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Results** | [**List&lt;WTMember&gt;**](WTMember.md) | Stores the results as an array | 
+**Results** | [**List&lt;WTMember&gt;**](WTMember.md) | The page of records returned for this request. | 
 **Length** | **int** | Denotes the length of the results array | 
 **Total** | **int** | Denotes the total number of records present in the database | 
 

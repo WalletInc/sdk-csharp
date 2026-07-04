@@ -54,7 +54,7 @@ namespace WalletInc.Model
         /// <param name="birthday">Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured (required).</param>
         /// <param name="pointsAccrued">The number of points that the member has accrued (required).</param>
         /// <param name="memberID">Member ID as represented by the merchant (required).</param>
-        /// <param name="membershipTierRedeemableID">The object ID of the membership tier that this member belongs to (required).</param>
+        /// <param name="membershipTierRedeemableID">The object ID of the membership tier redeemable assigned to this member (required).</param>
         public Member(string id = default, string merchantID = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default, string firstName = default, string lastName = default, string membershipTierID = default, string mobileNumber = default, string email = default, string birthday = default, int pointsAccrued = default, string memberID = default, string membershipTierRedeemableID = default)
         {
             // to ensure "id" is required (not null)
@@ -239,9 +239,9 @@ namespace WalletInc.Model
         public string MemberID { get; set; }
 
         /// <summary>
-        /// The object ID of the membership tier that this member belongs to
+        /// The object ID of the membership tier redeemable assigned to this member
         /// </summary>
-        /// <value>The object ID of the membership tier that this member belongs to</value>
+        /// <value>The object ID of the membership tier redeemable assigned to this member</value>
         /*
         <example>CMueJDL982Hs</example>
         */

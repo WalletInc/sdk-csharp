@@ -281,7 +281,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of bool</returns>
         ApiResponse<bool> FetchInfoGenesisCampaignDataWithHttpInfo(WTInfoGenesisRecordFilterParameters wTInfoGenesisRecordFilterParameters);
         /// <summary>
-        /// Get queries
+        /// Get lookup requests
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisRecordFilterParameters"></param>
@@ -289,7 +289,7 @@ namespace WalletInc.Api
         List<Request> FetchInfoGenesisLookupRequests(WTInfoGenesisRecordFilterParameters wTInfoGenesisRecordFilterParameters);
 
         /// <summary>
-        /// Get queries
+        /// Get lookup requests
         /// </summary>
         /// <remarks>
         /// 
@@ -299,7 +299,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;Request&gt;</returns>
         ApiResponse<List<Request>> FetchInfoGenesisLookupRequestsWithHttpInfo(WTInfoGenesisRecordFilterParameters wTInfoGenesisRecordFilterParameters);
         /// <summary>
-        /// Get queries errors
+        /// Get lookup request errors
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisLookupRequestErrors"></param>
@@ -307,7 +307,7 @@ namespace WalletInc.Api
         List<Request> FetchInfoGenesisLookupRequestsErrors(WTInfoGenesisLookupRequestErrors wTInfoGenesisLookupRequestErrors);
 
         /// <summary>
-        /// Get queries errors
+        /// Get lookup request errors
         /// </summary>
         /// <remarks>
         /// 
@@ -852,7 +852,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (bool)</returns>
         System.Threading.Tasks.Task<ApiResponse<bool>> FetchInfoGenesisCampaignDataWithHttpInfoAsync(WTInfoGenesisRecordFilterParameters wTInfoGenesisRecordFilterParameters, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get queries
+        /// Get lookup requests
         /// </summary>
         /// <remarks>
         /// 
@@ -864,7 +864,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<List<Request>> FetchInfoGenesisLookupRequestsAsync(WTInfoGenesisRecordFilterParameters wTInfoGenesisRecordFilterParameters, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get queries
+        /// Get lookup requests
         /// </summary>
         /// <remarks>
         /// 
@@ -875,7 +875,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (List&lt;Request&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Request>>> FetchInfoGenesisLookupRequestsWithHttpInfoAsync(WTInfoGenesisRecordFilterParameters wTInfoGenesisRecordFilterParameters, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get queries errors
+        /// Get lookup request errors
         /// </summary>
         /// <remarks>
         /// 
@@ -887,7 +887,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<List<Request>> FetchInfoGenesisLookupRequestsErrorsAsync(WTInfoGenesisLookupRequestErrors wTInfoGenesisLookupRequestErrors, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get queries errors
+        /// Get lookup request errors
         /// </summary>
         /// <remarks>
         /// 
@@ -3008,7 +3008,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries 
+        /// Get lookup requests 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisRecordFilterParameters"></param>
@@ -3020,7 +3020,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries 
+        /// Get lookup requests 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisRecordFilterParameters"></param>
@@ -3064,7 +3064,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries 
+        /// Get lookup requests 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisRecordFilterParameters"></param>
@@ -3077,7 +3077,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries 
+        /// Get lookup requests 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisRecordFilterParameters"></param>
@@ -3125,7 +3125,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries errors 
+        /// Get lookup request errors 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisLookupRequestErrors"></param>
@@ -3137,7 +3137,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries errors 
+        /// Get lookup request errors 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisLookupRequestErrors"></param>
@@ -3181,7 +3181,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries errors 
+        /// Get lookup request errors 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisLookupRequestErrors"></param>
@@ -3194,7 +3194,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get queries errors 
+        /// Get lookup request errors 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTInfoGenesisLookupRequestErrors"></param>

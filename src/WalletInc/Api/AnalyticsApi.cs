@@ -75,7 +75,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> CountAuthenticatedSessionsWithHttpInfo(DateTime? startDate = default, DateTime? endDate = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count distinct payment object redemptions
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -86,7 +86,7 @@ namespace WalletInc.Api
         Object CountDistinctRedemptions(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count distinct payment object redemptions
         /// </summary>
         /// <remarks>
         /// 
@@ -125,7 +125,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> CountHelpDeskRequestsWithHttpInfo(DateTime startDate, DateTime endDate, string locale, string timezone, bool? isResolved = default);
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count inbound SMS messages
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -134,7 +134,7 @@ namespace WalletInc.Api
         WTCountResult CountInboundMessages(DateTime? startDate = default, DateTime? endDate = default);
 
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count inbound SMS messages
         /// </summary>
         /// <remarks>
         /// 
@@ -185,7 +185,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> CountOptInListSubscribersPartitionedByDateWithHttpInfo(DateTime startDate, DateTime endDate);
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count outbound SMS messages
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -194,7 +194,7 @@ namespace WalletInc.Api
         WTCountResult CountOutboundMessages(DateTime? startDate = default, DateTime? endDate = default);
 
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count outbound SMS messages
         /// </summary>
         /// <remarks>
         /// 
@@ -225,7 +225,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> CountTotalSessionsWithHttpInfo(DateTime? startDate = default, DateTime? endDate = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count ledger transactions
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -236,7 +236,7 @@ namespace WalletInc.Api
         Object CountTransactions(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count ledger transactions
         /// </summary>
         /// <remarks>
         /// 
@@ -819,7 +819,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> FetchAnalyticsCampaignsRefundsAmountPartitionedByDateWithHttpInfo(DateTime startDate, DateTime endDate, string locale, string timezone);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count refunds of campaigns by Campaign
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -828,7 +828,7 @@ namespace WalletInc.Api
         List<Object> FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID(DateTime startDate, DateTime endDate);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count refunds of campaigns by Campaign
         /// </summary>
         /// <remarks>
         /// 
@@ -839,7 +839,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
         ApiResponse<List<Object>> FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignIDWithHttpInfo(DateTime startDate, DateTime endDate);
         /// <summary>
-        /// Get refund amount of campaigns by date
+        /// Count refunds of campaigns by date
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -850,7 +850,7 @@ namespace WalletInc.Api
         Object FetchAnalyticsCampaignsRefundsCountPartitionedByDate(DateTime startDate, DateTime endDate, string locale, string timezone);
 
         /// <summary>
-        /// Get refund amount of campaigns by date
+        /// Count refunds of campaigns by date
         /// </summary>
         /// <remarks>
         /// 
@@ -1799,7 +1799,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> ReferringSitesSummaryWithHttpInfo(DateTime? startDate = default, DateTime? endDate = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger revenue
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -1810,7 +1810,7 @@ namespace WalletInc.Api
         Object SumRevenue(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger revenue
         /// </summary>
         /// <remarks>
         /// 
@@ -1823,7 +1823,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> SumRevenueWithHttpInfo(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger transaction amounts
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -1834,7 +1834,7 @@ namespace WalletInc.Api
         Object SumTransactions(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger transaction amounts
         /// </summary>
         /// <remarks>
         /// 
@@ -1912,7 +1912,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CountAuthenticatedSessionsWithHttpInfoAsync(DateTime? startDate = default, DateTime? endDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count distinct payment object redemptions
         /// </summary>
         /// <remarks>
         /// 
@@ -1927,7 +1927,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Object> CountDistinctRedemptionsAsync(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count distinct payment object redemptions
         /// </summary>
         /// <remarks>
         /// 
@@ -1972,7 +1972,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CountHelpDeskRequestsWithHttpInfoAsync(DateTime startDate, DateTime endDate, string locale, string timezone, bool? isResolved = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count inbound SMS messages
         /// </summary>
         /// <remarks>
         /// 
@@ -1985,7 +1985,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<WTCountResult> CountInboundMessagesAsync(DateTime? startDate = default, DateTime? endDate = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count inbound SMS messages
         /// </summary>
         /// <remarks>
         /// 
@@ -2047,7 +2047,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CountOptInListSubscribersPartitionedByDateWithHttpInfoAsync(DateTime startDate, DateTime endDate, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count outbound SMS messages
         /// </summary>
         /// <remarks>
         /// 
@@ -2060,7 +2060,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<WTCountResult> CountOutboundMessagesAsync(DateTime? startDate = default, DateTime? endDate = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Count opt in list subscribers
+        /// Count outbound SMS messages
         /// </summary>
         /// <remarks>
         /// 
@@ -2097,7 +2097,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CountTotalSessionsWithHttpInfoAsync(DateTime? startDate = default, DateTime? endDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count ledger transactions
         /// </summary>
         /// <remarks>
         /// 
@@ -2112,7 +2112,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Object> CountTransactionsAsync(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count ledger transactions
         /// </summary>
         /// <remarks>
         /// 
@@ -2831,7 +2831,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> FetchAnalyticsCampaignsRefundsAmountPartitionedByDateWithHttpInfoAsync(DateTime startDate, DateTime endDate, string locale, string timezone, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count refunds of campaigns by Campaign
         /// </summary>
         /// <remarks>
         /// 
@@ -2844,7 +2844,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<List<Object>> FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignIDAsync(DateTime startDate, DateTime endDate, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Count refunds of campaigns by Campaign
         /// </summary>
         /// <remarks>
         /// 
@@ -2856,7 +2856,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Object>>> FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignIDWithHttpInfoAsync(DateTime startDate, DateTime endDate, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get refund amount of campaigns by date
+        /// Count refunds of campaigns by date
         /// </summary>
         /// <remarks>
         /// 
@@ -2871,7 +2871,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Object> FetchAnalyticsCampaignsRefundsCountPartitionedByDateAsync(DateTime startDate, DateTime endDate, string locale, string timezone, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by date
+        /// Count refunds of campaigns by date
         /// </summary>
         /// <remarks>
         /// 
@@ -4036,7 +4036,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ReferringSitesSummaryWithHttpInfoAsync(DateTime? startDate = default, DateTime? endDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger revenue
         /// </summary>
         /// <remarks>
         /// 
@@ -4051,7 +4051,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Object> SumRevenueAsync(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger revenue
         /// </summary>
         /// <remarks>
         /// 
@@ -4065,7 +4065,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> SumRevenueWithHttpInfoAsync(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger transaction amounts
         /// </summary>
         /// <remarks>
         /// 
@@ -4080,7 +4080,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Object> SumTransactionsAsync(DateTime startDate, DateTime endDate, string? transactionType = default, string? segmentType = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign
+        /// Sum ledger transaction amounts
         /// </summary>
         /// <remarks>
         /// 
@@ -4593,7 +4593,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count distinct payment object redemptions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -4608,7 +4608,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count distinct payment object redemptions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -4659,7 +4659,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count distinct payment object redemptions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -4675,7 +4675,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count distinct payment object redemptions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -4883,7 +4883,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count inbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -4896,7 +4896,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count inbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -4943,7 +4943,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count inbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -4957,7 +4957,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count inbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -5246,7 +5246,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count outbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -5259,7 +5259,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count outbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -5306,7 +5306,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count outbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -5320,7 +5320,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Count opt in list subscribers 
+        /// Count outbound SMS messages 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"> (optional)</param>
@@ -5496,7 +5496,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count ledger transactions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -5511,7 +5511,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count ledger transactions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -5562,7 +5562,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count ledger transactions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -5578,7 +5578,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count ledger transactions 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -8922,7 +8922,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count refunds of campaigns by Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -8935,7 +8935,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count refunds of campaigns by Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -8976,7 +8976,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count refunds of campaigns by Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -8990,7 +8990,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Count refunds of campaigns by Campaign 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -9035,7 +9035,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by date 
+        /// Count refunds of campaigns by date 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -9050,7 +9050,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by date 
+        /// Count refunds of campaigns by date 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -9103,7 +9103,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by date 
+        /// Count refunds of campaigns by date 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -9119,7 +9119,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by date 
+        /// Count refunds of campaigns by date 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14655,7 +14655,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger revenue 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14670,7 +14670,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger revenue 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14721,7 +14721,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger revenue 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14737,7 +14737,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger revenue 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14792,7 +14792,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger transaction amounts 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14807,7 +14807,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger transaction amounts 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14858,7 +14858,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger transaction amounts 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>
@@ -14874,7 +14874,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get refund amount of campaigns by Campaign 
+        /// Sum ledger transaction amounts 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate"></param>

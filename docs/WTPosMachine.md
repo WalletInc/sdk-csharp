@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **RegisterID** | **string** |  | 
 **RegisterName** | **string** |  | 
 **OutletName** | **string** |  | 
-**OutletNumber** | **int** | Stores the outlet number | 
+**OutletNumber** | **int** |  | 
 **ProfitCenter** | **string** |  | 
 **Id** | **string** |  | 
 **CreatedAt** | **DateTime** |  | 

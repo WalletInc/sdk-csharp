@@ -121,14 +121,14 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;Webpage&gt;</returns>
         ApiResponse<List<Webpage>> FetchWebpagesForRoleWithHttpInfo(string roleID);
         /// <summary>
-        /// Get payment prefixes
+        /// Get payment prefixes (empty stub)
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Object&gt;</returns>
         List<Object> GetPaymentPrefixes();
 
         /// <summary>
-        /// Get payment prefixes
+        /// Get payment prefixes (empty stub)
         /// </summary>
         /// <remarks>
         /// 
@@ -301,7 +301,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (List&lt;Webpage&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Webpage>>> FetchWebpagesForRoleWithHttpInfoAsync(string roleID, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get payment prefixes
+        /// Get payment prefixes (empty stub)
         /// </summary>
         /// <remarks>
         /// 
@@ -312,7 +312,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<List<Object>> GetPaymentPrefixesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get payment prefixes
+        /// Get payment prefixes (empty stub)
         /// </summary>
         /// <remarks>
         /// 
@@ -1158,7 +1158,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get payment prefixes 
+        /// Get payment prefixes (empty stub) 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Object&gt;</returns>
@@ -1169,7 +1169,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get payment prefixes 
+        /// Get payment prefixes (empty stub) 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
@@ -1206,7 +1206,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get payment prefixes 
+        /// Get payment prefixes (empty stub) 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1218,7 +1218,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get payment prefixes 
+        /// Get payment prefixes (empty stub) 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

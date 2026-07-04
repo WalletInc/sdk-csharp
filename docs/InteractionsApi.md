@@ -4,15 +4,15 @@ All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ClaimTicket**](InteractionsApi.md#claimticket) | **PUT** /wallet/ticket/claim/{id} | Update ticket |
+| [**ClaimTicket**](InteractionsApi.md#claimticket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID |
 | [**CreateAdvertisementCreditScan**](InteractionsApi.md#createadvertisementcreditscan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan |
 | [**CreateEmployeeVCard**](InteractionsApi.md#createemployeevcard) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card |
 | [**CreateIcsFile**](InteractionsApi.md#createicsfile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
 | [**CreateVirtualBusinessCardVCard**](InteractionsApi.md#createvirtualbusinesscardvcard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
-| [**FetchActiveDynamicVouchers**](InteractionsApi.md#fetchactivedynamicvouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
+| [**FetchActiveDynamicVouchers**](InteractionsApi.md#fetchactivedynamicvouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers |
 | [**FetchAdvertisementCreditScansFromList**](InteractionsApi.md#fetchadvertisementcreditscansfromlist) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs |
 | [**FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID**](InteractionsApi.md#fetchallstaticvouchersassociatedwithcustomerwithvoucherid) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
-| [**FetchCustomerTicketsWithToken**](InteractionsApi.md#fetchcustomerticketswithtoken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket |
+| [**FetchCustomerTicketsWithToken**](InteractionsApi.md#fetchcustomerticketswithtoken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token |
 | [**FetchDynamicVoucherWithVoucherID**](InteractionsApi.md#fetchdynamicvoucherwithvoucherid) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
 | [**FetchMemberInformation**](InteractionsApi.md#fetchmemberinformation) | **GET** /wallet/member | Get member information |
 | [**FetchStaticVoucherWithVoucherID**](InteractionsApi.md#fetchstaticvoucherwithvoucherid) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
@@ -28,7 +28,7 @@ All URIs are relative to *https://api.wall.et*
 # **ClaimTicket**
 > Ticket ClaimTicket (string id, ClaimTicketRequest claimTicketRequest)
 
-Update ticket
+Claim a ticket by ID
 
 ### Example
 ```csharp
@@ -56,7 +56,7 @@ namespace Example
 
             try
             {
-                // Update ticket
+                // Claim a ticket by ID
                 Ticket result = apiInstance.ClaimTicket(id, claimTicketRequest);
                 Debug.WriteLine(result);
             }
@@ -77,7 +77,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update ticket
+    // Claim a ticket by ID
     ApiResponse<Ticket> response = apiInstance.ClaimTicketWithHttpInfo(id, claimTicketRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -505,7 +505,7 @@ No authorization required
 # **FetchActiveDynamicVouchers**
 > List&lt;DynamicVoucher&gt; FetchActiveDynamicVouchers (string merchantID)
 
-Get a customer's static vouchers on the basis of a given voucher ID
+Get a merchant's active dynamic vouchers
 
 ### Example
 ```csharp
@@ -532,7 +532,7 @@ namespace Example
 
             try
             {
-                // Get a customer's static vouchers on the basis of a given voucher ID
+                // Get a merchant's active dynamic vouchers
                 List<DynamicVoucher> result = apiInstance.FetchActiveDynamicVouchers(merchantID);
                 Debug.WriteLine(result);
             }
@@ -553,7 +553,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get a customer's static vouchers on the basis of a given voucher ID
+    // Get a merchant's active dynamic vouchers
     ApiResponse<List<DynamicVoucher>> response = apiInstance.FetchActiveDynamicVouchersWithHttpInfo(merchantID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -792,7 +792,7 @@ No authorization required
 # **FetchCustomerTicketsWithToken**
 > List&lt;Ticket&gt; FetchCustomerTicketsWithToken (FetchCustomerTicketsWithTokenRequest fetchCustomerTicketsWithTokenRequest)
 
-Update ticket
+Get a customer's upcoming tickets via phone verification token
 
 ### Example
 ```csharp
@@ -819,7 +819,7 @@ namespace Example
 
             try
             {
-                // Update ticket
+                // Get a customer's upcoming tickets via phone verification token
                 List<Ticket> result = apiInstance.FetchCustomerTicketsWithToken(fetchCustomerTicketsWithTokenRequest);
                 Debug.WriteLine(result);
             }
@@ -840,7 +840,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update ticket
+    // Get a customer's upcoming tickets via phone verification token
     ApiResponse<List<Ticket>> response = apiInstance.FetchCustomerTicketsWithTokenWithHttpInfo(fetchCustomerTicketsWithTokenRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

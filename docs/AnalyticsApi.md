@@ -6,14 +6,14 @@ All URIs are relative to *https://api.wall.et*
 |--------|--------------|-------------|
 | [**CountAllSubscribers**](AnalyticsApi.md#countallsubscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers |
 | [**CountAuthenticatedSessions**](AnalyticsApi.md#countauthenticatedsessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions |
-| [**CountDistinctRedemptions**](AnalyticsApi.md#countdistinctredemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Get refund amount of campaigns by Campaign |
+| [**CountDistinctRedemptions**](AnalyticsApi.md#countdistinctredemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Count distinct payment object redemptions |
 | [**CountHelpDeskRequests**](AnalyticsApi.md#counthelpdeskrequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests |
-| [**CountInboundMessages**](AnalyticsApi.md#countinboundmessages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers |
+| [**CountInboundMessages**](AnalyticsApi.md#countinboundmessages) | **GET** /v2/analytics/sms/inbound/count | Count inbound SMS messages |
 | [**CountNewSessions**](AnalyticsApi.md#countnewsessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions |
 | [**CountOptInListSubscribersPartitionedByDate**](AnalyticsApi.md#countoptinlistsubscriberspartitionedbydate) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date |
-| [**CountOutboundMessages**](AnalyticsApi.md#countoutboundmessages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers |
+| [**CountOutboundMessages**](AnalyticsApi.md#countoutboundmessages) | **GET** /v2/analytics/sms/outbound/count | Count outbound SMS messages |
 | [**CountTotalSessions**](AnalyticsApi.md#counttotalsessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions |
-| [**CountTransactions**](AnalyticsApi.md#counttransactions) | **GET** /v2/analytics/ledger/transactions/count | Get refund amount of campaigns by Campaign |
+| [**CountTransactions**](AnalyticsApi.md#counttransactions) | **GET** /v2/analytics/ledger/transactions/count | Count ledger transactions |
 | [**CountVerifiedWalletPageViews**](AnalyticsApi.md#countverifiedwalletpageviews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Get wallet object counts within a given time frame that have a valid phone verification token |
 | [**CountWalletPageViews**](AnalyticsApi.md#countwalletpageviews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Get wallet object counts within a given time frame |
 | [**ExitLinkSummary**](AnalyticsApi.md#exitlinksummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks |
@@ -41,8 +41,8 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAnalyticsCampaignsRedemptionsCountPartitionedByDate**](AnalyticsApi.md#fetchanalyticscampaignsredemptionscountpartitionedbydate) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date |
 | [**FetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID**](AnalyticsApi.md#fetchanalyticscampaignsrefundsamountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Get refund amount of campaigns by Campaign |
 | [**FetchAnalyticsCampaignsRefundsAmountPartitionedByDate**](AnalyticsApi.md#fetchanalyticscampaignsrefundsamountpartitionedbydate) | **GET** /v2/analytics/campaigns/refunds/amount/date | Get refund amount of campaigns by date |
-| [**FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID**](AnalyticsApi.md#fetchanalyticscampaignsrefundscountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Get refund amount of campaigns by Campaign |
-| [**FetchAnalyticsCampaignsRefundsCountPartitionedByDate**](AnalyticsApi.md#fetchanalyticscampaignsrefundscountpartitionedbydate) | **GET** /v2/analytics/campaigns/refunds/count/date | Get refund amount of campaigns by date |
+| [**FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID**](AnalyticsApi.md#fetchanalyticscampaignsrefundscountpartitionedbycampaignid) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Count refunds of campaigns by Campaign |
+| [**FetchAnalyticsCampaignsRefundsCountPartitionedByDate**](AnalyticsApi.md#fetchanalyticscampaignsrefundscountpartitionedbydate) | **GET** /v2/analytics/campaigns/refunds/count/date | Count refunds of campaigns by date |
 | [**FetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate**](AnalyticsApi.md#fetchanalyticsdeliveredoutboundmessagescountpartitionedbydate) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date |
 | [**FetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber**](AnalyticsApi.md#fetchanalyticsdeliveredoutboundmessagescountpartitionedbyphonenumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number |
 | [**FetchAnalyticsDistinctWalletSessions**](AnalyticsApi.md#fetchanalyticsdistinctwalletsessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Get distinct wallet sessions |
@@ -86,8 +86,8 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAnalyticsWalletSessionActivity**](AnalyticsApi.md#fetchanalyticswalletsessionactivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Get session activity |
 | [**FetchWalletPageViewByID**](AnalyticsApi.md#fetchwalletpageviewbyid) | **GET** /v2/analytics/walletPageViews/activity/{id} | Get session activity by wallet page view ID |
 | [**ReferringSitesSummary**](AnalyticsApi.md#referringsitessummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites |
-| [**SumRevenue**](AnalyticsApi.md#sumrevenue) | **GET** /v2/analytics/ledger/revenue/sum | Get refund amount of campaigns by Campaign |
-| [**SumTransactions**](AnalyticsApi.md#sumtransactions) | **GET** /v2/analytics/ledger/transactions/sum | Get refund amount of campaigns by Campaign |
+| [**SumRevenue**](AnalyticsApi.md#sumrevenue) | **GET** /v2/analytics/ledger/revenue/sum | Sum ledger revenue |
+| [**SumTransactions**](AnalyticsApi.md#sumtransactions) | **GET** /v2/analytics/ledger/transactions/sum | Sum ledger transaction amounts |
 
 <a id="countallsubscribers"></a>
 # **CountAllSubscribers**
@@ -295,7 +295,7 @@ No authorization required
 # **CountDistinctRedemptions**
 > Object CountDistinctRedemptions (DateTime startDate, DateTime endDate, string? transactionType = null, string? segmentType = null)
 
-Get refund amount of campaigns by Campaign
+Count distinct payment object redemptions
 
 ### Example
 ```csharp
@@ -325,7 +325,7 @@ namespace Example
 
             try
             {
-                // Get refund amount of campaigns by Campaign
+                // Count distinct payment object redemptions
                 Object result = apiInstance.CountDistinctRedemptions(startDate, endDate, transactionType, segmentType);
                 Debug.WriteLine(result);
             }
@@ -346,7 +346,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get refund amount of campaigns by Campaign
+    // Count distinct payment object redemptions
     ApiResponse<Object> response = apiInstance.CountDistinctRedemptionsWithHttpInfo(startDate, endDate, transactionType, segmentType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -501,7 +501,7 @@ No authorization required
 # **CountInboundMessages**
 > WTCountResult CountInboundMessages (DateTime? startDate = null, DateTime? endDate = null)
 
-Count opt in list subscribers
+Count inbound SMS messages
 
 ### Example
 ```csharp
@@ -529,7 +529,7 @@ namespace Example
 
             try
             {
-                // Count opt in list subscribers
+                // Count inbound SMS messages
                 WTCountResult result = apiInstance.CountInboundMessages(startDate, endDate);
                 Debug.WriteLine(result);
             }
@@ -550,7 +550,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Count opt in list subscribers
+    // Count inbound SMS messages
     ApiResponse<WTCountResult> response = apiInstance.CountInboundMessagesWithHttpInfo(startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -795,7 +795,7 @@ No authorization required
 # **CountOutboundMessages**
 > WTCountResult CountOutboundMessages (DateTime? startDate = null, DateTime? endDate = null)
 
-Count opt in list subscribers
+Count outbound SMS messages
 
 ### Example
 ```csharp
@@ -823,7 +823,7 @@ namespace Example
 
             try
             {
-                // Count opt in list subscribers
+                // Count outbound SMS messages
                 WTCountResult result = apiInstance.CountOutboundMessages(startDate, endDate);
                 Debug.WriteLine(result);
             }
@@ -844,7 +844,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Count opt in list subscribers
+    // Count outbound SMS messages
     ApiResponse<WTCountResult> response = apiInstance.CountOutboundMessagesWithHttpInfo(startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -991,7 +991,7 @@ No authorization required
 # **CountTransactions**
 > Object CountTransactions (DateTime startDate, DateTime endDate, string? transactionType = null, string? segmentType = null)
 
-Get refund amount of campaigns by Campaign
+Count ledger transactions
 
 ### Example
 ```csharp
@@ -1021,7 +1021,7 @@ namespace Example
 
             try
             {
-                // Get refund amount of campaigns by Campaign
+                // Count ledger transactions
                 Object result = apiInstance.CountTransactions(startDate, endDate, transactionType, segmentType);
                 Debug.WriteLine(result);
             }
@@ -1042,7 +1042,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get refund amount of campaigns by Campaign
+    // Count ledger transactions
     ApiResponse<Object> response = apiInstance.CountTransactionsWithHttpInfo(startDate, endDate, transactionType, segmentType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -3769,7 +3769,7 @@ No authorization required
 # **FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID**
 > List&lt;Object&gt; FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID (DateTime startDate, DateTime endDate)
 
-Get refund amount of campaigns by Campaign
+Count refunds of campaigns by Campaign
 
 ### Example
 ```csharp
@@ -3797,7 +3797,7 @@ namespace Example
 
             try
             {
-                // Get refund amount of campaigns by Campaign
+                // Count refunds of campaigns by Campaign
                 List<Object> result = apiInstance.FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID(startDate, endDate);
                 Debug.WriteLine(result);
             }
@@ -3818,7 +3818,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get refund amount of campaigns by Campaign
+    // Count refunds of campaigns by Campaign
     ApiResponse<List<Object>> response = apiInstance.FetchAnalyticsCampaignsRefundsCountPartitionedByCampaignIDWithHttpInfo(startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -3867,7 +3867,7 @@ No authorization required
 # **FetchAnalyticsCampaignsRefundsCountPartitionedByDate**
 > Object FetchAnalyticsCampaignsRefundsCountPartitionedByDate (DateTime startDate, DateTime endDate, string locale, string timezone)
 
-Get refund amount of campaigns by date
+Count refunds of campaigns by date
 
 ### Example
 ```csharp
@@ -3897,7 +3897,7 @@ namespace Example
 
             try
             {
-                // Get refund amount of campaigns by date
+                // Count refunds of campaigns by date
                 Object result = apiInstance.FetchAnalyticsCampaignsRefundsCountPartitionedByDate(startDate, endDate, locale, timezone);
                 Debug.WriteLine(result);
             }
@@ -3918,7 +3918,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get refund amount of campaigns by date
+    // Count refunds of campaigns by date
     ApiResponse<Object> response = apiInstance.FetchAnalyticsCampaignsRefundsCountPartitionedByDateWithHttpInfo(startDate, endDate, locale, timezone);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -8259,7 +8259,7 @@ No authorization required
 # **SumRevenue**
 > Object SumRevenue (DateTime startDate, DateTime endDate, string? transactionType = null, string? segmentType = null)
 
-Get refund amount of campaigns by Campaign
+Sum ledger revenue
 
 ### Example
 ```csharp
@@ -8289,7 +8289,7 @@ namespace Example
 
             try
             {
-                // Get refund amount of campaigns by Campaign
+                // Sum ledger revenue
                 Object result = apiInstance.SumRevenue(startDate, endDate, transactionType, segmentType);
                 Debug.WriteLine(result);
             }
@@ -8310,7 +8310,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get refund amount of campaigns by Campaign
+    // Sum ledger revenue
     ApiResponse<Object> response = apiInstance.SumRevenueWithHttpInfo(startDate, endDate, transactionType, segmentType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -8361,7 +8361,7 @@ No authorization required
 # **SumTransactions**
 > Object SumTransactions (DateTime startDate, DateTime endDate, string? transactionType = null, string? segmentType = null)
 
-Get refund amount of campaigns by Campaign
+Sum ledger transaction amounts
 
 ### Example
 ```csharp
@@ -8391,7 +8391,7 @@ namespace Example
 
             try
             {
-                // Get refund amount of campaigns by Campaign
+                // Sum ledger transaction amounts
                 Object result = apiInstance.SumTransactions(startDate, endDate, transactionType, segmentType);
                 Debug.WriteLine(result);
             }
@@ -8412,7 +8412,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get refund amount of campaigns by Campaign
+    // Sum ledger transaction amounts
     ApiResponse<Object> response = apiInstance.SumTransactionsWithHttpInfo(startDate, endDate, transactionType, segmentType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

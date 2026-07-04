@@ -29,7 +29,7 @@ namespace WalletInc.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Update ticket
+        /// Claim a ticket by ID
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -38,7 +38,7 @@ namespace WalletInc.Api
         Ticket ClaimTicket(string id, ClaimTicketRequest claimTicketRequest);
 
         /// <summary>
-        /// Update ticket
+        /// Claim a ticket by ID
         /// </summary>
         /// <remarks>
         /// 
@@ -121,7 +121,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> CreateVirtualBusinessCardVCardWithHttpInfo(string id);
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID
+        /// Get a merchant&#39;s active dynamic vouchers
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="merchantID"></param>
@@ -129,7 +129,7 @@ namespace WalletInc.Api
         List<DynamicVoucher> FetchActiveDynamicVouchers(string merchantID);
 
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID
+        /// Get a merchant&#39;s active dynamic vouchers
         /// </summary>
         /// <remarks>
         /// 
@@ -177,7 +177,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner&gt;</returns>
         ApiResponse<List<FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner>> FetchAllStaticVouchersAssociatedWithCustomerWithVoucherIDWithHttpInfo(string voucherID);
         /// <summary>
-        /// Update ticket
+        /// Get a customer&#39;s upcoming tickets via phone verification token
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fetchCustomerTicketsWithTokenRequest"></param>
@@ -185,7 +185,7 @@ namespace WalletInc.Api
         List<Ticket> FetchCustomerTicketsWithToken(FetchCustomerTicketsWithTokenRequest fetchCustomerTicketsWithTokenRequest);
 
         /// <summary>
-        /// Update ticket
+        /// Get a customer&#39;s upcoming tickets via phone verification token
         /// </summary>
         /// <remarks>
         /// 
@@ -394,7 +394,7 @@ namespace WalletInc.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Update ticket
+        /// Claim a ticket by ID
         /// </summary>
         /// <remarks>
         /// 
@@ -407,7 +407,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Ticket> ClaimTicketAsync(string id, ClaimTicketRequest claimTicketRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update ticket
+        /// Claim a ticket by ID
         /// </summary>
         /// <remarks>
         /// 
@@ -511,7 +511,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> CreateVirtualBusinessCardVCardWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID
+        /// Get a merchant&#39;s active dynamic vouchers
         /// </summary>
         /// <remarks>
         /// 
@@ -523,7 +523,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<List<DynamicVoucher>> FetchActiveDynamicVouchersAsync(string merchantID, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID
+        /// Get a merchant&#39;s active dynamic vouchers
         /// </summary>
         /// <remarks>
         /// 
@@ -582,7 +582,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (List&lt;FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner>>> FetchAllStaticVouchersAssociatedWithCustomerWithVoucherIDWithHttpInfoAsync(string voucherID, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update ticket
+        /// Get a customer&#39;s upcoming tickets via phone verification token
         /// </summary>
         /// <remarks>
         /// 
@@ -594,7 +594,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<List<Ticket>> FetchCustomerTicketsWithTokenAsync(FetchCustomerTicketsWithTokenRequest fetchCustomerTicketsWithTokenRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update ticket
+        /// Get a customer&#39;s upcoming tickets via phone verification token
         /// </summary>
         /// <remarks>
         /// 
@@ -1058,7 +1058,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Claim a ticket by ID 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1071,7 +1071,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Claim a ticket by ID 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1121,7 +1121,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Claim a ticket by ID 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1135,7 +1135,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Claim a ticket by ID 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1649,7 +1649,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID 
+        /// Get a merchant&#39;s active dynamic vouchers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="merchantID"></param>
@@ -1661,7 +1661,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID 
+        /// Get a merchant&#39;s active dynamic vouchers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="merchantID"></param>
@@ -1704,7 +1704,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID 
+        /// Get a merchant&#39;s active dynamic vouchers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="merchantID"></param>
@@ -1717,7 +1717,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Get a customer&#39;s static vouchers on the basis of a given voucher ID 
+        /// Get a merchant&#39;s active dynamic vouchers 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="merchantID"></param>
@@ -2010,7 +2010,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Get a customer&#39;s upcoming tickets via phone verification token 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fetchCustomerTicketsWithTokenRequest"></param>
@@ -2022,7 +2022,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Get a customer&#39;s upcoming tickets via phone verification token 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fetchCustomerTicketsWithTokenRequest"></param>
@@ -2066,7 +2066,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Get a customer&#39;s upcoming tickets via phone verification token 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fetchCustomerTicketsWithTokenRequest"></param>
@@ -2079,7 +2079,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update ticket 
+        /// Get a customer&#39;s upcoming tickets via phone verification token 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fetchCustomerTicketsWithTokenRequest"></param>

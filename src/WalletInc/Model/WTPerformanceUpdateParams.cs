@@ -46,7 +46,7 @@ namespace WalletInc.Model
         /// <param name="startDateTime">startDateTime (required).</param>
         /// <param name="price">price (required).</param>
         /// <param name="url">url (required).</param>
-        /// <param name="orderNumber">Stores the order number (required).</param>
+        /// <param name="orderNumber">orderNumber (required).</param>
         /// <param name="isSoldOut">Denotes if the event has been sold out (required).</param>
         /// <param name="mediaURL">mediaURL.</param>
         /// <param name="paymentDesignID">paymentDesignID.</param>
@@ -102,7 +102,7 @@ namespace WalletInc.Model
         /// Gets or Sets Body
         /// </summary>
         /*
-        <example>This is the description of the performance</example>
+        <example>This is the body of the performance</example>
         */
         [DataMember(Name = "body", IsRequired = true, EmitDefaultValue = true)]
         public string Body { get; set; }
@@ -132,9 +132,8 @@ namespace WalletInc.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// Stores the order number
+        /// Gets or Sets OrderNumber
         /// </summary>
-        /// <value>Stores the order number</value>
         /*
         <example>5</example>
         */
