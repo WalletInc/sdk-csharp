@@ -17,10 +17,10 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchStaticVoucherCampaignById**](StaticVoucherCampaignsApi.md#fetchstaticvouchercampaignbyid) | **GET** /v2/payment/staticVoucherCampaign/{id} | Get Static Vouchers Campaign |
 | [**FetchStaticVoucherCampaigns**](StaticVoucherCampaignsApi.md#fetchstaticvouchercampaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Get all Static Vouchers Campaigns |
 | [**FetchStaticVouchers**](StaticVoucherCampaignsApi.md#fetchstaticvouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Get vouchers in Static Vouchers Campaign |
-| [**FetchStaticVouchersPage**](StaticVoucherCampaignsApi.md#fetchstaticvoucherspage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get vouchers in Static Vouchers Campaign |
+| [**FetchStaticVouchersPage**](StaticVoucherCampaignsApi.md#fetchstaticvoucherspage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get a page of vouchers in a Static Voucher Campaign |
 | [**FetchViews**](StaticVoucherCampaignsApi.md#fetchviews) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Get Static Vouchers Campaign traffic |
 | [**FetchVouchersRedeemed**](StaticVoucherCampaignsApi.md#fetchvouchersredeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Get redeemed vouchers in Static Vouchers Campaign |
-| [**PreviewMessagesByPage**](StaticVoucherCampaignsApi.md#previewmessagesbypage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | View vouchers in Static Voucher Campaign |
+| [**PreviewMessagesByPage**](StaticVoucherCampaignsApi.md#previewmessagesbypage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview generated broadcast messages by page |
 | [**RestoreStaticVoucherCampaign**](StaticVoucherCampaignsApi.md#restorestaticvouchercampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore Static Voucher Campaign |
 | [**UpdateStaticVoucherCampaign**](StaticVoucherCampaignsApi.md#updatestaticvouchercampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update Static Voucher Campaign |
 | [**UpdateStaticVoucherCampaignWithVoucher**](StaticVoucherCampaignsApi.md#updatestaticvouchercampaignwithvoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update Static Voucher Campaign with single voucher |
@@ -1285,7 +1285,7 @@ No authorization required
 # **FetchStaticVouchersPage**
 > FetchStaticVouchersPage200Response FetchStaticVouchersPage (string campaignID, double pagenum, double pagesize)
 
-Get vouchers in Static Vouchers Campaign
+Get a page of vouchers in a Static Voucher Campaign
 
 ### Example
 ```csharp
@@ -1314,7 +1314,7 @@ namespace Example
 
             try
             {
-                // Get vouchers in Static Vouchers Campaign
+                // Get a page of vouchers in a Static Voucher Campaign
                 FetchStaticVouchersPage200Response result = apiInstance.FetchStaticVouchersPage(campaignID, pagenum, pagesize);
                 Debug.WriteLine(result);
             }
@@ -1335,7 +1335,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get vouchers in Static Vouchers Campaign
+    // Get a page of vouchers in a Static Voucher Campaign
     ApiResponse<FetchStaticVouchersPage200Response> response = apiInstance.FetchStaticVouchersPageWithHttpInfo(campaignID, pagenum, pagesize);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -1577,7 +1577,7 @@ No authorization required
 # **PreviewMessagesByPage**
 > VSCampaignGeneratedMessagePagination PreviewMessagesByPage (string campaignID, WTStaticVoucherCampaignPreviewMessagesByPage wTStaticVoucherCampaignPreviewMessagesByPage)
 
-View vouchers in Static Voucher Campaign
+Preview generated broadcast messages by page
 
 ### Example
 ```csharp
@@ -1605,7 +1605,7 @@ namespace Example
 
             try
             {
-                // View vouchers in Static Voucher Campaign
+                // Preview generated broadcast messages by page
                 VSCampaignGeneratedMessagePagination result = apiInstance.PreviewMessagesByPage(campaignID, wTStaticVoucherCampaignPreviewMessagesByPage);
                 Debug.WriteLine(result);
             }
@@ -1626,7 +1626,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // View vouchers in Static Voucher Campaign
+    // Preview generated broadcast messages by page
     ApiResponse<VSCampaignGeneratedMessagePagination> response = apiInstance.PreviewMessagesByPageWithHttpInfo(campaignID, wTStaticVoucherCampaignPreviewMessagesByPage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

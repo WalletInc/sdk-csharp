@@ -499,7 +499,7 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> UpdateMerchantWithHttpInfo(WTMerchantUpdate wTMerchantUpdate);
         /// <summary>
-        /// Update billing contact
+        /// Update points of contact
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTMerchantUpdatePointsOfContact"></param>
@@ -507,7 +507,7 @@ namespace WalletInc.Api
         Object UpdatePointsOfContact(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact);
 
         /// <summary>
-        /// Update billing contact
+        /// Update points of contact
         /// </summary>
         /// <remarks>
         /// 
@@ -1139,7 +1139,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UpdateMerchantWithHttpInfoAsync(WTMerchantUpdate wTMerchantUpdate, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update billing contact
+        /// Update points of contact
         /// </summary>
         /// <remarks>
         /// 
@@ -1151,7 +1151,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Object> UpdatePointsOfContactAsync(WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update billing contact
+        /// Update points of contact
         /// </summary>
         /// <remarks>
         /// 
@@ -4375,7 +4375,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update billing contact 
+        /// Update points of contact 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTMerchantUpdatePointsOfContact"></param>
@@ -4387,7 +4387,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update billing contact 
+        /// Update points of contact 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTMerchantUpdatePointsOfContact"></param>
@@ -4431,7 +4431,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update billing contact 
+        /// Update points of contact 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTMerchantUpdatePointsOfContact"></param>
@@ -4444,7 +4444,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Update billing contact 
+        /// Update points of contact 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wTMerchantUpdatePointsOfContact"></param>

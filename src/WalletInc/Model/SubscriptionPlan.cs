@@ -48,7 +48,8 @@ namespace WalletInc.Model
         /// <param name="examples">examples (required).</param>
         /// <param name="products">products (required).</param>
         /// <param name="allPages">allPages (required).</param>
-        public SubscriptionPlan(string id = default, string name = default, double price = default, string nickname = default, string examples = default, List<SubscriptionProduct> products = default, List<PortalPage> allPages = default)
+        /// <param name="annual">annual.</param>
+        public SubscriptionPlan(string id = default, string name = default, double price = default, string nickname = default, string examples = default, List<SubscriptionProduct> products = default, List<PortalPage> allPages = default, SubscriptionPlanAnnual annual = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -87,6 +88,7 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("allPages is a required property for SubscriptionPlan and cannot be null");
             }
             this.AllPages = allPages;
+            this.Annual = annual;
         }
 
         /// <summary>
@@ -132,6 +134,12 @@ namespace WalletInc.Model
         public List<PortalPage> AllPages { get; set; }
 
         /// <summary>
+        /// Gets or Sets Annual
+        /// </summary>
+        [DataMember(Name = "annual", EmitDefaultValue = false)]
+        public SubscriptionPlanAnnual Annual { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -146,6 +154,7 @@ namespace WalletInc.Model
             sb.Append("  Examples: ").Append(Examples).Append("\n");
             sb.Append("  Products: ").Append(Products).Append("\n");
             sb.Append("  AllPages: ").Append(AllPages).Append("\n");
+            sb.Append("  Annual: ").Append(Annual).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

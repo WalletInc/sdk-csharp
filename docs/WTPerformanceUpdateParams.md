@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **StartDateTime** | **DateTime** |  | 
 **Price** | **string** |  | 
 **Url** | **string** |  | 
-**OrderNumber** | **int** | Stores the order number | 
+**OrderNumber** | **int** |  | 
 **IsSoldOut** | **bool** | Denotes if the event has been sold out | 
 **MediaURL** | **string** |  | [optional] 
 **PaymentDesignID** | **string** |  | [optional] 

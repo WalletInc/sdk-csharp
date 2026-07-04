@@ -29,7 +29,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchTCPAFilter**](MerchantApi.md#fetchtcpafilter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters |
 | [**FetchWalletConfiguration**](MerchantApi.md#fetchwalletconfiguration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration |
 | [**UpdateMerchant**](MerchantApi.md#updatemerchant) | **PUT** /v2/merchant | Update merchant details |
-| [**UpdatePointsOfContact**](MerchantApi.md#updatepointsofcontact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact |
+| [**UpdatePointsOfContact**](MerchantApi.md#updatepointsofcontact) | **PUT** /v2/merchant/pointsOfContact | Update points of contact |
 | [**UpdatePosIntegration**](MerchantApi.md#updateposintegration) | **PUT** /v2/merchant/pos/integration | Update POS Integration |
 
 <a id="archivemerchantprofile"></a>
@@ -2438,7 +2438,7 @@ No authorization required
 # **UpdatePointsOfContact**
 > Object UpdatePointsOfContact (WTMerchantUpdatePointsOfContact wTMerchantUpdatePointsOfContact)
 
-Update billing contact
+Update points of contact
 
 ### Example
 ```csharp
@@ -2465,7 +2465,7 @@ namespace Example
 
             try
             {
-                // Update billing contact
+                // Update points of contact
                 Object result = apiInstance.UpdatePointsOfContact(wTMerchantUpdatePointsOfContact);
                 Debug.WriteLine(result);
             }
@@ -2486,7 +2486,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update billing contact
+    // Update points of contact
     ApiResponse<Object> response = apiInstance.UpdatePointsOfContactWithHttpInfo(wTMerchantUpdatePointsOfContact);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

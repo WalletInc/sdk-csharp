@@ -36,9 +36,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -110,9 +107,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -184,9 +178,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -258,9 +249,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -332,9 +320,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -406,9 +391,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -489,7 +471,7 @@ paths:
                     - walletObjectID: HYdju8352A
                       walletObjectName: SV673AJwu71Loe
                       count: 5
-                      dateOccurred: 2026-07-04T10:52:34.801Z
+                      dateOccurred: 2026-07-04T12:04:35.465Z
               schema:
                 items:
                   $ref: "#/components/schemas/WTWalletObjectPrefixCounts"
@@ -574,7 +556,7 @@ paths:
                     - walletObjectID: HYdju8352A
                       walletObjectName: SV673AJwu71Loe
                       count: 5
-                      dateOccurred: 2026-07-04T10:52:34.804Z
+                      dateOccurred: 2026-07-04T12:04:35.486Z
               schema:
                 items:
                   $ref: "#/components/schemas/WTWalletObjectPrefixCounts"
@@ -642,9 +624,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/WTWalletPageView"
@@ -711,9 +690,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/WalletPageView"
           description: Ok
@@ -777,9 +753,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/WTWalletPageView"
@@ -846,9 +819,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/WTWalletPageView"
@@ -915,9 +885,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -1338,7 +1305,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get redeemed amoun̥t of tiers
+      summary: Get redeemed amount of tiers
       tags:
       - Analytics
   /v2/analytics/membership/tier/amount/refunded:
@@ -1473,9 +1440,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -1561,9 +1525,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -1649,9 +1610,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -1744,9 +1702,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -1832,9 +1787,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -1920,9 +1872,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2008,9 +1957,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2082,9 +2028,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -2173,9 +2116,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2247,9 +2187,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -2324,9 +2261,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2398,9 +2332,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2569,9 +2500,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2692,7 +2620,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Count opt in list subscribers
+      summary: Count inbound SMS messages
       tags:
       - Analytics
   /v2/analytics/sms/outbound/count:
@@ -2768,7 +2696,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Count opt in list subscribers
+      summary: Count outbound SMS messages
       tags:
       - Analytics
   /v2/analytics/paymentObjectBroadcasts/count/date/created:
@@ -2809,9 +2737,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2897,9 +2822,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -2971,9 +2893,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -3062,9 +2981,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -3136,9 +3052,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -3213,9 +3126,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -3287,9 +3197,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -3378,9 +3285,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -3452,9 +3356,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -3543,9 +3444,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -3617,9 +3515,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -3691,9 +3586,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -3768,9 +3660,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -3859,9 +3748,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -3933,9 +3819,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4024,9 +3907,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -4098,9 +3978,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4189,9 +4066,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -4263,9 +4137,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4354,9 +4225,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -4428,9 +4296,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4519,9 +4384,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -4593,9 +4455,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4670,9 +4529,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4747,9 +4603,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4838,9 +4691,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -4915,9 +4765,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5006,9 +4853,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -5080,9 +4924,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5171,9 +5012,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -5245,9 +5083,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5336,9 +5171,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -5410,9 +5242,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5487,9 +5316,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -5561,9 +5387,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5638,9 +5461,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5715,9 +5535,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5792,9 +5609,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -5883,9 +5697,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -5957,9 +5768,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -6048,9 +5856,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -6122,9 +5927,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -6213,9 +6015,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -6260,7 +6059,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get refund amount of campaigns by date
+      summary: Count refunds of campaigns by date
       tags:
       - Analytics
   /v2/analytics/campaigns/refunds/count/campaign:
@@ -6287,9 +6086,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -6337,7 +6133,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get refund amount of campaigns by Campaign
+      summary: Count refunds of campaigns by Campaign
       tags:
       - Analytics
   /v2/analytics/campaigns/refunds/amount/date:
@@ -6378,9 +6174,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -6452,9 +6245,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -6543,9 +6333,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -6590,7 +6377,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get refund amount of campaigns by Campaign
+      summary: Count ledger transactions
       tags:
       - Analytics
   /v2/analytics/ledger/transactions/sum:
@@ -6631,9 +6418,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -6678,7 +6462,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get refund amount of campaigns by Campaign
+      summary: Sum ledger transaction amounts
       tags:
       - Analytics
   /v2/analytics/ledger/revenue/sum:
@@ -6719,9 +6503,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -6766,7 +6547,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get refund amount of campaigns by Campaign
+      summary: Sum ledger revenue
       tags:
       - Analytics
   /v2/analytics/ledger/paymentObject/distinct/count:
@@ -6807,9 +6588,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -6854,7 +6632,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get refund amount of campaigns by Campaign
+      summary: Count distinct payment object redemptions
       tags:
       - Analytics
   /v2/apple/wallet/pass/subscribers/all:
@@ -6881,9 +6659,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 items: {}
                 type: array
@@ -6949,9 +6724,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 items: {}
                 type: array
@@ -7010,9 +6782,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -7073,9 +6842,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -7132,9 +6898,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -7203,9 +6966,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -7665,9 +7425,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 properties: {}
                 type: object
@@ -7725,9 +7482,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/WTBillingVerifyPaymentMethodResponse"
           description: Ok
@@ -7789,9 +7543,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -7847,9 +7598,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/fetchIndustry_200_response"
           description: Ok
@@ -7912,9 +7660,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Merchant"
           description: Ok
@@ -7971,9 +7716,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8029,9 +7771,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8087,9 +7826,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8137,6 +7873,61 @@ paths:
       summary: Get invoices
       tags:
       - Billing & Payments
+  /v2/billing/portal/session:
+    post:
+      operationId: createBillingPortalSession
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Create a Stripe Billing Portal session
+      tags:
+      - Billing & Payments
   /v2/billing/invoices/upcoming:
     get:
       operationId: upcomingInvoices
@@ -8145,9 +7936,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8203,9 +7991,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8266,9 +8051,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8324,9 +8106,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -8392,9 +8171,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8450,9 +8226,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -8518,9 +8291,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -8590,9 +8360,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -8666,9 +8433,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -8742,9 +8506,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -8818,9 +8579,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -8894,9 +8652,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -8970,9 +8725,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -9038,9 +8790,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -9102,9 +8851,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -9167,9 +8913,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/WalletPageView"
@@ -9245,9 +8988,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/WTCountResult"
           description: Ok
@@ -9369,7 +9109,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Count Performances
+      summary: Count subscribers
       tags:
       - Dashboard Summaries
   /v2/dashboard/count/membershipTiers:
@@ -11385,9 +11125,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/EmployeeAPIKey"
@@ -11454,9 +11191,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/EmployeeAPIKey"
           description: Ok
@@ -11527,8 +11261,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:36.210Z
-                    updatedAt: 2026-07-04T10:52:36.210Z
+                    createdAt: 2026-07-04T12:04:37.462Z
+                    updatedAt: 2026-07-04T12:04:37.462Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -11598,9 +11332,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/EmployeeAPIKey"
           description: Ok
@@ -11663,9 +11394,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/EmployeeAPIKey"
           description: Ok
@@ -11728,9 +11456,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Employee"
           description: Ok
@@ -11793,9 +11518,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -11865,9 +11587,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Employee"
           description: Ok
@@ -11924,9 +11643,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Employee"
           description: Ok
@@ -11983,9 +11699,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Webpage"
@@ -12045,9 +11758,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -12104,9 +11814,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Message"
@@ -12166,9 +11873,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -12231,9 +11935,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Employee"
           description: Ok
@@ -12298,9 +11999,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -12363,9 +12061,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -12436,9 +12131,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -12510,9 +12202,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -12576,9 +12265,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -12641,9 +12327,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/PresignedPost"
           description: Ok
@@ -12706,9 +12389,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/createFile_200_response"
           description: Ok
@@ -12772,9 +12452,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -12838,9 +12515,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -12903,9 +12577,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -12962,9 +12633,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -13027,9 +12695,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -13092,9 +12757,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -13151,9 +12813,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -13210,9 +12869,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -13268,9 +12924,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -13334,9 +12987,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/EmployeeActivityLog"
@@ -13402,9 +13052,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/OutboundSMS"
           description: Ok
@@ -13468,9 +13115,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/HelpDeskRequest"
           description: Ok
@@ -13527,9 +13171,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/OptInListSource"
@@ -13596,9 +13237,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/OptInListSource"
           description: Ok
@@ -13662,9 +13300,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/DynamicVoucher"
@@ -13730,9 +13365,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/MediaFile"
           description: Ok
@@ -13796,9 +13428,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/MediaFile"
           description: Ok
@@ -13862,9 +13491,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/MediaFile"
@@ -13930,9 +13556,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Document"
           description: Ok
@@ -13996,9 +13619,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Document"
           description: Ok
@@ -14062,9 +13682,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Document"
@@ -14137,9 +13754,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaignBroadcast"
           description: Ok
@@ -14215,9 +13829,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -14293,9 +13904,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -14378,9 +13986,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/DynamicVoucherBroadcast"
           description: Ok
@@ -14463,9 +14068,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/DynamicVoucherBroadcast"
           description: Ok
@@ -14524,7 +14126,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Schedule Dyanamic Voucher to recipient
+      summary: Schedule Dynamic Voucher to recipient
       tags:
       - Employees
   /v2/employee/sms/schedule/adCredit/{advertisementCreditID}:
@@ -14548,9 +14150,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/AdvertisementCreditBroadcast"
           description: Ok
@@ -16606,9 +16205,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -16670,9 +16266,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -16717,7 +16310,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Update billing contact
+      summary: Update points of contact
       tags:
       - Merchant
   /v2/merchant/pos/integration:
@@ -16734,9 +16327,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -16792,9 +16382,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -16850,9 +16437,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -16908,9 +16492,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -16966,9 +16547,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -17038,9 +16616,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -17103,9 +16678,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/PhoneNumber"
           description: Ok
@@ -17162,9 +16734,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Tcpa"
@@ -17238,9 +16807,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/HelpDeskRequest"
@@ -17314,9 +16880,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/InboundSMS"
@@ -17595,9 +17158,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -17668,9 +17228,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/OutboundSMS"
@@ -17751,9 +17308,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -17817,9 +17371,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -17882,9 +17433,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/OptInList"
           description: Ok
@@ -17948,9 +17496,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -18013,9 +17558,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/ImportedList"
           description: Ok
@@ -18079,9 +17621,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/SimpleSMSBroadcast"
@@ -18148,9 +17687,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/DynamicVoucherBroadcast"
@@ -18217,9 +17753,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/AdvertisementCreditBroadcast"
@@ -18286,9 +17819,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucherCampaignBroadcast"
@@ -18355,9 +17885,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -18413,9 +17940,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -20459,7 +19983,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get Peformance's Tickets
+      summary: Get Performance's Tickets
       tags:
       - Performances
   /v2/products/all:
@@ -22515,9 +22039,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -22579,9 +22100,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/PhoneNumber"
           description: Ok
@@ -22651,9 +22169,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -22717,9 +22232,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/PhoneNumber"
           description: Ok
@@ -22782,9 +22294,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/PhoneNumber"
           description: Ok
@@ -22853,9 +22362,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/PhoneNumber"
           description: Ok
@@ -22919,9 +22425,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Tcpa"
@@ -22988,9 +22491,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/OptInList"
@@ -23057,9 +22557,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/OptInListSource"
@@ -23125,9 +22622,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/OptInList"
           description: Ok
@@ -23197,9 +22691,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/OptInList"
           description: Ok
@@ -23262,9 +22753,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/OptInListSource"
           description: Ok
@@ -23334,9 +22822,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/OptInListSource"
           description: Ok
@@ -23400,9 +22885,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -23486,9 +22968,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/OutboundSMS"
@@ -23802,9 +23281,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/OptInListSubscriber"
@@ -23908,9 +23384,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/fetchOptInListSubscribersByPage_200_response"
           description: Ok
@@ -24084,9 +23557,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -24150,9 +23620,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -24237,9 +23704,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/OptInListSubscriber"
@@ -24410,9 +23874,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucherCampaignBroadcast"
@@ -24478,9 +23939,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/ImportedList"
           description: Ok
@@ -24550,9 +24008,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/ImportedList"
           description: Ok
@@ -24616,9 +24071,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/ImportedListRecipient"
@@ -24708,9 +24160,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/fetchImportedListRecipientsByPage_200_response"
           description: Ok
@@ -24863,9 +24312,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/ImportedListRecipient"
           description: Ok
@@ -24929,9 +24375,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/ImportedListRecipient"
           description: Ok
@@ -25063,9 +24506,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -25128,9 +24568,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -25194,9 +24631,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -25253,9 +24687,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -25706,10 +25137,14 @@ paths:
                     title: Video 1
                     description: Video Description
                     orderNumber: 1
-                    mediaURL: https://media.wall.et/video.mp4
                     additionalInfoURL: https://hotels.com/videos/sunset-bar
                     merchantID: MPvlw729Db
                     isActive: true
+                    provider: r2
+                    assetId: 9f3c1e2a4b.mp4
+                    source:
+                      type: progressive
+                      url: https://video.wall.et/9f3c1e2a4b.mp4
               schema: {}
           description: Ok
         "401":
@@ -25757,6 +25192,80 @@ paths:
       summary: Get all Videos
       tags:
       - Videos
+  /v2/video/upload/provision:
+    post:
+      operationId: provisionVideoUpload
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTVideoUploadProvisionParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    provider: r2
+                    url: https://walletinc-production-merchant-videos.<acct>.r2.cloudflarestorage.com
+                    fields:
+                      key: 9f3c1e2a4b.mp4
+                      Content-Type: video/mp4
+                      policy: <base64>
+                      x-amz-signature: <sig>
+                    assetId: 9f3c1e2a4b.mp4
+                    hdIncluded: false
+              schema:
+                $ref: "#/components/schemas/WTVideoUploadProvision"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Provision a direct video upload
+      tags:
+      - Videos
   /v2/video:
     post:
       operationId: createVideo
@@ -25780,10 +25289,14 @@ paths:
                     title: Video 1
                     description: Video Description
                     orderNumber: 1
-                    mediaURL: https://media.wall.et/video.mp4
                     additionalInfoURL: https://hotels.com/videos/sunset-bar
                     merchantID: MPvlw729Db
                     isActive: true
+                    provider: r2
+                    assetId: 9f3c1e2a4b.mp4
+                    source:
+                      type: progressive
+                      url: https://video.wall.et/9f3c1e2a4b.mp4
               schema:
                 $ref: "#/components/schemas/Video"
           description: Ok
@@ -25856,10 +25369,14 @@ paths:
                     title: Video 1
                     description: Video Description
                     orderNumber: 1
-                    mediaURL: https://media.wall.et/video.mp4
                     additionalInfoURL: https://hotels.com/videos/sunset-bar
                     merchantID: MPvlw729Db
                     isActive: false
+                    provider: r2
+                    assetId: 9f3c1e2a4b.mp4
+                    source:
+                      type: progressive
+                      url: https://video.wall.et/9f3c1e2a4b.mp4
               schema:
                 $ref: "#/components/schemas/Video"
           description: Ok
@@ -25931,10 +25448,14 @@ paths:
                     title: Video 1
                     description: Video Description
                     orderNumber: 1
-                    mediaURL: https://media.wall.et/video.mp4
                     additionalInfoURL: https://hotels.com/videos/sunset-bar
                     merchantID: MPvlw729Db
                     isActive: true
+                    provider: r2
+                    assetId: 9f3c1e2a4b.mp4
+                    source:
+                      type: progressive
+                      url: https://video.wall.et/9f3c1e2a4b.mp4
               schema:
                 $ref: "#/components/schemas/Video"
           description: Ok
@@ -26012,10 +25533,14 @@ paths:
                     title: Video 1
                     description: Video Description
                     orderNumber: 1
-                    mediaURL: https://media.wall.et/video.mp4
                     additionalInfoURL: https://hotels.com/videos/sunset-bar
                     merchantID: MPvlw729Db
                     isActive: true
+                    provider: r2
+                    assetId: 9f3c1e2a4b.mp4
+                    source:
+                      type: progressive
+                      url: https://video.wall.et/9f3c1e2a4b.mp4
               schema:
                 $ref: "#/components/schemas/Video"
           description: Ok
@@ -28758,9 +28283,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 $ref: "#/components/schemas/MSMemberHistoryPagination"
           description: Ok
@@ -28823,9 +28345,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 $ref: "#/components/schemas/MSMemberRedemptionPagination"
           description: Ok
@@ -29035,8 +28554,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-04T10:52:39.402Z
-                    updatedAt: 2026-07-04T10:52:39.402Z
+                    createdAt: 2026-07-04T12:04:41.858Z
+                    updatedAt: 2026-07-04T12:04:41.858Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -29110,8 +28629,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-04T10:52:39.370Z
-                    updatedAt: 2026-07-04T10:52:39.370Z
+                    createdAt: 2026-07-04T12:04:41.818Z
+                    updatedAt: 2026-07-04T12:04:41.818Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -29185,8 +28704,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-04T10:52:39.405Z
-                    updatedAt: 2026-07-04T10:52:39.405Z
+                    createdAt: 2026-07-04T12:04:41.863Z
+                    updatedAt: 2026-07-04T12:04:41.863Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -29266,8 +28785,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-04T10:52:39.391Z
-                    updatedAt: 2026-07-04T10:52:39.391Z
+                    createdAt: 2026-07-04T12:04:41.844Z
+                    updatedAt: 2026-07-04T12:04:41.844Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -29367,8 +28886,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-04T10:52:39.378Z
-                    updatedAt: 2026-07-04T10:52:39.378Z
+                    createdAt: 2026-07-04T12:04:41.828Z
+                    updatedAt: 2026-07-04T12:04:41.828Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -29458,9 +28977,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 $ref: "#/components/schemas/MSMembershipTierHistoryPagination"
           description: Ok
@@ -29523,9 +29039,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 $ref: "#/components/schemas/MSMembershipTierRedemptionPagination"
           description: Ok
@@ -29670,8 +29183,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.495Z
-                    updatedAt: 2026-07-04T10:52:39.495Z
+                    createdAt: 2026-07-04T12:04:41.969Z
+                    updatedAt: 2026-07-04T12:04:41.969Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -29748,8 +29261,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.448Z
-                    updatedAt: 2026-07-04T10:52:39.448Z
+                    createdAt: 2026-07-04T12:04:41.919Z
+                    updatedAt: 2026-07-04T12:04:41.919Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -29826,8 +29339,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.498Z
-                    updatedAt: 2026-07-04T10:52:39.498Z
+                    createdAt: 2026-07-04T12:04:41.974Z
+                    updatedAt: 2026-07-04T12:04:41.974Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -29910,8 +29423,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.481Z
-                    updatedAt: 2026-07-04T10:52:39.481Z
+                    createdAt: 2026-07-04T12:04:41.953Z
+                    updatedAt: 2026-07-04T12:04:41.953Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -30014,8 +29527,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.456Z
-                    updatedAt: 2026-07-04T10:52:39.456Z
+                    createdAt: 2026-07-04T12:04:41.929Z
+                    updatedAt: 2026-07-04T12:04:41.929Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -30106,9 +29619,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 items:
                   $ref: "#/components/schemas/WTAdvertisementCreditScan"
@@ -30262,8 +29772,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.607Z
-                    updatedAt: 2026-07-04T10:52:39.607Z
+                    createdAt: 2026-07-04T12:04:42.094Z
+                    updatedAt: 2026-07-04T12:04:42.095Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -30346,8 +29856,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.562Z
-                    updatedAt: 2026-07-04T10:52:39.562Z
+                    createdAt: 2026-07-04T12:04:42.048Z
+                    updatedAt: 2026-07-04T12:04:42.048Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -30430,8 +29940,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.611Z
-                    updatedAt: 2026-07-04T10:52:39.611Z
+                    createdAt: 2026-07-04T12:04:42.098Z
+                    updatedAt: 2026-07-04T12:04:42.098Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -30520,8 +30030,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.595Z
-                    updatedAt: 2026-07-04T10:52:39.595Z
+                    createdAt: 2026-07-04T12:04:42.081Z
+                    updatedAt: 2026-07-04T12:04:42.081Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -30630,8 +30140,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.571Z
-                    updatedAt: 2026-07-04T10:52:39.571Z
+                    createdAt: 2026-07-04T12:04:42.058Z
+                    updatedAt: 2026-07-04T12:04:42.058Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -30849,8 +30359,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.616Z
-                    updatedAt: 2026-07-04T10:52:39.616Z
+                    createdAt: 2026-07-04T12:04:42.104Z
+                    updatedAt: 2026-07-04T12:04:42.104Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -30979,8 +30489,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.667Z
-                    updatedAt: 2026-07-04T10:52:39.667Z
+                    createdAt: 2026-07-04T12:04:42.165Z
+                    updatedAt: 2026-07-04T12:04:42.165Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -31071,9 +30581,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 items:
                   $ref: "#/components/schemas/WTDynamicVoucherRedemption"
@@ -31198,8 +30705,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.656Z
-                    updatedAt: 2026-07-04T10:52:39.656Z
+                    createdAt: 2026-07-04T12:04:42.151Z
+                    updatedAt: 2026-07-04T12:04:42.151Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -31349,8 +30856,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.679Z
-                    updatedAt: 2026-07-04T10:52:39.679Z
+                    createdAt: 2026-07-04T12:04:42.181Z
+                    updatedAt: 2026-07-04T12:04:42.181Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -31473,8 +30980,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.684Z
-                    updatedAt: 2026-07-04T10:52:39.684Z
+                    createdAt: 2026-07-04T12:04:42.188Z
+                    updatedAt: 2026-07-04T12:04:42.188Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -32367,9 +31874,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 $ref: "#/components/schemas/MSMerchantCreditHistoryPagination"
           description: Ok
@@ -32432,9 +31936,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 $ref: "#/components/schemas/MSMerchantCreditRedemptionPagination"
           description: Ok
@@ -32534,8 +32035,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.828Z
-                    updatedAt: 2026-07-04T10:52:39.828Z
+                    createdAt: 2026-07-04T12:04:42.384Z
+                    updatedAt: 2026-07-04T12:04:42.384Z
                     isActive: true
               schema:
                 items:
@@ -32631,8 +32132,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.830Z
-                    updatedAt: 2026-07-04T10:52:39.830Z
+                    createdAt: 2026-07-04T12:04:42.386Z
+                    updatedAt: 2026-07-04T12:04:42.386Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -32831,9 +32332,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 items:
                   $ref: "#/components/schemas/WTStaticVoucher"
@@ -32928,8 +32426,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.843Z
-                    updatedAt: 2026-07-04T10:52:39.843Z
+                    createdAt: 2026-07-04T12:04:42.398Z
+                    updatedAt: 2026-07-04T12:04:42.398Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -32994,9 +32492,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 items:
                   $ref: "#/components/schemas/WTStaticVoucher"
@@ -33129,7 +32624,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get vouchers in Static Vouchers Campaign
+      summary: Get a page of vouchers in a Static Voucher Campaign
       tags:
       - Static Voucher Campaigns
   /v2/payment/staticVoucherCampaign/views/{campaignID}:
@@ -33147,9 +32642,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: []
               schema:
                 items:
                   $ref: "#/components/schemas/WTWalletPageView"
@@ -33272,7 +32764,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: View vouchers in Static Voucher Campaign
+      summary: Preview generated broadcast messages by page
       tags:
       - Static Voucher Campaigns
   /v2/payment/staticVoucherCampaign/voucher:
@@ -33317,8 +32809,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.886Z
-                    updatedAt: 2026-07-04T10:52:39.886Z
+                    createdAt: 2026-07-04T12:04:42.446Z
+                    updatedAt: 2026-07-04T12:04:42.446Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -33417,8 +32909,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.899Z
-                    updatedAt: 2026-07-04T10:52:39.899Z
+                    createdAt: 2026-07-04T12:04:42.465Z
+                    updatedAt: 2026-07-04T12:04:42.465Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -33510,8 +33002,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.935Z
-                    updatedAt: 2026-07-04T10:52:39.935Z
+                    createdAt: 2026-07-04T12:04:42.509Z
+                    updatedAt: 2026-07-04T12:04:42.509Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -33603,8 +33095,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.946Z
-                    updatedAt: 2026-07-04T10:52:39.946Z
+                    createdAt: 2026-07-04T12:04:42.523Z
+                    updatedAt: 2026-07-04T12:04:42.523Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -33697,8 +33189,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.958Z
-                    updatedAt: 2026-07-04T10:52:39.958Z
+                    createdAt: 2026-07-04T12:04:42.537Z
+                    updatedAt: 2026-07-04T12:04:42.537Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -33790,8 +33282,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.963Z
-                    updatedAt: 2026-07-04T10:52:39.963Z
+                    createdAt: 2026-07-04T12:04:42.542Z
+                    updatedAt: 2026-07-04T12:04:42.542Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -33889,8 +33381,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-04T10:52:39.966Z
-                    updatedAt: 2026-07-04T10:52:39.966Z
+                    createdAt: 2026-07-04T12:04:42.548Z
+                    updatedAt: 2026-07-04T12:04:42.548Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -33955,9 +33447,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 properties: {}
                 type: object
@@ -34297,7 +33786,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-04T10:52:39.981Z
+                    dateTimeLastViewed: 2026-07-04T12:04:42.563Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -34320,8 +33809,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-04T10:52:39.981Z
-                    updatedAt: 2026-07-04T10:52:39.981Z
+                    createdAt: 2026-07-04T12:04:42.563Z
+                    updatedAt: 2026-07-04T12:04:42.563Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -34410,7 +33899,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-04T10:52:39.988Z
+                    dateTimeLastViewed: 2026-07-04T12:04:42.570Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -34433,8 +33922,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-04T10:52:39.988Z
-                    updatedAt: 2026-07-04T10:52:39.988Z
+                    createdAt: 2026-07-04T12:04:42.570Z
+                    updatedAt: 2026-07-04T12:04:42.570Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -34530,7 +34019,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-04T10:52:40.017Z
+                    dateTimeLastViewed: 2026-07-04T12:04:42.600Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -34553,8 +34042,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-04T10:52:40.017Z
-                    updatedAt: 2026-07-04T10:52:40.017Z
+                    createdAt: 2026-07-04T12:04:42.600Z
+                    updatedAt: 2026-07-04T12:04:42.600Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -35240,9 +34729,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Request"
           description: Ok
@@ -35305,9 +34791,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Request"
@@ -35373,9 +34856,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Response"
@@ -35451,9 +34931,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Response"
@@ -35519,9 +34996,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Request"
@@ -35570,7 +35044,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get queries
+      summary: Get lookup requests
       tags:
       - InfoGenesis Reports
   /v2/pos/infogenesis/requests/lookup/errors:
@@ -35587,9 +35061,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Request"
@@ -35638,7 +35109,7 @@ paths:
           description: Internal Server Error
       security:
       - api_token: []
-      summary: Get queries errors
+      summary: Get lookup request errors
       tags:
       - InfoGenesis Reports
   /v2/pos/infogenesis/redemptions:
@@ -35655,9 +35126,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Request"
@@ -35723,9 +35191,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Request"
@@ -35791,9 +35256,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -35859,9 +35321,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/StaticVoucher"
@@ -35927,9 +35386,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Request"
@@ -35995,9 +35451,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Request"
@@ -36073,9 +35526,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -36150,9 +35600,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -36217,9 +35664,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -37560,9 +37004,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -37631,9 +37072,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -37696,9 +37134,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Member"
           description: Ok
@@ -37762,9 +37197,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -37833,9 +37265,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -37898,9 +37327,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -37963,9 +37389,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38034,9 +37457,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38099,9 +37519,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38164,9 +37581,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38235,9 +37649,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38300,9 +37711,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38365,9 +37773,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38436,9 +37841,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38501,9 +37903,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -38575,9 +37974,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/RoleAuditLog"
@@ -38644,9 +38040,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: boolean
           description: Ok
@@ -38709,9 +38102,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/WTRole"
           description: Ok
@@ -38780,9 +38170,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Role"
           description: Ok
@@ -38846,9 +38233,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Employee"
@@ -38915,9 +38299,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/Webpage"
@@ -38983,9 +38364,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Role"
           description: Ok
@@ -39034,67 +38412,6 @@ paths:
       summary: Create role
       tags:
       - System
-  /v2/system/prefixes:
-    get:
-      operationId: getPaymentPrefixes
-      parameters: []
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                Example 1:
-                  value: {}
-              schema:
-                items: {}
-                type: array
-                default: null
-          description: Ok
-        "401":
-          content:
-            application/json:
-              examples:
-                Example 1:
-                  value:
-                    name: AuthError
-                    message: Authentication Failed
-                    httpErrorCode: 401
-                    trackingCode: AUTH-1
-              schema:
-                $ref: "#/components/schemas/AuthError"
-          description: Authentication Failed
-        "422":
-          content:
-            application/json:
-              examples:
-                Example 1:
-                  value:
-                    fields:
-                    - name: field name
-                      message: reason why validation failed
-                      value: validated value
-                    message: Validation Failed
-              schema:
-                $ref: "#/components/schemas/FalsumError"
-          description: Validation Failed
-        "500":
-          content:
-            application/json:
-              examples:
-                Example 1:
-                  value:
-                    name: InternalServerError_500
-                    message: Internal Server Error
-                    httpErrorCode: 500
-                    trackingCode: ISE-1
-              schema:
-                $ref: "#/components/schemas/InternalServerError_500"
-          description: Internal Server Error
-      security:
-      - api_token: []
-      summary: Get payment prefixes
-      tags:
-      - System
   /v2/wallet:
     put:
       operationId: saveWalletRecord
@@ -39109,9 +38426,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -39236,9 +38550,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "401":
@@ -39322,9 +38633,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "422":
@@ -39379,9 +38687,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "422":
@@ -39429,9 +38734,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "422":
@@ -39482,9 +38784,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "422":
@@ -39536,9 +38835,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/DynamicVoucher"
@@ -39573,7 +38869,7 @@ paths:
                 $ref: "#/components/schemas/InternalServerError_500"
           description: Internal Server Error
       security: []
-      summary: Get a customer's static vouchers on the basis of a given voucher ID
+      summary: Get a merchant's active dynamic vouchers
       tags:
       - Interactions
   /wallet/staticVoucher/all:
@@ -39591,9 +38887,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID_200_response_inner"
@@ -39646,9 +38939,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/StaticVoucher"
           description: Ok
@@ -39698,9 +38988,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
           description: Ok
@@ -39757,9 +39044,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Member"
           description: Ok
@@ -39809,9 +39093,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/AdvertisementCreditScan"
           description: Ok
@@ -39867,9 +39148,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items: {}
                 type: array
@@ -39921,9 +39199,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/WalletConfiguration"
           description: Ok
@@ -39973,9 +39248,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "422":
@@ -40024,9 +39296,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -40076,9 +39345,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -40300,7 +39566,7 @@ paths:
                 $ref: "#/components/schemas/InternalServerError_500"
           description: Internal Server Error
       security: []
-      summary: Update ticket
+      summary: Claim a ticket by ID
       tags:
       - Interactions
   /wallet/tickets/fetchCustomerTicketsWithToken:
@@ -40368,7 +39634,7 @@ paths:
                 $ref: "#/components/schemas/InternalServerError_500"
           description: Internal Server Error
       security: []
-      summary: Update ticket
+      summary: Get a customer's upcoming tickets via phone verification token
       tags:
       - Interactions
   /authentication/login:
@@ -40387,7 +39653,23 @@ paths:
             application/json:
               examples:
                 Example 1:
-                  value: {}
+                  value:
+                    id: empl_8Fq2kLpZ
+                    createdAt: 2026-01-15T09:24:00.000Z
+                    updatedAt: 2026-06-30T17:02:11.000Z
+                    firstName: Ada
+                    lastName: Chen
+                    username: ada.chen@example.com
+                    email: ada.chen@example.com
+                    merchantID: merch_3Xy9Tv
+                    employeeID: empl_8Fq2kLpZ
+                    profilePictureURL: https://media.wall.et/employees/empl_8Fq2kLpZ/avatar.png
+                    jobTitle: Operations Manager
+                    department: Operations
+                    merchantName: Sunset Boat Tours
+                    merchantIndustry: "12"
+                    merchantCurrencyAbbreviation: USD
+                    customDomain: app.sunsetboattours.com
               schema:
                 $ref: "#/components/schemas/WTAuthenticationLoginResponse"
           description: Ok
@@ -40452,7 +39734,8 @@ paths:
             application/json:
               examples:
                 Example 1:
-                  value: {}
+                  value:
+                    status: Valid
               schema:
                 $ref: "#/components/schemas/loginStatus_200_response"
           description: Ok
@@ -40508,9 +39791,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 type: string
           description: Ok
@@ -40572,9 +39852,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/Employee"
           description: Ok
@@ -40667,9 +39944,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 items:
                   $ref: "#/components/schemas/fetchIndustry_200_response"
@@ -40701,9 +39975,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema: {}
           description: Ok
         "500":
@@ -40731,9 +40002,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Example 1:
-                  value: {}
               schema:
                 $ref: "#/components/schemas/fetchDomainsByIndustry_200_response"
           description: Ok
@@ -42305,6 +41573,9 @@ components:
         allPages:
         - null
         - null
+        annual:
+          price: 5.637376656633329
+          id: id
       properties:
         id:
           type: string
@@ -42327,6 +41598,8 @@ components:
             $ref: "#/components/schemas/PortalPage"
           type: array
           default: null
+        annual:
+          $ref: "#/components/schemas/SubscriptionPlan_annual"
       required:
       - allPages
       - examples
@@ -42413,6 +41686,9 @@ components:
           allPages:
           - null
           - null
+          annual:
+            price: 5.637376656633329
+            id: id
       properties:
         isPaymentMethodProvided:
           type: boolean
@@ -43388,7 +42664,7 @@ components:
         merchantID: 736dhakidk
         sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
         failedLoginAttempts: 5
-        lastLoginDate: 5
+        lastLoginDate: 2000-01-23T04:56:07.000+00:00
         cfuvid: igyuwsgfyiwegfuiwu34579
         schedule: {}
         isEmailNotificationDisabled: true
@@ -43627,7 +42903,6 @@ components:
           format: double
           type: number
         lastLoginDate:
-          example: 5
           format: date-time
           type: string
         cfuvid:
@@ -44418,7 +43693,7 @@ components:
           merchantID: 736dhakidk
           sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
           failedLoginAttempts: 5
-          lastLoginDate: 5
+          lastLoginDate: 2000-01-23T04:56:07.000+00:00
           cfuvid: igyuwsgfyiwegfuiwu34579
           schedule: {}
           isEmailNotificationDisabled: true
@@ -44449,7 +43724,7 @@ components:
           merchantID: 736dhakidk
           sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
           failedLoginAttempts: 5
-          lastLoginDate: 5
+          lastLoginDate: 2000-01-23T04:56:07.000+00:00
           cfuvid: igyuwsgfyiwegfuiwu34579
           schedule: {}
           isEmailNotificationDisabled: true
@@ -45033,7 +44308,7 @@ components:
         calcError: true
         calcErrorDetails: calcErrorDetails
         currentValue: 5
-        currentValue_decimal: $5.00
+        currentValue_decimal: "5.00"
         currentValue_string: $5.00
         timeValueZero: true
         timeValueZeroSubtractedAmount: 0.8008281904610115
@@ -45048,7 +44323,7 @@ components:
         maximumBudgetExhaustedTotalValueRedeemed_decimal: "5.00"
         maximumBudgetExhaustedTotalValueRedeemed_string: $5.00
         totalAmountSubtracted: 3
-        totalAmountSubtracted_decimal: $5.00
+        totalAmountSubtracted_decimal: "5.00"
         totalAmountSubtracted_string: $5.00
         totalDecrementedMultiple: 5.637376656633329
         redeemedKeys:
@@ -45066,7 +44341,7 @@ components:
           format: double
           type: number
         currentValue_decimal:
-          example: $5.00
+          example: "5.00"
           type: string
         currentValue_string:
           example: $5.00
@@ -45112,7 +44387,7 @@ components:
           format: double
           type: number
         totalAmountSubtracted_decimal:
-          example: $5.00
+          example: "5.00"
           type: string
         totalAmountSubtracted_string:
           example: $5.00
@@ -45297,7 +44572,7 @@ components:
         maxBudget_decimal: "5.00"
         maxBudget_string: $5.00
         currentValue: 5
-        currentValue_decimal: $5.00
+        currentValue_decimal: "5.00"
         currentValue_string: $5.00
         status: running
         temporalDecreaseFrequencyType: Minute(s)
@@ -45305,7 +44580,7 @@ components:
           calcError: true
           calcErrorDetails: calcErrorDetails
           currentValue: 5
-          currentValue_decimal: $5.00
+          currentValue_decimal: "5.00"
           currentValue_string: $5.00
           timeValueZero: true
           timeValueZeroSubtractedAmount: 0.8008281904610115
@@ -45320,7 +44595,7 @@ components:
           maximumBudgetExhaustedTotalValueRedeemed_decimal: "5.00"
           maximumBudgetExhaustedTotalValueRedeemed_string: $5.00
           totalAmountSubtracted: 3
-          totalAmountSubtracted_decimal: $5.00
+          totalAmountSubtracted_decimal: "5.00"
           totalAmountSubtracted_string: $5.00
           totalDecrementedMultiple: 5.637376656633329
           redeemedKeys:
@@ -45440,7 +44715,7 @@ components:
           format: double
           type: number
         currentValue_decimal:
-          example: $5.00
+          example: "5.00"
           type: string
         currentValue_string:
           example: $5.00
@@ -46681,7 +45956,7 @@ components:
           maxBudget_decimal: "5.00"
           maxBudget_string: $5.00
           currentValue: 5
-          currentValue_decimal: $5.00
+          currentValue_decimal: "5.00"
           currentValue_string: $5.00
           status: running
           temporalDecreaseFrequencyType: Minute(s)
@@ -46689,7 +45964,7 @@ components:
             calcError: true
             calcErrorDetails: calcErrorDetails
             currentValue: 5
-            currentValue_decimal: $5.00
+            currentValue_decimal: "5.00"
             currentValue_string: $5.00
             timeValueZero: true
             timeValueZeroSubtractedAmount: 0.8008281904610115
@@ -46704,7 +45979,7 @@ components:
             maximumBudgetExhaustedTotalValueRedeemed_decimal: "5.00"
             maximumBudgetExhaustedTotalValueRedeemed_string: $5.00
             totalAmountSubtracted: 3
-            totalAmountSubtracted_decimal: $5.00
+            totalAmountSubtracted_decimal: "5.00"
             totalAmountSubtracted_string: $5.00
             totalDecrementedMultiple: 5.637376656633329
             redeemedKeys:
@@ -47643,7 +46918,7 @@ components:
         displayedPrice: $200-$350
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
-        additionalInfoURL: https://your-site.com/restaurants/steak-house
+        additionalInfoURL: https://your-site.com/lounges/sky-lounge
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
@@ -47670,7 +46945,7 @@ components:
           example: https://wall.et/media/H847Sjudbw.png
           type: string
         additionalInfoURL:
-          example: https://your-site.com/restaurants/steak-house
+          example: https://your-site.com/lounges/sky-lounge
           type: string
         id:
           $ref: "#/components/schemas/Amenity_id"
@@ -47704,7 +46979,7 @@ components:
         displayedPrice: $200-$350
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
-        additionalInfoURL: https://your-site.com/restaurants/steak-house
+        additionalInfoURL: https://your-site.com/lounges/sky-lounge
       properties:
         title:
           example: This is the title of the lounge
@@ -47726,7 +47001,7 @@ components:
           example: https://wall.et/media/H847Sjudbw.png
           type: string
         additionalInfoURL:
-          example: https://your-site.com/restaurants/steak-house
+          example: https://your-site.com/lounges/sky-lounge
           type: string
       required:
       - description
@@ -47740,7 +47015,7 @@ components:
         displayedPrice: $200-$350
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
-        additionalInfoURL: https://your-site.com/restaurants/steak-house
+        additionalInfoURL: https://your-site.com/lounges/sky-lounge
       properties:
         title:
           example: This is the title of the lounge
@@ -47762,7 +47037,7 @@ components:
           example: https://wall.et/media/H847Sjudbw.png
           type: string
         additionalInfoURL:
-          example: https://your-site.com/restaurants/steak-house
+          example: https://your-site.com/lounges/sky-lounge
           type: string
       required:
       - description
@@ -48660,7 +47935,7 @@ components:
           minimum: 1
           type: integer
         body:
-          example: This is the description of the news article
+          example: This is the body of the news article
           minLength: 1
           type: string
         url:
@@ -48682,7 +47957,7 @@ components:
       example:
         title: This is the title of the news article
         orderNumber: 1
-        body: This is the description of the news article
+        body: This is the body of the news article
         url: https://example.com/news-article.html
         mediaURL: https://wall.et/media/H847Sjudbw.png
         publishedDate: 2000-01-23T04:56:07.000+00:00
@@ -48702,7 +47977,7 @@ components:
           minimum: 1
           type: integer
         body:
-          example: This is the description of the news article
+          example: This is the body of the news article
           minLength: 1
           type: string
         url:
@@ -48743,7 +48018,7 @@ components:
       additionalProperties: false
       example:
         title: This is the title of the news article
-        body: This is the description of the news article
+        body: This is the body of the news article
         url: https://example.com/news-article.html
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
@@ -48754,7 +48029,7 @@ components:
           minLength: 1
           type: string
         body:
-          example: This is the description of the news article
+          example: This is the body of the news article
           minLength: 1
           type: string
         url:
@@ -48780,7 +48055,7 @@ components:
       additionalProperties: false
       example:
         title: This is the title of the news article
-        body: This is the description of the news article
+        body: This is the body of the news article
         url: https://example.com/news-article.html
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
@@ -48791,7 +48066,7 @@ components:
           minLength: 1
           type: string
         body:
-          example: This is the description of the news article
+          example: This is the body of the news article
           minLength: 1
           type: string
         url:
@@ -48940,12 +48215,12 @@ components:
       - s3Key
       - updatedAt
     Performance:
-      additionalProperties: {}
+      additionalProperties: false
       example:
         title: This is the title of the performance
-        body: This is the description of the performance
+        body: This is the body of the performance
         startDateTime: 2000-01-23T04:56:07.000+00:00
-        price: 43.29
+        price: "43.29"
         url: https://example.com/performance.html
         orderNumber: 5
         isSoldOut: true
@@ -48965,21 +48240,19 @@ components:
           minLength: 1
           type: string
         body:
-          example: This is the description of the performance
+          example: This is the body of the performance
           minLength: 1
           type: string
         startDateTime:
           format: date-time
           type: string
         price:
-          example: 43.29
-          minimum: 0
+          example: "43.29"
           type: string
         url:
           example: https://example.com/performance.html
           type: string
         orderNumber:
-          description: Stores the order number
           example: 5
           format: int32
           minimum: 1
@@ -49035,9 +48308,9 @@ components:
       additionalProperties: false
       example:
         title: This is the title of the performance
-        body: This is the description of the performance
+        body: This is the body of the performance
         startDateTime: 2000-01-23T04:56:07.000+00:00
-        price: 43.29
+        price: "43.29"
         url: https://example.com/performance.html
         orderNumber: 5
         isSoldOut: true
@@ -49052,21 +48325,19 @@ components:
           minLength: 1
           type: string
         body:
-          example: This is the description of the performance
+          example: This is the body of the performance
           minLength: 1
           type: string
         startDateTime:
           format: date-time
           type: string
         price:
-          example: 43.29
-          minimum: 0
+          example: "43.29"
           type: string
         url:
           example: https://example.com/performance.html
           type: string
         orderNumber:
-          description: Stores the order number
           example: 5
           format: int32
           minimum: 1
@@ -49102,9 +48373,9 @@ components:
       additionalProperties: false
       example:
         title: This is the title of the performance
-        body: This is the description of the performance
+        body: This is the body of the performance
         startDateTime: 2000-01-23T04:56:07.000+00:00
-        price: 43.29
+        price: "43.29"
         url: https://example.com/performance.html
         orderNumber: 5
         isSoldOut: true
@@ -49119,21 +48390,19 @@ components:
           minLength: 1
           type: string
         body:
-          example: This is the description of the performance
+          example: This is the body of the performance
           minLength: 1
           type: string
         startDateTime:
           format: date-time
           type: string
         price:
-          example: 43.29
-          minimum: 0
+          example: "43.29"
           type: string
         url:
           example: https://example.com/performance.html
           type: string
         orderNumber:
-          description: Stores the order number
           example: 5
           format: int32
           minimum: 1
@@ -49375,11 +48644,17 @@ components:
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/product-1/buy-now
+        priceAmount: 2500
+        currency: usd
+        isBuyable: true
+        taxBehavior: exclusive
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
         isActive: true
         merchantID: 736dhakidk
+        stripeProductID: stripeProductID
+        stripePriceID: stripePriceID
       properties:
         title:
           example: This is the title of the product
@@ -49403,6 +48678,23 @@ components:
         additionalInfoURL:
           example: https://your-website.com/product-1/buy-now
           type: string
+        priceAmount:
+          example: 2500
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        isBuyable:
+          example: true
+          type: boolean
+        taxBehavior:
+          enum:
+          - inclusive
+          - exclusive
+          - unspecified
+          example: exclusive
         id:
           $ref: "#/components/schemas/Amenity_id"
         createdAt:
@@ -49418,6 +48710,10 @@ components:
           - $ref: "#/components/schemas/MerchantID"
           description: The id of the merchant registered in WalletInc's database
           example: 736dhakidk
+        stripeProductID:
+          type: string
+        stripePriceID:
+          type: string
       required:
       - createdAt
       - description
@@ -49436,6 +48732,10 @@ components:
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/product-1/buy-now
+        priceAmount: 2500
+        currency: usd
+        isBuyable: true
+        taxBehavior: exclusive
       properties:
         title:
           example: This is the title of the product
@@ -49458,6 +48758,24 @@ components:
           type: string
         additionalInfoURL:
           example: https://your-website.com/product-1/buy-now
+          type: string
+        priceAmount:
+          example: 2500
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        isBuyable:
+          example: true
+          type: boolean
+        taxBehavior:
+          enum:
+          - inclusive
+          - exclusive
+          - unspecified
+          example: exclusive
           type: string
       required:
       - description
@@ -49472,6 +48790,10 @@ components:
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/product-1/buy-now
+        priceAmount: 2500
+        currency: usd
+        isBuyable: true
+        taxBehavior: exclusive
       properties:
         title:
           example: This is the title of the product
@@ -49494,6 +48816,24 @@ components:
           type: string
         additionalInfoURL:
           example: https://your-website.com/product-1/buy-now
+          type: string
+        priceAmount:
+          example: 2500
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        isBuyable:
+          example: true
+          type: boolean
+        taxBehavior:
+          enum:
+          - inclusive
+          - exclusive
+          - unspecified
+          example: exclusive
           type: string
       required:
       - description
@@ -50035,11 +49375,17 @@ components:
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/service-1/reserve-now
+        priceAmount: 2500
+        currency: usd
+        isBuyable: true
+        taxBehavior: exclusive
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
         isActive: true
         merchantID: 736dhakidk
+        stripeProductID: stripeProductID
+        stripePriceID: stripePriceID
       properties:
         title:
           example: This is the title of the service
@@ -50063,6 +49409,23 @@ components:
         additionalInfoURL:
           example: https://your-website.com/service-1/reserve-now
           type: string
+        priceAmount:
+          example: 2500
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        isBuyable:
+          example: true
+          type: boolean
+        taxBehavior:
+          enum:
+          - inclusive
+          - exclusive
+          - unspecified
+          example: exclusive
         id:
           $ref: "#/components/schemas/Amenity_id"
         createdAt:
@@ -50078,6 +49441,10 @@ components:
           - $ref: "#/components/schemas/MerchantID"
           description: The id of the merchant registered in WalletInc's database
           example: 736dhakidk
+        stripeProductID:
+          type: string
+        stripePriceID:
+          type: string
       required:
       - createdAt
       - description
@@ -50096,6 +49463,10 @@ components:
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/service-1/reserve-now
+        priceAmount: 2500
+        currency: usd
+        isBuyable: true
+        taxBehavior: exclusive
       properties:
         title:
           example: This is the title of the service
@@ -50118,6 +49489,24 @@ components:
           type: string
         additionalInfoURL:
           example: https://your-website.com/service-1/reserve-now
+          type: string
+        priceAmount:
+          example: 2500
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        isBuyable:
+          example: true
+          type: boolean
+        taxBehavior:
+          enum:
+          - inclusive
+          - exclusive
+          - unspecified
+          example: exclusive
           type: string
       required:
       - description
@@ -50132,6 +49521,10 @@ components:
         orderNumber: 1
         mediaURL: https://wall.et/media/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/service-1/reserve-now
+        priceAmount: 2500
+        currency: usd
+        isBuyable: true
+        taxBehavior: exclusive
       properties:
         title:
           example: This is the title of the service
@@ -50154,6 +49547,24 @@ components:
           type: string
         additionalInfoURL:
           example: https://your-website.com/service-1/reserve-now
+          type: string
+        priceAmount:
+          example: 2500
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        isBuyable:
+          example: true
+          type: boolean
+        taxBehavior:
+          enum:
+          - inclusive
+          - exclusive
+          - unspecified
+          example: exclusive
           type: string
       required:
       - description
@@ -50760,40 +50171,101 @@ components:
           type: string
       required:
       - mobileNumber
-    Video:
+    WTVideoUploadProvision:
       additionalProperties: false
       example:
-        title: This is the title of the video
-        description: This is the description of the video
-        orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.mp4
-        additionalInfoURL: https://your-site.com/videos/steak-house
-        id: CMueJDL982Hs
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-        isActive: true
-        merchantID: 736dhakidk
+        provider: r2
+        url: url
+        fields:
+          key: fields
+        assetId: 9f3c1e2a4b.mp4
+        hdIncluded: true
       properties:
-        title:
-          example: This is the title of the video
+        provider:
+          enum:
+          - r2
+          - stream
+          example: r2
+        url:
+          type: string
+        fields:
+          additionalProperties:
+            type: string
+          properties: {}
+        assetId:
+          example: 9f3c1e2a4b.mp4
+          type: string
+        hdIncluded:
+          type: boolean
+      required:
+      - assetId
+      - hdIncluded
+      - provider
+      - url
+    WTVideoUploadProvisionParams:
+      additionalProperties: false
+      example:
+        fileName: sunset-bar-tour.mp4
+        fileType: video/mp4
+        maxDurationSeconds: 600
+      properties:
+        fileName:
+          example: sunset-bar-tour.mp4
           minLength: 1
           type: string
-        description:
-          example: This is the description of the video
+        fileType:
+          example: video/mp4
           minLength: 1
           type: string
-        orderNumber:
-          example: 1
+        maxDurationSeconds:
+          example: 600
           format: int32
           minimum: 1
           type: integer
-        mediaURL:
-          example: https://wall.et/media/H847Sjudbw.mp4
-          minLength: 12
+      required:
+      - fileName
+      - fileType
+    VideoProvider:
+      enum:
+      - embed
+      - r2
+      - stream
+    WTVideoPlaybackSource:
+      additionalProperties: false
+      example:
+        type: progressive
+        url: https://video.wall.et/9f3c1e2a4b.mp4
+      properties:
+        type:
+          enum:
+          - embed
+          - progressive
+          - hls
+          example: progressive
+        url:
+          example: https://video.wall.et/9f3c1e2a4b.mp4
           type: string
-        additionalInfoURL:
-          example: https://your-site.com/videos/steak-house
-          type: string
+      required:
+      - type
+      - url
+    Video:
+      additionalProperties: false
+      example:
+        id: CMueJDL982Hs
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        title: title
+        description: description
+        orderNumber: 0.8008281904610115
+        additionalInfoURL: additionalInfoURL
+        isActive: true
+        merchantID: 736dhakidk
+        provider: r2
+        assetId: 9f3c1e2a4b.mp4
+        source:
+          type: progressive
+          url: https://video.wall.et/9f3c1e2a4b.mp4
+      properties:
         id:
           $ref: "#/components/schemas/Amenity_id"
         createdAt:
@@ -50802,6 +50274,15 @@ components:
         updatedAt:
           format: date-time
           type: string
+        title:
+          type: string
+        description:
+          type: string
+        orderNumber:
+          format: double
+          type: number
+        additionalInfoURL:
+          type: string
         isActive:
           type: boolean
         merchantID:
@@ -50809,14 +50290,25 @@ components:
           - $ref: "#/components/schemas/MerchantID"
           description: The id of the merchant registered in WalletInc's database
           example: 736dhakidk
+        provider:
+          allOf:
+          - $ref: "#/components/schemas/VideoProvider"
+          example: r2
+        assetId:
+          example: 9f3c1e2a4b.mp4
+          type: string
+        source:
+          $ref: "#/components/schemas/WTVideoPlaybackSource"
       required:
+      - assetId
       - createdAt
       - description
       - id
       - isActive
-      - mediaURL
       - merchantID
       - orderNumber
+      - provider
+      - source
       - title
       - updatedAt
     WTVideoCreateParams:
@@ -50825,8 +50317,9 @@ components:
         title: This is the title of the video
         description: This is the description of the video
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.mp4
         additionalInfoURL: https://your-site.com/videos/steak-house
+        provider: r2
+        assetId: 9f3c1e2a4b.mp4
       properties:
         title:
           example: This is the title of the video
@@ -50841,17 +50334,22 @@ components:
           format: int32
           minimum: 1
           type: integer
-        mediaURL:
-          example: https://wall.et/media/H847Sjudbw.mp4
-          minLength: 12
-          type: string
         additionalInfoURL:
           example: https://your-site.com/videos/steak-house
           type: string
+        provider:
+          allOf:
+          - $ref: "#/components/schemas/VideoProvider"
+          example: r2
+        assetId:
+          example: 9f3c1e2a4b.mp4
+          minLength: 1
+          type: string
       required:
+      - assetId
       - description
-      - mediaURL
       - orderNumber
+      - provider
       - title
     WTVideoUpdateParams:
       additionalProperties: false
@@ -50859,7 +50357,6 @@ components:
         title: This is the title of the video
         description: This is the description of the video
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.mp4
         additionalInfoURL: https://your-site.com/videos/steak-house
       properties:
         title:
@@ -50875,16 +50372,11 @@ components:
           format: int32
           minimum: 1
           type: integer
-        mediaURL:
-          example: https://wall.et/media/H847Sjudbw.mp4
-          minLength: 12
-          type: string
         additionalInfoURL:
           example: https://your-site.com/videos/steak-house
           type: string
       required:
       - description
-      - mediaURL
       - orderNumber
       - title
     VirtualBusinessCard:
@@ -50893,7 +50385,7 @@ components:
         firstName: John
         lastName: Smith
         emailAddress: emailAddress
-        designation: designation
+        designation: Founder & CEO
         phoneNumber: +1 (800) 123-4567
         introduction: "John was born into the F&B world. His grandparents owned a\
           \ restaurant in the 1960s in Lorraine, France. His brother is a chef and\
@@ -50904,7 +50396,7 @@ components:
         twitter: your_handle
         linkedIn: company ID or handle
         whatsApp: WhatsApp number
-        avatarURL: WhatsApp number
+        avatarURL: https://media.wall.et/m/abc/avatar.png
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
@@ -50923,6 +50415,7 @@ components:
           minLength: 1
           type: string
         designation:
+          example: Founder & CEO
           minLength: 1
           type: string
         phoneNumber:
@@ -50960,7 +50453,7 @@ components:
           minimum: 0
           type: string
         avatarURL:
-          example: WhatsApp number
+          example: https://media.wall.et/m/abc/avatar.png
           minimum: 0
           type: string
         id:
@@ -50995,7 +50488,7 @@ components:
         firstName: John
         lastName: Smith
         emailAddress: emailAddress
-        designation: designation
+        designation: Founder & CEO
         phoneNumber: +1 (800) 123-4567
         introduction: "John was born into the F&B world. His grandparents owned a\
           \ restaurant in the 1960s in Lorraine, France. His brother is a chef and\
@@ -51006,7 +50499,7 @@ components:
         twitter: your_handle
         linkedIn: company ID or handle
         whatsApp: WhatsApp number
-        avatarURL: WhatsApp number
+        avatarURL: https://media.wall.et/m/abc/avatar.png
       properties:
         firstName:
           example: John
@@ -51020,6 +50513,7 @@ components:
           minLength: 1
           type: string
         designation:
+          example: Founder & CEO
           minLength: 1
           type: string
         phoneNumber:
@@ -51057,7 +50551,7 @@ components:
           minimum: 0
           type: string
         avatarURL:
-          example: WhatsApp number
+          example: https://media.wall.et/m/abc/avatar.png
           minimum: 0
           type: string
       required:
@@ -51072,7 +50566,7 @@ components:
         firstName: John
         lastName: Smith
         emailAddress: emailAddress
-        designation: designation
+        designation: Founder & CEO
         phoneNumber: +1 (800) 123-4567
         introduction: "John was born into the F&B world. His grandparents owned a\
           \ restaurant in the 1960s in Lorraine, France. His brother is a chef and\
@@ -51083,7 +50577,7 @@ components:
         twitter: your_handle
         linkedIn: company ID or handle
         whatsApp: WhatsApp number
-        avatarURL: WhatsApp number
+        avatarURL: https://media.wall.et/m/abc/avatar.png
       properties:
         firstName:
           example: John
@@ -51097,6 +50591,7 @@ components:
           minLength: 1
           type: string
         designation:
+          example: Founder & CEO
           minLength: 1
           type: string
         phoneNumber:
@@ -51134,7 +50629,7 @@ components:
           minimum: 0
           type: string
         avatarURL:
-          example: WhatsApp number
+          example: https://media.wall.et/m/abc/avatar.png
           minimum: 0
           type: string
       required:
@@ -51574,8 +51069,8 @@ components:
         membershipTierRedeemableID:
           allOf:
           - $ref: "#/components/schemas/PrefixedNanoID"
-          description: The object ID of the membership tier that this member belongs
-            to
+          description: The object ID of the membership tier redeemable assigned to
+            this member
           example: TRjdu37eua98
       required:
       - birthday
@@ -51764,7 +51259,7 @@ components:
         total: 6
       properties:
         results:
-          description: Stores the results as an array
+          description: The page of records returned for this request.
           items:
             $ref: "#/components/schemas/WTMember"
           type: array
@@ -53517,7 +53012,7 @@ components:
         maxBudget_decimal: "5.00"
         maxBudget_string: $5.00
         currentValue: 5
-        currentValue_decimal: $5.00
+        currentValue_decimal: "5.00"
         currentValue_string: $5.00
         status: running
         temporalDecreaseFrequencyType: Minute(s)
@@ -53525,7 +53020,7 @@ components:
           calcError: true
           calcErrorDetails: calcErrorDetails
           currentValue: 5
-          currentValue_decimal: $5.00
+          currentValue_decimal: "5.00"
           currentValue_string: $5.00
           timeValueZero: true
           timeValueZeroSubtractedAmount: 0.8008281904610115
@@ -53540,7 +53035,7 @@ components:
           maximumBudgetExhaustedTotalValueRedeemed_decimal: "5.00"
           maximumBudgetExhaustedTotalValueRedeemed_string: $5.00
           totalAmountSubtracted: 3
-          totalAmountSubtracted_decimal: $5.00
+          totalAmountSubtracted_decimal: "5.00"
           totalAmountSubtracted_string: $5.00
           totalDecrementedMultiple: 5.637376656633329
           redeemedKeys:
@@ -53660,7 +53155,7 @@ components:
           format: double
           type: number
         currentValue_decimal:
-          example: $5.00
+          example: "5.00"
           type: string
         currentValue_string:
           example: $5.00
@@ -54320,7 +53815,7 @@ components:
         total: 6
       properties:
         results:
-          description: Stores the results as an array
+          description: The page of records returned for this request.
           items:
             $ref: "#/components/schemas/WTMerchantCredit"
           type: array
@@ -55985,7 +55480,6 @@ components:
           minLength: 1
           type: string
         outletNumber:
-          description: Stores the outlet number
           example: 5
           format: int32
           type: integer
@@ -56044,7 +55538,6 @@ components:
           minLength: 1
           type: string
         outletNumber:
-          description: Stores the outlet number
           example: 5
           format: int32
           type: integer
@@ -56079,7 +55572,6 @@ components:
           minLength: 1
           type: string
         outletNumber:
-          description: Stores the outlet number
           example: 5
           format: int32
           type: integer
@@ -56193,8 +55685,8 @@ components:
         membershipTierRedeemableID:
           allOf:
           - $ref: "#/components/schemas/PrefixedNanoID"
-          description: The object ID of the membership tier that this member belongs
-            to
+          description: The object ID of the membership tier redeemable assigned to
+            this member
           example: TRjdu37eua98
       required:
       - birthday
@@ -56411,7 +55903,7 @@ components:
         merchantID: 736dhakidk
         sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
         failedLoginAttempts: 5
-        lastLoginDate: 5
+        lastLoginDate: 2000-01-23T04:56:07.000+00:00
         cfuvid: igyuwsgfyiwegfuiwu34579
         schedule: {}
         isEmailNotificationDisabled: true
@@ -56650,7 +56142,6 @@ components:
           format: double
           type: number
         lastLoginDate:
-          example: 5
           format: date-time
           type: string
         cfuvid:
@@ -56714,7 +56205,7 @@ components:
           merchantID: 736dhakidk
           sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
           failedLoginAttempts: 5
-          lastLoginDate: 5
+          lastLoginDate: 2000-01-23T04:56:07.000+00:00
           cfuvid: igyuwsgfyiwegfuiwu34579
           schedule: {}
           isEmailNotificationDisabled: true
@@ -56744,7 +56235,7 @@ components:
           merchantID: 736dhakidk
           sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
           failedLoginAttempts: 5
-          lastLoginDate: 5
+          lastLoginDate: 2000-01-23T04:56:07.000+00:00
           cfuvid: igyuwsgfyiwegfuiwu34579
           schedule: {}
           isEmailNotificationDisabled: true
@@ -56867,7 +56358,7 @@ components:
           merchantID: 736dhakidk
           sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
           failedLoginAttempts: 5
-          lastLoginDate: 5
+          lastLoginDate: 2000-01-23T04:56:07.000+00:00
           cfuvid: igyuwsgfyiwegfuiwu34579
           schedule: {}
           isEmailNotificationDisabled: true
@@ -56897,7 +56388,7 @@ components:
           merchantID: 736dhakidk
           sessionToken: kdnyhuigyuwsgfyiwegfuiwu345793y9fwehujkf
           failedLoginAttempts: 5
-          lastLoginDate: 5
+          lastLoginDate: 2000-01-23T04:56:07.000+00:00
           cfuvid: igyuwsgfyiwegfuiwu34579
           schedule: {}
           isEmailNotificationDisabled: true
@@ -59172,6 +58663,9 @@ components:
           allPages:
           - null
           - null
+          annual:
+            price: 5.637376656633329
+            id: id
         - id: id
           name: name
           price: 0.8008281904610115
@@ -59245,6 +58739,9 @@ components:
           allPages:
           - null
           - null
+          annual:
+            price: 5.637376656633329
+            id: id
         title: title
         icon: icon
         sortNumber: sortNumber
@@ -60064,6 +59561,23 @@ components:
       anyOf:
       - $ref: "#/components/schemas/PrefixedNanoID"
       - $ref: "#/components/schemas/NanoID"
+    SubscriptionPlan_annual:
+      description: |-
+        PLACEHOLDER annual pricing for the monthly/annual toggle UX. Optional: only populated
+        for plans surfaced through Industries.list(). `id` is a placeholder string, not a real
+        Stripe price, and MUST NOT be used at checkout. See PlanCatalog.withAnnualPlaceholder().
+      example:
+        price: 5.637376656633329
+        id: id
+      properties:
+        price:
+          format: double
+          type: number
+        id:
+          type: string
+      required:
+      - id
+      - price
     Pick_VSStaticVoucher_Exclude_keyofVSStaticVoucher_redeemedAt_or_refundedAt_or_lastViewedAt___registerID:
       anyOf:
       - type: string
@@ -60211,7 +59725,6 @@ x-tagGroups:
   - Industries
   - Countries
   - WebPages
-  - SuperUser
 - name: Wallet UI/UX
   tags:
   - Wallet Configuration

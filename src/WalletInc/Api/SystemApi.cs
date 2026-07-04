@@ -121,22 +121,6 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;Webpage&gt;</returns>
         ApiResponse<List<Webpage>> FetchWebpagesForRoleWithHttpInfo(string roleID);
         /// <summary>
-        /// Get payment prefixes
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Object&gt;</returns>
-        List<Object> GetPaymentPrefixes();
-
-        /// <summary>
-        /// Get payment prefixes
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        ApiResponse<List<Object>> GetPaymentPrefixesWithHttpInfo();
-        /// <summary>
         /// Get role
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
@@ -300,27 +284,6 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Webpage&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Webpage>>> FetchWebpagesForRoleWithHttpInfoAsync(string roleID, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Get payment prefixes
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        System.Threading.Tasks.Task<List<Object>> GetPaymentPrefixesAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get payment prefixes
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Object>>> GetPaymentPrefixesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get role
         /// </summary>
@@ -1151,107 +1114,6 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FetchWebpagesForRole", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get payment prefixes 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Object&gt;</returns>
-        public List<Object> GetPaymentPrefixes()
-        {
-            WalletInc.Client.ApiResponse<List<Object>> localVarResponse = GetPaymentPrefixesWithHttpInfo();
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get payment prefixes 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        public WalletInc.Client.ApiResponse<List<Object>> GetPaymentPrefixesWithHttpInfo()
-        {
-            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Object>>("/v2/system/prefixes", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetPaymentPrefixes", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get payment prefixes 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Object>> GetPaymentPrefixesAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            WalletInc.Client.ApiResponse<List<Object>> localVarResponse = await GetPaymentPrefixesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get payment prefixes 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<List<Object>>> GetPaymentPrefixesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-
-            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Object>>("/v2/system/prefixes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetPaymentPrefixes", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

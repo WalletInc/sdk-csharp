@@ -34,6 +34,40 @@ namespace WalletInc.Model
     public partial class WTProductUpdateParams : IValidatableObject
     {
         /// <summary>
+        /// Defines TaxBehavior
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TaxBehaviorEnum
+        {
+            /// <summary>
+            /// Enum Inclusive for value: inclusive
+            /// </summary>
+            [EnumMember(Value = "inclusive")]
+            Inclusive = 1,
+
+            /// <summary>
+            /// Enum Exclusive for value: exclusive
+            /// </summary>
+            [EnumMember(Value = "exclusive")]
+            Exclusive = 2,
+
+            /// <summary>
+            /// Enum Unspecified for value: unspecified
+            /// </summary>
+            [EnumMember(Value = "unspecified")]
+            Unspecified = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets TaxBehavior
+        /// </summary>
+        /*
+        <example>exclusive</example>
+        */
+        [DataMember(Name = "taxBehavior", EmitDefaultValue = false)]
+        public TaxBehaviorEnum? TaxBehavior { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="WTProductUpdateParams" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -47,7 +81,11 @@ namespace WalletInc.Model
         /// <param name="orderNumber">orderNumber (required).</param>
         /// <param name="mediaURL">mediaURL.</param>
         /// <param name="additionalInfoURL">additionalInfoURL.</param>
-        public WTProductUpdateParams(string title = default, string description = default, string displayedPrice = default, int orderNumber = default, string mediaURL = default, string additionalInfoURL = default)
+        /// <param name="priceAmount">priceAmount.</param>
+        /// <param name="currency">currency.</param>
+        /// <param name="isBuyable">isBuyable.</param>
+        /// <param name="taxBehavior">taxBehavior.</param>
+        public WTProductUpdateParams(string title = default, string description = default, string displayedPrice = default, int orderNumber = default, string mediaURL = default, string additionalInfoURL = default, int priceAmount = default, string currency = default, bool isBuyable = default, TaxBehaviorEnum? taxBehavior = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -65,6 +103,10 @@ namespace WalletInc.Model
             this.DisplayedPrice = displayedPrice;
             this.MediaURL = mediaURL;
             this.AdditionalInfoURL = additionalInfoURL;
+            this.PriceAmount = priceAmount;
+            this.Currency = currency;
+            this.IsBuyable = isBuyable;
+            this.TaxBehavior = taxBehavior;
         }
 
         /// <summary>
@@ -122,6 +164,33 @@ namespace WalletInc.Model
         public string AdditionalInfoURL { get; set; }
 
         /// <summary>
+        /// Gets or Sets PriceAmount
+        /// </summary>
+        /*
+        <example>2500</example>
+        */
+        [DataMember(Name = "priceAmount", EmitDefaultValue = false)]
+        public int PriceAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Currency
+        /// </summary>
+        /*
+        <example>usd</example>
+        */
+        [DataMember(Name = "currency", EmitDefaultValue = false)]
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsBuyable
+        /// </summary>
+        /*
+        <example>true</example>
+        */
+        [DataMember(Name = "isBuyable", EmitDefaultValue = true)]
+        public bool IsBuyable { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -135,6 +204,10 @@ namespace WalletInc.Model
             sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
             sb.Append("  MediaURL: ").Append(MediaURL).Append("\n");
             sb.Append("  AdditionalInfoURL: ").Append(AdditionalInfoURL).Append("\n");
+            sb.Append("  PriceAmount: ").Append(PriceAmount).Append("\n");
+            sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("  IsBuyable: ").Append(IsBuyable).Append("\n");
+            sb.Append("  TaxBehavior: ").Append(TaxBehavior).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +244,12 @@ namespace WalletInc.Model
             if (this.OrderNumber < (int)1)
             {
                 yield return new ValidationResult("Invalid value for OrderNumber, must be a value greater than or equal to 1.", new [] { "OrderNumber" });
+            }
+
+            // PriceAmount (int) minimum
+            if (this.PriceAmount < (int)0)
+            {
+                yield return new ValidationResult("Invalid value for PriceAmount, must be a value greater than or equal to 0.", new [] { "PriceAmount" });
             }
 
             yield break;

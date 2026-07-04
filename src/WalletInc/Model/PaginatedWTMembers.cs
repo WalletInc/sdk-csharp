@@ -41,7 +41,7 @@ namespace WalletInc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginatedWTMembers" /> class.
         /// </summary>
-        /// <param name="results">Stores the results as an array (required).</param>
+        /// <param name="results">The page of records returned for this request. (required).</param>
         /// <param name="length">Denotes the length of the results array (required).</param>
         /// <param name="total">Denotes the total number of records present in the database (required).</param>
         public PaginatedWTMembers(List<WTMember> results = default, int length = default, int total = default)
@@ -57,9 +57,9 @@ namespace WalletInc.Model
         }
 
         /// <summary>
-        /// Stores the results as an array
+        /// The page of records returned for this request.
         /// </summary>
-        /// <value>Stores the results as an array</value>
+        /// <value>The page of records returned for this request.</value>
         [DataMember(Name = "results", IsRequired = true, EmitDefaultValue = true)]
         public List<WTMember> Results { get; set; }
 

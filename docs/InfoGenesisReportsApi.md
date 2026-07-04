@@ -18,8 +18,8 @@ All URIs are relative to *https://api.wall.et*
 | [**CountStaticVoucherRefunds**](InfoGenesisReportsApi.md#countstaticvoucherrefunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds |
 | [**FetchInfoGenesisAuthorizations**](InfoGenesisReportsApi.md#fetchinfogenesisauthorizations) | **POST** /v2/pos/infogenesis/authorizations | Get authorizations |
 | [**FetchInfoGenesisCampaignData**](InfoGenesisReportsApi.md#fetchinfogenesiscampaigndata) | **POST** /v2/pos/infogenesis/campaign | Get campaign information |
-| [**FetchInfoGenesisLookupRequests**](InfoGenesisReportsApi.md#fetchinfogenesislookuprequests) | **POST** /v2/pos/infogenesis/requests/lookup | Get queries |
-| [**FetchInfoGenesisLookupRequestsErrors**](InfoGenesisReportsApi.md#fetchinfogenesislookuprequestserrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get queries errors |
+| [**FetchInfoGenesisLookupRequests**](InfoGenesisReportsApi.md#fetchinfogenesislookuprequests) | **POST** /v2/pos/infogenesis/requests/lookup | Get lookup requests |
+| [**FetchInfoGenesisLookupRequestsErrors**](InfoGenesisReportsApi.md#fetchinfogenesislookuprequestserrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get lookup request errors |
 | [**FetchInfoGenesisRedeemedStaticVouchers**](InfoGenesisReportsApi.md#fetchinfogenesisredeemedstaticvouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Get redeemed static vouchers |
 | [**FetchInfoGenesisRedeemedUniquePostingIDs**](InfoGenesisReportsApi.md#fetchinfogenesisredeemeduniquepostingids) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Get redeemed unique posting IDs |
 | [**FetchInfoGenesisRedemptions**](InfoGenesisReportsApi.md#fetchinfogenesisredemptions) | **POST** /v2/pos/infogenesis/redemptions | Get redemptions |
@@ -1380,7 +1380,7 @@ No authorization required
 # **FetchInfoGenesisLookupRequests**
 > List&lt;Request&gt; FetchInfoGenesisLookupRequests (WTInfoGenesisRecordFilterParameters wTInfoGenesisRecordFilterParameters)
 
-Get queries
+Get lookup requests
 
 ### Example
 ```csharp
@@ -1407,7 +1407,7 @@ namespace Example
 
             try
             {
-                // Get queries
+                // Get lookup requests
                 List<Request> result = apiInstance.FetchInfoGenesisLookupRequests(wTInfoGenesisRecordFilterParameters);
                 Debug.WriteLine(result);
             }
@@ -1428,7 +1428,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get queries
+    // Get lookup requests
     ApiResponse<List<Request>> response = apiInstance.FetchInfoGenesisLookupRequestsWithHttpInfo(wTInfoGenesisRecordFilterParameters);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -1476,7 +1476,7 @@ No authorization required
 # **FetchInfoGenesisLookupRequestsErrors**
 > List&lt;Request&gt; FetchInfoGenesisLookupRequestsErrors (WTInfoGenesisLookupRequestErrors wTInfoGenesisLookupRequestErrors)
 
-Get queries errors
+Get lookup request errors
 
 ### Example
 ```csharp
@@ -1503,7 +1503,7 @@ namespace Example
 
             try
             {
-                // Get queries errors
+                // Get lookup request errors
                 List<Request> result = apiInstance.FetchInfoGenesisLookupRequestsErrors(wTInfoGenesisLookupRequestErrors);
                 Debug.WriteLine(result);
             }
@@ -1524,7 +1524,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get queries errors
+    // Get lookup request errors
     ApiResponse<List<Request>> response = apiInstance.FetchInfoGenesisLookupRequestsErrorsWithHttpInfo(wTInfoGenesisLookupRequestErrors);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

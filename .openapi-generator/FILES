@@ -246,6 +246,7 @@ docs/StaticVouchersApi.md
 docs/Status.md
 docs/SubscriptionFeature.md
 docs/SubscriptionPlan.md
+docs/SubscriptionPlanAnnual.md
 docs/SubscriptionProduct.md
 docs/SystemApi.md
 docs/Tcpa.md
@@ -261,6 +262,7 @@ docs/VSCampaignGeneratedMessagePagination.md
 docs/VSDynamicVoucherStatus.md
 docs/VectorStore.md
 docs/Video.md
+docs/VideoProvider.md
 docs/VideosApi.md
 docs/VirtualBusinessCard.md
 docs/VirtualBusinessCardApi.md
@@ -395,7 +397,10 @@ docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTVideoCreateParams.md
+docs/WTVideoPlaybackSource.md
 docs/WTVideoUpdateParams.md
+docs/WTVideoUploadProvision.md
+docs/WTVideoUploadProvisionParams.md
 docs/WTVirtualBusinessCardCreateParams.md
 docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
@@ -417,6 +422,11 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/SubscriptionPlanAnnualTests.cs
+src/WalletInc.Test/Model/VideoProviderTests.cs
+src/WalletInc.Test/Model/WTVideoPlaybackSourceTests.cs
+src/WalletInc.Test/Model/WTVideoUploadProvisionParamsTests.cs
+src/WalletInc.Test/Model/WTVideoUploadProvisionTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -689,6 +699,7 @@ src/WalletInc/Model/StaticVoucherId.cs
 src/WalletInc/Model/Status.cs
 src/WalletInc/Model/SubscriptionFeature.cs
 src/WalletInc/Model/SubscriptionPlan.cs
+src/WalletInc/Model/SubscriptionPlanAnnual.cs
 src/WalletInc/Model/SubscriptionProduct.cs
 src/WalletInc/Model/Tcpa.cs
 src/WalletInc/Model/Thread.cs
@@ -702,6 +713,7 @@ src/WalletInc/Model/VSCampaignGeneratedMessagePagination.cs
 src/WalletInc/Model/VSDynamicVoucherStatus.cs
 src/WalletInc/Model/VectorStore.cs
 src/WalletInc/Model/Video.cs
+src/WalletInc/Model/VideoProvider.cs
 src/WalletInc/Model/VirtualBusinessCard.cs
 src/WalletInc/Model/WTA2PApplicationUpdateParams.cs
 src/WalletInc/Model/WTAdvertisementCredit.cs
@@ -834,7 +846,10 @@ src/WalletInc/Model/WTTicketUpdateParams.cs
 src/WalletInc/Model/WTTwilioRequestAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCode.cs
 src/WalletInc/Model/WTVideoCreateParams.cs
+src/WalletInc/Model/WTVideoPlaybackSource.cs
 src/WalletInc/Model/WTVideoUpdateParams.cs
+src/WalletInc/Model/WTVideoUploadProvision.cs
+src/WalletInc/Model/WTVideoUploadProvisionParams.cs
 src/WalletInc/Model/WTVirtualBusinessCardCreateParams.cs
 src/WalletInc/Model/WTVirtualBusinessCardUpdateParams.cs
 src/WalletInc/Model/WTWalletConfigurationSaveWalletRecord.cs
