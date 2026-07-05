@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Provider** | **string** |  | 
 **Url** | **string** |  | 
-**Fields** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **AssetId** | **string** |  | 
 **HdIncluded** | **bool** |  | 
 

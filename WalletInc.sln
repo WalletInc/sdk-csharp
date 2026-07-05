@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletInc", "src\WalletInc\WalletInc.csproj", "{90E2089F-516F-48B4-B8D3-436563D011D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletInc", "src\WalletInc\WalletInc.csproj", "{745878E7-6DDE-4A85-A774-468A9BF8CE89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletInc.Test", "src\WalletInc.Test\WalletInc.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{90E2089F-516F-48B4-B8D3-436563D011D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90E2089F-516F-48B4-B8D3-436563D011D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90E2089F-516F-48B4-B8D3-436563D011D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90E2089F-516F-48B4-B8D3-436563D011D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745878E7-6DDE-4A85-A774-468A9BF8CE89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745878E7-6DDE-4A85-A774-468A9BF8CE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745878E7-6DDE-4A85-A774-468A9BF8CE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745878E7-6DDE-4A85-A774-468A9BF8CE89}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
