@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-04T20:29:12.695Z
+ * Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-05T07:29:54.586Z
  *
  * The version of the OpenAPI document: 2.1.604
  * Contact: development@wallet.inc
@@ -71,10 +71,9 @@ namespace WalletInc.Model
         /// </summary>
         /// <param name="provider">provider (required).</param>
         /// <param name="url">url (required).</param>
-        /// <param name="fields">fields.</param>
         /// <param name="assetId">assetId (required).</param>
         /// <param name="hdIncluded">hdIncluded (required).</param>
-        public WTVideoUploadProvision(ProviderEnum provider = default, string url = default, Dictionary<string, string> fields = default, string assetId = default, bool hdIncluded = default)
+        public WTVideoUploadProvision(ProviderEnum provider = default, string url = default, string assetId = default, bool hdIncluded = default)
         {
             this.Provider = provider;
             // to ensure "url" is required (not null)
@@ -90,7 +89,6 @@ namespace WalletInc.Model
             }
             this.AssetId = assetId;
             this.HdIncluded = hdIncluded;
-            this.Fields = fields;
         }
 
         /// <summary>
@@ -98,12 +96,6 @@ namespace WalletInc.Model
         /// </summary>
         [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Fields
-        /// </summary>
-        [DataMember(Name = "fields", EmitDefaultValue = false)]
-        public Dictionary<string, string> Fields { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetId
@@ -130,7 +122,6 @@ namespace WalletInc.Model
             sb.Append("class WTVideoUploadProvision {\n");
             sb.Append("  Provider: ").Append(Provider).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  Fields: ").Append(Fields).Append("\n");
             sb.Append("  AssetId: ").Append(AssetId).Append("\n");
             sb.Append("  HdIncluded: ").Append(HdIncluded).Append("\n");
             sb.Append("}\n");
