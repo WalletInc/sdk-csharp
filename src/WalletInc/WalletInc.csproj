@@ -22,7 +22,7 @@
       <Title>Wallet (SDK)</Title>
     <PackageProjectUrl>https://github.com/WalletInc/sdk-csharp</PackageProjectUrl>
     <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;sms</PackageTags>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,6 +36,7 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <None Include="LICENSE.txt" Pack="true" PackagePath="" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../NOTICE" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
