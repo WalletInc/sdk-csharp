@@ -26,6 +26,10 @@ Name | Type | Description | Notes
 **CustomerServiceContactEmployeeID** | **string** |  | 
 **StripeCustomerID** | **string** |  | 
 **StripeConnectAccountID** | **string** |  | [optional] 
+**StripeConnectChargesEnabled** | **bool** |  | [optional] 
+**StripeConnectPayoutsEnabled** | **bool** |  | [optional] 
+**StripeConnectDetailsSubmitted** | **bool** |  | [optional] 
+**StripeConnectOnboardingStatus** | **string** |  | [optional] 
 **IsPaymentMethodProvided** | **bool** |  | 
 **PlanNickname** | **string** |  | 
 **MaxSMSCount** | **double** |  | 
