@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -43,9 +43,10 @@ namespace WalletInc.Model
         /// </summary>
         /// <param name="authorizationRecordID">authorizationRecordID (required).</param>
         /// <param name="qualificationTier">qualificationTier.</param>
+        /// <param name="tier">tier.</param>
         /// <param name="bureaus">bureaus (required).</param>
         /// <param name="result">result.</param>
-        public WTFinancingSoftPullResponse(string authorizationRecordID = default, string qualificationTier = default, List<string> bureaus = default, Object result = default)
+        public WTFinancingSoftPullResponse(string authorizationRecordID = default, string qualificationTier = default, string tier = default, List<string> bureaus = default, WTLeadFiInquiryResult result = default)
         {
             // to ensure "authorizationRecordID" is required (not null)
             if (authorizationRecordID == null)
@@ -60,6 +61,7 @@ namespace WalletInc.Model
             }
             this.Bureaus = bureaus;
             this.QualificationTier = qualificationTier;
+            this.Tier = tier;
             this.Result = result;
         }
 
@@ -76,6 +78,12 @@ namespace WalletInc.Model
         public string QualificationTier { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tier
+        /// </summary>
+        [DataMember(Name = "tier", EmitDefaultValue = false)]
+        public string Tier { get; set; }
+
+        /// <summary>
         /// Gets or Sets Bureaus
         /// </summary>
         [DataMember(Name = "bureaus", IsRequired = true, EmitDefaultValue = true)]
@@ -84,8 +92,8 @@ namespace WalletInc.Model
         /// <summary>
         /// Gets or Sets Result
         /// </summary>
-        [DataMember(Name = "result", EmitDefaultValue = true)]
-        public Object Result { get; set; }
+        [DataMember(Name = "result", EmitDefaultValue = false)]
+        public WTLeadFiInquiryResult Result { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -97,6 +105,7 @@ namespace WalletInc.Model
             sb.Append("class WTFinancingSoftPullResponse {\n");
             sb.Append("  AuthorizationRecordID: ").Append(AuthorizationRecordID).Append("\n");
             sb.Append("  QualificationTier: ").Append(QualificationTier).Append("\n");
+            sb.Append("  Tier: ").Append(Tier).Append("\n");
             sb.Append("  Bureaus: ").Append(Bureaus).Append("\n");
             sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("}\n");
