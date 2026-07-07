@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T18:06:11.567Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T21:13:51.937Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -65,6 +65,24 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of WTAdvertisementCredit</returns>
         ApiResponse<WTAdvertisementCredit> CreateAdvertisementCreditWithHttpInfo(WTAdvertisementCreditCreateParams wTAdvertisementCreditCreateParams);
         /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <returns>WTPrizePromotion</returns>
+        WTPrizePromotion CreatePrizePromotion(WTPrizePromotionCreateParams wTPrizePromotionCreateParams);
+
+        /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <returns>ApiResponse of WTPrizePromotion</returns>
+        ApiResponse<WTPrizePromotion> CreatePrizePromotionWithHttpInfo(WTPrizePromotionCreateParams wTPrizePromotionCreateParams);
+        /// <summary>
         /// Get Prize
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
@@ -119,6 +137,22 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of List&lt;WTAdvertisementCredit&gt;</returns>
         ApiResponse<List<WTAdvertisementCredit>> FetchAllAdvertisementCreditsWithHttpInfo(bool? isArchiveIncluded = default);
         /// <summary>
+        /// List the merchant&#39;s prize-game promotions
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;WTPrizePromotion&gt;</returns>
+        List<WTPrizePromotion> FetchPrizePromotions();
+
+        /// <summary>
+        /// List the merchant&#39;s prize-game promotions
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;WTPrizePromotion&gt;</returns>
+        ApiResponse<List<WTPrizePromotion>> FetchPrizePromotionsWithHttpInfo();
+        /// <summary>
         /// Restore Prize
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
@@ -156,6 +190,26 @@ namespace WalletInc.Api
         /// <param name="wTAdvertisementCreditUpdateParams"></param>
         /// <returns>ApiResponse of WTAdvertisementCredit</returns>
         ApiResponse<WTAdvertisementCredit> UpdateAdvertisementCreditWithHttpInfo(string id, WTAdvertisementCreditUpdateParams wTAdvertisementCreditUpdateParams);
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward.
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <returns>WTPrizePromotion</returns>
+        WTPrizePromotion UpdatePrizePromotion(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams);
+
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <returns>ApiResponse of WTPrizePromotion</returns>
+        ApiResponse<WTPrizePromotion> UpdatePrizePromotionWithHttpInfo(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams);
         #endregion Synchronous Operations
     }
 
@@ -211,6 +265,29 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WTAdvertisementCredit)</returns>
         System.Threading.Tasks.Task<ApiResponse<WTAdvertisementCredit>> CreateAdvertisementCreditWithHttpInfoAsync(WTAdvertisementCreditCreateParams wTAdvertisementCreditCreateParams, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizePromotion</returns>
+        System.Threading.Tasks.Task<WTPrizePromotion> CreatePrizePromotionAsync(WTPrizePromotionCreateParams wTPrizePromotionCreateParams, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizePromotion)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WTPrizePromotion>> CreatePrizePromotionWithHttpInfoAsync(WTPrizePromotionCreateParams wTPrizePromotionCreateParams, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Prize
         /// </summary>
@@ -281,6 +358,27 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (List&lt;WTAdvertisementCredit&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WTAdvertisementCredit>>> FetchAllAdvertisementCreditsWithHttpInfoAsync(bool? isArchiveIncluded = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List the merchant&#39;s prize-game promotions
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WTPrizePromotion&gt;</returns>
+        System.Threading.Tasks.Task<List<WTPrizePromotion>> FetchPrizePromotionsAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// List the merchant&#39;s prize-game promotions
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WTPrizePromotion&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WTPrizePromotion>>> FetchPrizePromotionsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Restore Prize
         /// </summary>
         /// <remarks>
@@ -328,6 +426,31 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WTAdvertisementCredit)</returns>
         System.Threading.Tasks.Task<ApiResponse<WTAdvertisementCredit>> UpdateAdvertisementCreditWithHttpInfoAsync(string id, WTAdvertisementCreditUpdateParams wTAdvertisementCreditUpdateParams, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizePromotion</returns>
+        System.Threading.Tasks.Task<WTPrizePromotion> UpdatePrizePromotionAsync(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizePromotion)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WTPrizePromotion>> UpdatePrizePromotionWithHttpInfoAsync(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -774,6 +897,123 @@ namespace WalletInc.Api
         }
 
         /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <returns>WTPrizePromotion</returns>
+        public WTPrizePromotion CreatePrizePromotion(WTPrizePromotionCreateParams wTPrizePromotionCreateParams)
+        {
+            WalletInc.Client.ApiResponse<WTPrizePromotion> localVarResponse = CreatePrizePromotionWithHttpInfo(wTPrizePromotionCreateParams);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <returns>ApiResponse of WTPrizePromotion</returns>
+        public WalletInc.Client.ApiResponse<WTPrizePromotion> CreatePrizePromotionWithHttpInfo(WTPrizePromotionCreateParams wTPrizePromotionCreateParams)
+        {
+            // verify the required parameter 'wTPrizePromotionCreateParams' is set
+            if (wTPrizePromotionCreateParams == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTPrizePromotionCreateParams' when calling PrizesApi->CreatePrizePromotion");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTPrizePromotionCreateParams;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WTPrizePromotion>("/v2/prizePromotions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreatePrizePromotion", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizePromotion</returns>
+        public async System.Threading.Tasks.Task<WTPrizePromotion> CreatePrizePromotionAsync(WTPrizePromotionCreateParams wTPrizePromotionCreateParams, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<WTPrizePromotion> localVarResponse = await CreatePrizePromotionWithHttpInfoAsync(wTPrizePromotionCreateParams, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizePromotionCreateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizePromotion)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<WTPrizePromotion>> CreatePrizePromotionWithHttpInfoAsync(WTPrizePromotionCreateParams wTPrizePromotionCreateParams, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'wTPrizePromotionCreateParams' is set
+            if (wTPrizePromotionCreateParams == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTPrizePromotionCreateParams' when calling PrizesApi->CreatePrizePromotion");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTPrizePromotionCreateParams;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WTPrizePromotion>("/v2/prizePromotions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreatePrizePromotion", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get Prize 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1117,6 +1357,107 @@ namespace WalletInc.Api
         }
 
         /// <summary>
+        /// List the merchant&#39;s prize-game promotions 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;WTPrizePromotion&gt;</returns>
+        public List<WTPrizePromotion> FetchPrizePromotions()
+        {
+            WalletInc.Client.ApiResponse<List<WTPrizePromotion>> localVarResponse = FetchPrizePromotionsWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List the merchant&#39;s prize-game promotions 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;WTPrizePromotion&gt;</returns>
+        public WalletInc.Client.ApiResponse<List<WTPrizePromotion>> FetchPrizePromotionsWithHttpInfo()
+        {
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<WTPrizePromotion>>("/v2/prizePromotions/all", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FetchPrizePromotions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List the merchant&#39;s prize-game promotions 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WTPrizePromotion&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WTPrizePromotion>> FetchPrizePromotionsAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<List<WTPrizePromotion>> localVarResponse = await FetchPrizePromotionsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List the merchant&#39;s prize-game promotions 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WTPrizePromotion&gt;)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<List<WTPrizePromotion>>> FetchPrizePromotionsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<WTPrizePromotion>>("/v2/prizePromotions/all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FetchPrizePromotions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Restore Prize 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1356,6 +1697,137 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateAdvertisementCredit", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <returns>WTPrizePromotion</returns>
+        public WTPrizePromotion UpdatePrizePromotion(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams)
+        {
+            WalletInc.Client.ApiResponse<WTPrizePromotion> localVarResponse = UpdatePrizePromotionWithHttpInfo(promotionID, wTPrizePromotionUpdateParams);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <returns>ApiResponse of WTPrizePromotion</returns>
+        public WalletInc.Client.ApiResponse<WTPrizePromotion> UpdatePrizePromotionWithHttpInfo(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams)
+        {
+            // verify the required parameter 'promotionID' is set
+            if (promotionID == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'promotionID' when calling PrizesApi->UpdatePrizePromotion");
+
+            // verify the required parameter 'wTPrizePromotionUpdateParams' is set
+            if (wTPrizePromotionUpdateParams == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTPrizePromotionUpdateParams' when calling PrizesApi->UpdatePrizePromotion");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("promotionID", WalletInc.Client.ClientUtils.ParameterToString(promotionID)); // path parameter
+            localVarRequestOptions.Data = wTPrizePromotionUpdateParams;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<WTPrizePromotion>("/v2/prizePromotions/{promotionID}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePrizePromotion", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizePromotion</returns>
+        public async System.Threading.Tasks.Task<WTPrizePromotion> UpdatePrizePromotionAsync(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<WTPrizePromotion> localVarResponse = await UpdatePrizePromotionWithHttpInfoAsync(promotionID, wTPrizePromotionUpdateParams, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a prize-game promotion Deactivate a promotion or bring its end date forward. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="promotionID"></param>
+        /// <param name="wTPrizePromotionUpdateParams"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizePromotion)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<WTPrizePromotion>> UpdatePrizePromotionWithHttpInfoAsync(string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'promotionID' is set
+            if (promotionID == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'promotionID' when calling PrizesApi->UpdatePrizePromotion");
+
+            // verify the required parameter 'wTPrizePromotionUpdateParams' is set
+            if (wTPrizePromotionUpdateParams == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTPrizePromotionUpdateParams' when calling PrizesApi->UpdatePrizePromotion");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("promotionID", WalletInc.Client.ClientUtils.ParameterToString(promotionID)); // path parameter
+            localVarRequestOptions.Data = wTPrizePromotionUpdateParams;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<WTPrizePromotion>("/v2/prizePromotions/{promotionID}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePrizePromotion", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

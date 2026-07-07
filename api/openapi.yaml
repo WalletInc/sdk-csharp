@@ -6,7 +6,7 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.3.1**, built 2026-07-07T18:06:11.567Z
+    **Spec version 2.3.1**, built 2026-07-07T21:13:51.937Z
   license:
     name: https://wallet.law
   title: wallet-api
@@ -3525,8 +3525,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:04:56.696Z
-                    updatedAt: 2026-07-07T18:04:56.696Z
+                    createdAt: 2026-07-07T21:12:37.484Z
+                    updatedAt: 2026-07-07T21:12:37.484Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -20813,8 +20813,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-07T18:05:01.032Z
-                    updatedAt: 2026-07-07T18:05:01.032Z
+                    createdAt: 2026-07-07T21:12:41.131Z
+                    updatedAt: 2026-07-07T21:12:41.131Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -20888,8 +20888,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-07T18:05:00.983Z
-                    updatedAt: 2026-07-07T18:05:00.983Z
+                    createdAt: 2026-07-07T21:12:41.096Z
+                    updatedAt: 2026-07-07T21:12:41.096Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -20963,8 +20963,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-07T18:05:01.038Z
-                    updatedAt: 2026-07-07T18:05:01.038Z
+                    createdAt: 2026-07-07T21:12:41.136Z
+                    updatedAt: 2026-07-07T21:12:41.136Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21044,8 +21044,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-07T18:05:01.016Z
-                    updatedAt: 2026-07-07T18:05:01.016Z
+                    createdAt: 2026-07-07T21:12:41.119Z
+                    updatedAt: 2026-07-07T21:12:41.119Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21145,8 +21145,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-07T18:05:00.996Z
-                    updatedAt: 2026-07-07T18:05:00.996Z
+                    createdAt: 2026-07-07T21:12:41.105Z
+                    updatedAt: 2026-07-07T21:12:41.105Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21442,8 +21442,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.161Z
-                    updatedAt: 2026-07-07T18:05:01.161Z
+                    createdAt: 2026-07-07T21:12:41.236Z
+                    updatedAt: 2026-07-07T21:12:41.236Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21520,8 +21520,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.107Z
-                    updatedAt: 2026-07-07T18:05:01.107Z
+                    createdAt: 2026-07-07T21:12:41.185Z
+                    updatedAt: 2026-07-07T21:12:41.185Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21598,8 +21598,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.166Z
-                    updatedAt: 2026-07-07T18:05:01.166Z
+                    createdAt: 2026-07-07T21:12:41.240Z
+                    updatedAt: 2026-07-07T21:12:41.240Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21682,8 +21682,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.146Z
-                    updatedAt: 2026-07-07T18:05:01.146Z
+                    createdAt: 2026-07-07T21:12:41.223Z
+                    updatedAt: 2026-07-07T21:12:41.223Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21786,8 +21786,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.119Z
-                    updatedAt: 2026-07-07T18:05:01.119Z
+                    createdAt: 2026-07-07T21:12:41.195Z
+                    updatedAt: 2026-07-07T21:12:41.195Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22031,8 +22031,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.311Z
-                    updatedAt: 2026-07-07T18:05:01.311Z
+                    createdAt: 2026-07-07T21:12:41.355Z
+                    updatedAt: 2026-07-07T21:12:41.355Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22115,8 +22115,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.251Z
-                    updatedAt: 2026-07-07T18:05:01.251Z
+                    createdAt: 2026-07-07T21:12:41.310Z
+                    updatedAt: 2026-07-07T21:12:41.310Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22199,8 +22199,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.317Z
-                    updatedAt: 2026-07-07T18:05:01.317Z
+                    createdAt: 2026-07-07T21:12:41.360Z
+                    updatedAt: 2026-07-07T21:12:41.360Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22289,8 +22289,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.293Z
-                    updatedAt: 2026-07-07T18:05:01.293Z
+                    createdAt: 2026-07-07T21:12:41.341Z
+                    updatedAt: 2026-07-07T21:12:41.341Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22399,8 +22399,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.264Z
-                    updatedAt: 2026-07-07T18:05:01.264Z
+                    createdAt: 2026-07-07T21:12:41.320Z
+                    updatedAt: 2026-07-07T21:12:41.320Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22618,8 +22618,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.325Z
-                    updatedAt: 2026-07-07T18:05:01.325Z
+                    createdAt: 2026-07-07T21:12:41.368Z
+                    updatedAt: 2026-07-07T21:12:41.368Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -22748,8 +22748,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.420Z
-                    updatedAt: 2026-07-07T18:05:01.420Z
+                    createdAt: 2026-07-07T21:12:41.426Z
+                    updatedAt: 2026-07-07T21:12:41.426Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -22964,8 +22964,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.399Z
-                    updatedAt: 2026-07-07T18:05:01.399Z
+                    createdAt: 2026-07-07T21:12:41.414Z
+                    updatedAt: 2026-07-07T21:12:41.414Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23115,8 +23115,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.449Z
-                    updatedAt: 2026-07-07T18:05:01.449Z
+                    createdAt: 2026-07-07T21:12:41.443Z
+                    updatedAt: 2026-07-07T21:12:41.443Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -23239,8 +23239,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.460Z
-                    updatedAt: 2026-07-07T18:05:01.460Z
+                    createdAt: 2026-07-07T21:12:41.455Z
+                    updatedAt: 2026-07-07T21:12:41.455Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -24243,6 +24243,203 @@ paths:
       summary: Get redemption log
       tags:
       - Merchant Credits
+  /v2/prizePromotions:
+    post:
+      operationId: createPrizePromotion
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTPrizePromotionCreateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizePromotion"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Create a prize-game promotion
+        Creates one instant-win promotion for the authenticated merchant. Guardrails enforced:
+        purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to
+        the merchant, total prize-pool value above $500 requires registration attestation, minimum
+        age 18, and only one live promotion per game type.
+      tags:
+      - Prizes
+  /v2/prizePromotions/all:
+    get:
+      operationId: fetchPrizePromotions
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTPrizePromotion"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List the merchant's prize-game promotions
+      tags:
+      - Prizes
+  /v2/prizePromotions/{promotionID}:
+    put:
+      operationId: updatePrizePromotion
+      parameters:
+      - explode: false
+        in: path
+        name: promotionID
+        required: true
+        schema:
+          $ref: "#/components/schemas/PrefixedNanoID"
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTPrizePromotionUpdateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizePromotion"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Update a prize-game promotion
+        Deactivate a promotion or bring its end date forward.
+      tags:
+      - Prizes
   /v2/payment/staticVoucherCampaign/all:
     get:
       operationId: fetchStaticVoucherCampaigns
@@ -24294,8 +24491,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.728Z
-                    updatedAt: 2026-07-07T18:05:01.728Z
+                    createdAt: 2026-07-07T21:12:41.668Z
+                    updatedAt: 2026-07-07T21:12:41.668Z
                     isActive: true
               schema:
                 items:
@@ -24391,8 +24588,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.731Z
-                    updatedAt: 2026-07-07T18:05:01.731Z
+                    createdAt: 2026-07-07T21:12:41.672Z
+                    updatedAt: 2026-07-07T21:12:41.672Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -24685,8 +24882,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.747Z
-                    updatedAt: 2026-07-07T18:05:01.747Z
+                    createdAt: 2026-07-07T21:12:41.684Z
+                    updatedAt: 2026-07-07T21:12:41.684Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25068,8 +25265,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.832Z
-                    updatedAt: 2026-07-07T18:05:01.832Z
+                    createdAt: 2026-07-07T21:12:41.729Z
+                    updatedAt: 2026-07-07T21:12:41.729Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25168,8 +25365,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.856Z
-                    updatedAt: 2026-07-07T18:05:01.856Z
+                    createdAt: 2026-07-07T21:12:41.743Z
+                    updatedAt: 2026-07-07T21:12:41.743Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25261,8 +25458,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.927Z
-                    updatedAt: 2026-07-07T18:05:01.927Z
+                    createdAt: 2026-07-07T21:12:41.781Z
+                    updatedAt: 2026-07-07T21:12:41.781Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25354,8 +25551,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.949Z
-                    updatedAt: 2026-07-07T18:05:01.949Z
+                    createdAt: 2026-07-07T21:12:41.794Z
+                    updatedAt: 2026-07-07T21:12:41.794Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25448,8 +25645,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.972Z
-                    updatedAt: 2026-07-07T18:05:01.972Z
+                    createdAt: 2026-07-07T21:12:41.808Z
+                    updatedAt: 2026-07-07T21:12:41.808Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -25541,8 +25738,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.980Z
-                    updatedAt: 2026-07-07T18:05:01.980Z
+                    createdAt: 2026-07-07T21:12:41.813Z
+                    updatedAt: 2026-07-07T21:12:41.813Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -25640,8 +25837,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-07T18:05:01.987Z
-                    updatedAt: 2026-07-07T18:05:01.987Z
+                    createdAt: 2026-07-07T21:12:41.817Z
+                    updatedAt: 2026-07-07T21:12:41.817Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26045,7 +26242,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-07T18:05:02.013Z
+                    dateTimeLastViewed: 2026-07-07T21:12:41.833Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26068,8 +26265,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-07T18:05:02.014Z
-                    updatedAt: 2026-07-07T18:05:02.014Z
+                    createdAt: 2026-07-07T21:12:41.833Z
+                    updatedAt: 2026-07-07T21:12:41.833Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -26158,7 +26355,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-07T18:05:02.028Z
+                    dateTimeLastViewed: 2026-07-07T21:12:41.841Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26181,8 +26378,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-07T18:05:02.028Z
-                    updatedAt: 2026-07-07T18:05:02.028Z
+                    createdAt: 2026-07-07T21:12:41.841Z
+                    updatedAt: 2026-07-07T21:12:41.841Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -26278,7 +26475,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-07T18:05:02.082Z
+                    dateTimeLastViewed: 2026-07-07T21:12:41.872Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26301,8 +26498,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-07T18:05:02.082Z
-                    updatedAt: 2026-07-07T18:05:02.082Z
+                    createdAt: 2026-07-07T21:12:41.872Z
+                    updatedAt: 2026-07-07T21:12:41.872Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -31378,6 +31575,120 @@ paths:
           description: Internal Server Error
       security: []
       summary: Create ad credit scan
+      tags:
+      - Interactions
+  /wallet/prizeGame/active/{merchantID}:
+    get:
+      operationId: fetchActivePrizeGamePromotion
+      parameters:
+      - explode: false
+        in: path
+        name: merchantID
+        required: true
+        schema:
+          $ref: "#/components/schemas/NanoID"
+        style: simple
+      - explode: true
+        in: query
+        name: gameType
+        required: true
+        schema:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizeGameActivePromotion"
+          description: Ok
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security: []
+      summary: |-
+        Get the active prize-game promotion
+        Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the
+        merchant), title, honest odds disclosure, prize list, play limits, and the minimum age.
+        Returns { active: false } when the merchant has no live promotion for the game.
+      tags:
+      - Interactions
+  /wallet/prizeGame/play:
+    post:
+      operationId: playPrizeGame
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTPrizeGamePlayRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizeGamePlayResult"
+          description: Ok
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security: []
+      summary: |-
+        Play a prize game
+        Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize
+        with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the
+        audited play with its odds snapshot, and on a win issues the prize into the guest's My
+        Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified
+        phone token; carries NO payment surface of any kind (plays are always free).
       tags:
       - Interactions
   /wallet/advertisementCredit/fetchScans/{merchantID}:
@@ -46666,6 +46977,212 @@ components:
       - length
       - results
       - total
+    WTPrizeGameType:
+      enum:
+      - wheel
+      - dice
+      - card
+    WTPrizePromotionPrizeTier:
+      additionalProperties: false
+      example:
+        advertisementCreditID: AC7y7huhdhhd
+        inventory: 10
+        awardedCount: 0
+      properties:
+        advertisementCreditID:
+          example: AC7y7huhdhhd
+          minLength: 1
+          type: string
+        inventory:
+          example: 10
+          format: int32
+          minimum: 1
+          type: integer
+        awardedCount:
+          format: int32
+          type: integer
+      required:
+      - advertisementCreditID
+      - inventory
+    WTPrizeGamePlayLimitPeriod:
+      enum:
+      - day
+      - promotion
+    WTPrizeGameTrigger:
+      enum:
+      - wallet_open
+      - daily_free_play
+      - public_code
+    WTPrizePromotion:
+      additionalProperties: false
+      example:
+        gameType: wheel
+        title: Spin & Win July
+        winOdds: 0.2
+        prizeTiers:
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        perGuestPlayLimit: 1
+        playLimitPeriod: day
+        startDate: 2000-01-23T04:56:07.000+00:00
+        endDate: 2000-01-23T04:56:07.000+00:00
+        triggerType: wallet_open
+        minimumAge: 18
+        registrationAttested: true
+        id: id
+        merchantID: merchantID
+        isActive: true
+        totalPrizePoolValue: 1
+        oddsDisclosure: oddsDisclosure
+      properties:
+        gameType:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        title:
+          example: Spin & Win July
+          minLength: 1
+          type: string
+        winOdds:
+          example: 0.2
+          format: double
+          maximum: 1
+          minimum: 0.0000010
+          type: number
+        prizeTiers:
+          items:
+            $ref: "#/components/schemas/WTPrizePromotionPrizeTier"
+          type: array
+          default: null
+        perGuestPlayLimit:
+          example: 1
+          format: int32
+          minimum: 1
+          type: integer
+        playLimitPeriod:
+          $ref: "#/components/schemas/WTPrizeGamePlayLimitPeriod"
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        triggerType:
+          $ref: "#/components/schemas/WTPrizeGameTrigger"
+        minimumAge:
+          format: int32
+          minimum: 18
+          type: integer
+        registrationAttested:
+          type: boolean
+        id:
+          type: string
+        merchantID:
+          type: string
+        isActive:
+          type: boolean
+        totalPrizePoolValue:
+          format: int32
+          type: integer
+        oddsDisclosure:
+          type: string
+      required:
+      - endDate
+      - gameType
+      - id
+      - isActive
+      - merchantID
+      - oddsDisclosure
+      - perGuestPlayLimit
+      - playLimitPeriod
+      - prizeTiers
+      - startDate
+      - title
+      - totalPrizePoolValue
+      - triggerType
+      - winOdds
+    WTPrizePromotionCreateParams:
+      additionalProperties: {}
+      example:
+        gameType: wheel
+        title: Spin & Win July
+        winOdds: 0.2
+        prizeTiers:
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        perGuestPlayLimit: 1
+        playLimitPeriod: day
+        startDate: 2000-01-23T04:56:07.000+00:00
+        endDate: 2000-01-23T04:56:07.000+00:00
+        triggerType: wallet_open
+        minimumAge: 18
+        registrationAttested: true
+      properties:
+        gameType:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        title:
+          example: Spin & Win July
+          minLength: 1
+          type: string
+        winOdds:
+          example: 0.2
+          format: double
+          maximum: 1
+          minimum: 0.0000010
+          type: number
+        prizeTiers:
+          items:
+            $ref: "#/components/schemas/WTPrizePromotionPrizeTier"
+          type: array
+          default: null
+        perGuestPlayLimit:
+          example: 1
+          format: int32
+          minimum: 1
+          type: integer
+        playLimitPeriod:
+          $ref: "#/components/schemas/WTPrizeGamePlayLimitPeriod"
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        triggerType:
+          $ref: "#/components/schemas/WTPrizeGameTrigger"
+        minimumAge:
+          format: int32
+          minimum: 18
+          type: integer
+        registrationAttested:
+          type: boolean
+      required:
+      - endDate
+      - gameType
+      - perGuestPlayLimit
+      - playLimitPeriod
+      - prizeTiers
+      - startDate
+      - title
+      - triggerType
+      - winOdds
+    WTPrizePromotionUpdateParams:
+      additionalProperties: false
+      example:
+        isActive: true
+        endDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        isActive:
+          type: boolean
+        endDate:
+          format: date-time
+          type: string
     WTStaticVoucherCampaign:
       additionalProperties: false
       example:
@@ -49821,6 +50338,103 @@ components:
       - status
       - transactionType
       - updatedAt
+    WTPrizeGameActivePromotion:
+      additionalProperties: false
+      example:
+        active: true
+        promotionID: promotionID
+        gameType: wheel
+        sponsorName: sponsorName
+        title: title
+        oddsDisclosure: oddsDisclosure
+        minimumAge: 0
+        startDate: 2000-01-23T04:56:07.000+00:00
+        endDate: 2000-01-23T04:56:07.000+00:00
+        perGuestPlayLimit: 6
+        playLimitPeriod: day
+        prizes:
+        - discountValueDisplay: discountValueDisplay
+          title: title
+        - discountValueDisplay: discountValueDisplay
+          title: title
+        noPurchaseNecessary: true
+      properties:
+        active:
+          type: boolean
+        promotionID:
+          type: string
+        gameType:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        sponsorName:
+          type: string
+        title:
+          type: string
+        oddsDisclosure:
+          type: string
+        minimumAge:
+          format: int32
+          type: integer
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        perGuestPlayLimit:
+          format: int32
+          type: integer
+        playLimitPeriod:
+          $ref: "#/components/schemas/WTPrizeGamePlayLimitPeriod"
+        prizes:
+          items:
+            $ref: "#/components/schemas/WTPrizeGameActivePromotion_prizes_inner"
+          type: array
+          default: null
+        noPurchaseNecessary:
+          type: boolean
+      required:
+      - active
+    WTPrizeGamePlayResult:
+      additionalProperties: false
+      example:
+        outcome: win
+        playsRemaining: 0
+        oddsDisclosure: oddsDisclosure
+        prize:
+          title: title
+          scanID: scanID
+          advertisementCreditID: advertisementCreditID
+      properties:
+        outcome:
+          enum:
+          - win
+          - lose
+        playsRemaining:
+          format: int32
+          type: integer
+        oddsDisclosure:
+          type: string
+        prize:
+          $ref: "#/components/schemas/WTPrizeGamePlayResult_prize"
+      required:
+      - oddsDisclosure
+      - outcome
+      - playsRemaining
+    WTPrizeGamePlayRequest:
+      additionalProperties: false
+      example:
+        promotionID: promotionID
+        phoneVerificationToken: phoneVerificationToken
+      properties:
+        promotionID:
+          minLength: 1
+          type: string
+        phoneVerificationToken:
+          minLength: 1
+          type: string
+      required:
+      - phoneVerificationToken
+      - promotionID
     WalletConfiguration:
       additionalProperties: false
       example:
@@ -52342,6 +52956,33 @@ components:
         - "0"
         type: string
         nullable: false
+    WTPrizeGameActivePromotion_prizes_inner:
+      example:
+        discountValueDisplay: discountValueDisplay
+        title: title
+      properties:
+        discountValueDisplay:
+          type: string
+        title:
+          type: string
+      required:
+      - discountValueDisplay
+      - title
+    WTPrizeGamePlayResult_prize:
+      example:
+        title: title
+        scanID: scanID
+        advertisementCreditID: advertisementCreditID
+      properties:
+        title:
+          type: string
+        scanID:
+          type: string
+        advertisementCreditID:
+          type: string
+      required:
+      - advertisementCreditID
+      - scanID
   securitySchemes:
     api_key:
       in: header

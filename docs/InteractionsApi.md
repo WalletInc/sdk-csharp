@@ -10,6 +10,7 @@ All URIs are relative to *https://api.wall.et*
 | [**CreateIcsFile**](InteractionsApi.md#createicsfile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
 | [**CreateVirtualBusinessCardVCard**](InteractionsApi.md#createvirtualbusinesscardvcard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
 | [**FetchActiveDynamicVouchers**](InteractionsApi.md#fetchactivedynamicvouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers |
+| [**FetchActivePrizeGamePromotion**](InteractionsApi.md#fetchactiveprizegamepromotion) | **GET** /wallet/prizeGame/active/{merchantID} | Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game. |
 | [**FetchAdvertisementCreditScansFromList**](InteractionsApi.md#fetchadvertisementcreditscansfromlist) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs |
 | [**FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID**](InteractionsApi.md#fetchallstaticvouchersassociatedwithcustomerwithvoucherid) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
 | [**FetchCustomerTicketsWithToken**](InteractionsApi.md#fetchcustomerticketswithtoken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token |
@@ -20,6 +21,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchWalletPaymentObjectsWithToken**](InteractionsApi.md#fetchwalletpaymentobjectswithtoken) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped) |
 | [**FindByVanityHandle**](InteractionsApi.md#findbyvanityhandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
 | [**IdentifyItem**](InteractionsApi.md#identifyitem) | **GET** /wallet/item/identify/{itemID} | Identify item |
+| [**PlayPrizeGame**](InteractionsApi.md#playprizegame) | **POST** /wallet/prizeGame/play | Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). |
 | [**RequestMerchantURLRedirect**](InteractionsApi.md#requestmerchanturlredirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
 | [**SubscribeEmail**](InteractionsApi.md#subscribeemail) | **POST** /wallet/subscribeEmail | Create email subscriber |
 | [**SubscribeSms**](InteractionsApi.md#subscribesms) | **POST** /wallet/subscribeSms | Create sms subscriber |
@@ -576,6 +578,103 @@ catch (ApiException e)
 ### Return type
 
 [**List&lt;DynamicVoucher&gt;**](DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchactiveprizegamepromotion"></a>
+# **FetchActivePrizeGamePromotion**
+> WTPrizeGameActivePromotion FetchActivePrizeGamePromotion (string merchantID, WTPrizeGameType gameType)
+
+Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchActivePrizeGamePromotionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
+            var merchantID = "merchantID_example";  // string | 
+            var gameType = (WTPrizeGameType) "wheel";  // WTPrizeGameType | 
+
+            try
+            {
+                // Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+                WTPrizeGameActivePromotion result = apiInstance.FetchActivePrizeGamePromotion(merchantID, gameType);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling InteractionsApi.FetchActivePrizeGamePromotion: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchActivePrizeGamePromotionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+    ApiResponse<WTPrizeGameActivePromotion> response = apiInstance.FetchActivePrizeGamePromotionWithHttpInfo(merchantID, gameType);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InteractionsApi.FetchActivePrizeGamePromotionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **merchantID** | **string** |  |  |
+| **gameType** | **WTPrizeGameType** |  |  |
+
+### Return type
+
+[**WTPrizeGameActivePromotion**](WTPrizeGameActivePromotion.md)
 
 ### Authorization
 
@@ -1544,6 +1643,101 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="playprizegame"></a>
+# **PlayPrizeGame**
+> WTPrizeGamePlayResult PlayPrizeGame (WTPrizeGamePlayRequest wTPrizeGamePlayRequest)
+
+Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest's My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class PlayPrizeGameExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
+            var wTPrizeGamePlayRequest = new WTPrizeGamePlayRequest(); // WTPrizeGamePlayRequest | 
+
+            try
+            {
+                // Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest's My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+                WTPrizeGamePlayResult result = apiInstance.PlayPrizeGame(wTPrizeGamePlayRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling InteractionsApi.PlayPrizeGame: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PlayPrizeGameWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest's My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+    ApiResponse<WTPrizeGamePlayResult> response = apiInstance.PlayPrizeGameWithHttpInfo(wTPrizeGamePlayRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InteractionsApi.PlayPrizeGameWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTPrizeGamePlayRequest** | [**WTPrizeGamePlayRequest**](WTPrizeGamePlayRequest.md) |  |  |
+
+### Return type
+
+[**WTPrizeGamePlayResult**](WTPrizeGamePlayResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T18:06:11.567Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T21:13:51.937Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -138,6 +138,26 @@ namespace WalletInc.Api
         /// <param name="merchantID"></param>
         /// <returns>ApiResponse of List&lt;DynamicVoucher&gt;</returns>
         ApiResponse<List<DynamicVoucher>> FetchActiveDynamicVouchersWithHttpInfo(string merchantID);
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <returns>WTPrizeGameActivePromotion</returns>
+        WTPrizeGameActivePromotion FetchActivePrizeGamePromotion(string merchantID, WTPrizeGameType gameType);
+
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <returns>ApiResponse of WTPrizeGameActivePromotion</returns>
+        ApiResponse<WTPrizeGameActivePromotion> FetchActivePrizeGamePromotionWithHttpInfo(string merchantID, WTPrizeGameType gameType);
         /// <summary>
         /// Get multiple credit scans w/ array of IDs
         /// </summary>
@@ -328,6 +348,24 @@ namespace WalletInc.Api
         /// <param name="referrer"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> IdentifyItemWithHttpInfo(string itemID, bool? isRefresh = default, string? phoneVerificationToken = default, string? referrer = default);
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <returns>WTPrizeGamePlayResult</returns>
+        WTPrizeGamePlayResult PlayPrizeGame(WTPrizeGamePlayRequest wTPrizeGamePlayRequest);
+
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <returns>ApiResponse of WTPrizeGamePlayResult</returns>
+        ApiResponse<WTPrizeGamePlayResult> PlayPrizeGameWithHttpInfo(WTPrizeGamePlayRequest wTPrizeGamePlayRequest);
         /// <summary>
         /// Request Merchant URL
         /// </summary>
@@ -533,6 +571,31 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DynamicVoucher&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<DynamicVoucher>>> FetchActiveDynamicVouchersWithHttpInfoAsync(string merchantID, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizeGameActivePromotion</returns>
+        System.Threading.Tasks.Task<WTPrizeGameActivePromotion> FetchActivePrizeGamePromotionAsync(string merchantID, WTPrizeGameType gameType, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizeGameActivePromotion)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WTPrizeGameActivePromotion>> FetchActivePrizeGamePromotionWithHttpInfoAsync(string merchantID, WTPrizeGameType gameType, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get multiple credit scans w/ array of IDs
         /// </summary>
@@ -773,6 +836,29 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> IdentifyItemWithHttpInfoAsync(string itemID, bool? isRefresh = default, string? phoneVerificationToken = default, string? referrer = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizeGamePlayResult</returns>
+        System.Threading.Tasks.Task<WTPrizeGamePlayResult> PlayPrizeGameAsync(WTPrizeGamePlayRequest wTPrizeGamePlayRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizeGamePlayResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WTPrizeGamePlayResult>> PlayPrizeGameWithHttpInfoAsync(WTPrizeGamePlayRequest wTPrizeGamePlayRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request Merchant URL
         /// </summary>
@@ -1757,6 +1843,127 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FetchActiveDynamicVouchers", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <returns>WTPrizeGameActivePromotion</returns>
+        public WTPrizeGameActivePromotion FetchActivePrizeGamePromotion(string merchantID, WTPrizeGameType gameType)
+        {
+            WalletInc.Client.ApiResponse<WTPrizeGameActivePromotion> localVarResponse = FetchActivePrizeGamePromotionWithHttpInfo(merchantID, gameType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <returns>ApiResponse of WTPrizeGameActivePromotion</returns>
+        public WalletInc.Client.ApiResponse<WTPrizeGameActivePromotion> FetchActivePrizeGamePromotionWithHttpInfo(string merchantID, WTPrizeGameType gameType)
+        {
+            // verify the required parameter 'merchantID' is set
+            if (merchantID == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'merchantID' when calling InteractionsApi->FetchActivePrizeGamePromotion");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("merchantID", WalletInc.Client.ClientUtils.ParameterToString(merchantID)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(WalletInc.Client.ClientUtils.ParameterToMultiMap("", "gameType", gameType));
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<WTPrizeGameActivePromotion>("/wallet/prizeGame/active/{merchantID}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FetchActivePrizeGamePromotion", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizeGameActivePromotion</returns>
+        public async System.Threading.Tasks.Task<WTPrizeGameActivePromotion> FetchActivePrizeGamePromotionAsync(string merchantID, WTPrizeGameType gameType, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<WTPrizeGameActivePromotion> localVarResponse = await FetchActivePrizeGamePromotionWithHttpInfoAsync(merchantID, gameType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game. 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="merchantID"></param>
+        /// <param name="gameType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizeGameActivePromotion)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<WTPrizeGameActivePromotion>> FetchActivePrizeGamePromotionWithHttpInfoAsync(string merchantID, WTPrizeGameType gameType, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'merchantID' is set
+            if (merchantID == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'merchantID' when calling InteractionsApi->FetchActivePrizeGamePromotion");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("merchantID", WalletInc.Client.ClientUtils.ParameterToString(merchantID)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(WalletInc.Client.ClientUtils.ParameterToMultiMap("", "gameType", gameType));
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WTPrizeGameActivePromotion>("/wallet/prizeGame/active/{merchantID}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FetchActivePrizeGamePromotion", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -2979,6 +3186,123 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("IdentifyItem", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <returns>WTPrizeGamePlayResult</returns>
+        public WTPrizeGamePlayResult PlayPrizeGame(WTPrizeGamePlayRequest wTPrizeGamePlayRequest)
+        {
+            WalletInc.Client.ApiResponse<WTPrizeGamePlayResult> localVarResponse = PlayPrizeGameWithHttpInfo(wTPrizeGamePlayRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <returns>ApiResponse of WTPrizeGamePlayResult</returns>
+        public WalletInc.Client.ApiResponse<WTPrizeGamePlayResult> PlayPrizeGameWithHttpInfo(WTPrizeGamePlayRequest wTPrizeGamePlayRequest)
+        {
+            // verify the required parameter 'wTPrizeGamePlayRequest' is set
+            if (wTPrizeGamePlayRequest == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTPrizeGamePlayRequest' when calling InteractionsApi->PlayPrizeGame");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTPrizeGamePlayRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WTPrizeGamePlayResult>("/wallet/prizeGame/play", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PlayPrizeGame", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTPrizeGamePlayResult</returns>
+        public async System.Threading.Tasks.Task<WTPrizeGamePlayResult> PlayPrizeGameAsync(WTPrizeGamePlayRequest wTPrizeGamePlayRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<WTPrizeGamePlayResult> localVarResponse = await PlayPrizeGameWithHttpInfoAsync(wTPrizeGamePlayRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTPrizeGamePlayRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTPrizeGamePlayResult)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<WTPrizeGamePlayResult>> PlayPrizeGameWithHttpInfoAsync(WTPrizeGamePlayRequest wTPrizeGamePlayRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'wTPrizeGamePlayRequest' is set
+            if (wTPrizeGamePlayRequest == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTPrizeGamePlayRequest' when calling InteractionsApi->PlayPrizeGame");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTPrizeGamePlayRequest;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WTPrizeGamePlayResult>("/wallet/prizeGame/play", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PlayPrizeGame", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
