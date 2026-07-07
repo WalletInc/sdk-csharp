@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **TechnicalContactEmployeeID** | **string** |  | 
 **CustomerServiceContactEmployeeID** | **string** |  | 
 **StripeCustomerID** | **string** |  | 
+**StripeConnectAccountID** | **string** |  | [optional] 
 **IsPaymentMethodProvided** | **bool** |  | 
 **PlanNickname** | **string** |  | 
 **MaxSMSCount** | **double** |  | 

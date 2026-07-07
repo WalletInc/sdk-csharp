@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:31:17.903Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -62,13 +62,14 @@ namespace WalletInc.Model
         /// <param name="technicalContactEmployeeID">technicalContactEmployeeID (required).</param>
         /// <param name="customerServiceContactEmployeeID">customerServiceContactEmployeeID (required).</param>
         /// <param name="stripeCustomerID">stripeCustomerID (required).</param>
+        /// <param name="stripeConnectAccountID">stripeConnectAccountID.</param>
         /// <param name="isPaymentMethodProvided">isPaymentMethodProvided (required).</param>
         /// <param name="planNickname">planNickname (required).</param>
         /// <param name="maxSMSCount">maxSMSCount (required).</param>
         /// <param name="isSmsAgreement">isSmsAgreement.</param>
         /// <param name="isWhiteLabeled">isWhiteLabeled.</param>
         /// <param name="isFeatured">isFeatured.</param>
-        public Merchant(string companyName = default, string address1 = default, string address2 = default, string city = default, string state = default, string country = default, string phoneNumber = default, string zip = default, string currencyAbbreviation = default, string id = default, DateTime createdAt = default, DateTime updatedAt = default, string industry = default, string industryName = default, string infoGenesisPropertyID = default, bool isFrozen = default, string billingContactEmployeeID = default, string marketingContactEmployeeID = default, string technicalContactEmployeeID = default, string customerServiceContactEmployeeID = default, string stripeCustomerID = default, bool isPaymentMethodProvided = default, string planNickname = default, double maxSMSCount = default, bool isSmsAgreement = default, bool isWhiteLabeled = default, bool isFeatured = default)
+        public Merchant(string companyName = default, string address1 = default, string address2 = default, string city = default, string state = default, string country = default, string phoneNumber = default, string zip = default, string currencyAbbreviation = default, string id = default, DateTime createdAt = default, DateTime updatedAt = default, string industry = default, string industryName = default, string infoGenesisPropertyID = default, bool isFrozen = default, string billingContactEmployeeID = default, string marketingContactEmployeeID = default, string technicalContactEmployeeID = default, string customerServiceContactEmployeeID = default, string stripeCustomerID = default, string stripeConnectAccountID = default, bool isPaymentMethodProvided = default, string planNickname = default, double maxSMSCount = default, bool isSmsAgreement = default, bool isWhiteLabeled = default, bool isFeatured = default)
         {
             // to ensure "companyName" is required (not null)
             if (companyName == null)
@@ -184,6 +185,7 @@ namespace WalletInc.Model
             this.PlanNickname = planNickname;
             this.MaxSMSCount = maxSMSCount;
             this.CurrencyAbbreviation = currencyAbbreviation;
+            this.StripeConnectAccountID = stripeConnectAccountID;
             this.IsSmsAgreement = isSmsAgreement;
             this.IsWhiteLabeled = isWhiteLabeled;
             this.IsFeatured = isFeatured;
@@ -322,6 +324,12 @@ namespace WalletInc.Model
         public string StripeCustomerID { get; set; }
 
         /// <summary>
+        /// Gets or Sets StripeConnectAccountID
+        /// </summary>
+        [DataMember(Name = "stripeConnectAccountID", EmitDefaultValue = false)]
+        public string StripeConnectAccountID { get; set; }
+
+        /// <summary>
         /// Gets or Sets IsPaymentMethodProvided
         /// </summary>
         [DataMember(Name = "isPaymentMethodProvided", IsRequired = true, EmitDefaultValue = true)]
@@ -386,6 +394,7 @@ namespace WalletInc.Model
             sb.Append("  TechnicalContactEmployeeID: ").Append(TechnicalContactEmployeeID).Append("\n");
             sb.Append("  CustomerServiceContactEmployeeID: ").Append(CustomerServiceContactEmployeeID).Append("\n");
             sb.Append("  StripeCustomerID: ").Append(StripeCustomerID).Append("\n");
+            sb.Append("  StripeConnectAccountID: ").Append(StripeConnectAccountID).Append("\n");
             sb.Append("  IsPaymentMethodProvided: ").Append(IsPaymentMethodProvided).Append("\n");
             sb.Append("  PlanNickname: ").Append(PlanNickname).Append("\n");
             sb.Append("  MaxSMSCount: ").Append(MaxSMSCount).Append("\n");
