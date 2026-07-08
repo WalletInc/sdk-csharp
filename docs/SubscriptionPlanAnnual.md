@@ -1,5 +1,5 @@
 # WalletInc.Model.SubscriptionPlanAnnual
-PLACEHOLDER annual pricing for the monthly/annual toggle UX. Optional: only populated for plans surfaced through Industries.list(). `id` is a placeholder string, not a real Stripe price, and MUST NOT be used at checkout. See PlanCatalog.withAnnualPlaceholder().
+Annual pricing for the monthly/annual billing toggle. Optional. When a plan factory defines it, `id` is the REAL annual Stripe price id and is chargeable via `/v2/billing/plan` with `billingCadence: \"annual\"`. When absent, non-prod environments receive a PLACEHOLDER from PlanCatalog.withAnnualPlaceholder() (id prefixed `price_ANNUAL_PLACEHOLDER_`), which MUST NOT be used at checkout and is rejected there.
 
 ## Properties
 
