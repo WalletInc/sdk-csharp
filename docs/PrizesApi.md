@@ -6,14 +6,11 @@ All URIs are relative to *https://api.wall.et*
 |--------|--------------|-------------|
 | [**ArchiveAdvertisementCredit**](PrizesApi.md#archiveadvertisementcredit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive Prize |
 | [**CreateAdvertisementCredit**](PrizesApi.md#createadvertisementcredit) | **POST** /v2/payment/advertisementCredit | Create Prize |
-| [**CreatePrizePromotion**](PrizesApi.md#createprizepromotion) | **POST** /v2/prizePromotions | Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type. |
 | [**FetchAdvertisementCreditById**](PrizesApi.md#fetchadvertisementcreditbyid) | **GET** /v2/payment/advertisementCredit/{id} | Get Prize |
 | [**FetchAdvertisementCreditScans**](PrizesApi.md#fetchadvertisementcreditscans) | **GET** /v2/payment/advertisementCredit/scans/{id} | Get Prizes awarded |
 | [**FetchAllAdvertisementCredits**](PrizesApi.md#fetchalladvertisementcredits) | **GET** /v2/payment/advertisementCredit/all | Get all Prizes |
-| [**FetchPrizePromotions**](PrizesApi.md#fetchprizepromotions) | **GET** /v2/prizePromotions/all | List the merchant&#39;s prize-game promotions |
 | [**RestoreAdvertisementCredit**](PrizesApi.md#restoreadvertisementcredit) | **PATCH** /v2/payment/advertisementCredit/{id} | Restore Prize |
 | [**UpdateAdvertisementCredit**](PrizesApi.md#updateadvertisementcredit) | **PUT** /v2/payment/advertisementCredit/{id} | Update Prize |
-| [**UpdatePrizePromotion**](PrizesApi.md#updateprizepromotion) | **PUT** /v2/prizePromotions/{promotionID} | Update a prize-game promotion Deactivate a promotion or bring its end date forward. |
 
 <a id="archiveadvertisementcredit"></a>
 # **ArchiveAdvertisementCredit**
@@ -205,102 +202,6 @@ No authorization required
 | **409** | Duplicate Row Found |  -  |
 | **422** | Validation Failed |  -  |
 | **424** | Merchant Not Initialized |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="createprizepromotion"></a>
-# **CreatePrizePromotion**
-> WTPrizePromotion CreatePrizePromotion (WTPrizePromotionCreateParams wTPrizePromotionCreateParams)
-
-Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class CreatePrizePromotionExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new PrizesApi(httpClient, config, httpClientHandler);
-            var wTPrizePromotionCreateParams = new WTPrizePromotionCreateParams(); // WTPrizePromotionCreateParams | 
-
-            try
-            {
-                // Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
-                WTPrizePromotion result = apiInstance.CreatePrizePromotion(wTPrizePromotionCreateParams);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling PrizesApi.CreatePrizePromotion: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CreatePrizePromotionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
-    ApiResponse<WTPrizePromotion> response = apiInstance.CreatePrizePromotionWithHttpInfo(wTPrizePromotionCreateParams);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling PrizesApi.CreatePrizePromotionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **wTPrizePromotionCreateParams** | [**WTPrizePromotionCreateParams**](WTPrizePromotionCreateParams.md) |  |  |
-
-### Return type
-
-[**WTPrizePromotion**](WTPrizePromotion.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -593,97 +494,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="fetchprizepromotions"></a>
-# **FetchPrizePromotions**
-> List&lt;WTPrizePromotion&gt; FetchPrizePromotions ()
-
-List the merchant's prize-game promotions
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class FetchPrizePromotionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new PrizesApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // List the merchant's prize-game promotions
-                List<WTPrizePromotion> result = apiInstance.FetchPrizePromotions();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling PrizesApi.FetchPrizePromotions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the FetchPrizePromotionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List the merchant's prize-game promotions
-    ApiResponse<List<WTPrizePromotion>> response = apiInstance.FetchPrizePromotionsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling PrizesApi.FetchPrizePromotionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**List&lt;WTPrizePromotion&gt;**](WTPrizePromotion.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="restoreadvertisementcredit"></a>
 # **RestoreAdvertisementCredit**
 > WTAdvertisementCredit RestoreAdvertisementCredit (string id)
@@ -876,104 +686,6 @@ No authorization required
 | **409** | Duplicate Row Found |  -  |
 | **422** | Validation Failed |  -  |
 | **424** | Foreign Key does not exist |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="updateprizepromotion"></a>
-# **UpdatePrizePromotion**
-> WTPrizePromotion UpdatePrizePromotion (string promotionID, WTPrizePromotionUpdateParams wTPrizePromotionUpdateParams)
-
-Update a prize-game promotion Deactivate a promotion or bring its end date forward.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class UpdatePrizePromotionExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new PrizesApi(httpClient, config, httpClientHandler);
-            var promotionID = "promotionID_example";  // string | 
-            var wTPrizePromotionUpdateParams = new WTPrizePromotionUpdateParams(); // WTPrizePromotionUpdateParams | 
-
-            try
-            {
-                // Update a prize-game promotion Deactivate a promotion or bring its end date forward.
-                WTPrizePromotion result = apiInstance.UpdatePrizePromotion(promotionID, wTPrizePromotionUpdateParams);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling PrizesApi.UpdatePrizePromotion: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UpdatePrizePromotionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update a prize-game promotion Deactivate a promotion or bring its end date forward.
-    ApiResponse<WTPrizePromotion> response = apiInstance.UpdatePrizePromotionWithHttpInfo(promotionID, wTPrizePromotionUpdateParams);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling PrizesApi.UpdatePrizePromotionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **promotionID** | **string** |  |  |
-| **wTPrizePromotionUpdateParams** | [**WTPrizePromotionUpdateParams**](WTPrizePromotionUpdateParams.md) |  |  |
-
-### Return type
-
-[**WTPrizePromotion**](WTPrizePromotion.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
