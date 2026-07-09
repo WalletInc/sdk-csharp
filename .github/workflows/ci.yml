@@ -52,3 +52,18 @@ jobs:
       - name: Publish to NuGet
         if: steps.check.outputs.exists == 'true'
         run: dotnet nuget push "./nupkg/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+      # Same notifier as the other SDK repos (hand-copied from sdk-ts until the
+      # consolidated reusable notifier lands, KAN-118). Secrets added 2026-07-09.
+      # The green-path notifier deliberately cannot fail the build (slack.py
+      # clean-exits); the failure notifier pages SquadCast + Slack independently.
+      - name: Send message to Slack
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > .gitdiff-names || touch .gitdiff-names
+          git log --pretty=%B --ancestry-path ${{ github.event.before }}..${{ github.sha }} > .gitdiff-commits || touch .gitdiff-commits
+          python3 scripts/slack.py .gitdiff-names .gitdiff-commits ${{ secrets.SLACK_WEBHOOK_URL }} ${{ github.actor }} ${{ github.repository }} ${{ github.run_id }} $GITHUB_REF
+
+      - name: Send failure message to Slack
+        if: ${{ failure() }}
+        run: |
+          python3 scripts/failure.py ${{ secrets.SLACK_WEBHOOK_URL }} ${{ github.actor }} ${{ github.repository }} $GITHUB_REF ${{ secrets.SQUADCAST_API_ENDPOINT }}
