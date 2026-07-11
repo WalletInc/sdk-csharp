@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:21:17.640Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:34:10.651Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -81,14 +81,14 @@ namespace WalletInc.Model
         /// <param name="borderRadius">borderRadius (required).</param>
         /// <param name="fontColor">fontColor (required).</param>
         /// <param name="fontType">fontType (required).</param>
-        /// <param name="abbreviation">abbreviation (required).</param>
-        /// <param name="acronym">acronym (required).</param>
         /// <param name="icon">icon (required).</param>
         /// <param name="designName">designName (required).</param>
         /// <param name="displayName">displayName (required).</param>
         /// <param name="backgroundImageURL">backgroundImageURL.</param>
         /// <param name="companyLogoURL">companyLogoURL.</param>
-        public WTPaymentDesignCreateParams(string borderColor = default, BorderStyleTypeEnum borderStyleType = default, string borderSize = default, int borderRadius = default, string fontColor = default, string fontType = default, string abbreviation = default, string acronym = default, string icon = default, string designName = default, string displayName = default, string backgroundImageURL = default, string companyLogoURL = default)
+        /// <param name="abbreviation">abbreviation.</param>
+        /// <param name="acronym">acronym.</param>
+        public WTPaymentDesignCreateParams(string borderColor = default, BorderStyleTypeEnum borderStyleType = default, string borderSize = default, int borderRadius = default, string fontColor = default, string fontType = default, string icon = default, string designName = default, string displayName = default, string backgroundImageURL = default, string companyLogoURL = default, string abbreviation = default, string acronym = default)
         {
             // to ensure "borderColor" is required (not null)
             if (borderColor == null)
@@ -116,18 +116,6 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("fontType is a required property for WTPaymentDesignCreateParams and cannot be null");
             }
             this.FontType = fontType;
-            // to ensure "abbreviation" is required (not null)
-            if (abbreviation == null)
-            {
-                throw new ArgumentNullException("abbreviation is a required property for WTPaymentDesignCreateParams and cannot be null");
-            }
-            this.Abbreviation = abbreviation;
-            // to ensure "acronym" is required (not null)
-            if (acronym == null)
-            {
-                throw new ArgumentNullException("acronym is a required property for WTPaymentDesignCreateParams and cannot be null");
-            }
-            this.Acronym = acronym;
             // to ensure "icon" is required (not null)
             if (icon == null)
             {
@@ -148,6 +136,8 @@ namespace WalletInc.Model
             this.DisplayName = displayName;
             this.BackgroundImageURL = backgroundImageURL;
             this.CompanyLogoURL = companyLogoURL;
+            this.Abbreviation = abbreviation;
+            this.Acronym = acronym;
         }
 
         /// <summary>
@@ -196,24 +186,6 @@ namespace WalletInc.Model
         public string FontType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Abbreviation
-        /// </summary>
-        /*
-        <example>ABBR</example>
-        */
-        [DataMember(Name = "abbreviation", IsRequired = true, EmitDefaultValue = true)]
-        public string Abbreviation { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Acronym
-        /// </summary>
-        /*
-        <example>AR</example>
-        */
-        [DataMember(Name = "acronym", IsRequired = true, EmitDefaultValue = true)]
-        public string Acronym { get; set; }
-
-        /// <summary>
         /// Gets or Sets Icon
         /// </summary>
         /*
@@ -256,6 +228,18 @@ namespace WalletInc.Model
         public string CompanyLogoURL { get; set; }
 
         /// <summary>
+        /// Gets or Sets Abbreviation
+        /// </summary>
+        [DataMember(Name = "abbreviation", EmitDefaultValue = false)]
+        public string Abbreviation { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Acronym
+        /// </summary>
+        [DataMember(Name = "acronym", EmitDefaultValue = false)]
+        public string Acronym { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -269,13 +253,13 @@ namespace WalletInc.Model
             sb.Append("  BorderRadius: ").Append(BorderRadius).Append("\n");
             sb.Append("  FontColor: ").Append(FontColor).Append("\n");
             sb.Append("  FontType: ").Append(FontType).Append("\n");
-            sb.Append("  Abbreviation: ").Append(Abbreviation).Append("\n");
-            sb.Append("  Acronym: ").Append(Acronym).Append("\n");
             sb.Append("  Icon: ").Append(Icon).Append("\n");
             sb.Append("  DesignName: ").Append(DesignName).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  BackgroundImageURL: ").Append(BackgroundImageURL).Append("\n");
             sb.Append("  CompanyLogoURL: ").Append(CompanyLogoURL).Append("\n");
+            sb.Append("  Abbreviation: ").Append(Abbreviation).Append("\n");
+            sb.Append("  Acronym: ").Append(Acronym).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -336,18 +320,6 @@ namespace WalletInc.Model
             if (this.FontType != null && this.FontType.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for FontType, length must be greater than 1.", new [] { "FontType" });
-            }
-
-            // Abbreviation (string) minLength
-            if (this.Abbreviation != null && this.Abbreviation.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Abbreviation, length must be greater than 1.", new [] { "Abbreviation" });
-            }
-
-            // Acronym (string) minLength
-            if (this.Acronym != null && this.Acronym.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Acronym, length must be greater than 1.", new [] { "Acronym" });
             }
 
             // Icon (string) minLength
