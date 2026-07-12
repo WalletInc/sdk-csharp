@@ -90,6 +90,7 @@ docs/ForeignKeyDoesNotExist.md
 docs/GalleryApi.md
 docs/Gaming.md
 docs/GamingApi.md
+docs/GiftCardsApi.md
 docs/HelpDeskApi.md
 docs/HelpDeskRequest.md
 docs/ImageGrid.md
@@ -188,7 +189,7 @@ docs/PickVSAdvertisementCreditScanExcludeKeyofVSAdvertisementCreditScanRedeemedA
 docs/PickVSAdvertisementCreditUpdateParamsExcludeKeyofVSAdvertisementCreditUpdateParamsId.md
 docs/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate.md
 docs/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequencyType.md
-docs/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.md
+docs/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym.md
 docs/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.md
 docs/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.md
 docs/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md
@@ -290,6 +291,9 @@ docs/WTAuthenticationSSOLoginForDiscourse.md
 docs/WTBillingChangePlan.md
 docs/WTBillingSavePaymentMethod.md
 docs/WTBillingVerifyPaymentMethodResponse.md
+docs/WTCertificateDealCreateRequest.md
+docs/WTCertificateEntitlementSnapshot.md
+docs/WTCertificatePurchaseRequest.md
 docs/WTConnectAccountStatus.md
 docs/WTConnectMoney.md
 docs/WTConnectOnboardingLinkRequest.md
@@ -335,6 +339,8 @@ docs/WTFinancingSoftPullRequest.md
 docs/WTFinancingSoftPullResponse.md
 docs/WTGamingCreateParams.md
 docs/WTGamingUpdateParams.md
+docs/WTGiftCardPurchaseRequest.md
+docs/WTGiftClaimRequest.md
 docs/WTImageGridCreateParams.md
 docs/WTImageGridUpdateParams.md
 docs/WTImportedList.md
@@ -444,6 +450,13 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Api/GiftCardsApiTests.cs
+src/WalletInc.Test/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronymTests.cs
+src/WalletInc.Test/Model/WTCertificateDealCreateRequestTests.cs
+src/WalletInc.Test/Model/WTCertificateEntitlementSnapshotTests.cs
+src/WalletInc.Test/Model/WTCertificatePurchaseRequestTests.cs
+src/WalletInc.Test/Model/WTGiftCardPurchaseRequestTests.cs
+src/WalletInc.Test/Model/WTGiftClaimRequestTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -463,6 +476,7 @@ src/WalletInc/Api/EmployeesApi.cs
 src/WalletInc/Api/FilesDocumentsApi.cs
 src/WalletInc/Api/GalleryApi.cs
 src/WalletInc/Api/GamingApi.cs
+src/WalletInc/Api/GiftCardsApi.cs
 src/WalletInc/Api/HelpDeskApi.cs
 src/WalletInc/Api/ImportExportApi.cs
 src/WalletInc/Api/ImportedListsApi.cs
@@ -675,7 +689,7 @@ src/WalletInc/Model/PickVSAdvertisementCreditScanExcludeKeyofVSAdvertisementCred
 src/WalletInc/Model/PickVSAdvertisementCreditUpdateParamsExcludeKeyofVSAdvertisementCreditUpdateParamsId.cs
 src/WalletInc/Model/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate.cs
 src/WalletInc/Model/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequencyType.cs
-src/WalletInc/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.cs
+src/WalletInc/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym.cs
 src/WalletInc/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.cs
 src/WalletInc/Model/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.cs
 src/WalletInc/Model/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.cs
@@ -757,6 +771,9 @@ src/WalletInc/Model/WTAuthenticationSSOLoginForDiscourse.cs
 src/WalletInc/Model/WTBillingChangePlan.cs
 src/WalletInc/Model/WTBillingSavePaymentMethod.cs
 src/WalletInc/Model/WTBillingVerifyPaymentMethodResponse.cs
+src/WalletInc/Model/WTCertificateDealCreateRequest.cs
+src/WalletInc/Model/WTCertificateEntitlementSnapshot.cs
+src/WalletInc/Model/WTCertificatePurchaseRequest.cs
 src/WalletInc/Model/WTConnectAccountStatus.cs
 src/WalletInc/Model/WTConnectMoney.cs
 src/WalletInc/Model/WTConnectOnboardingLinkRequest.cs
@@ -802,6 +819,8 @@ src/WalletInc/Model/WTFinancingSoftPullRequest.cs
 src/WalletInc/Model/WTFinancingSoftPullResponse.cs
 src/WalletInc/Model/WTGamingCreateParams.cs
 src/WalletInc/Model/WTGamingUpdateParams.cs
+src/WalletInc/Model/WTGiftCardPurchaseRequest.cs
+src/WalletInc/Model/WTGiftClaimRequest.cs
 src/WalletInc/Model/WTImageGridCreateParams.cs
 src/WalletInc/Model/WTImageGridUpdateParams.cs
 src/WalletInc/Model/WTImportedList.cs

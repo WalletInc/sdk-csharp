@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **StripeConnectOnboardingStatus** | **string** |  | [optional] 
 **IsPaymentMethodProvided** | **bool** |  | 
 **PlanNickname** | **string** |  | 
+**BillingCadence** | **string** |  | [optional] 
 **MaxSMSCount** | **double** |  | 
 **IsSmsAgreement** | **bool** |  | [optional] 
 **IsWhiteLabeled** | **bool** |  | [optional] 

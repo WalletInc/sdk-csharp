@@ -6,11 +6,11 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.4.3**, built 2026-07-09T22:41:33.079Z
+    **Spec version 2.5.0**, built 2026-07-12T09:49:39.468Z
   license:
     name: https://wallet.law
   title: wallet-api
-  version: 2.4.3
+  version: 2.5.0
 servers:
 - description: Production API
   url: https://api.wall.et
@@ -3525,8 +3525,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:16.726Z
-                    updatedAt: 2026-07-09T22:40:16.726Z
+                    createdAt: 2026-07-12T09:48:26.239Z
+                    updatedAt: 2026-07-12T09:48:26.239Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -20813,8 +20813,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-09T22:40:21.263Z
-                    updatedAt: 2026-07-09T22:40:21.263Z
+                    createdAt: 2026-07-12T09:48:29.834Z
+                    updatedAt: 2026-07-12T09:48:29.834Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -20888,8 +20888,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-09T22:40:21.220Z
-                    updatedAt: 2026-07-09T22:40:21.220Z
+                    createdAt: 2026-07-12T09:48:29.800Z
+                    updatedAt: 2026-07-12T09:48:29.800Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -20963,8 +20963,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-09T22:40:21.269Z
-                    updatedAt: 2026-07-09T22:40:21.269Z
+                    createdAt: 2026-07-12T09:48:29.838Z
+                    updatedAt: 2026-07-12T09:48:29.838Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21044,8 +21044,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-09T22:40:21.248Z
-                    updatedAt: 2026-07-09T22:40:21.248Z
+                    createdAt: 2026-07-12T09:48:29.822Z
+                    updatedAt: 2026-07-12T09:48:29.822Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21145,8 +21145,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-09T22:40:21.232Z
-                    updatedAt: 2026-07-09T22:40:21.232Z
+                    createdAt: 2026-07-12T09:48:29.809Z
+                    updatedAt: 2026-07-12T09:48:29.809Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21442,8 +21442,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.408Z
-                    updatedAt: 2026-07-09T22:40:21.408Z
+                    createdAt: 2026-07-12T09:48:29.927Z
+                    updatedAt: 2026-07-12T09:48:29.927Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21520,8 +21520,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.340Z
-                    updatedAt: 2026-07-09T22:40:21.340Z
+                    createdAt: 2026-07-12T09:48:29.884Z
+                    updatedAt: 2026-07-12T09:48:29.884Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21598,8 +21598,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.413Z
-                    updatedAt: 2026-07-09T22:40:21.413Z
+                    createdAt: 2026-07-12T09:48:29.930Z
+                    updatedAt: 2026-07-12T09:48:29.930Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21682,8 +21682,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.389Z
-                    updatedAt: 2026-07-09T22:40:21.389Z
+                    createdAt: 2026-07-12T09:48:29.915Z
+                    updatedAt: 2026-07-12T09:48:29.915Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21786,8 +21786,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.355Z
-                    updatedAt: 2026-07-09T22:40:21.355Z
+                    createdAt: 2026-07-12T09:48:29.893Z
+                    updatedAt: 2026-07-12T09:48:29.893Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22031,8 +22031,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.620Z
-                    updatedAt: 2026-07-09T22:40:21.620Z
+                    createdAt: 2026-07-12T09:48:30.038Z
+                    updatedAt: 2026-07-12T09:48:30.038Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22115,8 +22115,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.536Z
-                    updatedAt: 2026-07-09T22:40:21.536Z
+                    createdAt: 2026-07-12T09:48:29.997Z
+                    updatedAt: 2026-07-12T09:48:29.997Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22199,8 +22199,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.628Z
-                    updatedAt: 2026-07-09T22:40:21.628Z
+                    createdAt: 2026-07-12T09:48:30.042Z
+                    updatedAt: 2026-07-12T09:48:30.042Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22289,8 +22289,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.596Z
-                    updatedAt: 2026-07-09T22:40:21.596Z
+                    createdAt: 2026-07-12T09:48:30.027Z
+                    updatedAt: 2026-07-12T09:48:30.027Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22399,8 +22399,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.555Z
-                    updatedAt: 2026-07-09T22:40:21.555Z
+                    createdAt: 2026-07-12T09:48:30.006Z
+                    updatedAt: 2026-07-12T09:48:30.006Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22618,8 +22618,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.640Z
-                    updatedAt: 2026-07-09T22:40:21.640Z
+                    createdAt: 2026-07-12T09:48:30.048Z
+                    updatedAt: 2026-07-12T09:48:30.048Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -22748,8 +22748,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.743Z
-                    updatedAt: 2026-07-09T22:40:21.743Z
+                    createdAt: 2026-07-12T09:48:30.103Z
+                    updatedAt: 2026-07-12T09:48:30.103Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -22964,8 +22964,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.720Z
-                    updatedAt: 2026-07-09T22:40:21.720Z
+                    createdAt: 2026-07-12T09:48:30.091Z
+                    updatedAt: 2026-07-12T09:48:30.091Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23115,8 +23115,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.765Z
-                    updatedAt: 2026-07-09T22:40:21.765Z
+                    createdAt: 2026-07-12T09:48:30.118Z
+                    updatedAt: 2026-07-12T09:48:30.118Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -23239,8 +23239,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:21.774Z
-                    updatedAt: 2026-07-09T22:40:21.774Z
+                    createdAt: 2026-07-12T09:48:30.122Z
+                    updatedAt: 2026-07-12T09:48:30.122Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -23469,6 +23469,465 @@ paths:
       summary: Get the reach statistics of an individual dynamic voucher
       tags:
       - Dynamic Vouchers
+  /giftcards/purchase:
+    post:
+      operationId: purchaseGiftCard
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTGiftCardPurchaseRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Purchase a gift card
+        Runs the (mock) Connect direct charge to the merchant, then issues a funded, reloadable gift card. Optionally
+        gifts it to a recipient. Requires the merchant's Stripe Connect account to be active (charges enabled).
+      tags:
+      - Gift Cards
+  /giftcards/deals:
+    post:
+      operationId: createCertificateDeal
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTCertificateDealCreateRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Create a gift-certificate deal (draft)
+        Creates the discounted "deal" template (product/service entitlement, retail + sale price, quantity, validity) as a
+        DRAFT. It is not purchasable until published. Authoring a draft does not require Stripe Connect.
+      tags:
+      - Gift Cards
+  /giftcards/deals/{dealID}/publish:
+    post:
+      operationId: publishCertificateDeal
+      parameters:
+      - explode: false
+        in: path
+        name: dealID
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Publish a certificate deal (put it on sale)
+        Flips a draft deal live so guests can buy certificates from it. Requires the merchant's Stripe Connect account to
+        be active (charges enabled), since a purchase is a direct charge to that account.
+      tags:
+      - Gift Cards
+  /giftcards/deals/{dealID}/purchase:
+    post:
+      operationId: purchaseCertificateFromDeal
+      parameters:
+      - explode: false
+        in: path
+        name: dealID
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTCertificatePurchaseRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Purchase a certificate from a deal
+        Runs the (mock) Connect direct charge of the deal's discounted sale price to the merchant, then mints a
+        single-use certificate from the deal. Optionally gifts it to a recipient.
+      tags:
+      - Gift Cards
+  /giftcards/{giftID}/claim:
+    post:
+      operationId: claimGift
+      parameters:
+      - explode: false
+        in: path
+        name: giftID
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTGiftClaimRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Claim a gifted card or certificate
+        Claims a gift into the recipient's wallet (guest-to-guest). For a certificate with the gift-redemption
+        requirement, the claimer must be someone other than the purchaser.
+      tags:
+      - Gift Cards
+  /giftcards/{giftID}:
+    get:
+      operationId: fetchGift
+      parameters:
+      - explode: false
+        in: path
+        name: giftID
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Fetch a gift card or certificate by id
+      tags:
+      - Gift Cards
+  /giftcards/deals/{dealID}:
+    get:
+      operationId: fetchCertificateDeal
+      parameters:
+      - explode: false
+        in: path
+        name: dealID
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Fetch a certificate deal by id
+      tags:
+      - Gift Cards
   /v2/payment/merchantcredit/count:
     get:
       operationId: fetchMerchantCreditCount
@@ -24294,8 +24753,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.030Z
-                    updatedAt: 2026-07-09T22:40:22.030Z
+                    createdAt: 2026-07-12T09:48:30.319Z
+                    updatedAt: 2026-07-12T09:48:30.319Z
                     isActive: true
               schema:
                 items:
@@ -24391,8 +24850,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.033Z
-                    updatedAt: 2026-07-09T22:40:22.033Z
+                    createdAt: 2026-07-12T09:48:30.321Z
+                    updatedAt: 2026-07-12T09:48:30.321Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -24685,8 +25144,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.049Z
-                    updatedAt: 2026-07-09T22:40:22.049Z
+                    createdAt: 2026-07-12T09:48:30.335Z
+                    updatedAt: 2026-07-12T09:48:30.335Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25068,8 +25527,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.107Z
-                    updatedAt: 2026-07-09T22:40:22.107Z
+                    createdAt: 2026-07-12T09:48:30.378Z
+                    updatedAt: 2026-07-12T09:48:30.378Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25168,8 +25627,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.124Z
-                    updatedAt: 2026-07-09T22:40:22.124Z
+                    createdAt: 2026-07-12T09:48:30.392Z
+                    updatedAt: 2026-07-12T09:48:30.392Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25261,8 +25720,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.171Z
-                    updatedAt: 2026-07-09T22:40:22.171Z
+                    createdAt: 2026-07-12T09:48:30.432Z
+                    updatedAt: 2026-07-12T09:48:30.432Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25354,8 +25813,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.188Z
-                    updatedAt: 2026-07-09T22:40:22.188Z
+                    createdAt: 2026-07-12T09:48:30.447Z
+                    updatedAt: 2026-07-12T09:48:30.447Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25448,8 +25907,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.206Z
-                    updatedAt: 2026-07-09T22:40:22.206Z
+                    createdAt: 2026-07-12T09:48:30.465Z
+                    updatedAt: 2026-07-12T09:48:30.465Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -25541,8 +26000,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.213Z
-                    updatedAt: 2026-07-09T22:40:22.213Z
+                    createdAt: 2026-07-12T09:48:30.470Z
+                    updatedAt: 2026-07-12T09:48:30.471Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -25640,8 +26099,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-09T22:40:22.218Z
-                    updatedAt: 2026-07-09T22:40:22.218Z
+                    createdAt: 2026-07-12T09:48:30.475Z
+                    updatedAt: 2026-07-12T09:48:30.475Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26045,7 +26504,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-09T22:40:22.237Z
+                    dateTimeLastViewed: 2026-07-12T09:48:30.493Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26068,8 +26527,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-09T22:40:22.237Z
-                    updatedAt: 2026-07-09T22:40:22.237Z
+                    createdAt: 2026-07-12T09:48:30.493Z
+                    updatedAt: 2026-07-12T09:48:30.493Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -26158,7 +26617,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-09T22:40:22.247Z
+                    dateTimeLastViewed: 2026-07-12T09:48:30.502Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26181,8 +26640,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-09T22:40:22.247Z
-                    updatedAt: 2026-07-09T22:40:22.247Z
+                    createdAt: 2026-07-12T09:48:30.502Z
+                    updatedAt: 2026-07-12T09:48:30.502Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -26278,7 +26737,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-09T22:40:22.284Z
+                    dateTimeLastViewed: 2026-07-12T09:48:30.537Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26301,8 +26760,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-09T22:40:22.284Z
-                    updatedAt: 2026-07-09T22:40:22.284Z
+                    createdAt: 2026-07-12T09:48:30.537Z
+                    updatedAt: 2026-07-12T09:48:30.537Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -33910,12 +34369,18 @@ components:
           annual:
             price: 5.637376656633329
             id: id
+        billingCadence: monthly
       properties:
         isPaymentMethodProvided:
           type: boolean
         subscription:
           $ref: "#/components/schemas/SubscriptionPlan"
+        billingCadence:
+          enum:
+          - monthly
+          - annual
       required:
+      - billingCadence
       - isPaymentMethodProvided
       - subscription
     Merchant:
@@ -33949,6 +34414,7 @@ components:
         stripeConnectOnboardingStatus: stripeConnectOnboardingStatus
         isPaymentMethodProvided: true
         planNickname: planNickname
+        billingCadence: monthly
         maxSMSCount: 0.8008281904610115
         isSmsAgreement: true
         isWhiteLabeled: true
@@ -34017,6 +34483,10 @@ components:
           type: boolean
         planNickname:
           type: string
+        billingCadence:
+          enum:
+          - monthly
+          - annual
         maxSMSCount:
           format: double
           type: number
@@ -45153,6 +45623,7 @@ components:
           - Dashed
           - Dotted
           example: Dashed
+          type: string
         borderSize:
           example: 4px
           minLength: 1
@@ -45326,7 +45797,7 @@ components:
       - isActive
       - merchantID
       - updatedAt
-    Pick_VSPaymentDesignCreateParams.Exclude_keyofVSPaymentDesignCreateParams.employeeID__:
+    Pick_VSPaymentDesignCreateParams.Exclude_keyofVSPaymentDesignCreateParams.employeeID-or-abbreviation-or-acronym__:
       description: "From T, pick a set of properties whose keys are in the union K"
       properties:
         borderColor:
@@ -45339,6 +45810,7 @@ components:
           - Dashed
           - Dotted
           example: Dashed
+          type: string
         borderSize:
           example: 4px
           minLength: 1
@@ -45355,14 +45827,6 @@ components:
           type: string
         fontType:
           example: Arial
-          minLength: 1
-          type: string
-        abbreviation:
-          example: ABBR
-          minLength: 1
-          type: string
-        acronym:
-          example: AR
           minLength: 1
           type: string
         icon:
@@ -45384,8 +45848,6 @@ components:
           example: https://example.com/company-logo
           type: string
       required:
-      - abbreviation
-      - acronym
       - borderColor
       - borderRadius
       - borderSize
@@ -45404,13 +45866,13 @@ components:
         borderRadius: 4
         fontColor: "#777777"
         fontType: Arial
-        abbreviation: ABBR
-        acronym: AR
         icon: fa-anchor
         designName: Thanksgiving Design
         displayName: Thanksgiving Coupon
         backgroundImageURL: backgroundImageURL
         companyLogoURL: https://example.com/company-logo
+        abbreviation: abbreviation
+        acronym: acronym
       properties:
         borderColor:
           example: "#f0f0f0"
@@ -45441,14 +45903,6 @@ components:
           example: Arial
           minLength: 1
           type: string
-        abbreviation:
-          example: ABBR
-          minLength: 1
-          type: string
-        acronym:
-          example: AR
-          minLength: 1
-          type: string
         icon:
           example: fa-anchor
           minLength: 1
@@ -45466,9 +45920,11 @@ components:
         companyLogoURL:
           example: https://example.com/company-logo
           type: string
+        abbreviation:
+          type: string
+        acronym:
+          type: string
       required:
-      - abbreviation
-      - acronym
       - borderColor
       - borderRadius
       - borderSize
@@ -45487,13 +45943,13 @@ components:
         borderRadius: 4
         fontColor: "#777777"
         fontType: Arial
-        abbreviation: ABBR
-        acronym: AR
         icon: fa-anchor
         designName: Thanksgiving Design
         displayName: Thanksgiving Coupon
         backgroundImageURL: backgroundImageURL
         companyLogoURL: https://example.com/company-logo
+        abbreviation: abbreviation
+        acronym: acronym
       properties:
         borderColor:
           example: "#f0f0f0"
@@ -45524,14 +45980,6 @@ components:
           example: Arial
           minLength: 1
           type: string
-        abbreviation:
-          example: ABBR
-          minLength: 1
-          type: string
-        acronym:
-          example: AR
-          minLength: 1
-          type: string
         icon:
           example: fa-anchor
           minLength: 1
@@ -45549,9 +45997,11 @@ components:
         companyLogoURL:
           example: https://example.com/company-logo
           type: string
+        abbreviation:
+          type: string
+        acronym:
+          type: string
       required:
-      - abbreviation
-      - acronym
       - borderColor
       - borderRadius
       - borderSize
@@ -46187,6 +46637,157 @@ components:
       - valueClaimed
       - valueRefunded
       - viewedCount
+    WTGiftCardPurchaseRequest:
+      additionalProperties: false
+      example:
+        valueCents: 5000
+        recipientPhoneNumber: "8055551212"
+        recipientEmailAddress: recipientEmailAddress
+        recipientMemberID: recipientMemberID
+        pinNumber: 0
+      properties:
+        valueCents:
+          example: 5000
+          format: int32
+          minimum: 1
+          type: integer
+        recipientPhoneNumber:
+          example: "8055551212"
+          type: string
+        recipientEmailAddress:
+          type: string
+        recipientMemberID:
+          type: string
+        pinNumber:
+          format: int32
+          type: integer
+      required:
+      - valueCents
+    WTCertificateEntitlementSnapshot:
+      additionalProperties: false
+      example:
+        title: Dinner for Two
+        description: description
+        mediaURL: mediaURL
+      properties:
+        title:
+          example: Dinner for Two
+          minLength: 1
+          type: string
+        description:
+          type: string
+        mediaURL:
+          type: string
+      required:
+      - title
+    WTCertificateDealCreateRequest:
+      additionalProperties: false
+      example:
+        title: Dinner for Two
+        description: description
+        entitlementType: product
+        entitlementID: PRabc123def
+        entitlementQuantity: 1
+        entitlementSnapshot:
+          title: Dinner for Two
+          description: description
+          mediaURL: mediaURL
+        retailValueCents: 5000
+        salePriceCents: 3000
+        quantityAvailable: 0
+        requiresGiftRedemption: true
+        validFrom: 2000-01-23T04:56:07.000+00:00
+        validThrough: 2000-01-23T04:56:07.000+00:00
+      properties:
+        title:
+          example: Dinner for Two
+          minLength: 1
+          type: string
+        description:
+          type: string
+        entitlementType:
+          enum:
+          - product
+          - service
+        entitlementID:
+          example: PRabc123def
+          type: string
+        entitlementQuantity:
+          format: int32
+          minimum: 1
+          type: integer
+        entitlementSnapshot:
+          $ref: "#/components/schemas/WTCertificateEntitlementSnapshot"
+        retailValueCents:
+          example: 5000
+          format: int32
+          minimum: 0
+          type: integer
+        salePriceCents:
+          example: 3000
+          format: int32
+          minimum: 0
+          type: integer
+        quantityAvailable:
+          format: int32
+          minimum: 0
+          type: integer
+        requiresGiftRedemption:
+          type: boolean
+        validFrom:
+          format: date-time
+          type: string
+        validThrough:
+          format: date-time
+          type: string
+      required:
+      - entitlementID
+      - entitlementSnapshot
+      - entitlementType
+      - retailValueCents
+      - salePriceCents
+      - title
+    WTCertificatePurchaseRequest:
+      additionalProperties: false
+      example:
+        buyerMemberID: buyerMemberID
+        buyerPhoneNumber: buyerPhoneNumber
+        senderName: senderName
+        recipientPhoneNumber: recipientPhoneNumber
+        recipientEmailAddress: recipientEmailAddress
+        recipientMemberID: recipientMemberID
+        giftMessage: giftMessage
+        occasion: occasion
+      properties:
+        buyerMemberID:
+          type: string
+        buyerPhoneNumber:
+          type: string
+        senderName:
+          type: string
+        recipientPhoneNumber:
+          type: string
+        recipientEmailAddress:
+          type: string
+        recipientMemberID:
+          type: string
+        giftMessage:
+          type: string
+        occasion:
+          type: string
+    WTGiftClaimRequest:
+      additionalProperties: false
+      example:
+        claimedByPhoneNumber: "8055559999"
+        claimedByMemberID: claimedByMemberID
+      properties:
+        claimedByPhoneNumber:
+          example: "8055559999"
+          type: string
+        claimedByMemberID:
+          type: string
+      required:
+      - claimedByPhoneNumber
     Pick_MSMerchantCredit.Exclude_keyofMSMerchantCredit.memberIdentifier__:
       description: "From T, pick a set of properties whose keys are in the union K"
       properties:
@@ -52389,6 +52990,7 @@ x-tagGroups:
   - Static Vouchers
   - Static Voucher Campaigns
   - Tickets
+  - Gift Cards
 - name: Reward Members
   tags:
   - Club Members
