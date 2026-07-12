@@ -429,6 +429,7 @@ docs/WTTicketCreateParams.md
 docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
+docs/WTTwilioVerifyAuthyCodeResponse.md
 docs/WTVideoCreateParams.md
 docs/WTVideoPlaybackSource.md
 docs/WTVideoUpdateParams.md
@@ -455,10 +456,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
-src/WalletInc.Test/Api/OrdersApiTests.cs
-src/WalletInc.Test/Model/OrderStatusTests.cs
-src/WalletInc.Test/Model/WTOrderLineItemTests.cs
-src/WalletInc.Test/Model/WTOrderTests.cs
+src/WalletInc.Test/Model/WTTwilioVerifyAuthyCodeResponseTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -910,6 +908,7 @@ src/WalletInc/Model/WTTicketCreateParams.cs
 src/WalletInc/Model/WTTicketUpdateParams.cs
 src/WalletInc/Model/WTTwilioRequestAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCode.cs
+src/WalletInc/Model/WTTwilioVerifyAuthyCodeResponse.cs
 src/WalletInc/Model/WTVideoCreateParams.cs
 src/WalletInc/Model/WTVideoPlaybackSource.cs
 src/WalletInc/Model/WTVideoUpdateParams.cs
