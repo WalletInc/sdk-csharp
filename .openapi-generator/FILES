@@ -152,6 +152,8 @@ docs/OptInList.md
 docs/OptInListSource.md
 docs/OptInListSubscriber.md
 docs/OptInListsApi.md
+docs/OrderStatus.md
+docs/OrdersApi.md
 docs/OutboundSMS.md
 docs/PaginatedWTMembers.md
 docs/PaginatedWTMerchantCredits.md
@@ -304,6 +306,7 @@ docs/WTConnectPaymentsSummary.md
 docs/WTConnectPaymentsSummaryBalance.md
 docs/WTConnectPaymentsSummaryRecentChargesInner.md
 docs/WTConnectPaymentsSummaryRecentPayoutsInner.md
+docs/WTConnectRequirements.md
 docs/WTCountResult.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
@@ -377,6 +380,8 @@ docs/WTNewsArticleCreateParams.md
 docs/WTNewsArticleUpdateParams.md
 docs/WTOptInList.md
 docs/WTOptInListCreationParams.md
+docs/WTOrder.md
+docs/WTOrderLineItem.md
 docs/WTPassBrandKit.md
 docs/WTPaymentDesign.md
 docs/WTPaymentDesignCreateParams.md
@@ -425,6 +430,7 @@ docs/WTTicketCreateParams.md
 docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
+docs/WTTwilioVerifyAuthyCodeResponse.md
 docs/WTVideoCreateParams.md
 docs/WTVideoPlaybackSource.md
 docs/WTVideoUpdateParams.md
@@ -451,13 +457,12 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
-src/WalletInc.Test/Api/GiftCardsApiTests.cs
-src/WalletInc.Test/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronymTests.cs
-src/WalletInc.Test/Model/WTCertificateDealCreateRequestTests.cs
-src/WalletInc.Test/Model/WTCertificateEntitlementSnapshotTests.cs
-src/WalletInc.Test/Model/WTCertificatePurchaseRequestTests.cs
-src/WalletInc.Test/Model/WTGiftCardPurchaseRequestTests.cs
-src/WalletInc.Test/Model/WTGiftClaimRequestTests.cs
+src/WalletInc.Test/Api/OrdersApiTests.cs
+src/WalletInc.Test/Model/OrderStatusTests.cs
+src/WalletInc.Test/Model/WTConnectRequirementsTests.cs
+src/WalletInc.Test/Model/WTOrderLineItemTests.cs
+src/WalletInc.Test/Model/WTOrderTests.cs
+src/WalletInc.Test/Model/WTTwilioVerifyAuthyCodeResponseTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -491,6 +496,7 @@ src/WalletInc/Api/MerchantCreditsApi.cs
 src/WalletInc/Api/NewsApi.cs
 src/WalletInc/Api/OpenAIApi.cs
 src/WalletInc/Api/OptInListsApi.cs
+src/WalletInc/Api/OrdersApi.cs
 src/WalletInc/Api/PaymentDesignsApi.cs
 src/WalletInc/Api/PerformancesApi.cs
 src/WalletInc/Api/PhoneNumbersApi.cs
@@ -655,6 +661,7 @@ src/WalletInc/Model/OAIAssistantUpdateParamsCreateParams.cs
 src/WalletInc/Model/OptInList.cs
 src/WalletInc/Model/OptInListSource.cs
 src/WalletInc/Model/OptInListSubscriber.cs
+src/WalletInc/Model/OrderStatus.cs
 src/WalletInc/Model/OutboundSMS.cs
 src/WalletInc/Model/PaginatedWTMembers.cs
 src/WalletInc/Model/PaginatedWTMerchantCredits.cs
@@ -784,6 +791,7 @@ src/WalletInc/Model/WTConnectPaymentsSummary.cs
 src/WalletInc/Model/WTConnectPaymentsSummaryBalance.cs
 src/WalletInc/Model/WTConnectPaymentsSummaryRecentChargesInner.cs
 src/WalletInc/Model/WTConnectPaymentsSummaryRecentPayoutsInner.cs
+src/WalletInc/Model/WTConnectRequirements.cs
 src/WalletInc/Model/WTCountResult.cs
 src/WalletInc/Model/WTCustomerSearchByMemberID.cs
 src/WalletInc/Model/WTCustomerSearchByPhoneNumber.cs
@@ -857,6 +865,8 @@ src/WalletInc/Model/WTNewsArticleCreateParams.cs
 src/WalletInc/Model/WTNewsArticleUpdateParams.cs
 src/WalletInc/Model/WTOptInList.cs
 src/WalletInc/Model/WTOptInListCreationParams.cs
+src/WalletInc/Model/WTOrder.cs
+src/WalletInc/Model/WTOrderLineItem.cs
 src/WalletInc/Model/WTPassBrandKit.cs
 src/WalletInc/Model/WTPaymentDesign.cs
 src/WalletInc/Model/WTPaymentDesignCreateParams.cs
@@ -905,6 +915,7 @@ src/WalletInc/Model/WTTicketCreateParams.cs
 src/WalletInc/Model/WTTicketUpdateParams.cs
 src/WalletInc/Model/WTTwilioRequestAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCode.cs
+src/WalletInc/Model/WTTwilioVerifyAuthyCodeResponse.cs
 src/WalletInc/Model/WTVideoCreateParams.cs
 src/WalletInc/Model/WTVideoPlaybackSource.cs
 src/WalletInc/Model/WTVideoUpdateParams.cs
