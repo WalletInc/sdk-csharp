@@ -306,6 +306,7 @@ docs/WTConnectPaymentsSummary.md
 docs/WTConnectPaymentsSummaryBalance.md
 docs/WTConnectPaymentsSummaryRecentChargesInner.md
 docs/WTConnectPaymentsSummaryRecentPayoutsInner.md
+docs/WTConnectRequirements.md
 docs/WTCountResult.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
@@ -456,6 +457,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTConnectRequirementsTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -784,6 +786,7 @@ src/WalletInc/Model/WTConnectPaymentsSummary.cs
 src/WalletInc/Model/WTConnectPaymentsSummaryBalance.cs
 src/WalletInc/Model/WTConnectPaymentsSummaryRecentChargesInner.cs
 src/WalletInc/Model/WTConnectPaymentsSummaryRecentPayoutsInner.cs
+src/WalletInc/Model/WTConnectRequirements.cs
 src/WalletInc/Model/WTCountResult.cs
 src/WalletInc/Model/WTCustomerSearchByMemberID.cs
 src/WalletInc/Model/WTCustomerSearchByPhoneNumber.cs

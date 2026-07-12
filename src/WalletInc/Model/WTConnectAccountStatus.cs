@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:05:00.071Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:15:37.660Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -53,7 +53,8 @@ namespace WalletInc.Model
         /// <param name="chargesEnabled">chargesEnabled (required).</param>
         /// <param name="payoutsEnabled">payoutsEnabled (required).</param>
         /// <param name="ecommerceEligible">ecommerceEligible (required).</param>
-        public WTConnectAccountStatus(string accountId = default, WTConnectOnboardingStatus onboardingStatus = default, bool detailsSubmitted = default, bool chargesEnabled = default, bool payoutsEnabled = default, bool ecommerceEligible = default)
+        /// <param name="requirements">requirements (required).</param>
+        public WTConnectAccountStatus(string accountId = default, WTConnectOnboardingStatus onboardingStatus = default, bool detailsSubmitted = default, bool chargesEnabled = default, bool payoutsEnabled = default, bool ecommerceEligible = default, WTConnectRequirements requirements = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -66,6 +67,12 @@ namespace WalletInc.Model
             this.ChargesEnabled = chargesEnabled;
             this.PayoutsEnabled = payoutsEnabled;
             this.EcommerceEligible = ecommerceEligible;
+            // to ensure "requirements" is required (not null)
+            if (requirements == null)
+            {
+                throw new ArgumentNullException("requirements is a required property for WTConnectAccountStatus and cannot be null");
+            }
+            this.Requirements = requirements;
         }
 
         /// <summary>
@@ -99,6 +106,12 @@ namespace WalletInc.Model
         public bool EcommerceEligible { get; set; }
 
         /// <summary>
+        /// Gets or Sets Requirements
+        /// </summary>
+        [DataMember(Name = "requirements", IsRequired = true, EmitDefaultValue = true)]
+        public WTConnectRequirements Requirements { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -112,6 +125,7 @@ namespace WalletInc.Model
             sb.Append("  ChargesEnabled: ").Append(ChargesEnabled).Append("\n");
             sb.Append("  PayoutsEnabled: ").Append(PayoutsEnabled).Append("\n");
             sb.Append("  EcommerceEligible: ").Append(EcommerceEligible).Append("\n");
+            sb.Append("  Requirements: ").Append(Requirements).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
