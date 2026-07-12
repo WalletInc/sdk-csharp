@@ -152,6 +152,8 @@ docs/OptInList.md
 docs/OptInListSource.md
 docs/OptInListSubscriber.md
 docs/OptInListsApi.md
+docs/OrderStatus.md
+docs/OrdersApi.md
 docs/OutboundSMS.md
 docs/PaginatedWTMembers.md
 docs/PaginatedWTMerchantCredits.md
@@ -377,6 +379,8 @@ docs/WTNewsArticleCreateParams.md
 docs/WTNewsArticleUpdateParams.md
 docs/WTOptInList.md
 docs/WTOptInListCreationParams.md
+docs/WTOrder.md
+docs/WTOrderLineItem.md
 docs/WTPassBrandKit.md
 docs/WTPaymentDesign.md
 docs/WTPaymentDesignCreateParams.md
@@ -451,6 +455,10 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Api/OrdersApiTests.cs
+src/WalletInc.Test/Model/OrderStatusTests.cs
+src/WalletInc.Test/Model/WTOrderLineItemTests.cs
+src/WalletInc.Test/Model/WTOrderTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -484,6 +492,7 @@ src/WalletInc/Api/MerchantCreditsApi.cs
 src/WalletInc/Api/NewsApi.cs
 src/WalletInc/Api/OpenAIApi.cs
 src/WalletInc/Api/OptInListsApi.cs
+src/WalletInc/Api/OrdersApi.cs
 src/WalletInc/Api/PaymentDesignsApi.cs
 src/WalletInc/Api/PerformancesApi.cs
 src/WalletInc/Api/PhoneNumbersApi.cs
@@ -648,6 +657,7 @@ src/WalletInc/Model/OAIAssistantUpdateParamsCreateParams.cs
 src/WalletInc/Model/OptInList.cs
 src/WalletInc/Model/OptInListSource.cs
 src/WalletInc/Model/OptInListSubscriber.cs
+src/WalletInc/Model/OrderStatus.cs
 src/WalletInc/Model/OutboundSMS.cs
 src/WalletInc/Model/PaginatedWTMembers.cs
 src/WalletInc/Model/PaginatedWTMerchantCredits.cs
@@ -850,6 +860,8 @@ src/WalletInc/Model/WTNewsArticleCreateParams.cs
 src/WalletInc/Model/WTNewsArticleUpdateParams.cs
 src/WalletInc/Model/WTOptInList.cs
 src/WalletInc/Model/WTOptInListCreationParams.cs
+src/WalletInc/Model/WTOrder.cs
+src/WalletInc/Model/WTOrderLineItem.cs
 src/WalletInc/Model/WTPassBrandKit.cs
 src/WalletInc/Model/WTPaymentDesign.cs
 src/WalletInc/Model/WTPaymentDesignCreateParams.cs
