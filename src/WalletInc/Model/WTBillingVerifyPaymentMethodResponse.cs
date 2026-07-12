@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-09T22:41:01.331Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -34,6 +34,31 @@ namespace WalletInc.Model
     public partial class WTBillingVerifyPaymentMethodResponse : IValidatableObject
     {
         /// <summary>
+        /// Defines BillingCadence
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum BillingCadenceEnum
+        {
+            /// <summary>
+            /// Enum Monthly for value: monthly
+            /// </summary>
+            [EnumMember(Value = "monthly")]
+            Monthly = 1,
+
+            /// <summary>
+            /// Enum Annual for value: annual
+            /// </summary>
+            [EnumMember(Value = "annual")]
+            Annual = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets BillingCadence
+        /// </summary>
+        [DataMember(Name = "billingCadence", IsRequired = true, EmitDefaultValue = true)]
+        public BillingCadenceEnum BillingCadence { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="WTBillingVerifyPaymentMethodResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -43,7 +68,8 @@ namespace WalletInc.Model
         /// </summary>
         /// <param name="isPaymentMethodProvided">isPaymentMethodProvided (required).</param>
         /// <param name="subscription">subscription (required).</param>
-        public WTBillingVerifyPaymentMethodResponse(bool isPaymentMethodProvided = default, SubscriptionPlan subscription = default)
+        /// <param name="billingCadence">billingCadence (required).</param>
+        public WTBillingVerifyPaymentMethodResponse(bool isPaymentMethodProvided = default, SubscriptionPlan subscription = default, BillingCadenceEnum billingCadence = default)
         {
             this.IsPaymentMethodProvided = isPaymentMethodProvided;
             // to ensure "subscription" is required (not null)
@@ -52,6 +78,7 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("subscription is a required property for WTBillingVerifyPaymentMethodResponse and cannot be null");
             }
             this.Subscription = subscription;
+            this.BillingCadence = billingCadence;
         }
 
         /// <summary>
@@ -76,6 +103,7 @@ namespace WalletInc.Model
             sb.Append("class WTBillingVerifyPaymentMethodResponse {\n");
             sb.Append("  IsPaymentMethodProvided: ").Append(IsPaymentMethodProvided).Append("\n");
             sb.Append("  Subscription: ").Append(Subscription).Append("\n");
+            sb.Append("  BillingCadence: ").Append(BillingCadence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
