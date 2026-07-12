@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T14:00:18.428Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T00:43:56.031Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -33,6 +33,31 @@ namespace WalletInc.Model
     [DataContract(Name = "Merchant")]
     public partial class Merchant : IValidatableObject
     {
+        /// <summary>
+        /// Defines BillingCadence
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum BillingCadenceEnum
+        {
+            /// <summary>
+            /// Enum Monthly for value: monthly
+            /// </summary>
+            [EnumMember(Value = "monthly")]
+            Monthly = 1,
+
+            /// <summary>
+            /// Enum Annual for value: annual
+            /// </summary>
+            [EnumMember(Value = "annual")]
+            Annual = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets BillingCadence
+        /// </summary>
+        [DataMember(Name = "billingCadence", EmitDefaultValue = false)]
+        public BillingCadenceEnum? BillingCadence { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Merchant" /> class.
         /// </summary>
@@ -69,11 +94,12 @@ namespace WalletInc.Model
         /// <param name="stripeConnectOnboardingStatus">stripeConnectOnboardingStatus.</param>
         /// <param name="isPaymentMethodProvided">isPaymentMethodProvided (required).</param>
         /// <param name="planNickname">planNickname (required).</param>
+        /// <param name="billingCadence">billingCadence.</param>
         /// <param name="maxSMSCount">maxSMSCount (required).</param>
         /// <param name="isSmsAgreement">isSmsAgreement.</param>
         /// <param name="isWhiteLabeled">isWhiteLabeled.</param>
         /// <param name="isFeatured">isFeatured.</param>
-        public Merchant(string companyName = default, string address1 = default, string address2 = default, string city = default, string state = default, string country = default, string phoneNumber = default, string zip = default, string currencyAbbreviation = default, string id = default, DateTime createdAt = default, DateTime updatedAt = default, string industry = default, string industryName = default, string infoGenesisPropertyID = default, bool isFrozen = default, string billingContactEmployeeID = default, string marketingContactEmployeeID = default, string technicalContactEmployeeID = default, string customerServiceContactEmployeeID = default, string stripeCustomerID = default, string stripeConnectAccountID = default, bool stripeConnectChargesEnabled = default, bool stripeConnectPayoutsEnabled = default, bool stripeConnectDetailsSubmitted = default, string stripeConnectOnboardingStatus = default, bool isPaymentMethodProvided = default, string planNickname = default, double maxSMSCount = default, bool isSmsAgreement = default, bool isWhiteLabeled = default, bool isFeatured = default)
+        public Merchant(string companyName = default, string address1 = default, string address2 = default, string city = default, string state = default, string country = default, string phoneNumber = default, string zip = default, string currencyAbbreviation = default, string id = default, DateTime createdAt = default, DateTime updatedAt = default, string industry = default, string industryName = default, string infoGenesisPropertyID = default, bool isFrozen = default, string billingContactEmployeeID = default, string marketingContactEmployeeID = default, string technicalContactEmployeeID = default, string customerServiceContactEmployeeID = default, string stripeCustomerID = default, string stripeConnectAccountID = default, bool stripeConnectChargesEnabled = default, bool stripeConnectPayoutsEnabled = default, bool stripeConnectDetailsSubmitted = default, string stripeConnectOnboardingStatus = default, bool isPaymentMethodProvided = default, string planNickname = default, BillingCadenceEnum? billingCadence = default, double maxSMSCount = default, bool isSmsAgreement = default, bool isWhiteLabeled = default, bool isFeatured = default)
         {
             // to ensure "companyName" is required (not null)
             if (companyName == null)
@@ -194,6 +220,7 @@ namespace WalletInc.Model
             this.StripeConnectPayoutsEnabled = stripeConnectPayoutsEnabled;
             this.StripeConnectDetailsSubmitted = stripeConnectDetailsSubmitted;
             this.StripeConnectOnboardingStatus = stripeConnectOnboardingStatus;
+            this.BillingCadence = billingCadence;
             this.IsSmsAgreement = isSmsAgreement;
             this.IsWhiteLabeled = isWhiteLabeled;
             this.IsFeatured = isFeatured;
@@ -433,6 +460,7 @@ namespace WalletInc.Model
             sb.Append("  StripeConnectOnboardingStatus: ").Append(StripeConnectOnboardingStatus).Append("\n");
             sb.Append("  IsPaymentMethodProvided: ").Append(IsPaymentMethodProvided).Append("\n");
             sb.Append("  PlanNickname: ").Append(PlanNickname).Append("\n");
+            sb.Append("  BillingCadence: ").Append(BillingCadence).Append("\n");
             sb.Append("  MaxSMSCount: ").Append(MaxSMSCount).Append("\n");
             sb.Append("  IsSmsAgreement: ").Append(IsSmsAgreement).Append("\n");
             sb.Append("  IsWhiteLabeled: ").Append(IsWhiteLabeled).Append("\n");
