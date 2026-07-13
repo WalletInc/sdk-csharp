@@ -13,6 +13,8 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAllPerformances**](PerformancesApi.md#fetchallperformances) | **GET** /v2/performances/all | Get all Performances |
 | [**FetchPerformance**](PerformancesApi.md#fetchperformance) | **GET** /v2/performances/{id} | Get Performance |
 | [**FetchPerformanceTicketsPage**](PerformancesApi.md#fetchperformanceticketspage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets |
+| [**FetchTicketReachStatsAll**](PerformancesApi.md#fetchticketreachstatsall) | **GET** /v2/performances/reach/all | Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when. |
+| [**FetchTicketReachStatsForPerformance**](PerformancesApi.md#fetchticketreachstatsforperformance) | **GET** /v2/performances/{id}/reach | Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel. |
 | [**ImportTickets**](PerformancesApi.md#importtickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets |
 | [**RestorePerformance**](PerformancesApi.md#restoreperformance) | **PATCH** /v2/performances/{id} | Restore Performance |
 | [**SaveTicketSettings**](PerformancesApi.md#saveticketsettings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings |
@@ -877,6 +879,204 @@ catch (ApiException e)
 ### Return type
 
 [**FetchPerformanceTicketsPage200Response**](FetchPerformanceTicketsPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchticketreachstatsall"></a>
+# **FetchTicketReachStatsAll**
+> WTTicketReachStats FetchTicketReachStatsAll (DateTime? startDate = null, DateTime? endDate = null)
+
+Ticket reach funnel across all of the merchant's performances Merchant-wide ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics > Customers > Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchTicketReachStatsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new PerformancesApi(httpClient, config, httpClientHandler);
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+
+            try
+            {
+                // Ticket reach funnel across all of the merchant's performances Merchant-wide ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics > Customers > Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+                WTTicketReachStats result = apiInstance.FetchTicketReachStatsAll(startDate, endDate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PerformancesApi.FetchTicketReachStatsAll: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchTicketReachStatsAllWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Ticket reach funnel across all of the merchant's performances Merchant-wide ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics > Customers > Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+    ApiResponse<WTTicketReachStats> response = apiInstance.FetchTicketReachStatsAllWithHttpInfo(startDate, endDate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PerformancesApi.FetchTicketReachStatsAllWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
+
+### Return type
+
+[**WTTicketReachStats**](WTTicketReachStats.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchticketreachstatsforperformance"></a>
+# **FetchTicketReachStatsForPerformance**
+> WTTicketReachStats FetchTicketReachStatsForPerformance (string id, DateTime? startDate = null, DateTime? endDate = null)
+
+Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the /tickets \"Show Analytics\" slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance's all-time funnel.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchTicketReachStatsForPerformanceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new PerformancesApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+
+            try
+            {
+                // Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the /tickets \"Show Analytics\" slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance's all-time funnel.
+                WTTicketReachStats result = apiInstance.FetchTicketReachStatsForPerformance(id, startDate, endDate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PerformancesApi.FetchTicketReachStatsForPerformance: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchTicketReachStatsForPerformanceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the /tickets \"Show Analytics\" slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance's all-time funnel.
+    ApiResponse<WTTicketReachStats> response = apiInstance.FetchTicketReachStatsForPerformanceWithHttpInfo(id, startDate, endDate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PerformancesApi.FetchTicketReachStatsForPerformanceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** |  |  |
+| **startDate** | **DateTime?** |  | [optional]  |
+| **endDate** | **DateTime?** |  | [optional]  |
+
+### Return type
+
+[**WTTicketReachStats**](WTTicketReachStats.md)
 
 ### Authorization
 

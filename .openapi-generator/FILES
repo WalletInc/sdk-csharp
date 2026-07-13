@@ -427,6 +427,7 @@ docs/WTSystemRoleCreate.md
 docs/WTTCPAOpt.md
 docs/WTTicket.md
 docs/WTTicketCreateParams.md
+docs/WTTicketReachStats.md
 docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
@@ -457,12 +458,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
-src/WalletInc.Test/Api/OrdersApiTests.cs
-src/WalletInc.Test/Model/OrderStatusTests.cs
-src/WalletInc.Test/Model/WTConnectRequirementsTests.cs
-src/WalletInc.Test/Model/WTOrderLineItemTests.cs
-src/WalletInc.Test/Model/WTOrderTests.cs
-src/WalletInc.Test/Model/WTTwilioVerifyAuthyCodeResponseTests.cs
+src/WalletInc.Test/Model/WTTicketReachStatsTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -912,6 +908,7 @@ src/WalletInc/Model/WTSystemRoleCreate.cs
 src/WalletInc/Model/WTTCPAOpt.cs
 src/WalletInc/Model/WTTicket.cs
 src/WalletInc/Model/WTTicketCreateParams.cs
+src/WalletInc/Model/WTTicketReachStats.cs
 src/WalletInc/Model/WTTicketUpdateParams.cs
 src/WalletInc/Model/WTTwilioRequestAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCode.cs

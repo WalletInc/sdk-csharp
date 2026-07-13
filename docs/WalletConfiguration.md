@@ -61,6 +61,7 @@ Name | Type | Description | Notes
 **IsClaimed** | **bool** |  | [optional] 
 **MobileAppIconURL** | **string** |  | [optional] 
 **IsAgeGate** | **bool** |  | [optional] 
+**IsFlipRequiredForQR** | **bool** |  | [optional] 
 **AgeGateMinimum** | **double** |  | [optional] 
 **AgeGateDeclineURL** | **string** |  | [optional] 
 **SocialInstagramURL** | **string** |  | [optional] 
