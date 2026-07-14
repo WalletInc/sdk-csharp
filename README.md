@@ -1,4 +1,4 @@
-![Wallet Inc](https://resources.wallet.inc/logos/wallet-350x96.png)
+![Wallet Inc](https://raw.githubusercontent.com/walletinc/sdk-csharp/master/logo.png)
 
 # Wallet SDK for .NET
 
