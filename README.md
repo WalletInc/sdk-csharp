@@ -9,6 +9,13 @@ The official server-side .NET SDK for the [Wallet Inc](https://wallet.inc) CRM &
 
 > **Access note:** this library is currently restricted to Wallet Inc customers. Need access or a hand getting started? Join us on [Discord](https://discord.gg/xzwhcNCjcQ).
 
+## Links
+
+- Website: https://wallet.inc
+- Developer docs: https://wallet.dev
+- API status: https://uptime.wallet.inc
+- All SDKs: https://github.com/walletinc
+
 ## Requirements
 
 .NET 8.0 or later.
