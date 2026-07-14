@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T19:30:26.355Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T20:18:10.719Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -136,7 +136,7 @@ namespace WalletInc.Model
         /// </summary>
         /// <value>The URL of the file</value>
         /*
-        <example>https://wall.et/documents/folder/file.pdf</example>
+        <example>https://media.wall.et/documents/folder/file.pdf</example>
         */
         [DataMember(Name = "fileURL", IsRequired = true, EmitDefaultValue = true)]
         public string FileURL { get; set; }

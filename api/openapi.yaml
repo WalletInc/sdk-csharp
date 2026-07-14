@@ -6,7 +6,7 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.4.1**, built 2026-07-14T19:30:26.355Z
+    **Spec version 2.4.1**, built 2026-07-14T20:18:10.719Z
   license:
     name: https://wallet.law
   title: wallet-api
@@ -3525,8 +3525,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:19.651Z
-                    updatedAt: 2026-07-14T19:29:19.651Z
+                    createdAt: 2026-07-14T20:16:50.114Z
+                    updatedAt: 2026-07-14T20:16:50.114Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -21100,8 +21100,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-14T19:29:22.485Z
-                    updatedAt: 2026-07-14T19:29:22.485Z
+                    createdAt: 2026-07-14T20:16:53.745Z
+                    updatedAt: 2026-07-14T20:16:53.745Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21175,8 +21175,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-14T19:29:22.453Z
-                    updatedAt: 2026-07-14T19:29:22.453Z
+                    createdAt: 2026-07-14T20:16:53.707Z
+                    updatedAt: 2026-07-14T20:16:53.707Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21250,8 +21250,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-14T19:29:22.489Z
-                    updatedAt: 2026-07-14T19:29:22.489Z
+                    createdAt: 2026-07-14T20:16:53.750Z
+                    updatedAt: 2026-07-14T20:16:53.750Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21331,8 +21331,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-14T19:29:22.473Z
-                    updatedAt: 2026-07-14T19:29:22.473Z
+                    createdAt: 2026-07-14T20:16:53.732Z
+                    updatedAt: 2026-07-14T20:16:53.732Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21432,8 +21432,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-14T19:29:22.461Z
-                    updatedAt: 2026-07-14T19:29:22.461Z
+                    createdAt: 2026-07-14T20:16:53.717Z
+                    updatedAt: 2026-07-14T20:16:53.717Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21729,8 +21729,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.568Z
-                    updatedAt: 2026-07-14T19:29:22.568Z
+                    createdAt: 2026-07-14T20:16:53.852Z
+                    updatedAt: 2026-07-14T20:16:53.852Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21807,8 +21807,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.528Z
-                    updatedAt: 2026-07-14T19:29:22.528Z
+                    createdAt: 2026-07-14T20:16:53.801Z
+                    updatedAt: 2026-07-14T20:16:53.801Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21885,8 +21885,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.572Z
-                    updatedAt: 2026-07-14T19:29:22.572Z
+                    createdAt: 2026-07-14T20:16:53.856Z
+                    updatedAt: 2026-07-14T20:16:53.856Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21969,8 +21969,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.558Z
-                    updatedAt: 2026-07-14T19:29:22.558Z
+                    createdAt: 2026-07-14T20:16:53.839Z
+                    updatedAt: 2026-07-14T20:16:53.839Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22073,8 +22073,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.536Z
-                    updatedAt: 2026-07-14T19:29:22.536Z
+                    createdAt: 2026-07-14T20:16:53.814Z
+                    updatedAt: 2026-07-14T20:16:53.814Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22318,8 +22318,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.667Z
-                    updatedAt: 2026-07-14T19:29:22.667Z
+                    createdAt: 2026-07-14T20:16:53.976Z
+                    updatedAt: 2026-07-14T20:16:53.976Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22402,8 +22402,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.631Z
-                    updatedAt: 2026-07-14T19:29:22.631Z
+                    createdAt: 2026-07-14T20:16:53.930Z
+                    updatedAt: 2026-07-14T20:16:53.930Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22486,8 +22486,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.670Z
-                    updatedAt: 2026-07-14T19:29:22.670Z
+                    createdAt: 2026-07-14T20:16:53.979Z
+                    updatedAt: 2026-07-14T20:16:53.979Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22576,8 +22576,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.657Z
-                    updatedAt: 2026-07-14T19:29:22.657Z
+                    createdAt: 2026-07-14T20:16:53.963Z
+                    updatedAt: 2026-07-14T20:16:53.963Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22686,8 +22686,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.639Z
-                    updatedAt: 2026-07-14T19:29:22.639Z
+                    createdAt: 2026-07-14T20:16:53.940Z
+                    updatedAt: 2026-07-14T20:16:53.940Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22905,8 +22905,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.675Z
-                    updatedAt: 2026-07-14T19:29:22.675Z
+                    createdAt: 2026-07-14T20:16:53.986Z
+                    updatedAt: 2026-07-14T20:16:53.986Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23035,8 +23035,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.722Z
-                    updatedAt: 2026-07-14T19:29:22.722Z
+                    createdAt: 2026-07-14T20:16:54.047Z
+                    updatedAt: 2026-07-14T20:16:54.047Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23251,8 +23251,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.711Z
-                    updatedAt: 2026-07-14T19:29:22.711Z
+                    createdAt: 2026-07-14T20:16:54.033Z
+                    updatedAt: 2026-07-14T20:16:54.033Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23402,8 +23402,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.736Z
-                    updatedAt: 2026-07-14T19:29:22.736Z
+                    createdAt: 2026-07-14T20:16:54.061Z
+                    updatedAt: 2026-07-14T20:16:54.061Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -23526,8 +23526,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.741Z
-                    updatedAt: 2026-07-14T19:29:22.741Z
+                    createdAt: 2026-07-14T20:16:54.066Z
+                    updatedAt: 2026-07-14T20:16:54.066Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -25040,8 +25040,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.892Z
-                    updatedAt: 2026-07-14T19:29:22.892Z
+                    createdAt: 2026-07-14T20:16:54.270Z
+                    updatedAt: 2026-07-14T20:16:54.270Z
                     isActive: true
               schema:
                 items:
@@ -25137,8 +25137,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.894Z
-                    updatedAt: 2026-07-14T19:29:22.894Z
+                    createdAt: 2026-07-14T20:16:54.272Z
+                    updatedAt: 2026-07-14T20:16:54.272Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25431,8 +25431,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.903Z
-                    updatedAt: 2026-07-14T19:29:22.903Z
+                    createdAt: 2026-07-14T20:16:54.284Z
+                    updatedAt: 2026-07-14T20:16:54.284Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25814,8 +25814,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.939Z
-                    updatedAt: 2026-07-14T19:29:22.939Z
+                    createdAt: 2026-07-14T20:16:54.332Z
+                    updatedAt: 2026-07-14T20:16:54.332Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25914,8 +25914,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.950Z
-                    updatedAt: 2026-07-14T19:29:22.950Z
+                    createdAt: 2026-07-14T20:16:54.346Z
+                    updatedAt: 2026-07-14T20:16:54.346Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26007,8 +26007,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.981Z
-                    updatedAt: 2026-07-14T19:29:22.981Z
+                    createdAt: 2026-07-14T20:16:54.386Z
+                    updatedAt: 2026-07-14T20:16:54.386Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26100,8 +26100,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:22.990Z
-                    updatedAt: 2026-07-14T19:29:22.990Z
+                    createdAt: 2026-07-14T20:16:54.399Z
+                    updatedAt: 2026-07-14T20:16:54.399Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26194,8 +26194,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:23.001Z
-                    updatedAt: 2026-07-14T19:29:23.001Z
+                    createdAt: 2026-07-14T20:16:54.414Z
+                    updatedAt: 2026-07-14T20:16:54.414Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -26287,8 +26287,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:23.007Z
-                    updatedAt: 2026-07-14T19:29:23.007Z
+                    createdAt: 2026-07-14T20:16:54.421Z
+                    updatedAt: 2026-07-14T20:16:54.421Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -26386,8 +26386,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-14T19:29:23.012Z
-                    updatedAt: 2026-07-14T19:29:23.012Z
+                    createdAt: 2026-07-14T20:16:54.426Z
+                    updatedAt: 2026-07-14T20:16:54.426Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26791,7 +26791,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-14T19:29:23.029Z
+                    dateTimeLastViewed: 2026-07-14T20:16:54.445Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26814,8 +26814,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-14T19:29:23.029Z
-                    updatedAt: 2026-07-14T19:29:23.029Z
+                    createdAt: 2026-07-14T20:16:54.445Z
+                    updatedAt: 2026-07-14T20:16:54.445Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -26904,7 +26904,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-14T19:29:23.035Z
+                    dateTimeLastViewed: 2026-07-14T20:16:54.453Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26927,8 +26927,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-14T19:29:23.035Z
-                    updatedAt: 2026-07-14T19:29:23.035Z
+                    createdAt: 2026-07-14T20:16:54.453Z
+                    updatedAt: 2026-07-14T20:16:54.453Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -27024,7 +27024,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-14T19:29:23.061Z
+                    dateTimeLastViewed: 2026-07-14T20:16:54.485Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27047,8 +27047,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-14T19:29:23.062Z
-                    updatedAt: 2026-07-14T19:29:23.062Z
+                    createdAt: 2026-07-14T20:16:54.485Z
+                    updatedAt: 2026-07-14T20:16:54.485Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -34138,7 +34138,7 @@ components:
         description: This is the description of the amenity
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://hotels.com/your-property/pool
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -34163,7 +34163,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://hotels.com/your-property/pool
@@ -34199,7 +34199,7 @@ components:
         description: This is the description of the amenity
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://hotels.com/your-property/pool
       properties:
         title:
@@ -34219,7 +34219,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://hotels.com/your-property/pool
@@ -34235,7 +34235,7 @@ components:
         description: This is the description of the amenity
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://hotels.com/your-property/pool
       properties:
         title:
@@ -34255,7 +34255,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://hotels.com/your-property/pool
@@ -35622,7 +35622,7 @@ components:
         description: This is the description of the dining option
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/restaurants/steak-house
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -35647,7 +35647,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/restaurants/steak-house
@@ -35683,7 +35683,7 @@ components:
         description: This is the description of the dining option
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/restaurants/steak-house
       properties:
         title:
@@ -35703,7 +35703,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/restaurants/steak-house
@@ -35719,7 +35719,7 @@ components:
         description: This is the description of the dining option
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/restaurants/steak-house
       properties:
         title:
@@ -35739,7 +35739,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/restaurants/steak-house
@@ -38183,7 +38183,7 @@ components:
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
         merchantID: 736dhakidk
-        fileURL: https://wall.et/documents/folder/image.jpeg
+        fileURL: https://media.wall.et/documents/folder/image.jpeg
         fileType: image
         fileName: image.jpeg
         fileSize: 5000
@@ -38209,7 +38209,7 @@ components:
           example: 736dhakidk
         fileURL:
           description: The URL of the file
-          example: https://wall.et/documents/folder/image.jpeg
+          example: https://media.wall.et/documents/folder/image.jpeg
           type: string
         fileType:
           description: The type of the file
@@ -38251,7 +38251,7 @@ components:
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
         merchantID: 736dhakidk
-        fileURL: https://wall.et/documents/folder/file.pdf
+        fileURL: https://media.wall.et/documents/folder/file.pdf
         fileType: application/pdf
         fileName: file.pdf
         fileSize: 50000
@@ -38277,7 +38277,7 @@ components:
           example: 736dhakidk
         fileURL:
           description: The URL of the file
-          example: https://wall.et/documents/folder/file.pdf
+          example: https://media.wall.et/documents/folder/file.pdf
           type: string
         fileType:
           description: The type of the file
@@ -39796,7 +39796,7 @@ components:
         description: This is the description of the gaming option
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/games/blackjack
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -39821,7 +39821,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/games/blackjack
@@ -39857,7 +39857,7 @@ components:
         description: This is the description of the gaming option
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/games/blackjack
       properties:
         title:
@@ -39877,7 +39877,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/games/blackjack
@@ -39893,7 +39893,7 @@ components:
         description: This is the description of the gaming option
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/games/blackjack
       properties:
         title:
@@ -39913,7 +39913,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/games/blackjack
@@ -40325,7 +40325,7 @@ components:
         description: This is the description of the lounge
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/lounges/sky-lounge
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -40350,7 +40350,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/lounges/sky-lounge
@@ -40386,7 +40386,7 @@ components:
         description: This is the description of the lounge
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/lounges/sky-lounge
       properties:
         title:
@@ -40406,7 +40406,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/lounges/sky-lounge
@@ -40422,7 +40422,7 @@ components:
         description: This is the description of the lounge
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-site.com/lounges/sky-lounge
       properties:
         title:
@@ -40442,7 +40442,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-site.com/lounges/sky-lounge
@@ -41350,7 +41350,7 @@ components:
           example: https://example.com/news-article.html
           type: string
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         publishedDate:
           format: date-time
@@ -41367,7 +41367,7 @@ components:
         orderNumber: 1
         body: This is the body of the news article
         url: https://example.com/news-article.html
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         publishedDate: 2000-01-23T04:56:07.000+00:00
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -41392,7 +41392,7 @@ components:
           example: https://example.com/news-article.html
           type: string
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         publishedDate:
           format: date-time
@@ -41429,7 +41429,7 @@ components:
         body: This is the body of the news article
         url: https://example.com/news-article.html
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         publishedDate: 2000-01-23T04:56:07.000+00:00
       properties:
         title:
@@ -41449,7 +41449,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         publishedDate:
           format: date-time
@@ -41466,7 +41466,7 @@ components:
         body: This is the body of the news article
         url: https://example.com/news-article.html
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         publishedDate: 2000-01-23T04:56:07.000+00:00
       properties:
         title:
@@ -41486,7 +41486,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         publishedDate:
           format: date-time
@@ -41762,7 +41762,7 @@ components:
         url: https://example.com/performance.html
         orderNumber: 5
         isSoldOut: true
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         paymentDesignID: l38dh3ns73
         maxCompTickets: 0.8008281904610115
         ticketExpirationDateTime: 2000-01-23T04:56:07.000+00:00
@@ -41800,7 +41800,7 @@ components:
           example: true
           type: boolean
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         paymentDesignID:
           allOf:
@@ -41852,7 +41852,7 @@ components:
         url: https://example.com/performance.html
         orderNumber: 5
         isSoldOut: true
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         paymentDesignID: l38dh3ns73
         maxCompTickets: 0.8008281904610115
         ticketExpirationDateTime: 2000-01-23T04:56:07.000+00:00
@@ -41885,7 +41885,7 @@ components:
           example: true
           type: boolean
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         paymentDesignID:
           allOf:
@@ -41917,7 +41917,7 @@ components:
         url: https://example.com/performance.html
         orderNumber: 5
         isSoldOut: true
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         paymentDesignID: l38dh3ns73
         maxCompTickets: 0.8008281904610115
         ticketExpirationDateTime: 2000-01-23T04:56:07.000+00:00
@@ -41950,7 +41950,7 @@ components:
           example: true
           type: boolean
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         paymentDesignID:
           allOf:
@@ -42248,7 +42248,7 @@ components:
         description: This is the description of the product
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/product-1/buy-now
         priceAmount: 2500
         currency: usd
@@ -42279,7 +42279,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-website.com/product-1/buy-now
@@ -42336,7 +42336,7 @@ components:
         description: This is the description of the product
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/product-1/buy-now
         priceAmount: 2500
         currency: usd
@@ -42360,7 +42360,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-website.com/product-1/buy-now
@@ -42394,7 +42394,7 @@ components:
         description: This is the description of the product
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/product-1/buy-now
         priceAmount: 2500
         currency: usd
@@ -42418,7 +42418,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-website.com/product-1/buy-now
@@ -42453,7 +42453,7 @@ components:
         promoCode: XMAS20
         displayValue: 20% Off!
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         startDate: 2016-06-22 19:10:25-07
         expirationDate: 2016-06-22 19:10:25-07
         id: CMueJDL982Hs
@@ -42484,7 +42484,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         startDate:
           example: 2016-06-22 19:10:25-07
@@ -42530,7 +42530,7 @@ components:
         promoCode: XMAS20
         displayValue: 20% Off!
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         startDate: 2016-06-22 19:10:25-07
         expirationDate: 2016-06-22 19:10:25-07
       properties:
@@ -42556,7 +42556,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         startDate:
           example: 2016-06-22 19:10:25-07
@@ -42582,7 +42582,7 @@ components:
         promoCode: XMAS20
         displayValue: 20% Off!
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         startDate: 2016-06-22 19:10:25-07
         expirationDate: 2016-06-22 19:10:25-07
       properties:
@@ -42608,7 +42608,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         startDate:
           example: 2016-06-22 19:10:25-07
@@ -42846,7 +42846,7 @@ components:
         description: This is the description of the room & rate
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://hotels.com/your-property/king-bedroom
         id: CMueJDL982Hs
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -42871,7 +42871,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://hotels.com/your-property/king-bedroom
@@ -42907,7 +42907,7 @@ components:
         description: This is the description of the room & rate
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://hotels.com/your-property/king-bedroom
       properties:
         title:
@@ -42927,7 +42927,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://hotels.com/your-property/king-bedroom
@@ -42943,7 +42943,7 @@ components:
         description: This is the description of the room & rate
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://hotels.com/your-property/king-bedroom
       properties:
         title:
@@ -42963,7 +42963,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://hotels.com/your-property/king-bedroom
@@ -42979,7 +42979,7 @@ components:
         description: This is the description of the service
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/service-1/reserve-now
         priceAmount: 2500
         currency: usd
@@ -43010,7 +43010,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-website.com/service-1/reserve-now
@@ -43067,7 +43067,7 @@ components:
         description: This is the description of the service
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/service-1/reserve-now
         priceAmount: 2500
         currency: usd
@@ -43091,7 +43091,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-website.com/service-1/reserve-now
@@ -43125,7 +43125,7 @@ components:
         description: This is the description of the service
         displayedPrice: $200-$350
         orderNumber: 1
-        mediaURL: https://wall.et/media/H847Sjudbw.png
+        mediaURL: https://media.wall.et/H847Sjudbw.png
         additionalInfoURL: https://your-website.com/service-1/reserve-now
         priceAmount: 2500
         currency: usd
@@ -43149,7 +43149,7 @@ components:
           minimum: 1
           type: integer
         mediaURL:
-          example: https://wall.et/media/H847Sjudbw.png
+          example: https://media.wall.et/H847Sjudbw.png
           type: string
         additionalInfoURL:
           example: https://your-website.com/service-1/reserve-now
