@@ -9,19 +9,19 @@
     <Authors>Wallet Inc Development Team</Authors>
     <Company>Wallet Inc</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>Server-side .NET SDK for the Wallet Inc CRM and Digital Payments platform. Docs: https://wallet.dev</Description>
+    <Description>Official .NET SDK for the Wallet Inc CRM & Digital Payments platform.</Description>
     <Copyright>Copyright 2026 Wallet Inc</Copyright>
     <RootNamespace>WalletInc</RootNamespace>
-    <Version>2.7.4</Version>
+    <Version>2.7.5</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\WalletInc.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/WalletInc/sdk-csharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>https://github.com/WalletInc/api-clients/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/WalletInc/sdk-csharp/releases</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
       <Title>Wallet (SDK)</Title>
-    <PackageProjectUrl>https://github.com/WalletInc/sdk-csharp</PackageProjectUrl>
-    <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;sms</PackageTags>
+    <PackageProjectUrl>https://wallet.dev</PackageProjectUrl>
+    <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;membership;sms</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
