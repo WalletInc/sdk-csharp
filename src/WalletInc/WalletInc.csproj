@@ -22,6 +22,7 @@
       <Title>Wallet (SDK)</Title>
     <PackageProjectUrl>https://wallet.dev</PackageProjectUrl>
     <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;membership;sms</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
@@ -38,5 +39,6 @@
   <ItemGroup>
     <None Include="../../LICENSE" Pack="true" PackagePath="" />
     <None Include="../../NOTICE" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
