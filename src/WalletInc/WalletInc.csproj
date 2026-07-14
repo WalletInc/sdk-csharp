@@ -12,7 +12,7 @@
     <Description>Official .NET SDK for the Wallet Inc CRM &amp; Digital Payments platform.</Description>
     <Copyright>Copyright 2026 Wallet Inc</Copyright>
     <RootNamespace>WalletInc</RootNamespace>
-    <Version>2.7.7</Version>
+    <Version>2.7.8</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\WalletInc.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/WalletInc/sdk-csharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -22,6 +22,7 @@
       <Title>Wallet (SDK)</Title>
     <PackageProjectUrl>https://wallet.dev</PackageProjectUrl>
     <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;membership;sms</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
@@ -38,5 +39,6 @@
   <ItemGroup>
     <None Include="../../LICENSE" Pack="true" PackagePath="" />
     <None Include="../../NOTICE" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
