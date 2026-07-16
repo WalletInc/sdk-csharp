@@ -6,19 +6,24 @@
     <AssemblyName>WalletInc</AssemblyName>
     <PackageId>WalletInc</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
-    <Company>OpenAPI</Company>
+    <Authors>Wallet Inc Development Team</Authors>
+    <Company>Wallet Inc</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
-    <Copyright>No Copyright</Copyright>
+    <Description>Official .NET SDK for the Wallet Inc CRM &amp; Digital Payments platform.</Description>
+    <Copyright>Copyright 2026 Wallet Inc</Copyright>
     <RootNamespace>WalletInc</RootNamespace>
     <Version>2.4.1</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\WalletInc.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/WalletInc/sdk-csharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/WalletInc/sdk-csharp/releases</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+      <Title>Wallet (SDK)</Title>
+    <PackageProjectUrl>https://wallet.dev</PackageProjectUrl>
+    <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;membership;sms</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,5 +35,10 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../NOTICE" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
