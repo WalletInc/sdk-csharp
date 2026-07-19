@@ -6,6 +6,7 @@ All URIs are relative to *https://api.wall.et*
 |--------|--------------|-------------|
 | [**CountInboundSMS**](SMSMessagesApi.md#countinboundsms) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes |
 | [**CountOutboundSMS**](SMSMessagesApi.md#countoutboundsms) | **GET** /v2/sms/outbound/count/{phoneNumberID} | Count outbound SMS |
+| [**EstimateSMSSegments**](SMSMessagesApi.md#estimatesmssegments) | **POST** /sms/segment-estimate | Estimate SMS/MMS segments for a message |
 | [**ExportInboundMessages**](SMSMessagesApi.md#exportinboundmessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages |
 | [**ExportOutboundMessages**](SMSMessagesApi.md#exportoutboundmessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages |
 | [**FetchInboundSMS**](SMSMessagesApi.md#fetchinboundsms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes |
@@ -212,6 +213,102 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="estimatesmssegments"></a>
+# **EstimateSMSSegments**
+> WTSegmentEstimate EstimateSMSSegments (WTSegmentEstimateRequest wTSegmentEstimateRequest)
+
+Estimate SMS/MMS segments for a message
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class EstimateSMSSegmentsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+            var wTSegmentEstimateRequest = new WTSegmentEstimateRequest(); // WTSegmentEstimateRequest | 
+
+            try
+            {
+                // Estimate SMS/MMS segments for a message
+                WTSegmentEstimate result = apiInstance.EstimateSMSSegments(wTSegmentEstimateRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SMSMessagesApi.EstimateSMSSegments: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EstimateSMSSegmentsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Estimate SMS/MMS segments for a message
+    ApiResponse<WTSegmentEstimate> response = apiInstance.EstimateSMSSegmentsWithHttpInfo(wTSegmentEstimateRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SMSMessagesApi.EstimateSMSSegmentsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTSegmentEstimateRequest** | [**WTSegmentEstimateRequest**](WTSegmentEstimateRequest.md) |  |  |
+
+### Return type
+
+[**WTSegmentEstimate**](WTSegmentEstimate.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

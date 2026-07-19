@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-18T13:19:23.739Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-19T20:26:49.007Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -82,6 +82,24 @@ namespace WalletInc.Api
         /// <param name="endDate"> (optional)</param>
         /// <returns>ApiResponse of WTCountResult</returns>
         ApiResponse<WTCountResult> CountOutboundSMSWithHttpInfo(string phoneNumberID, string? toPhoneNumber = default, string? status = default, string? paymentObjectBroadcastID = default, DateTime? startDate = default, DateTime? endDate = default);
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <returns>WTSegmentEstimate</returns>
+        WTSegmentEstimate EstimateSMSSegments(WTSegmentEstimateRequest wTSegmentEstimateRequest);
+
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <returns>ApiResponse of WTSegmentEstimate</returns>
+        ApiResponse<WTSegmentEstimate> EstimateSMSSegmentsWithHttpInfo(WTSegmentEstimateRequest wTSegmentEstimateRequest);
         /// <summary>
         /// Export inbound messages
         /// </summary>
@@ -337,6 +355,29 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WTCountResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<WTCountResult>> CountOutboundSMSWithHttpInfoAsync(string phoneNumberID, string? toPhoneNumber = default, string? status = default, string? paymentObjectBroadcastID = default, DateTime? startDate = default, DateTime? endDate = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTSegmentEstimate</returns>
+        System.Threading.Tasks.Task<WTSegmentEstimate> EstimateSMSSegmentsAsync(WTSegmentEstimateRequest wTSegmentEstimateRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTSegmentEstimate)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WTSegmentEstimate>> EstimateSMSSegmentsWithHttpInfoAsync(WTSegmentEstimateRequest wTSegmentEstimateRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Export inbound messages
         /// </summary>
@@ -1104,6 +1145,123 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CountOutboundSMS", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <returns>WTSegmentEstimate</returns>
+        public WTSegmentEstimate EstimateSMSSegments(WTSegmentEstimateRequest wTSegmentEstimateRequest)
+        {
+            WalletInc.Client.ApiResponse<WTSegmentEstimate> localVarResponse = EstimateSMSSegmentsWithHttpInfo(wTSegmentEstimateRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <returns>ApiResponse of WTSegmentEstimate</returns>
+        public WalletInc.Client.ApiResponse<WTSegmentEstimate> EstimateSMSSegmentsWithHttpInfo(WTSegmentEstimateRequest wTSegmentEstimateRequest)
+        {
+            // verify the required parameter 'wTSegmentEstimateRequest' is set
+            if (wTSegmentEstimateRequest == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTSegmentEstimateRequest' when calling SMSMessagesApi->EstimateSMSSegments");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTSegmentEstimateRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WTSegmentEstimate>("/sms/segment-estimate", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EstimateSMSSegments", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WTSegmentEstimate</returns>
+        public async System.Threading.Tasks.Task<WTSegmentEstimate> EstimateSMSSegmentsAsync(WTSegmentEstimateRequest wTSegmentEstimateRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<WTSegmentEstimate> localVarResponse = await EstimateSMSSegmentsWithHttpInfoAsync(wTSegmentEstimateRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Estimate SMS/MMS segments for a message 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wTSegmentEstimateRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WTSegmentEstimate)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<WTSegmentEstimate>> EstimateSMSSegmentsWithHttpInfoAsync(WTSegmentEstimateRequest wTSegmentEstimateRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'wTSegmentEstimateRequest' is set
+            if (wTSegmentEstimateRequest == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTSegmentEstimateRequest' when calling SMSMessagesApi->EstimateSMSSegments");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = wTSegmentEstimateRequest;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WTSegmentEstimate>("/sms/segment-estimate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EstimateSMSSegments", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
