@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-21T15:43:42.754Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-21T19:57:31.962Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -69,7 +69,8 @@ namespace WalletInc.Model
         /// <param name="isPaymentMethodProvided">isPaymentMethodProvided (required).</param>
         /// <param name="subscription">subscription (required).</param>
         /// <param name="billingCadence">billingCadence (required).</param>
-        public WTBillingVerifyPaymentMethodResponse(bool isPaymentMethodProvided = default, SubscriptionPlan subscription = default, BillingCadenceEnum billingCadence = default)
+        /// <param name="isTrialEligible">isTrialEligible (required).</param>
+        public WTBillingVerifyPaymentMethodResponse(bool isPaymentMethodProvided = default, SubscriptionPlan subscription = default, BillingCadenceEnum billingCadence = default, bool isTrialEligible = default)
         {
             this.IsPaymentMethodProvided = isPaymentMethodProvided;
             // to ensure "subscription" is required (not null)
@@ -79,6 +80,7 @@ namespace WalletInc.Model
             }
             this.Subscription = subscription;
             this.BillingCadence = billingCadence;
+            this.IsTrialEligible = isTrialEligible;
         }
 
         /// <summary>
@@ -94,6 +96,12 @@ namespace WalletInc.Model
         public SubscriptionPlan Subscription { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsTrialEligible
+        /// </summary>
+        [DataMember(Name = "isTrialEligible", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsTrialEligible { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,6 +112,7 @@ namespace WalletInc.Model
             sb.Append("  IsPaymentMethodProvided: ").Append(IsPaymentMethodProvided).Append("\n");
             sb.Append("  Subscription: ").Append(Subscription).Append("\n");
             sb.Append("  BillingCadence: ").Append(BillingCadence).Append("\n");
+            sb.Append("  IsTrialEligible: ").Append(IsTrialEligible).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
