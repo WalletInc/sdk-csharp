@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-22T16:16:59.520Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-22T16:21:50.429Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -267,14 +267,14 @@ namespace WalletInc.Api
         /// <returns>ApiResponse of FetchOutboundSMSByPage200Response</returns>
         ApiResponse<FetchOutboundSMSByPage200Response> FetchOutboundSMSByPageWithHttpInfo(string phoneNumberID, string? toPhoneNumber = default, string? paymentObjectBroadcastID = default, double? pageSize = default, double? pageNum = default, SSOutboundStatuses? status = default, DateTime? startDate = default, DateTime? endDate = default);
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle
+        /// Retrieve the message segments used by the merchant within the current billing cycle
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
         Object RetrieveSentAndMaxCountOfMessages();
 
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle
+        /// Retrieve the message segments used by the merchant within the current billing cycle
         /// </summary>
         /// <remarks>
         /// 
@@ -580,7 +580,7 @@ namespace WalletInc.Api
         /// <returns>Task of ApiResponse (FetchOutboundSMSByPage200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<FetchOutboundSMSByPage200Response>> FetchOutboundSMSByPageWithHttpInfoAsync(string phoneNumberID, string? toPhoneNumber = default, string? paymentObjectBroadcastID = default, double? pageSize = default, double? pageNum = default, SSOutboundStatuses? status = default, DateTime? startDate = default, DateTime? endDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle
+        /// Retrieve the message segments used by the merchant within the current billing cycle
         /// </summary>
         /// <remarks>
         /// 
@@ -591,7 +591,7 @@ namespace WalletInc.Api
         System.Threading.Tasks.Task<Object> RetrieveSentAndMaxCountOfMessagesAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle
+        /// Retrieve the message segments used by the merchant within the current billing cycle
         /// </summary>
         /// <remarks>
         /// 
@@ -2320,7 +2320,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle 
+        /// Retrieve the message segments used by the merchant within the current billing cycle 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Object</returns>
@@ -2331,7 +2331,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle 
+        /// Retrieve the message segments used by the merchant within the current billing cycle 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
@@ -2368,7 +2368,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle 
+        /// Retrieve the message segments used by the merchant within the current billing cycle 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2380,7 +2380,7 @@ namespace WalletInc.Api
         }
 
         /// <summary>
-        /// Retrieve the number of messages sent by the merchant within the current billing cycle 
+        /// Retrieve the message segments used by the merchant within the current billing cycle 
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

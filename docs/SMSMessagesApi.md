@@ -14,7 +14,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchMerchantOutboundSMS**](SMSMessagesApi.md#fetchmerchantoutboundsms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes |
 | [**FetchOutboundSMS**](SMSMessagesApi.md#fetchoutboundsms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS |
 | [**FetchOutboundSMSByPage**](SMSMessagesApi.md#fetchoutboundsmsbypage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page |
-| [**RetrieveSentAndMaxCountOfMessages**](SMSMessagesApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the number of messages sent by the merchant within the current billing cycle |
+| [**RetrieveSentAndMaxCountOfMessages**](SMSMessagesApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the message segments used by the merchant within the current billing cycle |
 
 <a id="countinboundsms"></a>
 # **CountInboundSMS**
@@ -1038,7 +1038,7 @@ No authorization required
 # **RetrieveSentAndMaxCountOfMessages**
 > Object RetrieveSentAndMaxCountOfMessages ()
 
-Retrieve the number of messages sent by the merchant within the current billing cycle
+Retrieve the message segments used by the merchant within the current billing cycle
 
 ### Example
 ```csharp
@@ -1064,7 +1064,7 @@ namespace Example
 
             try
             {
-                // Retrieve the number of messages sent by the merchant within the current billing cycle
+                // Retrieve the message segments used by the merchant within the current billing cycle
                 Object result = apiInstance.RetrieveSentAndMaxCountOfMessages();
                 Debug.WriteLine(result);
             }
@@ -1085,7 +1085,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Retrieve the number of messages sent by the merchant within the current billing cycle
+    // Retrieve the message segments used by the merchant within the current billing cycle
     ApiResponse<Object> response = apiInstance.RetrieveSentAndMaxCountOfMessagesWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
