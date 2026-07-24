@@ -208,6 +208,8 @@ docs/PrizesApi.md
 docs/Product.md
 docs/ProductKey.md
 docs/ProductUpdateEntry.md
+docs/ProductUpdateIngestAck.md
+docs/ProductUpdateIngestBody.md
 docs/ProductUpdateType.md
 docs/ProductsApi.md
 docs/ProfileStatuses.md
@@ -456,6 +458,8 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/ProductUpdateIngestAckTests.cs
+src/WalletInc.Test/Model/ProductUpdateIngestBodyTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -704,6 +708,8 @@ src/WalletInc/Model/PresignedPostFields.cs
 src/WalletInc/Model/Product.cs
 src/WalletInc/Model/ProductKey.cs
 src/WalletInc/Model/ProductUpdateEntry.cs
+src/WalletInc/Model/ProductUpdateIngestAck.cs
+src/WalletInc/Model/ProductUpdateIngestBody.cs
 src/WalletInc/Model/ProductUpdateType.cs
 src/WalletInc/Model/ProfileStatuses.cs
 src/WalletInc/Model/PromoCode.cs
