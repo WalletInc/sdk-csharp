@@ -68,7 +68,6 @@ docs/FetchAllCountries200ResponseInner.md
 docs/FetchAllLedgerTransactions200Response.md
 docs/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.md
 docs/FetchCustomerTicketsWithTokenRequest.md
-docs/FetchDomainsByIndustry200Response.md
 docs/FetchImportedListRecipientsByPage200Response.md
 docs/FetchInboundSMSByPage200Response.md
 docs/FetchIndustry200Response.md
@@ -589,7 +588,6 @@ src/WalletInc/Model/FetchAllCountries200ResponseInner.cs
 src/WalletInc/Model/FetchAllLedgerTransactions200Response.cs
 src/WalletInc/Model/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.cs
 src/WalletInc/Model/FetchCustomerTicketsWithTokenRequest.cs
-src/WalletInc/Model/FetchDomainsByIndustry200Response.cs
 src/WalletInc/Model/FetchImportedListRecipientsByPage200Response.cs
 src/WalletInc/Model/FetchInboundSMSByPage200Response.cs
 src/WalletInc/Model/FetchIndustry200Response.cs
