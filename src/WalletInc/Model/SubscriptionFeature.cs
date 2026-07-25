@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.18.0**, built 2026-07-25T12:24:55.786Z
+ * Wallet Inc. API reference.  **Spec version 2.18.0**, built 2026-07-25T14:00:11.666Z
  *
  * The version of the OpenAPI document: 2.18.0
  * Contact: development@wallet.inc
@@ -43,6 +43,7 @@ namespace WalletInc.Model
         /// </summary>
         /// <param name="sortNum">sortNum (required).</param>
         /// <param name="name">name (required).</param>
+        /// <param name="slug">slug.</param>
         /// <param name="maxVolume">maxVolume.</param>
         /// <param name="measurement">measurement (required).</param>
         /// <param name="description">description (required).</param>
@@ -50,7 +51,7 @@ namespace WalletInc.Model
         /// <param name="isExceeded">isExceeded.</param>
         /// <param name="isInUse">isInUse.</param>
         /// <param name="isEnabled">isEnabled.</param>
-        public SubscriptionFeature(double sortNum = default, string name = default, string maxVolume = default, string measurement = default, string description = default, string currentVolume = default, bool isExceeded = default, bool isInUse = default, bool isEnabled = default)
+        public SubscriptionFeature(double sortNum = default, string name = default, string slug = default, string maxVolume = default, string measurement = default, string description = default, string currentVolume = default, bool isExceeded = default, bool isInUse = default, bool isEnabled = default)
         {
             this.SortNum = sortNum;
             // to ensure "name" is required (not null)
@@ -71,6 +72,7 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("description is a required property for SubscriptionFeature and cannot be null");
             }
             this.Description = description;
+            this.Slug = slug;
             this.MaxVolume = maxVolume;
             this.CurrentVolume = currentVolume;
             this.IsExceeded = isExceeded;
@@ -89,6 +91,12 @@ namespace WalletInc.Model
         /// </summary>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Slug
+        /// </summary>
+        [DataMember(Name = "slug", EmitDefaultValue = false)]
+        public string Slug { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxVolume
@@ -142,6 +150,7 @@ namespace WalletInc.Model
             sb.Append("class SubscriptionFeature {\n");
             sb.Append("  SortNum: ").Append(SortNum).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Slug: ").Append(Slug).Append("\n");
             sb.Append("  MaxVolume: ").Append(MaxVolume).Append("\n");
             sb.Append("  Measurement: ").Append(Measurement).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
