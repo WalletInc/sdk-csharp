@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:57:05.776Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T21:35:51.140Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -46,6 +46,96 @@ namespace WalletInc.Api
         /// <param name="a2PApplicationSubmission"></param>
         /// <returns>ApiResponse of bool</returns>
         ApiResponse<bool> BeginA2PApplicationWithHttpInfo(A2PApplicationSubmission a2PApplicationSubmission);
+        /// <summary>
+        /// Begin A2P Application (Government)
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <returns>bool</returns>
+        bool BeginA2PApplicationGovernment(A2PGovernmentSubmission a2PGovernmentSubmission);
+
+        /// <summary>
+        /// Begin A2P Application (Government)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        ApiResponse<bool> BeginA2PApplicationGovernmentWithHttpInfo(A2PGovernmentSubmission a2PGovernmentSubmission);
+        /// <summary>
+        /// Begin A2P Application (Non-profit)
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <returns>bool</returns>
+        bool BeginA2PApplicationNonProfit(A2PNonProfitSubmission a2PNonProfitSubmission);
+
+        /// <summary>
+        /// Begin A2P Application (Non-profit)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        ApiResponse<bool> BeginA2PApplicationNonProfitWithHttpInfo(A2PNonProfitSubmission a2PNonProfitSubmission);
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <returns>bool</returns>
+        bool BeginA2PApplicationPublic(A2PPublicSubmission a2PPublicSubmission);
+
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        ApiResponse<bool> BeginA2PApplicationPublicWithHttpInfo(A2PPublicSubmission a2PPublicSubmission);
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <returns>bool</returns>
+        bool BeginA2PApplicationSoleProprietor(A2PSoleProprietorSubmission a2PSoleProprietorSubmission);
+
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        ApiResponse<bool> BeginA2PApplicationSoleProprietorWithHttpInfo(A2PSoleProprietorSubmission a2PSoleProprietorSubmission);
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN)
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <returns>bool</returns>
+        bool BeginA2PApplicationStandard(A2PStandardSubmission a2PStandardSubmission);
+
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        ApiResponse<bool> BeginA2PApplicationStandardWithHttpInfo(A2PStandardSubmission a2PStandardSubmission);
         /// <summary>
         /// Get A2P Application
         /// </summary>
@@ -130,6 +220,121 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
         System.Threading.Tasks.Task<ApiResponse<bool>> BeginA2PApplicationWithHttpInfoAsync(A2PApplicationSubmission a2PApplicationSubmission, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Begin A2P Application (Government)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        System.Threading.Tasks.Task<bool> BeginA2PApplicationGovernmentAsync(A2PGovernmentSubmission a2PGovernmentSubmission, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Begin A2P Application (Government)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        System.Threading.Tasks.Task<ApiResponse<bool>> BeginA2PApplicationGovernmentWithHttpInfoAsync(A2PGovernmentSubmission a2PGovernmentSubmission, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Begin A2P Application (Non-profit)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        System.Threading.Tasks.Task<bool> BeginA2PApplicationNonProfitAsync(A2PNonProfitSubmission a2PNonProfitSubmission, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Begin A2P Application (Non-profit)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        System.Threading.Tasks.Task<ApiResponse<bool>> BeginA2PApplicationNonProfitWithHttpInfoAsync(A2PNonProfitSubmission a2PNonProfitSubmission, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        System.Threading.Tasks.Task<bool> BeginA2PApplicationPublicAsync(A2PPublicSubmission a2PPublicSubmission, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        System.Threading.Tasks.Task<ApiResponse<bool>> BeginA2PApplicationPublicWithHttpInfoAsync(A2PPublicSubmission a2PPublicSubmission, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        System.Threading.Tasks.Task<bool> BeginA2PApplicationSoleProprietorAsync(A2PSoleProprietorSubmission a2PSoleProprietorSubmission, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        System.Threading.Tasks.Task<ApiResponse<bool>> BeginA2PApplicationSoleProprietorWithHttpInfoAsync(A2PSoleProprietorSubmission a2PSoleProprietorSubmission, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        System.Threading.Tasks.Task<bool> BeginA2PApplicationStandardAsync(A2PStandardSubmission a2PStandardSubmission, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        System.Threading.Tasks.Task<ApiResponse<bool>> BeginA2PApplicationStandardWithHttpInfoAsync(A2PStandardSubmission a2PStandardSubmission, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get A2P Application
         /// </summary>
@@ -521,6 +726,591 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BeginA2PApplication", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Government) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <returns>bool</returns>
+        public bool BeginA2PApplicationGovernment(A2PGovernmentSubmission a2PGovernmentSubmission)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = BeginA2PApplicationGovernmentWithHttpInfo(a2PGovernmentSubmission);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Government) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        public WalletInc.Client.ApiResponse<bool> BeginA2PApplicationGovernmentWithHttpInfo(A2PGovernmentSubmission a2PGovernmentSubmission)
+        {
+            // verify the required parameter 'a2PGovernmentSubmission' is set
+            if (a2PGovernmentSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PGovernmentSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationGovernment");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PGovernmentSubmission;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<bool>("/a2p/application/government", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationGovernment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Government) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        public async System.Threading.Tasks.Task<bool> BeginA2PApplicationGovernmentAsync(A2PGovernmentSubmission a2PGovernmentSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = await BeginA2PApplicationGovernmentWithHttpInfoAsync(a2PGovernmentSubmission, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Government) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PGovernmentSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<bool>> BeginA2PApplicationGovernmentWithHttpInfoAsync(A2PGovernmentSubmission a2PGovernmentSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'a2PGovernmentSubmission' is set
+            if (a2PGovernmentSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PGovernmentSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationGovernment");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PGovernmentSubmission;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/a2p/application/government", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationGovernment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Non-profit) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <returns>bool</returns>
+        public bool BeginA2PApplicationNonProfit(A2PNonProfitSubmission a2PNonProfitSubmission)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = BeginA2PApplicationNonProfitWithHttpInfo(a2PNonProfitSubmission);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Non-profit) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        public WalletInc.Client.ApiResponse<bool> BeginA2PApplicationNonProfitWithHttpInfo(A2PNonProfitSubmission a2PNonProfitSubmission)
+        {
+            // verify the required parameter 'a2PNonProfitSubmission' is set
+            if (a2PNonProfitSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PNonProfitSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationNonProfit");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PNonProfitSubmission;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<bool>("/a2p/application/nonprofit", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationNonProfit", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Non-profit) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        public async System.Threading.Tasks.Task<bool> BeginA2PApplicationNonProfitAsync(A2PNonProfitSubmission a2PNonProfitSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = await BeginA2PApplicationNonProfitWithHttpInfoAsync(a2PNonProfitSubmission, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Non-profit) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PNonProfitSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<bool>> BeginA2PApplicationNonProfitWithHttpInfoAsync(A2PNonProfitSubmission a2PNonProfitSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'a2PNonProfitSubmission' is set
+            if (a2PNonProfitSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PNonProfitSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationNonProfit");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PNonProfitSubmission;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/a2p/application/nonprofit", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationNonProfit", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <returns>bool</returns>
+        public bool BeginA2PApplicationPublic(A2PPublicSubmission a2PPublicSubmission)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = BeginA2PApplicationPublicWithHttpInfo(a2PPublicSubmission);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        public WalletInc.Client.ApiResponse<bool> BeginA2PApplicationPublicWithHttpInfo(A2PPublicSubmission a2PPublicSubmission)
+        {
+            // verify the required parameter 'a2PPublicSubmission' is set
+            if (a2PPublicSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PPublicSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationPublic");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PPublicSubmission;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<bool>("/a2p/application/public", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationPublic", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        public async System.Threading.Tasks.Task<bool> BeginA2PApplicationPublicAsync(A2PPublicSubmission a2PPublicSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = await BeginA2PApplicationPublicWithHttpInfoAsync(a2PPublicSubmission, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PPublicSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<bool>> BeginA2PApplicationPublicWithHttpInfoAsync(A2PPublicSubmission a2PPublicSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'a2PPublicSubmission' is set
+            if (a2PPublicSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PPublicSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationPublic");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PPublicSubmission;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/a2p/application/public", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationPublic", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <returns>bool</returns>
+        public bool BeginA2PApplicationSoleProprietor(A2PSoleProprietorSubmission a2PSoleProprietorSubmission)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = BeginA2PApplicationSoleProprietorWithHttpInfo(a2PSoleProprietorSubmission);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        public WalletInc.Client.ApiResponse<bool> BeginA2PApplicationSoleProprietorWithHttpInfo(A2PSoleProprietorSubmission a2PSoleProprietorSubmission)
+        {
+            // verify the required parameter 'a2PSoleProprietorSubmission' is set
+            if (a2PSoleProprietorSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PSoleProprietorSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationSoleProprietor");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PSoleProprietorSubmission;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<bool>("/a2p/application/sole-proprietor", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationSoleProprietor", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        public async System.Threading.Tasks.Task<bool> BeginA2PApplicationSoleProprietorAsync(A2PSoleProprietorSubmission a2PSoleProprietorSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = await BeginA2PApplicationSoleProprietorWithHttpInfoAsync(a2PSoleProprietorSubmission, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PSoleProprietorSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<bool>> BeginA2PApplicationSoleProprietorWithHttpInfoAsync(A2PSoleProprietorSubmission a2PSoleProprietorSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'a2PSoleProprietorSubmission' is set
+            if (a2PSoleProprietorSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PSoleProprietorSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationSoleProprietor");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PSoleProprietorSubmission;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/a2p/application/sole-proprietor", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationSoleProprietor", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <returns>bool</returns>
+        public bool BeginA2PApplicationStandard(A2PStandardSubmission a2PStandardSubmission)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = BeginA2PApplicationStandardWithHttpInfo(a2PStandardSubmission);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <returns>ApiResponse of bool</returns>
+        public WalletInc.Client.ApiResponse<bool> BeginA2PApplicationStandardWithHttpInfo(A2PStandardSubmission a2PStandardSubmission)
+        {
+            // verify the required parameter 'a2PStandardSubmission' is set
+            if (a2PStandardSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PStandardSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationStandard");
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PStandardSubmission;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<bool>("/a2p/application/standard", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationStandard", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of bool</returns>
+        public async System.Threading.Tasks.Task<bool> BeginA2PApplicationStandardAsync(A2PStandardSubmission a2PStandardSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<bool> localVarResponse = await BeginA2PApplicationStandardWithHttpInfoAsync(a2PStandardSubmission, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Begin A2P Application (Standard: a private, for-profit business with an EIN) 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="a2PStandardSubmission"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (bool)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<bool>> BeginA2PApplicationStandardWithHttpInfoAsync(A2PStandardSubmission a2PStandardSubmission, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'a2PStandardSubmission' is set
+            if (a2PStandardSubmission == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'a2PStandardSubmission' when calling AppToPersonA2PRegistrationApi->BeginA2PApplicationStandard");
+
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = a2PStandardSubmission;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/a2p/application/standard", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("BeginA2PApplicationStandard", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

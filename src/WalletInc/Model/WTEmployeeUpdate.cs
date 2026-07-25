@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:57:05.776Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T21:35:51.140Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -1012,10 +1012,10 @@ namespace WalletInc.Model
         /// <param name="employeeID">employeeID (required).</param>
         /// <param name="firstName">firstName (required).</param>
         /// <param name="lastName">lastName (required).</param>
+        /// <param name="jobTitle">jobTitle (required).</param>
         /// <param name="phoneNumber">phoneNumber (required).</param>
         /// <param name="isPublicRepresentative">isPublicRepresentative (required).</param>
         /// <param name="walletSequenceNumber">walletSequenceNumber (required).</param>
-        /// <param name="jobTitle">jobTitle (required).</param>
         /// <param name="department">department (required).</param>
         /// <param name="scheduleStartDay">scheduleStartDay.</param>
         /// <param name="scheduleStartHour">scheduleStartHour.</param>
@@ -1025,7 +1025,7 @@ namespace WalletInc.Model
         /// <param name="scheduleEndHour">scheduleEndHour.</param>
         /// <param name="scheduleEndMinute">scheduleEndMinute.</param>
         /// <param name="scheduleEndMeridiem">scheduleEndMeridiem.</param>
-        public WTEmployeeUpdate(string employeeID = default, string firstName = default, string lastName = default, string phoneNumber = default, bool isPublicRepresentative = default, int walletSequenceNumber = default, string jobTitle = default, string department = default, ScheduleStartDayEnum? scheduleStartDay = default, ScheduleStartHourEnum? scheduleStartHour = default, ScheduleStartMinuteEnum? scheduleStartMinute = default, ScheduleStartMeridiemEnum? scheduleStartMeridiem = default, ScheduleEndDayEnum? scheduleEndDay = default, ScheduleEndHourEnum? scheduleEndHour = default, ScheduleEndMinuteEnum? scheduleEndMinute = default, ScheduleEndMeridiemEnum? scheduleEndMeridiem = default)
+        public WTEmployeeUpdate(string employeeID = default, string firstName = default, string lastName = default, string jobTitle = default, string phoneNumber = default, bool isPublicRepresentative = default, int walletSequenceNumber = default, string department = default, ScheduleStartDayEnum? scheduleStartDay = default, ScheduleStartHourEnum? scheduleStartHour = default, ScheduleStartMinuteEnum? scheduleStartMinute = default, ScheduleStartMeridiemEnum? scheduleStartMeridiem = default, ScheduleEndDayEnum? scheduleEndDay = default, ScheduleEndHourEnum? scheduleEndHour = default, ScheduleEndMinuteEnum? scheduleEndMinute = default, ScheduleEndMeridiemEnum? scheduleEndMeridiem = default)
         {
             // to ensure "employeeID" is required (not null)
             if (employeeID == null)
@@ -1045,6 +1045,12 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("lastName is a required property for WTEmployeeUpdate and cannot be null");
             }
             this.LastName = lastName;
+            // to ensure "jobTitle" is required (not null)
+            if (jobTitle == null)
+            {
+                throw new ArgumentNullException("jobTitle is a required property for WTEmployeeUpdate and cannot be null");
+            }
+            this.JobTitle = jobTitle;
             // to ensure "phoneNumber" is required (not null)
             if (phoneNumber == null)
             {
@@ -1053,12 +1059,6 @@ namespace WalletInc.Model
             this.PhoneNumber = phoneNumber;
             this.IsPublicRepresentative = isPublicRepresentative;
             this.WalletSequenceNumber = walletSequenceNumber;
-            // to ensure "jobTitle" is required (not null)
-            if (jobTitle == null)
-            {
-                throw new ArgumentNullException("jobTitle is a required property for WTEmployeeUpdate and cannot be null");
-            }
-            this.JobTitle = jobTitle;
             // to ensure "department" is required (not null)
             if (department == null)
             {
@@ -1103,6 +1103,15 @@ namespace WalletInc.Model
         public string LastName { get; set; }
 
         /// <summary>
+        /// Gets or Sets JobTitle
+        /// </summary>
+        /*
+        <example>Marketing Executive</example>
+        */
+        [DataMember(Name = "jobTitle", IsRequired = true, EmitDefaultValue = true)]
+        public string JobTitle { get; set; }
+
+        /// <summary>
         /// Gets or Sets PhoneNumber
         /// </summary>
         /*
@@ -1130,15 +1139,6 @@ namespace WalletInc.Model
         public int WalletSequenceNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets JobTitle
-        /// </summary>
-        /*
-        <example>Marketing Executive</example>
-        */
-        [DataMember(Name = "jobTitle", IsRequired = true, EmitDefaultValue = true)]
-        public string JobTitle { get; set; }
-
-        /// <summary>
         /// Gets or Sets Department
         /// </summary>
         /*
@@ -1158,10 +1158,10 @@ namespace WalletInc.Model
             sb.Append("  EmployeeID: ").Append(EmployeeID).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  IsPublicRepresentative: ").Append(IsPublicRepresentative).Append("\n");
             sb.Append("  WalletSequenceNumber: ").Append(WalletSequenceNumber).Append("\n");
-            sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
             sb.Append("  Department: ").Append(Department).Append("\n");
             sb.Append("  ScheduleStartDay: ").Append(ScheduleStartDay).Append("\n");
             sb.Append("  ScheduleStartHour: ").Append(ScheduleStartHour).Append("\n");

@@ -6,7 +6,7 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.4.1**, built 2026-07-25T13:57:05.776Z
+    **Spec version 2.4.1**, built 2026-07-25T21:35:51.140Z
   license:
     name: https://wallet.law
   title: wallet-api
@@ -392,6 +392,319 @@ paths:
       security:
       - api_token: []
       summary: Update A2P Application
+      tags:
+      - App-to-Person (A2P) Registration
+  /a2p/application/standard:
+    post:
+      operationId: beginA2PApplicationStandard
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/A2PStandardSubmission"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: boolean
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: "Begin A2P Application (Standard: a private, for-profit business with\
+        \ an EIN)"
+      tags:
+      - App-to-Person (A2P) Registration
+  /a2p/application/public:
+    post:
+      operationId: beginA2PApplicationPublic
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/A2PPublicSubmission"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: boolean
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: "Begin A2P Application (Public: a publicly-traded company; requires\
+        \ stock exchange, ticker, and brand contact email)"
+      tags:
+      - App-to-Person (A2P) Registration
+  /a2p/application/nonprofit:
+    post:
+      operationId: beginA2PApplicationNonProfit
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/A2PNonProfitSubmission"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: boolean
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Begin A2P Application (Non-profit)
+      tags:
+      - App-to-Person (A2P) Registration
+  /a2p/application/government:
+    post:
+      operationId: beginA2PApplicationGovernment
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/A2PGovernmentSubmission"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: boolean
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Begin A2P Application (Government)
+      tags:
+      - App-to-Person (A2P) Registration
+  /a2p/application/sole-proprietor:
+    post:
+      operationId: beginA2PApplicationSoleProprietor
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/A2PSoleProprietorSubmission"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: boolean
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: "Begin A2P Application (Sole Proprietor: no EIN; requires a mobile\
+        \ number for OTP verification)"
       tags:
       - App-to-Person (A2P) Registration
   /v2/amenities/all:
@@ -3525,8 +3838,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:52.574Z
-                    updatedAt: 2026-07-25T13:55:52.575Z
+                    createdAt: 2026-07-25T21:34:31.646Z
+                    updatedAt: 2026-07-25T21:34:31.646Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -21176,8 +21489,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-25T13:55:56.116Z
-                    updatedAt: 2026-07-25T13:55:56.116Z
+                    createdAt: 2026-07-25T21:34:35.712Z
+                    updatedAt: 2026-07-25T21:34:35.712Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21251,8 +21564,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-25T13:55:56.082Z
-                    updatedAt: 2026-07-25T13:55:56.082Z
+                    createdAt: 2026-07-25T21:34:35.675Z
+                    updatedAt: 2026-07-25T21:34:35.675Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21326,8 +21639,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-25T13:55:56.120Z
-                    updatedAt: 2026-07-25T13:55:56.121Z
+                    createdAt: 2026-07-25T21:34:35.717Z
+                    updatedAt: 2026-07-25T21:34:35.717Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21407,8 +21720,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-25T13:55:56.104Z
-                    updatedAt: 2026-07-25T13:55:56.104Z
+                    createdAt: 2026-07-25T21:34:35.700Z
+                    updatedAt: 2026-07-25T21:34:35.700Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21508,8 +21821,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-25T13:55:56.091Z
-                    updatedAt: 2026-07-25T13:55:56.091Z
+                    createdAt: 2026-07-25T21:34:35.685Z
+                    updatedAt: 2026-07-25T21:34:35.685Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21805,8 +22118,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.210Z
-                    updatedAt: 2026-07-25T13:55:56.210Z
+                    createdAt: 2026-07-25T21:34:35.838Z
+                    updatedAt: 2026-07-25T21:34:35.838Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21883,8 +22196,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.167Z
-                    updatedAt: 2026-07-25T13:55:56.167Z
+                    createdAt: 2026-07-25T21:34:35.787Z
+                    updatedAt: 2026-07-25T21:34:35.787Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -21961,8 +22274,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.214Z
-                    updatedAt: 2026-07-25T13:55:56.214Z
+                    createdAt: 2026-07-25T21:34:35.842Z
+                    updatedAt: 2026-07-25T21:34:35.842Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22045,8 +22358,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.199Z
-                    updatedAt: 2026-07-25T13:55:56.199Z
+                    createdAt: 2026-07-25T21:34:35.824Z
+                    updatedAt: 2026-07-25T21:34:35.824Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22149,8 +22462,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.176Z
-                    updatedAt: 2026-07-25T13:55:56.176Z
+                    createdAt: 2026-07-25T21:34:35.797Z
+                    updatedAt: 2026-07-25T21:34:35.797Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22394,8 +22707,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.329Z
-                    updatedAt: 2026-07-25T13:55:56.329Z
+                    createdAt: 2026-07-25T21:34:35.980Z
+                    updatedAt: 2026-07-25T21:34:35.980Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22478,8 +22791,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.285Z
-                    updatedAt: 2026-07-25T13:55:56.285Z
+                    createdAt: 2026-07-25T21:34:35.928Z
+                    updatedAt: 2026-07-25T21:34:35.929Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22562,8 +22875,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.332Z
-                    updatedAt: 2026-07-25T13:55:56.332Z
+                    createdAt: 2026-07-25T21:34:35.984Z
+                    updatedAt: 2026-07-25T21:34:35.984Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22652,8 +22965,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.315Z
-                    updatedAt: 2026-07-25T13:55:56.315Z
+                    createdAt: 2026-07-25T21:34:35.968Z
+                    updatedAt: 2026-07-25T21:34:35.968Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22762,8 +23075,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.294Z
-                    updatedAt: 2026-07-25T13:55:56.294Z
+                    createdAt: 2026-07-25T21:34:35.942Z
+                    updatedAt: 2026-07-25T21:34:35.942Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22981,8 +23294,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.338Z
-                    updatedAt: 2026-07-25T13:55:56.338Z
+                    createdAt: 2026-07-25T21:34:35.990Z
+                    updatedAt: 2026-07-25T21:34:35.990Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23111,8 +23424,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.394Z
-                    updatedAt: 2026-07-25T13:55:56.394Z
+                    createdAt: 2026-07-25T21:34:36.047Z
+                    updatedAt: 2026-07-25T21:34:36.047Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23327,8 +23640,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.382Z
-                    updatedAt: 2026-07-25T13:55:56.382Z
+                    createdAt: 2026-07-25T21:34:36.035Z
+                    updatedAt: 2026-07-25T21:34:36.035Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23478,8 +23791,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.408Z
-                    updatedAt: 2026-07-25T13:55:56.408Z
+                    createdAt: 2026-07-25T21:34:36.062Z
+                    updatedAt: 2026-07-25T21:34:36.062Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -23602,8 +23915,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.412Z
-                    updatedAt: 2026-07-25T13:55:56.412Z
+                    createdAt: 2026-07-25T21:34:36.069Z
+                    updatedAt: 2026-07-25T21:34:36.069Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -25116,8 +25429,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.592Z
-                    updatedAt: 2026-07-25T13:55:56.592Z
+                    createdAt: 2026-07-25T21:34:36.266Z
+                    updatedAt: 2026-07-25T21:34:36.266Z
                     isActive: true
               schema:
                 items:
@@ -25213,8 +25526,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.593Z
-                    updatedAt: 2026-07-25T13:55:56.593Z
+                    createdAt: 2026-07-25T21:34:36.268Z
+                    updatedAt: 2026-07-25T21:34:36.268Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25507,8 +25820,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.605Z
-                    updatedAt: 2026-07-25T13:55:56.605Z
+                    createdAt: 2026-07-25T21:34:36.281Z
+                    updatedAt: 2026-07-25T21:34:36.281Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25890,8 +26203,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.650Z
-                    updatedAt: 2026-07-25T13:55:56.650Z
+                    createdAt: 2026-07-25T21:34:36.358Z
+                    updatedAt: 2026-07-25T21:34:36.358Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25990,8 +26303,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.665Z
-                    updatedAt: 2026-07-25T13:55:56.665Z
+                    createdAt: 2026-07-25T21:34:36.383Z
+                    updatedAt: 2026-07-25T21:34:36.383Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26083,8 +26396,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.705Z
-                    updatedAt: 2026-07-25T13:55:56.705Z
+                    createdAt: 2026-07-25T21:34:36.447Z
+                    updatedAt: 2026-07-25T21:34:36.447Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26176,8 +26489,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.717Z
-                    updatedAt: 2026-07-25T13:55:56.717Z
+                    createdAt: 2026-07-25T21:34:36.460Z
+                    updatedAt: 2026-07-25T21:34:36.460Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26270,8 +26583,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.736Z
-                    updatedAt: 2026-07-25T13:55:56.736Z
+                    createdAt: 2026-07-25T21:34:36.487Z
+                    updatedAt: 2026-07-25T21:34:36.487Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -26363,8 +26676,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.741Z
-                    updatedAt: 2026-07-25T13:55:56.741Z
+                    createdAt: 2026-07-25T21:34:36.497Z
+                    updatedAt: 2026-07-25T21:34:36.497Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -26462,8 +26775,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-25T13:55:56.745Z
-                    updatedAt: 2026-07-25T13:55:56.745Z
+                    createdAt: 2026-07-25T21:34:36.504Z
+                    updatedAt: 2026-07-25T21:34:36.504Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26867,7 +27180,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-25T13:55:56.759Z
+                    dateTimeLastViewed: 2026-07-25T21:34:36.521Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -26890,8 +27203,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-25T13:55:56.759Z
-                    updatedAt: 2026-07-25T13:55:56.759Z
+                    createdAt: 2026-07-25T21:34:36.521Z
+                    updatedAt: 2026-07-25T21:34:36.521Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -26980,7 +27293,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-25T13:55:56.766Z
+                    dateTimeLastViewed: 2026-07-25T21:34:36.528Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27003,8 +27316,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-25T13:55:56.766Z
-                    updatedAt: 2026-07-25T13:55:56.766Z
+                    createdAt: 2026-07-25T21:34:36.529Z
+                    updatedAt: 2026-07-25T21:34:36.529Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -27100,7 +27413,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-25T13:55:56.796Z
+                    dateTimeLastViewed: 2026-07-25T21:34:36.562Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27123,8 +27436,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-25T13:55:56.797Z
-                    updatedAt: 2026-07-25T13:55:56.797Z
+                    createdAt: 2026-07-25T21:34:36.562Z
+                    updatedAt: 2026-07-25T21:34:36.562Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -33878,6 +34191,8 @@ components:
         jobTitle: VP of Marketing
         jobPosition: Director
         phoneNumber: +1 800 123 4567
+        brandContactEmail: brandContactEmail
+        verificationMobile: +1 415 555 0100
       properties:
         isTwilioTermsRead:
           type: boolean
@@ -33996,6 +34311,13 @@ components:
           example: +1 800 123 4567
           minLength: 7
           type: string
+        brandContactEmail:
+          minLength: 6
+          type: string
+        verificationMobile:
+          example: +1 415 555 0100
+          minLength: 7
+          type: string
       required:
       - address1
       - businessClassification
@@ -34057,6 +34379,8 @@ components:
         jobTitle: VP of Marketing
         jobPosition: Director
         phoneNumber: +1 800 123 4567
+        brandContactEmail: brandContactEmail
+        verificationMobile: +1 415 555 0100
       properties:
         businessName:
           example: Acme Corp
@@ -34151,6 +34475,13 @@ components:
           example: +1 800 123 4567
           minLength: 7
           type: string
+        brandContactEmail:
+          minLength: 6
+          type: string
+        verificationMobile:
+          example: +1 415 555 0100
+          minLength: 7
+          type: string
       required:
       - address1
       - businessClassification
@@ -34173,6 +34504,376 @@ components:
       - taxID
       - taxIDType
       - websiteURL
+    ? Pick_A2PApplicationSubmission.Exclude_keyofA2PApplicationSubmission.stockExchange-or-stockTicker-or-brandContactEmail-or-verificationMobile__
+    : description: "From T, pick a set of properties whose keys are in the union K"
+      properties:
+        firstName:
+          example: John
+          minLength: 1
+          type: string
+        lastName:
+          example: Doe
+          minLength: 1
+          type: string
+        email:
+          minLength: 6
+          type: string
+        businessClassification:
+          allOf:
+          - $ref: "#/components/schemas/BusinessClassification"
+          example: private
+        businessIndustry:
+          allOf:
+          - $ref: "#/components/schemas/BusinessIndustry"
+          example: private
+        taxIDType:
+          allOf:
+          - $ref: "#/components/schemas/BusinessRegistrationIdentifier"
+          example: EIN
+        taxID:
+          example: 23-235235
+          minLength: 1
+          type: string
+        websiteURL:
+          example: https://google.com
+          minLength: 1
+          type: string
+        socialMediaURL:
+          example: https://instagram.com/your_business
+          minLength: 1
+          type: string
+        regionsOfOperation:
+          example: AFRICA
+          items:
+            $ref: "#/components/schemas/BusinessRegionsOfOperation"
+          type: array
+          default: null
+        messagingVolumeHigh:
+          minLength: 1
+          type: boolean
+        jobTitle:
+          example: VP of Marketing
+          minLength: 2
+          type: string
+        jobPosition:
+          allOf:
+          - $ref: "#/components/schemas/JobPosition"
+          example: Director
+        businessName:
+          example: Acme Corp
+          minLength: 1
+          type: string
+        businessType:
+          allOf:
+          - $ref: "#/components/schemas/BusinessType"
+          example: Corporation
+        address1:
+          example: 21 Jump Street
+          minLength: 1
+          type: string
+        address2:
+          example: https://google.com
+          minLength: 0
+          type: string
+        city:
+          example: Los Angeles
+          minLength: 3
+          type: string
+        state:
+          example: California
+          minLength: 1
+          type: string
+        postalCode:
+          example: "90210"
+          minLength: 4
+          type: string
+        country:
+          example: US
+          minLength: 2
+          type: string
+        phoneNumber:
+          example: +1 800 123 4567
+          minLength: 7
+          type: string
+        isTwilioTermsRead:
+          type: boolean
+        isPrivacyPolicyOnWebsite:
+          type: boolean
+        isTosOnWebsite:
+          type: boolean
+        isStopUnderstood:
+          type: boolean
+        isManualRead:
+          type: boolean
+        isCtiaShortCodeRead:
+          type: boolean
+        isStandardsUnderstood:
+          type: boolean
+        isShortCodeUnderstood:
+          type: boolean
+        isOptInOutUnderstood:
+          type: boolean
+        isShortCodeTransferUnderstood:
+          type: boolean
+        isPricingUnderstood:
+          type: boolean
+        isShortCodeTimelineUnderstood:
+          type: boolean
+      required:
+      - address1
+      - businessClassification
+      - businessIndustry
+      - businessName
+      - businessType
+      - city
+      - country
+      - email
+      - firstName
+      - isCtiaShortCodeRead
+      - isManualRead
+      - isOptInOutUnderstood
+      - isPricingUnderstood
+      - isPrivacyPolicyOnWebsite
+      - isShortCodeTimelineUnderstood
+      - isShortCodeTransferUnderstood
+      - isShortCodeUnderstood
+      - isStandardsUnderstood
+      - isStopUnderstood
+      - isTosOnWebsite
+      - isTwilioTermsRead
+      - jobPosition
+      - jobTitle
+      - lastName
+      - messagingVolumeHigh
+      - phoneNumber
+      - postalCode
+      - regionsOfOperation
+      - socialMediaURL
+      - state
+      - taxID
+      - taxIDType
+      - websiteURL
+    Omit_A2PApplicationSubmission.stockExchange-or-stockTicker-or-brandContactEmail-or-verificationMobile_:
+      $ref: "#/components/schemas/Pick_A2PApplicationSubmission.Exclude_keyofA2PApplicationSubmission.stockExchange-or-stockTicker-or-brandContactEmail-or-verificationMobile__"
+    A2PBaseIntake:
+      allOf:
+      - $ref: "#/components/schemas/Omit_A2PApplicationSubmission.stockExchange-or-stockTicker-or-brandContactEmail-or-verificationMobile_"
+      description: "Fields shared by every entity intake. Conditional fields (stock,\
+        \ brand contact email) are re-added per type."
+    BusinessClassification.Private:
+      enum:
+      - private
+      type: string
+    A2PStandardSubmission:
+      allOf:
+      - $ref: "#/components/schemas/A2PBaseIntake"
+      - properties:
+          businessClassification:
+            $ref: "#/components/schemas/BusinessClassification.Private"
+        required:
+        - businessClassification
+      example:
+        businessClassification: private
+    BusinessClassification.Public:
+      enum:
+      - public
+      type: string
+    A2PPublicSubmission:
+      allOf:
+      - $ref: "#/components/schemas/A2PBaseIntake"
+      - properties:
+          brandContactEmail:
+            type: string
+          stockTicker:
+            type: string
+          stockExchange:
+            $ref: "#/components/schemas/BusinessStockExchanges"
+          businessClassification:
+            $ref: "#/components/schemas/BusinessClassification.Public"
+        required:
+        - brandContactEmail
+        - businessClassification
+        - stockExchange
+        - stockTicker
+      example:
+        brandContactEmail: brandContactEmail
+        stockTicker: stockTicker
+        stockExchange: NONE
+        businessClassification: public
+    BusinessType.NonProfit:
+      enum:
+      - Non-profit Corporation
+      type: string
+    BusinessIndustry.NOT_FOR_PROFIT:
+      enum:
+      - NOT_FOR_PROFIT
+      type: string
+    BusinessClassification.NonProfit:
+      enum:
+      - non-profit
+      type: string
+    A2PNonProfitSubmission:
+      allOf:
+      - $ref: "#/components/schemas/A2PBaseIntake"
+      - properties:
+          businessClassification:
+            $ref: "#/components/schemas/BusinessClassification.NonProfit"
+          businessIndustry:
+            $ref: "#/components/schemas/BusinessIndustry.NOT_FOR_PROFIT"
+          businessType:
+            $ref: "#/components/schemas/BusinessType.NonProfit"
+        required:
+        - businessClassification
+        - businessIndustry
+        - businessType
+      example:
+        businessClassification: non-profit
+        businessIndustry: NOT_FOR_PROFIT
+        businessType: Non-profit Corporation
+    BusinessIndustry.GOVERNMENT:
+      enum:
+      - GOVERNMENT
+      type: string
+    BusinessClassification.Government:
+      enum:
+      - government
+      type: string
+    A2PGovernmentSubmission:
+      allOf:
+      - $ref: "#/components/schemas/A2PBaseIntake"
+      - properties:
+          businessClassification:
+            $ref: "#/components/schemas/BusinessClassification.Government"
+          businessIndustry:
+            $ref: "#/components/schemas/BusinessIndustry.GOVERNMENT"
+          businessType:
+            $ref: "#/components/schemas/BusinessType.NonProfit"
+        required:
+        - businessClassification
+        - businessIndustry
+        - businessType
+      example:
+        businessClassification: government
+        businessIndustry: GOVERNMENT
+        businessType: Non-profit Corporation
+    ? Pick_A2PBaseIntake.Exclude_keyofA2PBaseIntake.businessClassification-or-businessIndustry-or-taxIDType-or-taxID-or-websiteURL-or-socialMediaURL-or-regionsOfOperation-or-messagingVolumeHigh-or-jobTitle-or-jobPosition__
+    : description: "From T, pick a set of properties whose keys are in the union K"
+      properties:
+        firstName:
+          example: John
+          minLength: 1
+          type: string
+        lastName:
+          example: Doe
+          minLength: 1
+          type: string
+        email:
+          minLength: 6
+          type: string
+        businessName:
+          example: Acme Corp
+          minLength: 1
+          type: string
+        businessType:
+          allOf:
+          - $ref: "#/components/schemas/BusinessType"
+          example: Corporation
+        address1:
+          example: 21 Jump Street
+          minLength: 1
+          type: string
+        address2:
+          example: https://google.com
+          minLength: 0
+          type: string
+        city:
+          example: Los Angeles
+          minLength: 3
+          type: string
+        state:
+          example: California
+          minLength: 1
+          type: string
+        postalCode:
+          example: "90210"
+          minLength: 4
+          type: string
+        country:
+          example: US
+          minLength: 2
+          type: string
+        phoneNumber:
+          example: +1 800 123 4567
+          minLength: 7
+          type: string
+        isTwilioTermsRead:
+          type: boolean
+        isPrivacyPolicyOnWebsite:
+          type: boolean
+        isTosOnWebsite:
+          type: boolean
+        isStopUnderstood:
+          type: boolean
+        isManualRead:
+          type: boolean
+        isCtiaShortCodeRead:
+          type: boolean
+        isStandardsUnderstood:
+          type: boolean
+        isShortCodeUnderstood:
+          type: boolean
+        isOptInOutUnderstood:
+          type: boolean
+        isShortCodeTransferUnderstood:
+          type: boolean
+        isPricingUnderstood:
+          type: boolean
+        isShortCodeTimelineUnderstood:
+          type: boolean
+      required:
+      - address1
+      - businessName
+      - businessType
+      - city
+      - country
+      - email
+      - firstName
+      - isCtiaShortCodeRead
+      - isManualRead
+      - isOptInOutUnderstood
+      - isPricingUnderstood
+      - isPrivacyPolicyOnWebsite
+      - isShortCodeTimelineUnderstood
+      - isShortCodeTransferUnderstood
+      - isShortCodeUnderstood
+      - isStandardsUnderstood
+      - isStopUnderstood
+      - isTosOnWebsite
+      - isTwilioTermsRead
+      - lastName
+      - phoneNumber
+      - postalCode
+      - state
+    ? Omit_A2PBaseIntake.businessClassification-or-businessIndustry-or-taxIDType-or-taxID-or-websiteURL-or-socialMediaURL-or-regionsOfOperation-or-messagingVolumeHigh-or-jobTitle-or-jobPosition_
+    : $ref: "#/components/schemas/Pick_A2PBaseIntake.Exclude_keyofA2PBaseIntake.businessClassification-or-businessIndustry-or-taxIDType-or-taxID-or-websiteURL-or-socialMediaURL-or-regionsOfOperation-or-messagingVolumeHigh-or-jobTitle-or-jobPosition__"
+    BusinessType.SoleProprietorship:
+      enum:
+      - Sole Proprietorship
+      type: string
+    A2PSoleProprietorSubmission:
+      allOf:
+      - $ref: "#/components/schemas/Omit_A2PBaseIntake.businessClassification-or-businessIndustry-or-taxIDType-or-taxID-or-websiteURL-or-socialMediaURL-or-regionsOfOperation-or-messagingVolumeHigh-or-jobTitle-or-jobPosition_"
+      - properties:
+          verificationMobile:
+            type: string
+          businessType:
+            $ref: "#/components/schemas/BusinessType.SoleProprietorship"
+        required:
+        - businessType
+        - verificationMobile
+      example:
+        verificationMobile: verificationMobile
+        businessType: Sole Proprietorship
     PrefixedNanoID:
       example: CMueJDL982Hs
       maxLength: 12
@@ -36662,6 +37363,10 @@ components:
           example: Doe
           minLength: 1
           type: string
+        jobTitle:
+          example: Marketing Executive
+          minLength: 0
+          type: string
         phoneNumber:
           example: "+1809898765"
           type: string
@@ -36672,10 +37377,6 @@ components:
           example: 1
           format: int32
           type: integer
-        jobTitle:
-          example: Marketing Executive
-          minLength: 0
-          type: string
         department:
           example: Sales & Marketing
           minLength: 0
@@ -36863,10 +37564,10 @@ components:
         employeeID: EMP005
         firstName: John
         lastName: Doe
+        jobTitle: Marketing Executive
         phoneNumber: "+1809898765"
         isPublicRepresentative: true
         walletSequenceNumber: 1
-        jobTitle: Marketing Executive
         department: Sales & Marketing
         scheduleStartDay: monday
         scheduleStartHour: 0.8008281904610115
@@ -36889,6 +37590,10 @@ components:
           example: Doe
           minLength: 1
           type: string
+        jobTitle:
+          example: Marketing Executive
+          minLength: 0
+          type: string
         phoneNumber:
           example: "+1809898765"
           type: string
@@ -36899,10 +37604,6 @@ components:
           example: 1
           format: int32
           type: integer
-        jobTitle:
-          example: Marketing Executive
-          minLength: 0
-          type: string
         department:
           example: Sales & Marketing
           minLength: 0
