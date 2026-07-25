@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SortNum** | **double** |  | 
 **Name** | **string** |  | 
+**Slug** | **string** |  | [optional] 
 **MaxVolume** | **string** |  | [optional] 
 **Measurement** | **string** |  | 
 **Description** | **string** |  | 
