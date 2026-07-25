@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-24T22:45:38.898Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T12:24:24.069Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -44,22 +44,6 @@ namespace WalletInc.Api
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;FetchIndustry200Response&gt;</returns>
         ApiResponse<List<FetchIndustry200Response>> FetchAllIndustriesWithHttpInfo();
-        /// <summary>
-        /// Get all white-labeled custom domains by industry
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>FetchDomainsByIndustry200Response</returns>
-        FetchDomainsByIndustry200Response FetchDomainsByIndustry();
-
-        /// <summary>
-        /// Get all white-labeled custom domains by industry
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of FetchDomainsByIndustry200Response</returns>
-        ApiResponse<FetchDomainsByIndustry200Response> FetchDomainsByIndustryWithHttpInfo();
         /// <summary>
         /// Get all Industries &amp; Pricing Plans with trimmed metadata
         /// </summary>
@@ -106,27 +90,6 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;FetchIndustry200Response&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<FetchIndustry200Response>>> FetchAllIndustriesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Get all white-labeled custom domains by industry
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FetchDomainsByIndustry200Response</returns>
-        System.Threading.Tasks.Task<FetchDomainsByIndustry200Response> FetchDomainsByIndustryAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get all white-labeled custom domains by industry
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FetchDomainsByIndustry200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FetchDomainsByIndustry200Response>> FetchDomainsByIndustryWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get all Industries &amp; Pricing Plans with trimmed metadata
         /// </summary>
@@ -456,107 +419,6 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FetchAllIndustries", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all white-labeled custom domains by industry 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>FetchDomainsByIndustry200Response</returns>
-        public FetchDomainsByIndustry200Response FetchDomainsByIndustry()
-        {
-            WalletInc.Client.ApiResponse<FetchDomainsByIndustry200Response> localVarResponse = FetchDomainsByIndustryWithHttpInfo();
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all white-labeled custom domains by industry 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of FetchDomainsByIndustry200Response</returns>
-        public WalletInc.Client.ApiResponse<FetchDomainsByIndustry200Response> FetchDomainsByIndustryWithHttpInfo()
-        {
-            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<FetchDomainsByIndustry200Response>("/system/industries/domains", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("FetchDomainsByIndustry", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all white-labeled custom domains by industry 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FetchDomainsByIndustry200Response</returns>
-        public async System.Threading.Tasks.Task<FetchDomainsByIndustry200Response> FetchDomainsByIndustryAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            WalletInc.Client.ApiResponse<FetchDomainsByIndustry200Response> localVarResponse = await FetchDomainsByIndustryWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all white-labeled custom domains by industry 
-        /// </summary>
-        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FetchDomainsByIndustry200Response)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<FetchDomainsByIndustry200Response>> FetchDomainsByIndustryWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-
-            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<FetchDomainsByIndustry200Response>("/system/industries/domains", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("FetchDomainsByIndustry", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
