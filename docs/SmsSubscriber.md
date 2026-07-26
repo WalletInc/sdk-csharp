@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MobileNumber** | **string** |  | 
+**OptInSource** | **string** |  | [optional] 
+**DisclosureVersion** | **string** |  | [optional] 
 **Id** | [**AmenityId**](AmenityId.md) |  | 
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
