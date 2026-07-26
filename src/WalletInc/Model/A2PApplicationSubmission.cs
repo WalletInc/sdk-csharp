@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -113,7 +113,9 @@ namespace WalletInc.Model
         /// <param name="jobTitle">jobTitle (required).</param>
         /// <param name="jobPosition">jobPosition (required).</param>
         /// <param name="phoneNumber">phoneNumber (required).</param>
-        public A2PApplicationSubmission(bool isTwilioTermsRead = default, bool isPrivacyPolicyOnWebsite = default, bool isTosOnWebsite = default, bool isStopUnderstood = default, bool isManualRead = default, bool isCtiaShortCodeRead = default, bool isStandardsUnderstood = default, bool isShortCodeUnderstood = default, bool isOptInOutUnderstood = default, bool isShortCodeTransferUnderstood = default, bool isPricingUnderstood = default, bool isShortCodeTimelineUnderstood = default, string businessName = default, BusinessType businessType = default, BusinessClassification businessClassification = default, BusinessIndustry businessIndustry = default, BusinessRegistrationIdentifier taxIDType = default, string taxID = default, string websiteURL = default, string socialMediaURL = default, List<BusinessRegionsOfOperation> regionsOfOperation = default, BusinessStockExchanges? stockExchange = default, string stockTicker = default, bool messagingVolumeHigh = default, string address1 = default, string address2 = default, string city = default, string state = default, string postalCode = default, string country = default, string firstName = default, string lastName = default, string email = default, string jobTitle = default, JobPosition jobPosition = default, string phoneNumber = default)
+        /// <param name="brandContactEmail">brandContactEmail.</param>
+        /// <param name="verificationMobile">verificationMobile.</param>
+        public A2PApplicationSubmission(bool isTwilioTermsRead = default, bool isPrivacyPolicyOnWebsite = default, bool isTosOnWebsite = default, bool isStopUnderstood = default, bool isManualRead = default, bool isCtiaShortCodeRead = default, bool isStandardsUnderstood = default, bool isShortCodeUnderstood = default, bool isOptInOutUnderstood = default, bool isShortCodeTransferUnderstood = default, bool isPricingUnderstood = default, bool isShortCodeTimelineUnderstood = default, string businessName = default, BusinessType businessType = default, BusinessClassification businessClassification = default, BusinessIndustry businessIndustry = default, BusinessRegistrationIdentifier taxIDType = default, string taxID = default, string websiteURL = default, string socialMediaURL = default, List<BusinessRegionsOfOperation> regionsOfOperation = default, BusinessStockExchanges? stockExchange = default, string stockTicker = default, bool messagingVolumeHigh = default, string address1 = default, string address2 = default, string city = default, string state = default, string postalCode = default, string country = default, string firstName = default, string lastName = default, string email = default, string jobTitle = default, JobPosition jobPosition = default, string phoneNumber = default, string brandContactEmail = default, string verificationMobile = default)
         {
             this.IsTwilioTermsRead = isTwilioTermsRead;
             this.IsPrivacyPolicyOnWebsite = isPrivacyPolicyOnWebsite;
@@ -226,6 +228,8 @@ namespace WalletInc.Model
             this.StockExchange = stockExchange;
             this.StockTicker = stockTicker;
             this.Address2 = address2;
+            this.BrandContactEmail = brandContactEmail;
+            this.VerificationMobile = verificationMobile;
         }
 
         /// <summary>
@@ -454,6 +458,21 @@ namespace WalletInc.Model
         public string PhoneNumber { get; set; }
 
         /// <summary>
+        /// Gets or Sets BrandContactEmail
+        /// </summary>
+        [DataMember(Name = "brandContactEmail", EmitDefaultValue = false)]
+        public string BrandContactEmail { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VerificationMobile
+        /// </summary>
+        /*
+        <example>+1 415 555 0100</example>
+        */
+        [DataMember(Name = "verificationMobile", EmitDefaultValue = false)]
+        public string VerificationMobile { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -497,6 +516,8 @@ namespace WalletInc.Model
             sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
             sb.Append("  JobPosition: ").Append(JobPosition).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  BrandContactEmail: ").Append(BrandContactEmail).Append("\n");
+            sb.Append("  VerificationMobile: ").Append(VerificationMobile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -611,6 +632,18 @@ namespace WalletInc.Model
             if (this.PhoneNumber != null && this.PhoneNumber.Length < 7)
             {
                 yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 7.", new [] { "PhoneNumber" });
+            }
+
+            // BrandContactEmail (string) minLength
+            if (this.BrandContactEmail != null && this.BrandContactEmail.Length < 6)
+            {
+                yield return new ValidationResult("Invalid value for BrandContactEmail, length must be greater than 6.", new [] { "BrandContactEmail" });
+            }
+
+            // VerificationMobile (string) minLength
+            if (this.VerificationMobile != null && this.VerificationMobile.Length < 7)
+            {
+                yield return new ValidationResult("Invalid value for VerificationMobile, length must be greater than 7.", new [] { "VerificationMobile" });
             }
 
             yield break;

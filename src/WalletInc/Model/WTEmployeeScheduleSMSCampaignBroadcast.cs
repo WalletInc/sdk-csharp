@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -33,6 +33,12 @@ namespace WalletInc.Model
     [DataContract(Name = "WTEmployeeScheduleSMSCampaignBroadcast")]
     public partial class WTEmployeeScheduleSMSCampaignBroadcast : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets MessageType
+        /// </summary>
+        [DataMember(Name = "messageType", EmitDefaultValue = false)]
+        public WTMessageType? MessageType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WTEmployeeScheduleSMSCampaignBroadcast" /> class.
         /// </summary>
@@ -48,7 +54,8 @@ namespace WalletInc.Model
         /// <param name="broadcastScheduledAt">broadcastScheduledAt (required).</param>
         /// <param name="locale">locale (required).</param>
         /// <param name="timezone">timezone (required).</param>
-        public WTEmployeeScheduleSMSCampaignBroadcast(string phoneNumberID = default, string messageTemplate = default, bool sendQRCode = default, List<string> mediaURLs = default, DateTime broadcastScheduledAt = default, string locale = default, string timezone = default)
+        /// <param name="messageType">messageType.</param>
+        public WTEmployeeScheduleSMSCampaignBroadcast(string phoneNumberID = default, string messageTemplate = default, bool sendQRCode = default, List<string> mediaURLs = default, DateTime broadcastScheduledAt = default, string locale = default, string timezone = default, WTMessageType? messageType = default)
         {
             // to ensure "phoneNumberID" is required (not null)
             if (phoneNumberID == null)
@@ -77,6 +84,7 @@ namespace WalletInc.Model
             }
             this.Timezone = timezone;
             this.MediaURLs = mediaURLs;
+            this.MessageType = messageType;
         }
 
         /// <summary>
@@ -154,6 +162,7 @@ namespace WalletInc.Model
             sb.Append("  BroadcastScheduledAt: ").Append(BroadcastScheduledAt).Append("\n");
             sb.Append("  Locale: ").Append(Locale).Append("\n");
             sb.Append("  Timezone: ").Append(Timezone).Append("\n");
+            sb.Append("  MessageType: ").Append(MessageType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

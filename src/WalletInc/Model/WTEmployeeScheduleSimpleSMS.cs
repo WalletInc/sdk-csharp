@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -61,6 +61,12 @@ namespace WalletInc.Model
         */
         [DataMember(Name = "listType", IsRequired = true, EmitDefaultValue = true)]
         public ListTypeEnum ListType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MessageType
+        /// </summary>
+        [DataMember(Name = "messageType", EmitDefaultValue = false)]
+        public WTMessageType? MessageType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WTEmployeeScheduleSimpleSMS" /> class.
         /// </summary>
@@ -75,7 +81,8 @@ namespace WalletInc.Model
         /// <param name="broadcastScheduledAt">broadcastScheduledAt (required).</param>
         /// <param name="listType">listType (required).</param>
         /// <param name="listID">listID (required).</param>
-        public WTEmployeeScheduleSimpleSMS(string phoneNumberID = default, string messageTemplate = default, List<string> mediaURLs = default, DateTime broadcastScheduledAt = default, ListTypeEnum listType = default, string listID = default)
+        /// <param name="messageType">messageType.</param>
+        public WTEmployeeScheduleSimpleSMS(string phoneNumberID = default, string messageTemplate = default, List<string> mediaURLs = default, DateTime broadcastScheduledAt = default, ListTypeEnum listType = default, string listID = default, WTMessageType? messageType = default)
         {
             // to ensure "phoneNumberID" is required (not null)
             if (phoneNumberID == null)
@@ -98,6 +105,7 @@ namespace WalletInc.Model
             }
             this.ListID = listID;
             this.MediaURLs = mediaURLs;
+            this.MessageType = messageType;
         }
 
         /// <summary>
@@ -159,6 +167,7 @@ namespace WalletInc.Model
             sb.Append("  BroadcastScheduledAt: ").Append(BroadcastScheduledAt).Append("\n");
             sb.Append("  ListType: ").Append(ListType).Append("\n");
             sb.Append("  ListID: ").Append(ListID).Append("\n");
+            sb.Append("  MessageType: ").Append(MessageType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

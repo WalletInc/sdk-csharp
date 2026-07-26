@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -42,8 +42,10 @@ namespace WalletInc.Model
         /// Initializes a new instance of the <see cref="WTSmsSubscriberCreateParamsWalletUI" /> class.
         /// </summary>
         /// <param name="mobileNumber">mobileNumber (required).</param>
+        /// <param name="optInSource">optInSource.</param>
+        /// <param name="disclosureVersion">disclosureVersion.</param>
         /// <param name="merchantID">merchantID (required).</param>
-        public WTSmsSubscriberCreateParamsWalletUI(string mobileNumber = default, string merchantID = default)
+        public WTSmsSubscriberCreateParamsWalletUI(string mobileNumber = default, string optInSource = default, string disclosureVersion = default, string merchantID = default)
         {
             // to ensure "mobileNumber" is required (not null)
             if (mobileNumber == null)
@@ -57,6 +59,8 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("merchantID is a required property for WTSmsSubscriberCreateParamsWalletUI and cannot be null");
             }
             this.MerchantID = merchantID;
+            this.OptInSource = optInSource;
+            this.DisclosureVersion = disclosureVersion;
         }
 
         /// <summary>
@@ -67,6 +71,24 @@ namespace WalletInc.Model
         */
         [DataMember(Name = "mobileNumber", IsRequired = true, EmitDefaultValue = true)]
         public string MobileNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OptInSource
+        /// </summary>
+        /*
+        <example>wallet-profile-cta</example>
+        */
+        [DataMember(Name = "optInSource", EmitDefaultValue = false)]
+        public string OptInSource { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisclosureVersion
+        /// </summary>
+        /*
+        <example>sms-optin-v2026-07</example>
+        */
+        [DataMember(Name = "disclosureVersion", EmitDefaultValue = false)]
+        public string DisclosureVersion { get; set; }
 
         /// <summary>
         /// Gets or Sets MerchantID
@@ -86,6 +108,8 @@ namespace WalletInc.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class WTSmsSubscriberCreateParamsWalletUI {\n");
             sb.Append("  MobileNumber: ").Append(MobileNumber).Append("\n");
+            sb.Append("  OptInSource: ").Append(OptInSource).Append("\n");
+            sb.Append("  DisclosureVersion: ").Append(DisclosureVersion).Append("\n");
             sb.Append("  MerchantID: ").Append(MerchantID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -47,7 +47,8 @@ namespace WalletInc.Model
         /// <param name="listID">listID (required).</param>
         /// <param name="sourceID">sourceID (required).</param>
         /// <param name="phoneNumber">phoneNumber (required).</param>
-        public WTTCPAOpt(AmenityId listID = default, AmenityId sourceID = default, string phoneNumber = default)
+        /// <param name="disclosureVersion">disclosureVersion.</param>
+        public WTTCPAOpt(AmenityId listID = default, AmenityId sourceID = default, string phoneNumber = default, string disclosureVersion = default)
         {
             // to ensure "listID" is required (not null)
             if (listID == null)
@@ -67,6 +68,7 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("phoneNumber is a required property for WTTCPAOpt and cannot be null");
             }
             this.PhoneNumber = phoneNumber;
+            this.DisclosureVersion = disclosureVersion;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -92,6 +94,15 @@ namespace WalletInc.Model
         public string PhoneNumber { get; set; }
 
         /// <summary>
+        /// Gets or Sets DisclosureVersion
+        /// </summary>
+        /*
+        <example>sms-optin-v2026-07</example>
+        */
+        [DataMember(Name = "disclosureVersion", EmitDefaultValue = false)]
+        public string DisclosureVersion { get; set; }
+
+        /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
         [JsonExtensionData]
@@ -108,6 +119,7 @@ namespace WalletInc.Model
             sb.Append("  ListID: ").Append(ListID).Append("\n");
             sb.Append("  SourceID: ").Append(SourceID).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  DisclosureVersion: ").Append(DisclosureVersion).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
