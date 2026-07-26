@@ -5,6 +5,11 @@ All URIs are relative to *https://api.wall.et*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**BeginA2PApplication**](AppToPersonA2PRegistrationApi.md#begina2papplication) | **POST** /v2/a2p/application | Create A2P Application |
+| [**BeginA2PApplicationGovernment**](AppToPersonA2PRegistrationApi.md#begina2papplicationgovernment) | **POST** /a2p/application/government | Begin A2P Application (Government) |
+| [**BeginA2PApplicationNonProfit**](AppToPersonA2PRegistrationApi.md#begina2papplicationnonprofit) | **POST** /a2p/application/nonprofit | Begin A2P Application (Non-profit) |
+| [**BeginA2PApplicationPublic**](AppToPersonA2PRegistrationApi.md#begina2papplicationpublic) | **POST** /a2p/application/public | Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email) |
+| [**BeginA2PApplicationSoleProprietor**](AppToPersonA2PRegistrationApi.md#begina2papplicationsoleproprietor) | **POST** /a2p/application/sole-proprietor | Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification) |
+| [**BeginA2PApplicationStandard**](AppToPersonA2PRegistrationApi.md#begina2papplicationstandard) | **POST** /a2p/application/standard | Begin A2P Application (Standard: a private, for-profit business with an EIN) |
 | [**FetchA2PApplication**](AppToPersonA2PRegistrationApi.md#fetcha2papplication) | **GET** /v2/a2p/application | Get A2P Application |
 | [**FetchA2PRegistration**](AppToPersonA2PRegistrationApi.md#fetcha2pregistration) | **GET** /v2/a2p/registration | Get A2P Registration |
 | [**UpdateA2PApplication**](AppToPersonA2PRegistrationApi.md#updatea2papplication) | **PUT** /v2/a2p/application/{applicationID} | Update A2P Application |
@@ -80,6 +85,486 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **a2PApplicationSubmission** | [**A2PApplicationSubmission**](A2PApplicationSubmission.md) |  |  |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="begina2papplicationgovernment"></a>
+# **BeginA2PApplicationGovernment**
+> bool BeginA2PApplicationGovernment (A2PGovernmentSubmission a2PGovernmentSubmission)
+
+Begin A2P Application (Government)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class BeginA2PApplicationGovernmentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AppToPersonA2PRegistrationApi(httpClient, config, httpClientHandler);
+            var a2PGovernmentSubmission = new A2PGovernmentSubmission(); // A2PGovernmentSubmission | 
+
+            try
+            {
+                // Begin A2P Application (Government)
+                bool result = apiInstance.BeginA2PApplicationGovernment(a2PGovernmentSubmission);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationGovernment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BeginA2PApplicationGovernmentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Begin A2P Application (Government)
+    ApiResponse<bool> response = apiInstance.BeginA2PApplicationGovernmentWithHttpInfo(a2PGovernmentSubmission);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationGovernmentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **a2PGovernmentSubmission** | [**A2PGovernmentSubmission**](A2PGovernmentSubmission.md) |  |  |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="begina2papplicationnonprofit"></a>
+# **BeginA2PApplicationNonProfit**
+> bool BeginA2PApplicationNonProfit (A2PNonProfitSubmission a2PNonProfitSubmission)
+
+Begin A2P Application (Non-profit)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class BeginA2PApplicationNonProfitExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AppToPersonA2PRegistrationApi(httpClient, config, httpClientHandler);
+            var a2PNonProfitSubmission = new A2PNonProfitSubmission(); // A2PNonProfitSubmission | 
+
+            try
+            {
+                // Begin A2P Application (Non-profit)
+                bool result = apiInstance.BeginA2PApplicationNonProfit(a2PNonProfitSubmission);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationNonProfit: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BeginA2PApplicationNonProfitWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Begin A2P Application (Non-profit)
+    ApiResponse<bool> response = apiInstance.BeginA2PApplicationNonProfitWithHttpInfo(a2PNonProfitSubmission);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationNonProfitWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **a2PNonProfitSubmission** | [**A2PNonProfitSubmission**](A2PNonProfitSubmission.md) |  |  |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="begina2papplicationpublic"></a>
+# **BeginA2PApplicationPublic**
+> bool BeginA2PApplicationPublic (A2PPublicSubmission a2PPublicSubmission)
+
+Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class BeginA2PApplicationPublicExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AppToPersonA2PRegistrationApi(httpClient, config, httpClientHandler);
+            var a2PPublicSubmission = new A2PPublicSubmission(); // A2PPublicSubmission | 
+
+            try
+            {
+                // Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+                bool result = apiInstance.BeginA2PApplicationPublic(a2PPublicSubmission);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationPublic: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BeginA2PApplicationPublicWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+    ApiResponse<bool> response = apiInstance.BeginA2PApplicationPublicWithHttpInfo(a2PPublicSubmission);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationPublicWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **a2PPublicSubmission** | [**A2PPublicSubmission**](A2PPublicSubmission.md) |  |  |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="begina2papplicationsoleproprietor"></a>
+# **BeginA2PApplicationSoleProprietor**
+> bool BeginA2PApplicationSoleProprietor (A2PSoleProprietorSubmission a2PSoleProprietorSubmission)
+
+Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class BeginA2PApplicationSoleProprietorExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AppToPersonA2PRegistrationApi(httpClient, config, httpClientHandler);
+            var a2PSoleProprietorSubmission = new A2PSoleProprietorSubmission(); // A2PSoleProprietorSubmission | 
+
+            try
+            {
+                // Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+                bool result = apiInstance.BeginA2PApplicationSoleProprietor(a2PSoleProprietorSubmission);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationSoleProprietor: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BeginA2PApplicationSoleProprietorWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+    ApiResponse<bool> response = apiInstance.BeginA2PApplicationSoleProprietorWithHttpInfo(a2PSoleProprietorSubmission);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationSoleProprietorWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **a2PSoleProprietorSubmission** | [**A2PSoleProprietorSubmission**](A2PSoleProprietorSubmission.md) |  |  |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="begina2papplicationstandard"></a>
+# **BeginA2PApplicationStandard**
+> bool BeginA2PApplicationStandard (A2PStandardSubmission a2PStandardSubmission)
+
+Begin A2P Application (Standard: a private, for-profit business with an EIN)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class BeginA2PApplicationStandardExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AppToPersonA2PRegistrationApi(httpClient, config, httpClientHandler);
+            var a2PStandardSubmission = new A2PStandardSubmission(); // A2PStandardSubmission | 
+
+            try
+            {
+                // Begin A2P Application (Standard: a private, for-profit business with an EIN)
+                bool result = apiInstance.BeginA2PApplicationStandard(a2PStandardSubmission);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationStandard: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BeginA2PApplicationStandardWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Begin A2P Application (Standard: a private, for-profit business with an EIN)
+    ApiResponse<bool> response = apiInstance.BeginA2PApplicationStandardWithHttpInfo(a2PStandardSubmission);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AppToPersonA2PRegistrationApi.BeginA2PApplicationStandardWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **a2PStandardSubmission** | [**A2PStandardSubmission**](A2PStandardSubmission.md) |  |  |
 
 ### Return type
 

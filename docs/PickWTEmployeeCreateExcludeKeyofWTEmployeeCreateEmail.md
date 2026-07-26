@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **EmployeeID** | **string** |  | 
 **FirstName** | **string** |  | 
 **LastName** | **string** |  | 
+**JobTitle** | **string** |  | 
 **PhoneNumber** | **string** |  | 
 **IsPublicRepresentative** | **bool** |  | 
 **WalletSequenceNumber** | **int** |  | 
-**JobTitle** | **string** |  | 
 **Department** | **string** |  | 
 **ScheduleStartDay** | **string** |  | [optional] 
 **ScheduleStartHour** | **decimal** |  | [optional] 
