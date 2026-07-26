@@ -6,7 +6,7 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.4.1**, built 2026-07-26T16:49:54.662Z
+    **Spec version 2.4.1**, built 2026-07-26T17:04:14.279Z
   license:
     name: https://wallet.law
   title: wallet-api
@@ -3838,8 +3838,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:37.781Z
-                    updatedAt: 2026-07-26T16:48:37.781Z
+                    createdAt: 2026-07-26T17:02:59.370Z
+                    updatedAt: 2026-07-26T17:02:59.370Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -17440,7 +17440,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/WTEmployeeImportRecords"
+              $ref: "#/components/schemas/WTImportedListRecipientImport"
         required: true
       responses:
         "200":
@@ -21489,8 +21489,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-26T16:48:41.240Z
-                    updatedAt: 2026-07-26T16:48:41.240Z
+                    createdAt: 2026-07-26T17:03:02.823Z
+                    updatedAt: 2026-07-26T17:03:02.823Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21564,8 +21564,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-26T16:48:41.206Z
-                    updatedAt: 2026-07-26T16:48:41.206Z
+                    createdAt: 2026-07-26T17:03:02.789Z
+                    updatedAt: 2026-07-26T17:03:02.789Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21639,8 +21639,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-26T16:48:41.245Z
-                    updatedAt: 2026-07-26T16:48:41.245Z
+                    createdAt: 2026-07-26T17:03:02.828Z
+                    updatedAt: 2026-07-26T17:03:02.828Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21720,8 +21720,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-26T16:48:41.228Z
-                    updatedAt: 2026-07-26T16:48:41.228Z
+                    createdAt: 2026-07-26T17:03:02.812Z
+                    updatedAt: 2026-07-26T17:03:02.812Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21821,8 +21821,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-07-26T16:48:41.215Z
-                    updatedAt: 2026-07-26T16:48:41.215Z
+                    createdAt: 2026-07-26T17:03:02.798Z
+                    updatedAt: 2026-07-26T17:03:02.798Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22118,8 +22118,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.335Z
-                    updatedAt: 2026-07-26T16:48:41.335Z
+                    createdAt: 2026-07-26T17:03:02.920Z
+                    updatedAt: 2026-07-26T17:03:02.920Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22196,8 +22196,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.292Z
-                    updatedAt: 2026-07-26T16:48:41.292Z
+                    createdAt: 2026-07-26T17:03:02.876Z
+                    updatedAt: 2026-07-26T17:03:02.876Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22274,8 +22274,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.339Z
-                    updatedAt: 2026-07-26T16:48:41.339Z
+                    createdAt: 2026-07-26T17:03:02.924Z
+                    updatedAt: 2026-07-26T17:03:02.924Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22358,8 +22358,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.323Z
-                    updatedAt: 2026-07-26T16:48:41.323Z
+                    createdAt: 2026-07-26T17:03:02.908Z
+                    updatedAt: 2026-07-26T17:03:02.908Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22462,8 +22462,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.301Z
-                    updatedAt: 2026-07-26T16:48:41.301Z
+                    createdAt: 2026-07-26T17:03:02.885Z
+                    updatedAt: 2026-07-26T17:03:02.885Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22707,8 +22707,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.454Z
-                    updatedAt: 2026-07-26T16:48:41.454Z
+                    createdAt: 2026-07-26T17:03:03.038Z
+                    updatedAt: 2026-07-26T17:03:03.038Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22791,8 +22791,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.413Z
-                    updatedAt: 2026-07-26T16:48:41.413Z
+                    createdAt: 2026-07-26T17:03:02.996Z
+                    updatedAt: 2026-07-26T17:03:02.996Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22875,8 +22875,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.457Z
-                    updatedAt: 2026-07-26T16:48:41.457Z
+                    createdAt: 2026-07-26T17:03:03.042Z
+                    updatedAt: 2026-07-26T17:03:03.042Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -22965,8 +22965,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.442Z
-                    updatedAt: 2026-07-26T16:48:41.442Z
+                    createdAt: 2026-07-26T17:03:03.026Z
+                    updatedAt: 2026-07-26T17:03:03.026Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23075,8 +23075,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.422Z
-                    updatedAt: 2026-07-26T16:48:41.422Z
+                    createdAt: 2026-07-26T17:03:03.006Z
+                    updatedAt: 2026-07-26T17:03:03.006Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23294,8 +23294,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.463Z
-                    updatedAt: 2026-07-26T16:48:41.463Z
+                    createdAt: 2026-07-26T17:03:03.048Z
+                    updatedAt: 2026-07-26T17:03:03.048Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23424,8 +23424,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.518Z
-                    updatedAt: 2026-07-26T16:48:41.518Z
+                    createdAt: 2026-07-26T17:03:03.104Z
+                    updatedAt: 2026-07-26T17:03:03.104Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23640,8 +23640,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.506Z
-                    updatedAt: 2026-07-26T16:48:41.506Z
+                    createdAt: 2026-07-26T17:03:03.092Z
+                    updatedAt: 2026-07-26T17:03:03.092Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23791,8 +23791,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.532Z
-                    updatedAt: 2026-07-26T16:48:41.532Z
+                    createdAt: 2026-07-26T17:03:03.123Z
+                    updatedAt: 2026-07-26T17:03:03.123Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -23915,8 +23915,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.537Z
-                    updatedAt: 2026-07-26T16:48:41.537Z
+                    createdAt: 2026-07-26T17:03:03.128Z
+                    updatedAt: 2026-07-26T17:03:03.128Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -25429,8 +25429,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.720Z
-                    updatedAt: 2026-07-26T16:48:41.720Z
+                    createdAt: 2026-07-26T17:03:03.310Z
+                    updatedAt: 2026-07-26T17:03:03.310Z
                     isActive: true
               schema:
                 items:
@@ -25526,8 +25526,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.722Z
-                    updatedAt: 2026-07-26T16:48:41.722Z
+                    createdAt: 2026-07-26T17:03:03.312Z
+                    updatedAt: 2026-07-26T17:03:03.312Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -25820,8 +25820,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.733Z
-                    updatedAt: 2026-07-26T16:48:41.733Z
+                    createdAt: 2026-07-26T17:03:03.324Z
+                    updatedAt: 2026-07-26T17:03:03.324Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26203,8 +26203,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.781Z
-                    updatedAt: 2026-07-26T16:48:41.781Z
+                    createdAt: 2026-07-26T17:03:03.374Z
+                    updatedAt: 2026-07-26T17:03:03.374Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26303,8 +26303,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.795Z
-                    updatedAt: 2026-07-26T16:48:41.795Z
+                    createdAt: 2026-07-26T17:03:03.389Z
+                    updatedAt: 2026-07-26T17:03:03.389Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26396,8 +26396,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.831Z
-                    updatedAt: 2026-07-26T16:48:41.831Z
+                    createdAt: 2026-07-26T17:03:03.434Z
+                    updatedAt: 2026-07-26T17:03:03.434Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26489,8 +26489,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.848Z
-                    updatedAt: 2026-07-26T16:48:41.848Z
+                    createdAt: 2026-07-26T17:03:03.454Z
+                    updatedAt: 2026-07-26T17:03:03.454Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26583,8 +26583,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.865Z
-                    updatedAt: 2026-07-26T16:48:41.865Z
+                    createdAt: 2026-07-26T17:03:03.468Z
+                    updatedAt: 2026-07-26T17:03:03.468Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -26676,8 +26676,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.870Z
-                    updatedAt: 2026-07-26T16:48:41.870Z
+                    createdAt: 2026-07-26T17:03:03.474Z
+                    updatedAt: 2026-07-26T17:03:03.474Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -26775,8 +26775,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-07-26T16:48:41.873Z
-                    updatedAt: 2026-07-26T16:48:41.873Z
+                    createdAt: 2026-07-26T17:03:03.478Z
+                    updatedAt: 2026-07-26T17:03:03.478Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27180,7 +27180,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-26T16:48:41.888Z
+                    dateTimeLastViewed: 2026-07-26T17:03:03.493Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27203,8 +27203,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-26T16:48:41.888Z
-                    updatedAt: 2026-07-26T16:48:41.888Z
+                    createdAt: 2026-07-26T17:03:03.493Z
+                    updatedAt: 2026-07-26T17:03:03.493Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -27293,7 +27293,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-26T16:48:41.895Z
+                    dateTimeLastViewed: 2026-07-26T17:03:03.500Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27316,8 +27316,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-26T16:48:41.895Z
-                    updatedAt: 2026-07-26T16:48:41.895Z
+                    createdAt: 2026-07-26T17:03:03.500Z
+                    updatedAt: 2026-07-26T17:03:03.500Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -27413,7 +27413,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-07-26T16:48:41.926Z
+                    dateTimeLastViewed: 2026-07-26T17:03:03.533Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27436,8 +27436,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-07-26T16:48:41.926Z
-                    updatedAt: 2026-07-26T16:48:41.926Z
+                    createdAt: 2026-07-26T17:03:03.533Z
+                    updatedAt: 2026-07-26T17:03:03.533Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -44625,6 +44625,39 @@ components:
       required:
       - importedListID
       - mobilePhoneNumber
+    WTImportConsentBasis:
+      enum:
+      - online-optin-form
+      - text-to-join
+      - point-of-sale
+      - written-form
+      - other-documented
+    WTImportedListRecipientImport:
+      additionalProperties: false
+      example:
+        fileName: club-members-upload.csv
+        bucket: members
+        consentBasis: online-optin-form
+        consentAttested: true
+      properties:
+        fileName:
+          example: club-members-upload.csv
+          minLength: 1
+          type: string
+        bucket:
+          example: members
+          minLength: 1
+          type: string
+        consentBasis:
+          allOf:
+          - $ref: "#/components/schemas/WTImportConsentBasis"
+          example: online-optin-form
+        consentAttested:
+          example: true
+          type: boolean
+      required:
+      - bucket
+      - fileName
     ? Pick_SSImportedListRecipientFromMembershipTierImport.Exclude_keyofSSImportedListRecipientFromMembershipTierImport.employeeID-or-tierID__
     : description: "From T, pick a set of properties whose keys are in the union K"
       properties:

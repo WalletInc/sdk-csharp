@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:49:54.662Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:04:14.279Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -207,9 +207,9 @@ namespace WalletInc.Api
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <returns>string</returns>
-        string ImportImportedListRecipients(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords);
+        string ImportImportedListRecipients(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport);
 
         /// <summary>
         /// Import imported list recipients
@@ -219,9 +219,9 @@ namespace WalletInc.Api
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> ImportImportedListRecipientsWithHttpInfo(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords);
+        ApiResponse<string> ImportImportedListRecipientsWithHttpInfo(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport);
         /// <summary>
         /// Import imported list recipients from a given membership tier
         /// </summary>
@@ -514,10 +514,10 @@ namespace WalletInc.Api
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> ImportImportedListRecipientsAsync(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<string> ImportImportedListRecipientsAsync(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Import imported list recipients
@@ -527,10 +527,10 @@ namespace WalletInc.Api
         /// </remarks>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> ImportImportedListRecipientsWithHttpInfoAsync(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<string>> ImportImportedListRecipientsWithHttpInfoAsync(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Import imported list recipients from a given membership tier
         /// </summary>
@@ -1929,11 +1929,11 @@ namespace WalletInc.Api
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <returns>string</returns>
-        public string ImportImportedListRecipients(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords)
+        public string ImportImportedListRecipients(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport)
         {
-            WalletInc.Client.ApiResponse<string> localVarResponse = ImportImportedListRecipientsWithHttpInfo(importedListID, wTEmployeeImportRecords);
+            WalletInc.Client.ApiResponse<string> localVarResponse = ImportImportedListRecipientsWithHttpInfo(importedListID, wTImportedListRecipientImport);
             return localVarResponse.Data;
         }
 
@@ -1942,17 +1942,17 @@ namespace WalletInc.Api
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <returns>ApiResponse of string</returns>
-        public WalletInc.Client.ApiResponse<string> ImportImportedListRecipientsWithHttpInfo(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords)
+        public WalletInc.Client.ApiResponse<string> ImportImportedListRecipientsWithHttpInfo(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport)
         {
             // verify the required parameter 'importedListID' is set
             if (importedListID == null)
                 throw new WalletInc.Client.ApiException(400, "Missing required parameter 'importedListID' when calling ImportedListsApi->ImportImportedListRecipients");
 
-            // verify the required parameter 'wTEmployeeImportRecords' is set
-            if (wTEmployeeImportRecords == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeImportRecords' when calling ImportedListsApi->ImportImportedListRecipients");
+            // verify the required parameter 'wTImportedListRecipientImport' is set
+            if (wTImportedListRecipientImport == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTImportedListRecipientImport' when calling ImportedListsApi->ImportImportedListRecipients");
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
 
@@ -1972,7 +1972,7 @@ namespace WalletInc.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("importedListID", WalletInc.Client.ClientUtils.ParameterToString(importedListID)); // path parameter
-            localVarRequestOptions.Data = wTEmployeeImportRecords;
+            localVarRequestOptions.Data = wTImportedListRecipientImport;
 
 
             // make the HTTP request
@@ -1992,12 +1992,12 @@ namespace WalletInc.Api
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> ImportImportedListRecipientsAsync(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<string> ImportImportedListRecipientsAsync(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport, System.Threading.CancellationToken cancellationToken = default)
         {
-            WalletInc.Client.ApiResponse<string> localVarResponse = await ImportImportedListRecipientsWithHttpInfoAsync(importedListID, wTEmployeeImportRecords, cancellationToken).ConfigureAwait(false);
+            WalletInc.Client.ApiResponse<string> localVarResponse = await ImportImportedListRecipientsWithHttpInfoAsync(importedListID, wTImportedListRecipientImport, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2006,18 +2006,18 @@ namespace WalletInc.Api
         /// </summary>
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importedListID"></param>
-        /// <param name="wTEmployeeImportRecords"></param>
+        /// <param name="wTImportedListRecipientImport"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> ImportImportedListRecipientsWithHttpInfoAsync(string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<string>> ImportImportedListRecipientsWithHttpInfoAsync(string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'importedListID' is set
             if (importedListID == null)
                 throw new WalletInc.Client.ApiException(400, "Missing required parameter 'importedListID' when calling ImportedListsApi->ImportImportedListRecipients");
 
-            // verify the required parameter 'wTEmployeeImportRecords' is set
-            if (wTEmployeeImportRecords == null)
-                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTEmployeeImportRecords' when calling ImportedListsApi->ImportImportedListRecipients");
+            // verify the required parameter 'wTImportedListRecipientImport' is set
+            if (wTImportedListRecipientImport == null)
+                throw new WalletInc.Client.ApiException(400, "Missing required parameter 'wTImportedListRecipientImport' when calling ImportedListsApi->ImportImportedListRecipients");
 
 
             WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
@@ -2039,7 +2039,7 @@ namespace WalletInc.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("importedListID", WalletInc.Client.ClientUtils.ParameterToString(importedListID)); // path parameter
-            localVarRequestOptions.Data = wTEmployeeImportRecords;
+            localVarRequestOptions.Data = wTImportedListRecipientImport;
 
 
             // make the HTTP request

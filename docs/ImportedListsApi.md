@@ -896,7 +896,7 @@ No authorization required
 
 <a id="importimportedlistrecipients"></a>
 # **ImportImportedListRecipients**
-> string ImportImportedListRecipients (string importedListID, WTEmployeeImportRecords wTEmployeeImportRecords)
+> string ImportImportedListRecipients (string importedListID, WTImportedListRecipientImport wTImportedListRecipientImport)
 
 Import imported list recipients
 
@@ -922,12 +922,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ImportedListsApi(httpClient, config, httpClientHandler);
             var importedListID = "importedListID_example";  // string | 
-            var wTEmployeeImportRecords = new WTEmployeeImportRecords(); // WTEmployeeImportRecords | 
+            var wTImportedListRecipientImport = new WTImportedListRecipientImport(); // WTImportedListRecipientImport | 
 
             try
             {
                 // Import imported list recipients
-                string result = apiInstance.ImportImportedListRecipients(importedListID, wTEmployeeImportRecords);
+                string result = apiInstance.ImportImportedListRecipients(importedListID, wTImportedListRecipientImport);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -948,7 +948,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Import imported list recipients
-    ApiResponse<string> response = apiInstance.ImportImportedListRecipientsWithHttpInfo(importedListID, wTEmployeeImportRecords);
+    ApiResponse<string> response = apiInstance.ImportImportedListRecipientsWithHttpInfo(importedListID, wTImportedListRecipientImport);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -966,7 +966,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **importedListID** | **string** |  |  |
-| **wTEmployeeImportRecords** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md) |  |  |
+| **wTImportedListRecipientImport** | [**WTImportedListRecipientImport**](WTImportedListRecipientImport.md) |  |  |
 
 ### Return type
 
