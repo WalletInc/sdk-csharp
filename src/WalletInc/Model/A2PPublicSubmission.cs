@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T18:06:38.053Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -100,21 +100,19 @@ namespace WalletInc.Model
         /// <param name="country">country (required).</param>
         /// <param name="phoneNumber">phoneNumber (required).</param>
         /// <param name="isTwilioTermsRead">isTwilioTermsRead (required).</param>
-        /// <param name="isPrivacyPolicyOnWebsite">isPrivacyPolicyOnWebsite (required).</param>
-        /// <param name="isTosOnWebsite">isTosOnWebsite (required).</param>
-        /// <param name="isStopUnderstood">isStopUnderstood (required).</param>
-        /// <param name="isManualRead">isManualRead (required).</param>
-        /// <param name="isCtiaShortCodeRead">isCtiaShortCodeRead (required).</param>
-        /// <param name="isStandardsUnderstood">isStandardsUnderstood (required).</param>
-        /// <param name="isShortCodeUnderstood">isShortCodeUnderstood (required).</param>
-        /// <param name="isOptInOutUnderstood">isOptInOutUnderstood (required).</param>
-        /// <param name="isShortCodeTransferUnderstood">isShortCodeTransferUnderstood (required).</param>
+        /// <param name="isWalletSmsTermsRead">isWalletSmsTermsRead (required).</param>
         /// <param name="isPricingUnderstood">isPricingUnderstood (required).</param>
-        /// <param name="isShortCodeTimelineUnderstood">isShortCodeTimelineUnderstood (required).</param>
+        /// <param name="isPrivacyAndTosPresent">isPrivacyAndTosPresent (required).</param>
+        /// <param name="privacyPolicyUrl">privacyPolicyUrl.</param>
+        /// <param name="willObtainConsent">willObtainConsent (required).</param>
+        /// <param name="willHonorOptOut">willHonorOptOut (required).</param>
+        /// <param name="willFollowContentRules">willFollowContentRules (required).</param>
+        /// <param name="willComplyLawAndHours">willComplyLawAndHours (required).</param>
+        /// <param name="infoIsAccurate">infoIsAccurate (required).</param>
         /// <param name="brandContactEmail">brandContactEmail (required).</param>
         /// <param name="stockTicker">stockTicker (required).</param>
         /// <param name="stockExchange">stockExchange (required).</param>
-        public A2PPublicSubmission(string firstName = default, string lastName = default, string email = default, BusinessClassificationPublic businessClassification = default, BusinessIndustry businessIndustry = default, BusinessRegistrationIdentifier taxIDType = default, string taxID = default, string websiteURL = default, string socialMediaURL = default, List<BusinessRegionsOfOperation> regionsOfOperation = default, bool messagingVolumeHigh = default, string jobTitle = default, JobPosition jobPosition = default, string businessName = default, BusinessType businessType = default, string address1 = default, string address2 = default, string city = default, string state = default, string postalCode = default, string country = default, string phoneNumber = default, bool isTwilioTermsRead = default, bool isPrivacyPolicyOnWebsite = default, bool isTosOnWebsite = default, bool isStopUnderstood = default, bool isManualRead = default, bool isCtiaShortCodeRead = default, bool isStandardsUnderstood = default, bool isShortCodeUnderstood = default, bool isOptInOutUnderstood = default, bool isShortCodeTransferUnderstood = default, bool isPricingUnderstood = default, bool isShortCodeTimelineUnderstood = default, string brandContactEmail = default, string stockTicker = default, BusinessStockExchanges stockExchange = default)
+        public A2PPublicSubmission(string firstName = default, string lastName = default, string email = default, BusinessClassificationPublic businessClassification = default, BusinessIndustry businessIndustry = default, BusinessRegistrationIdentifier taxIDType = default, string taxID = default, string websiteURL = default, string socialMediaURL = default, List<BusinessRegionsOfOperation> regionsOfOperation = default, bool messagingVolumeHigh = default, string jobTitle = default, JobPosition jobPosition = default, string businessName = default, BusinessType businessType = default, string address1 = default, string address2 = default, string city = default, string state = default, string postalCode = default, string country = default, string phoneNumber = default, bool isTwilioTermsRead = default, bool isWalletSmsTermsRead = default, bool isPricingUnderstood = default, bool isPrivacyAndTosPresent = default, string privacyPolicyUrl = default, bool willObtainConsent = default, bool willHonorOptOut = default, bool willFollowContentRules = default, bool willComplyLawAndHours = default, bool infoIsAccurate = default, string brandContactEmail = default, string stockTicker = default, BusinessStockExchanges stockExchange = default)
         {
             // to ensure "firstName" is required (not null)
             if (firstName == null)
@@ -213,17 +211,14 @@ namespace WalletInc.Model
             }
             this.PhoneNumber = phoneNumber;
             this.IsTwilioTermsRead = isTwilioTermsRead;
-            this.IsPrivacyPolicyOnWebsite = isPrivacyPolicyOnWebsite;
-            this.IsTosOnWebsite = isTosOnWebsite;
-            this.IsStopUnderstood = isStopUnderstood;
-            this.IsManualRead = isManualRead;
-            this.IsCtiaShortCodeRead = isCtiaShortCodeRead;
-            this.IsStandardsUnderstood = isStandardsUnderstood;
-            this.IsShortCodeUnderstood = isShortCodeUnderstood;
-            this.IsOptInOutUnderstood = isOptInOutUnderstood;
-            this.IsShortCodeTransferUnderstood = isShortCodeTransferUnderstood;
+            this.IsWalletSmsTermsRead = isWalletSmsTermsRead;
             this.IsPricingUnderstood = isPricingUnderstood;
-            this.IsShortCodeTimelineUnderstood = isShortCodeTimelineUnderstood;
+            this.IsPrivacyAndTosPresent = isPrivacyAndTosPresent;
+            this.WillObtainConsent = willObtainConsent;
+            this.WillHonorOptOut = willHonorOptOut;
+            this.WillFollowContentRules = willFollowContentRules;
+            this.WillComplyLawAndHours = willComplyLawAndHours;
+            this.InfoIsAccurate = infoIsAccurate;
             // to ensure "brandContactEmail" is required (not null)
             if (brandContactEmail == null)
             {
@@ -238,6 +233,7 @@ namespace WalletInc.Model
             this.StockTicker = stockTicker;
             this.StockExchange = stockExchange;
             this.Address2 = address2;
+            this.PrivacyPolicyUrl = privacyPolicyUrl;
         }
 
         /// <summary>
@@ -394,58 +390,10 @@ namespace WalletInc.Model
         public bool IsTwilioTermsRead { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsPrivacyPolicyOnWebsite
+        /// Gets or Sets IsWalletSmsTermsRead
         /// </summary>
-        [DataMember(Name = "isPrivacyPolicyOnWebsite", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsPrivacyPolicyOnWebsite { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsTosOnWebsite
-        /// </summary>
-        [DataMember(Name = "isTosOnWebsite", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsTosOnWebsite { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsStopUnderstood
-        /// </summary>
-        [DataMember(Name = "isStopUnderstood", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsStopUnderstood { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsManualRead
-        /// </summary>
-        [DataMember(Name = "isManualRead", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsManualRead { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsCtiaShortCodeRead
-        /// </summary>
-        [DataMember(Name = "isCtiaShortCodeRead", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsCtiaShortCodeRead { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsStandardsUnderstood
-        /// </summary>
-        [DataMember(Name = "isStandardsUnderstood", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsStandardsUnderstood { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsShortCodeUnderstood
-        /// </summary>
-        [DataMember(Name = "isShortCodeUnderstood", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsShortCodeUnderstood { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsOptInOutUnderstood
-        /// </summary>
-        [DataMember(Name = "isOptInOutUnderstood", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsOptInOutUnderstood { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsShortCodeTransferUnderstood
-        /// </summary>
-        [DataMember(Name = "isShortCodeTransferUnderstood", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsShortCodeTransferUnderstood { get; set; }
+        [DataMember(Name = "isWalletSmsTermsRead", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsWalletSmsTermsRead { get; set; }
 
         /// <summary>
         /// Gets or Sets IsPricingUnderstood
@@ -454,10 +402,46 @@ namespace WalletInc.Model
         public bool IsPricingUnderstood { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsShortCodeTimelineUnderstood
+        /// Gets or Sets IsPrivacyAndTosPresent
         /// </summary>
-        [DataMember(Name = "isShortCodeTimelineUnderstood", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsShortCodeTimelineUnderstood { get; set; }
+        [DataMember(Name = "isPrivacyAndTosPresent", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsPrivacyAndTosPresent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PrivacyPolicyUrl
+        /// </summary>
+        [DataMember(Name = "privacyPolicyUrl", EmitDefaultValue = false)]
+        public string PrivacyPolicyUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WillObtainConsent
+        /// </summary>
+        [DataMember(Name = "willObtainConsent", IsRequired = true, EmitDefaultValue = true)]
+        public bool WillObtainConsent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WillHonorOptOut
+        /// </summary>
+        [DataMember(Name = "willHonorOptOut", IsRequired = true, EmitDefaultValue = true)]
+        public bool WillHonorOptOut { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WillFollowContentRules
+        /// </summary>
+        [DataMember(Name = "willFollowContentRules", IsRequired = true, EmitDefaultValue = true)]
+        public bool WillFollowContentRules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WillComplyLawAndHours
+        /// </summary>
+        [DataMember(Name = "willComplyLawAndHours", IsRequired = true, EmitDefaultValue = true)]
+        public bool WillComplyLawAndHours { get; set; }
+
+        /// <summary>
+        /// Gets or Sets InfoIsAccurate
+        /// </summary>
+        [DataMember(Name = "infoIsAccurate", IsRequired = true, EmitDefaultValue = true)]
+        public bool InfoIsAccurate { get; set; }
 
         /// <summary>
         /// Gets or Sets BrandContactEmail
@@ -502,17 +486,15 @@ namespace WalletInc.Model
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  IsTwilioTermsRead: ").Append(IsTwilioTermsRead).Append("\n");
-            sb.Append("  IsPrivacyPolicyOnWebsite: ").Append(IsPrivacyPolicyOnWebsite).Append("\n");
-            sb.Append("  IsTosOnWebsite: ").Append(IsTosOnWebsite).Append("\n");
-            sb.Append("  IsStopUnderstood: ").Append(IsStopUnderstood).Append("\n");
-            sb.Append("  IsManualRead: ").Append(IsManualRead).Append("\n");
-            sb.Append("  IsCtiaShortCodeRead: ").Append(IsCtiaShortCodeRead).Append("\n");
-            sb.Append("  IsStandardsUnderstood: ").Append(IsStandardsUnderstood).Append("\n");
-            sb.Append("  IsShortCodeUnderstood: ").Append(IsShortCodeUnderstood).Append("\n");
-            sb.Append("  IsOptInOutUnderstood: ").Append(IsOptInOutUnderstood).Append("\n");
-            sb.Append("  IsShortCodeTransferUnderstood: ").Append(IsShortCodeTransferUnderstood).Append("\n");
+            sb.Append("  IsWalletSmsTermsRead: ").Append(IsWalletSmsTermsRead).Append("\n");
             sb.Append("  IsPricingUnderstood: ").Append(IsPricingUnderstood).Append("\n");
-            sb.Append("  IsShortCodeTimelineUnderstood: ").Append(IsShortCodeTimelineUnderstood).Append("\n");
+            sb.Append("  IsPrivacyAndTosPresent: ").Append(IsPrivacyAndTosPresent).Append("\n");
+            sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
+            sb.Append("  WillObtainConsent: ").Append(WillObtainConsent).Append("\n");
+            sb.Append("  WillHonorOptOut: ").Append(WillHonorOptOut).Append("\n");
+            sb.Append("  WillFollowContentRules: ").Append(WillFollowContentRules).Append("\n");
+            sb.Append("  WillComplyLawAndHours: ").Append(WillComplyLawAndHours).Append("\n");
+            sb.Append("  InfoIsAccurate: ").Append(InfoIsAccurate).Append("\n");
             sb.Append("  BrandContactEmail: ").Append(BrandContactEmail).Append("\n");
             sb.Append("  StockTicker: ").Append(StockTicker).Append("\n");
             sb.Append("  StockExchange: ").Append(StockExchange).Append("\n");
