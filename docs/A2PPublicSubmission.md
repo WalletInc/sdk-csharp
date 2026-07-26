@@ -27,17 +27,15 @@ Name | Type | Description | Notes
 **Country** | **string** |  | 
 **PhoneNumber** | **string** |  | 
 **IsTwilioTermsRead** | **bool** |  | 
-**IsPrivacyPolicyOnWebsite** | **bool** |  | 
-**IsTosOnWebsite** | **bool** |  | 
-**IsStopUnderstood** | **bool** |  | 
-**IsManualRead** | **bool** |  | 
-**IsCtiaShortCodeRead** | **bool** |  | 
-**IsStandardsUnderstood** | **bool** |  | 
-**IsShortCodeUnderstood** | **bool** |  | 
-**IsOptInOutUnderstood** | **bool** |  | 
-**IsShortCodeTransferUnderstood** | **bool** |  | 
+**IsWalletSmsTermsRead** | **bool** |  | 
 **IsPricingUnderstood** | **bool** |  | 
-**IsShortCodeTimelineUnderstood** | **bool** |  | 
+**IsPrivacyAndTosPresent** | **bool** |  | 
+**PrivacyPolicyUrl** | **string** |  | [optional] 
+**WillObtainConsent** | **bool** |  | 
+**WillHonorOptOut** | **bool** |  | 
+**WillFollowContentRules** | **bool** |  | 
+**WillComplyLawAndHours** | **bool** |  | 
+**InfoIsAccurate** | **bool** |  | 
 **BrandContactEmail** | **string** |  | 
 **StockTicker** | **string** |  | 
 **StockExchange** | **BusinessStockExchanges** |  | 

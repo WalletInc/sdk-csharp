@@ -27,17 +27,15 @@ Name | Type | Description | Notes
 **Country** | **string** |  | 
 **PhoneNumber** | **string** |  | 
 **IsTwilioTermsRead** | **bool** |  | 
-**IsPrivacyPolicyOnWebsite** | **bool** |  | 
-**IsTosOnWebsite** | **bool** |  | 
-**IsStopUnderstood** | **bool** |  | 
-**IsManualRead** | **bool** |  | 
-**IsCtiaShortCodeRead** | **bool** |  | 
-**IsStandardsUnderstood** | **bool** |  | 
-**IsShortCodeUnderstood** | **bool** |  | 
-**IsOptInOutUnderstood** | **bool** |  | 
-**IsShortCodeTransferUnderstood** | **bool** |  | 
+**IsWalletSmsTermsRead** | **bool** |  | 
 **IsPricingUnderstood** | **bool** |  | 
-**IsShortCodeTimelineUnderstood** | **bool** |  | 
+**IsPrivacyAndTosPresent** | **bool** |  | 
+**PrivacyPolicyUrl** | **string** |  | [optional] 
+**WillObtainConsent** | **bool** |  | 
+**WillHonorOptOut** | **bool** |  | 
+**WillFollowContentRules** | **bool** |  | 
+**WillComplyLawAndHours** | **bool** |  | 
+**InfoIsAccurate** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
