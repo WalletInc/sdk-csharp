@@ -388,6 +388,7 @@ docs/WTMerchantUpdate.md
 docs/WTMerchantUpdatePOSIntegration.md
 docs/WTMerchantUpdatePointsOfContact.md
 docs/WTMessageInstance.md
+docs/WTMessageType.md
 docs/WTNewsArticleCreateParams.md
 docs/WTNewsArticleUpdateParams.md
 docs/WTOptInList.md
@@ -473,6 +474,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTMessageTypeTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -883,6 +885,7 @@ src/WalletInc/Model/WTMerchantUpdate.cs
 src/WalletInc/Model/WTMerchantUpdatePOSIntegration.cs
 src/WalletInc/Model/WTMerchantUpdatePointsOfContact.cs
 src/WalletInc/Model/WTMessageInstance.cs
+src/WalletInc/Model/WTMessageType.cs
 src/WalletInc/Model/WTNewsArticleCreateParams.cs
 src/WalletInc/Model/WTNewsArticleUpdateParams.cs
 src/WalletInc/Model/WTOptInList.cs
