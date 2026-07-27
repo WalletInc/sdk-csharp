@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Title** | **string** |  | 
 **Items** | **List&lt;string&gt;** |  | 
 **PublishedAt** | **string** |  | 
+**ContentStatus** | **ContentStatus** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
