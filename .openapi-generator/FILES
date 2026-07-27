@@ -49,6 +49,7 @@ docs/ChatCompletionMessageToolCall.md
 docs/ChatCompletionMessageToolCallFunction.md
 docs/ClaimTicketRequest.md
 docs/ClubMembersApi.md
+docs/ContentStatus.md
 docs/CountClaimedComps200Response.md
 docs/CountriesApi.md
 docs/CreateFile200Response.md
@@ -476,6 +477,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/ContentStatusTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -595,6 +597,7 @@ src/WalletInc/Model/ChatCompletionMessageFunctionCall.cs
 src/WalletInc/Model/ChatCompletionMessageToolCall.cs
 src/WalletInc/Model/ChatCompletionMessageToolCallFunction.cs
 src/WalletInc/Model/ClaimTicketRequest.cs
+src/WalletInc/Model/ContentStatus.cs
 src/WalletInc/Model/CountClaimedComps200Response.cs
 src/WalletInc/Model/CreateFile200Response.cs
 src/WalletInc/Model/CreateRunOnThreadRequest.cs
