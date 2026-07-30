@@ -306,6 +306,7 @@ docs/WTAuthenticationSSOLoginForDiscourse.md
 docs/WTBillingChangePlan.md
 docs/WTBillingSavePaymentMethod.md
 docs/WTBillingVerifyPaymentMethodResponse.md
+docs/WTBrandingFooterLink.md
 docs/WTCertificateDealCreateRequest.md
 docs/WTCertificateEntitlementSnapshot.md
 docs/WTCertificatePurchaseRequest.md
@@ -410,6 +411,7 @@ docs/WTProductCreateParams.md
 docs/WTProductUpdateParams.md
 docs/WTPromoCodeCreateParams.md
 docs/WTPromoCodeUpdateParams.md
+docs/WTPublicBranding.md
 docs/WTQRCodeDesign.md
 docs/WTQRCodeDesignCreateParams.md
 docs/WTQRCodeDesignUpdateParams.md
@@ -476,6 +478,8 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTBrandingFooterLinkTests.cs
+src/WalletInc.Test/Model/WTPublicBrandingTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -805,6 +809,7 @@ src/WalletInc/Model/WTAuthenticationSSOLoginForDiscourse.cs
 src/WalletInc/Model/WTBillingChangePlan.cs
 src/WalletInc/Model/WTBillingSavePaymentMethod.cs
 src/WalletInc/Model/WTBillingVerifyPaymentMethodResponse.cs
+src/WalletInc/Model/WTBrandingFooterLink.cs
 src/WalletInc/Model/WTCertificateDealCreateRequest.cs
 src/WalletInc/Model/WTCertificateEntitlementSnapshot.cs
 src/WalletInc/Model/WTCertificatePurchaseRequest.cs
@@ -909,6 +914,7 @@ src/WalletInc/Model/WTProductCreateParams.cs
 src/WalletInc/Model/WTProductUpdateParams.cs
 src/WalletInc/Model/WTPromoCodeCreateParams.cs
 src/WalletInc/Model/WTPromoCodeUpdateParams.cs
+src/WalletInc/Model/WTPublicBranding.cs
 src/WalletInc/Model/WTQRCodeDesign.cs
 src/WalletInc/Model/WTQRCodeDesignCreateParams.cs
 src/WalletInc/Model/WTQRCodeDesignUpdateParams.cs
