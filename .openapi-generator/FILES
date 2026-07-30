@@ -97,6 +97,7 @@ docs/GalleryApi.md
 docs/Gaming.md
 docs/GamingApi.md
 docs/GiftCardsApi.md
+docs/GoogleWalletSubscribersApi.md
 docs/HelpDeskApi.md
 docs/HelpDeskRequest.md
 docs/ImageGrid.md
@@ -478,6 +479,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Api/GoogleWalletSubscribersApiTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -498,6 +500,7 @@ src/WalletInc/Api/FilesDocumentsApi.cs
 src/WalletInc/Api/GalleryApi.cs
 src/WalletInc/Api/GamingApi.cs
 src/WalletInc/Api/GiftCardsApi.cs
+src/WalletInc/Api/GoogleWalletSubscribersApi.cs
 src/WalletInc/Api/HelpDeskApi.cs
 src/WalletInc/Api/ImportExportApi.cs
 src/WalletInc/Api/ImportedListsApi.cs
