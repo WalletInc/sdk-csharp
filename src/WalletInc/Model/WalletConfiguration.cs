@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-28T16:20:40.617Z
+ * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T15:18:55.586Z
  *
  * The version of the OpenAPI document: 2.20.2
  * Contact: development@wallet.inc
@@ -117,12 +117,24 @@ namespace WalletInc.Model
         /// <param name="appleAppStoreURL">appleAppStoreURL.</param>
         /// <param name="googlePlayStoreURL">googlePlayStoreURL.</param>
         /// <param name="passBrandKit">passBrandKit.</param>
+        /// <param name="loginLogoURL">loginLogoURL.</param>
+        /// <param name="loginPanelImageURL">loginPanelImageURL.</param>
+        /// <param name="loginHeadline">loginHeadline.</param>
+        /// <param name="loginSubcopy">loginSubcopy.</param>
+        /// <param name="loginBackgroundColor">loginBackgroundColor.</param>
+        /// <param name="loginBackgroundImageURL">loginBackgroundImageURL.</param>
+        /// <param name="registerURL">registerURL.</param>
+        /// <param name="loginFooterLinks">loginFooterLinks.</param>
+        /// <param name="desktopFrameLogoURL">desktopFrameLogoURL.</param>
+        /// <param name="desktopFrameBackgroundColor">desktopFrameBackgroundColor.</param>
+        /// <param name="desktopFrameBackgroundImageURL">desktopFrameBackgroundImageURL.</param>
+        /// <param name="desktopFrameByline">desktopFrameByline.</param>
         /// <param name="id">id (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt (required).</param>
         /// <param name="merchantID">merchantID (required).</param>
         /// <param name="androidSHA256Fingerprint">SHA-256 fingerprint of the merchant&#39;s Android signing certificate, in Android&#39;s colon-separated uppercase hex format (e.g. \&quot;A1:B2:C3:...\&quot;). Populated by the POST /v2/wallet/android/keystore endpoint and consumed by the assetlinks.json endpoint so Google can verify the merchant&#39;s TWA ownership..</param>
-        public WalletConfiguration(string headerBackgroundColor = default, string headerButtonColor = default, string leftMenuHeaderBackgroundColor = default, string leftMenuHeaderFontColor = default, string leftMenuSectionBackgroundColor = default, string leftMenuSectionFontColor = default, string companyLogoURL = default, string headerImageURL = default, string headerCustomIcon = default, string welcomeMessage = default, bool isAppleEnabled = default, bool isGoogleEnabled = default, bool isSamsungEnabled = default, bool isAdCredits = default, bool isStaticVouchers = default, bool isDynamicVouchers = default, bool isMembershipTier = default, bool isMembershipPoints = default, bool isMembershipLevel = default, bool isGiftCards = default, bool isGiftCertificates = default, bool isPromotions = default, bool isMerchantCredit = default, bool isTickets = default, bool isNewsArticles = default, bool isPerformances = default, bool isMessages = default, bool isCall = default, bool isRepresentatives = default, bool isProducts = default, bool isServices = default, bool isRoomRates = default, bool isAmenities = default, bool isGaming = default, bool isDining = default, bool isLounges = default, bool isMapDirections = default, bool isLinkBook = default, bool isImageGrid = default, bool isVideos = default, bool isTransactionHistory = default, bool isProfile = default, bool isSettings = default, bool isChatRoom = default, bool isSmsOptIn = default, WTWalletConfigurationSaveWalletRecordSmsOptInSourceID smsOptInSourceID = default, bool isEmailSubscriber = default, string googleAnalyticsID = default, string facebookPixelID = default, double publicChatRoomChannelID = default, string vanityHandle = default, string vanityPageWalletPrefix = default, string merchantCreditPaymentDesignID = default, string customDomain = default, bool isClaimed = default, string mobileAppIconURL = default, bool isAgeGate = default, bool isFlipRequiredForQR = default, double ageGateMinimum = default, string ageGateDeclineURL = default, string socialInstagramURL = default, string socialFacebookURL = default, string socialYouTubeURL = default, string socialTwitterURL = default, string socialLinkedInURL = default, string socialBackgroundColor = default, string socialFontColor = default, string primaryPhoneNumber = default, string primaryWhatsApp = default, string primaryEmailAddress = default, string customJS = default, string customCSS = default, string nonMobileRedirectURL = default, string appleAppStoreURL = default, string googlePlayStoreURL = default, WTPassBrandKit passBrandKit = default, string id = default, DateTime createdAt = default, DateTime updatedAt = default, string merchantID = default, string androidSHA256Fingerprint = default)
+        public WalletConfiguration(string headerBackgroundColor = default, string headerButtonColor = default, string leftMenuHeaderBackgroundColor = default, string leftMenuHeaderFontColor = default, string leftMenuSectionBackgroundColor = default, string leftMenuSectionFontColor = default, string companyLogoURL = default, string headerImageURL = default, string headerCustomIcon = default, string welcomeMessage = default, bool isAppleEnabled = default, bool isGoogleEnabled = default, bool isSamsungEnabled = default, bool isAdCredits = default, bool isStaticVouchers = default, bool isDynamicVouchers = default, bool isMembershipTier = default, bool isMembershipPoints = default, bool isMembershipLevel = default, bool isGiftCards = default, bool isGiftCertificates = default, bool isPromotions = default, bool isMerchantCredit = default, bool isTickets = default, bool isNewsArticles = default, bool isPerformances = default, bool isMessages = default, bool isCall = default, bool isRepresentatives = default, bool isProducts = default, bool isServices = default, bool isRoomRates = default, bool isAmenities = default, bool isGaming = default, bool isDining = default, bool isLounges = default, bool isMapDirections = default, bool isLinkBook = default, bool isImageGrid = default, bool isVideos = default, bool isTransactionHistory = default, bool isProfile = default, bool isSettings = default, bool isChatRoom = default, bool isSmsOptIn = default, WTWalletConfigurationSaveWalletRecordSmsOptInSourceID smsOptInSourceID = default, bool isEmailSubscriber = default, string googleAnalyticsID = default, string facebookPixelID = default, double publicChatRoomChannelID = default, string vanityHandle = default, string vanityPageWalletPrefix = default, string merchantCreditPaymentDesignID = default, string customDomain = default, bool isClaimed = default, string mobileAppIconURL = default, bool isAgeGate = default, bool isFlipRequiredForQR = default, double ageGateMinimum = default, string ageGateDeclineURL = default, string socialInstagramURL = default, string socialFacebookURL = default, string socialYouTubeURL = default, string socialTwitterURL = default, string socialLinkedInURL = default, string socialBackgroundColor = default, string socialFontColor = default, string primaryPhoneNumber = default, string primaryWhatsApp = default, string primaryEmailAddress = default, string customJS = default, string customCSS = default, string nonMobileRedirectURL = default, string appleAppStoreURL = default, string googlePlayStoreURL = default, WTPassBrandKit passBrandKit = default, string loginLogoURL = default, string loginPanelImageURL = default, string loginHeadline = default, string loginSubcopy = default, string loginBackgroundColor = default, string loginBackgroundImageURL = default, string registerURL = default, List<WTBrandingFooterLink> loginFooterLinks = default, string desktopFrameLogoURL = default, string desktopFrameBackgroundColor = default, string desktopFrameBackgroundImageURL = default, string desktopFrameByline = default, string id = default, DateTime createdAt = default, DateTime updatedAt = default, string merchantID = default, string androidSHA256Fingerprint = default)
         {
             // to ensure "headerBackgroundColor" is required (not null)
             if (headerBackgroundColor == null)
@@ -254,6 +266,18 @@ namespace WalletInc.Model
             this.AppleAppStoreURL = appleAppStoreURL;
             this.GooglePlayStoreURL = googlePlayStoreURL;
             this.PassBrandKit = passBrandKit;
+            this.LoginLogoURL = loginLogoURL;
+            this.LoginPanelImageURL = loginPanelImageURL;
+            this.LoginHeadline = loginHeadline;
+            this.LoginSubcopy = loginSubcopy;
+            this.LoginBackgroundColor = loginBackgroundColor;
+            this.LoginBackgroundImageURL = loginBackgroundImageURL;
+            this.RegisterURL = registerURL;
+            this.LoginFooterLinks = loginFooterLinks;
+            this.DesktopFrameLogoURL = desktopFrameLogoURL;
+            this.DesktopFrameBackgroundColor = desktopFrameBackgroundColor;
+            this.DesktopFrameBackgroundImageURL = desktopFrameBackgroundImageURL;
+            this.DesktopFrameByline = desktopFrameByline;
             this.AndroidSHA256Fingerprint = androidSHA256Fingerprint;
         }
 
@@ -741,6 +765,78 @@ namespace WalletInc.Model
         public WTPassBrandKit PassBrandKit { get; set; }
 
         /// <summary>
+        /// Gets or Sets LoginLogoURL
+        /// </summary>
+        [DataMember(Name = "loginLogoURL", EmitDefaultValue = false)]
+        public string LoginLogoURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoginPanelImageURL
+        /// </summary>
+        [DataMember(Name = "loginPanelImageURL", EmitDefaultValue = false)]
+        public string LoginPanelImageURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoginHeadline
+        /// </summary>
+        [DataMember(Name = "loginHeadline", EmitDefaultValue = false)]
+        public string LoginHeadline { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoginSubcopy
+        /// </summary>
+        [DataMember(Name = "loginSubcopy", EmitDefaultValue = false)]
+        public string LoginSubcopy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoginBackgroundColor
+        /// </summary>
+        [DataMember(Name = "loginBackgroundColor", EmitDefaultValue = false)]
+        public string LoginBackgroundColor { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoginBackgroundImageURL
+        /// </summary>
+        [DataMember(Name = "loginBackgroundImageURL", EmitDefaultValue = false)]
+        public string LoginBackgroundImageURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RegisterURL
+        /// </summary>
+        [DataMember(Name = "registerURL", EmitDefaultValue = false)]
+        public string RegisterURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoginFooterLinks
+        /// </summary>
+        [DataMember(Name = "loginFooterLinks", EmitDefaultValue = false)]
+        public List<WTBrandingFooterLink> LoginFooterLinks { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DesktopFrameLogoURL
+        /// </summary>
+        [DataMember(Name = "desktopFrameLogoURL", EmitDefaultValue = false)]
+        public string DesktopFrameLogoURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DesktopFrameBackgroundColor
+        /// </summary>
+        [DataMember(Name = "desktopFrameBackgroundColor", EmitDefaultValue = false)]
+        public string DesktopFrameBackgroundColor { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DesktopFrameBackgroundImageURL
+        /// </summary>
+        [DataMember(Name = "desktopFrameBackgroundImageURL", EmitDefaultValue = false)]
+        public string DesktopFrameBackgroundImageURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DesktopFrameByline
+        /// </summary>
+        [DataMember(Name = "desktopFrameByline", EmitDefaultValue = false)]
+        public string DesktopFrameByline { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         /*
@@ -864,6 +960,18 @@ namespace WalletInc.Model
             sb.Append("  AppleAppStoreURL: ").Append(AppleAppStoreURL).Append("\n");
             sb.Append("  GooglePlayStoreURL: ").Append(GooglePlayStoreURL).Append("\n");
             sb.Append("  PassBrandKit: ").Append(PassBrandKit).Append("\n");
+            sb.Append("  LoginLogoURL: ").Append(LoginLogoURL).Append("\n");
+            sb.Append("  LoginPanelImageURL: ").Append(LoginPanelImageURL).Append("\n");
+            sb.Append("  LoginHeadline: ").Append(LoginHeadline).Append("\n");
+            sb.Append("  LoginSubcopy: ").Append(LoginSubcopy).Append("\n");
+            sb.Append("  LoginBackgroundColor: ").Append(LoginBackgroundColor).Append("\n");
+            sb.Append("  LoginBackgroundImageURL: ").Append(LoginBackgroundImageURL).Append("\n");
+            sb.Append("  RegisterURL: ").Append(RegisterURL).Append("\n");
+            sb.Append("  LoginFooterLinks: ").Append(LoginFooterLinks).Append("\n");
+            sb.Append("  DesktopFrameLogoURL: ").Append(DesktopFrameLogoURL).Append("\n");
+            sb.Append("  DesktopFrameBackgroundColor: ").Append(DesktopFrameBackgroundColor).Append("\n");
+            sb.Append("  DesktopFrameBackgroundImageURL: ").Append(DesktopFrameBackgroundImageURL).Append("\n");
+            sb.Append("  DesktopFrameByline: ").Append(DesktopFrameByline).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
