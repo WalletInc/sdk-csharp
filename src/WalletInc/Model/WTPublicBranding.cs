@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T12:47:27.912Z
+ * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T13:08:16.291Z
  *
  * The version of the OpenAPI document: 2.20.2
  * Contact: development@wallet.inc
@@ -39,6 +39,7 @@ namespace WalletInc.Model
         /// <param name="companyName">companyName.</param>
         /// <param name="headerBackgroundColor">headerBackgroundColor.</param>
         /// <param name="mobileAppIconURL">mobileAppIconURL.</param>
+        /// <param name="showWalletCredit">showWalletCredit.</param>
         /// <param name="loginLogoURL">loginLogoURL.</param>
         /// <param name="loginPanelImageURL">loginPanelImageURL.</param>
         /// <param name="loginHeadline">loginHeadline.</param>
@@ -51,11 +52,12 @@ namespace WalletInc.Model
         /// <param name="desktopFrameBackgroundColor">desktopFrameBackgroundColor.</param>
         /// <param name="desktopFrameBackgroundImageURL">desktopFrameBackgroundImageURL.</param>
         /// <param name="desktopFrameByline">desktopFrameByline.</param>
-        public WTPublicBranding(string companyName = default, string headerBackgroundColor = default, string mobileAppIconURL = default, string loginLogoURL = default, string loginPanelImageURL = default, string loginHeadline = default, string loginSubcopy = default, string loginBackgroundColor = default, string loginBackgroundImageURL = default, string registerURL = default, List<WTBrandingFooterLink> loginFooterLinks = default, string desktopFrameLogoURL = default, string desktopFrameBackgroundColor = default, string desktopFrameBackgroundImageURL = default, string desktopFrameByline = default)
+        public WTPublicBranding(string companyName = default, string headerBackgroundColor = default, string mobileAppIconURL = default, bool showWalletCredit = default, string loginLogoURL = default, string loginPanelImageURL = default, string loginHeadline = default, string loginSubcopy = default, string loginBackgroundColor = default, string loginBackgroundImageURL = default, string registerURL = default, List<WTBrandingFooterLink> loginFooterLinks = default, string desktopFrameLogoURL = default, string desktopFrameBackgroundColor = default, string desktopFrameBackgroundImageURL = default, string desktopFrameByline = default)
         {
             this.CompanyName = companyName;
             this.HeaderBackgroundColor = headerBackgroundColor;
             this.MobileAppIconURL = mobileAppIconURL;
+            this.ShowWalletCredit = showWalletCredit;
             this.LoginLogoURL = loginLogoURL;
             this.LoginPanelImageURL = loginPanelImageURL;
             this.LoginHeadline = loginHeadline;
@@ -88,6 +90,12 @@ namespace WalletInc.Model
         /// </summary>
         [DataMember(Name = "mobileAppIconURL", EmitDefaultValue = false)]
         public string MobileAppIconURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShowWalletCredit
+        /// </summary>
+        [DataMember(Name = "showWalletCredit", EmitDefaultValue = true)]
+        public bool ShowWalletCredit { get; set; }
 
         /// <summary>
         /// Gets or Sets LoginLogoURL
@@ -178,6 +186,7 @@ namespace WalletInc.Model
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  HeaderBackgroundColor: ").Append(HeaderBackgroundColor).Append("\n");
             sb.Append("  MobileAppIconURL: ").Append(MobileAppIconURL).Append("\n");
+            sb.Append("  ShowWalletCredit: ").Append(ShowWalletCredit).Append("\n");
             sb.Append("  LoginLogoURL: ").Append(LoginLogoURL).Append("\n");
             sb.Append("  LoginPanelImageURL: ").Append(LoginPanelImageURL).Append("\n");
             sb.Append("  LoginHeadline: ").Append(LoginHeadline).Append("\n");

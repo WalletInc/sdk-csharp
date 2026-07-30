@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CompanyName** | **string** |  | [optional] 
 **HeaderBackgroundColor** | **string** |  | [optional] 
 **MobileAppIconURL** | **string** |  | [optional] 
+**ShowWalletCredit** | **bool** |  | [optional] 
 **LoginLogoURL** | **string** |  | [optional] 
 **LoginPanelImageURL** | **string** |  | [optional] 
 **LoginHeadline** | **string** |  | [optional] 
