@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T23:23:58.408Z
+ * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-08-01T08:24:35.176Z
  *
  * The version of the OpenAPI document: 2.20.2
  * Contact: development@wallet.inc
@@ -44,6 +44,22 @@ namespace WalletInc.Api
         /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;FetchIndustry200Response&gt;</returns>
         ApiResponse<List<FetchIndustry200Response>> FetchAllIndustriesWithHttpInfo();
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SubscriptionPlan</returns>
+        SubscriptionPlan FetchFreePlan();
+
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SubscriptionPlan</returns>
+        ApiResponse<SubscriptionPlan> FetchFreePlanWithHttpInfo();
         /// <summary>
         /// Get all Industries &amp; Pricing Plans with trimmed metadata
         /// </summary>
@@ -90,6 +106,27 @@ namespace WalletInc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;FetchIndustry200Response&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<FetchIndustry200Response>>> FetchAllIndustriesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SubscriptionPlan</returns>
+        System.Threading.Tasks.Task<SubscriptionPlan> FetchFreePlanAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SubscriptionPlan)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionPlan>> FetchFreePlanWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get all Industries &amp; Pricing Plans with trimmed metadata
         /// </summary>
@@ -419,6 +456,107 @@ namespace WalletInc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FetchAllIndustries", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SubscriptionPlan</returns>
+        public SubscriptionPlan FetchFreePlan()
+        {
+            WalletInc.Client.ApiResponse<SubscriptionPlan> localVarResponse = FetchFreePlanWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SubscriptionPlan</returns>
+        public WalletInc.Client.ApiResponse<SubscriptionPlan> FetchFreePlanWithHttpInfo()
+        {
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SubscriptionPlan>("/system/industries/free", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FetchFreePlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SubscriptionPlan</returns>
+        public async System.Threading.Tasks.Task<SubscriptionPlan> FetchFreePlanAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            WalletInc.Client.ApiResponse<SubscriptionPlan> localVarResponse = await FetchFreePlanWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the free-by-default (Visitor tier) plan 
+        /// </summary>
+        /// <exception cref="WalletInc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SubscriptionPlan)</returns>
+        public async System.Threading.Tasks.Task<WalletInc.Client.ApiResponse<SubscriptionPlan>> FetchFreePlanWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            WalletInc.Client.RequestOptions localVarRequestOptions = new WalletInc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = WalletInc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = WalletInc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SubscriptionPlan>("/system/industries/free", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FetchFreePlan", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
