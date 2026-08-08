@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **HeaderImageURL** | **string** |  | [optional] 
 **HeaderCustomIcon** | **string** |  | [optional] 
 **WelcomeMessage** | **string** |  | 
+**HomeTemplate** | **string** |  | [optional] 
 **IsAppleEnabled** | **bool** |  | 
 **IsGoogleEnabled** | **bool** |  | 
 **IsSamsungEnabled** | **bool** |  | 
