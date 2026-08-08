@@ -7,6 +7,18 @@
     <IsPackable>false</IsPackable>
     <Nullable>annotations</Nullable>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+      <Title>Wallet (SDK)</Title>
+    <Authors>Wallet Inc Development Team</Authors>
+    <Company>Wallet Inc</Company>
+    <Copyright>Copyright 2026 Wallet Inc</Copyright>
+    <Description>Official .NET SDK for the Wallet Inc CRM &amp; Digital Payments platform.</Description>
+    <PackageProjectUrl>https://wallet.dev</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WalletInc/sdk-csharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>wallet;wallet-inc;sdk;api;crm;payments;rewards;vouchers;loyalty;membership;sms</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>https://github.com/WalletInc/sdk-csharp/releases</PackageReleaseNotes>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,5 +29,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WalletInc\WalletInc.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../NOTICE" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
