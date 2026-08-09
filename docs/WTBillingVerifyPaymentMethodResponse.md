@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **IsTrialEligible** | **bool** |  | 
 **SubscriptionStatus** | **string** |  | [optional] 
 **TrialEnd** | **string** |  | [optional] 
+**NextChargeAmount** | **double** |  | [optional] 
+**BillingPeriod** | **string** |  | [optional] 
+**NextChargeCurrency** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -34,6 +34,8 @@ Name | Type | Description | Notes
 **PlanNickname** | **string** |  | 
 **BillingCadence** | **string** |  | [optional] 
 **MaxSMSCount** | **double** |  | 
+**MaxPhoneNumbers** | **double** |  | [optional] 
+**SubaccountSid** | **string** |  | [optional] 
 **IsSmsAgreement** | **bool** |  | [optional] 
 **IsWhiteLabeled** | **bool** |  | [optional] 
 **IsFeatured** | **bool** |  | [optional] 
