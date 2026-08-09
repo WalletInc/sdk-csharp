@@ -4,6 +4,7 @@ api/openapi.yaml
 appveyor.yml
 docs/A2PApplicationSubmission.md
 docs/A2PBaseIntake.md
+docs/A2PBillingConsent.md
 docs/A2PGovernmentSubmission.md
 docs/A2PNonProfitSubmission.md
 docs/A2PPublicSubmission.md
@@ -479,6 +480,7 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/A2PBillingConsentTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -562,6 +564,7 @@ src/WalletInc/Client/RetryConfiguration.cs
 src/WalletInc/Client/WebRequestPathBuilder.cs
 src/WalletInc/Model/A2PApplicationSubmission.cs
 src/WalletInc/Model/A2PBaseIntake.cs
+src/WalletInc/Model/A2PBillingConsent.cs
 src/WalletInc/Model/A2PGovernmentSubmission.cs
 src/WalletInc/Model/A2PNonProfitSubmission.cs
 src/WalletInc/Model/A2PPublicSubmission.cs

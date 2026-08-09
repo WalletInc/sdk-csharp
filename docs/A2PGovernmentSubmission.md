@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **MessagingVolumeHigh** | **bool** |  | 
 **JobTitle** | **string** |  | 
 **JobPosition** | **JobPosition** |  | 
+**BillingConsent** | [**A2PBillingConsent**](A2PBillingConsent.md) |  | [optional] 
 **BusinessName** | **string** |  | 
 **BusinessType** | **BusinessTypeNonProfit** |  | 
 **Address1** | **string** |  | 

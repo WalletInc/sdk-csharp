@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **FirstName** | **string** |  | 
 **LastName** | **string** |  | 
 **Email** | **string** |  | 
+**BillingConsent** | [**A2PBillingConsent**](A2PBillingConsent.md) |  | [optional] 
 **BusinessName** | **string** |  | 
 **BusinessType** | **BusinessTypeSoleProprietorship** |  | 
 **Address1** | **string** |  | 
