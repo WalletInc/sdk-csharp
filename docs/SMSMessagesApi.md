@@ -14,6 +14,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchMerchantOutboundSMS**](SMSMessagesApi.md#fetchmerchantoutboundsms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes |
 | [**FetchOutboundSMS**](SMSMessagesApi.md#fetchoutboundsms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS |
 | [**FetchOutboundSMSByPage**](SMSMessagesApi.md#fetchoutboundsmsbypage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page |
+| [**FetchSendFreezeStatus**](SMSMessagesApi.md#fetchsendfreezestatus) | **GET** /v2/sms/sendfreeze/status | Get the merchant&#39;s outbound-SMS send-freeze status (KAN-440). |
 | [**RetrieveSentAndMaxCountOfMessages**](SMSMessagesApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the message segments used by the merchant within the current billing cycle |
 
 <a id="countinboundsms"></a>
@@ -1013,6 +1014,97 @@ catch (ApiException e)
 ### Return type
 
 [**FetchOutboundSMSByPage200Response**](FetchOutboundSMSByPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchsendfreezestatus"></a>
+# **FetchSendFreezeStatus**
+> WTSendFreezeStatus FetchSendFreezeStatus ()
+
+Get the merchant's outbound-SMS send-freeze status (KAN-440).
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchSendFreezeStatusExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SMSMessagesApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Get the merchant's outbound-SMS send-freeze status (KAN-440).
+                WTSendFreezeStatus result = apiInstance.FetchSendFreezeStatus();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SMSMessagesApi.FetchSendFreezeStatus: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchSendFreezeStatusWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the merchant's outbound-SMS send-freeze status (KAN-440).
+    ApiResponse<WTSendFreezeStatus> response = apiInstance.FetchSendFreezeStatusWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SMSMessagesApi.FetchSendFreezeStatusWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**WTSendFreezeStatus**](WTSendFreezeStatus.md)
 
 ### Authorization
 

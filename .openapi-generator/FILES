@@ -433,6 +433,8 @@ docs/WTSMSUpdatePhoneNumberConfig.md
 docs/WTSegmentAdvisory.md
 docs/WTSegmentEstimate.md
 docs/WTSegmentEstimateRequest.md
+docs/WTSendFreeze.md
+docs/WTSendFreezeStatus.md
 docs/WTServiceCreateParams.md
 docs/WTServiceUpdateParams.md
 docs/WTSettingsSetPassword.md
@@ -480,6 +482,8 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTSendFreezeStatusTests.cs
+src/WalletInc.Test/Model/WTSendFreezeTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -936,6 +940,8 @@ src/WalletInc/Model/WTSMSUpdatePhoneNumberConfig.cs
 src/WalletInc/Model/WTSegmentAdvisory.cs
 src/WalletInc/Model/WTSegmentEstimate.cs
 src/WalletInc/Model/WTSegmentEstimateRequest.cs
+src/WalletInc/Model/WTSendFreeze.cs
+src/WalletInc/Model/WTSendFreezeStatus.cs
 src/WalletInc/Model/WTServiceCreateParams.cs
 src/WalletInc/Model/WTServiceUpdateParams.cs
 src/WalletInc/Model/WTSettingsSetPassword.cs
