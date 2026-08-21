@@ -438,6 +438,8 @@ docs/WTSendFreezeStatus.md
 docs/WTServiceCreateParams.md
 docs/WTServiceUpdateParams.md
 docs/WTSettingsSetPassword.md
+docs/WTShareActivityReport.md
+docs/WTShareActivityRow.md
 docs/WTSmsSubscriberCreateParams.md
 docs/WTSmsSubscriberCreateParamsWalletUI.md
 docs/WTSmsSubscriberUpdateParams.md
@@ -482,6 +484,8 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTShareActivityReportTests.cs
+src/WalletInc.Test/Model/WTShareActivityRowTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -943,6 +947,8 @@ src/WalletInc/Model/WTSendFreezeStatus.cs
 src/WalletInc/Model/WTServiceCreateParams.cs
 src/WalletInc/Model/WTServiceUpdateParams.cs
 src/WalletInc/Model/WTSettingsSetPassword.cs
+src/WalletInc/Model/WTShareActivityReport.cs
+src/WalletInc/Model/WTShareActivityRow.cs
 src/WalletInc/Model/WTSmsSubscriberCreateParams.cs
 src/WalletInc/Model/WTSmsSubscriberCreateParamsWalletUI.cs
 src/WalletInc/Model/WTSmsSubscriberUpdateParams.cs
