@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Category** | **string** |  | 
 **Volume** | **double** |  | [optional] 
 **Value** | **double** |  | [optional] 
+**ValueBasis** | **string** |  | [optional] 
 **Features** | [**List&lt;SubscriptionFeature&gt;**](SubscriptionFeature.md) |  | 
 **Pages** | [**List&lt;PortalPage&gt;**](PortalPage.md) |  | 
 **IconName** | **string** |  | 
