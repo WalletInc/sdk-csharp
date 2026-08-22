@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 **HearAboutUs** | **string** |  | [optional] 
 **HearAboutUsDetails** | **string** |  | [optional] 
 **CompanyName** | **string** |  | 
-**MerchantType** | **string** |  | 
-**StreetAddress1** | **string** |  | 
-**StreetAddress2** | **string** |  | 
-**City** | **string** |  | 
-**State** | **string** |  | 
-**Zip** | **string** |  | 
-**Country** | **string** |  | 
-**PhoneNumber** | **string** |  | 
+**MerchantType** | **string** |  | [optional] 
+**StreetAddress1** | **string** |  | [optional] 
+**StreetAddress2** | **string** |  | [optional] 
+**City** | **string** |  | [optional] 
+**State** | **string** |  | [optional] 
+**Zip** | **string** |  | [optional] 
+**Country** | **string** |  | [optional] 
+**PhoneNumber** | **string** |  | [optional] 
 **Ein** | **string** |  | [optional] 
 **GaClientId** | **string** |  | [optional] 
 **GaMeasurementId** | **string** |  | [optional] 
