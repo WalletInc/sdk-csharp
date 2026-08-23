@@ -7,6 +7,7 @@ All URIs are relative to *https://api.wall.et*
 | [**ClaimTicket**](InteractionsApi.md#claimticket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID |
 | [**CreateAdvertisementCreditScan**](InteractionsApi.md#createadvertisementcreditscan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan |
 | [**CreateEmployeeVCard**](InteractionsApi.md#createemployeevcard) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card |
+| [**CreateGuestPaymentIntent**](InteractionsApi.md#createguestpaymentintent) | **POST** /wallet/payments/createIntent | Create a guest checkout PaymentIntent (KAN-802) |
 | [**CreateIcsFile**](InteractionsApi.md#createicsfile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
 | [**CreateVirtualBusinessCardVCard**](InteractionsApi.md#createvirtualbusinesscardvcard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
 | [**FetchActiveDynamicVouchers**](InteractionsApi.md#fetchactivedynamicvouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers |
@@ -14,6 +15,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID**](InteractionsApi.md#fetchallstaticvouchersassociatedwithcustomerwithvoucherid) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
 | [**FetchCustomerTicketsWithToken**](InteractionsApi.md#fetchcustomerticketswithtoken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token |
 | [**FetchDynamicVoucherWithVoucherID**](InteractionsApi.md#fetchdynamicvoucherwithvoucherid) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
+| [**FetchGuestOrder**](InteractionsApi.md#fetchguestorder) | **GET** /wallet/payments/order/{id} | Fetch a guest order receipt (KAN-802) |
 | [**FetchMemberInformation**](InteractionsApi.md#fetchmemberinformation) | **GET** /wallet/member | Get member information |
 | [**FetchStaticVoucherWithVoucherID**](InteractionsApi.md#fetchstaticvoucherwithvoucherid) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
 | [**FetchWalletPageWithToken**](InteractionsApi.md#fetchwalletpagewithtoken) | **POST** /wallet/page/token | Get page (token-scoped) |
@@ -299,6 +301,101 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createguestpaymentintent"></a>
+# **CreateGuestPaymentIntent**
+> WTGuestCreatePaymentIntentResponse CreateGuestPaymentIntent (WTGuestCreatePaymentIntentRequest wTGuestCreatePaymentIntentRequest)
+
+Create a guest checkout PaymentIntent (KAN-802)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class CreateGuestPaymentIntentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
+            var wTGuestCreatePaymentIntentRequest = new WTGuestCreatePaymentIntentRequest(); // WTGuestCreatePaymentIntentRequest | 
+
+            try
+            {
+                // Create a guest checkout PaymentIntent (KAN-802)
+                WTGuestCreatePaymentIntentResponse result = apiInstance.CreateGuestPaymentIntent(wTGuestCreatePaymentIntentRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling InteractionsApi.CreateGuestPaymentIntent: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateGuestPaymentIntentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a guest checkout PaymentIntent (KAN-802)
+    ApiResponse<WTGuestCreatePaymentIntentResponse> response = apiInstance.CreateGuestPaymentIntentWithHttpInfo(wTGuestCreatePaymentIntentRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InteractionsApi.CreateGuestPaymentIntentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTGuestCreatePaymentIntentRequest** | [**WTGuestCreatePaymentIntentRequest**](WTGuestCreatePaymentIntentRequest.md) |  |  |
+
+### Return type
+
+[**WTGuestCreatePaymentIntentResponse**](WTGuestCreatePaymentIntentResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -958,6 +1055,103 @@ catch (ApiException e)
 ### Return type
 
 [**DynamicVoucher**](DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchguestorder"></a>
+# **FetchGuestOrder**
+> WTGuestOrderReceipt FetchGuestOrder (string id, string phoneVerificationToken)
+
+Fetch a guest order receipt (KAN-802)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchGuestOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | 
+            var phoneVerificationToken = "phoneVerificationToken_example";  // string | 
+
+            try
+            {
+                // Fetch a guest order receipt (KAN-802)
+                WTGuestOrderReceipt result = apiInstance.FetchGuestOrder(id, phoneVerificationToken);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling InteractionsApi.FetchGuestOrder: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchGuestOrderWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Fetch a guest order receipt (KAN-802)
+    ApiResponse<WTGuestOrderReceipt> response = apiInstance.FetchGuestOrderWithHttpInfo(id, phoneVerificationToken);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InteractionsApi.FetchGuestOrderWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** |  |  |
+| **phoneVerificationToken** | **string** |  |  |
+
+### Return type
+
+[**WTGuestOrderReceipt**](WTGuestOrderReceipt.md)
 
 ### Authorization
 

@@ -86,6 +86,8 @@ docs/FetchCustomerTicketsWithTokenRequest.md
 docs/FetchImportedListRecipientsByPage200Response.md
 docs/FetchInboundSMSByPage200Response.md
 docs/FetchIndustry200Response.md
+docs/FetchIndustry200ResponseAnyOf.md
+docs/FetchIndustry200ResponseAnyOf1.md
 docs/FetchMembersCount200Response.md
 docs/FetchOptInListSubscribersByPage200Response.md
 docs/FetchOutboundSMSByPage200Response.md
@@ -307,6 +309,7 @@ docs/WTAuthenticationResetPassword.md
 docs/WTAuthenticationSSOLoginForDiscourse.md
 docs/WTBillingChangePlan.md
 docs/WTBillingSavePaymentMethod.md
+docs/WTBillingSetIndustry.md
 docs/WTBillingVerifyPaymentMethodResponse.md
 docs/WTBrandingFooterLink.md
 docs/WTCertificateDealCreateRequest.md
@@ -360,6 +363,10 @@ docs/WTGamingCreateParams.md
 docs/WTGamingUpdateParams.md
 docs/WTGiftCardPurchaseRequest.md
 docs/WTGiftClaimRequest.md
+docs/WTGuestAmountBreakdown.md
+docs/WTGuestCreatePaymentIntentRequest.md
+docs/WTGuestCreatePaymentIntentResponse.md
+docs/WTGuestOrderReceipt.md
 docs/WTImageGridCreateParams.md
 docs/WTImageGridUpdateParams.md
 docs/WTImportConsentBasis.md
@@ -484,6 +491,13 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/FetchIndustry200ResponseAnyOf1Tests.cs
+src/WalletInc.Test/Model/FetchIndustry200ResponseAnyOfTests.cs
+src/WalletInc.Test/Model/WTBillingSetIndustryTests.cs
+src/WalletInc.Test/Model/WTGuestAmountBreakdownTests.cs
+src/WalletInc.Test/Model/WTGuestCreatePaymentIntentRequestTests.cs
+src/WalletInc.Test/Model/WTGuestCreatePaymentIntentResponseTests.cs
+src/WalletInc.Test/Model/WTGuestOrderReceiptTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -635,6 +649,8 @@ src/WalletInc/Model/FetchCustomerTicketsWithTokenRequest.cs
 src/WalletInc/Model/FetchImportedListRecipientsByPage200Response.cs
 src/WalletInc/Model/FetchInboundSMSByPage200Response.cs
 src/WalletInc/Model/FetchIndustry200Response.cs
+src/WalletInc/Model/FetchIndustry200ResponseAnyOf.cs
+src/WalletInc/Model/FetchIndustry200ResponseAnyOf1.cs
 src/WalletInc/Model/FetchMembersCount200Response.cs
 src/WalletInc/Model/FetchOptInListSubscribersByPage200Response.cs
 src/WalletInc/Model/FetchOutboundSMSByPage200Response.cs
@@ -814,6 +830,7 @@ src/WalletInc/Model/WTAuthenticationResetPassword.cs
 src/WalletInc/Model/WTAuthenticationSSOLoginForDiscourse.cs
 src/WalletInc/Model/WTBillingChangePlan.cs
 src/WalletInc/Model/WTBillingSavePaymentMethod.cs
+src/WalletInc/Model/WTBillingSetIndustry.cs
 src/WalletInc/Model/WTBillingVerifyPaymentMethodResponse.cs
 src/WalletInc/Model/WTBrandingFooterLink.cs
 src/WalletInc/Model/WTCertificateDealCreateRequest.cs
@@ -867,6 +884,10 @@ src/WalletInc/Model/WTGamingCreateParams.cs
 src/WalletInc/Model/WTGamingUpdateParams.cs
 src/WalletInc/Model/WTGiftCardPurchaseRequest.cs
 src/WalletInc/Model/WTGiftClaimRequest.cs
+src/WalletInc/Model/WTGuestAmountBreakdown.cs
+src/WalletInc/Model/WTGuestCreatePaymentIntentRequest.cs
+src/WalletInc/Model/WTGuestCreatePaymentIntentResponse.cs
+src/WalletInc/Model/WTGuestOrderReceipt.cs
 src/WalletInc/Model/WTImageGridCreateParams.cs
 src/WalletInc/Model/WTImageGridUpdateParams.cs
 src/WalletInc/Model/WTImportConsentBasis.cs

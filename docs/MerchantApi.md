@@ -4,7 +4,7 @@ All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ArchiveMerchantProfile**](MerchantApi.md#archivemerchantprofile) | **DELETE** /v2/merchant/delete | Archive Merchant |
+| [**ArchiveMerchantProfile**](MerchantApi.md#archivemerchantprofile) | **DELETE** /v2/merchant/delete | Terminate (close) the merchant account |
 | [**FetchCustomRoles**](MerchantApi.md#fetchcustomroles) | **GET** /v2/merchant/roles/custom | Get custom roles |
 | [**FetchEmployees**](MerchantApi.md#fetchemployees) | **GET** /v2/merchant/employees/all | Get all employees |
 | [**FetchPublicEmployees**](MerchantApi.md#fetchpublicemployees) | **GET** /v2/merchant/employees/public | Get public representative employees of the merchant |
@@ -17,7 +17,7 @@ All URIs are relative to *https://api.wall.et*
 # **ArchiveMerchantProfile**
 > Object ArchiveMerchantProfile ()
 
-Archive Merchant
+Terminate (close) the merchant account
 
 ### Example
 ```csharp
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Archive Merchant
+                // Terminate (close) the merchant account
                 Object result = apiInstance.ArchiveMerchantProfile();
                 Debug.WriteLine(result);
             }
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Archive Merchant
+    // Terminate (close) the merchant account
     ApiResponse<Object> response = apiInstance.ArchiveMerchantProfileWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

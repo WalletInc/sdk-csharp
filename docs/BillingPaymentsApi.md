@@ -19,6 +19,7 @@ All URIs are relative to *https://api.wall.et*
 | [**RunFinancingSoftPull**](BillingPaymentsApi.md#runfinancingsoftpull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off). |
 | [**SavePaymentMethod**](BillingPaymentsApi.md#savepaymentmethod) | **PUT** /v2/billing/paymentMethod | Save payment method |
 | [**SetDefaultPaymentMethod**](BillingPaymentsApi.md#setdefaultpaymentmethod) | **POST** /v2/billing/paymentMethod/default | Set payment method as default |
+| [**SetIndustry**](BillingPaymentsApi.md#setindustry) | **PUT** /v2/billing/industry | Set merchant&#39;s industry |
 | [**UpcomingInvoices**](BillingPaymentsApi.md#upcominginvoices) | **GET** /v2/billing/invoices/upcoming | Get upcoming invoices |
 | [**VerifyPaymentMethod**](BillingPaymentsApi.md#verifypaymentmethod) | **GET** /v2/billing/paymentMethod | Verify payment method |
 
@@ -1403,6 +1404,102 @@ catch (ApiException e)
 ### Return type
 
 [**Merchant**](Merchant.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="setindustry"></a>
+# **SetIndustry**
+> FetchIndustry200ResponseAnyOf SetIndustry (WTBillingSetIndustry wTBillingSetIndustry)
+
+Set merchant's industry
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class SetIndustryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new BillingPaymentsApi(httpClient, config, httpClientHandler);
+            var wTBillingSetIndustry = new WTBillingSetIndustry(); // WTBillingSetIndustry | 
+
+            try
+            {
+                // Set merchant's industry
+                FetchIndustry200ResponseAnyOf result = apiInstance.SetIndustry(wTBillingSetIndustry);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling BillingPaymentsApi.SetIndustry: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SetIndustryWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set merchant's industry
+    ApiResponse<FetchIndustry200ResponseAnyOf> response = apiInstance.SetIndustryWithHttpInfo(wTBillingSetIndustry);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BillingPaymentsApi.SetIndustryWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTBillingSetIndustry** | [**WTBillingSetIndustry**](WTBillingSetIndustry.md) |  |  |
+
+### Return type
+
+[**FetchIndustry200ResponseAnyOf**](FetchIndustry200ResponseAnyOf.md)
 
 ### Authorization
 

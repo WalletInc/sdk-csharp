@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **IndustryName** | **string** |  | 
 **InfoGenesisPropertyID** | **string** |  | 
 **IsFrozen** | **bool** |  | 
+**IsClosed** | **bool** |  | 
 **BillingContactEmployeeID** | **string** |  | 
 **MarketingContactEmployeeID** | **string** |  | 
 **TechnicalContactEmployeeID** | **string** |  | 

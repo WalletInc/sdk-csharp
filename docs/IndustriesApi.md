@@ -10,7 +10,7 @@ All URIs are relative to *https://api.wall.et*
 
 <a id="fetchallindustries"></a>
 # **FetchAllIndustries**
-> List&lt;FetchIndustry200Response&gt; FetchAllIndustries ()
+> List&lt;FetchIndustry200ResponseAnyOf&gt; FetchAllIndustries ()
 
 Get all Industries & Pricing Plans
 
@@ -39,7 +39,7 @@ namespace Example
             try
             {
                 // Get all Industries & Pricing Plans
-                List<FetchIndustry200Response> result = apiInstance.FetchAllIndustries();
+                List<FetchIndustry200ResponseAnyOf> result = apiInstance.FetchAllIndustries();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -60,7 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get all Industries & Pricing Plans
-    ApiResponse<List<FetchIndustry200Response>> response = apiInstance.FetchAllIndustriesWithHttpInfo();
+    ApiResponse<List<FetchIndustry200ResponseAnyOf>> response = apiInstance.FetchAllIndustriesWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -77,7 +77,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;FetchIndustry200Response&gt;**](FetchIndustry200Response.md)
+[**List&lt;FetchIndustry200ResponseAnyOf&gt;**](FetchIndustry200ResponseAnyOf.md)
 
 ### Authorization
 
