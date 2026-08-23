@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **Cfuvid** | **string** |  | [optional] 
 **Schedule** | **Object** | Construct a type with a set of properties K of type T | [optional] 
 **IsEmailNotificationDisabled** | **bool** |  | [optional] 
+**ChromeTheme** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
