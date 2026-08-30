@@ -6,6 +6,7 @@ All URIs are relative to *https://api.wall.et*
 |--------|--------------|-------------|
 | [**FetchActiveVouchers**](CustomerApi.md#fetchactivevouchers) | **GET** /v2/customer/vouchers/active | Get active static vouchers |
 | [**FetchAllVouchers**](CustomerApi.md#fetchallvouchers) | **GET** /v2/customer/vouchers/all | Get all static vouchers |
+| [**FetchCustomerByChatIdentity**](CustomerApi.md#fetchcustomerbychatidentity) | **GET** /customer/chatIdentity/{chatUserID} | Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator&#39;s own merchant. The guest phone number is resolved server-side and never travels to the chat processor. |
 | [**FetchExpiredVouchers**](CustomerApi.md#fetchexpiredvouchers) | **GET** /v2/customer/vouchers/expired | Get expired static vouchers |
 | [**FetchRedeemedVouchers**](CustomerApi.md#fetchredeemedvouchers) | **GET** /v2/customer/vouchers/redeemed | Get redeemed static vouchers |
 | [**FetchRefundedVouchers**](CustomerApi.md#fetchrefundedvouchers) | **GET** /v2/customer/vouchers/refunded | Get refunded static vouchers |
@@ -189,6 +190,102 @@ catch (ApiException e)
 ### Return type
 
 [**List&lt;StaticVoucher&gt;**](StaticVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchcustomerbychatidentity"></a>
+# **FetchCustomerByChatIdentity**
+> Object FetchCustomerByChatIdentity (string chatUserID)
+
+Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchCustomerByChatIdentityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new CustomerApi(httpClient, config, httpClientHandler);
+            var chatUserID = "chatUserID_example";  // string | 
+
+            try
+            {
+                // Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
+                Object result = apiInstance.FetchCustomerByChatIdentity(chatUserID);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CustomerApi.FetchCustomerByChatIdentity: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchCustomerByChatIdentityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
+    ApiResponse<Object> response = apiInstance.FetchCustomerByChatIdentityWithHttpInfo(chatUserID);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomerApi.FetchCustomerByChatIdentityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **chatUserID** | **string** |  |  |
+
+### Return type
+
+**Object**
 
 ### Authorization
 

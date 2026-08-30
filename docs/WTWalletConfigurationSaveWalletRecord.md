@@ -42,6 +42,8 @@ Name | Type | Description | Notes
 **IsDining** | **bool** |  | 
 **IsLounges** | **bool** |  | 
 **IsMapDirections** | **bool** |  | 
+**IsDonationEnabled** | **bool** |  | 
+**DonationLabel** | **string** |  | [optional] 
 **IsLinkBook** | **bool** |  | 
 **IsImageGrid** | **bool** |  | 
 **IsVideos** | **bool** |  | 
@@ -70,6 +72,7 @@ Name | Type | Description | Notes
 **SocialYouTubeURL** | **string** |  | [optional] 
 **SocialTwitterURL** | **string** |  | [optional] 
 **SocialLinkedInURL** | **string** |  | [optional] 
+**SocialTikTokURL** | **string** |  | [optional] 
 **SocialBackgroundColor** | **string** |  | [optional] 
 **SocialFontColor** | **string** |  | [optional] 
 **PrimaryPhoneNumber** | **string** |  | [optional] 

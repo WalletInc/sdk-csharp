@@ -9,6 +9,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAllMerchantURLs**](ShortLinksApi.md#fetchallmerchanturls) | **GET** /v2/business/merchantUrl/all | Get all Short Links |
 | [**FetchMerchantURL**](ShortLinksApi.md#fetchmerchanturl) | **GET** /v2/business/merchantUrl/{id} | Get Short Link |
 | [**FetchMerchantURLRequests**](ShortLinksApi.md#fetchmerchanturlrequests) | **GET** /v2/business/merchantUrl/requests/{id} | Get Short Link traffic |
+| [**FetchMerchantURLRequestsPaged**](ShortLinksApi.md#fetchmerchanturlrequestspaged) | **GET** /business/merchantUrl/requests/{id}/paged | Get Short Link traffic (paginated) |
 | [**RestoreMerchantURL**](ShortLinksApi.md#restoremerchanturl) | **PATCH** /v2/business/merchantUrl/{id} | Restore Short Link |
 | [**UpdateMerchantURL**](ShortLinksApi.md#updatemerchanturl) | **PUT** /v2/business/merchantUrl/{id} | Update Short Link |
 
@@ -471,6 +472,106 @@ catch (ApiException e)
 ### Return type
 
 [**List&lt;WalletPageView&gt;**](WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchmerchanturlrequestspaged"></a>
+# **FetchMerchantURLRequestsPaged**
+> FetchMerchantURLRequestsPaged200Response FetchMerchantURLRequestsPaged (string id, double? page = null, double? limit = null)
+
+Get Short Link traffic (paginated)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchMerchantURLRequestsPagedExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ShortLinksApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | 
+            var page = 1.2D;  // double? |  (optional) 
+            var limit = 1.2D;  // double? |  (optional) 
+
+            try
+            {
+                // Get Short Link traffic (paginated)
+                FetchMerchantURLRequestsPaged200Response result = apiInstance.FetchMerchantURLRequestsPaged(id, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ShortLinksApi.FetchMerchantURLRequestsPaged: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchMerchantURLRequestsPagedWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get Short Link traffic (paginated)
+    ApiResponse<FetchMerchantURLRequestsPaged200Response> response = apiInstance.FetchMerchantURLRequestsPagedWithHttpInfo(id, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ShortLinksApi.FetchMerchantURLRequestsPagedWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** |  |  |
+| **page** | **double?** |  | [optional]  |
+| **limit** | **double?** |  | [optional]  |
+
+### Return type
+
+[**FetchMerchantURLRequestsPaged200Response**](FetchMerchantURLRequestsPaged200Response.md)
 
 ### Authorization
 

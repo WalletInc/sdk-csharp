@@ -6,7 +6,6 @@ All URIs are relative to *https://api.wall.et*
 |--------|--------------|-------------|
 | [**Login**](AuthenticationApi.md#login) | **POST** /authentication/login | Login |
 | [**LoginStatus**](AuthenticationApi.md#loginstatus) | **GET** /authentication/status/{token} | Retrieve session token status |
-| [**Logout**](AuthenticationApi.md#logout) | **DELETE** /authentication/logout | Logout |
 | [**Register**](AuthenticationApi.md#register) | **POST** /authentication/register | Register |
 
 <a id="login"></a>
@@ -180,97 +179,6 @@ catch (ApiException e)
 ### Return type
 
 [**LoginStatus200Response**](LoginStatus200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ok |  -  |
-| **401** | Authentication Failed |  -  |
-| **422** | Validation Failed |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="logout"></a>
-# **Logout**
-> string Logout ()
-
-Logout
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using WalletInc.Api;
-using WalletInc.Client;
-using WalletInc.Model;
-
-namespace Example
-{
-    public class LogoutExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.wall.et";
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new AuthenticationApi(httpClient, config, httpClientHandler);
-
-            try
-            {
-                // Logout
-                string result = apiInstance.Logout();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.Logout: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the LogoutWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Logout
-    ApiResponse<string> response = apiInstance.LogoutWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.LogoutWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-**string**
 
 ### Authorization
 

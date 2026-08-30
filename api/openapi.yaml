@@ -6,11 +6,11 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.42.0**, built 2026-08-23T20:20:50.110Z
+    **Spec version 2.43.0**, built 2026-08-30T17:22:30.636Z
   license:
     name: https://wallet.law
   title: wallet-api
-  version: 2.42.0
+  version: 2.43.0
 servers:
 - description: Production API
   url: https://api.wall.et
@@ -2347,6 +2347,72 @@ paths:
         in the Flow B money path.
       tags:
       - Stripe Connect
+  /customer/chatIdentity/{chatUserID}:
+    get:
+      operationId: fetchCustomerByChatIdentity
+      parameters:
+      - explode: false
+        in: path
+        name: chatUserID
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Resolve a chat identity to its customer
+        Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that
+        POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest
+        phone number is resolved server-side and never travels to the chat processor.
+      tags:
+      - Customer
   /v2/customer/vouchers/all:
     get:
       operationId: fetchAllVouchers
@@ -3899,8 +3965,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:19.525Z
-                    updatedAt: 2026-08-23T20:19:19.525Z
+                    createdAt: 2026-08-30T17:21:08.082Z
+                    updatedAt: 2026-08-30T17:21:08.082Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -11234,6 +11300,129 @@ paths:
       summary: Get Short Link traffic
       tags:
       - Short Links
+  /business/merchantUrl/requests/{id}/paged:
+    get:
+      operationId: fetchMerchantURLRequestsPaged
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          $ref: "#/components/schemas/ObjectNanoID"
+        style: simple
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    results:
+                    - id: kfyJqz7l8v
+                      createdAt: 2020-06-23T02:10:25.000Z
+                      updatedAt: 2020-06-23T02:10:25.000Z
+                      merchantID: MPvlw729Db
+                      ip: 72.205.93.123
+                      walletObjectID: xjBs3LEUIk
+                      walletObjectPrefix: WC
+                      parentObjectID: ""
+                      parentObjectPrefix: ""
+                      sessionID: UId0UaGGRFHf
+                      navigatorAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\
+                        \ (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+                      browserName: Chrome
+                      browserVersion: 103.0.0.0
+                      engineName: Blink
+                      engineVersion: 103.0.0.0
+                      oSName: Windows
+                      oSVersion: "10"
+                      isMobile: false
+                      deviceVendor: ""
+                      deviceModel: ""
+                      deviceType: ""
+                      status: success
+                      country: United States
+                      countryCode: US
+                      region: CA
+                      regionName: California
+                      city: Santa Barbara
+                      zip: "93103"
+                      latitude: 34.4282
+                      geoPoint:
+                        latitude: 34.4282
+                      timezone: America/Los_Angeles
+                      isp: Cox Communications Inc.
+                      org: Cox Communications Inc.
+                      asn: ""
+                      isPhoneVerified: true
+                      isActive: true
+                    length: 1
+                    total: 1
+              schema:
+                $ref: "#/components/schemas/fetchMerchantURLRequestsPaged_200_response"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get Short Link traffic (paginated)
+      tags:
+      - Short Links
   /sms/segment-estimate:
     post:
       operationId: estimateSMSSegments
@@ -11817,6 +12006,74 @@ paths:
         Fetch one of the authenticated merchant's orders by id
         Returns the order with its line items. 403-family error if the order belongs to another
         merchant (ownership is asserted server-side).
+      tags:
+      - Orders
+  /orders/{orderId}/donor-note/redact:
+    post:
+      operationId: redactOrderDonorNote
+      parameters:
+      - explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTOrder"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Redact (soft-delete) the donor note on one of the authenticated merchant's orders
+        KAN-862 takedown path: hides a guest-supplied tip / donation note from every surface. The original
+        text is RETAINED server-side (soft-delete) for a possible exposure / legal review; no "[redacted]"
+        placeholder is shown. Idempotent (an order with no note, or an already-redacted note, is a no-op).
+        403-family error if the order belongs to another merchant (ownership is asserted server-side).
       tags:
       - Orders
   /v2/performances/all:
@@ -21811,8 +22068,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-08-23T20:19:23.575Z
-                    updatedAt: 2026-08-23T20:19:23.575Z
+                    createdAt: 2026-08-30T17:21:12.290Z
+                    updatedAt: 2026-08-30T17:21:12.290Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21886,8 +22143,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-08-23T20:19:23.509Z
-                    updatedAt: 2026-08-23T20:19:23.509Z
+                    createdAt: 2026-08-30T17:21:12.251Z
+                    updatedAt: 2026-08-30T17:21:12.251Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -21961,8 +22218,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-08-23T20:19:23.581Z
-                    updatedAt: 2026-08-23T20:19:23.581Z
+                    createdAt: 2026-08-30T17:21:12.296Z
+                    updatedAt: 2026-08-30T17:21:12.296Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22042,8 +22299,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-08-23T20:19:23.539Z
-                    updatedAt: 2026-08-23T20:19:23.539Z
+                    createdAt: 2026-08-30T17:21:12.278Z
+                    updatedAt: 2026-08-30T17:21:12.278Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22143,8 +22400,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-08-23T20:19:23.518Z
-                    updatedAt: 2026-08-23T20:19:23.518Z
+                    createdAt: 2026-08-30T17:21:12.263Z
+                    updatedAt: 2026-08-30T17:21:12.263Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22440,8 +22697,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.682Z
-                    updatedAt: 2026-08-23T20:19:23.682Z
+                    createdAt: 2026-08-30T17:21:12.397Z
+                    updatedAt: 2026-08-30T17:21:12.397Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22518,8 +22775,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.633Z
-                    updatedAt: 2026-08-23T20:19:23.633Z
+                    createdAt: 2026-08-30T17:21:12.349Z
+                    updatedAt: 2026-08-30T17:21:12.349Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22596,8 +22853,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.686Z
-                    updatedAt: 2026-08-23T20:19:23.686Z
+                    createdAt: 2026-08-30T17:21:12.401Z
+                    updatedAt: 2026-08-30T17:21:12.401Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22680,8 +22937,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.669Z
-                    updatedAt: 2026-08-23T20:19:23.669Z
+                    createdAt: 2026-08-30T17:21:12.384Z
+                    updatedAt: 2026-08-30T17:21:12.384Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22784,8 +23041,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.643Z
-                    updatedAt: 2026-08-23T20:19:23.643Z
+                    createdAt: 2026-08-30T17:21:12.359Z
+                    updatedAt: 2026-08-30T17:21:12.359Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23029,8 +23286,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.825Z
-                    updatedAt: 2026-08-23T20:19:23.825Z
+                    createdAt: 2026-08-30T17:21:12.542Z
+                    updatedAt: 2026-08-30T17:21:12.542Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23113,8 +23370,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.777Z
-                    updatedAt: 2026-08-23T20:19:23.777Z
+                    createdAt: 2026-08-30T17:21:12.486Z
+                    updatedAt: 2026-08-30T17:21:12.486Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23197,8 +23454,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.829Z
-                    updatedAt: 2026-08-23T20:19:23.829Z
+                    createdAt: 2026-08-30T17:21:12.550Z
+                    updatedAt: 2026-08-30T17:21:12.550Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23287,8 +23544,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.810Z
-                    updatedAt: 2026-08-23T20:19:23.810Z
+                    createdAt: 2026-08-30T17:21:12.521Z
+                    updatedAt: 2026-08-30T17:21:12.521Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23397,8 +23654,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.787Z
-                    updatedAt: 2026-08-23T20:19:23.787Z
+                    createdAt: 2026-08-30T17:21:12.496Z
+                    updatedAt: 2026-08-30T17:21:12.496Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23616,8 +23873,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.836Z
-                    updatedAt: 2026-08-23T20:19:23.836Z
+                    createdAt: 2026-08-30T17:21:12.561Z
+                    updatedAt: 2026-08-30T17:21:12.561Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23746,8 +24003,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.897Z
-                    updatedAt: 2026-08-23T20:19:23.897Z
+                    createdAt: 2026-08-30T17:21:12.654Z
+                    updatedAt: 2026-08-30T17:21:12.654Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -23962,8 +24219,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.884Z
-                    updatedAt: 2026-08-23T20:19:23.884Z
+                    createdAt: 2026-08-30T17:21:12.640Z
+                    updatedAt: 2026-08-30T17:21:12.640Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -24113,8 +24370,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.912Z
-                    updatedAt: 2026-08-23T20:19:23.912Z
+                    createdAt: 2026-08-30T17:21:12.673Z
+                    updatedAt: 2026-08-30T17:21:12.673Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -24237,8 +24494,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:23.918Z
-                    updatedAt: 2026-08-23T20:19:23.918Z
+                    createdAt: 2026-08-30T17:21:12.682Z
+                    updatedAt: 2026-08-30T17:21:12.682Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -25700,6 +25957,203 @@ paths:
       summary: Get redemption log
       tags:
       - Merchant Credits
+  /v2/prizePromotions:
+    post:
+      operationId: createPrizePromotion
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTPrizePromotionCreateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizePromotion"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Create a prize-game promotion
+        Creates one instant-win promotion for the authenticated merchant. Guardrails enforced:
+        purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to
+        the merchant, total prize-pool value above $500 requires registration attestation, minimum
+        age 18, and only one live promotion per game type.
+      tags:
+      - Prizes
+  /v2/prizePromotions/all:
+    get:
+      operationId: fetchPrizePromotions
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTPrizePromotion"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List the merchant's prize-game promotions
+      tags:
+      - Prizes
+  /v2/prizePromotions/{promotionID}:
+    put:
+      operationId: updatePrizePromotion
+      parameters:
+      - explode: false
+        in: path
+        name: promotionID
+        required: true
+        schema:
+          $ref: "#/components/schemas/PrefixedNanoID"
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTPrizePromotionUpdateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizePromotion"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: |-
+        Update a prize-game promotion
+        Deactivate a promotion or bring its end date forward.
+      tags:
+      - Prizes
   /v2/payment/staticVoucherCampaign/all:
     get:
       operationId: fetchStaticVoucherCampaigns
@@ -25751,8 +26205,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.113Z
-                    updatedAt: 2026-08-23T20:19:24.113Z
+                    createdAt: 2026-08-30T17:21:12.988Z
+                    updatedAt: 2026-08-30T17:21:12.988Z
                     isActive: true
               schema:
                 items:
@@ -25848,8 +26302,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.115Z
-                    updatedAt: 2026-08-23T20:19:24.115Z
+                    createdAt: 2026-08-30T17:21:12.991Z
+                    updatedAt: 2026-08-30T17:21:12.991Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26142,8 +26596,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.130Z
-                    updatedAt: 2026-08-23T20:19:24.130Z
+                    createdAt: 2026-08-30T17:21:13.013Z
+                    updatedAt: 2026-08-30T17:21:13.013Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26525,8 +26979,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.179Z
-                    updatedAt: 2026-08-23T20:19:24.179Z
+                    createdAt: 2026-08-30T17:21:13.074Z
+                    updatedAt: 2026-08-30T17:21:13.074Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26625,8 +27079,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.196Z
-                    updatedAt: 2026-08-23T20:19:24.196Z
+                    createdAt: 2026-08-30T17:21:13.094Z
+                    updatedAt: 2026-08-30T17:21:13.094Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26718,8 +27172,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.240Z
-                    updatedAt: 2026-08-23T20:19:24.240Z
+                    createdAt: 2026-08-30T17:21:13.145Z
+                    updatedAt: 2026-08-30T17:21:13.145Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26811,8 +27265,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.253Z
-                    updatedAt: 2026-08-23T20:19:24.253Z
+                    createdAt: 2026-08-30T17:21:13.166Z
+                    updatedAt: 2026-08-30T17:21:13.166Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26905,8 +27359,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.269Z
-                    updatedAt: 2026-08-23T20:19:24.269Z
+                    createdAt: 2026-08-30T17:21:13.184Z
+                    updatedAt: 2026-08-30T17:21:13.184Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -26998,8 +27452,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.276Z
-                    updatedAt: 2026-08-23T20:19:24.276Z
+                    createdAt: 2026-08-30T17:21:13.199Z
+                    updatedAt: 2026-08-30T17:21:13.199Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -27097,8 +27551,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-08-23T20:19:24.283Z
-                    updatedAt: 2026-08-23T20:19:24.283Z
+                    createdAt: 2026-08-30T17:21:13.208Z
+                    updatedAt: 2026-08-30T17:21:13.208Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27502,7 +27956,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-08-23T20:19:24.302Z
+                    dateTimeLastViewed: 2026-08-30T17:21:13.233Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27525,8 +27979,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-08-23T20:19:24.302Z
-                    updatedAt: 2026-08-23T20:19:24.302Z
+                    createdAt: 2026-08-30T17:21:13.233Z
+                    updatedAt: 2026-08-30T17:21:13.233Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -27615,7 +28069,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-08-23T20:19:24.310Z
+                    dateTimeLastViewed: 2026-08-30T17:21:13.247Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27638,8 +28092,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-08-23T20:19:24.310Z
-                    updatedAt: 2026-08-23T20:19:24.310Z
+                    createdAt: 2026-08-30T17:21:13.247Z
+                    updatedAt: 2026-08-30T17:21:13.247Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -27735,7 +28189,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-08-23T20:19:24.343Z
+                    dateTimeLastViewed: 2026-08-30T17:21:13.286Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -27758,8 +28212,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-08-23T20:19:24.343Z
-                    updatedAt: 2026-08-23T20:19:24.343Z
+                    createdAt: 2026-08-30T17:21:13.286Z
+                    updatedAt: 2026-08-30T17:21:13.286Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -32837,6 +33291,120 @@ paths:
       summary: Create ad credit scan
       tags:
       - Interactions
+  /wallet/prizeGame/active/{merchantID}:
+    get:
+      operationId: fetchActivePrizeGamePromotion
+      parameters:
+      - explode: false
+        in: path
+        name: merchantID
+        required: true
+        schema:
+          $ref: "#/components/schemas/NanoID"
+        style: simple
+      - explode: true
+        in: query
+        name: gameType
+        required: true
+        schema:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizeGameActivePromotion"
+          description: Ok
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security: []
+      summary: |-
+        Get the active prize-game promotion
+        Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the
+        merchant), title, honest odds disclosure, prize list, play limits, and the minimum age.
+        Returns { active: false } when the merchant has no live promotion for the game.
+      tags:
+      - Interactions
+  /wallet/prizeGame/play:
+    post:
+      operationId: playPrizeGame
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTPrizeGamePlayRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTPrizeGamePlayResult"
+          description: Ok
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security: []
+      summary: |-
+        Play a prize game
+        Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize
+        with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the
+        audited play with its odds snapshot, and on a win issues the prize into the guest's My
+        Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified
+        phone token; carries NO payment surface of any kind (plays are always free).
+      tags:
+      - Interactions
   /wallet/advertisementCredit/fetchScans/{merchantID}:
     post:
       operationId: fetchAdvertisementCreditScansFromList
@@ -33395,6 +33963,54 @@ paths:
       summary: Create a guest checkout PaymentIntent (KAN-802)
       tags:
       - Interactions
+  /wallet/payments/donate:
+    post:
+      operationId: createGuestDonation
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTGuestDonationRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTGuestCreatePaymentIntentResponse"
+          description: Ok
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security: []
+      summary: Create a guest tip / donation PaymentIntent (KAN-861)
+      tags:
+      - Interactions
   /wallet/payments/order/{id}:
     get:
       operationId: fetchGuestOrder
@@ -33595,61 +34211,6 @@ paths:
           description: Internal Server Error
       security: []
       summary: Retrieve session token status
-      tags:
-      - Authentication
-  /authentication/logout:
-    delete:
-      operationId: logout
-      parameters: []
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Ok
-        "401":
-          content:
-            application/json:
-              examples:
-                Example 1:
-                  value:
-                    name: AuthError
-                    message: Authentication Failed
-                    httpErrorCode: 401
-                    trackingCode: AUTH-1
-              schema:
-                $ref: "#/components/schemas/AuthError"
-          description: Authentication Failed
-        "422":
-          content:
-            application/json:
-              examples:
-                Example 1:
-                  value:
-                    fields:
-                    - name: field name
-                      message: reason why validation failed
-                      value: validated value
-                    message: Validation Failed
-              schema:
-                $ref: "#/components/schemas/FalsumError"
-          description: Validation Failed
-        "500":
-          content:
-            application/json:
-              examples:
-                Example 1:
-                  value:
-                    name: InternalServerError_500
-                    message: Internal Server Error
-                    httpErrorCode: 500
-                    trackingCode: ISE-1
-              schema:
-                $ref: "#/components/schemas/InternalServerError_500"
-          description: Internal Server Error
-      security: []
-      summary: Logout
       tags:
       - Authentication
   /authentication/register:
@@ -36891,66 +37452,6 @@ components:
           type: string
       required:
       - memberID
-    DashboardWidget:
-      additionalProperties: {}
-      properties:
-        id:
-          example: ueJDL982Hs
-          maxLength: 10
-          minLength: 10
-          pattern: "^[a-zA-Z0-9]+$"
-          type: string
-        createdAt:
-          format: date-time
-          type: string
-        updatedAt:
-          format: date-time
-          type: string
-        divID:
-          type: string
-        title:
-          type: string
-        subtitle:
-          type: string
-        cssClass:
-          type: string
-        icon:
-          type: string
-        route:
-          type: string
-        type:
-          type: string
-        orderNumber:
-          format: double
-          type: number
-        isDefault:
-          type: boolean
-        category:
-          type: string
-        categoryIcon:
-          type: string
-        categoryOrderNumber:
-          format: double
-          type: number
-        pageName:
-          type: string
-      required:
-      - category
-      - categoryIcon
-      - categoryOrderNumber
-      - createdAt
-      - cssClass
-      - divID
-      - icon
-      - id
-      - isDefault
-      - orderNumber
-      - pageName
-      - route
-      - subtitle
-      - title
-      - type
-      - updatedAt
     Dining:
       additionalProperties: false
       example:
@@ -43028,6 +43529,7 @@ components:
         receiptURL: receiptURL
         acquisitionSource: acquisitionSource
         shareId: shareId
+        donorNote: donorNote
         lineItems:
         - id: null
           productID: null
@@ -43082,6 +43584,8 @@ components:
         acquisitionSource:
           type: string
         shareId:
+          type: string
+        donorNote:
           type: string
         lineItems:
           items:
@@ -43190,6 +43694,8 @@ components:
           type: string
         contentStatus:
           $ref: "#/components/schemas/ContentStatus"
+        story:
+          type: string
       required:
       - items
       - product
@@ -45630,6 +46136,7 @@ components:
         youTube: channel ID or handle
         twitter: your_handle
         linkedIn: company ID or handle
+        tikTok: your_handle
         whatsApp: WhatsApp number
         avatarURL: https://media.wall.et/m/abc/avatar.png
         id: CMueJDL982Hs
@@ -45683,6 +46190,10 @@ components:
           example: company ID or handle
           minimum: 0
           type: string
+        tikTok:
+          example: your_handle
+          minimum: 0
+          type: string
         whatsApp:
           example: WhatsApp number
           minimum: 0
@@ -45733,6 +46244,7 @@ components:
         youTube: channel ID or handle
         twitter: your_handle
         linkedIn: company ID or handle
+        tikTok: your_handle
         whatsApp: WhatsApp number
         avatarURL: https://media.wall.et/m/abc/avatar.png
       properties:
@@ -45779,6 +46291,10 @@ components:
           type: string
         linkedIn:
           example: company ID or handle
+          minimum: 0
+          type: string
+        tikTok:
+          example: your_handle
           minimum: 0
           type: string
         whatsApp:
@@ -45811,6 +46327,7 @@ components:
         youTube: channel ID or handle
         twitter: your_handle
         linkedIn: company ID or handle
+        tikTok: your_handle
         whatsApp: WhatsApp number
         avatarURL: https://media.wall.et/m/abc/avatar.png
       properties:
@@ -45857,6 +46374,10 @@ components:
           type: string
         linkedIn:
           example: company ID or handle
+          minimum: 0
+          type: string
+        tikTok:
+          example: your_handle
           minimum: 0
           type: string
         whatsApp:
@@ -46519,14 +47040,14 @@ components:
             payload
           example: true
           type: boolean
-        pageSize:
-          description: Denotes the number of records per page
-          example: 20
-          format: int32
-          type: integer
         pageNum:
           description: Denotes the page number
           example: 1
+          format: int32
+          type: integer
+        pageSize:
+          description: Denotes the number of records per page
+          example: 20
           format: int32
           type: integer
         sortOrder:
@@ -46539,8 +47060,8 @@ components:
       additionalProperties: false
       example:
         isArchiveIncluded: true
-        pageSize: 20
         pageNum: 1
+        pageSize: 20
         sortOrder: asc
         sortKey: createdAt
         searchKey: memberIdentifier
@@ -46551,14 +47072,14 @@ components:
             payload
           example: true
           type: boolean
-        pageSize:
-          description: Denotes the number of records per page
-          example: 20
-          format: int32
-          type: integer
         pageNum:
           description: Denotes the page number
           example: 1
+          format: int32
+          type: integer
+        pageSize:
+          description: Denotes the number of records per page
+          example: 20
           format: int32
           type: integer
         sortOrder:
@@ -46737,31 +47258,31 @@ components:
     Pick_PaginationRequestWithoutSortOptions.Exclude_keyofPaginationRequestWithoutSortOptions.isArchiveIncluded__:
       description: "From T, pick a set of properties whose keys are in the union K"
       properties:
-        pageSize:
-          description: Denotes the number of records per page
-          example: 20
-          format: int32
-          type: integer
         pageNum:
           description: Denotes the page number
           example: 1
+          format: int32
+          type: integer
+        pageSize:
+          description: Denotes the number of records per page
+          example: 20
           format: int32
           type: integer
     PaginationRequestWithIDAndWithoutSortOptions:
       additionalProperties: false
       example:
-        pageSize: 20
         pageNum: 1
+        pageSize: 20
         id: CMueJDL982Hs
       properties:
-        pageSize:
-          description: Denotes the number of records per page
-          example: 20
-          format: int32
-          type: integer
         pageNum:
           description: Denotes the page number
           example: 1
+          format: int32
+          type: integer
+        pageSize:
+          description: Denotes the number of records per page
+          example: 20
           format: int32
           type: integer
         id:
@@ -49449,6 +49970,213 @@ components:
       - length
       - results
       - total
+    WTPrizeGameType:
+      enum:
+      - wheel
+      - dice
+      - card
+      - scratch
+    WTPrizePromotionPrizeTier:
+      additionalProperties: false
+      example:
+        advertisementCreditID: AC7y7huhdhhd
+        inventory: 10
+        awardedCount: 0
+      properties:
+        advertisementCreditID:
+          example: AC7y7huhdhhd
+          minLength: 1
+          type: string
+        inventory:
+          example: 10
+          format: int32
+          minimum: 1
+          type: integer
+        awardedCount:
+          format: int32
+          type: integer
+      required:
+      - advertisementCreditID
+      - inventory
+    WTPrizeGamePlayLimitPeriod:
+      enum:
+      - day
+      - promotion
+    WTPrizeGameTrigger:
+      enum:
+      - wallet_open
+      - daily_free_play
+      - public_code
+    WTPrizePromotion:
+      additionalProperties: false
+      example:
+        gameType: wheel
+        title: Spin & Win July
+        winOdds: 0.2
+        prizeTiers:
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        perGuestPlayLimit: 1
+        playLimitPeriod: day
+        startDate: 2000-01-23T04:56:07.000+00:00
+        endDate: 2000-01-23T04:56:07.000+00:00
+        triggerType: wallet_open
+        minimumAge: 18
+        registrationAttested: true
+        id: id
+        merchantID: merchantID
+        isActive: true
+        totalPrizePoolValue: 1
+        oddsDisclosure: oddsDisclosure
+      properties:
+        gameType:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        title:
+          example: Spin & Win July
+          minLength: 1
+          type: string
+        winOdds:
+          example: 0.2
+          format: double
+          maximum: 1
+          minimum: 0.0000010
+          type: number
+        prizeTiers:
+          items:
+            $ref: "#/components/schemas/WTPrizePromotionPrizeTier"
+          type: array
+          default: null
+        perGuestPlayLimit:
+          example: 1
+          format: int32
+          minimum: 1
+          type: integer
+        playLimitPeriod:
+          $ref: "#/components/schemas/WTPrizeGamePlayLimitPeriod"
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        triggerType:
+          $ref: "#/components/schemas/WTPrizeGameTrigger"
+        minimumAge:
+          format: int32
+          minimum: 18
+          type: integer
+        registrationAttested:
+          type: boolean
+        id:
+          type: string
+        merchantID:
+          type: string
+        isActive:
+          type: boolean
+        totalPrizePoolValue:
+          format: int32
+          type: integer
+        oddsDisclosure:
+          type: string
+      required:
+      - endDate
+      - gameType
+      - id
+      - isActive
+      - merchantID
+      - oddsDisclosure
+      - perGuestPlayLimit
+      - playLimitPeriod
+      - prizeTiers
+      - startDate
+      - title
+      - totalPrizePoolValue
+      - triggerType
+      - winOdds
+    WTPrizePromotionCreateParams:
+      additionalProperties: {}
+      example:
+        gameType: wheel
+        title: Spin & Win July
+        winOdds: 0.2
+        prizeTiers:
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        - advertisementCreditID: AC7y7huhdhhd
+          inventory: 10
+          awardedCount: 0
+        perGuestPlayLimit: 1
+        playLimitPeriod: day
+        startDate: 2000-01-23T04:56:07.000+00:00
+        endDate: 2000-01-23T04:56:07.000+00:00
+        triggerType: wallet_open
+        minimumAge: 18
+        registrationAttested: true
+      properties:
+        gameType:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        title:
+          example: Spin & Win July
+          minLength: 1
+          type: string
+        winOdds:
+          example: 0.2
+          format: double
+          maximum: 1
+          minimum: 0.0000010
+          type: number
+        prizeTiers:
+          items:
+            $ref: "#/components/schemas/WTPrizePromotionPrizeTier"
+          type: array
+          default: null
+        perGuestPlayLimit:
+          example: 1
+          format: int32
+          minimum: 1
+          type: integer
+        playLimitPeriod:
+          $ref: "#/components/schemas/WTPrizeGamePlayLimitPeriod"
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        triggerType:
+          $ref: "#/components/schemas/WTPrizeGameTrigger"
+        minimumAge:
+          format: int32
+          minimum: 18
+          type: integer
+        registrationAttested:
+          type: boolean
+      required:
+      - endDate
+      - gameType
+      - perGuestPlayLimit
+      - playLimitPeriod
+      - prizeTiers
+      - startDate
+      - title
+      - triggerType
+      - winOdds
+    WTPrizePromotionUpdateParams:
+      additionalProperties: false
+      example:
+        isActive: true
+        endDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        isActive:
+          type: boolean
+        endDate:
+          format: date-time
+          type: string
     WTStaticVoucherCampaign:
       additionalProperties: false
       example:
@@ -51169,6 +51897,96 @@ components:
       - code
       - message
       - name
+    Order:
+      additionalProperties: false
+      example:
+        id: CMueJDL982Hs
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        merchantID: 736dhakidk
+        memberID: memberID
+        mobileNumber: mobileNumber
+        status: paid
+        currency: usd
+        amountTotal: 5000
+        stripeCheckoutSessionID: stripeCheckoutSessionID
+        stripePaymentIntentID: stripePaymentIntentID
+        stripeChargeID: stripeChargeID
+        receiptURL: receiptURL
+        acquisitionSource: acquisitionSource
+        shareId: shareId
+        donorNote: donorNote
+        lineItems:
+        - id: null
+          productID: null
+          serviceID: null
+          titleSnapshot: Sunset Boat Tour
+          unitAmount: 2500
+          quantity: 2
+        - id: null
+          productID: null
+          serviceID: null
+          titleSnapshot: Sunset Boat Tour
+          unitAmount: 2500
+          quantity: 2
+      properties:
+        id:
+          $ref: "#/components/schemas/Amenity_id"
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        merchantID:
+          allOf:
+          - $ref: "#/components/schemas/MerchantID"
+          description: The merchant the order was placed with.
+          example: 736dhakidk
+        memberID:
+          type: string
+        mobileNumber:
+          type: string
+        status:
+          allOf:
+          - $ref: "#/components/schemas/OrderStatus"
+          example: paid
+        currency:
+          example: usd
+          type: string
+        amountTotal:
+          example: 5000
+          format: int32
+          minimum: 0
+          type: integer
+        stripeCheckoutSessionID:
+          type: string
+        stripePaymentIntentID:
+          type: string
+        stripeChargeID:
+          type: string
+        receiptURL:
+          type: string
+        acquisitionSource:
+          type: string
+        shareId:
+          type: string
+        donorNote:
+          type: string
+        lineItems:
+          items:
+            $ref: "#/components/schemas/WTOrderLineItem"
+          type: array
+          default: null
+      required:
+      - amountTotal
+      - createdAt
+      - currency
+      - id
+      - lineItems
+      - merchantID
+      - status
+      - updatedAt
     RoleAuditLog:
       additionalProperties: false
       example:
@@ -51955,6 +52773,8 @@ components:
         isDining: true
         isLounges: true
         isMapDirections: true
+        isDonationEnabled: true
+        donationLabel: tip
         isLinkBook: true
         isImageGrid: true
         isVideos: true
@@ -51983,6 +52803,7 @@ components:
         socialYouTubeURL: socialYouTubeURL
         socialTwitterURL: socialTwitterURL
         socialLinkedInURL: socialLinkedInURL
+        socialTikTokURL: socialTikTokURL
         socialBackgroundColor: socialBackgroundColor
         socialFontColor: socialFontColor
         primaryPhoneNumber: primaryPhoneNumber
@@ -52097,6 +52918,15 @@ components:
           type: boolean
         isMapDirections:
           type: boolean
+        isDonationEnabled:
+          type: boolean
+        donationLabel:
+          enum:
+          - support
+          - tip
+          - donate
+          - contribute
+          example: tip
         isLinkBook:
           type: boolean
         isImageGrid:
@@ -52154,6 +52984,8 @@ components:
         socialTwitterURL:
           type: string
         socialLinkedInURL:
+          type: string
+        socialTikTokURL:
           type: string
         socialBackgroundColor:
           type: string
@@ -52216,6 +53048,7 @@ components:
       - isCall
       - isChatRoom
       - isDining
+      - isDonationEnabled
       - isDynamicVouchers
       - isEmailSubscriber
       - isGaming
@@ -52681,6 +53514,103 @@ components:
       - status
       - transactionType
       - updatedAt
+    WTPrizeGameActivePromotion:
+      additionalProperties: false
+      example:
+        active: true
+        promotionID: promotionID
+        gameType: wheel
+        sponsorName: sponsorName
+        title: title
+        oddsDisclosure: oddsDisclosure
+        minimumAge: 0
+        startDate: 2000-01-23T04:56:07.000+00:00
+        endDate: 2000-01-23T04:56:07.000+00:00
+        perGuestPlayLimit: 6
+        playLimitPeriod: day
+        prizes:
+        - discountValueDisplay: discountValueDisplay
+          title: title
+        - discountValueDisplay: discountValueDisplay
+          title: title
+        noPurchaseNecessary: true
+      properties:
+        active:
+          type: boolean
+        promotionID:
+          type: string
+        gameType:
+          $ref: "#/components/schemas/WTPrizeGameType"
+        sponsorName:
+          type: string
+        title:
+          type: string
+        oddsDisclosure:
+          type: string
+        minimumAge:
+          format: int32
+          type: integer
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        perGuestPlayLimit:
+          format: int32
+          type: integer
+        playLimitPeriod:
+          $ref: "#/components/schemas/WTPrizeGamePlayLimitPeriod"
+        prizes:
+          items:
+            $ref: "#/components/schemas/WTPrizeGameActivePromotion_prizes_inner"
+          type: array
+          default: null
+        noPurchaseNecessary:
+          type: boolean
+      required:
+      - active
+    WTPrizeGamePlayResult:
+      additionalProperties: false
+      example:
+        outcome: win
+        playsRemaining: 0
+        oddsDisclosure: oddsDisclosure
+        prize:
+          title: title
+          scanID: scanID
+          advertisementCreditID: advertisementCreditID
+      properties:
+        outcome:
+          enum:
+          - win
+          - lose
+        playsRemaining:
+          format: int32
+          type: integer
+        oddsDisclosure:
+          type: string
+        prize:
+          $ref: "#/components/schemas/WTPrizeGamePlayResult_prize"
+      required:
+      - oddsDisclosure
+      - outcome
+      - playsRemaining
+    WTPrizeGamePlayRequest:
+      additionalProperties: false
+      example:
+        promotionID: promotionID
+        phoneVerificationToken: phoneVerificationToken
+      properties:
+        promotionID:
+          minLength: 1
+          type: string
+        phoneVerificationToken:
+          minLength: 1
+          type: string
+      required:
+      - phoneVerificationToken
+      - promotionID
     WalletConfiguration:
       additionalProperties: false
       example:
@@ -52722,6 +53652,8 @@ components:
         isDining: true
         isLounges: true
         isMapDirections: true
+        isDonationEnabled: true
+        donationLabel: tip
         isLinkBook: true
         isImageGrid: true
         isVideos: true
@@ -52750,6 +53682,7 @@ components:
         socialYouTubeURL: socialYouTubeURL
         socialTwitterURL: socialTwitterURL
         socialLinkedInURL: socialLinkedInURL
+        socialTikTokURL: socialTikTokURL
         socialBackgroundColor: socialBackgroundColor
         socialFontColor: socialFontColor
         primaryPhoneNumber: primaryPhoneNumber
@@ -52869,6 +53802,15 @@ components:
           type: boolean
         isMapDirections:
           type: boolean
+        isDonationEnabled:
+          type: boolean
+        donationLabel:
+          enum:
+          - support
+          - tip
+          - donate
+          - contribute
+          example: tip
         isLinkBook:
           type: boolean
         isImageGrid:
@@ -52926,6 +53868,8 @@ components:
         socialTwitterURL:
           type: string
         socialLinkedInURL:
+          type: string
+        socialTikTokURL:
           type: string
         socialBackgroundColor:
           type: string
@@ -53017,6 +53961,7 @@ components:
       - isCall
       - isChatRoom
       - isDining
+      - isDonationEnabled
       - isDynamicVouchers
       - isEmailSubscriber
       - isGaming
@@ -53108,6 +54053,68 @@ components:
       required:
       - merchantID
       - mobileNumber
+    WTPublicVanityPageMerchant:
+      additionalProperties: {}
+      properties:
+        id:
+          type: string
+        companyName:
+          type: string
+    WTPublicVanityPage:
+      additionalProperties: {}
+      properties:
+        id:
+          type: string
+        merchantID:
+          example: ueJDL982Hs
+          maxLength: 10
+          minLength: 10
+          pattern: "^[a-zA-Z0-9]+$"
+          type: string
+        vanityPageWalletPrefix:
+          type: string
+        companyLogoURL:
+          type: string
+        headerBackgroundColor:
+          type: string
+        mobileAppIconURL:
+          type: string
+        androidSHA256Fingerprint:
+          type: string
+          nullable: true
+        isCall:
+          type: boolean
+        isPromotions:
+          type: boolean
+        isNewsArticles:
+          type: boolean
+        isPerformances:
+          type: boolean
+        isRepresentatives:
+          type: boolean
+        isProducts:
+          type: boolean
+        isServices:
+          type: boolean
+        isRoomRates:
+          type: boolean
+        isAmenities:
+          type: boolean
+        isGaming:
+          type: boolean
+        isDining:
+          type: boolean
+        isLounges:
+          type: boolean
+        isLinkBook:
+          type: boolean
+        isImageGrid:
+          type: boolean
+        Merchant:
+          allOf:
+          - $ref: "#/components/schemas/WTPublicVanityPageMerchant"
+          description: "Whitelisted slice of the attached Merchant: only id + companyName,\
+            \ never the full PII record."
     WTPublicBranding:
       additionalProperties: {}
       properties:
@@ -53151,6 +54158,7 @@ components:
       example:
         listAmountCents: 0
         creditAppliedCents: 0
+        tipCents: 0
         amountDueCents: 0
       properties:
         listAmountCents:
@@ -53158,6 +54166,10 @@ components:
           minimum: 0
           type: integer
         creditAppliedCents:
+          format: int32
+          minimum: 0
+          type: integer
+        tipCents:
           format: int32
           minimum: 0
           type: integer
@@ -53169,6 +54181,7 @@ components:
       - amountDueCents
       - creditAppliedCents
       - listAmountCents
+      - tipCents
     WTGuestCreatePaymentIntentResponse:
       additionalProperties: false
       example:
@@ -53183,6 +54196,7 @@ components:
         amountBreakdown:
           listAmountCents: 0
           creditAppliedCents: 0
+          tipCents: 0
           amountDueCents: 0
       properties:
         orderID:
@@ -53222,6 +54236,7 @@ components:
         phoneVerificationToken: phoneVerificationToken
         objectID: PR4bc3d2e1f0
         creditID: MC4bc3d2e1f0
+        tipCents: 0
       properties:
         phoneVerificationToken:
           minLength: 1
@@ -53233,8 +54248,43 @@ components:
         creditID:
           example: MC4bc3d2e1f0
           type: string
+        tipCents:
+          format: int32
+          minimum: 0
+          type: integer
       required:
       - objectID
+      - phoneVerificationToken
+    WTGuestDonationRequest:
+      additionalProperties: false
+      example:
+        phoneVerificationToken: phoneVerificationToken
+        merchantID: merchantID
+        amountCents: 1
+        message: message
+        type: tip
+      properties:
+        phoneVerificationToken:
+          minLength: 1
+          type: string
+        merchantID:
+          minLength: 1
+          type: string
+        amountCents:
+          format: int32
+          minimum: 1
+          type: integer
+        message:
+          maxLength: 280
+          type: string
+        type:
+          enum:
+          - donation
+          - tip
+          example: tip
+      required:
+      - amountCents
+      - merchantID
       - phoneVerificationToken
     WTGuestOrderReceipt:
       additionalProperties: false
@@ -53255,6 +54305,7 @@ components:
           receiptURL: receiptURL
           acquisitionSource: acquisitionSource
           shareId: shareId
+          donorNote: donorNote
           lineItems:
           - id: null
             productID: null
@@ -53271,6 +54322,7 @@ components:
         amountBreakdown:
           listAmountCents: 0
           creditAppliedCents: 0
+          tipCents: 0
           amountDueCents: 0
       properties:
         order:
@@ -53932,12 +54984,47 @@ components:
         publishedAt:
           description: ISO 8601. Optional; defaults to the ingest time.
           type: string
+        story:
+          description: |-
+            KAN-874: optional merchant-facing story/narrative for this release ("what this means for you"),
+            so What's New can arrive curated at write time. Optional and content-only: it does NOT affect the
+            hold/ready publish gate (entries still default to hold until Marketing curates them).
+          type: string
       required:
       - items
       - product
       - title
       - type
       - version
+    CSPViolationSummaryRow:
+      additionalProperties: {}
+      properties:
+        violatedDirective:
+          type: string
+        blockedHost:
+          description: "The scheme+host of the blocked URI, or the raw value for schemeless\
+            \ blocks (inline / eval / data:)."
+          type: string
+        disposition:
+          description: '"enforce" (actually blocked) vs "report" (report-only twin).'
+          type: string
+        count:
+          format: int32
+          type: integer
+        sampleDocumentURI:
+          type: string
+        firstSeen:
+          format: date-time
+          type: string
+        lastSeen:
+          format: date-time
+          type: string
+      required:
+      - blockedHost
+      - count
+      - disposition
+      - sampleDocumentURI
+      - violatedDirective
     fetchIndustry_200_response_anyOf:
       example:
         plans:
@@ -54263,6 +55350,111 @@ components:
         results:
           items:
             $ref: "#/components/schemas/InboundSMS"
+          type: array
+          default: null
+      required:
+      - length
+      - results
+      - total
+    fetchMerchantURLRequestsPaged_200_response:
+      example:
+        total: 0.8008281904610115
+        length: 6.027456183070403
+        results:
+        - ip: 78.67.23.32
+          walletObjectID: HDy289Akwq
+          walletObjectPrefix: SV
+          parentObjectID: JUS2kalo02
+          parentObjectPrefix: SV
+          sessionID: os9j3hihyfhmaFHDJFD
+          navigatorAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\
+            \ (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36"
+          browserName: Chrome
+          browserVersion: 98.0.4758.82
+          engineName: Blink
+          engineVersion: 98.0.4758.82
+          oSName: Windows
+          oSVersion: "10"
+          isMobile: true
+          deviceVendor: Samsung
+          deviceModel: SM-G991U
+          deviceType: mobile
+          phoneVerificationToken: JSbygwyehfiubij092u08r3hrohouh
+          referringDomain: google.com
+          referrer: https://google.com
+          id: jdu37eua98
+          status: ""
+          country: United Kingdom
+          countryCode: UK
+          region: region
+          regionName: regionName
+          city: London
+          zip: "533416"
+          latitude: 51.5
+          longitude: -0.11
+          timezone: GMT
+          isp: isp
+          org: org
+          asn: asn
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          merchantID: ueJDL982Hs
+          isActive: true
+          geoPoint:
+            longitude: 0.8008281904610115
+            latitude: 6.027456183070403
+        - ip: 78.67.23.32
+          walletObjectID: HDy289Akwq
+          walletObjectPrefix: SV
+          parentObjectID: JUS2kalo02
+          parentObjectPrefix: SV
+          sessionID: os9j3hihyfhmaFHDJFD
+          navigatorAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\
+            \ (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36"
+          browserName: Chrome
+          browserVersion: 98.0.4758.82
+          engineName: Blink
+          engineVersion: 98.0.4758.82
+          oSName: Windows
+          oSVersion: "10"
+          isMobile: true
+          deviceVendor: Samsung
+          deviceModel: SM-G991U
+          deviceType: mobile
+          phoneVerificationToken: JSbygwyehfiubij092u08r3hrohouh
+          referringDomain: google.com
+          referrer: https://google.com
+          id: jdu37eua98
+          status: ""
+          country: United Kingdom
+          countryCode: UK
+          region: region
+          regionName: regionName
+          city: London
+          zip: "533416"
+          latitude: 51.5
+          longitude: -0.11
+          timezone: GMT
+          isp: isp
+          org: org
+          asn: asn
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          merchantID: ueJDL982Hs
+          isActive: true
+          geoPoint:
+            longitude: 0.8008281904610115
+            latitude: 6.027456183070403
+      properties:
+        total:
+          format: double
+          type: number
+        length:
+          format: double
+          type: number
+        results:
+          items:
+            $ref: "#/components/schemas/WalletPageView"
           type: array
           default: null
       required:
@@ -55078,6 +56270,33 @@ components:
         - "0"
         type: string
         nullable: false
+    WTPrizeGameActivePromotion_prizes_inner:
+      example:
+        discountValueDisplay: discountValueDisplay
+        title: title
+      properties:
+        discountValueDisplay:
+          type: string
+        title:
+          type: string
+      required:
+      - discountValueDisplay
+      - title
+    WTPrizeGamePlayResult_prize:
+      example:
+        title: title
+        scanID: scanID
+        advertisementCreditID: advertisementCreditID
+      properties:
+        title:
+          type: string
+        scanID:
+          type: string
+        advertisementCreditID:
+          type: string
+      required:
+      - advertisementCreditID
+      - scanID
   securitySchemes:
     api_key:
       in: header

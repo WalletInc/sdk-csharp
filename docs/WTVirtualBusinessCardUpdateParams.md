@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **YouTube** | **string** |  | [optional] 
 **Twitter** | **string** |  | [optional] 
 **LinkedIn** | **string** |  | [optional] 
+**TikTok** | **string** |  | [optional] 
 **WhatsApp** | **string** |  | [optional] 
 **AvatarURL** | **string** |  | [optional] 
 

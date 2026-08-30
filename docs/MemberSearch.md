@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsArchiveIncluded** | **bool** | Denotes if archived records should be included in the response payload | [optional] 
-**PageSize** | **int** | Denotes the number of records per page | [optional] 
 **PageNum** | **int** | Denotes the page number | [optional] 
+**PageSize** | **int** | Denotes the number of records per page | [optional] 
 **SortOrder** | **string** | Denotes the sort order | [optional] 
 **SortKey** | **string** | Denotes the key using which the records need to be sorted | [optional] 
 **SearchKey** | **string** | The search key to be used | 
