@@ -213,7 +213,7 @@ No authorization required
 
 <a id="fetchcustomerbychatidentity"></a>
 # **FetchCustomerByChatIdentity**
-> Object FetchCustomerByChatIdentity (string chatUserID)
+> Object FetchCustomerByChatIdentity (string chatUserID, bool? identityOnly = null)
 
 Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
 
@@ -239,11 +239,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomerApi(httpClient, config, httpClientHandler);
             var chatUserID = "chatUserID_example";  // string | 
+            var identityOnly = true;  // bool? |  (optional) 
 
             try
             {
                 // Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
-                Object result = apiInstance.FetchCustomerByChatIdentity(chatUserID);
+                Object result = apiInstance.FetchCustomerByChatIdentity(chatUserID, identityOnly);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -264,7 +265,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
-    ApiResponse<Object> response = apiInstance.FetchCustomerByChatIdentityWithHttpInfo(chatUserID);
+    ApiResponse<Object> response = apiInstance.FetchCustomerByChatIdentityWithHttpInfo(chatUserID, identityOnly);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -282,6 +283,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **chatUserID** | **string** |  |  |
+| **identityOnly** | **bool?** |  | [optional]  |
 
 ### Return type
 
