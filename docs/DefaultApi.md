@@ -1551,7 +1551,7 @@ No authorization required
 
 
 
-A new subscriber has opted-in to a specific list / keyword for specialised SMS/MMS communications.
+A new subscriber has opted-in to a specific list / keyword for specialized SMS/MMS communications.
 
 ### Example
 ```csharp

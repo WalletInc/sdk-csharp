@@ -20,6 +20,7 @@ All URIs are relative to *https://api.wall.et*
 | [**UpdateChromeThemePreference**](EmployeesApi.md#updatechromethemepreference) | **PUT** /v2/employee/chromeThemePreference | Sets the employee&#39;s admin-portal chrome theme (light/dark), synced across devices (KAN-846) |
 | [**UpdateEmailNotificationPreference**](EmployeesApi.md#updateemailnotificationpreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled |
 | [**UpdateEmployeePeer**](EmployeesApi.md#updateemployeepeer) | **PUT** /v2/employee/peer/{userID} | Update peer |
+| [**UpdatePageTipsPreference**](EmployeesApi.md#updatepagetipspreference) | **PUT** /v2/employee/pageTipsPreference | Turns the admin-portal page tips bar on or off for this employee, synced across devices (KAN-963) |
 
 <a id="addpeertoroles"></a>
 # **AddPeerToRoles**
@@ -1508,6 +1509,102 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **userID** | **string** |  |  |
 | **wTEmployeeUpdate** | [**WTEmployeeUpdate**](WTEmployeeUpdate.md) |  |  |
+
+### Return type
+
+[**Employee**](Employee.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updatepagetipspreference"></a>
+# **UpdatePageTipsPreference**
+> Employee UpdatePageTipsPreference (UpdatePageTipsPreferenceRequest updatePageTipsPreferenceRequest)
+
+Turns the admin-portal page tips bar on or off for this employee, synced across devices (KAN-963)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class UpdatePageTipsPreferenceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
+            var updatePageTipsPreferenceRequest = new UpdatePageTipsPreferenceRequest(); // UpdatePageTipsPreferenceRequest | 
+
+            try
+            {
+                // Turns the admin-portal page tips bar on or off for this employee, synced across devices (KAN-963)
+                Employee result = apiInstance.UpdatePageTipsPreference(updatePageTipsPreferenceRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling EmployeesApi.UpdatePageTipsPreference: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdatePageTipsPreferenceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Turns the admin-portal page tips bar on or off for this employee, synced across devices (KAN-963)
+    ApiResponse<Employee> response = apiInstance.UpdatePageTipsPreferenceWithHttpInfo(updatePageTipsPreferenceRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling EmployeesApi.UpdatePageTipsPreferenceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **updatePageTipsPreferenceRequest** | [**UpdatePageTipsPreferenceRequest**](UpdatePageTipsPreferenceRequest.md) |  |  |
 
 ### Return type
 
