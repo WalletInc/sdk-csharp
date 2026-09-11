@@ -22,7 +22,7 @@ All URIs are relative to *https://api.wall.et*
 | [**SubscribersEmailOptIn**](DefaultApi.md#subscribersemailoptin) | **POST** /Subscribers.Email.opt_in |  |
 | [**SubscribersSMSDefaultOptIn**](DefaultApi.md#subscriberssmsdefaultoptin) | **POST** /Subscribers.SMS.default_opt_in |  |
 | [**SubscribersSMSKeywordOptIn**](DefaultApi.md#subscriberssmskeywordoptin) | **POST** /Subscribers.SMS.keyword_opt_in |  |
-| [**VisitorsAuthentiationSuccess**](DefaultApi.md#visitorsauthentiationsuccess) | **POST** /Visitors.Authentiation.success |  |
+| [**VisitorsAuthenticationSuccess**](DefaultApi.md#visitorsauthenticationsuccess) | **POST** /Visitors.Authentication.success |  |
 | [**VisitorsBusinessCardDownloaded**](DefaultApi.md#visitorsbusinesscarddownloaded) | **POST** /Visitors.BusinessCard.downloaded |  |
 | [**VisitorsCalendarEventDownloaded**](DefaultApi.md#visitorscalendareventdownloaded) | **POST** /Visitors.CalendarEvent.downloaded |  |
 | [**WalletPlatformAddOnPurchased**](DefaultApi.md#walletplatformaddonpurchased) | **POST** /WalletPlatform.AddOn.purchased |  |
@@ -1634,9 +1634,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="visitorsauthentiationsuccess"></a>
-# **VisitorsAuthentiationSuccess**
-> void VisitorsAuthentiationSuccess ()
+<a id="visitorsauthenticationsuccess"></a>
+# **VisitorsAuthenticationSuccess**
+> void VisitorsAuthenticationSuccess ()
 
 
 
@@ -1653,7 +1653,7 @@ using WalletInc.Model;
 
 namespace Example
 {
-    public class VisitorsAuthentiationSuccessExample
+    public class VisitorsAuthenticationSuccessExample
     {
         public static void Main()
         {
@@ -1666,11 +1666,11 @@ namespace Example
 
             try
             {
-                apiInstance.VisitorsAuthentiationSuccess();
+                apiInstance.VisitorsAuthenticationSuccess();
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultApi.VisitorsAuthentiationSuccess: " + e.Message);
+                Debug.Print("Exception when calling DefaultApi.VisitorsAuthenticationSuccess: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1679,17 +1679,17 @@ namespace Example
 }
 ```
 
-#### Using the VisitorsAuthentiationSuccessWithHttpInfo variant
+#### Using the VisitorsAuthenticationSuccessWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.VisitorsAuthentiationSuccessWithHttpInfo();
+    apiInstance.VisitorsAuthenticationSuccessWithHttpInfo();
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultApi.VisitorsAuthentiationSuccessWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultApi.VisitorsAuthenticationSuccessWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
