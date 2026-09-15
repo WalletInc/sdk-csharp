@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **Country** | **string** |  | [optional] 
 **PhoneNumber** | **string** |  | [optional] 
 **Ein** | **string** |  | [optional] 
+**AcceptedTermsVersion** | **string** |  | [optional] 
+**AcceptedPrivacyVersion** | **string** |  | [optional] 
 **UtmSource** | **string** |  | [optional] 
 **UtmMedium** | **string** |  | [optional] 
 **UtmTerm** | **string** |  | [optional] 
