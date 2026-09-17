@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **LandingPage** | **string** |  | [optional] 
 **GaClientId** | **string** |  | [optional] 
 **GaMeasurementId** | **string** |  | [optional] 
+**AdsConsentDeclined** | **bool** |  | [optional] 
 **RecaptchaToken** | **string** |  | [optional] 
 **AffiliateID** | **string** |  | [optional] 
 **FirstPromoterTrackingID** | **string** |  | [optional] 
