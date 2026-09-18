@@ -84,6 +84,8 @@ Name | Type | Description | Notes
 **AppleAppStoreURL** | **string** |  | [optional] 
 **GooglePlayStoreURL** | **string** |  | [optional] 
 **PassBrandKit** | [**WTPassBrandKit**](WTPassBrandKit.md) |  | [optional] 
+**GooglePassStyle** | [**WTGooglePassStyle**](WTGooglePassStyle.md) |  | [optional] 
+**ApplePassStyle** | [**WTApplePassStyle**](WTApplePassStyle.md) |  | [optional] 
 **LoginLogoURL** | **string** |  | [optional] 
 **LoginPanelImageURL** | **string** |  | [optional] 
 **LoginHeadline** | **string** |  | [optional] 
