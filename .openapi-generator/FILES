@@ -150,6 +150,7 @@ docs/MerchantApi.md
 docs/MerchantCreditSearch.md
 docs/MerchantCreditsApi.md
 docs/MerchantNotInitialized.md
+docs/MerchantTermsDocumentType.md
 docs/MerchantURL.md
 docs/Message.md
 docs/ModuleError.md
@@ -331,6 +332,7 @@ docs/WTConnectPaymentsSummaryRecentChargesInner.md
 docs/WTConnectPaymentsSummaryRecentPayoutsInner.md
 docs/WTConnectRequirements.md
 docs/WTCountResult.md
+docs/WTCurrentMerchantTermsVersion.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
 docs/WTDiningCreateParams.md
@@ -518,14 +520,8 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
-src/WalletInc.Test/Model/WTApplePassStyleTests.cs
-src/WalletInc.Test/Model/WTGooglePassStyleTests.cs
-src/WalletInc.Test/Model/WTPassStyleResponseAppleTests.cs
-src/WalletInc.Test/Model/WTPassStyleResponseGoogleTests.cs
-src/WalletInc.Test/Model/WTPassStyleResponseProvidersAppleTests.cs
-src/WalletInc.Test/Model/WTPassStyleResponseProvidersTests.cs
-src/WalletInc.Test/Model/WTPassStyleResponseTests.cs
-src/WalletInc.Test/Model/WTWalletPassProviderTests.cs
+src/WalletInc.Test/Model/MerchantTermsDocumentTypeTests.cs
+src/WalletInc.Test/Model/WTCurrentMerchantTermsVersionTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -726,6 +722,7 @@ src/WalletInc/Model/MemberSearch.cs
 src/WalletInc/Model/Merchant.cs
 src/WalletInc/Model/MerchantCreditSearch.cs
 src/WalletInc/Model/MerchantNotInitialized.cs
+src/WalletInc/Model/MerchantTermsDocumentType.cs
 src/WalletInc/Model/MerchantURL.cs
 src/WalletInc/Model/Message.cs
 src/WalletInc/Model/ModuleError.cs
@@ -880,6 +877,7 @@ src/WalletInc/Model/WTConnectPaymentsSummaryRecentChargesInner.cs
 src/WalletInc/Model/WTConnectPaymentsSummaryRecentPayoutsInner.cs
 src/WalletInc/Model/WTConnectRequirements.cs
 src/WalletInc/Model/WTCountResult.cs
+src/WalletInc/Model/WTCurrentMerchantTermsVersion.cs
 src/WalletInc/Model/WTCustomerSearchByMemberID.cs
 src/WalletInc/Model/WTCustomerSearchByPhoneNumber.cs
 src/WalletInc/Model/WTDiningCreateParams.cs
