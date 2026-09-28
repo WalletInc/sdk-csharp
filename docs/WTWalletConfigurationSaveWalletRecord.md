@@ -4,56 +4,56 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HeaderBackgroundColor** | **string** |  | 
-**HeaderButtonColor** | **string** |  | 
-**LeftMenuHeaderBackgroundColor** | **string** |  | 
-**LeftMenuHeaderFontColor** | **string** |  | 
-**LeftMenuSectionBackgroundColor** | **string** |  | 
-**LeftMenuSectionFontColor** | **string** |  | 
-**CompanyLogoURL** | **string** |  | 
+**HeaderBackgroundColor** | **string** |  | [optional] 
+**HeaderButtonColor** | **string** |  | [optional] 
+**LeftMenuHeaderBackgroundColor** | **string** |  | [optional] 
+**LeftMenuHeaderFontColor** | **string** |  | [optional] 
+**LeftMenuSectionBackgroundColor** | **string** |  | [optional] 
+**LeftMenuSectionFontColor** | **string** |  | [optional] 
+**CompanyLogoURL** | **string** |  | [optional] 
 **HeaderImageURL** | **string** |  | [optional] 
 **HeaderCustomIcon** | **string** |  | [optional] 
-**WelcomeMessage** | **string** |  | 
+**WelcomeMessage** | **string** |  | [optional] 
 **HomeTemplate** | **string** |  | [optional] 
-**IsAppleEnabled** | **bool** |  | 
-**IsGoogleEnabled** | **bool** |  | 
-**IsSamsungEnabled** | **bool** |  | 
-**IsAdCredits** | **bool** |  | 
-**IsStaticVouchers** | **bool** |  | 
-**IsDynamicVouchers** | **bool** |  | 
-**IsMembershipTier** | **bool** |  | 
-**IsMembershipPoints** | **bool** |  | 
-**IsMembershipLevel** | **bool** |  | 
-**IsGiftCards** | **bool** |  | 
-**IsGiftCertificates** | **bool** |  | 
-**IsPromotions** | **bool** |  | 
-**IsMerchantCredit** | **bool** |  | 
+**IsAppleEnabled** | **bool** |  | [optional] 
+**IsGoogleEnabled** | **bool** |  | [optional] 
+**IsSamsungEnabled** | **bool** |  | [optional] 
+**IsAdCredits** | **bool** |  | [optional] 
+**IsStaticVouchers** | **bool** |  | [optional] 
+**IsDynamicVouchers** | **bool** |  | [optional] 
+**IsMembershipTier** | **bool** |  | [optional] 
+**IsMembershipPoints** | **bool** |  | [optional] 
+**IsMembershipLevel** | **bool** |  | [optional] 
+**IsGiftCards** | **bool** |  | [optional] 
+**IsGiftCertificates** | **bool** |  | [optional] 
+**IsPromotions** | **bool** |  | [optional] 
+**IsMerchantCredit** | **bool** |  | [optional] 
 **IsTickets** | **bool** |  | [optional] 
-**IsNewsArticles** | **bool** |  | 
-**IsPerformances** | **bool** |  | 
-**IsMessages** | **bool** |  | 
-**IsCall** | **bool** |  | 
-**IsRepresentatives** | **bool** |  | 
-**IsProducts** | **bool** |  | 
-**IsServices** | **bool** |  | 
-**IsRoomRates** | **bool** |  | 
-**IsAmenities** | **bool** |  | 
-**IsGaming** | **bool** |  | 
-**IsDining** | **bool** |  | 
-**IsLounges** | **bool** |  | 
-**IsMapDirections** | **bool** |  | 
-**IsDonationEnabled** | **bool** |  | 
+**IsNewsArticles** | **bool** |  | [optional] 
+**IsPerformances** | **bool** |  | [optional] 
+**IsMessages** | **bool** |  | [optional] 
+**IsCall** | **bool** |  | [optional] 
+**IsRepresentatives** | **bool** |  | [optional] 
+**IsProducts** | **bool** |  | [optional] 
+**IsServices** | **bool** |  | [optional] 
+**IsRoomRates** | **bool** |  | [optional] 
+**IsAmenities** | **bool** |  | [optional] 
+**IsGaming** | **bool** |  | [optional] 
+**IsDining** | **bool** |  | [optional] 
+**IsLounges** | **bool** |  | [optional] 
+**IsMapDirections** | **bool** |  | [optional] 
+**IsDonationEnabled** | **bool** |  | [optional] 
 **DonationLabel** | **string** |  | [optional] 
-**IsLinkBook** | **bool** |  | 
-**IsImageGrid** | **bool** |  | 
-**IsVideos** | **bool** |  | 
-**IsTransactionHistory** | **bool** |  | 
-**IsProfile** | **bool** |  | 
-**IsSettings** | **bool** |  | 
-**IsChatRoom** | **bool** |  | 
-**IsSmsOptIn** | **bool** |  | 
+**IsLinkBook** | **bool** |  | [optional] 
+**IsImageGrid** | **bool** |  | [optional] 
+**IsVideos** | **bool** |  | [optional] 
+**IsTransactionHistory** | **bool** |  | [optional] 
+**IsProfile** | **bool** |  | [optional] 
+**IsSettings** | **bool** |  | [optional] 
+**IsChatRoom** | **bool** |  | [optional] 
+**IsSmsOptIn** | **bool** |  | [optional] 
 **SmsOptInSourceID** | [**WTWalletConfigurationSaveWalletRecordSmsOptInSourceID**](WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md) |  | [optional] 
-**IsEmailSubscriber** | **bool** |  | 
+**IsEmailSubscriber** | **bool** |  | [optional] 
 **GoogleAnalyticsID** | **string** |  | [optional] 
 **FacebookPixelID** | **string** |  | [optional] 
 **PublicChatRoomChannelID** | **double** |  | [optional] 

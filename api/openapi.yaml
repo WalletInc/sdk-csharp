@@ -6,11 +6,11 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.49.1**, built 2026-09-24T17:20:19.995Z
+    **Spec version 2.50.0**, built 2026-09-28T18:16:29.461Z
   license:
     name: https://wallet.law
   title: wallet-api
-  version: 2.49.1
+  version: 2.50.0
 servers:
 - description: Production API
   url: https://api.wall.et
@@ -1094,6 +1094,525 @@ paths:
       summary: Update Amenity
       tags:
       - Amenities
+  /autoresponders/create:
+    post:
+      operationId: createAutoResponder
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTAutoResponderCreateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    id: bs8ajdhk37
+                    phoneNumberID: jud74uIJ3B
+                    keyword: DEMO
+                    keywordCanonical: demo
+                    responseBody: Here's our brochure! https://example.com/brochure
+                    mediaURLs:
+                    - https://example.com/brochure.pdf
+                    merchantID: 736dhakidk
+                    createdAt: 2026-09-25T12:00:00.000Z
+                    updatedAt: 2026-09-25T12:00:00.000Z
+                    isActive: true
+              schema:
+                $ref: "#/components/schemas/WTAutoResponder"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    message: "Keyword 'STOP' is not usable: reserved-compliance-keyword"
+                    fields:
+                    - name: keyword
+                      message: reserved-compliance-keyword
+                      value: STOP
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: "Validation Failed. A refused keyword names the rule it broke\
+            \ in the failing field's message: reserved-compliance-keyword, opt-out-phrase,\
+            \ date-shaped, help-desk-keyword, opt-in-list-keyword (with a listID field),\
+            \ duplicate (with an existingID field), empty, too-long, or empty-response\
+            \ (on responseBody)."
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Create a keyword auto-responder
+      tags:
+      - Keyword Auto-Responders
+  /autoresponders/update:
+    post:
+      operationId: updateAutoResponder
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTAutoResponderUpdateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    id: bs8ajdhk37
+                    phoneNumberID: jud74uIJ3B
+                    keyword: DEMO
+                    keywordCanonical: demo
+                    responseBody: Here's our brochure! https://example.com/brochure
+                    mediaURLs:
+                    - https://example.com/brochure.pdf
+                    merchantID: 736dhakidk
+                    createdAt: 2026-09-25T12:00:00.000Z
+                    updatedAt: 2026-09-25T12:00:00.000Z
+                    isActive: true
+              schema:
+                $ref: "#/components/schemas/WTAutoResponder"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    message: "Keyword 'STOP' is not usable: reserved-compliance-keyword"
+                    fields:
+                    - name: keyword
+                      message: reserved-compliance-keyword
+                      value: STOP
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: "Validation Failed. A refused keyword names the rule it broke\
+            \ in the failing field's message: reserved-compliance-keyword, opt-out-phrase,\
+            \ date-shaped, help-desk-keyword, opt-in-list-keyword (with a listID field),\
+            \ duplicate (with an existingID field), empty, too-long, or empty-response\
+            \ (on responseBody)."
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Update a keyword auto-responder
+      tags:
+      - Keyword Auto-Responders
+  /autoresponders/archive/{autoResponderID}:
+    post:
+      operationId: archiveAutoResponder
+      parameters:
+      - explode: false
+        in: path
+        name: autoResponderID
+        required: true
+        schema:
+          $ref: "#/components/schemas/NanoID"
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    id: bs8ajdhk37
+                    phoneNumberID: jud74uIJ3B
+                    keyword: DEMO
+                    keywordCanonical: demo
+                    responseBody: Here's our brochure! https://example.com/brochure
+                    mediaURLs:
+                    - https://example.com/brochure.pdf
+                    merchantID: 736dhakidk
+                    createdAt: 2026-09-25T12:00:00.000Z
+                    updatedAt: 2026-09-25T12:00:00.000Z
+                    isActive: false
+              schema:
+                $ref: "#/components/schemas/WTAutoResponder"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    message: "Keyword 'STOP' is not usable: reserved-compliance-keyword"
+                    fields:
+                    - name: keyword
+                      message: reserved-compliance-keyword
+                      value: STOP
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: "Validation Failed. A refused keyword names the rule it broke\
+            \ in the failing field's message: reserved-compliance-keyword, opt-out-phrase,\
+            \ date-shaped, help-desk-keyword, opt-in-list-keyword (with a listID field),\
+            \ duplicate (with an existingID field), empty, too-long, or empty-response\
+            \ (on responseBody)."
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Archive a keyword auto-responder
+      tags:
+      - Keyword Auto-Responders
+  /autoresponders/restore/{autoResponderID}:
+    post:
+      operationId: restoreAutoResponder
+      parameters:
+      - explode: false
+        in: path
+        name: autoResponderID
+        required: true
+        schema:
+          $ref: "#/components/schemas/NanoID"
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    id: bs8ajdhk37
+                    phoneNumberID: jud74uIJ3B
+                    keyword: DEMO
+                    keywordCanonical: demo
+                    responseBody: Here's our brochure! https://example.com/brochure
+                    mediaURLs:
+                    - https://example.com/brochure.pdf
+                    merchantID: 736dhakidk
+                    createdAt: 2026-09-25T12:00:00.000Z
+                    updatedAt: 2026-09-25T12:00:00.000Z
+                    isActive: true
+              schema:
+                $ref: "#/components/schemas/WTAutoResponder"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    message: "Keyword 'STOP' is not usable: reserved-compliance-keyword"
+                    fields:
+                    - name: keyword
+                      message: reserved-compliance-keyword
+                      value: STOP
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: "Validation Failed. A refused keyword names the rule it broke\
+            \ in the failing field's message: reserved-compliance-keyword, opt-out-phrase,\
+            \ date-shaped, help-desk-keyword, opt-in-list-keyword (with a listID field),\
+            \ duplicate (with an existingID field), empty, too-long, or empty-response\
+            \ (on responseBody)."
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Restore a keyword auto-responder
+      tags:
+      - Keyword Auto-Responders
+  /autoresponders/fetchAll:
+    get:
+      operationId: fetchAllAutoResponders
+      parameters:
+      - explode: true
+        in: query
+        name: phoneNumberID
+        required: false
+        schema:
+          $ref: "#/components/schemas/NanoID"
+        style: form
+      - explode: true
+        in: query
+        name: isArchiveIncluded
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                  - id: bs8ajdhk37
+                    phoneNumberID: jud74uIJ3B
+                    keyword: DEMO
+                    keywordCanonical: demo
+                    responseBody: Here's our brochure! https://example.com/brochure
+                    mediaURLs:
+                    - https://example.com/brochure.pdf
+                    merchantID: 736dhakidk
+                    createdAt: 2026-09-25T12:00:00.000Z
+                    updatedAt: 2026-09-25T12:00:00.000Z
+                    isActive: true
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTAutoResponder"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    message: "Keyword 'STOP' is not usable: reserved-compliance-keyword"
+                    fields:
+                    - name: keyword
+                      message: reserved-compliance-keyword
+                      value: STOP
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: "Validation Failed. A refused keyword names the rule it broke\
+            \ in the failing field's message: reserved-compliance-keyword, opt-out-phrase,\
+            \ date-shaped, help-desk-keyword, opt-in-list-keyword (with a listID field),\
+            \ duplicate (with an existingID field), empty, too-long, or empty-response\
+            \ (on responseBody)."
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List keyword auto-responders
+      tags:
+      - Keyword Auto-Responders
+  /autoresponders/hits:
+    get:
+      operationId: fetchAutoResponderHits
+      parameters:
+      - explode: true
+        in: query
+        name: autoResponderID
+        required: false
+        schema:
+          $ref: "#/components/schemas/NanoID"
+        style: form
+      - description: Maximum number of records to return
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          minimum: 1
+          type: integer
+        style: form
+      - description: Number of records to skip
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          format: int32
+          minimum: 0
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                  - id: kd83hdnEo2
+                    autoResponderID: bs8ajdhk37
+                    keyword: DEMO
+                    consumerPhone: "+15555550123"
+                    inboundMessageID: jdu37eua98
+                    outboundMessageID: mdk39dkE02
+                    outcome: sent
+                    outcomeDetail: ""
+                    messageStatus: delivered
+                    merchantID: 736dhakidk
+                    createdAt: 2026-09-25T12:00:00.000Z
+                    updatedAt: 2026-09-25T12:00:00.000Z
+                    isActive: true
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTAutoResponderHit"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    message: "Keyword 'STOP' is not usable: reserved-compliance-keyword"
+                    fields:
+                    - name: keyword
+                      message: reserved-compliance-keyword
+                      value: STOP
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: "Validation Failed. A refused keyword names the rule it broke\
+            \ in the failing field's message: reserved-compliance-keyword, opt-out-phrase,\
+            \ date-shaped, help-desk-keyword, opt-in-list-keyword (with a listID field),\
+            \ duplicate (with an existingID field), empty, too-long, or empty-response\
+            \ (on responseBody)."
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List keyword auto-responder activity
+      tags:
+      - Keyword Auto-Responders
   /v2/billing/summary:
     get:
       operationId: fetchUsageSummary
@@ -3986,8 +4505,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:18:54.820Z
-                    updatedAt: 2026-09-24T17:18:54.820Z
+                    createdAt: 2026-09-28T18:15:10.948Z
+                    updatedAt: 2026-09-28T18:15:10.948Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -22152,8 +22671,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-09-24T17:19:00.115Z
-                    updatedAt: 2026-09-24T17:19:00.115Z
+                    createdAt: 2026-09-28T18:15:14.719Z
+                    updatedAt: 2026-09-28T18:15:14.719Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22227,8 +22746,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-09-24T17:19:00.050Z
-                    updatedAt: 2026-09-24T17:19:00.050Z
+                    createdAt: 2026-09-28T18:15:14.680Z
+                    updatedAt: 2026-09-28T18:15:14.680Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22302,8 +22821,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-09-24T17:19:00.124Z
-                    updatedAt: 2026-09-24T17:19:00.124Z
+                    createdAt: 2026-09-28T18:15:14.725Z
+                    updatedAt: 2026-09-28T18:15:14.725Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22383,8 +22902,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-09-24T17:19:00.095Z
-                    updatedAt: 2026-09-24T17:19:00.095Z
+                    createdAt: 2026-09-28T18:15:14.706Z
+                    updatedAt: 2026-09-28T18:15:14.706Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22484,8 +23003,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-09-24T17:19:00.069Z
-                    updatedAt: 2026-09-24T17:19:00.069Z
+                    createdAt: 2026-09-28T18:15:14.690Z
+                    updatedAt: 2026-09-28T18:15:14.690Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22781,8 +23300,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.307Z
-                    updatedAt: 2026-09-24T17:19:00.307Z
+                    createdAt: 2026-09-28T18:15:14.833Z
+                    updatedAt: 2026-09-28T18:15:14.833Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22859,8 +23378,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.226Z
-                    updatedAt: 2026-09-24T17:19:00.226Z
+                    createdAt: 2026-09-28T18:15:14.783Z
+                    updatedAt: 2026-09-28T18:15:14.783Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -22937,8 +23456,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.312Z
-                    updatedAt: 2026-09-24T17:19:00.312Z
+                    createdAt: 2026-09-28T18:15:14.837Z
+                    updatedAt: 2026-09-28T18:15:14.837Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23021,8 +23540,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.289Z
-                    updatedAt: 2026-09-24T17:19:00.289Z
+                    createdAt: 2026-09-28T18:15:14.819Z
+                    updatedAt: 2026-09-28T18:15:14.819Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23125,8 +23644,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.244Z
-                    updatedAt: 2026-09-24T17:19:00.244Z
+                    createdAt: 2026-09-28T18:15:14.793Z
+                    updatedAt: 2026-09-28T18:15:14.793Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23370,8 +23889,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.466Z
-                    updatedAt: 2026-09-24T17:19:00.466Z
+                    createdAt: 2026-09-28T18:15:14.968Z
+                    updatedAt: 2026-09-28T18:15:14.968Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23454,8 +23973,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.402Z
-                    updatedAt: 2026-09-24T17:19:00.402Z
+                    createdAt: 2026-09-28T18:15:14.918Z
+                    updatedAt: 2026-09-28T18:15:14.918Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23538,8 +24057,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.470Z
-                    updatedAt: 2026-09-24T17:19:00.470Z
+                    createdAt: 2026-09-28T18:15:14.972Z
+                    updatedAt: 2026-09-28T18:15:14.972Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23628,8 +24147,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.449Z
-                    updatedAt: 2026-09-24T17:19:00.449Z
+                    createdAt: 2026-09-28T18:15:14.953Z
+                    updatedAt: 2026-09-28T18:15:14.953Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23738,8 +24257,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.418Z
-                    updatedAt: 2026-09-24T17:19:00.418Z
+                    createdAt: 2026-09-28T18:15:14.929Z
+                    updatedAt: 2026-09-28T18:15:14.929Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTPaymentDesign"
@@ -23957,8 +24476,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.479Z
-                    updatedAt: 2026-09-24T17:19:00.479Z
+                    createdAt: 2026-09-28T18:15:14.979Z
+                    updatedAt: 2026-09-28T18:15:14.979Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -24087,8 +24606,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.544Z
-                    updatedAt: 2026-09-24T17:19:00.544Z
+                    createdAt: 2026-09-28T18:15:15.041Z
+                    updatedAt: 2026-09-28T18:15:15.041Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -24303,8 +24822,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.529Z
-                    updatedAt: 2026-09-24T17:19:00.529Z
+                    createdAt: 2026-09-28T18:15:15.028Z
+                    updatedAt: 2026-09-28T18:15:15.028Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -24454,8 +24973,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.565Z
-                    updatedAt: 2026-09-24T17:19:00.565Z
+                    createdAt: 2026-09-28T18:15:15.058Z
+                    updatedAt: 2026-09-28T18:15:15.058Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -24578,8 +25097,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.575Z
-                    updatedAt: 2026-09-24T17:19:00.575Z
+                    createdAt: 2026-09-28T18:15:15.064Z
+                    updatedAt: 2026-09-28T18:15:15.064Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -26289,8 +26808,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.905Z
-                    updatedAt: 2026-09-24T17:19:00.905Z
+                    createdAt: 2026-09-28T18:15:15.319Z
+                    updatedAt: 2026-09-28T18:15:15.319Z
                     isActive: true
               schema:
                 items:
@@ -26386,8 +26905,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.909Z
-                    updatedAt: 2026-09-24T17:19:00.909Z
+                    createdAt: 2026-09-28T18:15:15.321Z
+                    updatedAt: 2026-09-28T18:15:15.321Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -26680,8 +27199,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.928Z
-                    updatedAt: 2026-09-24T17:19:00.928Z
+                    createdAt: 2026-09-28T18:15:15.337Z
+                    updatedAt: 2026-09-28T18:15:15.337Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27063,8 +27582,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:00.993Z
-                    updatedAt: 2026-09-24T17:19:00.993Z
+                    createdAt: 2026-09-28T18:15:15.389Z
+                    updatedAt: 2026-09-28T18:15:15.389Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27163,8 +27682,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:01.011Z
-                    updatedAt: 2026-09-24T17:19:01.011Z
+                    createdAt: 2026-09-28T18:15:15.404Z
+                    updatedAt: 2026-09-28T18:15:15.404Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27256,8 +27775,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:01.064Z
-                    updatedAt: 2026-09-24T17:19:01.065Z
+                    createdAt: 2026-09-28T18:15:15.446Z
+                    updatedAt: 2026-09-28T18:15:15.446Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27349,8 +27868,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:01.088Z
-                    updatedAt: 2026-09-24T17:19:01.088Z
+                    createdAt: 2026-09-28T18:15:15.459Z
+                    updatedAt: 2026-09-28T18:15:15.459Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27443,8 +27962,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:01.115Z
-                    updatedAt: 2026-09-24T17:19:01.115Z
+                    createdAt: 2026-09-28T18:15:15.474Z
+                    updatedAt: 2026-09-28T18:15:15.474Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -27536,8 +28055,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:01.123Z
-                    updatedAt: 2026-09-24T17:19:01.123Z
+                    createdAt: 2026-09-28T18:15:15.479Z
+                    updatedAt: 2026-09-28T18:15:15.479Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -27635,8 +28154,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-09-24T17:19:01.131Z
-                    updatedAt: 2026-09-24T17:19:01.131Z
+                    createdAt: 2026-09-28T18:15:15.484Z
+                    updatedAt: 2026-09-28T18:15:15.484Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28040,7 +28559,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-09-24T17:19:01.157Z
+                    dateTimeLastViewed: 2026-09-28T18:15:15.501Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -28063,8 +28582,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-09-24T17:19:01.157Z
-                    updatedAt: 2026-09-24T17:19:01.157Z
+                    createdAt: 2026-09-28T18:15:15.501Z
+                    updatedAt: 2026-09-28T18:15:15.501Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -28153,7 +28672,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-09-24T17:19:01.169Z
+                    dateTimeLastViewed: 2026-09-28T18:15:15.509Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -28176,8 +28695,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-09-24T17:19:01.169Z
-                    updatedAt: 2026-09-24T17:19:01.169Z
+                    createdAt: 2026-09-28T18:15:15.509Z
+                    updatedAt: 2026-09-28T18:15:15.509Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -28273,7 +28792,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-09-24T17:19:01.218Z
+                    dateTimeLastViewed: 2026-09-28T18:15:15.544Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -28296,8 +28815,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-09-24T17:19:01.218Z
-                    updatedAt: 2026-09-24T17:19:01.218Z
+                    createdAt: 2026-09-28T18:15:15.544Z
+                    updatedAt: 2026-09-28T18:15:15.544Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -36320,6 +36839,211 @@ components:
       - description
       - orderNumber
       - title
+    WTAutoResponder:
+      additionalProperties: false
+      example:
+        id: bs8ajdhk37
+        phoneNumberID: jud74uIJ3B
+        keyword: DEMO
+        keywordCanonical: demo
+        responseBody: Here's our brochure! https://example.com/brochure
+        mediaURLs:
+        - https://example.com/brochure.pdf
+        merchantID: 736dhakidk
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        isActive: true
+      properties:
+        id:
+          allOf:
+          - $ref: "#/components/schemas/NanoID"
+          example: bs8ajdhk37
+        phoneNumberID:
+          allOf:
+          - $ref: "#/components/schemas/NanoID"
+          example: jud74uIJ3B
+        keyword:
+          example: DEMO
+          type: string
+        keywordCanonical:
+          example: demo
+          type: string
+        responseBody:
+          example: Here's our brochure! https://example.com/brochure
+          type: string
+        mediaURLs:
+          example:
+          - https://example.com/brochure.pdf
+          items:
+            type: string
+          type: array
+          default: null
+        merchantID:
+          allOf:
+          - $ref: "#/components/schemas/MerchantID"
+          example: 736dhakidk
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        isActive:
+          example: true
+          type: boolean
+      required:
+      - createdAt
+      - id
+      - isActive
+      - keyword
+      - keywordCanonical
+      - mediaURLs
+      - merchantID
+      - phoneNumberID
+      - responseBody
+      - updatedAt
+    WTAutoResponderCreateParams:
+      additionalProperties: false
+      example:
+        phoneNumberID: jud74uIJ3B
+        keyword: DEMO
+        responseBody: Here's our brochure! https://example.com/brochure
+        mediaURLs:
+        - https://example.com/brochure.pdf
+      properties:
+        phoneNumberID:
+          allOf:
+          - $ref: "#/components/schemas/NanoID"
+          example: jud74uIJ3B
+        keyword:
+          example: DEMO
+          maxLength: 60
+          minLength: 1
+          type: string
+        responseBody:
+          example: Here's our brochure! https://example.com/brochure
+          type: string
+        mediaURLs:
+          example:
+          - https://example.com/brochure.pdf
+          items:
+            type: string
+          type: array
+          default: null
+      required:
+      - keyword
+      - mediaURLs
+      - phoneNumberID
+      - responseBody
+    WTAutoResponderUpdateParams:
+      additionalProperties: false
+      example:
+        id: bs8ajdhk37
+        keyword: BROCHURE
+        responseBody: Here's our brochure! https://example.com/brochure
+        mediaURLs:
+        - https://example.com/brochure.pdf
+      properties:
+        id:
+          allOf:
+          - $ref: "#/components/schemas/NanoID"
+          example: bs8ajdhk37
+        keyword:
+          example: BROCHURE
+          maxLength: 60
+          minLength: 1
+          type: string
+        responseBody:
+          example: Here's our brochure! https://example.com/brochure
+          type: string
+        mediaURLs:
+          example:
+          - https://example.com/brochure.pdf
+          items:
+            type: string
+          type: array
+          default: null
+      required:
+      - id
+    WTAutoResponderHitOutcome:
+      enum:
+      - sent
+      - blocked-over-cap
+      - blocked-frozen
+      - failed
+    WTAutoResponderHit:
+      additionalProperties: false
+      example:
+        id: kd83hdnEo2
+        autoResponderID: bs8ajdhk37
+        keyword: DEMO
+        consumerPhone: "+15555550123"
+        inboundMessageID: jdu37eua98
+        outboundMessageID: mdk39dkE02
+        outcome: sent
+        outcomeDetail: ""
+        messageStatus: delivered
+        merchantID: 736dhakidk
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        isActive: true
+      properties:
+        id:
+          allOf:
+          - $ref: "#/components/schemas/NanoID"
+          example: kd83hdnEo2
+        autoResponderID:
+          allOf:
+          - $ref: "#/components/schemas/NanoID"
+          example: bs8ajdhk37
+        keyword:
+          example: DEMO
+          type: string
+        consumerPhone:
+          example: "+15555550123"
+          type: string
+        inboundMessageID:
+          example: jdu37eua98
+          type: string
+        outboundMessageID:
+          example: mdk39dkE02
+          type: string
+        outcome:
+          allOf:
+          - $ref: "#/components/schemas/WTAutoResponderHitOutcome"
+          example: sent
+        outcomeDetail:
+          example: ""
+          type: string
+        messageStatus:
+          example: delivered
+          type: string
+        merchantID:
+          allOf:
+          - $ref: "#/components/schemas/MerchantID"
+          example: 736dhakidk
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        isActive:
+          example: true
+          type: boolean
+      required:
+      - autoResponderID
+      - consumerPhone
+      - createdAt
+      - id
+      - inboundMessageID
+      - isActive
+      - keyword
+      - merchantID
+      - outboundMessageID
+      - outcome
+      - outcomeDetail
+      - updatedAt
     WTBillingSavePaymentMethod:
       additionalProperties: false
       example:
@@ -36389,6 +37113,7 @@ components:
       - communications-google-wallet
       - communications-sms-media
       - communications-sms-agreement
+      - communications-sms-autoresponders
       - communications-sms-create
       - communications-sms-customer-service
       - communications-sms-keywords
@@ -53415,51 +54140,6 @@ components:
           type: string
         desktopFrameByline:
           type: string
-      required:
-      - companyLogoURL
-      - headerBackgroundColor
-      - headerButtonColor
-      - isAdCredits
-      - isAmenities
-      - isAppleEnabled
-      - isCall
-      - isChatRoom
-      - isDining
-      - isDonationEnabled
-      - isDynamicVouchers
-      - isEmailSubscriber
-      - isGaming
-      - isGiftCards
-      - isGiftCertificates
-      - isGoogleEnabled
-      - isImageGrid
-      - isLinkBook
-      - isLounges
-      - isMapDirections
-      - isMembershipLevel
-      - isMembershipPoints
-      - isMembershipTier
-      - isMerchantCredit
-      - isMessages
-      - isNewsArticles
-      - isPerformances
-      - isProducts
-      - isProfile
-      - isPromotions
-      - isRepresentatives
-      - isRoomRates
-      - isSamsungEnabled
-      - isServices
-      - isSettings
-      - isSmsOptIn
-      - isStaticVouchers
-      - isTransactionHistory
-      - isVideos
-      - leftMenuHeaderBackgroundColor
-      - leftMenuHeaderFontColor
-      - leftMenuSectionBackgroundColor
-      - leftMenuSectionFontColor
-      - welcomeMessage
     WTAndroidKeystoreResponse:
       additionalProperties: false
       example:
@@ -53972,16 +54652,16 @@ components:
     WalletConfiguration:
       additionalProperties: false
       example:
-        headerBackgroundColor: "#F10A44"
-        headerButtonColor: "#FFFFFF"
-        leftMenuHeaderBackgroundColor: "#050343"
-        leftMenuHeaderFontColor: "#812934"
-        leftMenuSectionBackgroundColor: "#812934"
-        leftMenuSectionFontColor: "#812934"
-        companyLogoURL: https://example.com/company-info/logo.png
+        headerBackgroundColor: headerBackgroundColor
+        headerButtonColor: headerButtonColor
+        leftMenuHeaderBackgroundColor: leftMenuHeaderBackgroundColor
+        leftMenuHeaderFontColor: leftMenuHeaderFontColor
+        leftMenuSectionBackgroundColor: leftMenuSectionBackgroundColor
+        leftMenuSectionFontColor: leftMenuSectionFontColor
+        companyLogoURL: companyLogoURL
         headerImageURL: https://example.com/company-info/logo.png
         headerCustomIcon: headerCustomIcon
-        welcomeMessage: Welcome to Company!
+        welcomeMessage: welcomeMessage
         homeTemplate: summary
         isAppleEnabled: true
         isGoogleEnabled: true
@@ -54077,25 +54757,18 @@ components:
         androidSHA256Fingerprint: A1:B2:C3:D4:E5:F6:A7:B8:C9:D0:E1:F2:A3:B4:C5:D6:E7:F8:A9:B0:C1:D2:E3:F4:A5:B6:C7:D8:E9:F0:A1:B2
       properties:
         headerBackgroundColor:
-          example: "#F10A44"
           type: string
         headerButtonColor:
-          example: "#FFFFFF"
           type: string
         leftMenuHeaderBackgroundColor:
-          example: "#050343"
           type: string
         leftMenuHeaderFontColor:
-          example: "#812934"
           type: string
         leftMenuSectionBackgroundColor:
-          example: "#812934"
           type: string
         leftMenuSectionFontColor:
-          example: "#812934"
           type: string
         companyLogoURL:
-          example: https://example.com/company-info/logo.png
           type: string
         headerImageURL:
           example: https://example.com/company-info/logo.png
@@ -54103,7 +54776,6 @@ components:
         headerCustomIcon:
           type: string
         welcomeMessage:
-          example: Welcome to Company!
           type: string
         homeTemplate:
           example: summary
@@ -56846,6 +57518,7 @@ x-tagGroups:
   - Opt-in Lists
   - Imported Lists
   - SMS Messages
+  - Keyword Auto-Responders
   - Broadcasts
   - SMS Subscribers
   - Email Subscribers

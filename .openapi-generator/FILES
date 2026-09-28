@@ -116,6 +116,7 @@ docs/InfoGenesisReportsApi.md
 docs/InteractionsApi.md
 docs/InternalServerError500.md
 docs/JobPosition.md
+docs/KeywordAutoRespondersApi.md
 docs/LedgerEntry.md
 docs/LedgerEntryParentObjectID.md
 docs/LinkBook.md
@@ -313,6 +314,11 @@ docs/WTAuthenticationRegister.md
 docs/WTAuthenticationRequestResetPassword.md
 docs/WTAuthenticationResetPassword.md
 docs/WTAuthenticationSSOLoginForDiscourse.md
+docs/WTAutoResponder.md
+docs/WTAutoResponderCreateParams.md
+docs/WTAutoResponderHit.md
+docs/WTAutoResponderHitOutcome.md
+docs/WTAutoResponderUpdateParams.md
 docs/WTBillingChangePlan.md
 docs/WTBillingSavePaymentMethod.md
 docs/WTBillingSetIndustry.md
@@ -520,8 +526,12 @@ docs/Webpage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
-src/WalletInc.Test/Model/MerchantTermsDocumentTypeTests.cs
-src/WalletInc.Test/Model/WTCurrentMerchantTermsVersionTests.cs
+src/WalletInc.Test/Api/KeywordAutoRespondersApiTests.cs
+src/WalletInc.Test/Model/WTAutoResponderCreateParamsTests.cs
+src/WalletInc.Test/Model/WTAutoResponderHitOutcomeTests.cs
+src/WalletInc.Test/Model/WTAutoResponderHitTests.cs
+src/WalletInc.Test/Model/WTAutoResponderTests.cs
+src/WalletInc.Test/Model/WTAutoResponderUpdateParamsTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -549,6 +559,7 @@ src/WalletInc/Api/ImportedListsApi.cs
 src/WalletInc/Api/IndustriesApi.cs
 src/WalletInc/Api/InfoGenesisReportsApi.cs
 src/WalletInc/Api/InteractionsApi.cs
+src/WalletInc/Api/KeywordAutoRespondersApi.cs
 src/WalletInc/Api/LoungeApi.cs
 src/WalletInc/Api/MembershipTiersApi.cs
 src/WalletInc/Api/MerchantApi.cs
@@ -858,6 +869,11 @@ src/WalletInc/Model/WTAuthenticationRegister.cs
 src/WalletInc/Model/WTAuthenticationRequestResetPassword.cs
 src/WalletInc/Model/WTAuthenticationResetPassword.cs
 src/WalletInc/Model/WTAuthenticationSSOLoginForDiscourse.cs
+src/WalletInc/Model/WTAutoResponder.cs
+src/WalletInc/Model/WTAutoResponderCreateParams.cs
+src/WalletInc/Model/WTAutoResponderHit.cs
+src/WalletInc/Model/WTAutoResponderHitOutcome.cs
+src/WalletInc/Model/WTAutoResponderUpdateParams.cs
 src/WalletInc/Model/WTBillingChangePlan.cs
 src/WalletInc/Model/WTBillingSavePaymentMethod.cs
 src/WalletInc/Model/WTBillingSetIndustry.cs
