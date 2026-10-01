@@ -523,9 +523,13 @@ docs/WalletPageView.md
 docs/WalletTransactionLedgerApi.md
 docs/WalletWebTerminalApi.md
 docs/Webpage.md
+docs/WhatsNewArticle.md
+docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WhatsNewArticleTests.cs
+src/WalletInc.Test/Model/WhatsNewStageTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -1068,4 +1072,6 @@ src/WalletInc/Model/WTWhatsAppStatusCallback.cs
 src/WalletInc/Model/WalletConfiguration.cs
 src/WalletInc/Model/WalletPageView.cs
 src/WalletInc/Model/Webpage.cs
+src/WalletInc/Model/WhatsNewArticle.cs
+src/WalletInc/Model/WhatsNewStage.cs
 src/WalletInc/WalletInc.csproj
