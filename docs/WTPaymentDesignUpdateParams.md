@@ -17,6 +17,10 @@ Name | Type | Description | Notes
 **CompanyLogoURL** | **string** |  | [optional] 
 **Abbreviation** | **string** |  | [optional] 
 **Acronym** | **string** |  | [optional] 
+**TextPlate** | **bool** |  | [optional] 
+**TextPlateOpacity** | **double** |  | [optional] 
+**TextPlateColor** | **string** |  | [optional] 
+**GuestInstructions** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchAllVirtualBusinessCards**](VirtualBusinessCardApi.md#fetchallvirtualbusinesscards) | **GET** /v2/virtualBusinessCard/all | Get all Virtual Business Cards |
 | [**FetchVirtualBusinessCard**](VirtualBusinessCardApi.md#fetchvirtualbusinesscard) | **GET** /v2/virtualBusinessCard/{id} | Get Virtual Business Card |
 | [**FetchVirtualBusinessCardRequests**](VirtualBusinessCardApi.md#fetchvirtualbusinesscardrequests) | **GET** /v2/virtualBusinessCard/requests/{id} | Get Virtual Business Card traffic |
+| [**FetchVirtualBusinessCardRequestsPaged**](VirtualBusinessCardApi.md#fetchvirtualbusinesscardrequestspaged) | **GET** /v2/virtualBusinessCard/requests/{id}/paged | Get Virtual Business Card traffic (paginated) |
 | [**RestoreVirtualBusinessCard**](VirtualBusinessCardApi.md#restorevirtualbusinesscard) | **PATCH** /v2/virtualBusinessCard/{id} | Restore Virtual Business Card |
 | [**UpdateVirtualBusinessCard**](VirtualBusinessCardApi.md#updatevirtualbusinesscard) | **PUT** /v2/virtualBusinessCard/{id} | Update Virtual Business Card |
 
@@ -471,6 +472,106 @@ catch (ApiException e)
 ### Return type
 
 [**List&lt;WalletPageView&gt;**](WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchvirtualbusinesscardrequestspaged"></a>
+# **FetchVirtualBusinessCardRequestsPaged**
+> FetchMerchantURLRequestsPaged200Response FetchVirtualBusinessCardRequestsPaged (string id, double? page = null, double? limit = null)
+
+Get Virtual Business Card traffic (paginated)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchVirtualBusinessCardRequestsPagedExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VirtualBusinessCardApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | 
+            var page = 1.2D;  // double? |  (optional) 
+            var limit = 1.2D;  // double? |  (optional) 
+
+            try
+            {
+                // Get Virtual Business Card traffic (paginated)
+                FetchMerchantURLRequestsPaged200Response result = apiInstance.FetchVirtualBusinessCardRequestsPaged(id, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VirtualBusinessCardApi.FetchVirtualBusinessCardRequestsPaged: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchVirtualBusinessCardRequestsPagedWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get Virtual Business Card traffic (paginated)
+    ApiResponse<FetchMerchantURLRequestsPaged200Response> response = apiInstance.FetchVirtualBusinessCardRequestsPagedWithHttpInfo(id, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling VirtualBusinessCardApi.FetchVirtualBusinessCardRequestsPagedWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** |  |  |
+| **page** | **double?** |  | [optional]  |
+| **limit** | **double?** |  | [optional]  |
+
+### Return type
+
+[**FetchMerchantURLRequestsPaged200Response**](FetchMerchantURLRequestsPaged200Response.md)
 
 ### Authorization
 

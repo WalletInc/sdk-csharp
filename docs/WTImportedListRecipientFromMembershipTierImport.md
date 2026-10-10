@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ListName** | **string** |  | 
 **PhoneNumberID** | **string** |  | 
 **TierID** | [**AmenityId**](AmenityId.md) |  | 
+**IsOver21Required** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

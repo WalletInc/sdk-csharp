@@ -400,7 +400,7 @@ No authorization required
 
 <a id="fetchpeeractivity"></a>
 # **FetchPeerActivity**
-> List&lt;EmployeeActivityLog&gt; FetchPeerActivity (string employeeID)
+> List&lt;EmployeeActivityLog&gt; FetchPeerActivity (string employeeID, DateTime? startDateTime = null, DateTime? endDateTime = null, double? pageSize = null, double? pageNum = null)
 
 Get peer activity
 
@@ -426,11 +426,15 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new EmployeesApi(httpClient, config, httpClientHandler);
             var employeeID = "employeeID_example";  // string | 
+            var startDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only entries at or after this time (optional) 
+            var endDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only entries at or before this time (optional) 
+            var pageSize = 1.2D;  // double? | Entries per page, 1 to 1000 (default 1000) (optional) 
+            var pageNum = 1.2D;  // double? | 1-based page number (default 1). A page shorter than pageSize is the last one. (optional) 
 
             try
             {
                 // Get peer activity
-                List<EmployeeActivityLog> result = apiInstance.FetchPeerActivity(employeeID);
+                List<EmployeeActivityLog> result = apiInstance.FetchPeerActivity(employeeID, startDateTime, endDateTime, pageSize, pageNum);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -451,7 +455,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get peer activity
-    ApiResponse<List<EmployeeActivityLog>> response = apiInstance.FetchPeerActivityWithHttpInfo(employeeID);
+    ApiResponse<List<EmployeeActivityLog>> response = apiInstance.FetchPeerActivityWithHttpInfo(employeeID, startDateTime, endDateTime, pageSize, pageNum);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -469,6 +473,10 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **employeeID** | **string** |  |  |
+| **startDateTime** | **DateTime?** | Only entries at or after this time | [optional]  |
+| **endDateTime** | **DateTime?** | Only entries at or before this time | [optional]  |
+| **pageSize** | **double?** | Entries per page, 1 to 1000 (default 1000) | [optional]  |
+| **pageNum** | **double?** | 1-based page number (default 1). A page shorter than pageSize is the last one. | [optional]  |
 
 ### Return type
 

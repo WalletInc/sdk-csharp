@@ -23,6 +23,10 @@ Name | Type | Description | Notes
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
 **IsActive** | **bool** |  | 
+**TextPlate** | **bool** |  | 
+**TextPlateOpacity** | **double** |  | 
+**TextPlateColor** | **string** |  | [optional] 
+**GuestInstructions** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

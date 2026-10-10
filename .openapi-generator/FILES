@@ -157,6 +157,7 @@ docs/Message.md
 docs/ModuleError.md
 docs/NewsApi.md
 docs/NewsArticle.md
+docs/NotFound.md
 docs/OAIAssistantUpdateParams.md
 docs/OAIAssistantUpdateParamsCreateParams.md
 docs/OpenAIApi.md
@@ -528,8 +529,7 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
-src/WalletInc.Test/Model/WhatsNewArticleTests.cs
-src/WalletInc.Test/Model/WhatsNewStageTests.cs
+src/WalletInc.Test/Model/NotFoundTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -736,6 +736,7 @@ src/WalletInc/Model/MerchantURL.cs
 src/WalletInc/Model/Message.cs
 src/WalletInc/Model/ModuleError.cs
 src/WalletInc/Model/NewsArticle.cs
+src/WalletInc/Model/NotFound.cs
 src/WalletInc/Model/OAIAssistantUpdateParams.cs
 src/WalletInc/Model/OAIAssistantUpdateParamsCreateParams.cs
 src/WalletInc/Model/OptInList.cs
