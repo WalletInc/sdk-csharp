@@ -6,11 +6,11 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.51.1**, built 2026-10-10T07:39:53.867Z
+    **Spec version 2.52.0**, built 2026-10-11T11:57:05.118Z
   license:
     name: https://wallet.law
   title: wallet-api
-  version: 2.51.1
+  version: 2.52.0
 servers:
 - description: Production API
   url: https://api.wall.et
@@ -4505,8 +4505,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:44.193Z
-                    updatedAt: 2026-10-10T07:38:44.193Z
+                    createdAt: 2026-10-11T11:55:42.864Z
+                    updatedAt: 2026-10-11T11:55:42.864Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -9598,6 +9598,90 @@ paths:
       summary: Update Lounge
       tags:
       - Lounge
+  /employee/mediaFile/upload:
+    post:
+      operationId: requestMediaFileUpload
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTMediaUploadRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    mediaFile:
+                      id: HDJu74Yql2
+                      createdAt: 2026-10-10T12:00:00.000Z
+                      updatedAt: 2026-10-10T12:00:00.000Z
+                      merchantID: 736dhakidk
+                      fileURL: ""
+                      fileType: image
+                      fileName: summer-menu.jpg
+                      fileSize: 0
+                      folder: menus
+                      employeeID: HDJu74Yql2
+                      status: pending
+                    url: https://example-bucket.s3.us-east-2.amazonaws.com/
+                    fields:
+                      key: originals/736dhakidk/0f1e2d3c4b5a69788796a5b4c3d2e1f0.jpg
+                      Content-Type: image/jpeg
+                      Policy: '...'
+                      X-Amz-Signature: '...'
+                    expiresAt: 2026-10-10T12:15:00.000Z
+              schema:
+                $ref: "#/components/schemas/WTMediaUploadTicket"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: fileSize
+                      message: Images can be up to 10MB.
+                      value: "12000000"
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Upload a full-size image (up to 10MB)
+      tags:
+      - Files & Documents
   /v2/merchant:
     put:
       operationId: updateMerchant
@@ -18752,6 +18836,84 @@ paths:
       summary: Get the merchant's outbound-SMS send-freeze status (KAN-440).
       tags:
       - SMS Messages
+  /sms/quiethours/status:
+    get:
+      operationId: fetchSMSQuietHoursStatus
+      parameters:
+      - description: The instant to evaluate (ISO 8601). Defaults to now.
+        explode: true
+        in: query
+        name: at
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    mode: enforce
+                    appliesTo: marketing
+                    referenceZone: America/New_York
+                    bandStartMin: 660
+                    bandEndMin: 1200
+                    evaluatedAt: 2026-10-04T16:30:00.000Z
+                    withinBand: true
+                    wouldReject: false
+                    windowOpensAt: 2026-10-04T15:00:00.000Z
+                    windowClosesAt: 2026-10-05T00:01:00.000Z
+                    nextTransitionAt: 2026-10-05T00:01:00.000Z
+              schema:
+                $ref: "#/components/schemas/WTQuietHoursStatus"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get the marketing quiet-hours window (KAN-951).
+      tags:
+      - SMS Messages
   /v2/SmsSubscriber/all:
     get:
       operationId: fetchAllSmsSubscribers
@@ -19740,6 +19902,19 @@ paths:
               schema:
                 $ref: "#/components/schemas/AuthError"
           description: Authentication Failed
+        "404":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: NotFound
+                    message: We could not locate this business card.
+                    httpErrorCode: 404
+                    trackingCode: VBCRD-404
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not Found
         "422":
           content:
             application/json:
@@ -19825,6 +20000,19 @@ paths:
               schema:
                 $ref: "#/components/schemas/AuthError"
           description: Authentication Failed
+        "404":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: NotFound
+                    message: We could not locate this business card.
+                    httpErrorCode: 404
+                    trackingCode: VBCRD-404
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not Found
         "422":
           content:
             application/json:
@@ -19910,6 +20098,19 @@ paths:
               schema:
                 $ref: "#/components/schemas/AuthError"
           description: Authentication Failed
+        "404":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: NotFound
+                    message: We could not locate this business card.
+                    httpErrorCode: 404
+                    trackingCode: VBCRD-404
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not Found
         "422":
           content:
             application/json:
@@ -20001,6 +20202,19 @@ paths:
               schema:
                 $ref: "#/components/schemas/AuthError"
           description: Authentication Failed
+        "404":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: NotFound
+                    message: We could not locate this business card.
+                    httpErrorCode: 404
+                    trackingCode: VBCRD-404
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not Found
         "422":
           content:
             application/json:
@@ -20193,6 +20407,19 @@ paths:
               schema:
                 $ref: "#/components/schemas/AuthError"
           description: Authentication Failed
+        "404":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: NotFound
+                    message: We could not locate this business card.
+                    httpErrorCode: 404
+                    trackingCode: VBCRD-404
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not Found
         "422":
           content:
             application/json:
@@ -20316,6 +20543,19 @@ paths:
               schema:
                 $ref: "#/components/schemas/AuthError"
           description: Authentication Failed
+        "404":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: NotFound
+                    message: We could not locate this business card.
+                    httpErrorCode: 404
+                    trackingCode: VBCRD-404
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not Found
         "422":
           content:
             application/json:
@@ -22831,8 +23071,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-10T07:38:47.304Z
-                    updatedAt: 2026-10-10T07:38:47.304Z
+                    createdAt: 2026-10-11T11:55:47.242Z
+                    updatedAt: 2026-10-11T11:55:47.242Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22906,8 +23146,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-10T07:38:47.272Z
-                    updatedAt: 2026-10-10T07:38:47.272Z
+                    createdAt: 2026-10-11T11:55:47.198Z
+                    updatedAt: 2026-10-11T11:55:47.198Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -22981,8 +23221,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-10T07:38:47.307Z
-                    updatedAt: 2026-10-10T07:38:47.307Z
+                    createdAt: 2026-10-11T11:55:47.247Z
+                    updatedAt: 2026-10-11T11:55:47.247Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23062,8 +23302,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-10T07:38:47.293Z
-                    updatedAt: 2026-10-10T07:38:47.293Z
+                    createdAt: 2026-10-11T11:55:47.227Z
+                    updatedAt: 2026-10-11T11:55:47.227Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23163,8 +23403,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-10T07:38:47.281Z
-                    updatedAt: 2026-10-10T07:38:47.281Z
+                    createdAt: 2026-10-11T11:55:47.209Z
+                    updatedAt: 2026-10-11T11:55:47.209Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23460,8 +23700,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.389Z
-                    updatedAt: 2026-10-10T07:38:47.389Z
+                    createdAt: 2026-10-11T11:55:47.367Z
+                    updatedAt: 2026-10-11T11:55:47.367Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23538,8 +23778,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.351Z
-                    updatedAt: 2026-10-10T07:38:47.351Z
+                    createdAt: 2026-10-11T11:55:47.308Z
+                    updatedAt: 2026-10-11T11:55:47.308Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23616,8 +23856,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.392Z
-                    updatedAt: 2026-10-10T07:38:47.392Z
+                    createdAt: 2026-10-11T11:55:47.371Z
+                    updatedAt: 2026-10-11T11:55:47.371Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23700,8 +23940,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.378Z
-                    updatedAt: 2026-10-10T07:38:47.378Z
+                    createdAt: 2026-10-11T11:55:47.351Z
+                    updatedAt: 2026-10-11T11:55:47.351Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23804,8 +24044,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.359Z
-                    updatedAt: 2026-10-10T07:38:47.359Z
+                    createdAt: 2026-10-11T11:55:47.319Z
+                    updatedAt: 2026-10-11T11:55:47.320Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24049,8 +24289,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.485Z
-                    updatedAt: 2026-10-10T07:38:47.485Z
+                    createdAt: 2026-10-11T11:55:47.508Z
+                    updatedAt: 2026-10-11T11:55:47.508Z
                     isActive: false
                     textPlate: false
                     textPlateOpacity: 0.55
@@ -24136,8 +24376,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.449Z
-                    updatedAt: 2026-10-10T07:38:47.449Z
+                    createdAt: 2026-10-11T11:55:47.454Z
+                    updatedAt: 2026-10-11T11:55:47.454Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24224,8 +24464,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.488Z
-                    updatedAt: 2026-10-10T07:38:47.488Z
+                    createdAt: 2026-10-11T11:55:47.512Z
+                    updatedAt: 2026-10-11T11:55:47.512Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24318,8 +24558,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.475Z
-                    updatedAt: 2026-10-10T07:38:47.475Z
+                    createdAt: 2026-10-11T11:55:47.493Z
+                    updatedAt: 2026-10-11T11:55:47.493Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24432,8 +24672,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.457Z
-                    updatedAt: 2026-10-10T07:38:47.457Z
+                    createdAt: 2026-10-11T11:55:47.466Z
+                    updatedAt: 2026-10-11T11:55:47.466Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24655,8 +24895,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.493Z
-                    updatedAt: 2026-10-10T07:38:47.493Z
+                    createdAt: 2026-10-11T11:55:47.520Z
+                    updatedAt: 2026-10-11T11:55:47.520Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -24785,8 +25025,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.539Z
-                    updatedAt: 2026-10-10T07:38:47.539Z
+                    createdAt: 2026-10-11T11:55:47.589Z
+                    updatedAt: 2026-10-11T11:55:47.589Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25001,8 +25241,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.529Z
-                    updatedAt: 2026-10-10T07:38:47.529Z
+                    createdAt: 2026-10-11T11:55:47.574Z
+                    updatedAt: 2026-10-11T11:55:47.574Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25152,8 +25392,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.552Z
-                    updatedAt: 2026-10-10T07:38:47.552Z
+                    createdAt: 2026-10-11T11:55:47.607Z
+                    updatedAt: 2026-10-11T11:55:47.607Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -25276,8 +25516,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.556Z
-                    updatedAt: 2026-10-10T07:38:47.556Z
+                    createdAt: 2026-10-11T11:55:47.613Z
+                    updatedAt: 2026-10-11T11:55:47.613Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -26987,8 +27227,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.750Z
-                    updatedAt: 2026-10-10T07:38:47.750Z
+                    createdAt: 2026-10-11T11:55:47.897Z
+                    updatedAt: 2026-10-11T11:55:47.897Z
                     isActive: true
               schema:
                 items:
@@ -27084,8 +27324,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.752Z
-                    updatedAt: 2026-10-10T07:38:47.752Z
+                    createdAt: 2026-10-11T11:55:47.900Z
+                    updatedAt: 2026-10-11T11:55:47.900Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27378,8 +27618,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.762Z
-                    updatedAt: 2026-10-10T07:38:47.762Z
+                    createdAt: 2026-10-11T11:55:47.914Z
+                    updatedAt: 2026-10-11T11:55:47.914Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27761,8 +28001,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.800Z
-                    updatedAt: 2026-10-10T07:38:47.800Z
+                    createdAt: 2026-10-11T11:55:47.975Z
+                    updatedAt: 2026-10-11T11:55:47.975Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27861,8 +28101,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.811Z
-                    updatedAt: 2026-10-10T07:38:47.811Z
+                    createdAt: 2026-10-11T11:55:47.993Z
+                    updatedAt: 2026-10-11T11:55:47.993Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27954,8 +28194,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.842Z
-                    updatedAt: 2026-10-10T07:38:47.842Z
+                    createdAt: 2026-10-11T11:55:48.043Z
+                    updatedAt: 2026-10-11T11:55:48.043Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28047,8 +28287,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.855Z
-                    updatedAt: 2026-10-10T07:38:47.855Z
+                    createdAt: 2026-10-11T11:55:48.058Z
+                    updatedAt: 2026-10-11T11:55:48.058Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28141,8 +28381,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.870Z
-                    updatedAt: 2026-10-10T07:38:47.870Z
+                    createdAt: 2026-10-11T11:55:48.075Z
+                    updatedAt: 2026-10-11T11:55:48.075Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -28234,8 +28474,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.875Z
-                    updatedAt: 2026-10-10T07:38:47.875Z
+                    createdAt: 2026-10-11T11:55:48.082Z
+                    updatedAt: 2026-10-11T11:55:48.082Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -28333,8 +28573,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-10T07:38:47.878Z
-                    updatedAt: 2026-10-10T07:38:47.878Z
+                    createdAt: 2026-10-11T11:55:48.086Z
+                    updatedAt: 2026-10-11T11:55:48.086Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28738,7 +28978,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-10T07:38:47.891Z
+                    dateTimeLastViewed: 2026-10-11T11:55:48.105Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -28761,8 +29001,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-10T07:38:47.891Z
-                    updatedAt: 2026-10-10T07:38:47.891Z
+                    createdAt: 2026-10-11T11:55:48.105Z
+                    updatedAt: 2026-10-11T11:55:48.105Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -28851,7 +29091,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-10T07:38:47.897Z
+                    dateTimeLastViewed: 2026-10-11T11:55:48.114Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -28874,8 +29114,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-10T07:38:47.897Z
-                    updatedAt: 2026-10-10T07:38:47.897Z
+                    createdAt: 2026-10-11T11:55:48.114Z
+                    updatedAt: 2026-10-11T11:55:48.114Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -28971,7 +29211,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-10T07:38:47.922Z
+                    dateTimeLastViewed: 2026-10-11T11:55:48.153Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -28994,8 +29234,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-10T07:38:47.922Z
-                    updatedAt: 2026-10-10T07:38:47.922Z
+                    createdAt: 2026-10-11T11:55:48.153Z
+                    updatedAt: 2026-10-11T11:55:48.153Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -34541,6 +34781,19 @@ paths:
               schema:
                 type: string
           description: Ok
+        "404":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: NotFound
+                    message: We could not locate this business card.
+                    httpErrorCode: 404
+                    trackingCode: VBCRD-404
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not Found
         "422":
           content:
             application/json:
@@ -41174,6 +41427,11 @@ components:
       - temporalDecreaseFrequencyType
       - title
       - updatedAt
+    WTMediaFileStatus:
+      enum:
+      - pending
+      - ready
+      - failed
     MediaFile:
       additionalProperties: false
       example:
@@ -41187,6 +41445,7 @@ components:
         fileSize: 5000
         folder: folder
         employeeID: HDJu74Yql2
+        status: ready
       properties:
         id:
           example: ueJDL982Hs
@@ -41231,6 +41490,12 @@ components:
           - $ref: "#/components/schemas/NanoID"
           description: The ID of the employee who created this file
           example: HDJu74Yql2
+        status:
+          allOf:
+          - $ref: "#/components/schemas/WTMediaFileStatus"
+          description: "Processing state of a large upload (KAN-367). Absent on files\
+            \ uploaded the original way, which are always ready."
+          example: ready
       required:
       - createdAt
       - employeeID
@@ -43476,6 +43741,145 @@ components:
       - description
       - orderNumber
       - title
+    WTMediaFile:
+      additionalProperties: false
+      example:
+        id: ueJDL982Hs
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        merchantID: 736dhakidk
+        fileURL: https://media.wall.et/documents/folder/image.jpeg
+        fileType: image
+        fileName: image.jpeg
+        fileSize: 5000
+        folder: folder
+        employeeID: HDJu74Yql2
+        status: ready
+      properties:
+        id:
+          example: ueJDL982Hs
+          maxLength: 10
+          minLength: 10
+          pattern: "^[a-zA-Z0-9]+$"
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        merchantID:
+          allOf:
+          - $ref: "#/components/schemas/MerchantID"
+          description: The id of the merchant registered in WalletInc's database
+          example: 736dhakidk
+        fileURL:
+          description: The URL of the file
+          example: https://media.wall.et/documents/folder/image.jpeg
+          type: string
+        fileType:
+          description: The type of the file
+          example: image
+          type: string
+        fileName:
+          description: The name of the file
+          example: image.jpeg
+          type: string
+        fileSize:
+          description: The size of the file
+          example: 5000
+          format: double
+          type: number
+        folder:
+          description: The folder in which the file is stored
+          example: folder
+          type: string
+        employeeID:
+          allOf:
+          - $ref: "#/components/schemas/NanoID"
+          description: The ID of the employee who created this file
+          example: HDJu74Yql2
+        status:
+          allOf:
+          - $ref: "#/components/schemas/WTMediaFileStatus"
+          description: "Processing state of a large upload (KAN-367). Absent on files\
+            \ uploaded the original way, which are always ready."
+          example: ready
+      required:
+      - createdAt
+      - employeeID
+      - fileName
+      - fileSize
+      - fileType
+      - fileURL
+      - folder
+      - id
+      - merchantID
+      - updatedAt
+    WTMediaUploadTicket:
+      additionalProperties: false
+      example:
+        mediaFile:
+          id: ueJDL982Hs
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          merchantID: 736dhakidk
+          fileURL: https://media.wall.et/documents/folder/image.jpeg
+          fileType: image
+          fileName: image.jpeg
+          fileSize: 5000
+          folder: folder
+          employeeID: HDJu74Yql2
+          status: ready
+        url: https://example-bucket.s3.us-east-2.amazonaws.com/
+        fields:
+          key: fields
+        expiresAt: 2026-10-10T12:15:00.000Z
+      properties:
+        mediaFile:
+          $ref: "#/components/schemas/WTMediaFile"
+        url:
+          example: https://example-bucket.s3.us-east-2.amazonaws.com/
+          type: string
+        fields:
+          additionalProperties:
+            type: string
+          properties: {}
+        expiresAt:
+          example: 2026-10-10T12:15:00.000Z
+          type: string
+      required:
+      - expiresAt
+      - fields
+      - mediaFile
+      - url
+    WTMediaUploadRequest:
+      additionalProperties: false
+      example:
+        fileName: summer-menu.jpg
+        fileType: image/jpeg
+        fileSize: 5242880
+        folder: menus
+      properties:
+        fileName:
+          example: summer-menu.jpg
+          maxLength: 255
+          minLength: 1
+          type: string
+        fileType:
+          example: image/jpeg
+          type: string
+        fileSize:
+          example: 5242880
+          format: int32
+          type: integer
+        folder:
+          example: menus
+          type: string
+      required:
+      - fileName
+      - fileSize
+      - fileType
     WTMerchantUpdate:
       additionalProperties: false
       example:
@@ -47003,6 +47407,68 @@ components:
       required:
       - freezes
       - frozen
+    WTQuietHoursStatus:
+      additionalProperties: false
+      example:
+        mode: enforce
+        appliesTo: marketing
+        referenceZone: America/New_York
+        bandStartMin: 660
+        bandEndMin: 1200
+        evaluatedAt: 2026-10-04T16:30:00.000Z
+        withinBand: true
+        wouldReject: false
+        windowOpensAt: 2026-10-04T15:00:00.000Z
+        windowClosesAt: 2026-10-05T00:01:00.000Z
+        nextTransitionAt: 2026-10-05T00:01:00.000Z
+      properties:
+        mode:
+          example: enforce
+          type: string
+        appliesTo:
+          example: marketing
+          type: string
+        referenceZone:
+          example: America/New_York
+          type: string
+        bandStartMin:
+          example: 660
+          format: double
+          type: number
+        bandEndMin:
+          example: 1200
+          format: double
+          type: number
+        evaluatedAt:
+          example: 2026-10-04T16:30:00.000Z
+          type: string
+        withinBand:
+          example: true
+          type: boolean
+        wouldReject:
+          example: false
+          type: boolean
+        windowOpensAt:
+          example: 2026-10-04T15:00:00.000Z
+          type: string
+        windowClosesAt:
+          example: 2026-10-05T00:01:00.000Z
+          type: string
+        nextTransitionAt:
+          example: 2026-10-05T00:01:00.000Z
+          type: string
+      required:
+      - appliesTo
+      - bandEndMin
+      - bandStartMin
+      - evaluatedAt
+      - mode
+      - nextTransitionAt
+      - referenceZone
+      - windowClosesAt
+      - windowOpensAt
+      - withinBand
+      - wouldReject
     Pick_WTSmsSubscriberUpdateParams.Exclude_keyofWTSmsSubscriberUpdateParams.id__:
       description: "From T, pick a set of properties whose keys are in the union K"
       properties:
@@ -47396,6 +47862,34 @@ components:
       - merchantID
       - phoneNumber
       - updatedAt
+    NotFound:
+      additionalProperties: false
+      description: |-
+        Returned when the requested object does not exist (KAN-990). Silent: a mistyped, expired or crawled
+        link is the caller's error, so it is not posted to the error sink.
+      example:
+        name: name
+        message: message
+        stack: stack
+        httpErrorCode: 0.8008281904610115
+        trackingCode: trackingCode
+      properties:
+        name:
+          type: string
+        message:
+          type: string
+        stack:
+          type: string
+        httpErrorCode:
+          format: double
+          type: number
+        trackingCode:
+          type: string
+      required:
+      - httpErrorCode
+      - message
+      - name
+      - trackingCode
     WTVirtualBusinessCardCreateParams:
       additionalProperties: false
       example:
@@ -54555,34 +55049,6 @@ components:
       - listID
       - phoneNumber
       - sourceID
-    NotFound:
-      additionalProperties: false
-      description: |-
-        Returned when the requested object does not exist (KAN-990). Silent: a mistyped, expired or crawled
-        link is the caller's error, so it is not posted to the error sink.
-      example:
-        name: name
-        message: message
-        stack: stack
-        httpErrorCode: 0.8008281904610115
-        trackingCode: trackingCode
-      properties:
-        name:
-          type: string
-        message:
-          type: string
-        stack:
-          type: string
-        httpErrorCode:
-          format: double
-          type: number
-        trackingCode:
-          type: string
-      required:
-      - httpErrorCode
-      - message
-      - name
-      - trackingCode
     BrowserDetails:
       additionalProperties: false
       example:
@@ -56494,6 +56960,25 @@ components:
       - disposition
       - sampleDocumentURI
       - violatedDirective
+    WTMediaProcessedReport:
+      additionalProperties: {}
+      properties:
+        originalKey:
+          type: string
+        status:
+          enum:
+          - ready
+          - failed
+        fileURL:
+          type: string
+        fileType:
+          type: string
+        fileSize:
+          format: int32
+          type: integer
+      required:
+      - originalKey
+      - status
     fetchIndustry_200_response_anyOf:
       example:
         plans:

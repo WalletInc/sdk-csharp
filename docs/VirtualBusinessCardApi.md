@@ -104,6 +104,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
+| **404** | Not Found |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -392,6 +393,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
+| **404** | Not Found |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -488,6 +490,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
+| **404** | Not Found |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -588,6 +591,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
+| **404** | Not Found |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -684,6 +688,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
+| **404** | Not Found |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -782,6 +787,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
+| **404** | Not Found |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 

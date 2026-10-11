@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **FileSize** | **double** | The size of the file | 
 **Folder** | **string** | The folder in which the file is stored | 
 **EmployeeID** | **string** | The ID of the employee who created this file | 
+**Status** | **WTMediaFileStatus** | Processing state of a large upload (KAN-367). Absent on files uploaded the original way, which are always ready. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

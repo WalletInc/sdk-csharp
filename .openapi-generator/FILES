@@ -402,6 +402,11 @@ docs/WTLeadFiInquiryResult.md
 docs/WTLocalInstance.md
 docs/WTLoungeCreateParams.md
 docs/WTLoungeUpdateParams.md
+docs/WTMediaFile.md
+docs/WTMediaFileStatus.md
+docs/WTMediaProcessedReport.md
+docs/WTMediaUploadRequest.md
+docs/WTMediaUploadTicket.md
 docs/WTMember.md
 docs/WTMemberCreationParams.md
 docs/WTMembershipTier.md
@@ -464,6 +469,7 @@ docs/WTQuickLinkCreateParams.md
 docs/WTQuickLinkSectionCreateParams.md
 docs/WTQuickLinkSectionUpdateParams.md
 docs/WTQuickLinkUpdateParams.md
+docs/WTQuietHoursStatus.md
 docs/WTRole.md
 docs/WTRoomRateCreateParams.md
 docs/WTRoomRateUpdateParams.md
@@ -529,6 +535,12 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTMediaFileStatusTests.cs
+src/WalletInc.Test/Model/WTMediaFileTests.cs
+src/WalletInc.Test/Model/WTMediaProcessedReportTests.cs
+src/WalletInc.Test/Model/WTMediaUploadRequestTests.cs
+src/WalletInc.Test/Model/WTMediaUploadTicketTests.cs
+src/WalletInc.Test/Model/WTQuietHoursStatusTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -954,6 +966,11 @@ src/WalletInc/Model/WTLeadFiInquiryResult.cs
 src/WalletInc/Model/WTLocalInstance.cs
 src/WalletInc/Model/WTLoungeCreateParams.cs
 src/WalletInc/Model/WTLoungeUpdateParams.cs
+src/WalletInc/Model/WTMediaFile.cs
+src/WalletInc/Model/WTMediaFileStatus.cs
+src/WalletInc/Model/WTMediaProcessedReport.cs
+src/WalletInc/Model/WTMediaUploadRequest.cs
+src/WalletInc/Model/WTMediaUploadTicket.cs
 src/WalletInc/Model/WTMember.cs
 src/WalletInc/Model/WTMemberCreationParams.cs
 src/WalletInc/Model/WTMembershipTier.cs
@@ -1016,6 +1033,7 @@ src/WalletInc/Model/WTQuickLinkCreateParams.cs
 src/WalletInc/Model/WTQuickLinkSectionCreateParams.cs
 src/WalletInc/Model/WTQuickLinkSectionUpdateParams.cs
 src/WalletInc/Model/WTQuickLinkUpdateParams.cs
+src/WalletInc/Model/WTQuietHoursStatus.cs
 src/WalletInc/Model/WTRole.cs
 src/WalletInc/Model/WTRoomRateCreateParams.cs
 src/WalletInc/Model/WTRoomRateUpdateParams.cs
