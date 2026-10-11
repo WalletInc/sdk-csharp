@@ -4,11 +4,198 @@ All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**DeleteCustomDomain**](WalletConfigurationApi.md#deletecustomdomain) | **DELETE** /employee/walletConfiguration/customDomain | Remove the custom domain |
+| [**FetchCustomDomain**](WalletConfigurationApi.md#fetchcustomdomain) | **GET** /employee/walletConfiguration/customDomain | Get the custom domain |
 | [**FetchPassStyle**](WalletConfigurationApi.md#fetchpassstyle) | **GET** /wallet/passStyle | Get pass styling |
 | [**GenerateAndroidKeystore**](WalletConfigurationApi.md#generateandroidkeystore) | **POST** /v2/wallet/android/keystore | Generate Android TWA signing keystore |
 | [**ResetPassStyle**](WalletConfigurationApi.md#resetpassstyle) | **DELETE** /wallet/passStyle/{provider} | Reset one provider&#39;s pass styling |
+| [**SaveCustomDomain**](WalletConfigurationApi.md#savecustomdomain) | **PUT** /employee/walletConfiguration/customDomain | Set up a custom domain |
 | [**SaveMerchantCreditPaymentDesign**](WalletConfigurationApi.md#savemerchantcreditpaymentdesign) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update payment design for merchant credits |
 | [**SaveWalletRecord**](WalletConfigurationApi.md#savewalletrecord) | **PUT** /v2/wallet | Update wallet record |
+
+<a id="deletecustomdomain"></a>
+# **DeleteCustomDomain**
+> WTCustomDomain DeleteCustomDomain ()
+
+Remove the custom domain
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class DeleteCustomDomainExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WalletConfigurationApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Remove the custom domain
+                WTCustomDomain result = apiInstance.DeleteCustomDomain();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WalletConfigurationApi.DeleteCustomDomain: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteCustomDomainWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove the custom domain
+    ApiResponse<WTCustomDomain> response = apiInstance.DeleteCustomDomainWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WalletConfigurationApi.DeleteCustomDomainWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**WTCustomDomain**](WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **403** | Forbidden |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchcustomdomain"></a>
+# **FetchCustomDomain**
+> WTCustomDomain FetchCustomDomain ()
+
+Get the custom domain
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchCustomDomainExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WalletConfigurationApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Get the custom domain
+                WTCustomDomain result = apiInstance.FetchCustomDomain();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WalletConfigurationApi.FetchCustomDomain: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchCustomDomainWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the custom domain
+    ApiResponse<WTCustomDomain> response = apiInstance.FetchCustomDomainWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WalletConfigurationApi.FetchCustomDomainWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**WTCustomDomain**](WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **403** | Forbidden |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="fetchpassstyle"></a>
 # **FetchPassStyle**
@@ -288,6 +475,103 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Ok |  -  |
 | **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="savecustomdomain"></a>
+# **SaveCustomDomain**
+> WTCustomDomain SaveCustomDomain (WTCustomDomainRequest wTCustomDomainRequest)
+
+Set up a custom domain
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class SaveCustomDomainExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WalletConfigurationApi(httpClient, config, httpClientHandler);
+            var wTCustomDomainRequest = new WTCustomDomainRequest(); // WTCustomDomainRequest | 
+
+            try
+            {
+                // Set up a custom domain
+                WTCustomDomain result = apiInstance.SaveCustomDomain(wTCustomDomainRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WalletConfigurationApi.SaveCustomDomain: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SaveCustomDomainWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set up a custom domain
+    ApiResponse<WTCustomDomain> response = apiInstance.SaveCustomDomainWithHttpInfo(wTCustomDomainRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WalletConfigurationApi.SaveCustomDomainWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTCustomDomainRequest** | [**WTCustomDomainRequest**](WTCustomDomainRequest.md) |  |  |
+
+### Return type
+
+[**WTCustomDomain**](WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **403** | Forbidden |  -  |
 | **422** | Validation Failed |  -  |
 | **500** | Internal Server Error |  -  |
 

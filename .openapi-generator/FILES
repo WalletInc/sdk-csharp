@@ -340,6 +340,11 @@ docs/WTConnectPaymentsSummaryRecentPayoutsInner.md
 docs/WTConnectRequirements.md
 docs/WTCountResult.md
 docs/WTCurrentMerchantTermsVersion.md
+docs/WTCustomDomain.md
+docs/WTCustomDomainError.md
+docs/WTCustomDomainRequest.md
+docs/WTCustomDomainState.md
+docs/WTCustomDomainTXT.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
 docs/WTDiningCreateParams.md
@@ -536,6 +541,11 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTCustomDomainErrorTests.cs
+src/WalletInc.Test/Model/WTCustomDomainRequestTests.cs
+src/WalletInc.Test/Model/WTCustomDomainStateTests.cs
+src/WalletInc.Test/Model/WTCustomDomainTXTTests.cs
+src/WalletInc.Test/Model/WTCustomDomainTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -899,6 +909,11 @@ src/WalletInc/Model/WTConnectPaymentsSummaryRecentPayoutsInner.cs
 src/WalletInc/Model/WTConnectRequirements.cs
 src/WalletInc/Model/WTCountResult.cs
 src/WalletInc/Model/WTCurrentMerchantTermsVersion.cs
+src/WalletInc/Model/WTCustomDomain.cs
+src/WalletInc/Model/WTCustomDomainError.cs
+src/WalletInc/Model/WTCustomDomainRequest.cs
+src/WalletInc/Model/WTCustomDomainState.cs
+src/WalletInc/Model/WTCustomDomainTXT.cs
 src/WalletInc/Model/WTCustomerSearchByMemberID.cs
 src/WalletInc/Model/WTCustomerSearchByPhoneNumber.cs
 src/WalletInc/Model/WTDiningCreateParams.cs

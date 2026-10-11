@@ -6,11 +6,11 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.53.0**, built 2026-10-11T15:02:01.363Z
+    **Spec version 2.54.0**, built 2026-10-11T22:44:53.202Z
   license:
     name: https://wallet.law
   title: wallet-api
-  version: 2.53.0
+  version: 2.54.0
 servers:
 - description: Production API
   url: https://api.wall.et
@@ -2866,6 +2866,240 @@ paths:
         in the Flow B money path.
       tags:
       - Stripe Connect
+  /employee/walletConfiguration/customDomain:
+    delete:
+      operationId: deleteCustomDomain
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    hostname: ""
+                    managed: true
+                    dnsTarget: domains.wallet.inc
+              schema:
+                $ref: "#/components/schemas/WTCustomDomain"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "403":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: ForbiddenRequest
+                    message: You do not have permission for this action.
+                    httpErrorCode: 403
+                    trackingCode: RBAC-403
+              schema:
+                $ref: "#/components/schemas/ForbiddenRequest"
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: hostname
+                      message: "Use a subdomain, such as wallet.acme.com. Contact\
+                        \ us to use a bare domain."
+                      value: acme.com
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Remove the custom domain
+      tags:
+      - Wallet Configuration
+    get:
+      operationId: fetchCustomDomain
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    hostname: wallet.acme.com
+                    state: securing
+                    managed: true
+                    dnsTarget: domains.wallet.inc
+              schema:
+                $ref: "#/components/schemas/WTCustomDomain"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "403":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: ForbiddenRequest
+                    message: You do not have permission for this action.
+                    httpErrorCode: 403
+                    trackingCode: RBAC-403
+              schema:
+                $ref: "#/components/schemas/ForbiddenRequest"
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: hostname
+                      message: "Use a subdomain, such as wallet.acme.com. Contact\
+                        \ us to use a bare domain."
+                      value: acme.com
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get the custom domain
+      tags:
+      - Wallet Configuration
+    put:
+      operationId: saveCustomDomain
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTCustomDomainRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    hostname: wallet.acme.com
+                    state: dns_pending
+                    managed: true
+                    dnsTarget: domains.wallet.inc
+              schema:
+                $ref: "#/components/schemas/WTCustomDomain"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "403":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: ForbiddenRequest
+                    message: You do not have permission for this action.
+                    httpErrorCode: 403
+                    trackingCode: RBAC-403
+              schema:
+                $ref: "#/components/schemas/ForbiddenRequest"
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: hostname
+                      message: "Use a subdomain, such as wallet.acme.com. Contact\
+                        \ us to use a bare domain."
+                      value: acme.com
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Set up a custom domain
+      tags:
+      - Wallet Configuration
   /customer/chatIdentity/{chatUserID}:
     get:
       operationId: fetchCustomerByChatIdentity
@@ -4505,8 +4739,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:32.418Z
-                    updatedAt: 2026-10-11T15:00:32.418Z
+                    createdAt: 2026-10-11T22:43:35.674Z
+                    updatedAt: 2026-10-11T22:43:35.674Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -23085,8 +23319,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-11T15:00:38.427Z
-                    updatedAt: 2026-10-11T15:00:38.427Z
+                    createdAt: 2026-10-11T22:43:39.381Z
+                    updatedAt: 2026-10-11T22:43:39.381Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23160,8 +23394,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-11T15:00:38.367Z
-                    updatedAt: 2026-10-11T15:00:38.367Z
+                    createdAt: 2026-10-11T22:43:39.340Z
+                    updatedAt: 2026-10-11T22:43:39.340Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23235,8 +23469,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-11T15:00:38.432Z
-                    updatedAt: 2026-10-11T15:00:38.432Z
+                    createdAt: 2026-10-11T22:43:39.385Z
+                    updatedAt: 2026-10-11T22:43:39.385Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23316,8 +23550,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-11T15:00:38.408Z
-                    updatedAt: 2026-10-11T15:00:38.408Z
+                    createdAt: 2026-10-11T22:43:39.366Z
+                    updatedAt: 2026-10-11T22:43:39.366Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23417,8 +23651,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-11T15:00:38.385Z
-                    updatedAt: 2026-10-11T15:00:38.385Z
+                    createdAt: 2026-10-11T22:43:39.349Z
+                    updatedAt: 2026-10-11T22:43:39.349Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23714,8 +23948,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.629Z
-                    updatedAt: 2026-10-11T15:00:38.629Z
+                    createdAt: 2026-10-11T22:43:39.481Z
+                    updatedAt: 2026-10-11T22:43:39.481Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23792,8 +24026,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.530Z
-                    updatedAt: 2026-10-11T15:00:38.530Z
+                    createdAt: 2026-10-11T22:43:39.436Z
+                    updatedAt: 2026-10-11T22:43:39.436Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23870,8 +24104,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.637Z
-                    updatedAt: 2026-10-11T15:00:38.637Z
+                    createdAt: 2026-10-11T22:43:39.484Z
+                    updatedAt: 2026-10-11T22:43:39.484Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -23954,8 +24188,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.602Z
-                    updatedAt: 2026-10-11T15:00:38.602Z
+                    createdAt: 2026-10-11T22:43:39.468Z
+                    updatedAt: 2026-10-11T22:43:39.468Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24058,8 +24292,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.553Z
-                    updatedAt: 2026-10-11T15:00:38.553Z
+                    createdAt: 2026-10-11T22:43:39.445Z
+                    updatedAt: 2026-10-11T22:43:39.445Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24303,8 +24537,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.885Z
-                    updatedAt: 2026-10-11T15:00:38.885Z
+                    createdAt: 2026-10-11T22:43:39.602Z
+                    updatedAt: 2026-10-11T22:43:39.602Z
                     isActive: false
                     textPlate: false
                     textPlateOpacity: 0.55
@@ -24390,8 +24624,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.789Z
-                    updatedAt: 2026-10-11T15:00:38.789Z
+                    createdAt: 2026-10-11T22:43:39.558Z
+                    updatedAt: 2026-10-11T22:43:39.559Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24478,8 +24712,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.892Z
-                    updatedAt: 2026-10-11T15:00:38.892Z
+                    createdAt: 2026-10-11T22:43:39.606Z
+                    updatedAt: 2026-10-11T22:43:39.606Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24572,8 +24806,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.861Z
-                    updatedAt: 2026-10-11T15:00:38.861Z
+                    createdAt: 2026-10-11T22:43:39.591Z
+                    updatedAt: 2026-10-11T22:43:39.591Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24686,8 +24920,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.812Z
-                    updatedAt: 2026-10-11T15:00:38.812Z
+                    createdAt: 2026-10-11T22:43:39.568Z
+                    updatedAt: 2026-10-11T22:43:39.568Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24909,8 +25143,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.902Z
-                    updatedAt: 2026-10-11T15:00:38.902Z
+                    createdAt: 2026-10-11T22:43:39.612Z
+                    updatedAt: 2026-10-11T22:43:39.612Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25039,8 +25273,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.014Z
-                    updatedAt: 2026-10-11T15:00:39.014Z
+                    createdAt: 2026-10-11T22:43:39.674Z
+                    updatedAt: 2026-10-11T22:43:39.674Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25255,8 +25489,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:38.993Z
-                    updatedAt: 2026-10-11T15:00:38.993Z
+                    createdAt: 2026-10-11T22:43:39.661Z
+                    updatedAt: 2026-10-11T22:43:39.661Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25406,8 +25640,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.041Z
-                    updatedAt: 2026-10-11T15:00:39.041Z
+                    createdAt: 2026-10-11T22:43:39.688Z
+                    updatedAt: 2026-10-11T22:43:39.688Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -25530,8 +25764,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.052Z
-                    updatedAt: 2026-10-11T15:00:39.052Z
+                    createdAt: 2026-10-11T22:43:39.693Z
+                    updatedAt: 2026-10-11T22:43:39.693Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -27241,8 +27475,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.499Z
-                    updatedAt: 2026-10-11T15:00:39.499Z
+                    createdAt: 2026-10-11T22:43:39.930Z
+                    updatedAt: 2026-10-11T22:43:39.930Z
                     isActive: true
               schema:
                 items:
@@ -27338,8 +27572,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.502Z
-                    updatedAt: 2026-10-11T15:00:39.502Z
+                    createdAt: 2026-10-11T22:43:39.932Z
+                    updatedAt: 2026-10-11T22:43:39.932Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27632,8 +27866,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.523Z
-                    updatedAt: 2026-10-11T15:00:39.523Z
+                    createdAt: 2026-10-11T22:43:39.943Z
+                    updatedAt: 2026-10-11T22:43:39.943Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28015,8 +28249,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.617Z
-                    updatedAt: 2026-10-11T15:00:39.617Z
+                    createdAt: 2026-10-11T22:43:39.993Z
+                    updatedAt: 2026-10-11T22:43:39.993Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28115,8 +28349,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.648Z
-                    updatedAt: 2026-10-11T15:00:39.648Z
+                    createdAt: 2026-10-11T22:43:40.013Z
+                    updatedAt: 2026-10-11T22:43:40.013Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28208,8 +28442,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.734Z
-                    updatedAt: 2026-10-11T15:00:39.734Z
+                    createdAt: 2026-10-11T22:43:40.053Z
+                    updatedAt: 2026-10-11T22:43:40.053Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28301,8 +28535,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.760Z
-                    updatedAt: 2026-10-11T15:00:39.760Z
+                    createdAt: 2026-10-11T22:43:40.065Z
+                    updatedAt: 2026-10-11T22:43:40.065Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28395,8 +28629,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.787Z
-                    updatedAt: 2026-10-11T15:00:39.787Z
+                    createdAt: 2026-10-11T22:43:40.080Z
+                    updatedAt: 2026-10-11T22:43:40.080Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -28488,8 +28722,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.797Z
-                    updatedAt: 2026-10-11T15:00:39.797Z
+                    createdAt: 2026-10-11T22:43:40.084Z
+                    updatedAt: 2026-10-11T22:43:40.084Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -28587,8 +28821,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-11T15:00:39.806Z
-                    updatedAt: 2026-10-11T15:00:39.806Z
+                    createdAt: 2026-10-11T22:43:40.088Z
+                    updatedAt: 2026-10-11T22:43:40.088Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28992,7 +29226,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-11T15:00:39.842Z
+                    dateTimeLastViewed: 2026-10-11T22:43:40.103Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -29015,8 +29249,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-11T15:00:39.842Z
-                    updatedAt: 2026-10-11T15:00:39.842Z
+                    createdAt: 2026-10-11T22:43:40.103Z
+                    updatedAt: 2026-10-11T22:43:40.103Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -29105,7 +29339,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-11T15:00:39.860Z
+                    dateTimeLastViewed: 2026-10-11T22:43:40.111Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -29128,8 +29362,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-11T15:00:39.860Z
-                    updatedAt: 2026-10-11T15:00:39.860Z
+                    createdAt: 2026-10-11T22:43:40.111Z
+                    updatedAt: 2026-10-11T22:43:40.111Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -29225,7 +29459,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-11T15:00:39.923Z
+                    dateTimeLastViewed: 2026-10-11T22:43:40.141Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -29248,8 +29482,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-11T15:00:39.923Z
-                    updatedAt: 2026-10-11T15:00:39.923Z
+                    createdAt: 2026-10-11T22:43:40.141Z
+                    updatedAt: 2026-10-11T22:43:40.141Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -38543,6 +38777,96 @@ components:
       - balance
       - recentCharges
       - recentPayouts
+    WTCustomDomainState:
+      enum:
+      - dns_pending
+      - ownership_pending
+      - securing
+      - live
+      - error
+    WTCustomDomainTXT:
+      additionalProperties: false
+      properties:
+        name:
+          example: _cf-custom-hostname.wallet.acme.com
+          type: string
+        value:
+          example: 5cc07c04-ea62-4a5a-95f0-419334a875a4
+          type: string
+      required:
+      - name
+      - value
+    WTCustomDomainError:
+      additionalProperties: false
+      properties:
+        code:
+          example: certificate_blocked
+          type: string
+        message:
+          example: Your domain's CAA records do not allow the certificate authorities
+            Wallet uses.
+          type: string
+        helpURL:
+          description: A help-centre guide for this problem.
+          example: https://help.wallet.inc
+          type: string
+      required:
+      - code
+      - helpURL
+      - message
+    WTCustomDomain:
+      additionalProperties: false
+      example:
+        hostname: wallet.acme.com
+        state: ""
+        managed: true
+        dnsTarget: domains.wallet.inc
+        txt: ""
+        error: ""
+      properties:
+        hostname:
+          description: "The custom domain, or empty when none is set up."
+          example: wallet.acme.com
+          type: string
+        state:
+          allOf:
+          - $ref: "#/components/schemas/WTCustomDomainState"
+          description: Where the domain is in its setup. Absent when `hostname` is
+            empty.
+        managed:
+          description: False when Wallet set the domain up by hand. Such a domain
+            is shown read-only and cannot be changed here.
+          example: true
+          type: boolean
+        dnsTarget:
+          description: The CNAME target the merchant points their domain at.
+          example: domains.wallet.inc
+          type: string
+        txt:
+          allOf:
+          - $ref: "#/components/schemas/WTCustomDomainTXT"
+          description: Present when the merchant must also add a TXT record.
+        error:
+          allOf:
+          - $ref: "#/components/schemas/WTCustomDomainError"
+          description: Present when `state` is `error`.
+      required:
+      - dnsTarget
+      - hostname
+      - managed
+    WTCustomDomainRequest:
+      additionalProperties: false
+      example:
+        hostname: wallet.acme.com
+      properties:
+        hostname:
+          description: "A subdomain the merchant controls, such as `wallet.acme.com`."
+          example: wallet.acme.com
+          maxLength: 253
+          minLength: 4
+          type: string
+      required:
+      - hostname
     Status:
       enum:
       - created
