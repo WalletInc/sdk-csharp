@@ -495,7 +495,7 @@ No authorization required
 
 <a id="fetchmerchanturlrequestspaged"></a>
 # **FetchMerchantURLRequestsPaged**
-> FetchMerchantURLRequestsPaged200Response FetchMerchantURLRequestsPaged (string id, double? page = null, double? limit = null)
+> FetchMerchantURLRequestsPaged200Response FetchMerchantURLRequestsPaged (string id, double? page = null, double? limit = null, WTTrafficClass? trafficClass = null)
 
 Get Short Link traffic (paginated)
 
@@ -523,11 +523,12 @@ namespace Example
             var id = "id_example";  // string | 
             var page = 1.2D;  // double? |  (optional) 
             var limit = 1.2D;  // double? |  (optional) 
+            var trafficClass = new WTTrafficClass?(); // WTTrafficClass? |  (optional) 
 
             try
             {
                 // Get Short Link traffic (paginated)
-                FetchMerchantURLRequestsPaged200Response result = apiInstance.FetchMerchantURLRequestsPaged(id, page, limit);
+                FetchMerchantURLRequestsPaged200Response result = apiInstance.FetchMerchantURLRequestsPaged(id, page, limit, trafficClass);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -548,7 +549,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Short Link traffic (paginated)
-    ApiResponse<FetchMerchantURLRequestsPaged200Response> response = apiInstance.FetchMerchantURLRequestsPagedWithHttpInfo(id, page, limit);
+    ApiResponse<FetchMerchantURLRequestsPaged200Response> response = apiInstance.FetchMerchantURLRequestsPagedWithHttpInfo(id, page, limit, trafficClass);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -568,6 +569,7 @@ catch (ApiException e)
 | **id** | **string** |  |  |
 | **page** | **double?** |  | [optional]  |
 | **limit** | **double?** |  | [optional]  |
+| **trafficClass** | [**WTTrafficClass?**](WTTrafficClass?.md) |  | [optional]  |
 
 ### Return type
 

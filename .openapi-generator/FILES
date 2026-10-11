@@ -503,6 +503,7 @@ docs/WTTicket.md
 docs/WTTicketCreateParams.md
 docs/WTTicketReachStats.md
 docs/WTTicketUpdateParams.md
+docs/WTTrafficClass.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTTwilioVerifyAuthyCodeResponse.md
@@ -535,12 +536,7 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
-src/WalletInc.Test/Model/WTMediaFileStatusTests.cs
-src/WalletInc.Test/Model/WTMediaFileTests.cs
-src/WalletInc.Test/Model/WTMediaProcessedReportTests.cs
-src/WalletInc.Test/Model/WTMediaUploadRequestTests.cs
-src/WalletInc.Test/Model/WTMediaUploadTicketTests.cs
-src/WalletInc.Test/Model/WTQuietHoursStatusTests.cs
+src/WalletInc.Test/Model/WTTrafficClassTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -1067,6 +1063,7 @@ src/WalletInc/Model/WTTicket.cs
 src/WalletInc/Model/WTTicketCreateParams.cs
 src/WalletInc/Model/WTTicketReachStats.cs
 src/WalletInc/Model/WTTicketUpdateParams.cs
+src/WalletInc/Model/WTTrafficClass.cs
 src/WalletInc/Model/WTTwilioRequestAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCodeResponse.cs
