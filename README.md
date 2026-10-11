@@ -13,7 +13,7 @@ The official server-side .NET SDK for the [Wallet Inc](https://wallet.inc) CRM &
 
 - Website: https://wallet.inc
 - Developer docs: https://wallet.dev
-- API status: https://uptime.wallet.inc
+- API status: https://status.wallet.inc
 - All SDKs: https://github.com/walletinc
 
 ## Requirements
