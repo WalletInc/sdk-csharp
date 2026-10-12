@@ -464,6 +464,7 @@ docs/WTProductUpdateParams.md
 docs/WTPromoCodeCreateParams.md
 docs/WTPromoCodeUpdateParams.md
 docs/WTPublicBranding.md
+docs/WTPublicItemBranding.md
 docs/WTPublicVanityPage.md
 docs/WTPublicVanityPageMerchant.md
 docs/WTQRCodeDesign.md
@@ -541,6 +542,7 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTPublicItemBrandingTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -1028,6 +1030,7 @@ src/WalletInc/Model/WTProductUpdateParams.cs
 src/WalletInc/Model/WTPromoCodeCreateParams.cs
 src/WalletInc/Model/WTPromoCodeUpdateParams.cs
 src/WalletInc/Model/WTPublicBranding.cs
+src/WalletInc/Model/WTPublicItemBranding.cs
 src/WalletInc/Model/WTPublicVanityPage.cs
 src/WalletInc/Model/WTPublicVanityPageMerchant.cs
 src/WalletInc/Model/WTQRCodeDesign.cs
