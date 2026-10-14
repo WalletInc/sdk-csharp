@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DnsTarget** | **string** | The CNAME target the merchant points their domain at. | 
 **Txt** | [**WTCustomDomainTXT**](WTCustomDomainTXT.md) | Present when the merchant must also add a TXT record. | [optional] 
 **Error** | [**WTCustomDomainError**](WTCustomDomainError.md) | Present when &#x60;state&#x60; is &#x60;error&#x60;. | [optional] 
+**Paused** | **bool** | True when the domain is live but the merchant&#39;s plan no longer includes custom domains. Guests are redirected to the same page on wall.et until the merchant upgrades; nothing needs to be set up again. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **DesktopFrameBackgroundColor** | **string** |  | [optional] 
 **DesktopFrameBackgroundImageURL** | **string** |  | [optional] 
 **DesktopFrameByline** | **string** |  | [optional] 
+**CustomDomainPaused** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
