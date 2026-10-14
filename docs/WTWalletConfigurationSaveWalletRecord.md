@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HeaderBackgroundColor** | **string** |  | [optional] 
 **HeaderButtonColor** | **string** |  | [optional] 
+**HeaderStyle** | **WTWalletHeaderStyle** |  | [optional] 
 **LeftMenuHeaderBackgroundColor** | **string** |  | [optional] 
 **LeftMenuHeaderFontColor** | **string** |  | [optional] 
 **LeftMenuSectionBackgroundColor** | **string** |  | [optional] 

@@ -523,6 +523,7 @@ docs/WTVirtualBusinessCardCreateParams.md
 docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
 docs/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md
+docs/WTWalletHeaderStyle.md
 docs/WTWalletItemRedemption.md
 docs/WTWalletObjectPrefixCounts.md
 docs/WTWalletPageView.md
@@ -543,6 +544,7 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTWalletHeaderStyleTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -1089,6 +1091,7 @@ src/WalletInc/Model/WTVirtualBusinessCardCreateParams.cs
 src/WalletInc/Model/WTVirtualBusinessCardUpdateParams.cs
 src/WalletInc/Model/WTWalletConfigurationSaveWalletRecord.cs
 src/WalletInc/Model/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.cs
+src/WalletInc/Model/WTWalletHeaderStyle.cs
 src/WalletInc/Model/WTWalletItemRedemption.cs
 src/WalletInc/Model/WTWalletObjectPrefixCounts.cs
 src/WalletInc/Model/WTWalletPageView.cs

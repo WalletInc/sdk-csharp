@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **VanityPageWalletPrefix** | **string** |  | [optional] 
 **CompanyLogoURL** | **string** |  | [optional] 
 **HeaderBackgroundColor** | **string** |  | [optional] 
+**HeaderStyle** | **WTWalletHeaderStyle** |  | [optional] 
 **MobileAppIconURL** | **string** |  | [optional] 
 **AndroidSHA256Fingerprint** | **string** |  | [optional] 
 **IsCall** | **bool** |  | [optional] 
