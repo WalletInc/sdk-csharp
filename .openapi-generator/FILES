@@ -515,7 +515,9 @@ docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTTwilioVerifyAuthyCodeResponse.md
 docs/WTVideoCreateParams.md
+docs/WTVideoOrientation.md
 docs/WTVideoPlaybackSource.md
+docs/WTVideoStatus.md
 docs/WTVideoUpdateParams.md
 docs/WTVideoUploadProvision.md
 docs/WTVideoUploadProvisionParams.md
@@ -544,6 +546,8 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTVideoOrientationTests.cs
+src/WalletInc.Test/Model/WTVideoStatusTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -1082,7 +1086,9 @@ src/WalletInc/Model/WTTwilioRequestAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCode.cs
 src/WalletInc/Model/WTTwilioVerifyAuthyCodeResponse.cs
 src/WalletInc/Model/WTVideoCreateParams.cs
+src/WalletInc/Model/WTVideoOrientation.cs
 src/WalletInc/Model/WTVideoPlaybackSource.cs
+src/WalletInc/Model/WTVideoStatus.cs
 src/WalletInc/Model/WTVideoUpdateParams.cs
 src/WalletInc/Model/WTVideoUploadProvision.cs
 src/WalletInc/Model/WTVideoUploadProvisionParams.cs

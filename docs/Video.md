@@ -16,6 +16,12 @@ Name | Type | Description | Notes
 **Provider** | **VideoProvider** |  | 
 **AssetId** | **string** |  | 
 **Source** | [**WTVideoPlaybackSource**](WTVideoPlaybackSource.md) |  | 
+**Width** | **double** |  | [optional] 
+**Height** | **double** |  | [optional] 
+**Orientation** | **WTVideoOrientation** |  | [optional] 
+**DurationSeconds** | **double** |  | [optional] 
+**PosterURL** | **string** |  | [optional] 
+**Status** | **WTVideoStatus** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
