@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **MerchantsReferenceID** | **string** |  | [optional] 
 **ValidOnlyAtPOSRegisterIDs** | **List&lt;string&gt;** |  | [optional] 
 **PaymentDesignID** | **string** |  | 
+**GuestInstructions** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

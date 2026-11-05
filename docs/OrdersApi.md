@@ -5,8 +5,10 @@ All URIs are relative to *https://api.wall.et*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**FetchOrder**](OrdersApi.md#fetchorder) | **GET** /orders/{orderId} | Fetch one of the authenticated merchant&#39;s orders by id Returns the order with its line items. 403-family error if the order belongs to another merchant (ownership is asserted server-side). |
+| [**FetchOrderingSettings**](OrdersApi.md#fetchorderingsettings) | **GET** /ordering/settings | Get ordering settings |
 | [**ListOrders**](OrdersApi.md#listorders) | **GET** /orders | List the authenticated merchant&#39;s orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B. |
 | [**RedactOrderDonorNote**](OrdersApi.md#redactorderdonornote) | **POST** /orders/{orderId}/donor-note/redact | Redact (soft-delete) the donor note on one of the authenticated merchant&#39;s orders KAN-862 takedown path: hides a guest-supplied tip / donation note from every surface. The original text is RETAINED server-side (soft-delete) for a possible exposure / legal review; no \&quot;[redacted]\&quot; placeholder is shown. Idempotent (an order with no note, or an already-redacted note, is a no-op). 403-family error if the order belongs to another merchant (ownership is asserted server-side). |
+| [**UpdateOrderingSettings**](OrdersApi.md#updateorderingsettings) | **PUT** /ordering/settings | Update ordering settings |
 
 <a id="fetchorder"></a>
 # **FetchOrder**
@@ -104,9 +106,100 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="fetchorderingsettings"></a>
+# **FetchOrderingSettings**
+> WTOrderingSettings FetchOrderingSettings ()
+
+Get ordering settings
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchOrderingSettingsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OrdersApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Get ordering settings
+                WTOrderingSettings result = apiInstance.FetchOrderingSettings();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrdersApi.FetchOrderingSettings: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchOrderingSettingsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get ordering settings
+    ApiResponse<WTOrderingSettings> response = apiInstance.FetchOrderingSettingsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrdersApi.FetchOrderingSettingsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**WTOrderingSettings**](WTOrderingSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="listorders"></a>
 # **ListOrders**
-> List&lt;WTOrder&gt; ListOrders ()
+> List&lt;WTOrder&gt; ListOrders (string? venueID = null)
 
 List the authenticated merchant's orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B.
 
@@ -131,11 +224,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new OrdersApi(httpClient, config, httpClientHandler);
+            var venueID = "venueID_example";  // string? | Only the orders of this Dining outlet (DI...) or Lounge (LO...), so each kitchen sees its own. (optional) 
 
             try
             {
                 // List the authenticated merchant's orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B.
-                List<WTOrder> result = apiInstance.ListOrders();
+                List<WTOrder> result = apiInstance.ListOrders(venueID);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -156,7 +250,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List the authenticated merchant's orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B.
-    ApiResponse<List<WTOrder>> response = apiInstance.ListOrdersWithHttpInfo();
+    ApiResponse<List<WTOrder>> response = apiInstance.ListOrdersWithHttpInfo(venueID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -170,7 +264,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **venueID** | **string?** | Only the orders of this Dining outlet (DI...) or Lounge (LO...), so each kitchen sees its own. | [optional]  |
+
 ### Return type
 
 [**List&lt;WTOrder&gt;**](WTOrder.md)
@@ -278,6 +376,102 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updateorderingsettings"></a>
+# **UpdateOrderingSettings**
+> WTOrderingSettings UpdateOrderingSettings (WTOrderingSettingsUpdateParams wTOrderingSettingsUpdateParams)
+
+Update ordering settings
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class UpdateOrderingSettingsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new OrdersApi(httpClient, config, httpClientHandler);
+            var wTOrderingSettingsUpdateParams = new WTOrderingSettingsUpdateParams(); // WTOrderingSettingsUpdateParams | 
+
+            try
+            {
+                // Update ordering settings
+                WTOrderingSettings result = apiInstance.UpdateOrderingSettings(wTOrderingSettingsUpdateParams);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrdersApi.UpdateOrderingSettings: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateOrderingSettingsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update ordering settings
+    ApiResponse<WTOrderingSettings> response = apiInstance.UpdateOrderingSettingsWithHttpInfo(wTOrderingSettingsUpdateParams);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrdersApi.UpdateOrderingSettingsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTOrderingSettingsUpdateParams** | [**WTOrderingSettingsUpdateParams**](WTOrderingSettingsUpdateParams.md) |  |  |
+
+### Return type
+
+[**WTOrderingSettings**](WTOrderingSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

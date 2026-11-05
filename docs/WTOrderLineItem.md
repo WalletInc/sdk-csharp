@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **TitleSnapshot** | **string** |  | 
 **UnitAmount** | **int** |  | 
 **Quantity** | **int** |  | 
+**Note** | **string** |  | [optional] 
+**MenuItemID** | **string** |  | [optional] 
+**Options** | [**List&lt;WTOrderLineOption&gt;**](WTOrderLineOption.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

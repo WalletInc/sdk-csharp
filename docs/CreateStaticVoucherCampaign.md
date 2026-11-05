@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **MerchantsReferenceID** | **string** |  | [optional] 
 **ValidOnlyAtPOSRegisterIDs** | **List&lt;string&gt;** |  | [optional] 
 **PaymentDesignID** | **string** |  | 
+**GuestInstructions** | **string** |  | [optional] 
 **Bucket** | **string** |  | [optional] 
 **FileName** | **string** |  | [optional] 
 **SourceID** | **int** |  | 

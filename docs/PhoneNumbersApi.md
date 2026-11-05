@@ -11,6 +11,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchPhoneNumber**](PhoneNumbersApi.md#fetchphonenumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Get phone number |
 | [**FetchSMSAgreement**](PhoneNumbersApi.md#fetchsmsagreement) | **GET** /v2/sms/agreement | Get SMS Agreement |
 | [**FetchTCPAFilter**](PhoneNumbersApi.md#fetchtcpafilter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters |
+| [**RecordSMSPrivacyRequest**](PhoneNumbersApi.md#recordsmsprivacyrequest) | **POST** /sms/privacyRequest | Record a request to stop texts |
 | [**RestorePhoneNumber**](PhoneNumbersApi.md#restorephonenumber) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number |
 | [**SendPhoneNumberForVerification**](PhoneNumbersApi.md#sendphonenumberforverification) | **PUT** /v2/sms/phoneNumber/verification/{phoneNumberID} | Request phone number verification |
 | [**UpdatePhoneNumber**](PhoneNumbersApi.md#updatephonenumber) | **PUT** /v2/sms/phoneNumber/{phoneNumberID} | Update phone number |
@@ -666,6 +667,102 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="recordsmsprivacyrequest"></a>
+# **RecordSMSPrivacyRequest**
+> WTTCPAPrivacyRequestResult RecordSMSPrivacyRequest (WTTCPAPrivacyRequest wTTCPAPrivacyRequest)
+
+Record a request to stop texts
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class RecordSMSPrivacyRequestExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new PhoneNumbersApi(httpClient, config, httpClientHandler);
+            var wTTCPAPrivacyRequest = new WTTCPAPrivacyRequest(); // WTTCPAPrivacyRequest | 
+
+            try
+            {
+                // Record a request to stop texts
+                WTTCPAPrivacyRequestResult result = apiInstance.RecordSMSPrivacyRequest(wTTCPAPrivacyRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PhoneNumbersApi.RecordSMSPrivacyRequest: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RecordSMSPrivacyRequestWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Record a request to stop texts
+    ApiResponse<WTTCPAPrivacyRequestResult> response = apiInstance.RecordSMSPrivacyRequestWithHttpInfo(wTTCPAPrivacyRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PhoneNumbersApi.RecordSMSPrivacyRequestWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTTCPAPrivacyRequest** | [**WTTCPAPrivacyRequest**](WTTCPAPrivacyRequest.md) |  |  |
+
+### Return type
+
+[**WTTCPAPrivacyRequestResult**](WTTCPAPrivacyRequestResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

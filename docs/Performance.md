@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **TicketExpirationDateTime** | **DateTime** |  | [optional] 
 **RedemptionInstructions** | **string** |  | [optional] 
 **Id** | [**AmenityId**](AmenityId.md) |  | 
+**PageID** | **string** |  | [optional] 
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
 **IsActive** | **bool** |  | 

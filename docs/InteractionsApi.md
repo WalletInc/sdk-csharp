@@ -25,6 +25,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FindByVanityHandle**](InteractionsApi.md#findbyvanityhandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
 | [**IdentifyItem**](InteractionsApi.md#identifyitem) | **GET** /wallet/item/identify/{itemID} | Identify item |
 | [**PlayPrizeGame**](InteractionsApi.md#playprizegame) | **POST** /wallet/prizeGame/play | Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). |
+| [**PriceGuestCart**](InteractionsApi.md#priceguestcart) | **POST** /wallet/cart/price | Price a guest&#39;s cart |
 | [**RequestMerchantURLRedirect**](InteractionsApi.md#requestmerchanturlredirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
 | [**SubscribeEmail**](InteractionsApi.md#subscribeemail) | **POST** /wallet/subscribeEmail | Create email subscriber |
 | [**SubscribeSms**](InteractionsApi.md#subscribesms) | **POST** /wallet/subscribeSms | Create sms subscriber |
@@ -2022,6 +2023,101 @@ catch (ApiException e)
 ### Return type
 
 [**WTPrizeGamePlayResult**](WTPrizeGamePlayResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="priceguestcart"></a>
+# **PriceGuestCart**
+> WTCartQuote PriceGuestCart (WTCartPriceRequest wTCartPriceRequest)
+
+Price a guest's cart
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class PriceGuestCartExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new InteractionsApi(httpClient, config, httpClientHandler);
+            var wTCartPriceRequest = new WTCartPriceRequest(); // WTCartPriceRequest | 
+
+            try
+            {
+                // Price a guest's cart
+                WTCartQuote result = apiInstance.PriceGuestCart(wTCartPriceRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling InteractionsApi.PriceGuestCart: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PriceGuestCartWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Price a guest's cart
+    ApiResponse<WTCartQuote> response = apiInstance.PriceGuestCartWithHttpInfo(wTCartPriceRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InteractionsApi.PriceGuestCartWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTCartPriceRequest** | [**WTCartPriceRequest**](WTCartPriceRequest.md) |  |  |
+
+### Return type
+
+[**WTCartQuote**](WTCartQuote.md)
 
 ### Authorization
 

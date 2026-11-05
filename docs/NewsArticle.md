@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **MediaURL** | **string** |  | [optional] 
 **PublishedDate** | **DateTime** |  | [optional] 
 **Id** | [**AmenityId**](AmenityId.md) |  | 
+**PageID** | **string** |  | [optional] 
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
 **IsActive** | **bool** |  | 

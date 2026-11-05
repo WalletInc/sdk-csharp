@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ListAmountCents** | **int** |  | 
 **CreditAppliedCents** | **int** |  | 
+**TaxCents** | **int** |  | [optional] 
 **TipCents** | **int** |  | 
 **AmountDueCents** | **int** |  | 
 

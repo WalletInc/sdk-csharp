@@ -20,6 +20,11 @@ Name | Type | Description | Notes
 **AcquisitionSource** | **string** |  | [optional] 
 **ShareId** | **string** |  | [optional] 
 **DonorNote** | **string** |  | [optional] 
+**AgeRequirement** | **WTAgeRestriction** |  | [optional] 
+**IdCheckRequired** | **bool** |  | [optional] 
+**VenueType** | **WTMenuVenueType** |  | [optional] 
+**VenueID** | **string** |  | [optional] 
+**VenueTitle** | **string** |  | [optional] 
 **LineItems** | [**List&lt;WTOrderLineItem&gt;**](WTOrderLineItem.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

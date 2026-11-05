@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PhoneVerificationToken** | **string** |  | 
-**ObjectID** | **string** |  | 
+**ObjectID** | **string** |  | [optional] 
+**Lines** | [**List&lt;WTCartLineInput&gt;**](WTCartLineInput.md) |  | [optional] 
+**AgeConfirmed** | **bool** |  | [optional] 
 **CreditID** | **string** |  | [optional] 
 **TipCents** | **int** |  | [optional] 
 

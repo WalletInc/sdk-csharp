@@ -16,6 +16,7 @@ All URIs are relative to *https://api.wall.et*
 | [**FetchSpecialOffers**](BillingPaymentsApi.md#fetchspecialoffers) | **GET** /v2/billing/products/specialOffers | Get special offers |
 | [**FetchSubscription**](BillingPaymentsApi.md#fetchsubscription) | **GET** /v2/billing/subscription | Get subscription |
 | [**FetchUsageSummary**](BillingPaymentsApi.md#fetchusagesummary) | **GET** /v2/billing/summary | Get usage summary |
+| [**KeepPlan**](BillingPaymentsApi.md#keepplan) | **POST** /billing/plan/keep | Keep the current plan |
 | [**RunFinancingSoftPull**](BillingPaymentsApi.md#runfinancingsoftpull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off). |
 | [**SavePaymentMethod**](BillingPaymentsApi.md#savepaymentmethod) | **PUT** /v2/billing/paymentMethod | Save payment method |
 | [**SetDefaultPaymentMethod**](BillingPaymentsApi.md#setdefaultpaymentmethod) | **POST** /v2/billing/paymentMethod/default | Set payment method as default |
@@ -1116,6 +1117,97 @@ catch (ApiException e)
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="keepplan"></a>
+# **KeepPlan**
+> WTBillingKeepPlanResponse KeepPlan ()
+
+Keep the current plan
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class KeepPlanExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new BillingPaymentsApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Keep the current plan
+                WTBillingKeepPlanResponse result = apiInstance.KeepPlan();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling BillingPaymentsApi.KeepPlan: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the KeepPlanWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Keep the current plan
+    ApiResponse<WTBillingKeepPlanResponse> response = apiInstance.KeepPlanWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BillingPaymentsApi.KeepPlanWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**WTBillingKeepPlanResponse**](WTBillingKeepPlanResponse.md)
 
 ### Authorization
 

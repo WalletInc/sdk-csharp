@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **IsRepresentatives** | **bool** |  | [optional] 
 **IsProducts** | **bool** |  | [optional] 
 **IsServices** | **bool** |  | [optional] 
+**IsMenu** | **bool** |  | [optional] 
 **IsRoomRates** | **bool** |  | [optional] 
 **IsAmenities** | **bool** |  | [optional] 
 **IsGaming** | **bool** |  | [optional] 

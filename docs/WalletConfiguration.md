@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **IsRepresentatives** | **bool** |  | 
 **IsProducts** | **bool** |  | 
 **IsServices** | **bool** |  | 
+**IsMenu** | **bool** |  | 
 **IsRoomRates** | **bool** |  | 
 **IsAmenities** | **bool** |  | 
 **IsGaming** | **bool** |  | 

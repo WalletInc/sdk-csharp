@@ -28,11 +28,11 @@ Name | Type | Description | Notes
 **PostalCode** | **string** |  | 
 **Country** | **string** |  | 
 **PhoneNumber** | **string** |  | 
+**PrivacyPolicyUrl** | **string** |  | [optional] 
 **IsTwilioTermsRead** | **bool** |  | 
 **IsWalletSmsTermsRead** | **bool** |  | 
 **IsPricingUnderstood** | **bool** |  | 
 **IsPrivacyAndTosPresent** | **bool** |  | 
-**PrivacyPolicyUrl** | **string** |  | [optional] 
 **WillObtainConsent** | **bool** |  | 
 **WillHonorOptOut** | **bool** |  | 
 **WillFollowContentRules** | **bool** |  | 

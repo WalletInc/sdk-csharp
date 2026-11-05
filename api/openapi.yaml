@@ -6,11 +6,11 @@ info:
   description: |-
     Wallet Inc. API reference.
 
-    **Spec version 2.60.0**, built 2026-10-15T14:55:59.768Z
+    **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
   license:
     name: https://wallet.law
   title: wallet-api
-  version: 2.60.0
+  version: 2.61.0
 servers:
 - description: Production API
   url: https://api.wall.et
@@ -2678,6 +2678,67 @@ paths:
       summary: Buy special offer
       tags:
       - Billing & Payments
+  /billing/plan/keep:
+    post:
+      operationId: keepPlan
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    isDowngradeCancelled: true
+                    planName: retail_medium
+              schema:
+                $ref: "#/components/schemas/WTBillingKeepPlanResponse"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Keep the current plan
+      tags:
+      - Billing & Payments
   /v2/connect/account:
     get:
       operationId: fetchConnectAccountStatus
@@ -4200,6 +4261,226 @@ paths:
       summary: Update Dining info
       tags:
       - Dining
+  /sms/earlyOptIns/count:
+    get:
+      operationId: countEarlySmsOptIns
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTEarlyOptInCount"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Count early SMS opt-ins
+      tags:
+      - SMS Subscribers
+  /sms/earlyOptIns:
+    get:
+      operationId: fetchEarlySmsOptIns
+      parameters:
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTEarlyOptInPage"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "403":
+          description: Upgrade required to see the list
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List early SMS opt-ins
+      tags:
+      - SMS Subscribers
+  /sms/earlyOptIns/importPreview:
+    get:
+      operationId: previewEarlySmsOptInImport
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTEarlyOptInImportResult"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Preview bringing early SMS opt-ins over
+      tags:
+      - SMS Subscribers
+  /sms/earlyOptIns/import:
+    post:
+      operationId: importEarlySmsOptIns
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTEarlyOptInImportRequest"
+        required: false
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTEarlyOptInImportResult"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "413":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: EntityTooLarge
+                    message: Too Many Messages Sent
+                    httpErrorCode: 413
+                    trackingCode: MAXPAYLOAD-1006
+              schema:
+                $ref: "#/components/schemas/EntityTooLarge"
+          description: Entity Too Large
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: registration
+                      message: You can bring people over once your SMS registration
+                        is approved.
+                      value: ""
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Bring early SMS opt-ins over
+      tags:
+      - SMS Subscribers
   /v2/emailSubscriber/all:
     get:
       operationId: fetchAllEmailSubscribers
@@ -4739,8 +5020,8 @@ paths:
                     description: Description about the API Key
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:38.683Z
-                    updatedAt: 2026-10-15T14:54:38.683Z
+                    createdAt: 2026-11-05T12:07:35.485Z
+                    updatedAt: 2026-11-05T12:07:35.485Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTEmployeeAPIKey"
@@ -9916,6 +10197,1152 @@ paths:
       summary: Upload a full-size image (up to 10MB)
       tags:
       - Files & Documents
+  /menus:
+    get:
+      operationId: fetchMenus
+      parameters:
+      - explode: true
+        in: query
+        name: isArchiveIncluded
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTMenu"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List menus
+      tags:
+      - Menus
+    post:
+      operationId: createMenu
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTMenuCreateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenu"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Create a menu
+      tags:
+      - Menus
+  /menus/{id}:
+    delete:
+      operationId: archiveMenu
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenu"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Archive a menu
+      tags:
+      - Menus
+    get:
+      operationId: fetchMenu
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenu"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get a menu
+      tags:
+      - Menus
+    patch:
+      operationId: restoreMenu
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenu"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Restore a menu
+      tags:
+      - Menus
+    put:
+      operationId: updateMenu
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTMenuUpdateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenu"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Update a menu
+      tags:
+      - Menus
+  /menuItems:
+    get:
+      operationId: fetchMenuItems
+      parameters:
+      - explode: true
+        in: query
+        name: isArchiveIncluded
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTMenuItem"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List menu items
+      tags:
+      - Menus
+    post:
+      operationId: createMenuItem
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTMenuItemCreateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuItem"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Create a menu item
+      tags:
+      - Menus
+  /menuItems/{id}:
+    delete:
+      operationId: archiveMenuItem
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuItem"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Archive a menu item
+      tags:
+      - Menus
+    get:
+      operationId: fetchMenuItem
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuItem"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get a menu item
+      tags:
+      - Menus
+    patch:
+      operationId: restoreMenuItem
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuItem"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Restore a menu item
+      tags:
+      - Menus
+    put:
+      operationId: updateMenuItem
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTMenuItemUpdateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuItem"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Update a menu item
+      tags:
+      - Menus
+  /menuOptionGroups:
+    get:
+      operationId: fetchMenuOptionGroups
+      parameters:
+      - explode: true
+        in: query
+        name: isArchiveIncluded
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTMenuOptionGroup"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List option groups
+      tags:
+      - Menus
+    post:
+      operationId: createMenuOptionGroup
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTMenuOptionGroupCreateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuOptionGroup"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Create an option group
+      tags:
+      - Menus
+  /menuOptionGroups/{id}:
+    delete:
+      operationId: archiveMenuOptionGroup
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuOptionGroup"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Archive an option group
+      tags:
+      - Menus
+    get:
+      operationId: fetchMenuOptionGroup
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuOptionGroup"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get an option group
+      tags:
+      - Menus
+    patch:
+      operationId: restoreMenuOptionGroup
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuOptionGroup"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Restore an option group
+      tags:
+      - Menus
+    put:
+      operationId: updateMenuOptionGroup
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTMenuOptionGroupUpdateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTMenuOptionGroup"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Update an option group
+      tags:
+      - Menus
   /v2/merchant:
     put:
       operationId: updateMerchant
@@ -12849,7 +14276,16 @@ paths:
   /orders:
     get:
       operationId: listOrders
-      parameters: []
+      parameters:
+      - description: "Only the orders of this Dining outlet (DI...) or Lounge (LO...),\
+          \ so each kitchen sees its own."
+        explode: true
+        in: query
+        name: venueID
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -13039,6 +14475,123 @@ paths:
         text is RETAINED server-side (soft-delete) for a possible exposure / legal review; no "[redacted]"
         placeholder is shown. Idempotent (an order with no note, or an already-redacted note, is a no-op).
         403-family error if the order belongs to another merchant (ownership is asserted server-side).
+      tags:
+      - Orders
+  /ordering/settings:
+    get:
+      operationId: fetchOrderingSettings
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTOrderingSettings"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get ordering settings
+      tags:
+      - Orders
+    put:
+      operationId: updateOrderingSettings
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTOrderingSettingsUpdateParams"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTOrderingSettings"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Update ordering settings
       tags:
       - Orders
   /v2/performances/all:
@@ -15543,6 +17096,312 @@ paths:
       summary: Create QR Code design
       tags:
       - QR Code Designs
+  /relatedItems/search:
+    get:
+      operationId: searchRelatedItems
+      parameters:
+      - explode: true
+        in: query
+        name: q
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          $ref: "#/components/schemas/WTRelatedItemType"
+        style: form
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTRelatedItemSearchResults"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: items
+                      message: Attach at most 12 items.
+                      value: ""
+                    message: Attach at most 12 items.
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Search items to attach
+      tags:
+      - Related Items
+  /relatedItems/usedBy/{type}/{id}:
+    get:
+      operationId: fetchRelatedItemUsage
+      parameters:
+      - explode: false
+        in: path
+        name: type
+        required: true
+        schema:
+          $ref: "#/components/schemas/WTRelatedItemType"
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/WTRelatedItemUsage"
+                type: array
+                default: null
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: items
+                      message: Attach at most 12 items.
+                      value: ""
+                    message: Attach at most 12 items.
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: List where an item is attached
+      tags:
+      - Related Items
+  /relatedItems/{type}/{id}:
+    get:
+      operationId: fetchRelatedItems
+      parameters:
+      - explode: false
+        in: path
+        name: type
+        required: true
+        schema:
+          $ref: "#/components/schemas/WTRelatedItemSourceType"
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    sourceType: product
+                    sourceId: aBcDeFgHiJ
+                    items:
+                    - type: video
+                      id: kLmNoPqRsT
+                      status: ok
+                      title: How it's made
+              schema:
+                $ref: "#/components/schemas/WTRelatedItems"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: items
+                      message: Attach at most 12 items.
+                      value: ""
+                    message: Attach at most 12 items.
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Get an item's related items
+      tags:
+      - Related Items
+    put:
+      operationId: saveRelatedItems
+      parameters:
+      - explode: false
+        in: path
+        name: type
+        required: true
+        schema:
+          $ref: "#/components/schemas/WTRelatedItemSourceType"
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTRelatedItemsUpdate"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTRelatedItems"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: items
+                      message: Attach at most 12 items.
+                      value: ""
+                    message: Attach at most 12 items.
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Set an item's related items
+      tags:
+      - Related Items
   /v2/roomRates/all:
     get:
       operationId: fetchAllRoomRates
@@ -20836,6 +22695,72 @@ paths:
       summary: Get Virtual Business Card traffic (paginated)
       tags:
       - Virtual Business Card
+  /sms/privacyRequest:
+    post:
+      operationId: recordSMSPrivacyRequest
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTTCPAPrivacyRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    alreadySuppressed: false
+              schema:
+                $ref: "#/components/schemas/WTTCPAPrivacyRequestResult"
+          description: Ok
+        "401":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: AuthError
+                    message: Authentication Failed
+                    httpErrorCode: 401
+                    trackingCode: AUTH-1
+              schema:
+                $ref: "#/components/schemas/AuthError"
+          description: Authentication Failed
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: reference
+                      message: "Use a ticket or case id, not an email address."
+                      value: ""
+                    message: Check the highlighted fields.
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security:
+      - api_token: []
+      summary: Record a request to stop texts
+      tags:
+      - Phone Numbers
   /google/wallet/pass/subscribers/all:
     get:
       operationId: fetchGoogleWalletSubscribers
@@ -23319,8 +25244,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-15T14:54:42.876Z
-                    updatedAt: 2026-10-15T14:54:42.876Z
+                    createdAt: 2026-11-05T12:07:39.764Z
+                    updatedAt: 2026-11-05T12:07:39.764Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23394,8 +25319,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-15T14:54:42.839Z
-                    updatedAt: 2026-10-15T14:54:42.839Z
+                    createdAt: 2026-11-05T12:07:39.716Z
+                    updatedAt: 2026-11-05T12:07:39.716Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23469,8 +25394,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-15T14:54:42.880Z
-                    updatedAt: 2026-10-15T14:54:42.880Z
+                    createdAt: 2026-11-05T12:07:39.768Z
+                    updatedAt: 2026-11-05T12:07:39.768Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23550,8 +25475,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-15T14:54:42.863Z
-                    updatedAt: 2026-10-15T14:54:42.863Z
+                    createdAt: 2026-11-05T12:07:39.745Z
+                    updatedAt: 2026-11-05T12:07:39.745Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23651,8 +25576,8 @@ paths:
                     tierDiscount: 25
                     tierDesignID: hd749SHJAx
                     pointsDesignID: hd749SHJAx
-                    createdAt: 2026-10-15T14:54:42.848Z
-                    updatedAt: 2026-10-15T14:54:42.848Z
+                    createdAt: 2026-11-05T12:07:39.729Z
+                    updatedAt: 2026-11-05T12:07:39.729Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTMembershipTier"
@@ -23948,8 +25873,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:42.984Z
-                    updatedAt: 2026-10-15T14:54:42.984Z
+                    createdAt: 2026-11-05T12:07:39.875Z
+                    updatedAt: 2026-11-05T12:07:39.875Z
                     isActive: false
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24026,8 +25951,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:42.936Z
-                    updatedAt: 2026-10-15T14:54:42.936Z
+                    createdAt: 2026-11-05T12:07:39.824Z
+                    updatedAt: 2026-11-05T12:07:39.824Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24104,8 +26029,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:42.988Z
-                    updatedAt: 2026-10-15T14:54:42.988Z
+                    createdAt: 2026-11-05T12:07:39.879Z
+                    updatedAt: 2026-11-05T12:07:39.879Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24188,8 +26113,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:42.971Z
-                    updatedAt: 2026-10-15T14:54:42.971Z
+                    createdAt: 2026-11-05T12:07:39.861Z
+                    updatedAt: 2026-11-05T12:07:39.861Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24292,8 +26217,8 @@ paths:
                     valueType: percent
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:42.947Z
-                    updatedAt: 2026-10-15T14:54:42.947Z
+                    createdAt: 2026-11-05T12:07:39.835Z
+                    updatedAt: 2026-11-05T12:07:39.835Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTAdvertisementCredit"
@@ -24537,8 +26462,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.118Z
-                    updatedAt: 2026-10-15T14:54:43.118Z
+                    createdAt: 2026-11-05T12:07:40.016Z
+                    updatedAt: 2026-11-05T12:07:40.016Z
                     isActive: false
                     textPlate: false
                     textPlateOpacity: 0.55
@@ -24624,8 +26549,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.070Z
-                    updatedAt: 2026-10-15T14:54:43.070Z
+                    createdAt: 2026-11-05T12:07:39.964Z
+                    updatedAt: 2026-11-05T12:07:39.964Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24712,8 +26637,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.122Z
-                    updatedAt: 2026-10-15T14:54:43.122Z
+                    createdAt: 2026-11-05T12:07:40.021Z
+                    updatedAt: 2026-11-05T12:07:40.021Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24806,8 +26731,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.105Z
-                    updatedAt: 2026-10-15T14:54:43.105Z
+                    createdAt: 2026-11-05T12:07:40.003Z
+                    updatedAt: 2026-11-05T12:07:40.003Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -24920,8 +26845,8 @@ paths:
                     companyLogoURL: https://example.com/company-logo
                     employeeID: JD729Dhw3m
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.080Z
-                    updatedAt: 2026-10-15T14:54:43.080Z
+                    createdAt: 2026-11-05T12:07:39.974Z
+                    updatedAt: 2026-11-05T12:07:39.974Z
                     isActive: true
                     textPlate: true
                     textPlateOpacity: 0.55
@@ -25143,8 +27068,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.128Z
-                    updatedAt: 2026-10-15T14:54:43.128Z
+                    createdAt: 2026-11-05T12:07:40.027Z
+                    updatedAt: 2026-11-05T12:07:40.027Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25273,8 +27198,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.187Z
-                    updatedAt: 2026-10-15T14:54:43.187Z
+                    createdAt: 2026-11-05T12:07:40.092Z
+                    updatedAt: 2026-11-05T12:07:40.092Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25489,8 +27414,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.175Z
-                    updatedAt: 2026-10-15T14:54:43.175Z
+                    createdAt: 2026-11-05T12:07:40.078Z
+                    updatedAt: 2026-11-05T12:07:40.078Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTDynamicVoucher"
@@ -25640,8 +27565,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.203Z
-                    updatedAt: 2026-10-15T14:54:43.203Z
+                    createdAt: 2026-11-05T12:07:40.108Z
+                    updatedAt: 2026-11-05T12:07:40.108Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -25764,8 +27689,8 @@ paths:
                       expired: false
                     employeeID: EMpa729Fhe
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.208Z
-                    updatedAt: 2026-10-15T14:54:43.208Z
+                    createdAt: 2026-11-05T12:07:40.121Z
+                    updatedAt: 2026-11-05T12:07:40.121Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/DynamicVoucher"
@@ -27475,8 +29400,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.466Z
-                    updatedAt: 2026-10-15T14:54:43.466Z
+                    createdAt: 2026-11-05T12:07:40.378Z
+                    updatedAt: 2026-11-05T12:07:40.378Z
                     isActive: true
               schema:
                 items:
@@ -27572,8 +29497,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.468Z
-                    updatedAt: 2026-10-15T14:54:43.468Z
+                    createdAt: 2026-11-05T12:07:40.381Z
+                    updatedAt: 2026-11-05T12:07:40.381Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -27866,8 +29791,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.485Z
-                    updatedAt: 2026-10-15T14:54:43.485Z
+                    createdAt: 2026-11-05T12:07:40.394Z
+                    updatedAt: 2026-11-05T12:07:40.394Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28249,8 +30174,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.534Z
-                    updatedAt: 2026-10-15T14:54:43.534Z
+                    createdAt: 2026-11-05T12:07:40.447Z
+                    updatedAt: 2026-11-05T12:07:40.447Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28349,8 +30274,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.550Z
-                    updatedAt: 2026-10-15T14:54:43.550Z
+                    createdAt: 2026-11-05T12:07:40.464Z
+                    updatedAt: 2026-11-05T12:07:40.464Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28442,8 +30367,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.597Z
-                    updatedAt: 2026-10-15T14:54:43.597Z
+                    createdAt: 2026-11-05T12:07:40.518Z
+                    updatedAt: 2026-11-05T12:07:40.518Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28535,8 +30460,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.611Z
-                    updatedAt: 2026-10-15T14:54:43.612Z
+                    createdAt: 2026-11-05T12:07:40.531Z
+                    updatedAt: 2026-11-05T12:07:40.531Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -28629,8 +30554,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.626Z
-                    updatedAt: 2026-10-15T14:54:43.626Z
+                    createdAt: 2026-11-05T12:07:40.549Z
+                    updatedAt: 2026-11-05T12:07:40.549Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -28722,8 +30647,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.632Z
-                    updatedAt: 2026-10-15T14:54:43.632Z
+                    createdAt: 2026-11-05T12:07:40.555Z
+                    updatedAt: 2026-11-05T12:07:40.555Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/StaticVoucherCampaign"
@@ -28821,8 +30746,8 @@ paths:
                     employeeID: EMpa729Fhe
                     createdBySourceID: 4058
                     merchantID: 736dhakidk
-                    createdAt: 2026-10-15T14:54:43.636Z
-                    updatedAt: 2026-10-15T14:54:43.636Z
+                    createdAt: 2026-11-05T12:07:40.559Z
+                    updatedAt: 2026-11-05T12:07:40.559Z
                     isActive: true
               schema:
                 $ref: "#/components/schemas/WTStaticVoucherCampaign"
@@ -29226,7 +31151,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-15T14:54:43.652Z
+                    dateTimeLastViewed: 2026-11-05T12:07:40.576Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -29249,8 +31174,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-15T14:54:43.652Z
-                    updatedAt: 2026-10-15T14:54:43.652Z
+                    createdAt: 2026-11-05T12:07:40.576Z
+                    updatedAt: 2026-11-05T12:07:40.576Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -29339,7 +31264,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-15T14:54:43.660Z
+                    dateTimeLastViewed: 2026-11-05T12:07:40.585Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -29362,8 +31287,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-15T14:54:43.660Z
-                    updatedAt: 2026-10-15T14:54:43.660Z
+                    createdAt: 2026-11-05T12:07:40.585Z
+                    updatedAt: 2026-11-05T12:07:40.585Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -29459,7 +31384,7 @@ paths:
                   value:
                     id: bs8ajdhk37
                     orderNumber: 5
-                    dateTimeLastViewed: 2026-10-15T14:54:43.692Z
+                    dateTimeLastViewed: 2026-11-05T12:07:40.618Z
                     authorizedAgainstCheckNumber: dweqd
                     authorizedAmount: 500
                     authorizedAmount_decimal: "5.00"
@@ -29482,8 +31407,8 @@ paths:
                     refundedAmount: 0
                     refundedTransactionID: ""
                     status: redeemed
-                    createdAt: 2026-10-15T14:54:43.692Z
-                    updatedAt: 2026-10-15T14:54:43.692Z
+                    createdAt: 2026-11-05T12:07:40.618Z
+                    updatedAt: 2026-11-05T12:07:40.618Z
                     merchantID: 736dhakidk
                     isActive: true
               schema:
@@ -35331,6 +37256,54 @@ paths:
       summary: Get a customer's upcoming tickets via phone verification token
       tags:
       - Interactions
+  /wallet/cart/price:
+    post:
+      operationId: priceGuestCart
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WTCartPriceRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WTCartQuote"
+          description: Ok
+        "422":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    fields:
+                    - name: field name
+                      message: reason why validation failed
+                      value: validated value
+                    message: Validation Failed
+              schema:
+                $ref: "#/components/schemas/FalsumError"
+          description: Validation Failed
+        "500":
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    name: InternalServerError_500
+                    message: Internal Server Error
+                    httpErrorCode: 500
+                    trackingCode: ISE-1
+              schema:
+                $ref: "#/components/schemas/InternalServerError_500"
+          description: Internal Server Error
+      security: []
+      summary: Price a guest's cart
+      tags:
+      - Interactions
   /wallet/payments/createIntent:
     post:
       operationId: createGuestPaymentIntent
@@ -35941,6 +37914,11 @@ components:
       - message
       - name
       - trackingCode
+    WTTrafficClass:
+      enum:
+      - human
+      - bot
+      - unknown
     WTWalletPageViewCount:
       additionalProperties: {}
       properties:
@@ -36545,6 +38523,34 @@ components:
       - rows
       - totals
       - windowDays
+    NotFound:
+      additionalProperties: false
+      description: |-
+        Returned when the requested object does not exist (KAN-990). Silent: a mistyped, expired or crawled
+        link is the caller's error, so it is not posted to the error sink.
+      example:
+        name: name
+        message: message
+        stack: stack
+        httpErrorCode: 0.8008281904610115
+        trackingCode: trackingCode
+      properties:
+        name:
+          type: string
+        message:
+          type: string
+        stack:
+          type: string
+        httpErrorCode:
+          format: double
+          type: number
+        trackingCode:
+          type: string
+      required:
+      - httpErrorCode
+      - message
+      - name
+      - trackingCode
     A2PBillingConsent:
       additionalProperties: false
       example:
@@ -36691,7 +38697,7 @@ components:
         isWalletSmsTermsRead: true
         isPricingUnderstood: true
         isPrivacyAndTosPresent: true
-        privacyPolicyUrl: privacyPolicyUrl
+        privacyPolicyUrl: https://northsidecoffee.com/privacy
         willObtainConsent: true
         willHonorOptOut: true
         willFollowContentRules: true
@@ -36738,6 +38744,7 @@ components:
         isPrivacyAndTosPresent:
           type: boolean
         privacyPolicyUrl:
+          example: https://northsidecoffee.com/privacy
           type: string
         willObtainConsent:
           type: boolean
@@ -36911,6 +38918,7 @@ components:
         phoneNumber: +1 800 123 4567
         brandContactEmail: brandContactEmail
         verificationMobile: +1 415 555 0100
+        privacyPolicyUrl: https://northsidecoffee.com/privacy
       properties:
         businessName:
           example: Acme Corp
@@ -37011,6 +39019,9 @@ components:
         verificationMobile:
           example: +1 415 555 0100
           minLength: 7
+          type: string
+        privacyPolicyUrl:
+          example: https://northsidecoffee.com/privacy
           type: string
       required:
       - address1
@@ -37127,6 +39138,8 @@ components:
           example: +1 800 123 4567
           minLength: 7
           type: string
+        privacyPolicyUrl:
+          type: string
         isTwilioTermsRead:
           type: boolean
         isWalletSmsTermsRead:
@@ -37135,8 +39148,6 @@ components:
           type: boolean
         isPrivacyAndTosPresent:
           type: boolean
-        privacyPolicyUrl:
-          type: string
         willObtainConsent:
           type: boolean
         willHonorOptOut:
@@ -37333,6 +39344,8 @@ components:
           example: +1 800 123 4567
           minLength: 7
           type: string
+        privacyPolicyUrl:
+          type: string
         isTwilioTermsRead:
           type: boolean
         isWalletSmsTermsRead:
@@ -37341,8 +39354,6 @@ components:
           type: boolean
         isPrivacyAndTosPresent:
           type: boolean
-        privacyPolicyUrl:
-          type: string
         willObtainConsent:
           type: boolean
         willHonorOptOut:
@@ -37855,6 +39866,7 @@ components:
       - branding-wallet-pages
       - products
       - services
+      - menu
       - room-rates
       - amenities
       - dining
@@ -38172,6 +40184,7 @@ components:
         nextChargeAmount: 2.3021358869347655
         billingPeriod: billingPeriod
         nextChargeCurrency: nextChargeCurrency
+        scheduledDowngradeAt: 2026-12-02T17:04:11.000Z
       properties:
         isPaymentMethodProvided:
           type: boolean
@@ -38196,6 +40209,10 @@ components:
           type: string
           nullable: true
         nextChargeCurrency:
+          type: string
+          nullable: true
+        scheduledDowngradeAt:
+          example: 2026-12-02T17:04:11.000Z
           type: string
           nullable: true
       required:
@@ -38585,6 +40602,25 @@ components:
       - firstName
       - lastName
       - phoneNumber
+    WTBillingKeepPlanResponse:
+      additionalProperties: false
+      example:
+        isDowngradeCancelled: true
+        planName: retail_medium
+        scheduledDowngradeAt: scheduledDowngradeAt
+      properties:
+        isDowngradeCancelled:
+          type: boolean
+        planName:
+          example: retail_medium
+          type: string
+        scheduledDowngradeAt:
+          type: string
+          nullable: true
+      required:
+      - isDowngradeCancelled
+      - planName
+      - scheduledDowngradeAt
     WTConnectOnboardingStatus:
       enum:
       - not_started
@@ -39219,11 +41255,6 @@ components:
           type: string
       required:
       - memberID
-    WTTrafficClass:
-      enum:
-      - human
-      - bot
-      - unknown
     Dining:
       additionalProperties: false
       example:
@@ -39357,6 +41388,236 @@ components:
       - description
       - orderNumber
       - title
+    WTEarlyOptInCount:
+      additionalProperties: false
+      example:
+        count: 0.8008281904610115
+        lastJoinedAt: 2000-01-23T04:56:07.000+00:00
+        readyCount: 6.027456183070403
+        needsConfirmationCount: 1.4658129805029452
+      properties:
+        count:
+          format: double
+          type: number
+        lastJoinedAt:
+          format: date-time
+          type: string
+        readyCount:
+          format: double
+          type: number
+        needsConfirmationCount:
+          format: double
+          type: number
+      required:
+      - count
+      - needsConfirmationCount
+      - readyCount
+    WTEarlyOptInTier:
+      enum:
+      - ready
+      - needsConfirmation
+      - tooOld
+      - noConsentRecord
+    WTDisclosureBasis:
+      enum:
+      - captured
+      - reconstructed
+    WTEarlyOptIn:
+      additionalProperties: false
+      example:
+        id: id
+        mobileNumber: "+15555550123"
+        joinedAt: 2000-01-23T04:56:07.000+00:00
+        tier: ready
+        optInSource: optInSource
+        disclosureVersion: sms-optin-template-2026-08-27
+        disclosureBasis: captured
+      properties:
+        id:
+          type: string
+        mobileNumber:
+          example: "+15555550123"
+          type: string
+        joinedAt:
+          format: date-time
+          type: string
+        tier:
+          $ref: "#/components/schemas/WTEarlyOptInTier"
+        optInSource:
+          type: string
+        disclosureVersion:
+          example: sms-optin-template-2026-08-27
+          type: string
+        disclosureBasis:
+          $ref: "#/components/schemas/WTDisclosureBasis"
+      required:
+      - id
+      - joinedAt
+      - mobileNumber
+      - tier
+    WTEarlyOptInPage:
+      additionalProperties: false
+      example:
+        rows:
+        - id: id
+          mobileNumber: "+15555550123"
+          joinedAt: 2000-01-23T04:56:07.000+00:00
+          tier: ready
+          optInSource: optInSource
+          disclosureVersion: sms-optin-template-2026-08-27
+          disclosureBasis: captured
+        - id: id
+          mobileNumber: "+15555550123"
+          joinedAt: 2000-01-23T04:56:07.000+00:00
+          tier: ready
+          optInSource: optInSource
+          disclosureVersion: sms-optin-template-2026-08-27
+          disclosureBasis: captured
+        total: 0.8008281904610115
+        page: 6.027456183070403
+        pageSize: 1.4658129805029452
+        hasMore: true
+      properties:
+        rows:
+          items:
+            $ref: "#/components/schemas/WTEarlyOptIn"
+          type: array
+          default: null
+        total:
+          format: double
+          type: number
+        page:
+          format: double
+          type: number
+        pageSize:
+          format: double
+          type: number
+        hasMore:
+          type: boolean
+      required:
+      - hasMore
+      - page
+      - pageSize
+      - rows
+      - total
+    WTEarlyOptInSkipCount:
+      additionalProperties: false
+      example:
+        reason: opted-out
+        count: 2.3021358869347655
+      properties:
+        reason:
+          example: opted-out
+          type: string
+        count:
+          format: double
+          type: number
+      required:
+      - count
+      - reason
+    WTEarlyOptInImportResult:
+      additionalProperties: false
+      example:
+        isDryRun: true
+        isRegistrationApproved: true
+        optInListID: JAkdbc628s
+        phoneNumberID: Pja4104HEQ
+        totalCount: 0.8008281904610115
+        bringOverCount: 6.027456183070403
+        welcomeCount: 1.4658129805029452
+        confirmationCount: 5.962133916683182
+        skippedCount: 5.637376656633329
+        skipped:
+        - reason: opted-out
+          count: 2.3021358869347655
+        - reason: opted-out
+          count: 2.3021358869347655
+        notEligibleCount: 7.061401241503109
+        isOptOutChecked: true
+        textsScheduledAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        isDryRun:
+          type: boolean
+        isRegistrationApproved:
+          type: boolean
+        optInListID:
+          example: JAkdbc628s
+          type: string
+        phoneNumberID:
+          example: Pja4104HEQ
+          type: string
+        totalCount:
+          format: double
+          type: number
+        bringOverCount:
+          format: double
+          type: number
+        welcomeCount:
+          format: double
+          type: number
+        confirmationCount:
+          format: double
+          type: number
+        skippedCount:
+          format: double
+          type: number
+        skipped:
+          items:
+            $ref: "#/components/schemas/WTEarlyOptInSkipCount"
+          type: array
+          default: null
+        notEligibleCount:
+          format: double
+          type: number
+        isOptOutChecked:
+          type: boolean
+        textsScheduledAt:
+          format: date-time
+          type: string
+      required:
+      - bringOverCount
+      - confirmationCount
+      - isDryRun
+      - isOptOutChecked
+      - isRegistrationApproved
+      - notEligibleCount
+      - skipped
+      - skippedCount
+      - totalCount
+      - welcomeCount
+    EntityTooLarge:
+      additionalProperties: false
+      example:
+        name: name
+        message: message
+        stack: stack
+        httpErrorCode: 0.8008281904610115
+        trackingCode: trackingCode
+      properties:
+        name:
+          type: string
+        message:
+          type: string
+        stack:
+          type: string
+        httpErrorCode:
+          format: double
+          type: number
+        trackingCode:
+          type: string
+      required:
+      - httpErrorCode
+      - message
+      - name
+      - trackingCode
+    WTEarlyOptInImportRequest:
+      additionalProperties: false
+      example:
+        phoneNumberID: Pja4104HEQ
+      properties:
+        phoneNumberID:
+          example: Pja4104HEQ
+          type: string
     Pick_WTEmailSubscriberUpdateParams.Exclude_keyofWTEmailSubscriberUpdateParams.id__:
       description: "From T, pick a set of properties whose keys are in the union K"
       properties:
@@ -42127,6 +44388,7 @@ components:
         reinvestmentSum_string: $5.00
         startDate: 2016-06-22 19:10:25-07
         expirationDate: 2016-06-22 19:10:25-07
+        guestInstructions: guestInstructions
       properties:
         id:
           $ref: "#/components/schemas/StaticVoucher_id"
@@ -42225,6 +44487,8 @@ components:
         expirationDate:
           example: 2016-06-22 19:10:25-07
           format: date-time
+          type: string
+        guestInstructions:
           type: string
       required:
       - createdAt
@@ -42674,6 +44938,7 @@ components:
           reinvestmentSum_string: $5.00
           startDate: 2016-06-22 19:10:25-07
           expirationDate: 2016-06-22 19:10:25-07
+          guestInstructions: guestInstructions
       properties:
         id:
           $ref: "#/components/schemas/StaticVoucher_id"
@@ -42763,31 +45028,6 @@ components:
       - paymentObjectPrefix
       - phoneNumberID
       - updatedAt
-    EntityTooLarge:
-      additionalProperties: false
-      example:
-        name: name
-        message: message
-        stack: stack
-        httpErrorCode: 0.8008281904610115
-        trackingCode: trackingCode
-      properties:
-        name:
-          type: string
-        message:
-          type: string
-        stack:
-          type: string
-        httpErrorCode:
-          format: double
-          type: number
-        trackingCode:
-          type: string
-      required:
-      - httpErrorCode
-      - message
-      - name
-      - trackingCode
     WTMessageType:
       enum:
       - marketing
@@ -44253,6 +46493,902 @@ components:
       - fileName
       - fileSize
       - fileType
+    WTMenuScheduleWindow:
+      additionalProperties: false
+      example:
+        days:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        start: 11:00
+        end: 15:00
+      properties:
+        days:
+          example:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          items:
+            format: double
+            type: number
+          maxItems: 7
+          minItems: 1
+          type: array
+          default: null
+        start:
+          example: 11:00
+          pattern: "^\\d{2}:\\d{2}$"
+          type: string
+        end:
+          example: 15:00
+          pattern: "^\\d{2}:\\d{2}$"
+          type: string
+      required:
+      - days
+      - end
+      - start
+    WTMenuCategory:
+      additionalProperties: false
+      example:
+        id: k3J9xQ2a
+        title: Starters
+        itemIDs:
+        - MIaBcDeFgHiJ
+      properties:
+        id:
+          example: k3J9xQ2a
+          type: string
+        title:
+          example: Starters
+          maxLength: 60
+          minLength: 1
+          type: string
+        itemIDs:
+          example:
+          - MIaBcDeFgHiJ
+          items:
+            type: string
+          maxItems: 200
+          type: array
+          default: null
+      required:
+      - itemIDs
+      - title
+    WTMenuVenueType:
+      enum:
+      - dining
+      - lounge
+    WTMenu:
+      additionalProperties: false
+      example:
+        id: MEaBcDeFgHiJ
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        merchantID: ueJDL982Hs
+        title: title
+        description: description
+        orderNumber: 0.8008281904610115
+        timeZone: timeZone
+        schedule:
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        categories:
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        venueType: dining
+        venueID: DIaBcDeFgHiJ
+        isActive: true
+      properties:
+        id:
+          example: MEaBcDeFgHiJ
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        merchantID:
+          example: ueJDL982Hs
+          maxLength: 10
+          minLength: 10
+          pattern: "^[a-zA-Z0-9]+$"
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        orderNumber:
+          format: double
+          type: number
+        timeZone:
+          type: string
+        schedule:
+          items:
+            $ref: "#/components/schemas/WTMenuScheduleWindow"
+          type: array
+          default: null
+        categories:
+          items:
+            $ref: "#/components/schemas/WTMenuCategory"
+          type: array
+          default: null
+        venueType:
+          $ref: "#/components/schemas/WTMenuVenueType"
+        venueID:
+          example: DIaBcDeFgHiJ
+          type: string
+        isActive:
+          type: boolean
+      required:
+      - categories
+      - createdAt
+      - description
+      - id
+      - isActive
+      - merchantID
+      - orderNumber
+      - schedule
+      - timeZone
+      - title
+      - updatedAt
+    WTMenuCreateParams:
+      additionalProperties: false
+      example:
+        title: All Day
+        description: description
+        orderNumber: 0
+        timeZone: America/Los_Angeles
+        schedule:
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        categories:
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        venueType: dining
+        venueID: DIaBcDeFgHiJ
+      properties:
+        title:
+          example: All Day
+          maxLength: 80
+          minLength: 1
+          type: string
+        description:
+          maxLength: 500
+          type: string
+        orderNumber:
+          format: int32
+          minimum: 0
+          type: integer
+        timeZone:
+          example: America/Los_Angeles
+          type: string
+        schedule:
+          items:
+            $ref: "#/components/schemas/WTMenuScheduleWindow"
+          maxItems: 14
+          type: array
+          default: null
+        categories:
+          items:
+            $ref: "#/components/schemas/WTMenuCategory"
+          maxItems: 30
+          type: array
+          default: null
+        venueType:
+          $ref: "#/components/schemas/WTMenuVenueType"
+        venueID:
+          example: DIaBcDeFgHiJ
+          type: string
+      required:
+      - title
+    WTMenuUpdateParams:
+      additionalProperties: false
+      example:
+        title: All Day
+        description: description
+        orderNumber: 0
+        timeZone: America/Los_Angeles
+        schedule:
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        categories:
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        - id: k3J9xQ2a
+          title: Starters
+          itemIDs:
+          - MIaBcDeFgHiJ
+        venueType: dining
+        venueID: DIaBcDeFgHiJ
+      properties:
+        title:
+          example: All Day
+          maxLength: 80
+          minLength: 1
+          type: string
+        description:
+          maxLength: 500
+          type: string
+        orderNumber:
+          format: int32
+          minimum: 0
+          type: integer
+        timeZone:
+          example: America/Los_Angeles
+          type: string
+        schedule:
+          items:
+            $ref: "#/components/schemas/WTMenuScheduleWindow"
+          maxItems: 14
+          type: array
+          default: null
+        categories:
+          items:
+            $ref: "#/components/schemas/WTMenuCategory"
+          maxItems: 30
+          type: array
+          default: null
+        venueType:
+          $ref: "#/components/schemas/WTMenuVenueType"
+        venueID:
+          example: DIaBcDeFgHiJ
+          type: string
+    WTMenuTaxCategory:
+      enum:
+      - standard
+      - alcohol
+      - exempt
+    WTMenuDietaryTag:
+      enum:
+      - vegetarian
+      - vegan
+      - glutenFree
+      - dairyFree
+      - nutFree
+      - halal
+      - kosher
+      - spicy
+    WTAgeRestriction:
+      enum:
+      - none
+      - 18+
+      - 21+
+    WTFulfillmentMode:
+      enum:
+      - pickup
+      - delivery
+      - shipping
+      - inVenue
+      - digital
+    WTMenuItem:
+      additionalProperties: false
+      example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
+        id: MIaBcDeFgHiJ
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        merchantID: ueJDL982Hs
+        title: title
+        description: description
+        mediaURL: mediaURL
+        priceAmount: 0.8008281904610115
+        currency: currency
+        taxCategory: standard
+        dietaryTags:
+        - vegetarian
+        - vegetarian
+        allergens:
+        - allergens
+        - allergens
+        prepMinutes: 6.027456183070403
+        optionGroupIDs:
+        - optionGroupIDs
+        - optionGroupIDs
+        isActive: true
+      properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
+        id:
+          example: MIaBcDeFgHiJ
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        merchantID:
+          example: ueJDL982Hs
+          maxLength: 10
+          minLength: 10
+          pattern: "^[a-zA-Z0-9]+$"
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        mediaURL:
+          type: string
+        priceAmount:
+          format: double
+          type: number
+        currency:
+          type: string
+        taxCategory:
+          $ref: "#/components/schemas/WTMenuTaxCategory"
+        dietaryTags:
+          items:
+            $ref: "#/components/schemas/WTMenuDietaryTag"
+          type: array
+          default: null
+        allergens:
+          items:
+            type: string
+          type: array
+          default: null
+        prepMinutes:
+          format: double
+          type: number
+        optionGroupIDs:
+          items:
+            type: string
+          type: array
+          default: null
+        isActive:
+          type: boolean
+      required:
+      - allergens
+      - createdAt
+      - currency
+      - description
+      - dietaryTags
+      - id
+      - isActive
+      - mediaURL
+      - merchantID
+      - optionGroupIDs
+      - priceAmount
+      - taxCategory
+      - title
+      - updatedAt
+    WTMenuItemCreateParams:
+      additionalProperties: false
+      example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
+        title: Margherita
+        description: description
+        mediaURL: https://media.wall.et/H847Sjudbw.png
+        priceAmount: 1200
+        currency: usd
+        taxCategory: standard
+        dietaryTags:
+        - vegetarian
+        - vegetarian
+        - vegetarian
+        - vegetarian
+        - vegetarian
+        allergens:
+        - allergens
+        - allergens
+        - allergens
+        - allergens
+        - allergens
+        prepMinutes: 19
+        optionGroupIDs:
+        - OGaBcDeFgHiJ
+      properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
+        title:
+          example: Margherita
+          maxLength: 80
+          minLength: 1
+          type: string
+        description:
+          maxLength: 500
+          type: string
+        mediaURL:
+          example: https://media.wall.et/H847Sjudbw.png
+          type: string
+        priceAmount:
+          example: 1200
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        taxCategory:
+          $ref: "#/components/schemas/WTMenuTaxCategory"
+        dietaryTags:
+          items:
+            $ref: "#/components/schemas/WTMenuDietaryTag"
+          maxItems: 8
+          type: array
+          default: null
+        allergens:
+          items:
+            type: string
+          maxItems: 14
+          type: array
+          default: null
+        prepMinutes:
+          format: int32
+          maximum: 240
+          minimum: 0
+          type: integer
+        optionGroupIDs:
+          example:
+          - OGaBcDeFgHiJ
+          items:
+            type: string
+          maxItems: 10
+          type: array
+          default: null
+      required:
+      - priceAmount
+      - title
+    WTMenuItemUpdateParams:
+      additionalProperties: false
+      example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
+        title: Margherita
+        description: description
+        mediaURL: https://media.wall.et/H847Sjudbw.png
+        priceAmount: 1200
+        currency: usd
+        taxCategory: standard
+        dietaryTags:
+        - vegetarian
+        - vegetarian
+        - vegetarian
+        - vegetarian
+        - vegetarian
+        allergens:
+        - allergens
+        - allergens
+        - allergens
+        - allergens
+        - allergens
+        prepMinutes: 19
+        optionGroupIDs:
+        - OGaBcDeFgHiJ
+      properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
+        title:
+          example: Margherita
+          maxLength: 80
+          minLength: 1
+          type: string
+        description:
+          maxLength: 500
+          type: string
+        mediaURL:
+          example: https://media.wall.et/H847Sjudbw.png
+          type: string
+        priceAmount:
+          example: 1200
+          format: int32
+          minimum: 0
+          type: integer
+        currency:
+          example: usd
+          type: string
+        taxCategory:
+          $ref: "#/components/schemas/WTMenuTaxCategory"
+        dietaryTags:
+          items:
+            $ref: "#/components/schemas/WTMenuDietaryTag"
+          maxItems: 8
+          type: array
+          default: null
+        allergens:
+          items:
+            type: string
+          maxItems: 14
+          type: array
+          default: null
+        prepMinutes:
+          format: int32
+          maximum: 240
+          minimum: 0
+          type: integer
+        optionGroupIDs:
+          example:
+          - OGaBcDeFgHiJ
+          items:
+            type: string
+          maxItems: 10
+          type: array
+          default: null
+    WTMenuOption:
+      additionalProperties: false
+      example:
+        id: p7Lm2Qa9
+        title: Extra cheese
+        priceDeltaCents: 150
+        isSoldOut: true
+      properties:
+        id:
+          example: p7Lm2Qa9
+          type: string
+        title:
+          example: Extra cheese
+          maxLength: 60
+          minLength: 1
+          type: string
+        priceDeltaCents:
+          example: 150
+          format: int32
+          maximum: 100000
+          minimum: -100000
+          type: integer
+        isSoldOut:
+          type: boolean
+      required:
+      - priceDeltaCents
+      - title
+    WTMenuOptionGroup:
+      additionalProperties: false
+      example:
+        id: OGaBcDeFgHiJ
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        merchantID: ueJDL982Hs
+        title: title
+        minChoices: 0.8008281904610115
+        maxChoices: 6.027456183070403
+        options:
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        isActive: true
+      properties:
+        id:
+          example: OGaBcDeFgHiJ
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        merchantID:
+          example: ueJDL982Hs
+          maxLength: 10
+          minLength: 10
+          pattern: "^[a-zA-Z0-9]+$"
+          type: string
+        title:
+          type: string
+        minChoices:
+          format: double
+          type: number
+        maxChoices:
+          format: double
+          type: number
+        options:
+          items:
+            $ref: "#/components/schemas/WTMenuOption"
+          type: array
+          default: null
+        isActive:
+          type: boolean
+      required:
+      - createdAt
+      - id
+      - isActive
+      - maxChoices
+      - merchantID
+      - minChoices
+      - options
+      - title
+      - updatedAt
+    WTMenuOptionGroupCreateParams:
+      additionalProperties: false
+      example:
+        title: Toppings
+        minChoices: 2
+        maxChoices: 18
+        options:
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+      properties:
+        title:
+          example: Toppings
+          maxLength: 60
+          minLength: 1
+          type: string
+        minChoices:
+          format: int32
+          maximum: 30
+          minimum: 0
+          type: integer
+        maxChoices:
+          format: int32
+          maximum: 30
+          minimum: 1
+          type: integer
+        options:
+          items:
+            $ref: "#/components/schemas/WTMenuOption"
+          maxItems: 30
+          minItems: 1
+          type: array
+          default: null
+      required:
+      - options
+      - title
+    WTMenuOptionGroupUpdateParams:
+      additionalProperties: false
+      example:
+        title: Toppings
+        minChoices: 2
+        maxChoices: 18
+        options:
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+        - id: p7Lm2Qa9
+          title: Extra cheese
+          priceDeltaCents: 150
+          isSoldOut: true
+      properties:
+        title:
+          example: Toppings
+          maxLength: 60
+          minLength: 1
+          type: string
+        minChoices:
+          format: int32
+          maximum: 30
+          minimum: 0
+          type: integer
+        maxChoices:
+          format: int32
+          maximum: 30
+          minimum: 1
+          type: integer
+        options:
+          items:
+            $ref: "#/components/schemas/WTMenuOption"
+          maxItems: 30
+          minItems: 1
+          type: array
+          default: null
     WTMerchantUpdate:
       additionalProperties: false
       example:
@@ -45281,6 +48417,7 @@ components:
         mediaURL: https://media.wall.et/H847Sjudbw.png
         publishedDate: 2000-01-23T04:56:07.000+00:00
         id: CMueJDL982Hs
+        pageID: ARaBcDeFgHiJ
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
         isActive: true
@@ -45310,6 +48447,9 @@ components:
           type: string
         id:
           $ref: "#/components/schemas/Amenity_id"
+        pageID:
+          example: ARaBcDeFgHiJ
+          type: string
         createdAt:
           format: date-time
           type: string
@@ -45416,6 +48556,26 @@ components:
       - canceled
       - refunded
       - disputed
+    WTOrderLineOption:
+      additionalProperties: false
+      example:
+        groupTitle: Toppings
+        title: Extra cheese
+        priceDeltaCents: 0
+      properties:
+        groupTitle:
+          example: Toppings
+          type: string
+        title:
+          example: Extra cheese
+          type: string
+        priceDeltaCents:
+          format: int32
+          type: integer
+      required:
+      - groupTitle
+      - priceDeltaCents
+      - title
     WTOrderLineItem:
       additionalProperties: false
       example:
@@ -45425,6 +48585,15 @@ components:
         titleSnapshot: Sunset Boat Tour
         unitAmount: 2500
         quantity: 2
+        note: note
+        menuItemID: menuItemID
+        options:
+        - groupTitle: Toppings
+          title: Extra cheese
+          priceDeltaCents: 0
+        - groupTitle: Toppings
+          title: Extra cheese
+          priceDeltaCents: 0
       properties:
         id:
           $ref: "#/components/schemas/Amenity_id"
@@ -45445,6 +48614,16 @@ components:
           format: int32
           minimum: 1
           type: integer
+        note:
+          maxLength: 140
+          type: string
+        menuItemID:
+          type: string
+        options:
+          items:
+            $ref: "#/components/schemas/WTOrderLineOption"
+          type: array
+          default: null
       required:
       - id
       - quantity
@@ -45469,6 +48648,11 @@ components:
         acquisitionSource: acquisitionSource
         shareId: shareId
         donorNote: donorNote
+        ageRequirement: none
+        idCheckRequired: true
+        venueType: dining
+        venueID: DIaBcDeFgHiJ
+        venueTitle: The Grill
         lineItems:
         - id: null
           productID: null
@@ -45476,12 +48660,30 @@ components:
           titleSnapshot: Sunset Boat Tour
           unitAmount: 2500
           quantity: 2
+          note: note
+          menuItemID: menuItemID
+          options:
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
         - id: null
           productID: null
           serviceID: null
           titleSnapshot: Sunset Boat Tour
           unitAmount: 2500
           quantity: 2
+          note: note
+          menuItemID: menuItemID
+          options:
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
       properties:
         id:
           $ref: "#/components/schemas/Amenity_id"
@@ -45526,6 +48728,18 @@ components:
           type: string
         donorNote:
           type: string
+        ageRequirement:
+          $ref: "#/components/schemas/WTAgeRestriction"
+        idCheckRequired:
+          type: boolean
+        venueType:
+          $ref: "#/components/schemas/WTMenuVenueType"
+        venueID:
+          example: DIaBcDeFgHiJ
+          type: string
+        venueTitle:
+          example: The Grill
+          type: string
         lineItems:
           items:
             $ref: "#/components/schemas/WTOrderLineItem"
@@ -45540,6 +48754,175 @@ components:
       - merchantID
       - status
       - updatedAt
+    WTOrderingSettings:
+      additionalProperties: false
+      example:
+        merchantID: ueJDL982Hs
+        taxRatePercent: 0.8008281904610115
+        alcoholTaxRatePercent: 6.027456183070403
+        defaultPrepMinutes: 1.4658129805029452
+        busyExtraMinutes: 5.962133916683182
+        isPaused: true
+        pausedReason: pausedReason
+        autoAccept: true
+        scheduledPickup: true
+        timeZone: timeZone
+        hours:
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+      properties:
+        merchantID:
+          example: ueJDL982Hs
+          maxLength: 10
+          minLength: 10
+          pattern: "^[a-zA-Z0-9]+$"
+          type: string
+        taxRatePercent:
+          format: double
+          type: number
+        alcoholTaxRatePercent:
+          format: double
+          type: number
+        defaultPrepMinutes:
+          format: double
+          type: number
+        busyExtraMinutes:
+          format: double
+          type: number
+        isPaused:
+          type: boolean
+        pausedReason:
+          type: string
+        autoAccept:
+          type: boolean
+        scheduledPickup:
+          type: boolean
+        timeZone:
+          type: string
+        hours:
+          items:
+            $ref: "#/components/schemas/WTMenuScheduleWindow"
+          type: array
+          default: null
+      required:
+      - autoAccept
+      - busyExtraMinutes
+      - defaultPrepMinutes
+      - hours
+      - isPaused
+      - merchantID
+      - scheduledPickup
+      - taxRatePercent
+      - timeZone
+    WTOrderingSettingsUpdateParams:
+      additionalProperties: {}
+      example:
+        taxRatePercent: 8.875
+        alcoholTaxRatePercent: 10.375
+        defaultPrepMinutes: 19
+        busyExtraMinutes: 72
+        isPaused: true
+        pausedReason: pausedReason
+        autoAccept: true
+        scheduledPickup: true
+        timeZone: America/Los_Angeles
+        hours:
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+        - days:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          start: 11:00
+          end: 15:00
+      properties:
+        taxRatePercent:
+          example: 8.875
+          format: double
+          maximum: 25
+          minimum: 0
+          type: number
+        alcoholTaxRatePercent:
+          example: 10.375
+          format: double
+          maximum: 40
+          minimum: 0
+          type: number
+          nullable: true
+        defaultPrepMinutes:
+          format: int32
+          maximum: 240
+          minimum: 0
+          type: integer
+        busyExtraMinutes:
+          format: int32
+          maximum: 120
+          minimum: 0
+          type: integer
+        isPaused:
+          type: boolean
+        pausedReason:
+          maxLength: 140
+          type: string
+        autoAccept:
+          type: boolean
+        scheduledPickup:
+          type: boolean
+        timeZone:
+          example: America/Los_Angeles
+          type: string
+        hours:
+          items:
+            $ref: "#/components/schemas/WTMenuScheduleWindow"
+          maxItems: 14
+          type: array
+          default: null
     Announcement:
       additionalProperties: {}
       properties:
@@ -45751,6 +49134,7 @@ components:
         ticketExpirationDateTime: 2000-01-23T04:56:07.000+00:00
         redemptionInstructions: redemptionInstructions
         id: CMueJDL982Hs
+        pageID: EVaBcDeFgHiJ
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
         isActive: true
@@ -45799,6 +49183,9 @@ components:
           type: string
         id:
           $ref: "#/components/schemas/Amenity_id"
+        pageID:
+          example: EVaBcDeFgHiJ
+          type: string
         createdAt:
           format: date-time
           type: string
@@ -46227,6 +49614,13 @@ components:
     Product:
       additionalProperties: false
       example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
         title: This is the title of the product
         description: This is the description of the product
         displayedPrice: $200-$350
@@ -46245,6 +49639,23 @@ components:
         stripeProductID: stripeProductID
         stripePriceID: stripePriceID
       properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
         title:
           example: This is the title of the product
           minLength: 1
@@ -46315,6 +49726,13 @@ components:
     WTProductCreateParams:
       additionalProperties: false
       example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
         title: This is the title of the product
         description: This is the description of the product
         displayedPrice: $200-$350
@@ -46326,6 +49744,23 @@ components:
         isBuyable: true
         taxBehavior: exclusive
       properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
         title:
           example: This is the title of the product
           minLength: 1
@@ -46373,6 +49808,13 @@ components:
     WTProductUpdateParams:
       additionalProperties: false
       example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
         title: This is the title of the product
         description: This is the description of the product
         displayedPrice: $200-$350
@@ -46384,6 +49826,23 @@ components:
         isBuyable: true
         taxBehavior: exclusive
       properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
         title:
           example: This is the title of the product
           minLength: 1
@@ -46822,6 +50281,204 @@ components:
       - name
       - serializedJsonConfiguration
       - updatedAt
+    WTRelatedItemType:
+      enum:
+      - product
+      - service
+      - amenity
+      - dining
+      - gaming
+      - lounge
+      - room
+      - video
+      - gallery
+      - news
+      - event
+      - quickLink
+      - promotion
+      - menuItem
+    WTRelatedItemSearchResult:
+      additionalProperties: false
+      example:
+        type: product
+        id: id
+        title: title
+        thumbnailURL: thumbnailURL
+        isActive: true
+      properties:
+        type:
+          $ref: "#/components/schemas/WTRelatedItemType"
+        id:
+          type: string
+        title:
+          type: string
+        thumbnailURL:
+          type: string
+        isActive:
+          type: boolean
+      required:
+      - id
+      - isActive
+      - title
+      - type
+    WTRelatedItemSearchResults:
+      additionalProperties: false
+      example:
+        results:
+        - type: product
+          id: id
+          title: title
+          thumbnailURL: thumbnailURL
+          isActive: true
+        - type: product
+          id: id
+          title: title
+          thumbnailURL: thumbnailURL
+          isActive: true
+        hasMore: true
+      properties:
+        results:
+          items:
+            $ref: "#/components/schemas/WTRelatedItemSearchResult"
+          type: array
+          default: null
+        hasMore:
+          type: boolean
+      required:
+      - hasMore
+      - results
+    WTRelatedItemSourceType:
+      enum:
+      - product
+      - service
+      - amenity
+      - dining
+      - gaming
+      - lounge
+      - room
+      - video
+      - news
+      - event
+      - promotion
+      - menuItem
+    WTRelatedItemUsage:
+      additionalProperties: false
+      example:
+        sourceType: product
+        sourceId: sourceId
+        title: title
+      properties:
+        sourceType:
+          $ref: "#/components/schemas/WTRelatedItemSourceType"
+        sourceId:
+          type: string
+        title:
+          type: string
+      required:
+      - sourceId
+      - sourceType
+      - title
+    WTRelatedItemStatus:
+      enum:
+      - ok
+      - archived
+      - missing
+      - sectionOff
+    WTRelatedItemAdminRef:
+      additionalProperties: false
+      example:
+        type: video
+        id: aBcDeFgHiJ
+        status: ok
+        title: title
+        thumbnailURL: thumbnailURL
+      properties:
+        type:
+          allOf:
+          - $ref: "#/components/schemas/WTRelatedItemType"
+          example: video
+        id:
+          example: aBcDeFgHiJ
+          type: string
+        status:
+          $ref: "#/components/schemas/WTRelatedItemStatus"
+        title:
+          type: string
+        thumbnailURL:
+          type: string
+      required:
+      - id
+      - status
+      - type
+    WTRelatedItems:
+      additionalProperties: false
+      example:
+        sourceType: product
+        sourceId: sourceId
+        items:
+        - type: video
+          id: aBcDeFgHiJ
+          status: ok
+          title: title
+          thumbnailURL: thumbnailURL
+        - type: video
+          id: aBcDeFgHiJ
+          status: ok
+          title: title
+          thumbnailURL: thumbnailURL
+      properties:
+        sourceType:
+          $ref: "#/components/schemas/WTRelatedItemSourceType"
+        sourceId:
+          type: string
+        items:
+          items:
+            $ref: "#/components/schemas/WTRelatedItemAdminRef"
+          type: array
+          default: null
+      required:
+      - items
+      - sourceId
+      - sourceType
+    WTRelatedItemRef:
+      additionalProperties: false
+      example:
+        type: video
+        id: aBcDeFgHiJ
+      properties:
+        type:
+          allOf:
+          - $ref: "#/components/schemas/WTRelatedItemType"
+          example: video
+        id:
+          example: aBcDeFgHiJ
+          type: string
+      required:
+      - id
+      - type
+    WTRelatedItemsUpdate:
+      additionalProperties: false
+      example:
+        items:
+        - type: video
+          id: aBcDeFgHiJ
+        - type: video
+          id: aBcDeFgHiJ
+        - type: video
+          id: aBcDeFgHiJ
+        - type: video
+          id: aBcDeFgHiJ
+        - type: video
+          id: aBcDeFgHiJ
+      properties:
+        items:
+          items:
+            $ref: "#/components/schemas/WTRelatedItemRef"
+          maxItems: 12
+          type: array
+          default: null
+      required:
+      - items
     RoomRate:
       additionalProperties: false
       example:
@@ -46958,6 +50615,13 @@ components:
     Service:
       additionalProperties: false
       example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
         title: This is the title of the service
         description: This is the description of the service
         displayedPrice: $200-$350
@@ -46976,6 +50640,23 @@ components:
         stripeProductID: stripeProductID
         stripePriceID: stripePriceID
       properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
         title:
           example: This is the title of the service
           minLength: 1
@@ -47046,6 +50727,13 @@ components:
     WTServiceCreateParams:
       additionalProperties: false
       example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
         title: This is the title of the service
         description: This is the description of the service
         displayedPrice: $200-$350
@@ -47057,6 +50745,23 @@ components:
         isBuyable: true
         taxBehavior: exclusive
       properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
         title:
           example: This is the title of the service
           minLength: 1
@@ -47104,6 +50809,13 @@ components:
     WTServiceUpdateParams:
       additionalProperties: false
       example:
+        ageRestriction: 21+
+        idCheckOnHandoff: true
+        isSoldOut: true
+        soldOutUntil: 2000-01-23T04:56:07.000+00:00
+        fulfillmentModes:
+        - pickup
+        - pickup
         title: This is the title of the service
         description: This is the description of the service
         displayedPrice: $200-$350
@@ -47115,6 +50827,23 @@ components:
         isBuyable: true
         taxBehavior: exclusive
       properties:
+        ageRestriction:
+          allOf:
+          - $ref: "#/components/schemas/WTAgeRestriction"
+          example: 21+
+        idCheckOnHandoff:
+          type: boolean
+        isSoldOut:
+          type: boolean
+        soldOutUntil:
+          format: date-time
+          type: string
+        fulfillmentModes:
+          items:
+            $ref: "#/components/schemas/WTFulfillmentMode"
+          minItems: 1
+          type: array
+          default: null
         title:
           example: This is the title of the service
           minLength: 1
@@ -48006,6 +51735,7 @@ components:
       additionalProperties: {}
       example:
         id: CMueJDL982Hs
+        pageID: VIaBcDeFgHiJ
         createdAt: 2000-01-23T04:56:07.000+00:00
         updatedAt: 2000-01-23T04:56:07.000+00:00
         title: title
@@ -48025,9 +51755,13 @@ components:
         durationSeconds: 42.5
         posterURL: https://customer-abc.cloudflarestream.com/5d5bc37ffcf54c9b82e996823bffbb81/thumbnails/thumbnail.jpg
         status: ready
+        paused: true
       properties:
         id:
           $ref: "#/components/schemas/Amenity_id"
+        pageID:
+          example: VIaBcDeFgHiJ
+          type: string
         createdAt:
           format: date-time
           type: string
@@ -48082,6 +51816,9 @@ components:
           allOf:
           - $ref: "#/components/schemas/WTVideoStatus"
           example: ready
+        paused:
+          example: true
+          type: boolean
       required:
       - assetId
       - createdAt
@@ -48299,34 +52036,6 @@ components:
       - merchantID
       - phoneNumber
       - updatedAt
-    NotFound:
-      additionalProperties: false
-      description: |-
-        Returned when the requested object does not exist (KAN-990). Silent: a mistyped, expired or crawled
-        link is the caller's error, so it is not posted to the error sink.
-      example:
-        name: name
-        message: message
-        stack: stack
-        httpErrorCode: 0.8008281904610115
-        trackingCode: trackingCode
-      properties:
-        name:
-          type: string
-        message:
-          type: string
-        stack:
-          type: string
-        httpErrorCode:
-          format: double
-          type: number
-        trackingCode:
-          type: string
-      required:
-      - httpErrorCode
-      - message
-      - name
-      - trackingCode
     WTVirtualBusinessCardCreateParams:
       additionalProperties: false
       example:
@@ -48536,6 +52245,95 @@ components:
       - publishedAt
       - stages
       - title
+    WTTCPAFilter:
+      additionalProperties: false
+      example:
+        cellPhone: "+18047552674"
+        phoneNumberID: jud74uIJ3B
+        id: jdu37eua98
+        merchantID: 736dhakidk
+        createdAt: 2016-06-22 19:10:25-07
+        updatedAt: 2016-06-22 19:10:25-07
+        isActive: true
+      properties:
+        cellPhone:
+          example: "+18047552674"
+          type: string
+        phoneNumberID:
+          allOf:
+          - $ref: "#/components/schemas/SSNanoID"
+          example: jud74uIJ3B
+        id:
+          $ref: "#/components/schemas/StaticVoucher_id"
+        merchantID:
+          example: 736dhakidk
+        createdAt:
+          example: 2016-06-22 19:10:25-07
+          format: date-time
+          type: string
+        updatedAt:
+          example: 2016-06-22 19:10:25-07
+          format: date-time
+          type: string
+        isActive:
+          example: true
+          type: boolean
+      required:
+      - cellPhone
+      - createdAt
+      - id
+      - isActive
+      - merchantID
+      - phoneNumberID
+      - updatedAt
+    WTTCPAPrivacyRequestResult:
+      additionalProperties: false
+      example:
+        filter:
+          cellPhone: "+18047552674"
+          phoneNumberID: jud74uIJ3B
+          id: jdu37eua98
+          merchantID: 736dhakidk
+          createdAt: 2016-06-22 19:10:25-07
+          updatedAt: 2016-06-22 19:10:25-07
+          isActive: true
+        alreadySuppressed: true
+      properties:
+        filter:
+          $ref: "#/components/schemas/WTTCPAFilter"
+        alreadySuppressed:
+          type: boolean
+      required:
+      - alreadySuppressed
+      - filter
+    WTPrivacyRequestChannel:
+      enum:
+      - email
+      - phone
+      - mail
+      - web
+      - other
+    WTTCPAPrivacyRequest:
+      additionalProperties: false
+      example:
+        cellPhone: "+18045551234"
+        receivedVia: email
+        reference: PR-20261021-01
+      properties:
+        cellPhone:
+          example: "+18045551234"
+          type: string
+        receivedVia:
+          allOf:
+          - $ref: "#/components/schemas/WTPrivacyRequestChannel"
+          example: email
+        reference:
+          example: PR-20261021-01
+          type: string
+      required:
+      - cellPhone
+      - receivedVia
+      - reference
     Assistant:
       additionalProperties: false
       example:
@@ -49554,6 +53352,86 @@ components:
       - length
       - results
       - total
+    WTMemberUpdateJobStatus:
+      enum:
+      - previewing
+      - previewed
+      - applying
+      - applied
+      - reverted
+      - cancelled
+      - failed
+    WTMemberUpdateRevertRefusalReason:
+      enum:
+      - changed_since_job
+      - phone_in_use
+      - no_prior_version
+      - already_reverted
+    WTMemberUpdateRevertRefusal:
+      additionalProperties: {}
+      properties:
+        memberID:
+          type: string
+        memberIdentifier:
+          type: string
+        reason:
+          $ref: "#/components/schemas/WTMemberUpdateRevertRefusalReason"
+      required:
+      - memberID
+      - reason
+    WTMemberUpdateRevertResult:
+      additionalProperties: {}
+      properties:
+        reverted:
+          format: double
+          type: number
+        refused:
+          items:
+            $ref: "#/components/schemas/WTMemberUpdateRevertRefusal"
+          type: array
+          default: null
+      required:
+      - refused
+      - reverted
+    WTMemberUpdateJob:
+      additionalProperties: {}
+      properties:
+        id:
+          example: Vb3kq0_Lx9TnR2mWp7cZa
+          type: string
+        status:
+          $ref: "#/components/schemas/WTMemberUpdateJobStatus"
+        fileName:
+          example: members-oct.csv
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        summary: {}
+        diffFileURL:
+          type: string
+        error:
+          type: string
+        revert:
+          $ref: "#/components/schemas/WTMemberUpdateRevertResult"
+      required:
+      - createdAt
+      - fileName
+      - id
+      - status
+      - updatedAt
+    WTMemberUpdateJobRequest:
+      additionalProperties: {}
+      properties:
+        fileName:
+          example: success/membership/import/a1B2c3D4e5-members-oct.csv
+          minLength: 1
+          type: string
+      required:
+      - fileName
     WTMembershipTier:
       additionalProperties: false
       example:
@@ -52404,6 +56282,7 @@ components:
         reinvestmentSum_string: $5.00
         startDate: 2016-06-22 19:10:25-07
         expirationDate: 2016-06-22 19:10:25-07
+        guestInstructions: guestInstructions
       properties:
         id:
           $ref: "#/components/schemas/StaticVoucher_id"
@@ -52502,6 +56381,8 @@ components:
         expirationDate:
           example: 2016-06-22 19:10:25-07
           format: date-time
+          type: string
+        guestInstructions:
           type: string
       required:
       - createdAt
@@ -52841,6 +56722,9 @@ components:
         cellPhone:
           example: "+18054052344"
           type: string
+        guestInstructions:
+          example: <p>Show this to your server before ordering.</p>
+          type: string
       required:
       - expirationDateTime
       - notes
@@ -52901,6 +56785,9 @@ components:
         cellPhone:
           example: "+18054052344"
           type: string
+        guestInstructions:
+          example: <p>Show this to your server before ordering.</p>
+          type: string
       required:
       - expirationDateTime
       - notes
@@ -52957,6 +56844,9 @@ components:
         cellPhone:
           example: "+18054052344"
           type: string
+        guestInstructions:
+          example: <p>Show this to your server before ordering.</p>
+          type: string
         voucherID:
           allOf:
           - $ref: "#/components/schemas/ObjectNanoID"
@@ -53006,6 +56896,9 @@ components:
           allOf:
           - $ref: "#/components/schemas/NanoID"
           example: PLSHy19cbz
+        guestInstructions:
+          example: <p>Show this to your server before ordering.</p>
+          type: string
         bucket:
           example: s3/bucket
           minLength: 1
@@ -53070,6 +56963,9 @@ components:
           allOf:
           - $ref: "#/components/schemas/NanoID"
           example: PLSHy19cbz
+        guestInstructions:
+          example: <p>Show this to your server before ordering.</p>
+          type: string
         bucket:
           example: s3/bucket
           minLength: 1
@@ -53132,6 +57028,9 @@ components:
           allOf:
           - $ref: "#/components/schemas/NanoID"
           example: PLSHy19cbz
+        guestInstructions:
+          example: <p>Show this to your server before ordering.</p>
+          type: string
       required:
       - expirationDateTime
       - notes
@@ -54112,6 +58011,11 @@ components:
         acquisitionSource: acquisitionSource
         shareId: shareId
         donorNote: donorNote
+        ageRequirement: none
+        idCheckRequired: true
+        venueType: dining
+        venueID: DIaBcDeFgHiJ
+        venueTitle: The Grill
         lineItems:
         - id: null
           productID: null
@@ -54119,12 +58023,30 @@ components:
           titleSnapshot: Sunset Boat Tour
           unitAmount: 2500
           quantity: 2
+          note: note
+          menuItemID: menuItemID
+          options:
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
         - id: null
           productID: null
           serviceID: null
           titleSnapshot: Sunset Boat Tour
           unitAmount: 2500
           quantity: 2
+          note: note
+          menuItemID: menuItemID
+          options:
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
+          - groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 0
       properties:
         id:
           $ref: "#/components/schemas/Amenity_id"
@@ -54168,6 +58090,18 @@ components:
         shareId:
           type: string
         donorNote:
+          type: string
+        ageRequirement:
+          $ref: "#/components/schemas/WTAgeRestriction"
+        idCheckRequired:
+          type: boolean
+        venueType:
+          $ref: "#/components/schemas/WTMenuVenueType"
+        venueID:
+          example: DIaBcDeFgHiJ
+          type: string
+        venueTitle:
+          example: The Grill
           type: string
         lineItems:
           items:
@@ -55102,6 +59036,7 @@ components:
         isRepresentatives: true
         isProducts: true
         isServices: true
+        isMenu: true
         isRoomRates: true
         isAmenities: true
         isGaming: true
@@ -55246,6 +59181,8 @@ components:
         isProducts:
           type: boolean
         isServices:
+          type: boolean
+        isMenu:
           type: boolean
         isRoomRates:
           type: boolean
@@ -55400,6 +59337,73 @@ components:
       required:
       - fingerprint
       - keystoreBase64
+    WTPlanTier:
+      enum:
+      - Standard
+      - Plus
+      - Premium
+    WTWalletSectionAccess:
+      additionalProperties: {}
+      properties:
+        section:
+          example: isVideos
+          type: string
+        included:
+          example: false
+          type: boolean
+        lowestTier:
+          allOf:
+          - $ref: "#/components/schemas/WTPlanTier"
+          example: Plus
+      required:
+      - included
+      - section
+    WTWalletSectionTopItem:
+      additionalProperties: {}
+      properties:
+        pageID:
+          type: string
+        title:
+          type: string
+        views:
+          format: double
+          type: number
+      required:
+      - pageID
+      - title
+      - views
+    WTWalletSectionViews:
+      additionalProperties: {}
+      properties:
+        name:
+          example: Products
+          type: string
+        sectionPrefix:
+          example: PR
+          type: string
+        listViews:
+          format: double
+          type: number
+        itemViews:
+          format: double
+          type: number
+        views:
+          format: double
+          type: number
+        itemPrefix:
+          example: PD
+          type: string
+        topItems:
+          items:
+            $ref: "#/components/schemas/WTWalletSectionTopItem"
+          type: array
+          default: null
+      required:
+      - itemViews
+      - listViews
+      - name
+      - sectionPrefix
+      - views
     feature:
       additionalProperties: {}
       properties:
@@ -55959,6 +59963,7 @@ components:
         isRepresentatives: true
         isProducts: true
         isServices: true
+        isMenu: true
         isRoomRates: true
         isAmenities: true
         isGaming: true
@@ -56100,6 +60105,8 @@ components:
         isProducts:
           type: boolean
         isServices:
+          type: boolean
+        isMenu:
           type: boolean
         isRoomRates:
           type: boolean
@@ -56294,6 +60301,7 @@ components:
       - isMembershipLevel
       - isMembershipPoints
       - isMembershipTier
+      - isMenu
       - isMerchantCredit
       - isMessages
       - isNewsArticles
@@ -56417,6 +60425,8 @@ components:
           type: boolean
         isServices:
           type: boolean
+        isMenu:
+          type: boolean
         isRoomRates:
           type: boolean
         isAmenities:
@@ -56476,11 +60486,373 @@ components:
           type: string
         customDomainPaused:
           type: boolean
+    WTMenuVenue:
+      additionalProperties: false
+      example:
+        venueType: dining
+        venueID: DIaBcDeFgHiJ
+        venueTitle: The Grill
+      properties:
+        venueType:
+          $ref: "#/components/schemas/WTMenuVenueType"
+        venueID:
+          example: DIaBcDeFgHiJ
+          type: string
+        venueTitle:
+          example: The Grill
+          type: string
+      required:
+      - venueID
+      - venueTitle
+      - venueType
+    WTCartLineOption:
+      additionalProperties: false
+      example:
+        id: id
+        groupTitle: Toppings
+        title: Extra cheese
+        priceDeltaCents: 1.4658129805029452
+      properties:
+        id:
+          type: string
+        groupTitle:
+          example: Toppings
+          type: string
+        title:
+          example: Extra cheese
+          type: string
+        priceDeltaCents:
+          format: double
+          type: number
+      required:
+      - groupTitle
+      - id
+      - priceDeltaCents
+      - title
+    WTCartLineProblem:
+      enum:
+      - unknown
+      - notForSale
+      - soldOut
+      - otherMerchant
+      - currency
+      - optionUnavailable
+      - optionsInvalid
+      - otherVenue
+      - notOnMenu
+      - menuRequired
+    WTCartLineQuote:
+      additionalProperties: false
+      example:
+        itemID: itemID
+        title: title
+        quantity: 0.8008281904610115
+        unitAmountCents: 6.027456183070403
+        options:
+        - id: id
+          groupTitle: Toppings
+          title: Extra cheese
+          priceDeltaCents: 1.4658129805029452
+        - id: id
+          groupTitle: Toppings
+          title: Extra cheese
+          priceDeltaCents: 1.4658129805029452
+        priceChanged: true
+        lineTotalCents: 5.962133916683182
+        taxCents: 5.637376656633329
+        note: note
+        ageRestriction: none
+        idCheckOnHandoff: true
+        venue:
+          venueType: dining
+          venueID: DIaBcDeFgHiJ
+          venueTitle: The Grill
+        problem: unknown
+      properties:
+        itemID:
+          type: string
+        title:
+          type: string
+        quantity:
+          format: double
+          type: number
+        unitAmountCents:
+          format: double
+          type: number
+        options:
+          items:
+            $ref: "#/components/schemas/WTCartLineOption"
+          type: array
+          default: null
+        priceChanged:
+          type: boolean
+        lineTotalCents:
+          format: double
+          type: number
+        taxCents:
+          format: double
+          type: number
+        note:
+          type: string
+        ageRestriction:
+          $ref: "#/components/schemas/WTAgeRestriction"
+        idCheckOnHandoff:
+          type: boolean
+        venue:
+          $ref: "#/components/schemas/WTMenuVenue"
+        problem:
+          $ref: "#/components/schemas/WTCartLineProblem"
+      required:
+      - ageRestriction
+      - idCheckOnHandoff
+      - itemID
+      - lineTotalCents
+      - quantity
+      - title
+      - unitAmountCents
+    WTWalletOrdering:
+      additionalProperties: false
+      example:
+        isOnlineCheckout: true
+        isAcceptingOrders: true
+        pausedReason: pausedReason
+        opensAt: 11:00
+        opensDay: 3.616076749251911
+        timeZone: timeZone
+        prepMinutes: 2.027123023002322
+        scheduledPickup: true
+      properties:
+        isOnlineCheckout:
+          type: boolean
+        isAcceptingOrders:
+          type: boolean
+        pausedReason:
+          type: string
+        opensAt:
+          example: 11:00
+          type: string
+        opensDay:
+          format: double
+          type: number
+        timeZone:
+          type: string
+        prepMinutes:
+          format: double
+          type: number
+        scheduledPickup:
+          type: boolean
+      required:
+      - isAcceptingOrders
+      - isOnlineCheckout
+      - prepMinutes
+      - scheduledPickup
+      - timeZone
+    WTCartQuote:
+      additionalProperties: false
+      example:
+        merchantID: merchantID
+        currency: currency
+        venue:
+          venueType: dining
+          venueID: DIaBcDeFgHiJ
+          venueTitle: The Grill
+        lines:
+        - itemID: itemID
+          title: title
+          quantity: 0.8008281904610115
+          unitAmountCents: 6.027456183070403
+          options:
+          - id: id
+            groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 1.4658129805029452
+          - id: id
+            groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 1.4658129805029452
+          priceChanged: true
+          lineTotalCents: 5.962133916683182
+          taxCents: 5.637376656633329
+          note: note
+          ageRestriction: none
+          idCheckOnHandoff: true
+          venue:
+            venueType: dining
+            venueID: DIaBcDeFgHiJ
+            venueTitle: The Grill
+          problem: unknown
+        - itemID: itemID
+          title: title
+          quantity: 0.8008281904610115
+          unitAmountCents: 6.027456183070403
+          options:
+          - id: id
+            groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 1.4658129805029452
+          - id: id
+            groupTitle: Toppings
+            title: Extra cheese
+            priceDeltaCents: 1.4658129805029452
+          priceChanged: true
+          lineTotalCents: 5.962133916683182
+          taxCents: 5.637376656633329
+          note: note
+          ageRestriction: none
+          idCheckOnHandoff: true
+          venue:
+            venueType: dining
+            venueID: DIaBcDeFgHiJ
+            venueTitle: The Grill
+          problem: unknown
+        subtotalCents: 2.3021358869347655
+        taxCents: 7.061401241503109
+        totalCents: 9.301444243932576
+        ordering:
+          isOnlineCheckout: true
+          isAcceptingOrders: true
+          pausedReason: pausedReason
+          opensAt: 11:00
+          opensDay: 3.616076749251911
+          timeZone: timeZone
+          prepMinutes: 2.027123023002322
+          scheduledPickup: true
+        ageRequirement: null
+        idCheckRequired: true
+        isValid: true
+      properties:
+        merchantID:
+          type: string
+        currency:
+          type: string
+        venue:
+          $ref: "#/components/schemas/WTMenuVenue"
+        lines:
+          items:
+            $ref: "#/components/schemas/WTCartLineQuote"
+          type: array
+          default: null
+        subtotalCents:
+          format: double
+          type: number
+        taxCents:
+          format: double
+          type: number
+        totalCents:
+          format: double
+          type: number
+        ordering:
+          $ref: "#/components/schemas/WTWalletOrdering"
+        ageRequirement:
+          $ref: "#/components/schemas/WTAgeRestriction"
+        idCheckRequired:
+          type: boolean
+        isValid:
+          type: boolean
+      required:
+      - ageRequirement
+      - currency
+      - idCheckRequired
+      - isValid
+      - lines
+      - merchantID
+      - subtotalCents
+      - taxCents
+      - totalCents
+    WTCartLineInput:
+      additionalProperties: false
+      example:
+        itemID: PDabc1234567
+        quantity: 8
+        note: note
+        optionIDs:
+        - p7Lm2Qa9
+        menuID: MEaBcDeFgHiJ
+        expectedUnitAmountCents: 6
+      properties:
+        itemID:
+          example: PDabc1234567
+          type: string
+        quantity:
+          format: int32
+          maximum: 99
+          minimum: 1
+          type: integer
+        note:
+          maxLength: 140
+          type: string
+        optionIDs:
+          example:
+          - p7Lm2Qa9
+          items:
+            type: string
+          maxItems: 30
+          type: array
+          default: null
+        menuID:
+          example: MEaBcDeFgHiJ
+          type: string
+        expectedUnitAmountCents:
+          format: int32
+          type: integer
+      required:
+      - itemID
+      - quantity
+    WTCartPriceRequest:
+      additionalProperties: false
+      example:
+        lines:
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+      properties:
+        lines:
+          items:
+            $ref: "#/components/schemas/WTCartLineInput"
+          maxItems: 50
+          minItems: 1
+          type: array
+          default: null
+      required:
+      - lines
     WTGuestAmountBreakdown:
       additionalProperties: false
       example:
         listAmountCents: 0
         creditAppliedCents: 0
+        taxCents: 0
         tipCents: 0
         amountDueCents: 0
       properties:
@@ -56489,6 +60861,10 @@ components:
           minimum: 0
           type: integer
         creditAppliedCents:
+          format: int32
+          minimum: 0
+          type: integer
+        taxCents:
           format: int32
           minimum: 0
           type: integer
@@ -56519,6 +60895,7 @@ components:
         amountBreakdown:
           listAmountCents: 0
           creditAppliedCents: 0
+          taxCents: 0
           tipCents: 0
           amountDueCents: 0
       properties:
@@ -56557,7 +60934,44 @@ components:
       additionalProperties: false
       example:
         phoneVerificationToken: phoneVerificationToken
-        objectID: PR4bc3d2e1f0
+        objectID: PD4bc3d2e1f0
+        lines:
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        - itemID: PDabc1234567
+          quantity: 8
+          note: note
+          optionIDs:
+          - p7Lm2Qa9
+          menuID: MEaBcDeFgHiJ
+          expectedUnitAmountCents: 6
+        ageConfirmed: true
         creditID: MC4bc3d2e1f0
         tipCents: 0
       properties:
@@ -56565,9 +60979,18 @@ components:
           minLength: 1
           type: string
         objectID:
-          example: PR4bc3d2e1f0
+          example: PD4bc3d2e1f0
           minLength: 12
           type: string
+        lines:
+          items:
+            $ref: "#/components/schemas/WTCartLineInput"
+          maxItems: 50
+          minItems: 1
+          type: array
+          default: null
+        ageConfirmed:
+          type: boolean
         creditID:
           example: MC4bc3d2e1f0
           type: string
@@ -56576,7 +60999,6 @@ components:
           minimum: 0
           type: integer
       required:
-      - objectID
       - phoneVerificationToken
     WTGuestDonationRequest:
       additionalProperties: false
@@ -56629,6 +61051,11 @@ components:
           acquisitionSource: acquisitionSource
           shareId: shareId
           donorNote: donorNote
+          ageRequirement: none
+          idCheckRequired: true
+          venueType: dining
+          venueID: DIaBcDeFgHiJ
+          venueTitle: The Grill
           lineItems:
           - id: null
             productID: null
@@ -56636,15 +61063,34 @@ components:
             titleSnapshot: Sunset Boat Tour
             unitAmount: 2500
             quantity: 2
+            note: note
+            menuItemID: menuItemID
+            options:
+            - groupTitle: Toppings
+              title: Extra cheese
+              priceDeltaCents: 0
+            - groupTitle: Toppings
+              title: Extra cheese
+              priceDeltaCents: 0
           - id: null
             productID: null
             serviceID: null
             titleSnapshot: Sunset Boat Tour
             unitAmount: 2500
             quantity: 2
+            note: note
+            menuItemID: menuItemID
+            options:
+            - groupTitle: Toppings
+              title: Extra cheese
+              priceDeltaCents: 0
+            - groupTitle: Toppings
+              title: Extra cheese
+              priceDeltaCents: 0
         amountBreakdown:
           listAmountCents: 0
           creditAppliedCents: 0
+          taxCents: 0
           tipCents: 0
           amountDueCents: 0
       properties:
@@ -57445,6 +61891,52 @@ components:
           type: integer
       required:
       - originalKey
+      - status
+    WTMemberUpdatePreviewReport:
+      additionalProperties: {}
+      properties:
+        jobID:
+          type: string
+        summary: {}
+        diffFileKey:
+          type: string
+        error:
+          type: string
+      required:
+      - jobID
+    WTTCPAPrivacyRequestForMerchant:
+      additionalProperties: {}
+      properties:
+        cellPhone:
+          example: "+18045551234"
+          type: string
+        receivedVia:
+          allOf:
+          - $ref: "#/components/schemas/WTPrivacyRequestChannel"
+          example: email
+        reference:
+          example: PR-20261021-01
+          type: string
+        merchantID:
+          $ref: "#/components/schemas/Amenity_id"
+      required:
+      - cellPhone
+      - merchantID
+      - receivedVia
+      - reference
+    WTMemberUpdateAppliedReport:
+      additionalProperties: {}
+      properties:
+        jobID:
+          type: string
+        status:
+          enum:
+          - applied
+          - failed
+        error:
+          type: string
+      required:
+      - jobID
       - status
     fetchIndustry_200_response_anyOf:
       example:
@@ -58807,6 +63299,7 @@ x-tagGroups:
   - News
   - Products
   - Services
+  - Menus
   - Room Rates
   - Amenities
   - Gaming
@@ -58816,6 +63309,7 @@ x-tagGroups:
   - Quick Links Section
   - Gallery
   - Videos
+  - Related Items
   - Virtual Business Card
 - name: Engage Subscribers
   tags:
@@ -58865,6 +63359,7 @@ x-tagGroups:
   - Files & Documents
   - Import & Export
   - Help Desk
+  - Ask Wallet
   - Authentication
   - Billing & Payments
   - System

@@ -4,6 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AgeRestriction** | **WTAgeRestriction** |  | [optional] 
+**IdCheckOnHandoff** | **bool** |  | [optional] 
+**IsSoldOut** | **bool** |  | [optional] 
+**SoldOutUntil** | **DateTime** |  | [optional] 
+**FulfillmentModes** | [**List&lt;WTFulfillmentMode&gt;**](WTFulfillmentMode.md) |  | [optional] 
 **Title** | **string** |  | 
 **Description** | **string** |  | 
 **DisplayedPrice** | **string** |  | [optional] 

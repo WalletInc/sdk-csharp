@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | [**AmenityId**](AmenityId.md) |  | 
+**PageID** | **string** |  | [optional] 
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
 **Title** | **string** |  | 
@@ -22,6 +23,7 @@ Name | Type | Description | Notes
 **DurationSeconds** | **double** |  | [optional] 
 **PosterURL** | **string** |  | [optional] 
 **Status** | **WTVideoStatus** |  | [optional] 
+**Paused** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
