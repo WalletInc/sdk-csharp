@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -75,6 +75,7 @@ namespace WalletInc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentDesign" /> class.
         /// </summary>
+        /// <param name="guestInstructions">guestInstructions (required).</param>
         /// <param name="borderColor">borderColor (required).</param>
         /// <param name="borderStyleType">borderStyleType (required).</param>
         /// <param name="borderSize">borderSize (required).</param>
@@ -88,18 +89,23 @@ namespace WalletInc.Model
         /// <param name="displayName">displayName (required).</param>
         /// <param name="backgroundImageURL">backgroundImageURL.</param>
         /// <param name="companyLogoURL">companyLogoURL.</param>
+        /// <param name="textPlate">textPlate (required).</param>
+        /// <param name="textPlateOpacity">textPlateOpacity (required).</param>
+        /// <param name="textPlateColor">textPlateColor.</param>
         /// <param name="employeeID">employeeID (required).</param>
         /// <param name="id">id (required).</param>
         /// <param name="merchantID">merchantID (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt (required).</param>
         /// <param name="isActive">isActive (required).</param>
-        /// <param name="textPlate">textPlate (required).</param>
-        /// <param name="textPlateOpacity">textPlateOpacity (required).</param>
-        /// <param name="textPlateColor">textPlateColor.</param>
-        /// <param name="guestInstructions">guestInstructions (required).</param>
-        public PaymentDesign(string borderColor = default, BorderStyleTypeEnum borderStyleType = default, string borderSize = default, int borderRadius = default, string fontColor = default, string fontType = default, string abbreviation = default, string acronym = default, string icon = default, string designName = default, string displayName = default, string backgroundImageURL = default, string companyLogoURL = default, string employeeID = default, StaticVoucherId id = default, string merchantID = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default, bool textPlate = default, double textPlateOpacity = default, string textPlateColor = default, string guestInstructions = default)
+        public PaymentDesign(string guestInstructions = default, string borderColor = default, BorderStyleTypeEnum borderStyleType = default, string borderSize = default, int borderRadius = default, string fontColor = default, string fontType = default, string abbreviation = default, string acronym = default, string icon = default, string designName = default, string displayName = default, string backgroundImageURL = default, string companyLogoURL = default, bool textPlate = default, double textPlateOpacity = default, string textPlateColor = default, string employeeID = default, StaticVoucherId id = default, string merchantID = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default)
         {
+            // to ensure "guestInstructions" is required (not null)
+            if (guestInstructions == null)
+            {
+                throw new ArgumentNullException("guestInstructions is a required property for PaymentDesign and cannot be null");
+            }
+            this.GuestInstructions = guestInstructions;
             // to ensure "borderColor" is required (not null)
             if (borderColor == null)
             {
@@ -156,6 +162,8 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("displayName is a required property for PaymentDesign and cannot be null");
             }
             this.DisplayName = displayName;
+            this.TextPlate = textPlate;
+            this.TextPlateOpacity = textPlateOpacity;
             // to ensure "employeeID" is required (not null)
             if (employeeID == null)
             {
@@ -177,18 +185,16 @@ namespace WalletInc.Model
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.IsActive = isActive;
-            this.TextPlate = textPlate;
-            this.TextPlateOpacity = textPlateOpacity;
-            // to ensure "guestInstructions" is required (not null)
-            if (guestInstructions == null)
-            {
-                throw new ArgumentNullException("guestInstructions is a required property for PaymentDesign and cannot be null");
-            }
-            this.GuestInstructions = guestInstructions;
             this.BackgroundImageURL = backgroundImageURL;
             this.CompanyLogoURL = companyLogoURL;
             this.TextPlateColor = textPlateColor;
         }
+
+        /// <summary>
+        /// Gets or Sets GuestInstructions
+        /// </summary>
+        [DataMember(Name = "guestInstructions", IsRequired = true, EmitDefaultValue = true)]
+        public string GuestInstructions { get; set; }
 
         /// <summary>
         /// Gets or Sets BorderColor
@@ -299,6 +305,24 @@ namespace WalletInc.Model
         public string CompanyLogoURL { get; set; }
 
         /// <summary>
+        /// Gets or Sets TextPlate
+        /// </summary>
+        [DataMember(Name = "textPlate", IsRequired = true, EmitDefaultValue = true)]
+        public bool TextPlate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TextPlateOpacity
+        /// </summary>
+        [DataMember(Name = "textPlateOpacity", IsRequired = true, EmitDefaultValue = true)]
+        public double TextPlateOpacity { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TextPlateColor
+        /// </summary>
+        [DataMember(Name = "textPlateColor", EmitDefaultValue = false)]
+        public string TextPlateColor { get; set; }
+
+        /// <summary>
         /// Gets or Sets EmployeeID
         /// </summary>
         /*
@@ -350,30 +374,6 @@ namespace WalletInc.Model
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Gets or Sets TextPlate
-        /// </summary>
-        [DataMember(Name = "textPlate", IsRequired = true, EmitDefaultValue = true)]
-        public bool TextPlate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TextPlateOpacity
-        /// </summary>
-        [DataMember(Name = "textPlateOpacity", IsRequired = true, EmitDefaultValue = true)]
-        public double TextPlateOpacity { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TextPlateColor
-        /// </summary>
-        [DataMember(Name = "textPlateColor", EmitDefaultValue = false)]
-        public string TextPlateColor { get; set; }
-
-        /// <summary>
-        /// Gets or Sets GuestInstructions
-        /// </summary>
-        [DataMember(Name = "guestInstructions", IsRequired = true, EmitDefaultValue = true)]
-        public string GuestInstructions { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -381,6 +381,7 @@ namespace WalletInc.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentDesign {\n");
+            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("  BorderColor: ").Append(BorderColor).Append("\n");
             sb.Append("  BorderStyleType: ").Append(BorderStyleType).Append("\n");
             sb.Append("  BorderSize: ").Append(BorderSize).Append("\n");
@@ -394,16 +395,15 @@ namespace WalletInc.Model
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  BackgroundImageURL: ").Append(BackgroundImageURL).Append("\n");
             sb.Append("  CompanyLogoURL: ").Append(CompanyLogoURL).Append("\n");
+            sb.Append("  TextPlate: ").Append(TextPlate).Append("\n");
+            sb.Append("  TextPlateOpacity: ").Append(TextPlateOpacity).Append("\n");
+            sb.Append("  TextPlateColor: ").Append(TextPlateColor).Append("\n");
             sb.Append("  EmployeeID: ").Append(EmployeeID).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  MerchantID: ").Append(MerchantID).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
-            sb.Append("  TextPlate: ").Append(TextPlate).Append("\n");
-            sb.Append("  TextPlateOpacity: ").Append(TextPlateOpacity).Append("\n");
-            sb.Append("  TextPlateColor: ").Append(TextPlateColor).Append("\n");
-            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

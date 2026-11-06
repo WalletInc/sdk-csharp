@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -81,7 +81,8 @@ namespace WalletInc.Model
         /// <param name="employeeID">employeeID (required).</param>
         /// <param name="reinvestmentSum">reinvestmentSum (required).</param>
         /// <param name="numberOfVouchersInFile">numberOfVouchersInFile (required).</param>
-        public PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate(string id = default, string title = default, string notes = default, ValueTypeEnum valueType = default, bool isLoaded = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, string employeeID = default, int reinvestmentSum = default, int numberOfVouchersInFile = default)
+        /// <param name="guestInstructions">guestInstructions.</param>
+        public PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate(string id = default, string title = default, string notes = default, ValueTypeEnum valueType = default, bool isLoaded = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, string employeeID = default, int reinvestmentSum = default, int numberOfVouchersInFile = default, string guestInstructions = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -120,6 +121,7 @@ namespace WalletInc.Model
             this.DisplayValue = displayValue;
             this.MerchantsReferenceID = merchantsReferenceID;
             this.ValidOnlyAtPOSRegisterIDs = validOnlyAtPOSRegisterIDs;
+            this.GuestInstructions = guestInstructions;
         }
 
         /// <summary>
@@ -222,6 +224,15 @@ namespace WalletInc.Model
         public int NumberOfVouchersInFile { get; set; }
 
         /// <summary>
+        /// Gets or Sets GuestInstructions
+        /// </summary>
+        /*
+        <example>&lt;p&gt;Pick up at will-call, gate B.&lt;/p&gt;</example>
+        */
+        [DataMember(Name = "guestInstructions", EmitDefaultValue = false)]
+        public string GuestInstructions { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -241,6 +252,7 @@ namespace WalletInc.Model
             sb.Append("  EmployeeID: ").Append(EmployeeID).Append("\n");
             sb.Append("  ReinvestmentSum: ").Append(ReinvestmentSum).Append("\n");
             sb.Append("  NumberOfVouchersInFile: ").Append(NumberOfVouchersInFile).Append("\n");
+            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

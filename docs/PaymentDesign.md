@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**GuestInstructions** | **string** |  | 
 **BorderColor** | **string** |  | 
 **BorderStyleType** | **string** |  | 
 **BorderSize** | **string** |  | 
@@ -17,16 +18,15 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | 
 **BackgroundImageURL** | **string** |  | [optional] 
 **CompanyLogoURL** | **string** |  | [optional] 
+**TextPlate** | **bool** |  | 
+**TextPlateOpacity** | **double** |  | 
+**TextPlateColor** | **string** |  | [optional] 
 **EmployeeID** | **string** |  | 
 **Id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **MerchantID** | **string** |  | 
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
 **IsActive** | **bool** |  | 
-**TextPlate** | **bool** |  | 
-**TextPlateOpacity** | **double** |  | 
-**TextPlateColor** | **string** |  | [optional] 
-**GuestInstructions** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

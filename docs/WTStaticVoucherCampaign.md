@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **EmployeeID** | **string** |  | 
 **ReinvestmentSum** | **int** |  | 
 **NumberOfVouchersInFile** | **int** |  | 
+**GuestInstructions** | **string** |  | [optional] 
 **CampaignGroupID** | **string** |  | [optional] 
 **Bucket** | **string** |  | [optional] 
 **CreatedBySourceID** | **int** |  | 
@@ -29,7 +30,6 @@ Name | Type | Description | Notes
 **ReinvestmentSumString** | **string** |  | 
 **StartDate** | **DateTime** |  | 
 **ExpirationDate** | **DateTime** |  | 
-**GuestInstructions** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

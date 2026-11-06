@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -33,6 +33,12 @@ namespace WalletInc.Model
     [DataContract(Name = "WTWalletPageView")]
     public partial class WTWalletPageView : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets TrafficClass
+        /// </summary>
+        [DataMember(Name = "trafficClass", EmitDefaultValue = false)]
+        public TrafficClass? TrafficClass { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WTWalletPageView" /> class.
         /// </summary>
@@ -61,6 +67,7 @@ namespace WalletInc.Model
         /// <param name="phoneVerificationToken">phoneVerificationToken (required).</param>
         /// <param name="referringDomain">referringDomain.</param>
         /// <param name="referrer">referrer.</param>
+        /// <param name="trafficClass">trafficClass.</param>
         /// <param name="id">id (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="country">country (required).</param>
@@ -80,7 +87,7 @@ namespace WalletInc.Model
         /// <param name="merchantID">merchantID (required).</param>
         /// <param name="isActive">Denotes if this resource is active (required).</param>
         /// <param name="geoPoint">geoPoint (required).</param>
-        public WTWalletPageView(string ip = default, string walletObjectID = default, string walletObjectPrefix = default, string parentObjectID = default, string parentObjectPrefix = default, string sessionID = default, string navigatorAgent = default, string browserName = default, string browserVersion = default, string engineName = default, string engineVersion = default, string oSName = default, string oSVersion = default, bool isMobile = default, string deviceVendor = default, string deviceModel = default, string deviceType = default, string phoneVerificationToken = default, string referringDomain = default, string referrer = default, string id = default, string status = default, string country = default, string countryCode = default, string region = default, string regionName = default, string city = default, string zip = default, double latitude = default, double longitude = default, string timezone = default, string isp = default, string org = default, string asn = default, DateTime createdAt = default, DateTime updatedAt = default, string merchantID = default, bool isActive = default, WTWalletPageViewGeoPoint geoPoint = default)
+        public WTWalletPageView(string ip = default, string walletObjectID = default, string walletObjectPrefix = default, string parentObjectID = default, string parentObjectPrefix = default, string sessionID = default, string navigatorAgent = default, string browserName = default, string browserVersion = default, string engineName = default, string engineVersion = default, string oSName = default, string oSVersion = default, bool isMobile = default, string deviceVendor = default, string deviceModel = default, string deviceType = default, string phoneVerificationToken = default, string referringDomain = default, string referrer = default, TrafficClass? trafficClass = default, string id = default, string status = default, string country = default, string countryCode = default, string region = default, string regionName = default, string city = default, string zip = default, double latitude = default, double longitude = default, string timezone = default, string isp = default, string org = default, string asn = default, DateTime createdAt = default, DateTime updatedAt = default, string merchantID = default, bool isActive = default, WTWalletPageViewGeoPoint geoPoint = default)
         {
             // to ensure "ip" is required (not null)
             if (ip == null)
@@ -276,6 +283,7 @@ namespace WalletInc.Model
             this.GeoPoint = geoPoint;
             this.ReferringDomain = referringDomain;
             this.Referrer = referrer;
+            this.TrafficClass = trafficClass;
         }
 
         /// <summary>
@@ -631,6 +639,7 @@ namespace WalletInc.Model
             sb.Append("  PhoneVerificationToken: ").Append(PhoneVerificationToken).Append("\n");
             sb.Append("  ReferringDomain: ").Append(ReferringDomain).Append("\n");
             sb.Append("  Referrer: ").Append(Referrer).Append("\n");
+            sb.Append("  TrafficClass: ").Append(TrafficClass).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");

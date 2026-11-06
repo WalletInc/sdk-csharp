@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -75,6 +75,7 @@ namespace WalletInc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym" /> class.
         /// </summary>
+        /// <param name="guestInstructions">guestInstructions.</param>
         /// <param name="borderColor">borderColor (required).</param>
         /// <param name="borderStyleType">borderStyleType (required).</param>
         /// <param name="borderSize">borderSize (required).</param>
@@ -86,7 +87,10 @@ namespace WalletInc.Model
         /// <param name="displayName">displayName (required).</param>
         /// <param name="backgroundImageURL">backgroundImageURL.</param>
         /// <param name="companyLogoURL">companyLogoURL.</param>
-        public PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym(string borderColor = default, BorderStyleTypeEnum borderStyleType = default, string borderSize = default, int borderRadius = default, string fontColor = default, string fontType = default, string icon = default, string designName = default, string displayName = default, string backgroundImageURL = default, string companyLogoURL = default)
+        /// <param name="textPlate">textPlate.</param>
+        /// <param name="textPlateOpacity">textPlateOpacity.</param>
+        /// <param name="textPlateColor">textPlateColor.</param>
+        public PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym(string guestInstructions = default, string borderColor = default, BorderStyleTypeEnum borderStyleType = default, string borderSize = default, int borderRadius = default, string fontColor = default, string fontType = default, string icon = default, string designName = default, string displayName = default, string backgroundImageURL = default, string companyLogoURL = default, bool textPlate = default, double textPlateOpacity = default, string textPlateColor = default)
         {
             // to ensure "borderColor" is required (not null)
             if (borderColor == null)
@@ -132,9 +136,22 @@ namespace WalletInc.Model
                 throw new ArgumentNullException("displayName is a required property for PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym and cannot be null");
             }
             this.DisplayName = displayName;
+            this.GuestInstructions = guestInstructions;
             this.BackgroundImageURL = backgroundImageURL;
             this.CompanyLogoURL = companyLogoURL;
+            this.TextPlate = textPlate;
+            this.TextPlateOpacity = textPlateOpacity;
+            this.TextPlateColor = textPlateColor;
         }
+
+        /// <summary>
+        /// Gets or Sets GuestInstructions
+        /// </summary>
+        /*
+        <example>&lt;p&gt;Show this to your server. One per table.&lt;/p&gt;</example>
+        */
+        [DataMember(Name = "guestInstructions", EmitDefaultValue = false)]
+        public string GuestInstructions { get; set; }
 
         /// <summary>
         /// Gets or Sets BorderColor
@@ -227,6 +244,33 @@ namespace WalletInc.Model
         public string CompanyLogoURL { get; set; }
 
         /// <summary>
+        /// Gets or Sets TextPlate
+        /// </summary>
+        /*
+        <example>true</example>
+        */
+        [DataMember(Name = "textPlate", EmitDefaultValue = true)]
+        public bool TextPlate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TextPlateOpacity
+        /// </summary>
+        /*
+        <example>0.55</example>
+        */
+        [DataMember(Name = "textPlateOpacity", EmitDefaultValue = false)]
+        public double TextPlateOpacity { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TextPlateColor
+        /// </summary>
+        /*
+        <example>#ffffff</example>
+        */
+        [DataMember(Name = "textPlateColor", EmitDefaultValue = false)]
+        public string TextPlateColor { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -234,6 +278,7 @@ namespace WalletInc.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym {\n");
+            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("  BorderColor: ").Append(BorderColor).Append("\n");
             sb.Append("  BorderStyleType: ").Append(BorderStyleType).Append("\n");
             sb.Append("  BorderSize: ").Append(BorderSize).Append("\n");
@@ -245,6 +290,9 @@ namespace WalletInc.Model
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  BackgroundImageURL: ").Append(BackgroundImageURL).Append("\n");
             sb.Append("  CompanyLogoURL: ").Append(CompanyLogoURL).Append("\n");
+            sb.Append("  TextPlate: ").Append(TextPlate).Append("\n");
+            sb.Append("  TextPlateOpacity: ").Append(TextPlateOpacity).Append("\n");
+            sb.Append("  TextPlateColor: ").Append(TextPlateColor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -323,6 +371,27 @@ namespace WalletInc.Model
             if (this.DisplayName != null && this.DisplayName.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for DisplayName, length must be greater than 1.", new [] { "DisplayName" });
+            }
+
+            // TextPlateOpacity (double) maximum
+            if (this.TextPlateOpacity > (double)0.8)
+            {
+                yield return new ValidationResult("Invalid value for TextPlateOpacity, must be a value less than or equal to 0.8.", new [] { "TextPlateOpacity" });
+            }
+
+            // TextPlateOpacity (double) minimum
+            if (this.TextPlateOpacity < (double)0.2)
+            {
+                yield return new ValidationResult("Invalid value for TextPlateOpacity, must be a value greater than or equal to 0.2.", new [] { "TextPlateOpacity" });
+            }
+
+            if (this.TextPlateColor != null) {
+                // TextPlateColor (string) pattern
+                Regex regexTextPlateColor = new Regex(@"^(#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}))?$", RegexOptions.CultureInvariant);
+                if (!regexTextPlateColor.Match(this.TextPlateColor).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TextPlateColor, must match a pattern of " + regexTextPlateColor, new [] { "TextPlateColor" });
+                }
             }
 
             yield break;

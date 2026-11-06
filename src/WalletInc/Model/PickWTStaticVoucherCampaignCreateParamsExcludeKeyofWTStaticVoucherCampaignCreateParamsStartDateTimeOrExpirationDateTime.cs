@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -78,11 +78,12 @@ namespace WalletInc.Model
         /// <param name="validOnlyAtPOSRegisterIDs">validOnlyAtPOSRegisterIDs.</param>
         /// <param name="paymentDesignID">paymentDesignID (required).</param>
         /// <param name="employeeID">employeeID (required).</param>
+        /// <param name="guestInstructions">guestInstructions.</param>
         /// <param name="campaignGroupID">campaignGroupID.</param>
         /// <param name="bucket">bucket.</param>
         /// <param name="createdBySourceID">createdBySourceID (required).</param>
         /// <param name="originalFileName">originalFileName.</param>
-        public PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaignCreateParamsStartDateTimeOrExpirationDateTime(string title = default, string notes = default, ValueTypeEnum valueType = default, bool isLoaded = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, string employeeID = default, string campaignGroupID = default, string bucket = default, int createdBySourceID = default, string originalFileName = default)
+        public PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaignCreateParamsStartDateTimeOrExpirationDateTime(string title = default, string notes = default, ValueTypeEnum valueType = default, bool isLoaded = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, string employeeID = default, string guestInstructions = default, string campaignGroupID = default, string bucket = default, int createdBySourceID = default, string originalFileName = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -114,6 +115,7 @@ namespace WalletInc.Model
             this.DisplayValue = displayValue;
             this.MerchantsReferenceID = merchantsReferenceID;
             this.ValidOnlyAtPOSRegisterIDs = validOnlyAtPOSRegisterIDs;
+            this.GuestInstructions = guestInstructions;
             this.CampaignGroupID = campaignGroupID;
             this.Bucket = bucket;
             this.OriginalFileName = originalFileName;
@@ -192,6 +194,15 @@ namespace WalletInc.Model
         public string EmployeeID { get; set; }
 
         /// <summary>
+        /// Gets or Sets GuestInstructions
+        /// </summary>
+        /*
+        <example>&lt;p&gt;Pick up at will-call, gate B.&lt;/p&gt;</example>
+        */
+        [DataMember(Name = "guestInstructions", EmitDefaultValue = false)]
+        public string GuestInstructions { get; set; }
+
+        /// <summary>
         /// Gets or Sets CampaignGroupID
         /// </summary>
         /*
@@ -244,6 +255,7 @@ namespace WalletInc.Model
             sb.Append("  ValidOnlyAtPOSRegisterIDs: ").Append(ValidOnlyAtPOSRegisterIDs).Append("\n");
             sb.Append("  PaymentDesignID: ").Append(PaymentDesignID).Append("\n");
             sb.Append("  EmployeeID: ").Append(EmployeeID).Append("\n");
+            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("  CampaignGroupID: ").Append(CampaignGroupID).Append("\n");
             sb.Append("  Bucket: ").Append(Bucket).Append("\n");
             sb.Append("  CreatedBySourceID: ").Append(CreatedBySourceID).Append("\n");

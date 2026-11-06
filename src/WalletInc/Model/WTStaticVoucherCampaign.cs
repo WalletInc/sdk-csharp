@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -81,6 +81,7 @@ namespace WalletInc.Model
         /// <param name="employeeID">employeeID (required).</param>
         /// <param name="reinvestmentSum">reinvestmentSum (required).</param>
         /// <param name="numberOfVouchersInFile">numberOfVouchersInFile (required).</param>
+        /// <param name="guestInstructions">guestInstructions.</param>
         /// <param name="campaignGroupID">campaignGroupID.</param>
         /// <param name="bucket">bucket.</param>
         /// <param name="createdBySourceID">createdBySourceID (required).</param>
@@ -94,8 +95,7 @@ namespace WalletInc.Model
         /// <param name="reinvestmentSumString">reinvestmentSumString (required).</param>
         /// <param name="startDate">startDate (required).</param>
         /// <param name="expirationDate">expirationDate (required).</param>
-        /// <param name="guestInstructions">guestInstructions.</param>
-        public WTStaticVoucherCampaign(StaticVoucherId id = default, string title = default, string notes = default, ValueTypeEnum valueType = default, bool isLoaded = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, string employeeID = default, int reinvestmentSum = default, int numberOfVouchersInFile = default, string campaignGroupID = default, string bucket = default, int createdBySourceID = default, string originalFileName = default, string merchantID = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default, double voucherType = default, string reinvestmentSumDecimal = default, string reinvestmentSumString = default, DateTime startDate = default, DateTime expirationDate = default, string guestInstructions = default)
+        public WTStaticVoucherCampaign(StaticVoucherId id = default, string title = default, string notes = default, ValueTypeEnum valueType = default, bool isLoaded = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, string employeeID = default, int reinvestmentSum = default, int numberOfVouchersInFile = default, string guestInstructions = default, string campaignGroupID = default, string bucket = default, int createdBySourceID = default, string originalFileName = default, string merchantID = default, DateTime createdAt = default, DateTime updatedAt = default, bool isActive = default, double voucherType = default, string reinvestmentSumDecimal = default, string reinvestmentSumString = default, DateTime startDate = default, DateTime expirationDate = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -159,10 +159,10 @@ namespace WalletInc.Model
             this.DisplayValue = displayValue;
             this.MerchantsReferenceID = merchantsReferenceID;
             this.ValidOnlyAtPOSRegisterIDs = validOnlyAtPOSRegisterIDs;
+            this.GuestInstructions = guestInstructions;
             this.CampaignGroupID = campaignGroupID;
             this.Bucket = bucket;
             this.OriginalFileName = originalFileName;
-            this.GuestInstructions = guestInstructions;
         }
 
         /// <summary>
@@ -260,6 +260,12 @@ namespace WalletInc.Model
         */
         [DataMember(Name = "numberOfVouchersInFile", IsRequired = true, EmitDefaultValue = true)]
         public int NumberOfVouchersInFile { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GuestInstructions
+        /// </summary>
+        [DataMember(Name = "guestInstructions", EmitDefaultValue = false)]
+        public string GuestInstructions { get; set; }
 
         /// <summary>
         /// Gets or Sets CampaignGroupID
@@ -379,12 +385,6 @@ namespace WalletInc.Model
         public DateTime ExpirationDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets GuestInstructions
-        /// </summary>
-        [DataMember(Name = "guestInstructions", EmitDefaultValue = false)]
-        public string GuestInstructions { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -404,6 +404,7 @@ namespace WalletInc.Model
             sb.Append("  EmployeeID: ").Append(EmployeeID).Append("\n");
             sb.Append("  ReinvestmentSum: ").Append(ReinvestmentSum).Append("\n");
             sb.Append("  NumberOfVouchersInFile: ").Append(NumberOfVouchersInFile).Append("\n");
+            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("  CampaignGroupID: ").Append(CampaignGroupID).Append("\n");
             sb.Append("  Bucket: ").Append(Bucket).Append("\n");
             sb.Append("  CreatedBySourceID: ").Append(CreatedBySourceID).Append("\n");
@@ -417,7 +418,6 @@ namespace WalletInc.Model
             sb.Append("  ReinvestmentSumString: ").Append(ReinvestmentSumString).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  ExpirationDate: ").Append(ExpirationDate).Append("\n");
-            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

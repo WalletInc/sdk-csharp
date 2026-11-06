@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **PhoneVerificationToken** | **string** |  | 
 **ReferringDomain** | **string** |  | [optional] 
 **Referrer** | **string** |  | [optional] 
+**TrafficClass** | **TrafficClass** |  | [optional] 
 **Id** | **string** |  | 
 **Status** | **string** |  | 
 **Country** | **string** |  | 

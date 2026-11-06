@@ -5,6 +5,7 @@ From T, pick a set of properties whose keys are in the union K
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**GuestInstructions** | **string** |  | [optional] 
 **BorderColor** | **string** |  | 
 **BorderStyleType** | **string** |  | 
 **BorderSize** | **string** |  | 
@@ -16,6 +17,9 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | 
 **BackgroundImageURL** | **string** |  | [optional] 
 **CompanyLogoURL** | **string** |  | [optional] 
+**TextPlate** | **bool** |  | [optional] 
+**TextPlateOpacity** | **double** |  | [optional] 
+**TextPlateColor** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

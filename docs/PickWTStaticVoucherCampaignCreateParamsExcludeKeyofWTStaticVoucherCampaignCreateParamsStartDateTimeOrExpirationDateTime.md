@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ValidOnlyAtPOSRegisterIDs** | **List&lt;string&gt;** |  | [optional] 
 **PaymentDesignID** | **string** |  | 
 **EmployeeID** | **string** |  | 
+**GuestInstructions** | **string** |  | [optional] 
 **CampaignGroupID** | **string** |  | [optional] 
 **Bucket** | **string** |  | [optional] 
 **CreatedBySourceID** | **int** |  | 

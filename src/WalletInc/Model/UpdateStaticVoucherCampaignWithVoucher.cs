@@ -1,7 +1,7 @@
 /*
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -76,14 +76,14 @@ namespace WalletInc.Model
         /// <param name="merchantsReferenceID">merchantsReferenceID.</param>
         /// <param name="validOnlyAtPOSRegisterIDs">validOnlyAtPOSRegisterIDs.</param>
         /// <param name="paymentDesignID">paymentDesignID (required).</param>
+        /// <param name="guestInstructions">guestInstructions.</param>
         /// <param name="startDateTime">startDateTime (required).</param>
         /// <param name="expirationDateTime">expirationDateTime (required).</param>
         /// <param name="memberID">memberID.</param>
         /// <param name="offerAmountCents">offerAmountCents (required).</param>
         /// <param name="cellPhone">cellPhone.</param>
-        /// <param name="guestInstructions">guestInstructions.</param>
         /// <param name="voucherID">voucherID (required).</param>
-        public UpdateStaticVoucherCampaignWithVoucher(string title = default, string notes = default, ValueTypeEnum valueType = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, DateTime startDateTime = default, DateTime expirationDateTime = default, string memberID = default, int offerAmountCents = default, string cellPhone = default, string guestInstructions = default, string voucherID = default)
+        public UpdateStaticVoucherCampaignWithVoucher(string title = default, string notes = default, ValueTypeEnum valueType = default, string displayValue = default, string merchantsReferenceID = default, List<string> validOnlyAtPOSRegisterIDs = default, string paymentDesignID = default, string guestInstructions = default, DateTime startDateTime = default, DateTime expirationDateTime = default, string memberID = default, int offerAmountCents = default, string cellPhone = default, string voucherID = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -116,9 +116,9 @@ namespace WalletInc.Model
             this.DisplayValue = displayValue;
             this.MerchantsReferenceID = merchantsReferenceID;
             this.ValidOnlyAtPOSRegisterIDs = validOnlyAtPOSRegisterIDs;
+            this.GuestInstructions = guestInstructions;
             this.MemberID = memberID;
             this.CellPhone = cellPhone;
-            this.GuestInstructions = guestInstructions;
         }
 
         /// <summary>
@@ -167,6 +167,15 @@ namespace WalletInc.Model
         public string PaymentDesignID { get; set; }
 
         /// <summary>
+        /// Gets or Sets GuestInstructions
+        /// </summary>
+        /*
+        <example>&lt;p&gt;Show this to your server before ordering.&lt;/p&gt;</example>
+        */
+        [DataMember(Name = "guestInstructions", EmitDefaultValue = false)]
+        public string GuestInstructions { get; set; }
+
+        /// <summary>
         /// Gets or Sets StartDateTime
         /// </summary>
         /*
@@ -212,15 +221,6 @@ namespace WalletInc.Model
         public string CellPhone { get; set; }
 
         /// <summary>
-        /// Gets or Sets GuestInstructions
-        /// </summary>
-        /*
-        <example>&lt;p&gt;Show this to your server before ordering.&lt;/p&gt;</example>
-        */
-        [DataMember(Name = "guestInstructions", EmitDefaultValue = false)]
-        public string GuestInstructions { get; set; }
-
-        /// <summary>
         /// Gets or Sets VoucherID
         /// </summary>
         /*
@@ -244,12 +244,12 @@ namespace WalletInc.Model
             sb.Append("  MerchantsReferenceID: ").Append(MerchantsReferenceID).Append("\n");
             sb.Append("  ValidOnlyAtPOSRegisterIDs: ").Append(ValidOnlyAtPOSRegisterIDs).Append("\n");
             sb.Append("  PaymentDesignID: ").Append(PaymentDesignID).Append("\n");
+            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("  StartDateTime: ").Append(StartDateTime).Append("\n");
             sb.Append("  ExpirationDateTime: ").Append(ExpirationDateTime).Append("\n");
             sb.Append("  MemberID: ").Append(MemberID).Append("\n");
             sb.Append("  OfferAmountCents: ").Append(OfferAmountCents).Append("\n");
             sb.Append("  CellPhone: ").Append(CellPhone).Append("\n");
-            sb.Append("  GuestInstructions: ").Append(GuestInstructions).Append("\n");
             sb.Append("  VoucherID: ").Append(VoucherID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
