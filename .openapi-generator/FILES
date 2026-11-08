@@ -155,7 +155,6 @@ docs/MerchantNotInitialized.md
 docs/MerchantTermsDocumentType.md
 docs/MerchantURL.md
 docs/Message.md
-docs/ModuleError.md
 docs/NewsApi.md
 docs/NewsArticle.md
 docs/NotFound.md
@@ -166,7 +165,6 @@ docs/OptInList.md
 docs/OptInListSource.md
 docs/OptInListSubscriber.md
 docs/OptInListsApi.md
-docs/Order.md
 docs/OrderStatus.md
 docs/OrdersApi.md
 docs/OutboundSMS.md
@@ -599,6 +597,9 @@ docs/WTWalletPassProvider.md
 docs/WTWalletSectionAccess.md
 docs/WTWalletSectionTopItem.md
 docs/WTWalletSectionViews.md
+docs/WTWebsiteWidget.md
+docs/WTWebsiteWidgetEmbedders.md
+docs/WTWebsiteWidgetOriginsUpdate.md
 docs/WTWhatsAppInboundWebhook.md
 docs/WTWhatsAppStatusCallback.md
 docs/WalletConfiguration.md
@@ -613,6 +614,9 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTWebsiteWidgetEmbeddersTests.cs
+src/WalletInc.Test/Model/WTWebsiteWidgetOriginsUpdateTests.cs
+src/WalletInc.Test/Model/WTWebsiteWidgetTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -819,7 +823,6 @@ src/WalletInc/Model/MerchantNotInitialized.cs
 src/WalletInc/Model/MerchantTermsDocumentType.cs
 src/WalletInc/Model/MerchantURL.cs
 src/WalletInc/Model/Message.cs
-src/WalletInc/Model/ModuleError.cs
 src/WalletInc/Model/NewsArticle.cs
 src/WalletInc/Model/NotFound.cs
 src/WalletInc/Model/OAIAssistantUpdateParams.cs
@@ -827,7 +830,6 @@ src/WalletInc/Model/OAIAssistantUpdateParamsCreateParams.cs
 src/WalletInc/Model/OptInList.cs
 src/WalletInc/Model/OptInListSource.cs
 src/WalletInc/Model/OptInListSubscriber.cs
-src/WalletInc/Model/Order.cs
 src/WalletInc/Model/OrderStatus.cs
 src/WalletInc/Model/OutboundSMS.cs
 src/WalletInc/Model/PaginatedWTMembers.cs
@@ -1235,6 +1237,9 @@ src/WalletInc/Model/WTWalletPassProvider.cs
 src/WalletInc/Model/WTWalletSectionAccess.cs
 src/WalletInc/Model/WTWalletSectionTopItem.cs
 src/WalletInc/Model/WTWalletSectionViews.cs
+src/WalletInc/Model/WTWebsiteWidget.cs
+src/WalletInc/Model/WTWebsiteWidgetEmbedders.cs
+src/WalletInc/Model/WTWebsiteWidgetOriginsUpdate.cs
 src/WalletInc/Model/WTWhatsAppInboundWebhook.cs
 src/WalletInc/Model/WTWhatsAppStatusCallback.cs
 src/WalletInc/Model/WalletConfiguration.cs

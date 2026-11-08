@@ -7,11 +7,13 @@ All URIs are relative to *https://api.wall.et*
 | [**DeleteCustomDomain**](WalletConfigurationApi.md#deletecustomdomain) | **DELETE** /employee/walletConfiguration/customDomain | Remove the custom domain |
 | [**FetchCustomDomain**](WalletConfigurationApi.md#fetchcustomdomain) | **GET** /employee/walletConfiguration/customDomain | Get the custom domain |
 | [**FetchPassStyle**](WalletConfigurationApi.md#fetchpassstyle) | **GET** /wallet/passStyle | Get pass styling |
+| [**FetchWebsiteWidget**](WalletConfigurationApi.md#fetchwebsitewidget) | **GET** /merchant/wallet/widget | Get website widget settings |
 | [**GenerateAndroidKeystore**](WalletConfigurationApi.md#generateandroidkeystore) | **POST** /v2/wallet/android/keystore | Generate Android TWA signing keystore |
 | [**ResetPassStyle**](WalletConfigurationApi.md#resetpassstyle) | **DELETE** /wallet/passStyle/{provider} | Reset one provider&#39;s pass styling |
 | [**SaveCustomDomain**](WalletConfigurationApi.md#savecustomdomain) | **PUT** /employee/walletConfiguration/customDomain | Set up a custom domain |
 | [**SaveMerchantCreditPaymentDesign**](WalletConfigurationApi.md#savemerchantcreditpaymentdesign) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update payment design for merchant credits |
 | [**SaveWalletRecord**](WalletConfigurationApi.md#savewalletrecord) | **PUT** /v2/wallet | Update wallet record |
+| [**SaveWebsiteWidgetOrigins**](WalletConfigurationApi.md#savewebsitewidgetorigins) | **PUT** /merchant/wallet/widget/origins | Set the websites allowed to show the wallet |
 
 <a id="deletecustomdomain"></a>
 # **DeleteCustomDomain**
@@ -267,6 +269,97 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**WTPassStyleResponse**](WTPassStyleResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="fetchwebsitewidget"></a>
+# **FetchWebsiteWidget**
+> WTWebsiteWidget FetchWebsiteWidget ()
+
+Get website widget settings
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class FetchWebsiteWidgetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WalletConfigurationApi(httpClient, config, httpClientHandler);
+
+            try
+            {
+                // Get website widget settings
+                WTWebsiteWidget result = apiInstance.FetchWebsiteWidget();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WalletConfigurationApi.FetchWebsiteWidget: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the FetchWebsiteWidgetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get website widget settings
+    ApiResponse<WTWebsiteWidget> response = apiInstance.FetchWebsiteWidgetWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WalletConfigurationApi.FetchWebsiteWidgetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**WTWebsiteWidget**](WTWebsiteWidget.md)
 
 ### Authorization
 
@@ -748,6 +841,102 @@ catch (ApiException e)
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Ok |  -  |
+| **401** | Authentication Failed |  -  |
+| **422** | Validation Failed |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="savewebsitewidgetorigins"></a>
+# **SaveWebsiteWidgetOrigins**
+> WTWebsiteWidget SaveWebsiteWidgetOrigins (WTWebsiteWidgetOriginsUpdate wTWebsiteWidgetOriginsUpdate)
+
+Set the websites allowed to show the wallet
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using WalletInc.Api;
+using WalletInc.Client;
+using WalletInc.Model;
+
+namespace Example
+{
+    public class SaveWebsiteWidgetOriginsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.wall.et";
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WalletConfigurationApi(httpClient, config, httpClientHandler);
+            var wTWebsiteWidgetOriginsUpdate = new WTWebsiteWidgetOriginsUpdate(); // WTWebsiteWidgetOriginsUpdate | 
+
+            try
+            {
+                // Set the websites allowed to show the wallet
+                WTWebsiteWidget result = apiInstance.SaveWebsiteWidgetOrigins(wTWebsiteWidgetOriginsUpdate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WalletConfigurationApi.SaveWebsiteWidgetOrigins: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SaveWebsiteWidgetOriginsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set the websites allowed to show the wallet
+    ApiResponse<WTWebsiteWidget> response = apiInstance.SaveWebsiteWidgetOriginsWithHttpInfo(wTWebsiteWidgetOriginsUpdate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WalletConfigurationApi.SaveWebsiteWidgetOriginsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **wTWebsiteWidgetOriginsUpdate** | [**WTWebsiteWidgetOriginsUpdate**](WTWebsiteWidgetOriginsUpdate.md) |  |  |
+
+### Return type
+
+[**WTWebsiteWidget**](WTWebsiteWidget.md)
 
 ### Authorization
 
