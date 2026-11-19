@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 **IsSmsOptIn** | **bool** |  | [optional] 
 **SmsOptInSourceID** | [**WTWalletConfigurationSaveWalletRecordSmsOptInSourceID**](WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md) |  | [optional] 
 **IsEmailSubscriber** | **bool** |  | [optional] 
+**IsSocialHub** | **bool** |  | [optional] 
 **GoogleAnalyticsID** | **string** |  | [optional] 
 **FacebookPixelID** | **string** |  | [optional] 
 **PublicChatRoomChannelID** | **double** |  | [optional] 

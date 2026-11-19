@@ -4,14 +4,14 @@ All URIs are relative to *https://api.wall.et*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**FetchAppleWalletSubscriberActivity**](AppleWalletSubscribersApi.md#fetchapplewalletsubscriberactivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity |
+| [**FetchAppleWalletSubscriberActivity**](AppleWalletSubscribersApi.md#fetchapplewalletsubscriberactivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity Scoped to the caller&#39;s merchant: the subscription must belong to them. |
 | [**FetchAppleWalletSubscribers**](AppleWalletSubscribersApi.md#fetchapplewalletsubscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Get all subscribers |
 
 <a id="fetchapplewalletsubscriberactivity"></a>
 # **FetchAppleWalletSubscriberActivity**
 > List&lt;Object&gt; FetchAppleWalletSubscriberActivity (string subscriptionID)
 
-Get subscriber activity
+Get subscriber activity Scoped to the caller's merchant: the subscription must belong to them.
 
 ### Example
 ```csharp
@@ -38,7 +38,7 @@ namespace Example
 
             try
             {
-                // Get subscriber activity
+                // Get subscriber activity Scoped to the caller's merchant: the subscription must belong to them.
                 List<Object> result = apiInstance.FetchAppleWalletSubscriberActivity(subscriptionID);
                 Debug.WriteLine(result);
             }
@@ -59,7 +59,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get subscriber activity
+    // Get subscriber activity Scoped to the caller's merchant: the subscription must belong to them.
     ApiResponse<List<Object>> response = apiInstance.FetchAppleWalletSubscriberActivityWithHttpInfo(subscriptionID);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
