@@ -30,6 +30,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.wall.et";
+            // Configure API key authorization: api_token
+            config.AddApiKey("access-token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access-token", "Bearer");
+
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
@@ -85,7 +90,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -126,6 +131,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.wall.et";
+            // Configure API key authorization: api_token
+            config.AddApiKey("access-token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access-token", "Bearer");
+
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
@@ -183,7 +193,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
