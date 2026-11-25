@@ -482,6 +482,7 @@ docs/WTOrderLineItem.md
 docs/WTOrderLineOption.md
 docs/WTOrderingSettings.md
 docs/WTOrderingSettingsUpdateParams.md
+docs/WTOtpChannel.md
 docs/WTPassBrandKit.md
 docs/WTPassStyleResponse.md
 docs/WTPassStyleResponseApple.md
@@ -641,6 +642,7 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTOtpChannelTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -1146,6 +1148,7 @@ src/WalletInc/Model/WTOrderLineItem.cs
 src/WalletInc/Model/WTOrderLineOption.cs
 src/WalletInc/Model/WTOrderingSettings.cs
 src/WalletInc/Model/WTOrderingSettingsUpdateParams.cs
+src/WalletInc/Model/WTOtpChannel.cs
 src/WalletInc/Model/WTPassBrandKit.cs
 src/WalletInc/Model/WTPassStyleResponse.cs
 src/WalletInc/Model/WTPassStyleResponseApple.cs
