@@ -466,6 +466,7 @@ docs/WTMenuVenueType.md
 docs/WTMerchantCredit.md
 docs/WTMerchantCreditCreationParams.md
 docs/WTMerchantURLCreate.md
+docs/WTMerchantURLPathRequest.md
 docs/WTMerchantURLUpdate.md
 docs/WTMerchantUpdate.md
 docs/WTMerchantUpdatePOSIntegration.md
@@ -640,6 +641,7 @@ docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
+src/WalletInc.Test/Model/WTMerchantURLPathRequestTests.cs
 src/WalletInc.Test/WalletInc.Test.csproj
 src/WalletInc/Api/APIKeysApi.cs
 src/WalletInc/Api/AmenitiesApi.cs
@@ -1129,6 +1131,7 @@ src/WalletInc/Model/WTMenuVenueType.cs
 src/WalletInc/Model/WTMerchantCredit.cs
 src/WalletInc/Model/WTMerchantCreditCreationParams.cs
 src/WalletInc/Model/WTMerchantURLCreate.cs
+src/WalletInc/Model/WTMerchantURLPathRequest.cs
 src/WalletInc/Model/WTMerchantURLUpdate.cs
 src/WalletInc/Model/WTMerchantUpdate.cs
 src/WalletInc/Model/WTMerchantUpdatePOSIntegration.cs

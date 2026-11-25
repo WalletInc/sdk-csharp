@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Nickname** | **string** |  | 
 **DestinationURL** | **string** |  | 
+**CustomPath** | **string** |  | [optional] 
 **Id** | [**AmenityId**](AmenityId.md) |  | 
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
